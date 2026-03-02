@@ -1,0 +1,15 @@
+[project]
+name = "gtfs-ontology"
+version = "0.1"
+description = "An OWL ontology for GTFS"
+authors = [
+    {name = "Joseph Preece", email = "joseph.preece@glasgow.ac.uk"}
+]
+dependencies = [
+    "owlready2",
+    "pyyaml",
+    "requests",
+    "joblib",
+    "dotenv",
+    "pandas",
+]

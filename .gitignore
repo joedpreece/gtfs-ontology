@@ -1,0 +1,4 @@
+tests/cache/
+.env
+tests/tfwm_artifacts/
+src/__pycache__/
