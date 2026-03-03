@@ -12,4 +12,4 @@ def _read_yaml(path: pathlib.Path):
 defaults = _read_yaml(path=REPO_ROOT / "config" / "defaults.yaml")
 
 ONTOLOGY_FILE = defaults["ontology_file"]
-CACHE = defaults["test_cache"]
+# CACHE = defaults["test_cache"]

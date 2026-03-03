@@ -8,8 +8,4 @@ authors = [
 dependencies = [
     "owlready2",
     "pyyaml",
-    "requests",
-    "joblib",
-    "dotenv",
-    "pandas",
 ]
