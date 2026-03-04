@@ -82,38 +82,11 @@
 
 <owl:Class rdf:about="#AgencyFile">
   <rdfs:subClassOf rdf:resource="#File"/>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#hasAgency"/>
-      <owl:someValuesFrom rdf:resource="#Agency"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transit agencies with service represented in this dataset.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Agency">
   <rdfs:subClassOf rdf:resource="#Record"/>
-  <rdfs:subClassOf>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#agency_name"/>
-          <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-          <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-        </owl:Restriction>
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#agency_url"/>
-          <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-          <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-        </owl:Restriction>
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#agency_timezone"/>
-          <owl:onClass rdf:resource="#Timezone"/>
-          <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-        </owl:Restriction>
-      </owl:intersectionOf>
-    </owl:Class>
-  </rdfs:subClassOf>
 </owl:Class>
 
 <owl:Class rdf:about="#Dataset">
@@ -189,22 +162,6 @@
 
 <owl:Class rdf:about="#Calendar">
   <rdfs:subClassOf rdf:resource="#Record"/>
-</owl:Class>
-
-<owl:Class rdf:about="#AgencyFileWithMultipleAgents">
-  <rdfs:subClassOf rdf:resource="#AgencyFile"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <rdf:Description rdf:about="#AgencyFile"/>
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#hasAgency"/>
-          <owl:onClass rdf:resource="#Agency"/>
-          <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
-        </owl:Restriction>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
 </owl:Class>
 
 <rdfs:Datatype rdf:about="#LanguageCode">

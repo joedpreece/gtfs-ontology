@@ -1,0 +1,65 @@
+# Put this in a TTL you load alongside your data and rules
+@prefix gtfs:   <http://example.org/gtfs#> .
+@prefix v:      <http://example.org/gtfs/validation#> .
+
+v:Violation            a rdfs:Class .
+v:violation            a rdf:Property .     # (focusNode, message)
+v:onFile               a rdf:Property .
+v:onAgency             a rdf:Property .
+v:message              a rdf:Property .
+v:severity             a rdf:Property .     # e.g., v:ERROR, v:WARN
+v:ERROR                a rdfs:Resource .
+v:WARN                 a rdfs:Resource .
+
+gtfs:AgencyFile        a rdfs:Class .
+gtfs:Agency            a rdfs:Class .
+gtfs:hasAgency         a rdf:Property .
+gtfs:agency_name       a rdf:Property .
+gtfs:agency_url        a rdf:Property .
+gtfs:agency_timezone   a rdf:Property .
+gtfs:agency_id         a rdf:Property .
+
+# Optional classifications you mentioned
+gtfs:AgencyFileWithSingleAgency   a rdfs:Class .
+gtfs:AgencyFileWithMultipleAgencies a rdfs:Class .
+
+# ---- Pairwise detection of multi-agency ----
+# Multi if there exist two distinct agencies in the same file.
+gtfs:AgencyFileWithMultipleAgencies(?f) :-
+    gtfs:hasAgency(?f, ?a1),
+    gtfs:hasAgency(?f, ?a2),
+    ?a1 != ?a2.
+
+# Single-agency if it has an agency and is not multi.
+gtfs:AgencyFileWithSingleAgency(?f) :-
+    gtfs:hasAgency(?f, ?a),
+    not gtfs:AgencyFileWithMultipleAgencies(?f).
+
+# ---- Missing fields ----
+v:violation(?a, "An agency must have exactly one agency_name.") :-
+    rdf:type(?a, gtfs:Agency),
+    not gtfs:agency_name(?a, ?n).
+
+v:violation(?a, "An agency must have exactly one agency_url.") :-
+    rdf:type(?a, gtfs:Agency),
+    not gtfs:agency_url(?a, ?u).
+
+v:violation(?a, "An agency must have exactly one agency_timezone.") :-
+    rdf:type(?a, gtfs:Agency),
+    not gtfs:agency_timezone(?a, ?tz).
+
+# ---- Multiplicity > 1 ----
+v:violation(?a, "An agency must have exactly one agency_name (found multiple).") :-
+    gtfs:agency_name(?a, ?n1),
+    gtfs:agency_name(?a, ?n2),
+    ?n1 != ?n2.
+
+v:violation(?a, "An agency must have exactly one agency_url (found multiple).") :-
+    gtfs:agency_url(?a, ?u1),
+    gtfs:agency_url(?a, ?u2),
+    ?u1 != ?u2.
+
+v:violation(?a, "An agency must have exactly one agency_timezone (found multiple).") :-
+    gtfs:agency_timezone(?a, ?t1),
+    gtfs:agency_timezone(?a, ?t2),
+    ?t1 != ?t2.

@@ -8,8 +8,11 @@ with gtfs:
 
     # region Classes
 
-    class AgencyFileWithMultipleAgents(gtfs.AgencyFile):
-        pass
+    # class AgencyFileWithSingleAgency(gtfs.AgencyFile):
+    #     pass
+    #
+    # class AgencyFileWithMultipleAgencies(gtfs.AgencyFile):
+    #     pass
 
     # end region
 
@@ -79,21 +82,33 @@ with gtfs:
 
     # region Rules
 
-    gtfs.Agency.is_a.append(
-        agency_name.exactly(1, str) &
-        agency_url.exactly(1, str) &
-        agency_timezone.exactly(1, gtfs.Timezone)
-    )
-
-    # An agency dataset has at least one agency
-    gtfs.AgencyFile.is_a.append(
-        gtfs.hasAgency.some(gtfs.Agency)
-    )
-
-    # An agency dataset with multiple agents is equivalent to an agency dataset with a minimum of two agencies
-    AgencyFileWithMultipleAgents.equivalent_to.append(
-        gtfs.AgencyFile & gtfs.hasAgency.min(2, gtfs.Agency)
-    )
+    # gtfs.Agency.is_a.append(
+    #     agency_name.exactly(1) &
+    #     agency_url.exactly(1) &
+    #     agency_timezone.exactly(1)
+    # )
+    #
+    # # An agency dataset has at least one agency
+    # gtfs.AgencyFile.is_a.append(
+    #     gtfs.hasAgency.min(1, gtfs.Agency)
+    # )
+    #
+    # # An agency dataset with multiple agents is equivalent to an agency dataset with a minimum of two agencies
+    # AgencyFileWithMultipleAgencies.equivalent_to.append(
+    #     gtfs.AgencyFile &
+    #     gtfs.hasAgency.min(2, gtfs.Agency)
+    # )
+    #
+    # # An agency dataset with multiple agents is equivalent to an agency dataset with a minimum of two agencies
+    # AgencyFileWithMultipleAgencies.equivalent_to.append(
+    #     gtfs.AgencyFile &
+    #     gtfs.hasAgency.min(2, gtfs.Agency)
+    # )
+    #
+    # AgencyFileWithSingleAgency.equivalent_to.append(
+    #     gtfs.AgencyFile &
+    #     gtfs.hasAgency.exactly(1, gtfs.Agency)
+    # )
 
     # endregion
 
