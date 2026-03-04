@@ -1,4 +1,5 @@
-from owlready2 import get_ontology, Thing, Datatype, OneOf, ObjectProperty, locstr
+from owlready2 import get_ontology, Thing, Datatype, OneOf, ObjectProperty, locstr, \
+    DataProperty
 from config import ONTOLOGY_FILE
 
 gtfs = get_ontology("http://www.transit.ac.uk/ontologies/gtfs")
@@ -22,13 +23,31 @@ with gtfs:
     class Field(Thing):
         comment = "A property of an object or entity. Represented, in a table, as a column. The field exists if added in a file as a header. It may or may not have field values defined."
 
-    class FieldValue(Thing):
+    class FieldValue(DataProperty):
         comment = "An individual entry in a field. Represented, in a table, as a single cell."
-
-    # Define the files.
 
     class File(Thing):
         comment = ""
+
+    class ServiceDay(Thing):
+        comment = "A service day is a time period used to indicate route scheduling. The exact definition of service day varies from agency to agency but service days often do not correspond with calendar days. A service day may exceed 24:00:00 if service begins on one day and ends on a following day. For example, service that runs from 08:00:00 on Friday to 02:00:00 on Saturday, could be denoted as running from 08:00:00 to 26:00:00 on a single service day."
+
+    class TextToSpeechField(Field):
+        comment = "The field should contain the same information than its parent field (on which it falls back if it is empty). It is aimed to be read as text-to-speech, therefore, abbreviation should be either removed (\"St\" should be either read as \"Street\" or \"Saint\"; \"Elizabeth I\" should be \"Elizabeth the first\") or kept to be read as it (\"JFK Airport\" is said abbreviated)."
+
+    class Leg(Thing):
+        comment = "Travel in which a rider boards and alights between a pair of subsequent locations along a trip."
+
+    class Journey(Thing):
+        comment = "Overall travel from origin to destination, including all legs and transfers in-between."
+
+    class SubJourney(Thing):
+        comment = "Two or more legs that comprise a subset of a journey."
+
+    class FareProduct(Thing):
+        comment = "Purchassable fare products that can be used to pay for or validate travel."
+
+    # Define the files.
 
     class AgencyFile(File):
         comment = "Transit agencies with service represented in this dataset."
@@ -51,7 +70,7 @@ with gtfs:
     class CalendarDateFile(File):
         comment = "Exceptions for the services defined in the calendar.txt."
 
-    # Defin the records.
+    # Define the records.
 
     class Agency(Record):
         pass
@@ -68,7 +87,7 @@ with gtfs:
     class StopTime(Record):
         pass
 
-    class Calendar(Record):
+    class Service(Record):
         pass
 
     # endregion
@@ -77,7 +96,6 @@ with gtfs:
 
     # TODO Complete this list.
     class LanguageCode(Datatype):
-        comment = "Test comment"
         equivalent_to = [
             OneOf(
                 [
