@@ -1,13 +1,28 @@
 [gtfs:Violation, rdf:type, owl:Class] .
 
-[gtfs:AgencyFileWithMultipleAgencies, rdf:type, owl:Class] .
-
+# An agency file with multiple agencies
 [?f, rdf:type, gtfs:AgencyFileWithMultipleAgencies] :-
+    [?f, rdf:type, gtfs:AgencyFile] ,
     [?f, gtfs:hasAgency, ?a1],
     [?f, gtfs:hasAgency, ?a2],
     FILTER(?a1 != ?a2).
 
 # Single‑agency if it has at least one agency AND it is not multi
 [?f, rdf:type, gtfs:AgencyFileWithSingleAgency] :-
+    [?f, rdf:type, gtfs:AgencyFile] ,
     [ ?f, gtfs:hasAgency, ?a ],
     NOT [ ?f, rdf:type, gtfs:AgencyFileWithMultipleAgencies ] .
+
+# Raise a violation if the file is neither a single or multiple agency file.
+[?f, rdf:type, gtfs:Violation] :-
+    [?f, rdf:type, gtfs:AgencyFile] ,
+    NOT [ ?f, rdf:type, gtfs:AgencyFileWithSingleAgency ] ,
+    NOT [ ?f, rdf:type, gtfs:AgencyFileWithMultipleAgencies ] .
+
+[?a, rdf:type, gtfs:Violation] :-
+    [?a, rdf:type, gtfs:Agency] ,
+    (
+        NOT EXISTS ?x IN ([?a, gtfs:agency_name, ?x]) ;
+        NOT EXISTS ?y IN ([?a, gtfs:agency_url, ?y]) ;
+        NOT EXISTS ?z IN ([?a, gtfs:agency_timezone, ?z])
+    ) .
