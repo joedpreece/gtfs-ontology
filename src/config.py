@@ -11,5 +11,7 @@ def _read_yaml(path: pathlib.Path):
 
 defaults = _read_yaml(path=REPO_ROOT / "config" / "defaults.yaml")
 
-ONTOLOGY_FILE = defaults["ontology_file"]
-# CACHE = defaults["test_cache"]
+GTFS_ONTOLOGY_NT = (REPO_ROOT / defaults["gtfs_ontology_nt"]).resolve()
+GTFS_ONTOLOGY_RDF = (REPO_ROOT / defaults["gtfs_ontology_rdf"]).resolve()
+
+TEST_ONTOLOGY = (REPO_ROOT / defaults["test_ontology"]).resolve()

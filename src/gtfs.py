@@ -1,6 +1,6 @@
 from owlready2 import get_ontology, Thing, Datatype, OneOf, ObjectProperty, locstr, \
     DataProperty, FunctionalProperty
-from config import ONTOLOGY_FILE
+from config import GTFS_ONTOLOGY_NT, GTFS_ONTOLOGY_RDF
 
 gtfs = get_ontology("http://www.transit.ac.uk/ontologies/gtfs")
 
@@ -506,4 +506,5 @@ Conditionally Forbidden:
 - Optional otherwise.
 """
 
-gtfs.save(file=ONTOLOGY_FILE, format="rdfxml")
+gtfs.save(file=str(GTFS_ONTOLOGY_RDF))
+gtfs.save(file=str(GTFS_ONTOLOGY_NT), format="ntriples")

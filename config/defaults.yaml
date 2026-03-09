@@ -1,2 +1,3 @@
-ontology_file: "./artifacts/gtfs.rdf"
-test_cache: "./tests/cache/"
+gtfs_ontology_nt: "./artifacts/gtfs.nt"
+gtfs_ontology_rdf: "./artifacts/gtfs.rdf"
+test_ontology: "./artifacts/test.nt"
