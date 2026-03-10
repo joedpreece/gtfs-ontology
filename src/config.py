@@ -11,7 +11,11 @@ def _read_yaml(path: pathlib.Path):
 
 defaults = _read_yaml(path=REPO_ROOT / "config" / "defaults.yaml")
 
+ARTIFACTS = (REPO_ROOT / "artifacts").resolve()
+
 GTFS_ONTOLOGY_NT = (REPO_ROOT / defaults["gtfs_ontology_nt"]).resolve()
 GTFS_ONTOLOGY_RDF = (REPO_ROOT / defaults["gtfs_ontology_rdf"]).resolve()
 
 TEST_ONTOLOGY = (REPO_ROOT / defaults["test_ontology"]).resolve()
+
+RULES_AGENCIES = (ARTIFACTS / "datalog" / "agencies.dlog").resolve()

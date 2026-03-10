@@ -19,10 +19,10 @@
     NOT [ ?f, rdf:type, gtfs:AgencyFileWithSingleAgency ] ,
     NOT [ ?f, rdf:type, gtfs:AgencyFileWithMultipleAgencies ] .
 
-[?a, rdf:type, gtfs:Violation] :-
-    [?a, rdf:type, gtfs:Agency] ,
-    (
-        NOT EXISTS ?x IN ([?a, gtfs:agency_name, ?x]) ;
-        NOT EXISTS ?y IN ([?a, gtfs:agency_url, ?y]) ;
-        NOT EXISTS ?z IN ([?a, gtfs:agency_timezone, ?z])
-    ) .
+#[?a, rdf:type, gtfs:Violation] :-
+#    [?a, rdf:type, gtfs:Agency] ,
+#    (
+#        NOT EXISTS ?x IN ([?a, gtfs:agency_name, ?x]) ;
+#        NOT EXISTS ?y IN ([?a, gtfs:agency_url, ?y]) ;
+#        NOT EXISTS ?z IN ([?a, gtfs:agency_timezone, ?z])
+#    ) .
