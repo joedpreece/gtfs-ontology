@@ -1,4 +1,5 @@
-
+import json
+import re
 import subprocess
 import sys
 import time
@@ -27,7 +28,10 @@ def run_cmd(proc, cmd, timeout=5):
     full_cmd = f"{cmd}\necho {marker}\n"
 
     # Print the command being run
-    print(f"\n▶ RDFox $ {cmd}")
+    # print(f"\n▶ RDFox $ {cmd}")
+    sys.stdout.write(f"\n▶ RDFox $ {cmd}")
+    sys.stdout.flush()
+
     proc.stdin.write(full_cmd)
     proc.stdin.flush()
 
@@ -54,26 +58,6 @@ def run_cmd(proc, cmd, timeout=5):
     return "".join(output_lines)
 
 
-# def run_cmd(proc, cmd, timeout=3):
-#
-#
-#     marker = f"__END__{time.time()}"
-#     proc.stdin.write(f"{cmd}\necho {marker}\n")
-#     proc.stdin.flush()
-#
-#     output = []
-#     start = time.time()
-#     while time.time() - start < timeout:
-#         line = proc.stdout.readline()
-#         if marker in line:
-#             break
-#         output.append(line)
-#
-#     print(output)
-#
-#     return "".join(output)
-
-
 def create_triple(
         subject,
         predicate,
@@ -85,6 +69,33 @@ def create_triple(
 
     predicate[subject].append(object)
     return predicate
+
+def extract_json_object(text: str) -> dict:
+    """
+    Extract the first full top-level JSON object from RDFox output,
+    even if the JSON contains nested braces (e.g., 'head': {}).
+    """
+    start = text.find("{")
+    if start == -1:
+        raise ValueError("No JSON object found.")
+
+    depth = 0
+    for i in range(start, len(text)):
+        if text[i] == "{":
+            depth += 1
+        elif text[i] == "}":
+            depth -= 1
+            if depth == 0:
+                json_str = text[start:i+1]
+                import json
+                return json.loads(json_str)
+
+    raise ValueError("JSON braces did not balance.")
+
+
+def extract_boolean(text: str) -> bool:
+    obj = extract_json_object(text)
+    return obj["boolean"]
 
 
 @pytest.fixture(scope="session")
@@ -103,6 +114,7 @@ def rdfox_proc():
     run_cmd(proc, "dstore create test")
     run_cmd(proc, "active test")
     run_cmd(proc, "prefix gtfs: <http://www.transit.ac.uk/ontologies/gtfs#>")
+    run_cmd(proc, "set query.answer-format application/sparql-results+json")
 
     yield proc
 
@@ -111,16 +123,18 @@ def rdfox_proc():
 
 
 @pytest.fixture
-def empty_datastore(rdfox_proc):
+def clear_datastore(rdfox_proc):
     """Clear datastore before every test."""
     yield
-    run_cmd(rdfox_proc, f"clear facts force")
+    run_cmd(rdfox_proc, f"clear facts axioms force")
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture
 def gtfs_onto():
     """Load GTFS ontology once."""
-    return get_ontology(f"file://{GTFS_ONTOLOGY_RDF}").load()
+    onto = get_ontology(f"file://{GTFS_ONTOLOGY_RDF}").load()
+    yield onto
+    onto.destroy()
 
 
 @pytest.fixture
@@ -144,8 +158,8 @@ def import_into_rdfox(rdfox_proc):
 
 
 @pytest.fixture
-def rdfox_query(rdfox_proc):
+def rdfox_ask(rdfox_proc):
     """Run SPARQL queries."""
     def _query(q):
-        return run_cmd(rdfox_proc, f'query "{q}"')
+        return run_cmd(rdfox_proc, f'ask {q}')
     return _query
