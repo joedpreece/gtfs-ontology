@@ -19,8 +19,8 @@
     NOT [ ?f, rdf:type, gtfs:AgencyFileWithSingleAgency ] ,
     NOT [ ?f, rdf:type, gtfs:AgencyFileWithMultipleAgencies ] .
 
-#[?a, rdf:type, gtfs:Violation] :-
-#    [?a, rdf:type, gtfs:Agency] ,
+[?a, rdf:type, gtfs:Violation] :-
+    [?a, rdf:type, gtfs:Agency] ,
 #    (
 #        NOT EXISTS ?x IN ([?a, gtfs:agency_name, ?x]) ;
 #        NOT EXISTS ?y IN ([?a, gtfs:agency_url, ?y]) ;
