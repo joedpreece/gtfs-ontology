@@ -266,14 +266,11 @@ This field is independent of all other fare-related files and may be used separa
           <owl:onProperty rdf:resource="#hasAgency"/>
           <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
         </owl:Restriction>
-        <owl:Restriction>
-          <owl:allValuesFrom rdf:resource="#Agency"/>
-          <owl:onProperty rdf:resource="#hasAgency"/>
-        </owl:Restriction>
       </owl:intersectionOf>
     </owl:Class>
   </owl:equivalentClass>
   <rdfs:subClassOf rdf:resource="#AgencyFile"/>
+  <owl:disjointWith rdf:resource="#AgencyFileWithMultipleAgencies"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An agency file with a single agency.</rdfs:comment>
 </owl:Class>
 
@@ -292,8 +289,9 @@ This field is independent of all other fare-related files and may be used separa
           <owl:onProperty rdf:resource="#hasAgency"/>
         </owl:Restriction>
         <owl:Restriction>
+          <owl:onClass rdf:resource="#Agency"/>
           <owl:onProperty rdf:resource="#hasAgency"/>
-          <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minCardinality>
+          <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
         </owl:Restriction>
       </owl:intersectionOf>
     </owl:Class>
@@ -302,22 +300,22 @@ This field is independent of all other fare-related files and may be used separa
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An agency file with multiple agencies.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#CEMVSupport">
+<owl:Class rdf:about="#CEMVSupportTypeDescription">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#CEMVSupport0">
-  <rdfs:subClassOf rdf:resource="#CEMVSupport"/>
+<owl:Class rdf:about="#CEMVSupportTypeDescription0">
+  <rdfs:subClassOf rdf:resource="#CEMVSupportTypeDescription"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No cEMV information for trips associated with this agency.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#CEMVSupport1">
-  <rdfs:subClassOf rdf:resource="#CEMVSupport"/>
+<owl:Class rdf:about="#CEMVSupportTypeDescription1">
+  <rdfs:subClassOf rdf:resource="#CEMVSupportTypeDescription"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Riders may use cEMVs as fare media for trips associated with this agency.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#CEMVSupport2">
-  <rdfs:subClassOf rdf:resource="#CEMVSupport"/>
+<owl:Class rdf:about="#CEMVSupportTypeDescription2">
+  <rdfs:subClassOf rdf:resource="#CEMVSupportTypeDescription"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cEMVs are not supported as fare media for trips associated with this agency.</rdfs:comment>
 </owl:Class>
 

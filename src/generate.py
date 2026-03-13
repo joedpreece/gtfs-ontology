@@ -1,4 +1,5 @@
-import subprocess
+from config import GTFS_ONTOLOGY_RDF
+from core import gtfs
+import agencies
 
-subprocess.run(["python", "src/gtfs.py"])
-# subprocess.run(["python", "src/agencies.py"])
+gtfs.save(file=str(GTFS_ONTOLOGY_RDF))

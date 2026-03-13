@@ -63,6 +63,7 @@ _:4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02
 <http://www.transit.ac.uk/ontologies/gtfs#AgencyFileWithSingleAgency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.transit.ac.uk/ontologies/gtfs#AgencyFile> .
 <http://www.transit.ac.uk/ontologies/gtfs#AgencyFileWithMultipleAgencies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.transit.ac.uk/ontologies/gtfs#AgencyFileWithMultipleAgencies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.transit.ac.uk/ontologies/gtfs#AgencyFile> .
+<http://www.transit.ac.uk/ontologies/gtfs#AgencyFileWithSingleAgency> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.transit.ac.uk/ontologies/gtfs#AgencyFileWithMultipleAgencies> .
 <http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
 _:5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
 _:5 <http://www.w3.org/2002/07/owl#oneOf> _:6 .
@@ -70,14 +71,14 @@ _:6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:7 .
 _:7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:8 .
 _:8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportType> <http://www.w3.org/2002/07/owl#equivalentClass> _:5 .
-<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport0> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport> .
-<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport1> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport> .
-<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport2> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport> .
+<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription0> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription> .
+<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription1> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription> .
+<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription2> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription> .
 <http://www.transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://www.transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.transit.ac.uk/ontologies/gtfs#FieldValue> .
 <http://www.transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
@@ -148,6 +149,7 @@ _:19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.transit.ac.uk/ontolo
 _:19 <http://www.w3.org/2002/07/owl#allValuesFrom> _:18 .
 _:20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:20 <http://www.w3.org/2002/07/owl#onProperty> <http://www.transit.ac.uk/ontologies/gtfs#hasAgency> .
+_:20 <http://www.w3.org/2002/07/owl#onClass> <http://www.transit.ac.uk/ontologies/gtfs#Agency> .
 _:21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:21 <http://www.w3.org/2002/07/owl#intersectionOf> _:17 .
 _:17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.transit.ac.uk/ontologies/gtfs#AgencyFile> .
@@ -160,18 +162,13 @@ _:23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/0
 _:25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:25 <http://www.w3.org/2002/07/owl#onProperty> <http://www.transit.ac.uk/ontologies/gtfs#hasAgency> .
 _:25 <http://www.w3.org/2002/07/owl#onClass> <http://www.transit.ac.uk/ontologies/gtfs#Agency> .
-_:26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:26 <http://www.w3.org/2002/07/owl#onProperty> <http://www.transit.ac.uk/ontologies/gtfs#hasAgency> .
-_:26 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.transit.ac.uk/ontologies/gtfs#Agency> .
-_:27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:27 <http://www.w3.org/2002/07/owl#intersectionOf> _:24 .
+_:26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:26 <http://www.w3.org/2002/07/owl#intersectionOf> _:24 .
 _:24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.transit.ac.uk/ontologies/gtfs#AgencyFile> .
-_:24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:28 .
-_:28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:25 .
-_:28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:29 .
-_:29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:26 .
-_:29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<http://www.transit.ac.uk/ontologies/gtfs#AgencyFileWithSingleAgency> <http://www.w3.org/2002/07/owl#equivalentClass> _:27 .
+_:24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:27 .
+_:27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:25 .
+_:27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://www.transit.ac.uk/ontologies/gtfs#AgencyFileWithSingleAgency> <http://www.w3.org/2002/07/owl#equivalentClass> _:26 .
 <http://www.transit.ac.uk/ontologies/gtfs> <http://www.w3.org/2000/01/rdf-schema#label> "The GTFS Ontology"@en .
 <http://www.transit.ac.uk/ontologies/gtfs> <http://www.w3.org/2000/01/rdf-schema#comment> "An OWL ontology describing entities, relationships, and data structures found in the General Transit Feed Specification (GTFS)."@en .
 <http://www.transit.ac.uk/ontologies/gtfs> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0"^^<http://www.w3.org/2001/XMLSchema#string> .
@@ -200,9 +197,9 @@ _:4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Europe/London"^^<http://
 _:6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
 _:7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
 _:8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport0> <http://www.w3.org/2000/01/rdf-schema#comment> "No cEMV information for trips associated with this agency."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport1> <http://www.w3.org/2000/01/rdf-schema#comment> "Riders may use cEMVs as fare media for trips associated with this agency."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupport2> <http://www.w3.org/2000/01/rdf-schema#comment> "cEMVs are not supported as fare media for trips associated with this agency."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription0> <http://www.w3.org/2000/01/rdf-schema#comment> "No cEMV information for trips associated with this agency."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription1> <http://www.w3.org/2000/01/rdf-schema#comment> "Riders may use cEMVs as fare media for trips associated with this agency."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.transit.ac.uk/ontologies/gtfs#CEMVSupportTypeDescription2> <http://www.w3.org/2000/01/rdf-schema#comment> "cEMVs are not supported as fare media for trips associated with this agency."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/2000/01/rdf-schema#comment> "\nIdentifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This document uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies.\n\nConditionally Required:\n- Required when the dataset contains data for multiple transit agencies.\n- Recommended otherwise.\n"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.transit.ac.uk/ontologies/gtfs#agency_name> <http://www.w3.org/2000/01/rdf-schema#comment> "Full name of the transit agency."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://www.transit.ac.uk/ontologies/gtfs#agency_url> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of the transit agency."^^<http://www.w3.org/2001/XMLSchema#string> .
@@ -217,5 +214,5 @@ _:11 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XM
 _:12 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:16 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:18 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:20 <http://www.w3.org/2002/07/owl#minCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:20 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:25 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
