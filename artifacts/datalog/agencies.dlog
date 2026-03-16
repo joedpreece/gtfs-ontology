@@ -26,7 +26,7 @@
 # Check for the required fields.
 [?a, rdf:type, gtfs:Violation] :-
     [?a, rdf:type, gtfs:Agency] ,
-    NOT EXISTS ?n IN ([?a, gtfs:agency_name, ?n]),
+    NOT EXISTS ?n IN ([?a, gtfs:agency_name, ?sn]),
     NOT EXISTS ?u IN ([?a, gtfs:agency_url, ?u]),
     NOT EXISTS ?t IN ([?a, gtfs:agency_timezone, ?t]).
 

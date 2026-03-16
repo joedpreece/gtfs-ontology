@@ -1,0 +1,153 @@
+[gtfs:Violation, rdf:type, owl:Class] .
+
+# A stop must have a stop_id.
+[?s, rdf:type, gtfs:Violation] :-
+    [?s, rdf:type, gtfs:Stop] ,
+    NOT EXISTS ?i IN (
+        [?s, gtfs:stop_id, ?i]
+    ) .
+
+# If the stop is a stop location, it must have a stop_name, stop_lat, and stop_lon.
+[?sl, rdf:type, gtfs:Violation] :-
+    [?sl, rdf:type, gtfs:StopLocation] ,
+    NOT EXISTS ?n IN (
+        [?sl, gtfs:stop_name, ?n]
+    ) ,
+    NOT EXISTS ?lat IN (
+        [?sl, gtfs:stop_lat, ?lat]
+    ) ,
+    NOT EXISTS ?lon IN (
+        [?sl, gtfs:stop_lon, ?lon]
+    ) .
+
+# If the stop is a station, it must have a stop_name, stop_lat, and stop_lon.
+[?s, rdf:type, gtfs:Violation] :-
+    [?s, rdf:type, gtfs:Station] ,
+    NOT EXISTS ?n IN (
+        [?s, gtfs:stop_name, ?n]
+    ) ,
+    NOT EXISTS ?lat IN (
+        [?s, gtfs:stop_lat, ?lat]
+    ) ,
+    NOT EXISTS ?lon IN (
+        [?s, gtfs:stop_lon, ?lon]
+    ) .
+
+# If the stop is an entrance or exit, it must have a stop_name.
+[?s, rdf:type, gtfs:Violation] :-
+    [?s, rdf:type, gtfs:EntranceOrExit] ,
+    NOT EXISTS ?n IN (
+        [?s, gtfs:stop_name, ?n]
+    ) ,
+    NOT EXISTS ?lat IN (
+        [?s, gtfs:stop_lat, ?lat]
+    ) ,
+    NOT EXISTS ?lon IN (
+        [?s, gtfs:stop_lon, ?lon]
+    ) .
+
+# A stop is a platform if the location_type is 0, and the stop is a child stop.
+[?s, rdf:type, gtfs:StopLocation] :-
+    [?s, rdf:type, gtfs:Stop] ,
+    [?s, gtfs:location_type, 0] ,
+    NOT EXISTS ?x IN (
+        [?s, rdf:type, gtfs:ChildStop]
+    ) .
+
+# A stop is a platform if the location_type is 0, and the stop is a child stop.
+[?s, rdf:type, gtfs:Platform] :-
+    [?s, gtfs:location_type, 0],
+    [?s, rdf:type, gtfs:ChildStop] .
+
+# A stop is a station if the location_type is 1.
+[?s, rdf:type, gtfs:Station] :-
+    [?s, gtfs:location_type, 1] .
+
+# A stop is an entrance or exit if the location_type is 2.
+[?s, rdf:type, gtfs:EntranceOrExit] :-
+    [?s, gtfs:location_type, 2] .
+
+# A stop is a generic node if the location_type is 3.
+[?s, rdf:type, gtfs:GenericNode] :-
+    [?s, gtfs:location_type, 3] .
+
+# A stop is a boarding area if the location_type is 4.
+[?s, rdf:type, gtfs:BoardingArea] :-
+    [?s, gtfs:location_type, 4] .
+
+# An entrance or exit is a violation if it has no parent station.
+[?s, rdf:type, gtfs:Violation] :-
+    [?s, rdf:type, gtfs:EntranceOrExit] ,
+    NOT EXISTS ?i IN (
+        [?s, gtfs:parent_station, ?i]
+    ) .
+
+# A generic node is a violation if it has no parent station.
+[?s, rdf:type, gtfs:Violation] :-
+    [?s, rdf:type, gtfs:GenericNode] ,
+    NOT EXISTS ?i IN (
+        [?s, gtfs:parent_station, ?i]
+    ) .
+
+# A generic node is a violation if it has no parent station.
+[?s, rdf:type, gtfs:Violation] :-
+    [?s, rdf:type, gtfs:BoardingArea] ,
+    NOT EXISTS ?i IN (
+        [?s, gtfs:parent_station, ?i]
+    ) .
+
+# A station is a violation if it has a parent station.
+[?s, rdf:type, gtfs:Violation] :-
+    [?s, rdf:type, gtfs:Station] ,
+    [?s, gtfs:parent_station, ?ps] .
+
+# A stop is a child stop if it has a parent station.
+[?s, rdf:type, gtfs:ChildStop] :-
+    [?s, gtfs:parent_station, ?ps] .
+
+# A stop is a parentless stop if it has no parent stops.
+[?s, rdf:type, gtfs:ParentlessStop] :-
+    [?s, rdf:type, gtfs:Stop] ,
+    NOT EXISTS ?ps IN (
+        [?s, rdf:type, gtfs:ChildStop]
+    ) .
+
+[?ps, gtfs:wheelchair_boarding_description, gtfs:WheelchairBoardingParentlessStop0] :-
+    [?ps, rdf:type, gtfs:ParentlessStop] ,
+    [?ps, gtfs:wheelchair_boarding, 0] .
+
+[?ps, gtfs:wheelchair_boarding_description, gtfs:WheelchairBoardingParentlessStop1] :-
+    [?ps, rdf:type, gtfs:ParentlessStop] ,
+    [?ps, gtfs:wheelchair_boarding, 1] .
+
+[?ps, gtfs:wheelchair_boarding_description, gtfs:WheelchairBoardingParentlessStop2] :-
+    [?ps, rdf:type, gtfs:ParentlessStop] ,
+    [?ps, gtfs:wheelchair_boarding, 2] .
+
+[?cs, gtfs:wheelchair_boarding_description, ?d] :-
+    [?cs, rdf:type, gtfs:ChildStop] ,
+    [?cs, gtfs:parent_station, ?ps] ,
+    [?ps, gtfs:wheelchair_boarding_description, ?d] ,
+    [?cs, gtfs:wheelchair_boarding, 0] .
+
+[?cs, gtfs:wheelchair_boarding_description, gtfs:WheelchairBoardingChildStop1] :-
+    [?cs, rdf:type, gtfs:ChildStop] ,
+    [?cs, gtfs:wheelchair_boarding, 1] .
+
+[?cs, gtfs:wheelchair_boarding_description, gtfs:WheelchairBoardingChildStop2] :-
+    [?cs, rdf:type, gtfs:ChildStop] ,
+    [?cs, gtfs:wheelchair_boarding, 2] .
+
+[?ee, gtfs:wheelchair_boarding_description, ?d] :-
+    [?ee, rdf:type, gtfs:EntranceOrExit] ,
+    [?ee, gtfs:parent_station, ?ps] ,
+    [?ps, gtfs:wheelchair_boarding_description, ?d] ,
+    [?ee, gtfs:wheelchair_boarding, 0] .
+
+[?ee, gtfs:wheelchair_boarding_description, gtfs:WheelchairBoardingChildStop1] :-
+    [?ee, rdf:type, gtfs:EntranceOrExit] ,
+    [?ee, gtfs:wheelchair_boarding, 1] .
+
+[?ee, gtfs:wheelchair_boarding_description, gtfs:WheelchairBoardingChildStop2] :-
+    [?ee, rdf:type, gtfs:EntranceOrExit] ,
+    [?ee, gtfs:wheelchair_boarding, 2] .

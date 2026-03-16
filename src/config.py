@@ -18,4 +18,7 @@ GTFS_ONTOLOGY_RDF = (REPO_ROOT / defaults["gtfs_ontology_rdf"]).resolve()
 
 TEST_ONTOLOGY = (REPO_ROOT / defaults["test_ontology"]).resolve()
 
-RULES_AGENCIES = (ARTIFACTS / "datalog" / "agencies.dlog").resolve()
+DATALOG = (ARTIFACTS / "datalog").resolve()
+
+RULES_AGENCIES = (DATALOG / "agencies.dlog").resolve()
+RULES_STOPS = (DATALOG / "stops.dlog").resolve()
