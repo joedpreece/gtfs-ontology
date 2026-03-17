@@ -15,8 +15,6 @@
         [?f, rdf:type, gtfs:AgencyFileWithMultipleAgencies]
     ).
 
-#    NOT [ ?f, rdf:type, gtfs:AgencyFileWithMultipleAgencies ] .
-
 # Raise a violation if the file is neither a single or multiple agency file.
 [?f, rdf:type, gtfs:Violation] :-
     [?f, rdf:type, gtfs:AgencyFile] ,
@@ -26,7 +24,7 @@
 # Check for the required fields.
 [?a, rdf:type, gtfs:Violation] :-
     [?a, rdf:type, gtfs:Agency] ,
-    NOT EXISTS ?n IN ([?a, gtfs:agency_name, ?sn]),
+    NOT EXISTS ?n IN ([?a, gtfs:agency_name, ?n]),
     NOT EXISTS ?u IN ([?a, gtfs:agency_url, ?u]),
     NOT EXISTS ?t IN ([?a, gtfs:agency_timezone, ?t]).
 
@@ -36,14 +34,14 @@
     [?f, gtfs:hasAgency, ?a],
     NOT EXISTS ?id IN ([?a, gtfs:agency_id, ?id]).
 
-[?a, gtfs:cemv_support_description, gtfs:CEMVSupportTypeDescription0] :-
+[?a, gtfs:cemv_support_description, gtfs:CEMVSupportDatatypeDescriptionAgency0] :-
     [?a, rdf:type, gtfs:Agency],
     [?a, gtfs:cemv_support, 0].
 
-[?a, gtfs:cemv_support_description, gtfs:CEMVSupportTypeDescription1] :-
+[?a, gtfs:cemv_support_description, gtfs:CEMVSupportDatatypeDescriptionAgency1] :-
     [?a, rdf:type, gtfs:Agency],
     [?a, gtfs:cemv_support, 1].
 
-[?a, gtfs:cemv_support_description, gtfs:CEMVSupportTypeDescription2] :-
+[?a, gtfs:cemv_support_description, gtfs:CEMVSupportDatatypeDescriptionAgency2] :-
     [?a, rdf:type, gtfs:Agency],
     [?a, gtfs:cemv_support, 2].

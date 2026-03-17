@@ -46,6 +46,9 @@ with gtfs:
     class FareProduct(Thing):
         comment = "Purchassable fare products that can be used to pay for or validate travel."
 
+    class DatatypeDescription(Thing):
+        comment = "A description provided to compliment an enumerated datatype."
+
     # Define the files.
 
     class AgencyFile(File):
@@ -91,7 +94,17 @@ with gtfs:
 
     # endregion
 
-    # region Data Types
+    # region Datatypes
+
+    Color = ConstrainedDatatype(
+        base_datatype=str,
+        pattern=r"^[0-9A-F]{6}$"  # uppercase only
+    )
+
+    NonNegativeInteger = ConstrainedDatatype(
+        base_datatype=int,
+        min_inclusive=0
+    )
 
     # TODO Complete this list.
     class LanguageCode(Datatype):
@@ -112,6 +125,17 @@ with gtfs:
             )
         ]
 
+    class CEMVSupportDatatype(Datatype):
+        equivalent_to = [
+            OneOf(
+                [
+                    0,
+                    1,
+                    2,
+                ]
+            )
+        ]
+
     # endregion
 
     # region Class Properties
@@ -121,10 +145,3 @@ with gtfs:
         range = [Agency]
 
     # endregion
-
-# with gtfs:
-#
-#     close_world(gtfs)
-
-# gtfs.save(file=str(GTFS_ONTOLOGY_RDF))
-# gtfs.save(file=str(GTFS_ONTOLOGY_NT), format="ntriples")

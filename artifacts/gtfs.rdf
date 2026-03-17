@@ -47,10 +47,6 @@ Conditionally Required:
   <rdfs:domain rdf:resource="#Agency"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
 Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This document uses the term "agency" in place of "brand". A dataset may contain data from multiple agencies.
-
-Conditionally Required:
-- Required when the dataset contains data for multiple transit agencies.
-- Recommended otherwise.
 </rdfs:comment>
 </owl:DatatypeProperty>
 
@@ -124,17 +120,11 @@ Email address actively monitored by the agency’s customer service department. 
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
   <rdfs:domain rdf:resource="#Agency"/>
-  <rdfs:range rdf:resource="#CEMVSupportType"/>
+  <rdfs:range rdf:resource="#CEMVSupportDatatype"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
 Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.
 
 Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media.
-
-Valid options are:
-
-0 or empty - No cEMV information for trips associated with this agency.
-1 - Riders may use cEMVs as fare media for trips associated with this agency.
-2 - cEMVs are not supported as fare media for trips associated with this agency.
 
 If both agency.cemv_support and routes.cemv_support are provided for the same service, the value in routes.cemv_support shall take precedence.
 
@@ -385,6 +375,11 @@ Conditionally Forbidden:
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Purchassable fare products that can be used to pay for or validate travel.</rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#DatatypeDescription">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A description provided to compliment an enumerated datatype.</rdfs:comment>
+</owl:Class>
+
 <owl:Class rdf:about="#AgencyFile">
   <rdfs:subClassOf>
     <owl:Restriction>
@@ -512,27 +507,37 @@ Conditionally Forbidden:
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An agency file with multiple agencies.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#CEMVSupportTypeDescription">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#CEMVSupportDatatypeDescriptionAgency">
+  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
 </owl:Class>
 
-<owl:Class rdf:about="#CEMVSupportTypeDescription0">
-  <rdfs:subClassOf rdf:resource="#CEMVSupportTypeDescription"/>
+<owl:Class rdf:about="#CEMVSupportDatatypeDescriptionAgency0">
+  <rdfs:subClassOf rdf:resource="#CEMVSupportDatatypeDescriptionAgency"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No cEMV information for trips associated with this agency.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#CEMVSupportTypeDescription1">
-  <rdfs:subClassOf rdf:resource="#CEMVSupportTypeDescription"/>
+<owl:Class rdf:about="#CEMVSupportDatatypeDescriptionAgency1">
+  <rdfs:subClassOf rdf:resource="#CEMVSupportDatatypeDescriptionAgency"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Riders may use cEMVs as fare media for trips associated with this agency.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#CEMVSupportTypeDescription2">
-  <rdfs:subClassOf rdf:resource="#CEMVSupportTypeDescription"/>
+<owl:Class rdf:about="#CEMVSupportDatatypeDescriptionAgency2">
+  <rdfs:subClassOf rdf:resource="#CEMVSupportDatatypeDescriptionAgency"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cEMVs are not supported as fare media for trips associated with this agency.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#LocationTypeTypeDescription">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#StopLocation">
+  <rdfs:subClassOf rdf:resource="#LocationTypeTypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A location where passengers board or disembark from a transit vehicle.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Platform">
+  <rdfs:subClassOf rdf:resource="#LocationTypeTypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A location where passengers board or disembark from a transit vehicle. Is called a platform when defined within a parent_station.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Station">
@@ -555,27 +560,31 @@ Conditionally Forbidden:
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specific location on a platform, where passengers can board and/or alight vehicles.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#WheelchairBoardingParentlessStop">
+<owl:Class rdf:about="#WheelchairBoardingTypeDescription">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
+<owl:Class rdf:about="#WheelchairBoardingParentlessStop">
+  <rdfs:subClassOf rdf:resource="#WheelchairBoardingTypeDescription"/>
+</owl:Class>
+
 <owl:Class rdf:about="#WheelchairBoardingParentlessStop0">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#WheelchairBoardingParentlessStop"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No accessibility information for the stop.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#WheelchairBoardingParentlessStop1">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#WheelchairBoardingParentlessStop"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wheelchair boardings are possible from the stop.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#WheelchairBoardingParentlessStop2">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#WheelchairBoardingParentlessStop"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wheelchair boarding is not possible at this stop.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#WheelchairBoardingChildStop">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#WheelchairBoardingTypeDescription"/>
 </owl:Class>
 
 <owl:Class rdf:about="#WheelchairBoardingChildStop0">
@@ -594,7 +603,7 @@ Conditionally Forbidden:
 </owl:Class>
 
 <owl:Class rdf:about="#WheelchairBoardingEntranceExit">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#WheelchairBoardingTypeDescription"/>
 </owl:Class>
 
 <owl:Class rdf:about="#WheelchairBoardingEntranceExit0">
@@ -652,7 +661,7 @@ Conditionally Forbidden:
   </owl:equivalentClass>
 </rdfs:Datatype>
 
-<rdfs:Datatype rdf:about="#CEMVSupportType">
+<rdfs:Datatype rdf:about="#CEMVSupportDatatype">
   <owl:equivalentClass>
     <rdfs:Datatype>
       <owl:oneOf>

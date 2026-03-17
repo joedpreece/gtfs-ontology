@@ -12,31 +12,16 @@ with gtfs:
 
     AllDisjoint([AgencyFileWithSingleAgency, AgencyFileWithMultipleAgencies])
 
-    # end region
-
-    # region Data Types
-
-    class CEMVSupportType(Datatype):
-        equivalent_to = [
-            OneOf(
-                [
-                    0,
-                    1,
-                    2,
-                ]
-            )
-        ]
-
-    class CEMVSupportTypeDescription(Thing):
+    class CEMVSupportDatatypeDescriptionAgency(DatatypeDescription):
         pass
 
-    class CEMVSupportTypeDescription0(CEMVSupportTypeDescription):
+    class CEMVSupportDatatypeDescriptionAgency0(CEMVSupportDatatypeDescriptionAgency):
         comment = "No cEMV information for trips associated with this agency."
 
-    class CEMVSupportTypeDescription1(CEMVSupportTypeDescription):
+    class CEMVSupportDatatypeDescriptionAgency1(CEMVSupportDatatypeDescriptionAgency):
         comment = "Riders may use cEMVs as fare media for trips associated with this agency."
 
-    class CEMVSupportTypeDescription2(CEMVSupportTypeDescription):
+    class CEMVSupportDatatypeDescriptionAgency2(CEMVSupportDatatypeDescriptionAgency):
         comment = "cEMVs are not supported as fare media for trips associated with this agency."
 
     # endregion
@@ -46,10 +31,6 @@ with gtfs:
     class agency_id(FieldValue, FunctionalProperty):
         comment = """
 Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This document uses the term "agency" in place of "brand". A dataset may contain data from multiple agencies.
-
-Conditionally Required:
-- Required when the dataset contains data for multiple transit agencies.
-- Recommended otherwise.
 """
         domain = [gtfs.Agency]
         range = [str]
@@ -105,20 +86,14 @@ Indicates if riders can access a transit service (i.e., trip) associated with th
 
 Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media.
 
-Valid options are:
-
-0 or empty - No cEMV information for trips associated with this agency.
-1 - Riders may use cEMVs as fare media for trips associated with this agency.
-2 - cEMVs are not supported as fare media for trips associated with this agency.
-
 If both agency.cemv_support and routes.cemv_support are provided for the same service, the value in routes.cemv_support shall take precedence.
 
 This field is independent of all other fare-related files and may be used separately. If there is conflicting information between this field and any fare-related file (such as fare_media.txt, fare_products.txt, or fare_leg_rules.txt), the information in those files shall take precedence over agency.cemv_support.
         """
-        domain = [gtfs.Agency]
-        range = [gtfs.CEMVSupportType]
+        domain = [Agency]
+        range = [CEMVSupportDatatype]
 
-    # region Rules
+    # region OWLDL Rules
 
     # Every agency has to have exactly one agency_name, agency_url, and agency_timezone.
     gtfs.Agency.is_a.append(
@@ -144,5 +119,3 @@ This field is independent of all other fare-related files and may be used separa
         gtfs.AgencyFile &
         gtfs.hasAgency.exactly(1, gtfs.Agency)
     )
-
-# gtfs.save(file=str(GTFS_ONTOLOGY_RDF))
