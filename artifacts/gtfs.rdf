@@ -45,6 +45,7 @@ Conditionally Required:
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
   <rdfs:domain rdf:resource="#Agency"/>
+  <rdfs:domain rdf:resource="#Route"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
 Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This document uses the term "agency" in place of "brand". A dataset may contain data from multiple agencies.
 </rdfs:comment>
@@ -323,6 +324,110 @@ Conditionally Forbidden:
 - Forbidden if parent_station is empty.
 - Optional otherwise.
 </rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_id">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies a route.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_short_name">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+Short name of a route. Often a short, abstract identifier (e.g., "32", "100X", "Green") that riders use to identify a route. Both route_short_name and route_long_name may be defined.
+
+Conditionally Required:
+- Required if routes.route_long_name is empty.
+- Recommended if there is a brief service designation. This should be the commonly-known passenger name of the service, and should be no longer than 12 characters.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_long_name">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+Full name of a route. This name is generally more descriptive than the route_short_name and often includes the route's destination or stop. Both route_short_name and route_long_name may be defined.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_desc">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+ 	Description of a route that provides useful, quality information. Should not be a duplicate of route_short_name or route_long_name. </rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_type">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:range rdf:resource="#RouteTypeDatatype"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the type of transportation used on a route.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_url">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URL of a web page about the particular route. Should be different from the agency.agency_url value.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_color">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:range rdf:resource="#Color"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Route color designation that matches public facing material. Defaults to white (FFFFFF) when omitted or left empty. The color difference between route_color and route_text_color should provide sufficient contrast when viewed on a black and white screen.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_text_color">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:range rdf:resource="#Color"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legible color to use for text drawn against a background of route_color. Defaults to black (000000) when omitted or left empty. The color difference between route_color and route_text_color should provide sufficient contrast when viewed on a black and white screen.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_sort_order">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:range rdf:resource="#NonNegativeInteger"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orders the routes in a way which is ideal for presentation to customers. Routes with smaller route_sort_order values should be displayed first.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#continuous_pickup">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:range rdf:resource="#ContinuousPickupDatatype"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that the rider can board the transit vehicle at any point along the vehicle’s travel path as described by shapes.txt, on every trip of the route.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#continuous_drop_off">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:range rdf:resource="#ContinuousDropOffDatatype"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that the rider can alight from the transit vehicle at any point along the vehicle’s travel path as described by shapes.txt, on every trip of the route.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#network_id">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies a group of routes. Multiple rows in routes.txt may have the same network_id.</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:Class rdf:about="#Dataset">
@@ -635,6 +740,147 @@ Conditionally Forbidden:
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Consuming applications should generate directions for access directly to the stop, independent of any entrances or pathways of the parent station.</rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#RouteTypeDatatypeDescription">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RouteTypeDatatypeDescription0">
+  <rdfs:subClassOf rdf:resource="#RouteTypeDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tram, Streetcar, Light rail. Any light rail or street level system within a metropolitan area.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RouteTypeDatatypeDescription1">
+  <rdfs:subClassOf rdf:resource="#RouteTypeDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subway, Metro. Any underground rail system within a metropolitan area.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RouteTypeDatatypeDescription2">
+  <rdfs:subClassOf rdf:resource="#RouteTypeDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rail. Used for intercity or long-distance travel.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RouteTypeDatatypeDescription3">
+  <rdfs:subClassOf rdf:resource="#RouteTypeDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bus. Used for short- and long-distance bus routes.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RouteTypeDatatypeDescription4">
+  <rdfs:subClassOf rdf:resource="#RouteTypeDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ferry. Used for short- and long-distance boat service.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RouteTypeDatatypeDescription5">
+  <rdfs:subClassOf rdf:resource="#RouteTypeDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cable tram. Used for street-level rail cars where the cable runs beneath the vehicle (e.g., cable car in San Francisco).</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RouteTypeDatatypeDescription6">
+  <rdfs:subClassOf rdf:resource="#RouteTypeDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aerial lift, suspended cable car (e.g., gondola lift, aerial tramway). Cable transport where cabins, cars, gondolas or open chairs are suspended by means of one or more cables.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RouteTypeDatatypeDescription7">
+  <rdfs:subClassOf rdf:resource="#RouteTypeDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Funicular. Any rail system designed for steep inclines.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RouteTypeDatatypeDescription11">
+  <rdfs:subClassOf rdf:resource="#RouteTypeDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trolleybus. Electric buses that draw power from overhead wires using poles.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RouteTypeDatatypeDescription12">
+  <rdfs:subClassOf rdf:resource="#RouteTypeDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Monorail. Railway in which the track consists of a single rail or a beam.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#ContinuousPickupDatatypeDescription">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ContinuousPickupDatatypeDescription0">
+  <rdfs:subClassOf rdf:resource="#ContinuousPickupDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Continuous stopping pickup.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#ContinuousPickupDatatypeDescription1">
+  <rdfs:subClassOf rdf:resource="#ContinuousPickupDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No continuous stopping pickup.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#ContinuousPickupDatatypeDescription2">
+  <rdfs:subClassOf rdf:resource="#ContinuousPickupDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Must phone agency to arrange continuous stopping pickup.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#ContinuousPickupDatatypeDescription3">
+  <rdfs:subClassOf rdf:resource="#ContinuousPickupDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Must coordinate with driver to arrange continuous stopping pickup.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#ContinuousDropOffDatatypeDescription">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ContinuousDropOffDatatypeDescription0">
+  <rdfs:subClassOf rdf:resource="#ContinuousDropOffDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Continuous stopping drop off.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#ContinuousDropOffDatatypeDescription1">
+  <rdfs:subClassOf rdf:resource="#ContinuousDropOffDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No continuous stopping drop off.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#ContinuousDropOffDatatypeDescription2">
+  <rdfs:subClassOf rdf:resource="#ContinuousDropOffDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Must phone agency to arrange continuous stopping drop off.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#ContinuousDropOffDatatypeDescription3">
+  <rdfs:subClassOf rdf:resource="#ContinuousDropOffDatatypeDescription"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Must coordinate with driver to arrange continuous stopping drop off. </rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#CEMVSupportDatatypeDescriptionRoute">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CEMVSupportDatatypeDescriptionRoute0">
+  <rdfs:subClassOf rdf:resource="#CEMVSupportDatatypeDescriptionRoute"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No cEMV information for trips associated with this route.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#CEMVSupportDatatypeDescriptionRoute1">
+  <rdfs:subClassOf rdf:resource="#CEMVSupportDatatypeDescriptionRoute"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Riders may use cEMVs as fare media for trips associated with this route. </rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#CEMVSupportDatatypeDescriptionRoute2">
+  <rdfs:subClassOf rdf:resource="#CEMVSupportDatatypeDescriptionRoute"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cEMVs are not supported as fare media for trips associated with this route.</rdfs:comment>
+</owl:Class>
+
+<rdfs:Datatype rdf:about="#Color">
+  <owl:equivalentClass>
+    <rdfs:Datatype>
+      <owl:withRestrictions>
+        <rdf:Description>
+          <rdf:first>
+            <rdf:Description>
+              <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">^[0-9A-F]{6}$</xsd:pattern>
+            </rdf:Description>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </owl:withRestrictions>
+      <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdfs:Datatype>
+  </owl:equivalentClass>
+</rdfs:Datatype>
+
+<rdfs:Datatype rdf:about="#NonNegativeInteger"/>
+
 <rdfs:Datatype rdf:about="#LanguageCode">
   <owl:equivalentClass>
     <rdfs:Datatype>
@@ -750,6 +996,120 @@ Conditionally Forbidden:
         <rdf:Description>
       <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+      </owl:oneOf>
+    </rdfs:Datatype>
+  </owl:equivalentClass>
+</rdfs:Datatype>
+
+<rdfs:Datatype rdf:about="#RouteTypeDatatype">
+  <owl:equivalentClass>
+    <rdfs:Datatype>
+      <owl:oneOf>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+      </owl:oneOf>
+    </rdfs:Datatype>
+  </owl:equivalentClass>
+</rdfs:Datatype>
+
+<rdfs:Datatype rdf:about="#ContinuousPickupDatatype">
+  <owl:equivalentClass>
+    <rdfs:Datatype>
+      <owl:oneOf>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+      </owl:oneOf>
+    </rdfs:Datatype>
+  </owl:equivalentClass>
+</rdfs:Datatype>
+
+<rdfs:Datatype rdf:about="#ContinuousDropOffDatatype">
+  <owl:equivalentClass>
+    <rdfs:Datatype>
+      <owl:oneOf>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
         </rdf:Description>
         </rdf:rest>
         </rdf:Description>

@@ -1,0 +1,37 @@
+[gtfs:Violation, rdf:type, owl:Class] .
+
+# A route must have a route_id.
+[?r, rdf:type, gtfs:Violation] :-
+    [?r, rdf:type, gtfs:Route] ,
+    NOT EXISTS ?i IN (
+        [?r, gtfs:route_id, ?i]
+    ) .
+
+# A route must have an agency_id if the agency file has multiple agencies.
+[?r, rdf:type, gtfs:Violation] :-
+    [?r, rdf:type, gtfs:Route] ,
+    [?rf, rdf:type, gtfs:RouteFile] ,
+    [?af, rdf:type, gtfs:AgencyFile] ,
+    [?ds, gtfs:hasFile, ?rf] ,
+    [?ds, gtfs:hasFile, ?af] ,
+    [?af, rdf:type, gtfs:AgencyFileWithMultipleAgencies] ,
+    NOT EXISTS ?i IN (
+        [?r, gtfs:agency_id, ?i]
+    ) .
+
+# A route must have a short name or a long name.
+[?r, rdf:type, gtfs:Violation] :-
+    [?r, rdf:type, gtfs:Route] ,
+    NOT EXISTS ?sn IN (
+        [?r, gtfs:route_short_name, ?sn
+    ) ,
+    NOT EXISTS ?ln IN (
+        [?r, gtfs:route_long_name, ?ln
+    ) .
+
+# A route must have a route_type.
+[?r, rdf:type, gtfs:Violation] :-
+    [?r, rdf:type, gtfs:Route] ,
+    NOT EXISTS ?t IN (
+        [?r, gtfs:route_type, ?t]
+    ) .

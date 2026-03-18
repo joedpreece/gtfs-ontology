@@ -32,52 +32,52 @@ with gtfs:
         comment = """
 Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This document uses the term "agency" in place of "brand". A dataset may contain data from multiple agencies.
 """
-        domain = [gtfs.Agency]
+        domain = [Agency, Route]
         range = [str]
 
     class agency_name(FieldValue, FunctionalProperty):
         comment = "Full name of the transit agency."
-        domain = [gtfs.Agency]
+        domain = [Agency]
         range = [str]
 
     class agency_url(FieldValue, FunctionalProperty):
         comment = "URL of the transit agency."
-        domain = [gtfs.Agency]
+        domain = [Agency]
         range = [str]
 
     class agency_timezone(FieldValue, FunctionalProperty):
         comment = """
 Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone.
 """
-        domain = [gtfs.Agency]
-        range = [gtfs.Timezone]
+        domain = [Agency]
+        range = [Timezone]
 
     class agency_lang(FieldValue, FunctionalProperty):
         comment = """
 Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset.
 """
-        domain = [gtfs.Agency]
-        range = [gtfs.LanguageCode]
+        domain = [Agency]
+        range = [LanguageCode]
 
     class agency_phone(FieldValue, FunctionalProperty):
         comment = """
 A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's "503-238-RIDE") is permitted, but the field must not contain any other descriptive text.
 """
-        domain = [gtfs.Agency]
+        domain = [Agency]
         range = [str]
 
     class agency_fare_url(FieldValue, FunctionalProperty):
         comment = """
 URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares.
 """
-        domain = [gtfs.Agency]
+        domain = [Agency]
         range = [str]
 
     class agency_email(FieldValue, FunctionalProperty):
         comment = """
 Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency.
 """
-        domain = [gtfs.Agency]
+        domain = [Agency]
         range = [str]
 
     class cemv_support(FieldValue, FunctionalProperty):
@@ -90,7 +90,7 @@ If both agency.cemv_support and routes.cemv_support are provided for the same se
 
 This field is independent of all other fare-related files and may be used separately. If there is conflicting information between this field and any fare-related file (such as fare_media.txt, fare_products.txt, or fare_leg_rules.txt), the information in those files shall take precedence over agency.cemv_support.
         """
-        domain = [Agency]
+        domain = [Agency, Route]
         range = [CEMVSupportDatatype]
 
     # region OWLDL Rules

@@ -92,19 +92,27 @@ with gtfs:
     class Service(Record):
         pass
 
+    class Calendar(Record):
+        pass
+
+    class CalendarDate(Record):
+        pass
+
     # endregion
 
     # region Datatypes
 
-    Color = ConstrainedDatatype(
-        base_datatype=str,
-        pattern=r"^[0-9A-F]{6}$"  # uppercase only
-    )
+    class Color(Datatype):
+        equivalent_to = [ConstrainedDatatype(
+            base_datatype=str,
+            pattern=r"^[0-9A-F]{6}$"  # uppercase only
+        )]
 
-    NonNegativeInteger = ConstrainedDatatype(
-        base_datatype=int,
-        min_inclusive=0
-    )
+    class NonNegativeInteger(Datatype):
+        equivalent_to = ConstrainedDatatype(
+            base_datatype=int,
+            min_inclusive=0
+        )
 
     # TODO Complete this list.
     class LanguageCode(Datatype):
@@ -143,5 +151,15 @@ with gtfs:
     class hasAgency(ObjectProperty):
         domain = [AgencyFile]
         range = [Agency]
+
+    class hasFile(ObjectProperty):
+        domain = [Dataset]
+        range = [File]
+
+    # endregion
+
+    # region Data Properties
+
+
 
     # endregion

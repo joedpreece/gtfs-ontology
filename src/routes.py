@@ -143,19 +143,19 @@ with gtfs:
 
     class route_id(FieldValue, FunctionalProperty):
         comment = "Identifies a route."
-        domain = [Route]
+        domain = [Route, Trip]
         range = [str]
 
-    # TODO This is a problem because it is already defined. Work out a way around this!
-#     class agency_id(FieldValue, FunctionalProperty):
-#         comment = """
-# Agency for the specified route.
-#
-# Conditionally Required:
-# - Required if multiple agencies are defined in agency.txt.
-# - Recommended otherwise."""
-#         domain = [Route]
-#         range = [str]
+#     # TODO This is a problem because it is already defined. Work out a way around this!
+# #     class agency_id(FieldValue, FunctionalProperty):
+# #         comment = """
+# # Agency for the specified route.
+# #
+# # Conditionally Required:
+# # - Required if multiple agencies are defined in agency.txt.
+# # - Recommended otherwise."""
+# #         domain = [Route]
+# #         range = [str]
 
     class route_short_name(FieldValue, FunctionalProperty):
         comment = """
@@ -170,10 +170,7 @@ Conditionally Required:
     class route_long_name(FieldValue, FunctionalProperty):
         comment = """
 Full name of a route. This name is generally more descriptive than the route_short_name and often includes the route's destination or stop. Both route_short_name and route_long_name may be defined.
-
-Conditionally Required:
-- Required if routes.route_short_name is empty.
-- Optional otherwise."""
+"""
         domain = [Route]
         range = [str]
 
@@ -223,12 +220,13 @@ Conditionally Required:
         domain = [Route]
         range = [str]
 
-    class cemv_support_routes(FieldValue, FunctionalProperty):
-        comment = """
-Indicates if riders can access a transit service (i.e., trip) associated with this route by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.
-
-Support for cEMVs should only be indicated if all services under this route are accessible with the use of cEMV cards or mobile devices as fare media."""
-        domain = [Route]
-        range = [CEMVSupportDatatype]
+#
+#     class cemv_support_routes(FieldValue, FunctionalProperty):
+#         comment = """
+# Indicates if riders can access a transit service (i.e., trip) associated with this route by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.
+#
+# Support for cEMVs should only be indicated if all services under this route are accessible with the use of cEMV cards or mobile devices as fare media."""
+#         domain = [Route]
+#         range = [CEMVSupportDatatype]
 
     # endregion
