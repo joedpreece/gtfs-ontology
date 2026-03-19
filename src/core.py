@@ -89,13 +89,13 @@ with gtfs:
     class StopTime(Record):
         pass
 
-    class Service(Record):
-        pass
-
     class Calendar(Record):
         pass
 
     class CalendarDate(Record):
+        pass
+
+    class Level(Record):
         pass
 
     # endregion
