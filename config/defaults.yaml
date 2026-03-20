@@ -1,3 +1,0 @@
-gtfs_ontology_nt: "./artifacts/gtfs.nt"
-gtfs_ontology_rdf: "./artifacts/gtfs.rdf"
-test_ontology: "./artifacts/test.nt"

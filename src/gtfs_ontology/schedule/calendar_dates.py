@@ -1,4 +1,4 @@
-from core import *
+from gtfs_ontology.schedule.core import *
 
 with gtfs:
 

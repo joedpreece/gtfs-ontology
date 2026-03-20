@@ -1,5 +1,5 @@
-from core import *
-from routes import route_id
+from gtfs_ontology.schedule.core import *
+from gtfs_ontology.schedule.routes import route_id
 
 # region Definitions
 

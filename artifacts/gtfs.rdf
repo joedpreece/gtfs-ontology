@@ -12,6 +12,11 @@
   <rdfs:label xml:lang="en">The GTFS Ontology</rdfs:label>
 </owl:Ontology>
 
+<owl:ObjectProperty rdf:about="#hasDataset">
+  <rdfs:domain rdf:resource="#GTFSSchedule"/>
+  <rdfs:range rdf:resource="#Dataset"/>
+</owl:ObjectProperty>
+
 <owl:ObjectProperty rdf:about="#hasAgency">
   <rdfs:domain rdf:resource="#AgencyFile"/>
   <rdfs:range rdf:resource="#Agency"/>
@@ -38,90 +43,6 @@ Defines hierarchy between the different locations defined in stops.txt. It conta
 
 <owl:DatatypeProperty rdf:about="#FieldValue">
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An individual entry in a field. Represented, in a table, as a single cell.</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#service_id">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
-  <rdfs:domain rdf:resource="#Trip"/>
-  <rdfs:domain rdf:resource="#Calendar"/>
-  <rdfs:domain rdf:resource="#CalendarDate"/>
-  <rdfs:comment xml:lang="en">
-Identifies a set of dates when service is available for one or more routes.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#monday">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
-  <rdfs:domain rdf:resource="#Calendar"/>
-  <rdfs:range rdf:resource="#CalendarDatatype"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether the service operates on all Mondays in the date range specified by the start_date and end_date fields.</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#tuesday">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
-  <rdfs:domain rdf:resource="#Calendar"/>
-  <rdfs:range rdf:resource="#CalendarDatatype"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether the service operates on all Tuesdays in the date range specified by the start_date and end_date fields.</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#wednesday">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
-  <rdfs:domain rdf:resource="#Calendar"/>
-  <rdfs:range rdf:resource="#CalendarDatatype"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether the service operates on all Wednesdays in the date range specified by the start_date and end_date fields.</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#thursday">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
-  <rdfs:domain rdf:resource="#Calendar"/>
-  <rdfs:range rdf:resource="#CalendarDatatype"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether the service operates on all Thursdays in the date range specified by the start_date and end_date fields.</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#friday">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
-  <rdfs:domain rdf:resource="#Calendar"/>
-  <rdfs:range rdf:resource="#CalendarDatatype"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether the service operates on all Fridays in the date range specified by the start_date and end_date fields.</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#saturday">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
-  <rdfs:domain rdf:resource="#Calendar"/>
-  <rdfs:range rdf:resource="#CalendarDatatype"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether the service operates on all Saturdays in the date range specified by the start_date and end_date fields.</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#sunday">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
-  <rdfs:domain rdf:resource="#Calendar"/>
-  <rdfs:range rdf:resource="#CalendarDatatype"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether the service operates on all Sundays in the date range specified by the start_date and end_date fields.</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#start_date">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
-  <rdfs:domain rdf:resource="#Calendar"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Start service day for the service interval.</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#end_date">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
-  <rdfs:domain rdf:resource="#Calendar"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">End service day for the service interval. This service day is included in the interval.</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#agency_id">
@@ -586,6 +507,16 @@ Identifies a group of routes. Multiple rows in routes.txt may have the same netw
 </rdfs:comment>
 </owl:DatatypeProperty>
 
+<owl:DatatypeProperty rdf:about="#service_id">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#Trip"/>
+  <rdfs:comment xml:lang="en">
+Identifies a set of dates when service is available for one or more routes.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
 <owl:DatatypeProperty rdf:about="#trip_id">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -697,6 +628,262 @@ Indicates whether cars are allowed. Valid options are:
 </rdfs:comment>
 </owl:DatatypeProperty>
 
+<owl:DatatypeProperty rdf:about="#header">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedMessage"/>
+  <rdfs:range rdf:resource="#FeedHeader"/>
+  <rdfs:comment xml:lang="en">
+Metadata about this feed and feed message.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#entity">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedMessage"/>
+  <rdfs:range rdf:resource="#FeedEntity"/>
+  <rdfs:comment xml:lang="en">
+Contents of the feed. If there is real-time information available for the transit system, this field must be provided. If this field is empty, consumers should assume there is no real-time information available for the system.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#gtfs_realtime_version">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedHeader"/>
+  <rdfs:comment xml:lang="en">
+Version of the feed specification. The current version is 2.0.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#incrementality">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedHeader"/>
+  <rdfs:range rdf:resource="#IncrementalityDatatype"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#timestamp">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedHeader"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:comment xml:lang="en">
+The most recent moment at which the vehicle's real-time progress was measured to estimate StopTimes
+in the future. When StopTimes in the past are provided, arrival/departure times may be earlier than
+this value. In POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC).
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#feed_version">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedHeader"/>
+  <rdfs:comment xml:lang="en">
+String that matches the feed_info.feed_version from the GTFS feed that the realtime data is based on. Consumers can use this to identify which GTFS feed is currently active or when a new one is available to download.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#id">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:comment xml:lang="en">
+Feed-unique identifier for this entity. The ids are used only to provide incrementality support.
+The actual entities referenced by the feed must be specified by explicit selectors
+(see EntitySelector below for more info).
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#is_deleted">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:comment xml:lang="en">
+Whether this entity is to be deleted. Should be provided only for feeds with Incrementality of
+DIFFERENTIAL - this field should NOT be provided for feeds with Incrementality of FULL_DATASET.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#trip_update">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:range rdf:resource="#TripUpdate"/>
+  <rdfs:comment xml:lang="en">
+Data about the realtime departure delays of a trip. At least one of the fields trip_update, vehicle,
+alert, or shape must be provided - all these fields cannot be empty.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#vehicle">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:range rdf:resource="#VehiclePosition"/>
+  <rdfs:range rdf:resource="#VehicleDescriptor"/>
+  <rdfs:comment xml:lang="en">
+Additional information on the vehicle that is serving this trip.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#alert">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:range rdf:resource="#Alert"/>
+  <rdfs:comment xml:lang="en">
+Data about the realtime alert. At least one of the fields trip_update, vehicle, alert, or shape
+must be provided - all these fields cannot be empty.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#shape">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:range rdf:resource="#Shape"/>
+  <rdfs:comment xml:lang="en">
+Data about the realtime added shapes, such as for a detour. At least one of the fields trip_update,
+vehicle, alert, or shape must be provided - all these fields cannot be empty.
+
+Caution: this field is still experimental, and subject to change. It may be formally adopted
+in the future.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:range rdf:resource="#Stop"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:comment xml:lang="en">
+A new stop added to the feed dynamically.
+
+Caution: this field is still experimental, and subject to change. It may be formally adopted
+in the future.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#trip_modifications">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:range rdf:resource="#TripModifications"/>
+  <rdfs:comment xml:lang="en">
+List of trips affected by a particular modification, such as a detour.
+
+Caution: this field is still experimental, and subject to change. It may be formally adopted
+in the future.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#trip">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:range rdf:resource="#TripDescriptor"/>
+  <rdfs:comment xml:lang="en">
+The Trip that this message applies to. There can be at most one TripUpdate entity for each actual
+trip instance. If there is none, that means there is no prediction information available. It does
+not mean that the trip is progressing according to schedule.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop_time_update">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:range rdf:resource="#StopTimeUpdate"/>
+  <rdfs:comment xml:lang="en">
+Updates to StopTimes for the trip (both future, i.e., predictions, and in some cases, past ones,
+i.e., those that already happened). The updates must be sorted by stop_sequence, and apply for all
+the following stops of the trip up to the next specified stop_time_update.
+
+If trip.schedule_relationship is SCHEDULED or UNSCHEDULED, at least one stop_time_update must be
+provided for the trip.
+
+If trip.schedule_relationship is NEW or REPLACEMENT, stop_time_updates must be provided for all
+stops in the new or replacement trip, including stops with times in the past, and the stop times in
+the static GTFS are not used.
+
+If the trip is canceled or deleted, no stop_time_updates need to be provided. If stop_time_updates
+are provided for a canceled or deleted trip then the trip.schedule_relationship takes precedence
+over any stop_time_updates and their associated schedule_relationship. If the trip is duplicated,
+stop_time_updates may be provided to indicate real-time information for the new trip.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#delay">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:comment xml:lang="en">
+The current schedule deviation for the trip. Delay should only be specified when the prediction is
+given relative to some existing schedule in GTFS.
+
+Delay (in seconds) can be positive (meaning that the vehicle is late) or negative (meaning that the
+vehicle is ahead of schedule). Delay of 0 means that the vehicle is exactly on time.
+
+Delay information in StopTimeUpdates take precedent of trip-level delay information, such that
+trip-level delay is only propagated until the next stop along the trip with a StopTimeUpdate delay
+value specified.
+
+Feed providers are strongly encouraged to provide a TripUpdate.timestamp value indicating when the
+delay value was last updated, in order to evaluate the freshness of the data.
+
+Caution: this field is still experimental, and subject to change. It may be formally adopted in the
+future.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#trip_properties">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:domain rdf:resource="#FeedEntity"/>
+  <rdfs:range rdf:resource="#TripProperties"/>
+  <rdfs:comment xml:lang="en">
+Provides the updated properties for the trip.
+
+Caution: this message is still experimental, and subject to change. It may be formally adopted in
+the future.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#FeedSpecification">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specification for a transit feed.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#GTFSSchedule">
+  <rdfs:subClassOf rdf:resource="#FeedSpecification"/>
+  <rdfs:comment xml:lang="en">
+GTFS Schedule is a feed specification that defines a common format for static public transportation information. It is composed of a collection of simple files, mostly text files (.txt) that are contained in a single ZIP file.
+
+Each file describes a particular aspect of transit information such as stops, routes, trips, etc. At its most basic form, a GTFS Schedule dataset is composed of 7 files: agency.txt, routes.txt, trips.txt, stops.txt, stop_times.txt, calendar.txt and calendar_dates.txt.
+
+Along with this basic set of files, additional (optional) files can also be grouped to provide information of other service elements, such as fares, translations, transfers, in-station pathways, etc. Currently there are more than 15 optional files that extend the basic elements of GTFS, including locations.geojson which introduced a new format besides text files (.txt) which can be used to represent geographical areas. 
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#GTFSRealtime">
+  <rdfs:subClassOf rdf:resource="#FeedSpecification"/>
+  <rdfs:comment xml:lang="en">
+GTFS Realtime is a feed specification that allows public transportation agencies to provide up-to-date information about current arrival and departure times, service alerts, and vehicle position, allowing users to smoothly plan their trips.
+
+The specification currently supports the following types of information:
+
+    Trip updates - delays, cancellations, changed routes
+    Service alerts - stop moved, unforeseen events affecting a station, route or the entire network
+    Vehicle positions - information about the vehicles including location and congestion level
+</rdfs:comment>
+</owl:Class>
+
 <owl:Class rdf:about="#Dataset">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A complete set of files defined by this specification reference. Altering the dataset creates a new version of the dataset. Datasets should be published at a public, permanent URL, including the zip file name. (e.g., https://www.agency.org/gtfs/gtfs.zip).</rdfs:comment>
@@ -750,6 +937,10 @@ Indicates whether cars are allowed. Valid options are:
 <owl:Class rdf:about="#DatatypeDescription">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A description provided to compliment an enumerated datatype.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Element">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#AgencyFile">
@@ -817,6 +1008,7 @@ Indicates whether cars are allowed. Valid options are:
 
 <owl:Class rdf:about="#Stop">
   <rdfs:subClassOf rdf:resource="#Record"/>
+  <rdfs:subClassOf rdf:resource="#Message"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Route">
@@ -841,20 +1033,6 @@ Indicates whether cars are allowed. Valid options are:
 
 <owl:Class rdf:about="#Level">
   <rdfs:subClassOf rdf:resource="#Record"/>
-</owl:Class>
-
-<owl:Class rdf:about="#CalendarDatatypeDescription">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-</owl:Class>
-
-<owl:Class rdf:about="#CalendarDatatypeDescription0">
-  <rdfs:subClassOf rdf:resource="#CalendarDatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Service is available for all Mondays in the date range.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#CalendarDatatypeDescription1">
-  <rdfs:subClassOf rdf:resource="#CalendarDatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Service is not available for Mondays in the date range.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#AgencyFileWithSingleAgency">
@@ -1205,6 +1383,92 @@ Indicates whether cars are allowed. Valid options are:
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No cars are allowed on this trip.</rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#ProtocolBufferDataTypes">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Message">
+  <rdfs:subClassOf rdf:resource="#ProtocolBufferDataTypes"/>
+  <rdfs:comment xml:lang="en">
+Complex type
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#FeedMessage">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+  <rdfs:comment xml:lang="en">
+The contents of a feed message. Each message in the stream is obtained as a response to an appropriate HTTP GET request. A realtime feed is always defined with relation to an existing GTFS feed. All the entity ids are resolved with respect to the GTFS feed.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#FeedHeader">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+  <rdfs:comment xml:lang="en">
+Metadata about a feed, included in feed messages.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#FeedEntity">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+  <rdfs:comment xml:lang="en">
+Metadata about a feed, included in feed messages.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#TripUpdate">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+  <rdfs:comment xml:lang="en">
+Realtime update on the progress of a vehicle along a trip. Please also refer to the general discussion of the trip updates entities. upd Depending on the value of ScheduleRelationship, a TripUpdate can specify:
+
+    A trip that proceeds along the schedule.
+    A trip that proceeds along a route but has no fixed schedule.
+    A trip that has been added or removed with regard to schedule.
+    A trip that replaces an existing trip in static GTFS.
+    A new trip that is a copy of an existing trip in static GTFS. It will run at the service date and time specified in TripProperties.
+
+The updates can be for future, predicted arrival/departure events, or for past events that already occurred. In most cases information about past events is a measured value thus its uncertainty value is recommended to be 0. Although there could be cases when this does not hold so it is allowed to have uncertainty value different from 0 for past events. If an update's uncertainty is not 0, either the update is an approximate prediction for a trip that has not completed or the measurement is not precise or the update was a prediction for the past that has not been verified after the event occurred.
+
+If a vehicle is serving multiple trips within the same block (for more information about trips and blocks, please refer to GTFS trips.txt):
+
+    the feed should include a TripUpdate for the trip currently being served by the vehicle. Producers are encouraged to include TripUpdates for one or more trips after the current trip in this vehicle's block if the producer is confident in the quality of the predictions for these future trip(s). Including multiple TripUpdates for the same vehicle avoids prediction "pop-in" for riders as the vehicle transitions from one trip to another and also gives riders advance notice of delays that impact downstream trips (e.g., when the known delay exceeds planned layover times between trips).
+    the respective TripUpdate entities are not required to be added to the feed in the same order that they are scheduled in the block. For example, if there are trips with trip_ids 1, 2, and 3 that all belong to one block, and the vehicle travels trip 1, then trip 2, and then trip 3, the trip_update entities may appear in any order - for example, adding trip 2, then trip 1, and then trip 3 is allowed.
+
+Note that the update can describe a trip that has already completed. To this end, it is enough to provide an update for the last stop of the trip. If the time of arrival at the last stop is in the past, the client will conclude that the whole trip is in the past (it is possible, although inconsequential, to also provide updates for preceding stops). This option is most relevant for a trip that has completed ahead of schedule, but according to the schedule, the trip is still proceeding at the current time. Removing the updates for this trip could make the client assume that the trip is still proceeding. Note that the feed provider is allowed, but not required, to purge past updates - this is one case where this would be practically useful.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#VehiclePosition">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Alert">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Shape">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TripModifications">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TripDescriptor">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
+<owl:Class rdf:about="#VehicleDescriptor">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
+<owl:Class rdf:about="#StopTimeUpdate">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TripProperties">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
 <rdfs:Datatype rdf:about="#Color">
   <owl:equivalentClass>
     <rdfs:Datatype>
@@ -1266,24 +1530,6 @@ Indicates whether cars are allowed. Valid options are:
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         </rdf:Description>
         </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-      </owl:oneOf>
-    </rdfs:Datatype>
-  </owl:equivalentClass>
-</rdfs:Datatype>
-
-<rdfs:Datatype rdf:about="#CalendarDatatype">
-  <owl:equivalentClass>
-    <rdfs:Datatype>
-      <owl:oneOf>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         </rdf:Description>
         </rdf:rest>
         </rdf:Description>
@@ -1559,6 +1805,24 @@ Indicates whether cars are allowed. Valid options are:
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         </rdf:Description>
         </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+      </owl:oneOf>
+    </rdfs:Datatype>
+  </owl:equivalentClass>
+</rdfs:Datatype>
+
+<rdfs:Datatype rdf:about="#IncrementalityDatatype">
+  <owl:equivalentClass>
+    <rdfs:Datatype>
+      <owl:oneOf>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FULL_DATASET</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DIFFERENTIAL</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         </rdf:Description>
         </rdf:rest>
         </rdf:Description>

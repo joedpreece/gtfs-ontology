@@ -1,5 +1,4 @@
 from owlready2 import *
-from config import GTFS_ONTOLOGY_NT, GTFS_ONTOLOGY_RDF
 
 gtfs = get_ontology("http://www.transit.ac.uk/ontologies/gtfs")
 
@@ -9,9 +8,36 @@ gtfs.metadata.comment = [locstr(
 )]
 gtfs.metadata.versionInfo = "0.1.0"
 
+GTFS_SCHEDULE_DEF = """
+GTFS Schedule is a feed specification that defines a common format for static public transportation information. It is composed of a collection of simple files, mostly text files (.txt) that are contained in a single ZIP file.
+
+Each file describes a particular aspect of transit information such as stops, routes, trips, etc. At its most basic form, a GTFS Schedule dataset is composed of 7 files: agency.txt, routes.txt, trips.txt, stops.txt, stop_times.txt, calendar.txt and calendar_dates.txt.
+
+Along with this basic set of files, additional (optional) files can also be grouped to provide information of other service elements, such as fares, translations, transfers, in-station pathways, etc. Currently there are more than 15 optional files that extend the basic elements of GTFS, including locations.geojson which introduced a new format besides text files (.txt) which can be used to represent geographical areas. 
+"""
+
+GTFS_REALTIME_DEF = """
+GTFS Realtime is a feed specification that allows public transportation agencies to provide up-to-date information about current arrival and departure times, service alerts, and vehicle position, allowing users to smoothly plan their trips.
+
+The specification currently supports the following types of information:
+
+    Trip updates - delays, cancellations, changed routes
+    Service alerts - stop moved, unforeseen events affecting a station, route or the entire network
+    Vehicle positions - information about the vehicles including location and congestion level
+"""
+
 with gtfs:
 
     # region Classes
+
+    class FeedSpecification(Thing):
+        comment = "A specification for a transit feed."
+
+    class GTFSSchedule(FeedSpecification):
+        comment = [locstr(GTFS_SCHEDULE_DEF, "en")]
+
+    class GTFSRealtime(FeedSpecification):
+        comment = [locstr(GTFS_REALTIME_DEF, "en")]
 
     class Dataset(Thing):
         comment = "A complete set of files defined by this specification reference. Altering the dataset creates a new version of the dataset. Datasets should be published at a public, permanent URL, including the zip file name. (e.g., https://www.agency.org/gtfs/gtfs.zip)."
@@ -48,6 +74,9 @@ with gtfs:
 
     class DatatypeDescription(Thing):
         comment = "A description provided to compliment an enumerated datatype."
+
+    class Element(Thing):
+        pass
 
     # Define the files.
 
@@ -147,6 +176,10 @@ with gtfs:
     # endregion
 
     # region Class Properties
+
+    class hasDataset(ObjectProperty):
+        domain = [GTFSSchedule]
+        range = [Dataset]
 
     class hasAgency(ObjectProperty):
         domain = [AgencyFile]

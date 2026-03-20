@@ -1,6 +1,6 @@
-from agencies import agency_id, CEMVSupportDatatypeDescription0, \
+from gtfs_ontology.schedule.core import *
+from gtfs_ontology.schedule.agencies import agency_id, CEMVSupportDatatypeDescription0, \
     CEMVSupportDatatypeDescription1, CEMVSupportDatatypeDescription2, cemv_support
-from core import *
 
 # region Definitions
 

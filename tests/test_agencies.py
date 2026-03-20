@@ -42,7 +42,7 @@ def test_should_classify_as_multiple_when_file_has_two_agencies(
 
     import_into_rdfox(nt_path)
 
-    # time.sleep(60)
+    time.sleep(60)
 
     assert extract_boolean(
         rdfox_ask(
