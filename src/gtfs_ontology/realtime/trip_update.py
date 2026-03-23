@@ -49,16 +49,10 @@ value specified.
 
 Feed providers are strongly encouraged to provide a TripUpdate.timestamp value indicating when the
 delay value was last updated, in order to evaluate the freshness of the data.
-
-Caution: this field is still experimental, and subject to change. It may be formally adopted in the
-future.
 """
 
 TRIP_PROPERTIES_DEF = """
 Provides the updated properties for the trip.
-
-Caution: this message is still experimental, and subject to change. It may be formally adopted in
-the future.
 """
 
 # endregion
@@ -67,42 +61,40 @@ with gtfs:
     class trip(FieldValue, FunctionalProperty):
         # Required, One
         comment = [locstr(TRIP_DEF, "en")]
-        domain = [FeedEntity]
+        domain = [TripUpdate]
         range = [TripDescriptor]
 
 
     class vehicle(FieldValue, FunctionalProperty):
         # Optional, One
         comment = [locstr(VEHICLE_DEF, "en")]
-        domain = [FeedEntity]
+        domain = [TripUpdate]
         range = [VehicleDescriptor]
 
 
     class stop_time_update(FieldValue):
         # Conditionally required, Many  → not FunctionalProperty
         comment = [locstr(STOP_TIME_UPDATE_DEF, "en")]
-        domain = [FeedEntity]
+        domain = [TripUpdate]
         range = [StopTimeUpdate]
 
 
     class timestamp(FieldValue, FunctionalProperty):
         # Optional, One
         comment = [locstr(TIMESTAMP_DEF, "en")]
-        domain = [FeedEntity]
-        # uint64 represented as POSIX seconds
+        domain = [TripUpdate]
         range = [int]
 
 
-    class delay(FieldValue, FunctionalProperty):
+    class delay(ExperimentalField, FunctionalProperty):
         # Optional, One
         comment = [locstr(DELAY_DEF, "en")]
-        domain = [FeedEntity]
-        # int32 seconds (negative = early, positive = late)
+        domain = [TripUpdate]
         range = [int]
 
 
-    class trip_properties(FieldValue, FunctionalProperty):
+    class trip_properties(ExperimentalField, FunctionalProperty):
         # Optional, One
         comment = [locstr(TRIP_PROPERTIES_DEF, "en")]
-        domain = [FeedEntity]
+        domain = [TripUpdate]
         range = [TripProperties]

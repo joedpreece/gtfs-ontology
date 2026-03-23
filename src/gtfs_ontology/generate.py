@@ -13,6 +13,10 @@ import gtfs_ontology.realtime.feed_message
 import gtfs_ontology.realtime.feed_header
 import gtfs_ontology.realtime.feed_entity
 import gtfs_ontology.realtime.trip_update
+import gtfs_ontology.realtime.stop_time_event
+import gtfs_ontology.realtime.stop_time_update
+import gtfs_ontology.realtime.stop_time_properties
+import gtfs_ontology.realtime.trip_properties
 
 def generate_ontology(
         path: Path

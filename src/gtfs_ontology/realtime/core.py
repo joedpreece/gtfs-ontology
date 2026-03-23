@@ -35,6 +35,40 @@ If a vehicle is serving multiple trips within the same block (for more informati
 Note that the update can describe a trip that has already completed. To this end, it is enough to provide an update for the last stop of the trip. If the time of arrival at the last stop is in the past, the client will conclude that the whole trip is in the past (it is possible, although inconsequential, to also provide updates for preceding stops). This option is most relevant for a trip that has completed ahead of schedule, but according to the schedule, the trip is still proceeding at the current time. Removing the updates for this trip could make the client assume that the trip is still proceeding. Note that the feed provider is allowed, but not required, to purge past updates - this is one case where this would be practically useful.
 """
 
+STOP_TIME_EVENT_DEF = """
+Timing information for a single predicted event (either arrival or departure). Timing consists of delay and/or estimated time, and uncertainty. A scheduled time can also be added for NEW, REPLACEMENT, or DUPLICATED trips.
+
+    delay should be used when the prediction is given relative to some existing schedule in GTFS.
+    time should be given whether there is a predicted schedule or not, and must be given for new or replacement trips. If both time and delay are specified, time will take precedence (although normally, time, if given for a scheduled trip, should be equal to scheduled time in GTFS + delay).
+    scheduled time may be given if the trip is a new, replacement or duplicated trip.
+
+Uncertainty applies equally to both time and delay. The uncertainty roughly specifies the expected error in true delay (but note, we don't yet define its precise statistical meaning). It's possible for the uncertainty to be 0, for example for trains that are driven under computer timing control.
+"""
+
+STOP_TIME_UPDATE_DEF = """
+Realtime update for arrival and/or departure events for a given stop on a trip. Please also refer to the general discussion of stop time updates in the TripDescriptor and trip updates entities documentation.
+
+Updates can be supplied for both past and future events. The producer is allowed, although not required, to drop past events, unless if TripUpdate.schedule_relationship is NEW or REPLACEMENT, in such case past stops must not be dropped as they define the trip the vehicle is on, until the whole trip has been finished. The update is linked to a specific stop either through stop_sequence or stop_id, so one of these fields must necessarily be set. If the same stop_id is visited more than once in a trip, then stop_sequence should be provided in all StopTimeUpdates for that stop_id on that trip.
+
+In new or replacement trips, updates are used to specify the stops visited by the trip without referring to an existing trip in the GTFS Static. In such trips, stop_id, stop_sequence, departure and arrival must all be set.
+"""
+
+STOP_TIME_PROPERTIES_DEF = """
+Realtime update for certain properties defined within GTFS stop_times.txt.
+"""
+
+TRIP_PROPERTIES_DEF = """
+Defines updated properties of the trip.
+"""
+
+EXPERIMENTAL_FIELD_DEF = """
+Caution: this field is still experimental, and subject to change. It may be formally adopted in the future.
+"""
+
+EXPERIMENTAL_MESSAGE_DEF = """
+Caution: this message is still experimental, and subject to change. It may be formally adopted in the future.
+"""
+
 with gtfs:
 
     class ProtocolBufferDataTypes(Thing):
@@ -42,6 +76,12 @@ with gtfs:
 
     class Message(ProtocolBufferDataTypes):
         comment = [locstr(MESSAGE_DEF, "en")]
+
+    class ExperimentalField(FieldValue):
+        comment = [locstr(EXPERIMENTAL_FIELD_DEF, "en")]
+
+    class ExperimentalMessage(Message):
+        comment = [locstr(EXPERIMENTAL_MESSAGE_DEF, "en")]
 
     class FeedMessage(Message):
         comment = [locstr(FEED_MESSAGE_DEF, "en")]
@@ -55,6 +95,21 @@ with gtfs:
     class TripUpdate(Message):
         comment = [locstr(TRIP_UPDATE_DEF, "en")]
 
+    class StopTimeEvent(Message):
+        comment = [locstr(STOP_TIME_EVENT_DEF, "en")]
+
+    class StopTimeUpdate(Message):
+        comment = [locstr(STOP_TIME_UPDATE_DEF, "en")]
+        
+    class StopTimeProperties(ExperimentalMessage):
+        comment = [locstr(STOP_TIME_PROPERTIES_DEF, "en")]
+        
+    class TripProperties(ExperimentalMessage):
+        comment = [locstr(TRIP_PROPERTIES_DEF, "en")]
+
+    class TripModifications(Message):
+        pass
+
     class VehiclePosition(Message):
         pass
 
@@ -67,17 +122,17 @@ with gtfs:
     class Stop(Message):
         pass
 
-    class TripModifications(Message):
-        pass
-
     class TripDescriptor(Message):
         pass
 
     class VehicleDescriptor(Message):
         pass
 
-    class StopTimeUpdate(Message):
+    class TripProperties(Message):
         pass
 
-    class TripProperties(Message):
+    class OccupancyStatus(Message):
+        pass
+
+    class ScheduleRelationship(Message):
         pass

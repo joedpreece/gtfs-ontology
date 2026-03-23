@@ -31,23 +31,14 @@ must be provided - all these fields cannot be empty.
 SHAPE_DEF = """
 Data about the realtime added shapes, such as for a detour. At least one of the fields trip_update,
 vehicle, alert, or shape must be provided - all these fields cannot be empty.
-
-Caution: this field is still experimental, and subject to change. It may be formally adopted
-in the future.
 """
 
 STOP_DEF = """
 A new stop added to the feed dynamically.
-
-Caution: this field is still experimental, and subject to change. It may be formally adopted
-in the future.
 """
 
 TRIP_MODIFICATIONS_DEF = """
 List of trips affected by a particular modification, such as a detour.
-
-Caution: this field is still experimental, and subject to change. It may be formally adopted
-in the future.
 """
 
 # endregion
@@ -84,19 +75,19 @@ with gtfs:
         range = [Alert]
 
 
-    class shape(FieldValue, FunctionalProperty):
+    class shape(ExperimentalField, FunctionalProperty):
         comment = [locstr(SHAPE_DEF, "en")]
         domain = [FeedEntity]
         range = [Shape]
 
 
-    class stop(FieldValue, FunctionalProperty):
+    class stop(ExperimentalField, FunctionalProperty):
         comment = [locstr(STOP_DEF, "en")]
         domain = [FeedEntity]
         range = [Stop]
 
 
-    class trip_modifications(FieldValue, FunctionalProperty):
+    class trip_modifications(ExperimentalField, FunctionalProperty):
         comment = [locstr(TRIP_MODIFICATIONS_DEF, "en")]
         domain = [FeedEntity]
         range = [TripModifications]
