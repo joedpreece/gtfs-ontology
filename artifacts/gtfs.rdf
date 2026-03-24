@@ -164,8 +164,12 @@ This field is independent of all other fare-related files and may be used separa
   <rdfs:domain rdf:resource="#StopTime"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   <rdfs:domain rdf:resource="#StopTimeUpdate"/>
+  <rdfs:domain rdf:resource="#VehiclePosition"/>
   <rdfs:comment xml:lang="en">
 Must be the same as in stops.txt in the corresponding GTFS feed. Either stop_sequence or stop_id must be provided within a StopTimeUpdate - both fields cannot be empty. If StopTimeProperties.assigned_stop_id is populated, it is preferred to omit stop_id and use only stop_sequence. If StopTimeProperties.assigned_stop_id and stop_id are populated, stop_id must match assigned_stop_id. Required if TripUpdate.schedule_relationship is NEW or REPLACEMENT.
+</rdfs:comment>
+  <rdfs:comment xml:lang="en">
+Identifies the current stop. The value must be the same as in stops.txt in the corresponding GTFS feed. If `StopTimeProperties.assigned_stop_id` is used to assign a `stop_id`, this field should also reflect the change in `stop_id`.
 </rdfs:comment>
 </owl:DatatypeProperty>
 
@@ -685,10 +689,11 @@ Version of the feed specification. The current version is 2.0.
   <rdfs:domain rdf:resource="#FeedHeader"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
   <rdfs:domain rdf:resource="#TripUpdate"/>
+  <rdfs:domain rdf:resource="#VehiclePosition"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
   <rdfs:comment xml:lang="en">
-The most recent moment at which the vehicle's real-time progress was measured to estimate StopTimes
-in the future. When StopTimes in the past are provided, arrival/departure times may be earlier than
-this value. In POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC).
+Moment at which the vehicle's position was measured. In POSIX time 
+(i.e., number of seconds since January 1st 1970 00:00:00 UTC).
 </rdfs:comment>
 </owl:DatatypeProperty>
 
@@ -743,8 +748,9 @@ alert, or shape must be provided - all these fields cannot be empty.
   <rdfs:range rdf:resource="#VehiclePosition"/>
   <rdfs:domain rdf:resource="#TripUpdate"/>
   <rdfs:range rdf:resource="#VehicleDescriptor"/>
+  <rdfs:domain rdf:resource="#VehiclePosition"/>
   <rdfs:comment xml:lang="en">
-Additional information on the vehicle that is serving this trip.
+Additional information on the vehicle that is serving this trip. Each entry should have a **unique** vehicle id.
 </rdfs:comment>
 </owl:DatatypeProperty>
 
@@ -795,10 +801,9 @@ List of trips affected by a particular modification, such as a detour.
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#TripUpdate"/>
   <rdfs:range rdf:resource="#TripDescriptor"/>
+  <rdfs:domain rdf:resource="#VehiclePosition"/>
   <rdfs:comment xml:lang="en">
-The Trip that this message applies to. There can be at most one TripUpdate entity for each actual
-trip instance. If there is none, that means there is no prediction information available. It does
-not mean that the trip is progressing according to schedule.
+The Trip that this vehicle is serving. Can be empty or partial if the vehicle can not be identified with a given trip instance.
 </rdfs:comment>
 </owl:DatatypeProperty>
 
@@ -1006,6 +1011,252 @@ Service date on which the duplicated trip will be run. Must be provided in YYYYM
   <rdfs:comment xml:lang="en">
 Defines the departure start time of the trip when it’s duplicated. See definition of stop_times.departure_time in (CSV) GTFS. Scheduled arrival and departure times for the duplicated trip are calculated based on the offset between the original trip departure_time and this field. For example, if a GTFS trip has stop A with a departure_time of 10:00:00 and stop B with departure_time of 10:01:00, and this field is populated with the value of 10:30:00, stop B on the duplicated trip will have a scheduled departure_time of 10:31:00. Real-time prediction delay values are applied to this calculated schedule time to determine the predicted time. For example, if a departure delay of 30 is provided for stop B, then the predicted departure time is 10:31:30. Real-time prediction time values do not have any offset applied to them and indicate the predicted time as provided. For example, if a departure time representing 10:31:30 is provided for stop B, then the predicted departure time is 10:31:30. This field is required if schedule_relationship is DUPLICATED, otherwise this field must not be populated and will be ignored by consumers.
 </rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#position">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#VehiclePosition"/>
+  <rdfs:range rdf:resource="#Position"/>
+  <rdfs:comment xml:lang="en">
+Current position of this vehicle.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#current_stop_sequence">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#VehiclePosition"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:comment xml:lang="en">
+The stop sequence index of the current stop. The meaning of 
+current_stop_sequence (i.e., the stop that it refers to) is determined 
+by current_status. If current_status is missing IN_TRANSIT_TO is 
+assumed.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#current_status">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#VehiclePosition"/>
+  <rdfs:range rdf:resource="#VehicleStopStatus"/>
+  <rdfs:comment xml:lang="en">
+The exact status of the vehicle with respect to the current stop. Ignored if current_stop_sequence is missing.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#congestion_level">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#VehiclePosition"/>
+  <rdfs:range rdf:resource="#CongestionLevel"/>
+  <rdfs:comment xml:lang="en">
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#occupancy_status">
+  <rdfs:subPropertyOf rdf:resource="#ExperimentalField"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#VehiclePosition"/>
+  <rdfs:range rdf:resource="#OccupancyStatus"/>
+  <rdfs:comment xml:lang="en">
+The state of passenger occupancy for the vehicle or carriage. If 
+multi_carriage_details is populated with per-carriage OccupancyStatus, 
+then this field should describe the entire vehicle with all carriages 
+accepting passengers considered.
+
+**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#occupancy_percentage">
+  <rdfs:subPropertyOf rdf:resource="#ExperimentalField"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#VehiclePosition"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:comment xml:lang="en">
+A percentage value indicating the degree of passenger occupancy in 
+the vehicle. The value 100 should represent the total maximum occupancy 
+the vehicle was designed for, including both seating and standing 
+capacity, and current operating regulations allow. The value may exceed 
+100 if there are more passengers than the maximum designed capacity. The 
+ precision of occupancy_percentage should be low enough that individual 
+passengers cannot be tracked boarding or alighting the vehicle. If 
+multi_carriage_details is populated with per-carriage 
+occupancy_percentage, then this field should describe the entire vehicle 
+ with all carriages accepting passengers considered.
+
+**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#multi_carriage_details">
+  <rdfs:subPropertyOf rdf:resource="#ExperimentalField"/>
+  <rdfs:domain rdf:resource="#VehiclePosition"/>
+  <rdfs:range rdf:resource="#CarriageDetails"/>
+  <rdfs:comment xml:lang="en">
+Details of the multiple carriages of this given vehicle. The first occurrence represents the first carriage of the vehicle, **given the current direction of travel**. 
+ The number of occurrences of the multi_carriage_details field 
+represents the number of carriages of the vehicle. It also includes non 
+boardable carriages, like engines, maintenance carriages, etc… as they 
+provide valuable information to passengers about where to stand on a 
+platform.
+
+**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#active_period">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#TimeRange"/>
+  <rdfs:comment xml:lang="en">
+Time when the alert should be shown to the user. If missing, the alert will be shown as long as it appears in the feed. If multiple ranges are given, the alert will be shown during all of them.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#informed_entity">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#EntitySelector"/>
+  <rdfs:comment xml:lang="en">
+Entities whose users we should notify of this alert. At least one informed_entity must be provided.
+</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#cause">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#Cause"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+If cause_detail is included, then Cause must also be included.
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#cause_detail">
+  <rdfs:subPropertyOf rdf:resource="#ExperimentalField"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#TranslatedString"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Description of the cause of the alert that allows for agency-specific language; more specific than the Cause. If cause_detail is included, then Cause must also be included. 
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#effect">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#Effect"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+If effect_detail is included, then Effect must also be included.
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#effect_detail">
+  <rdfs:subPropertyOf rdf:resource="#ExperimentalField"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#TranslatedString"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Description of the effect of the alert that allows for agency-specific language; more specific than the Effect. If effect_detail is included, then Effect must also be included. 
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#url">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#TranslatedString"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+The URL which provides additional information about the alert.
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#header_text">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#TranslatedString"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Header for the alert. This plain-text string will be highlighted, for example in boldface.
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#description_text">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#TranslatedString"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Description for the alert. This plain-text string will be formatted as the body of the alert (or shown on an explicit "expand" request by the user). The information in the description should add to the information of the header.
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#tts_header_text">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#TranslatedString"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Text containing the alert's header to be used for text-to-speech implementations. This field is the text-to-speech version of header_text. It should contain the same information as header_text but formatted such that it can read as text-to-speech (for example, abbreviations removed, numbers spelled out, etc.)
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#tts_description_text">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#TranslatedString"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Text containing a description for the alert to be used for text-to-speech implementations. This field is the text-to-speech version of description_text. It should contain the same information as description_text but formatted such that it can be read as text-to-speech (for example, abbreviations removed, numbers spelled out, etc.)
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#severity_level">
+  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#SeverityLevel"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Severity of the alert.
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#image">
+  <rdfs:subPropertyOf rdf:resource="#ExperimentalField"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#TranslatedImage"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+TranslatedImage to be displayed along the alert text. Used to explain visually the alert effect of a detour, station closure, etc. The image should enhance the understanding of the alert and must not be the only location of essential information. The following types of images are discouraged : image containing mainly text, marketing or branded images that add no additional information. 
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#image_alternative_text">
+  <rdfs:subPropertyOf rdf:resource="#ExperimentalField"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Alert"/>
+  <rdfs:range rdf:resource="#TranslatedString"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Text describing the appearance of the linked image in the image field (e.g., in case the image can't be displayed or the user can't see the image for accessibility reasons). 
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:Class rdf:about="#FeedSpecification">
@@ -1630,7 +1881,6 @@ Realtime update for certain properties defined within GTFS stop_times.txt.
 
 <owl:Class rdf:about="#TripProperties">
   <rdfs:subClassOf rdf:resource="#ExperimentalMessage"/>
-  <rdfs:subClassOf rdf:resource="#Message"/>
   <rdfs:comment xml:lang="en">
 Defines updated properties of the trip.
 </rdfs:comment>
@@ -1660,11 +1910,31 @@ Defines updated properties of the trip.
   <rdfs:subClassOf rdf:resource="#Message"/>
 </owl:Class>
 
-<owl:Class rdf:about="#OccupancyStatus">
+<owl:Class rdf:about="#ScheduleRelationship">
   <rdfs:subClassOf rdf:resource="#Message"/>
 </owl:Class>
 
-<owl:Class rdf:about="#ScheduleRelationship">
+<owl:Class rdf:about="#Position">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CarriageDetails">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TimeRange">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EntitySelector">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TranslatedString">
+  <rdfs:subClassOf rdf:resource="#Message"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TranslatedImage">
   <rdfs:subClassOf rdf:resource="#Message"/>
 </owl:Class>
 
@@ -2125,6 +2395,59 @@ Must coordinate with driver to arrange pickup/dropoff.
   </owl:equivalentClass>
 </rdfs:Datatype>
 
+<rdfs:Datatype rdf:about="#OccupancyStatus">
+  <owl:equivalentClass>
+    <rdfs:Datatype>
+      <owl:oneOf>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMPTY</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MANY_SEATS_AVAILABLE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FEW_SEATS_AVAILABLE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">STANDING_ROOM_ONLY</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CRUSHED_STANDING_ROOM_ONLY</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FULL</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NOT_ACCEPTING_PASSENGERS</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NO_DATA_AVAILABLE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NOT_BOARDABLE</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+      </owl:oneOf>
+    </rdfs:Datatype>
+  </owl:equivalentClass>
+</rdfs:Datatype>
+
 <rdfs:Datatype rdf:about="#DropOffPickupTypeDatatype">
   <owl:equivalentClass>
     <rdfs:Datatype>
@@ -2140,6 +2463,221 @@ Must coordinate with driver to arrange pickup/dropoff.
         <rdf:rest>
         <rdf:Description>
       <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">COORDINATE_WITH_DRIVER</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+      </owl:oneOf>
+    </rdfs:Datatype>
+  </owl:equivalentClass>
+</rdfs:Datatype>
+
+<rdfs:Datatype rdf:about="#VehicleStopStatus">
+  <owl:equivalentClass>
+    <rdfs:Datatype>
+      <owl:oneOf>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INCOMING_AT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">STOPPED_AT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IN_TRANSIT_TO</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+      </owl:oneOf>
+    </rdfs:Datatype>
+  </owl:equivalentClass>
+</rdfs:Datatype>
+
+<rdfs:Datatype rdf:about="#CongestionLevel">
+  <owl:equivalentClass>
+    <rdfs:Datatype>
+      <owl:oneOf>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UNKNOWN_CONGESTION_LEVEL</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RUNNING_SMOOTHLY</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">STOP_AND_GO</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CONGESTION</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SEVERE_CONGESTION</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+      </owl:oneOf>
+    </rdfs:Datatype>
+  </owl:equivalentClass>
+</rdfs:Datatype>
+
+<rdfs:Datatype rdf:about="#Cause">
+  <owl:equivalentClass>
+    <rdfs:Datatype>
+      <owl:oneOf>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UNKNOWN_CAUSE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OTHER_CAUSE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TECHNICAL_PROBLEM</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">STRIKE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DEMONSTRATION</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACCIDENT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HOLIDAY</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WEATHER</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MAINTENANCE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CONSTRUCTION</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">POLICE_ACTIVITY</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MEDICAL_EMERGENCY</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+      </owl:oneOf>
+    </rdfs:Datatype>
+  </owl:equivalentClass>
+</rdfs:Datatype>
+
+<rdfs:Datatype rdf:about="#Effect">
+  <owl:equivalentClass>
+    <rdfs:Datatype>
+      <owl:oneOf>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NO_SERVICE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">REDUCED_SERVICE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SIGNIFICANT_DELAYS</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DETOUR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ADDITIONAL_SERVICE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MODIFIED_SERVICE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OTHER_EFFECT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UNKNOWN_EFFECT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">STOP_MOVED</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NO_EFFECT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACCESSIBILITY_ISSUE</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+      </owl:oneOf>
+    </rdfs:Datatype>
+  </owl:equivalentClass>
+</rdfs:Datatype>
+
+<rdfs:Datatype rdf:about="#SeverityLevel">
+  <owl:equivalentClass>
+    <rdfs:Datatype>
+      <owl:oneOf>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UNKNOWN_SEVERITY</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INFO</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WARNING</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SEVERE</rdf:first>
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         </rdf:Description>
         </rdf:rest>

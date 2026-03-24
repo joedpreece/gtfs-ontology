@@ -61,6 +61,10 @@ TRIP_PROPERTIES_DEF = """
 Defines updated properties of the trip.
 """
 
+VEHICLE_POSITION_DEF = """
+Realtime positioning information for a given vehicle.
+"""
+
 EXPERIMENTAL_FIELD_DEF = """
 Caution: this field is still experimental, and subject to change. It may be formally adopted in the future.
 """
@@ -128,11 +132,23 @@ with gtfs:
     class VehicleDescriptor(Message):
         pass
 
-    class TripProperties(Message):
-        pass
-
-    class OccupancyStatus(Message):
-        pass
-
     class ScheduleRelationship(Message):
+        pass
+
+    class Position(Message):
+        pass
+
+    class CarriageDetails(Message):
+        pass
+
+    class TimeRange(Message):
+        pass
+
+    class EntitySelector(Message):
+        pass
+
+    class TranslatedString(Message):
+        pass
+
+    class TranslatedImage(Message):
         pass

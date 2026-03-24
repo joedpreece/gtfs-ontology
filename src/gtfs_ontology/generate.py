@@ -17,6 +17,8 @@ import gtfs_ontology.realtime.stop_time_event
 import gtfs_ontology.realtime.stop_time_update
 import gtfs_ontology.realtime.stop_time_properties
 import gtfs_ontology.realtime.trip_properties
+import gtfs_ontology.realtime.vehicle_position
+import gtfs_ontology.realtime.alert
 
 def generate_ontology(
         path: Path
