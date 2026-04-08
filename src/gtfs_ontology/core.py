@@ -1,12 +1,23 @@
+#%%
 from owlready2 import *
 
-gtfs = get_ontology("http://www.transit.ac.uk/ontologies/gtfs")
+gtfs = get_ontology("https://www.gtfs.org/ontology")
+dcterms = gtfs.get_namespace("http://purl.org/dc/terms/")
+foaf = get_ontology("https://xmlns.com/foaf/spec/index.rdf").load()
+dcat = get_ontology("https://www.w3.org/ns/dcat3.rdf").load()
 
 gtfs.metadata.label = [locstr("The GTFS Ontology", "en")]
 gtfs.metadata.comment = [locstr(
     "An OWL ontology describing entities, relationships, and data structures found in the General Transit Feed Specification (GTFS).", "en"
 )]
 gtfs.metadata.versionInfo = "0.1.0"
+
+with gtfs:
+    class creator(AnnotationProperty):
+        namespace = dcterms  # => http://purl.org/dc/terms/creator
+
+with gtfs:
+    gtfs.metadata.creator = ["Joseph D. Preece"]
 
 GTFS_SCHEDULE_DEF = """
 GTFS Schedule is a feed specification that defines a common format for static public transportation information. It is composed of a collection of simple files, mostly text files (.txt) that are contained in a single ZIP file.
@@ -26,24 +37,36 @@ The specification currently supports the following types of information:
     Vehicle positions - information about the vehicles including location and congestion level
 """
 
+DATASET_DEF = """
+A complete set of files defined by this specification reference. Altering the dataset creates a new version of the dataset. Datasets should be published at a public, permanent URL, including the zip file name. (e.g., https://www.agency.org/gtfs/gtfs.zip).
+"""
+
+RECORD = """
+A basic data structure comprised of a number of different field values describing a single entity (e.g. transit agency, stop, route, etc.). Represented, in a table, as a row.
+"""
+
 with gtfs:
 
     # region Classes
 
     class FeedSpecification(Thing):
-        comment = "A specification for a transit feed."
+        comment = [locstr("A specification for a transit feed.", "en")]
 
     class GTFSSchedule(FeedSpecification):
         comment = [locstr(GTFS_SCHEDULE_DEF, "en")]
+        seeAlso = ["https://gtfs.org/documentation/overview/#gtfs-schedule"]
 
     class GTFSRealtime(FeedSpecification):
         comment = [locstr(GTFS_REALTIME_DEF, "en")]
+        seeAlso = ["https://gtfs.org/documentation/overview/#gtfs-realtime"]
 
-    class Dataset(Thing):
-        comment = "A complete set of files defined by this specification reference. Altering the dataset creates a new version of the dataset. Datasets should be published at a public, permanent URL, including the zip file name. (e.g., https://www.agency.org/gtfs/gtfs.zip)."
+    class Dataset(dcat.Dataset):
+        comment = [locstr(DATASET_DEF, "en")]
+        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#term-definitions"]
 
     class Record(Thing):
-        comment = "A basic data structure comprised of a number of different field values describing a single entity (e.g. transit agency, stop, route, etc.). Represented, in a table, as a row."
+        comment = [locstr(RECORD, "en")]
+        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#term-definitions"]
 
     class Field(Thing):
         comment = "A property of an object or entity. Represented, in a table, as a column. The field exists if added in a file as a header. It may or may not have field values defined."
@@ -51,8 +74,9 @@ with gtfs:
     class FieldValue(DataProperty):
         comment = "An individual entry in a field. Represented, in a table, as a single cell."
 
-    class File(Thing):
+    class DatasetFile(Thing):
         comment = ""
+        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#dataset-files"]
 
     class ServiceDay(Thing):
         comment = "A service day is a time period used to indicate route scheduling. The exact definition of service day varies from agency to agency but service days often do not correspond with calendar days. A service day may exceed 24:00:00 if service begins on one day and ends on a following day. For example, service that runs from 08:00:00 on Friday to 02:00:00 on Saturday, could be denoted as running from 08:00:00 to 26:00:00 on a single service day."
@@ -75,36 +99,34 @@ with gtfs:
     class DatatypeDescription(Thing):
         comment = "A description provided to compliment an enumerated datatype."
 
-    class Element(Thing):
-        pass
-
     # Define the files.
 
-    class AgencyFile(File):
+    class AgencyFile(DatasetFile):
         comment = "Transit agencies with service represented in this dataset."
 
-    class StopFile(File):
+    class StopFile(DatasetFile):
         comment = "Stops where vehicles pick up or drop off riders. Also defines stations and station entrances."
 
-    class RouteFile(File):
+    class RouteFile(DatasetFile):
         comment = "Transit routes. A route is a group of trips that are displayed to riders as a single service."
 
-    class TripFile(File):
+    class TripFile(DatasetFile):
         comment = "Trips for each route. A trip is a sequence of two or more stops that occur during a specific time period."
 
-    class StopTimeFile(File):
+    class StopTimeFile(DatasetFile):
         comment = "Times that a vehicle arrives at and departs from stops for each trip."
 
-    class CalendarFile(File):
+    class CalendarFile(DatasetFile):
         comment = "Service dates specified using a weekly schedule with start and end dates."
 
-    class CalendarDateFile(File):
+    class CalendarDateFile(DatasetFile):
         comment = "Exceptions for the services defined in the calendar.txt."
 
     # Define the records.
 
     class Agency(Record):
-        pass
+        seeAlso = ["<https://gtfs.org/documentation/schedule/reference/#agencytxt>"]
+        is_a = [foaf.Agent]
 
     class Stop(Record):
         pass
@@ -138,10 +160,10 @@ with gtfs:
         )]
 
     class NonNegativeInteger(Datatype):
-        equivalent_to = ConstrainedDatatype(
+        equivalent_to = [ConstrainedDatatype(
             base_datatype=int,
             min_inclusive=0
-        )
+        )]
 
     # TODO Complete this list.
     class LanguageCode(Datatype):
@@ -187,7 +209,7 @@ with gtfs:
 
     class hasFile(ObjectProperty):
         domain = [Dataset]
-        range = [File]
+        range = [DatasetFile]
 
     # endregion
 
@@ -196,3 +218,6 @@ with gtfs:
 
 
     # endregion
+
+
+    # TODO NOTE: Any Field that has an instance, becomes a FieldValue.

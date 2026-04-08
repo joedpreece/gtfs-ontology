@@ -52,63 +52,60 @@ with gtfs:
 
     AllDisjoint([AgencyFileWithSingleAgency, AgencyFileWithMultipleAgencies])
 
-    class CEMVSupportDatatypeDescription(DatatypeDescription):
-        pass
-
-    class CEMVSupportDatatypeDescription0(CEMVSupportDatatypeDescription):
+    class CEMVSupportDatatypeDescription0(DatatypeDescription):
         comment = [locstr("No cEMV information for trips associated with this agency.", "en")]
 
-    class CEMVSupportDatatypeDescription1(CEMVSupportDatatypeDescription):
+    class CEMVSupportDatatypeDescription1(DatatypeDescription):
         comment = [locstr("Riders may use cEMVs as fare media for trips associated with this agency.", "en")]
 
-    class CEMVSupportDatatypeDescription2(CEMVSupportDatatypeDescription):
+    class CEMVSupportDatatypeDescription2(DatatypeDescription):
         comment = [locstr("cEMVs are not supported as fare media for trips associated with this agency.", "en")]
 
     # endregion
 
     # region Data Properties
 
-    class agency_id(FieldValue, FunctionalProperty):
+    class agency_id(Field, FunctionalProperty):
         comment = [locstr(AGENCY_ID_DEF, "en")]
         domain = [Agency]
         range = [str]
 
-    class agency_name(FieldValue, FunctionalProperty):
+    class agency_name(Field, FunctionalProperty):
         comment = [locstr(AGENCY_NAME_DEF, "en")]
         domain = [Agency]
         range = [str]
 
-    class agency_url(FieldValue, FunctionalProperty):
+    class agency_url(Field, FunctionalProperty):
         comment = [locstr(AGENCY_URL_DEF, "en")]
         domain = [Agency]
         range = [str]
 
-    class agency_timezone(FieldValue, FunctionalProperty):
+    class agency_timezone(Field, FunctionalProperty):
         comment = [locstr(AGENCY_TIMEZONE_DEF, "en")]
         domain = [Agency]
         range = [Timezone]
 
-    class agency_lang(FieldValue, FunctionalProperty):
+    class agency_lang(Field, FunctionalProperty):
         comment = [locstr(AGENCY_LANG_DEF, "en")]
         domain = [Agency]
         range = [LanguageCode]
 
-    class agency_phone(FieldValue, FunctionalProperty):
+    class agency_phone(Field, FunctionalProperty):
         comment = [locstr(AGENCY_PHONE_DEF, "en")]
         domain = [Agency]
         range = [str]
 
-    class agency_fare_url(FieldValue, FunctionalProperty):
+    class agency_fare_url(Field, FunctionalProperty):
         comment = [locstr(AGENCY_FARE_URL_DEF, "en")]
         domain = [Agency]
         range = [str]
 
-    class agency_email(FieldValue, FunctionalProperty):
+    class agency_email(Field, FunctionalProperty):
         comment = [locstr(AGENCY_EMAIL_DEF, "en")]
         domain = [Agency]
         range = [str]
 
-    class cemv_support(FieldValue, FunctionalProperty):
+    class cemv_support(Field, FunctionalProperty):
         comment = [locstr(CEMV_SUPPORT_DEF, "en")]
         domain = [Agency, Route]
         range = [CEMVSupportDatatype]

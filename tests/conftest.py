@@ -10,8 +10,7 @@ import pytest
 from pathlib import Path
 from owlready2 import get_ontology
 
-from config import GTFS_ONTOLOGY_RDF
-
+GTFS_ONTOLOGY_RDF = "/home/joe/Projects/research/transit/gtfs-ontology/artifacts/gtfs.rdf"
 
 def run_cmd(proc, cmd, timeout=5):
     """

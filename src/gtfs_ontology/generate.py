@@ -8,17 +8,17 @@ import gtfs_ontology.schedule.stops
 import gtfs_ontology.schedule.routes
 import gtfs_ontology.schedule.trips
 
-import gtfs_ontology.realtime.core
-import gtfs_ontology.realtime.feed_message
-import gtfs_ontology.realtime.feed_header
-import gtfs_ontology.realtime.feed_entity
-import gtfs_ontology.realtime.trip_update
-import gtfs_ontology.realtime.stop_time_event
-import gtfs_ontology.realtime.stop_time_update
-import gtfs_ontology.realtime.stop_time_properties
-import gtfs_ontology.realtime.trip_properties
-import gtfs_ontology.realtime.vehicle_position
-import gtfs_ontology.realtime.alert
+# import gtfs_ontology.realtime.core
+# import gtfs_ontology.realtime.feed_message
+# import gtfs_ontology.realtime.feed_header
+# import gtfs_ontology.realtime.feed_entity
+# import gtfs_ontology.realtime.trip_update
+# import gtfs_ontology.realtime.stop_time_event
+# import gtfs_ontology.realtime.stop_time_update
+# import gtfs_ontology.realtime.stop_time_properties
+# import gtfs_ontology.realtime.trip_properties
+# import gtfs_ontology.realtime.vehicle_position
+# import gtfs_ontology.realtime.alert
 
 def generate_ontology(
         path: Path

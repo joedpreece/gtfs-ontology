@@ -1,7 +1,8 @@
 import time
 import pytest
-from config import RULES_AGENCIES
 from conftest import run_cmd, create_triple, extract_boolean
+
+RULES_AGENCIES = "/home/joe/Projects/research/transit/gtfs-ontology/artifacts/datalog/agencies.dl"
 
 # Module-scoped so we load the .dl only once per this file
 @pytest.fixture(scope="module")
@@ -225,6 +226,8 @@ def test_should_flag_agency_missing_id_in_multi_agency_file(
         nt_path, _ = nt_writer(gtfs_onto)
 
     import_into_rdfox(nt_path)
+
+    time.sleep(60)
 
     assert extract_boolean(
         rdfox_ask(
