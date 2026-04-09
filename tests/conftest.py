@@ -112,7 +112,7 @@ def rdfox_proc():
     run_cmd(proc, "endpoint start")
     run_cmd(proc, "dstore create test")
     run_cmd(proc, "active test")
-    run_cmd(proc, "prefix gtfs: <http://www.transit.ac.uk/ontologies/gtfs#>")
+    run_cmd(proc, "prefix gtfs: <https://gtfs.org/ontology#>")
     run_cmd(proc, "set query.answer-format application/sparql-results+json")
 
     yield proc

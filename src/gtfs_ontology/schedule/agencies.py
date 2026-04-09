@@ -2,6 +2,8 @@ from gtfs_ontology.schedule.core import *
 
 # region Definitions
 
+AGENCY_DEFINITIONS_URL = "https://gtfs.org/documentation/schedule/reference/#agencytxt"
+
 AGENCY_ID_DEF = """
 Identifies a transit brand which is often synonymous with a transit agency. In some cases, a single agency operates multiple separate services and agencies and brands are distinct. This document uses the term “agency” in place of “brand”. A dataset may contain data from multiple agencies.
 """
@@ -69,46 +71,55 @@ with gtfs:
         comment = [locstr(AGENCY_ID_DEF, "en")]
         domain = [Agency]
         range = [str]
+        seeAlso = [AGENCY_DEFINITIONS_URL]
 
     class agency_name(Field, FunctionalProperty):
         comment = [locstr(AGENCY_NAME_DEF, "en")]
         domain = [Agency]
         range = [str]
+        seeAlso = [AGENCY_DEFINITIONS_URL]
 
     class agency_url(Field, FunctionalProperty):
         comment = [locstr(AGENCY_URL_DEF, "en")]
         domain = [Agency]
         range = [str]
+        seeAlso = [AGENCY_DEFINITIONS_URL]
 
     class agency_timezone(Field, FunctionalProperty):
         comment = [locstr(AGENCY_TIMEZONE_DEF, "en")]
         domain = [Agency]
         range = [Timezone]
+        seeAlso = [AGENCY_DEFINITIONS_URL]
 
     class agency_lang(Field, FunctionalProperty):
         comment = [locstr(AGENCY_LANG_DEF, "en")]
         domain = [Agency]
         range = [LanguageCode]
+        seeAlso = [AGENCY_DEFINITIONS_URL]
 
     class agency_phone(Field, FunctionalProperty):
         comment = [locstr(AGENCY_PHONE_DEF, "en")]
         domain = [Agency]
         range = [str]
+        seeAlso = [AGENCY_DEFINITIONS_URL]
 
     class agency_fare_url(Field, FunctionalProperty):
         comment = [locstr(AGENCY_FARE_URL_DEF, "en")]
         domain = [Agency]
         range = [str]
+        seeAlso = [AGENCY_DEFINITIONS_URL]
 
     class agency_email(Field, FunctionalProperty):
         comment = [locstr(AGENCY_EMAIL_DEF, "en")]
         domain = [Agency]
         range = [str]
+        seeAlso = [AGENCY_DEFINITIONS_URL]
 
     class cemv_support(Field, FunctionalProperty):
         comment = [locstr(CEMV_SUPPORT_DEF, "en")]
         domain = [Agency, Route]
         range = [CEMVSupportDatatype]
+        seeAlso = [AGENCY_DEFINITIONS_URL]
 
     # region OWLDL Rules
 

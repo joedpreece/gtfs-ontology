@@ -1,6 +1,6 @@
 [gtfs:Violation, rdf:type, owl:Class] .
 
-# Multiple agency file if it has more than one agency.
+# An AgencyFile is an AgencyFileWithMultipleAgencies if it has more than one Agency.
 [?f, rdf:type, gtfs:AgencyFileWithMultipleAgencies] :-
     [?f, rdf:type, gtfs:AgencyFile] ,
     [?f, gtfs:hasAgency, ?a1],
@@ -21,12 +21,27 @@
     NOT EXISTS ?x IN ([ ?f, rdf:type, gtfs:AgencyFileWithSingleAgency ]) ,
     NOT EXISTS ?y IN ([ ?f, rdf:type, gtfs:AgencyFileWithMultipleAgencies ]) .
 
-# Check for the required fields.
+# Raise a violation if two agencies have the same id.
+[?a1, rdf:type, gtfs:Violation],
+[?a2, rdf:type, gtfs:Violation] :-
+    [?a1, gtfs:agency_id, ?i] ,
+    [?a2, gtfs:agency_id, ?i] ,
+    FILTER(?a1 != ?a2).
+
+# Check for the required name field.
 [?a, rdf:type, gtfs:Violation] :-
     [?a, rdf:type, gtfs:Agency] ,
-    NOT EXISTS ?n IN ([?a, gtfs:agency_name, ?n]),
-    NOT EXISTS ?u IN ([?a, gtfs:agency_url, ?u]),
-    NOT EXISTS ?t IN ([?a, gtfs:agency_timezone, ?t]).
+    NOT EXISTS ?n IN ([?a, gtfs:agency_name, ?n]) .
+
+# Check for the required URL field.
+[?a, rdf:type, gtfs:Violation] :-
+    [?a, rdf:type, gtfs:Agency] ,
+    NOT EXISTS ?u IN ([?a, gtfs:agency_url, ?u]) .
+
+# Check for the required timezone field.
+[?a, rdf:type, gtfs:Violation] :-
+    [?a, rdf:type, gtfs:Agency] ,
+    NOT EXISTS ?t IN ([?a, gtfs:agency_timezone, ?t]) .
 
 # Check if agencies within a multiple agency file have unique ids.
 [?a, rdf:type, gtfs:Violation] :-
@@ -34,6 +49,7 @@
     [?f, gtfs:hasAgency, ?a],
     NOT EXISTS ?id IN ([?a, gtfs:agency_id, ?id]).
 
+# Assign the appropriate description to the CEMV support fields.
 [?a, gtfs:cemv_support_description, gtfs:CEMVSupportDatatypeDescriptionAgency0] :-
     [?a, rdf:type, gtfs:Agency],
     [?a, gtfs:cemv_support, 0].
@@ -45,3 +61,8 @@
 [?a, gtfs:cemv_support_description, gtfs:CEMVSupportDatatypeDescriptionAgency2] :-
     [?a, rdf:type, gtfs:Agency],
     [?a, gtfs:cemv_support, 2].
+
+# Raise a violation if the CEMV support field is not 0, 1, or 2.
+[?a, rdf:type, gtfs:Violation] :-
+    [?a, gtfs:cemv_support, ?v],
+    FILTER(?v != 0 && ?v != 1 && ?v != 2).

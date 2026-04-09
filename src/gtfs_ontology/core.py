@@ -1,7 +1,7 @@
 #%%
 from owlready2 import *
 
-gtfs = get_ontology("https://www.gtfs.org/ontology")
+gtfs = get_ontology("https://gtfs.org/ontology")
 dcterms = gtfs.get_namespace("http://purl.org/dc/terms/")
 foaf = get_ontology("https://xmlns.com/foaf/spec/index.rdf").load()
 dcat = get_ontology("https://www.w3.org/ns/dcat3.rdf").load()
@@ -68,7 +68,7 @@ with gtfs:
         comment = [locstr(RECORD, "en")]
         seeAlso = ["https://gtfs.org/documentation/schedule/reference/#term-definitions"]
 
-    class Field(Thing):
+    class Field(DataProperty):
         comment = "A property of an object or entity. Represented, in a table, as a column. The field exists if added in a file as a header. It may or may not have field values defined."
 
     class FieldValue(DataProperty):
