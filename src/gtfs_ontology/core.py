@@ -1,4 +1,4 @@
-#%%
+# Imports
 from owlready2 import *
 
 # Namespaces and external ontologies
@@ -30,6 +30,9 @@ with gtfs:
         namespace = schema
 
     class url(Datatype):
+        namespace = schema
+
+    class BusStop(Thing):
         namespace = schema
 
 # Define the metadata for the ontology
