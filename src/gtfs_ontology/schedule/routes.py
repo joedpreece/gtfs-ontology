@@ -151,79 +151,69 @@ with gtfs:
 
     # region Classes
 
-    class RouteTypeDatatypeDescription(Thing):
-        pass
-
-
-    class RouteTypeDatatypeDescription0(RouteTypeDatatypeDescription):
+    class RouteTypeDatatypeDescription0(DatatypeDescription):
         comment = "Tram, Streetcar, Light rail. Any light rail or street level system within a metropolitan area."
 
 
-    class RouteTypeDatatypeDescription1(RouteTypeDatatypeDescription):
+    class RouteTypeDatatypeDescription1(DatatypeDescription):
         comment = "Subway, Metro. Any underground rail system within a metropolitan area."
 
 
-    class RouteTypeDatatypeDescription2(RouteTypeDatatypeDescription):
+    class RouteTypeDatatypeDescription2(DatatypeDescription):
         comment = "Rail. Used for intercity or long-distance travel."
 
 
-    class RouteTypeDatatypeDescription3(RouteTypeDatatypeDescription):
+    class RouteTypeDatatypeDescription3(DatatypeDescription):
         comment = "Bus. Used for short- and long-distance bus routes."
 
 
-    class RouteTypeDatatypeDescription4(RouteTypeDatatypeDescription):
+    class RouteTypeDatatypeDescription4(DatatypeDescription):
         comment = "Ferry. Used for short- and long-distance boat service."
 
 
-    class RouteTypeDatatypeDescription5(RouteTypeDatatypeDescription):
+    class RouteTypeDatatypeDescription5(DatatypeDescription):
         comment = "Cable tram. Used for street-level rail cars where the cable runs beneath the vehicle (e.g., cable car in San Francisco)."
 
 
-    class RouteTypeDatatypeDescription6(RouteTypeDatatypeDescription):
+    class RouteTypeDatatypeDescription6(DatatypeDescription):
         comment = "Aerial lift, suspended cable car (e.g., gondola lift, aerial tramway). Cable transport where cabins, cars, gondolas or open chairs are suspended by means of one or more cables."
 
 
-    class RouteTypeDatatypeDescription7(RouteTypeDatatypeDescription):
+    class RouteTypeDatatypeDescription7(DatatypeDescription):
         comment = "Funicular. Any rail system designed for steep inclines."
 
 
-    class RouteTypeDatatypeDescription11(RouteTypeDatatypeDescription):
+    class RouteTypeDatatypeDescription11(DatatypeDescription):
         comment = "Trolleybus. Electric buses that draw power from overhead wires using poles."
 
 
-    class RouteTypeDatatypeDescription12(RouteTypeDatatypeDescription):
+    class RouteTypeDatatypeDescription12(DatatypeDescription):
         comment = "Monorail. Railway in which the track consists of a single rail or a beam."
 
 
-    class ContinuousPickupDatatypeDescription(Thing):
-        pass
-
-    class ContinuousPickupDatatypeDescription0(ContinuousPickupDatatypeDescription):
+    class ContinuousPickupDatatypeDescription0(DatatypeDescription):
         comment = "Continuous stopping pickup."
 
-    class ContinuousPickupDatatypeDescription1(ContinuousPickupDatatypeDescription):
+    class ContinuousPickupDatatypeDescription1(DatatypeDescription):
         comment = "No continuous stopping pickup."
 
-    class ContinuousPickupDatatypeDescription2(ContinuousPickupDatatypeDescription):
+    class ContinuousPickupDatatypeDescription2(DatatypeDescription):
         comment = "Must phone agency to arrange continuous stopping pickup."
 
-    class ContinuousPickupDatatypeDescription3(ContinuousPickupDatatypeDescription):
+    class ContinuousPickupDatatypeDescription3(DatatypeDescription):
         comment = "Must coordinate with driver to arrange continuous stopping pickup."
 
 
-    class ContinuousDropOffDatatypeDescription(Thing):
-        pass
-
-    class ContinuousDropOffDatatypeDescription0(ContinuousDropOffDatatypeDescription):
+    class ContinuousDropOffDatatypeDescription0(DatatypeDescription):
         comment = "Continuous stopping drop off."
 
-    class ContinuousDropOffDatatypeDescription1(ContinuousDropOffDatatypeDescription):
+    class ContinuousDropOffDatatypeDescription1(DatatypeDescription):
         comment = "No continuous stopping drop off."
 
-    class ContinuousDropOffDatatypeDescription2(ContinuousDropOffDatatypeDescription):
+    class ContinuousDropOffDatatypeDescription2(DatatypeDescription):
         comment = "Must phone agency to arrange continuous stopping drop off."
 
-    class ContinuousDropOffDatatypeDescription3(ContinuousDropOffDatatypeDescription):
+    class ContinuousDropOffDatatypeDescription3(DatatypeDescription):
         comment = "Must coordinate with driver to arrange continuous stopping drop off. "
 
     CEMVSupportDatatypeDescription0.comment.append(
@@ -239,7 +229,7 @@ with gtfs:
 
     class route_id(FieldValue, FunctionalProperty):
         comment = [locstr(ROUTE_ID_DEF, "en")]
-        domain = [Route, Trip]
+        domain = [Route]
         range = [str]
 
     agency_id.domain.append(Route)
