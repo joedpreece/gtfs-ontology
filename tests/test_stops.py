@@ -1,28 +1,90 @@
 import time
 import pytest
-from config import RULES_STOPS
 from conftest import run_cmd, create_triple, extract_boolean
 
-# Module-scoped so we load the .dl only once per this file
+RULES_STOPS = "/home/joe/Projects/research/transit/gtfs-ontology/artifacts/datalog/stops.dl"
+
 @pytest.fixture(scope="module")
 def stops_rules(rdfox_proc):
+    """
+    Imports the datalog rules for validating agencies into RDFox.
+    """
 
     run_cmd(rdfox_proc, f'import "{str(RULES_STOPS)}"')
 
-    return True
+def create_stop(
+        gtfs,
+        entity_name: str,
+        stop_id: str = None,
+        stop_code: str = None,
+        stop_name: str = None,
+        tts_stop_name: str = None,
+        stop_desc: str = None,
+        stop_lat: float = None,
+        stop_lon: float = None,
+        zone_id: str = None,
+        stop_url: str = None,
+        location_type: int = None,
+        parent_station: str = None,
+        stop_timezone: str = None,
+        wheelchair_boarding: int = None,
+        level_id: str = None,
+        platform_code: str = None,
+        stop_access: str = None,
+):
+
+    with gtfs:
+
+        stop = gtfs.Stop(entity_name)
+
+        if stop_id is not None:
+            create_triple(stop, gtfs.stop_id, stop_id)
+        if stop_code is not None:
+            create_triple(stop, gtfs.stop_code, stop_code)
+        if stop_name is not None:
+            create_triple(stop, gtfs.stop_name, stop_name)
+        if tts_stop_name is not None:
+            create_triple(stop, gtfs.tts_stop_name, tts_stop_name)
+        if stop_desc is not None:
+            create_triple(stop, gtfs.stop_desc, stop_desc)
+        if stop_lat is not None:
+            create_triple(stop, gtfs.stop_lat, stop_lat)
+        if stop_lon is not None:
+            create_triple(stop, gtfs.stop_lon, stop_lon)
+        if zone_id is not None:
+            create_triple(stop, gtfs.zone_id, zone_id)
+        if stop_url is not None:
+            create_triple(stop, gtfs.stop_url, stop_url)
+        if location_type is not None:
+            create_triple(stop, gtfs.location_type, location_type)
+        if parent_station is not None:
+            create_triple(stop, gtfs.parent_station, parent_station)
+        if stop_timezone is not None:
+            create_triple(stop, gtfs.stop_timezone, stop_timezone)
+        if wheelchair_boarding is not None:
+            create_triple(stop, gtfs.wheelchair_boarding, wheelchair_boarding)
+        if level_id is not None:
+            create_triple(stop, gtfs.level_id, level_id)
+        if platform_code is not None:
+            create_triple(stop, gtfs.platform_code, platform_code)
+        if stop_access is not None:
+            create_triple(stop, gtfs.stop_access, stop_access)
+
+        return stop
 
 
 def test_stop_without_stop_id_is_violation(
     clear_datastore, gtfs_onto, nt_writer, import_into_rdfox, rdfox_ask, stops_rules
 ):
     with gtfs_onto:
-        s = gtfs_onto.Stop("StopNoID")
+        # Create a stop without stop_id
+        stop = create_stop(gtfs_onto, "Stop1")
         # No stop_id assigned
         nt_path, _ = nt_writer(gtfs_onto)
     import_into_rdfox(nt_path)
 
     assert extract_boolean(
-        rdfox_ask("{ gtfs:StopNoID rdf:type gtfs:Violation }")
+        rdfox_ask("{ gtfs:Stop1 rdf:type gtfs:Violation }")
     ) is True
 
 
@@ -30,15 +92,13 @@ def test_stop_with_stop_id_is_not_violation(
     clear_datastore, gtfs_onto, nt_writer, import_into_rdfox, rdfox_ask, stops_rules
 ):
     with gtfs_onto:
-        s = gtfs_onto.Stop("StopWithID")
-        create_triple(s, gtfs_onto.stop_id, "S123")
+        stop = create_stop(gtfs_onto, "Stop1", stop_id="12345")
         nt_path, _ = nt_writer(gtfs_onto)
     import_into_rdfox(nt_path)
 
     assert extract_boolean(
-        rdfox_ask("{ gtfs:StopWithID rdf:type gtfs:Violation }")
+        rdfox_ask("{ gtfs:Stop1 rdf:type gtfs:Violation }")
     ) is False
-
 
 
 def test_location_type_0_yields_stoplocation_when_not_child(
@@ -47,7 +107,6 @@ def test_location_type_0_yields_stoplocation_when_not_child(
     with gtfs_onto:
         s = gtfs_onto.Stop("S0")
         create_triple(s, gtfs_onto.location_type, 0)
-        # no parent_station => NOT a ChildStop
         nt_path, _ = nt_writer(gtfs_onto)
     import_into_rdfox(nt_path)
 
@@ -60,10 +119,8 @@ def test_location_type_0_yields_platform_when_childstop(
     clear_datastore, gtfs_onto, nt_writer, import_into_rdfox, rdfox_ask, stops_rules
 ):
     with gtfs_onto:
-        child = gtfs_onto.Stop("Child0")
-        parent = gtfs_onto.Stop("StationP")
-        create_triple(child, gtfs_onto.location_type, 0)
-        create_triple(parent, gtfs_onto.location_type, 1)  # Station
+        child = create_stop(gtfs_onto, "Child0", location_type=0)
+        parent = create_stop(gtfs_onto, "Parent1", location_type=1)
         create_triple(child, gtfs_onto.parent_station, parent)
         nt_path, _ = nt_writer(gtfs_onto)
     import_into_rdfox(nt_path)
@@ -72,9 +129,7 @@ def test_location_type_0_yields_platform_when_childstop(
     assert extract_boolean(rdfox_ask("{ gtfs:Child0 rdf:type gtfs:Platform }")) is True
     assert extract_boolean(rdfox_ask("{ gtfs:Child0 rdf:type gtfs:StopLocation }")) is False
     # Parent typed Station
-    assert extract_boolean(rdfox_ask("{ gtfs:StationP rdf:type gtfs:Station }")) is True
-
-
+    assert extract_boolean(rdfox_ask("{ gtfs:Parent1 rdf:type gtfs:Station }")) is True
 
 
 @pytest.mark.parametrize(

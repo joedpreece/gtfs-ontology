@@ -1,9 +1,9 @@
 from gtfs_ontology.core import *
 
-from gtfs_ontology.schedule.files.generate import *
-from gtfs_ontology.schedule.records.generate import *
 from gtfs_ontology.schedule.term_definitions.generate import *
 from gtfs_ontology.schedule.field_types.generate import *
+from gtfs_ontology.schedule.files.generate import *
+from gtfs_ontology.schedule.records.generate import *
 
 with gtfs:
 

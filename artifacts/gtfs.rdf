@@ -283,8 +283,8 @@ This field is independent of all other fare-related files and may be used separa
 <owl:DatatypeProperty rdf:about="#stop_id">
   <rdfs:subPropertyOf rdf:resource="#id"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#StopTime"/>
   <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:domain rdf:resource="#StopTime"/>
   <rdfs:comment xml:lang="en">
 Identifies a location: stop/platform, station, entrance/exit, generic node or boarding area (see location_type).
 
@@ -487,7 +487,7 @@ Conditionally Forbidden:
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#route_id">
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:subPropertyOf rdf:resource="#id"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Route"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -497,37 +497,34 @@ Identifies a route.
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#route_short_name">
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:subPropertyOf rdf:resource="#text"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   <rdfs:comment xml:lang="en">
 Short name of a route. Often a short, abstract identifier (e.g., "32", "100X", "Green") that riders use to identify a route. Both route_short_name and route_long_name may be defined.
 </rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#route_long_name">
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:subPropertyOf rdf:resource="#text"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   <rdfs:comment xml:lang="en">
 Full name of a route. This name is generally more descriptive than the route_short_name and often includes the route's destination or stop. Both route_short_name and route_long_name may be defined.
 </rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#route_desc">
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:subPropertyOf rdf:resource="#text"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   <rdfs:comment xml:lang="en">
 Description of a route that provides useful, quality information. Should not be a duplicate of route_short_name or route_long_name. 
 </rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#route_type">
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:subPropertyOf rdf:resource="#enum"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Route"/>
   <rdfs:range rdf:resource="#RouteTypeDatatype"/>
@@ -548,37 +545,34 @@ Indicates the type of transportation used on a route. Valid options are:
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#route_url">
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:subPropertyOf rdf:resource="#url_field"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   <rdfs:comment xml:lang="en">
 URL of a web page about the particular route. Should be different from the agency.agency_url value.
 </rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#route_color">
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:subPropertyOf rdf:resource="#color"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:range rdf:resource="#Color"/>
   <rdfs:comment xml:lang="en">
 Route color designation that matches public facing material. Defaults to white (FFFFFF) when omitted or left empty. The color difference between route_color and route_text_color should provide sufficient contrast when viewed on a black and white screen.
 </rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#route_text_color">
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:subPropertyOf rdf:resource="#color"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:range rdf:resource="#Color"/>
   <rdfs:comment xml:lang="en">
 Legible color to use for text drawn against a background of route_color. Defaults to black (000000) when omitted or left empty. The color difference between route_color and route_text_color should provide sufficient contrast when viewed on a black and white screen.
 </rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#route_sort_order">
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:subPropertyOf rdf:resource="#num_int"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Route"/>
   <rdfs:range rdf:resource="#NonNegativeInteger"/>
@@ -588,7 +582,7 @@ Orders the routes in a way which is ideal for presentation to customers. Routes 
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#continuous_pickup">
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:subPropertyOf rdf:resource="#enum"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Route"/>
   <rdfs:domain rdf:resource="#StopTime"/>
@@ -606,7 +600,7 @@ Values for routes.continuous_pickup may be overridden by defining values in stop
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#continuous_drop_off">
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:subPropertyOf rdf:resource="#enum"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Route"/>
   <rdfs:domain rdf:resource="#StopTime"/>
@@ -624,10 +618,9 @@ Values for routes.continuous_drop_off may be overridden by defining values in st
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#network_id">
-  <rdfs:subPropertyOf rdf:resource="#FieldValue"/>
+  <rdfs:subPropertyOf rdf:resource="#id"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   <rdfs:comment xml:lang="en">
 Identifies a group of routes. Multiple rows in routes.txt may have the same network_id.
 </rdfs:comment>

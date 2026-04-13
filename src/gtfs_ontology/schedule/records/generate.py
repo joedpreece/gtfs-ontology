@@ -1,5 +1,4 @@
-from gtfs_ontology.core import *
-from gtfs_ontology.schedule.term_definitions.generate import *
+from gtfs_ontology.schedule.core import *
 
 with gtfs:
 
