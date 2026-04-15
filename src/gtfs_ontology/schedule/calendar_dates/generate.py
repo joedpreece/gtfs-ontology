@@ -1,4 +1,5 @@
 from gtfs_ontology.schedule.core import *
+from gtfs_ontology.schedule.agencies.definitions import *
 
 with gtfs:
 

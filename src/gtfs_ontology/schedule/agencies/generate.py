@@ -1,6 +1,6 @@
 from gtfs_ontology.schedule.core import *
 from gtfs_ontology.schedule.agencies.definitions import *
-
+from gtfs_ontology.schedule.files.generate import AgencyFile
 
 with gtfs:
 
@@ -55,55 +55,55 @@ with gtfs:
 
     AGENCY_DEFINITIONS_URL = "https://gtfs.org/documentation/schedule/reference/#agencytxt"
 
-    class agency_id(id, FunctionalProperty):
+    class agency_id(id):
         comment = [locstr(AGENCY_ID_DEF, "en")]
         domain = [Agency]
         seeAlso = [AGENCY_DEFINITIONS_URL]
 
 
-    class agency_name(text, FunctionalProperty):
+    class agency_name(text):
         comment = [locstr(AGENCY_NAME_DEF, "en")]
         domain = [Agency]
         seeAlso = [AGENCY_DEFINITIONS_URL]
 
 
-    class agency_url(url_field, FunctionalProperty):
+    class agency_url(url_field):
         comment = [locstr(AGENCY_URL_DEF, "en")]
         domain = [Agency]
         seeAlso = [AGENCY_DEFINITIONS_URL]
 
 
-    class agency_timezone(timezone, FunctionalProperty):
+    class agency_timezone(timezone):
         comment = [locstr(AGENCY_TIMEZONE_DEF, "en")]
         domain = [Agency]
         seeAlso = [AGENCY_DEFINITIONS_URL]
 
 
-    class agency_lang(language_code, FunctionalProperty):
+    class agency_lang(language_code):
         comment = [locstr(AGENCY_LANG_DEF, "en")]
         domain = [Agency]
         seeAlso = [AGENCY_DEFINITIONS_URL]
 
 
-    class agency_phone(phone_number, FunctionalProperty):
+    class agency_phone(phone_number):
         comment = [locstr(AGENCY_PHONE_DEF, "en")]
         domain = [Agency]
         seeAlso = [AGENCY_DEFINITIONS_URL]
 
 
-    class agency_fare_url(url_field, FunctionalProperty):
+    class agency_fare_url(url_field):
         comment = [locstr(AGENCY_FARE_URL_DEF, "en")]
         domain = [Agency]
         seeAlso = [AGENCY_DEFINITIONS_URL]
 
 
-    class agency_email(email_field, FunctionalProperty):
+    class agency_email(email_field):
         comment = [locstr(AGENCY_EMAIL_DEF, "en")]
         domain = [Agency]
         seeAlso = [AGENCY_DEFINITIONS_URL]
 
 
-    class cemv_support(enum, FunctionalProperty):
+    class cemv_support(enum):
         comment = [locstr(CEMV_SUPPORT_DEF, "en")]
         domain = [Agency]
         range = [CEMVSupportDatatype]

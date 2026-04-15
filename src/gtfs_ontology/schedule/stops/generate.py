@@ -1,6 +1,8 @@
 from gtfs_ontology.schedule.core import *
 from gtfs_ontology.schedule.stops.definitions import *
 
+STOP_URL = "https://gtfs.org/documentation/schedule/reference/#stopstxt"
+
 with gtfs:
 
 # region Enumerated datatypes
@@ -94,72 +96,88 @@ with gtfs:
 
 # region Fields
 
-    class stop_id(id, FunctionalProperty):
+    class stop_id(id):
         comment = [locstr(STOP_ID_DEF, "en")]
-        domain = [Stop, StopTime]
+        domain = [Stop]
+        seeAlso = [STOP_URL]
 
-    class stop_code(text, FunctionalProperty):
+    class stop_code(text):
         comment = [locstr(STOP_NAME_DEF, "en")]
         domain = [Stop]
+        seeAlso = [STOP_URL]
 
-    class stop_name(text, FunctionalProperty):
+    class stop_name(text):
         comment = [locstr(STOP_ACCESS_DEF, "en")]
         domain = [Stop]
+        seeAlso = [STOP_URL]
 
-    class tts_stop_name(text, FunctionalProperty):
+    class tts_stop_name(text):
         comment = [locstr(TTS_STOP_NAME_DEF, "en")]
         domain = [Stop]
+        seeAlso = [STOP_URL]
 
-    class stop_desc(text, FunctionalProperty):
+    class stop_desc(text):
         comment = [locstr(STOP_DESC_DEF, "en")]
         domain = [Stop]
+        seeAlso = [STOP_URL]
 
-    class stop_lat(latitude, FunctionalProperty):
+    class stop_lat(latitude):
         comment = [locstr(STOP_LAT_DEF, "en")]
         domain = [Stop]
+        seeAlso = [STOP_URL]
 
-    class stop_lon(longitude, FunctionalProperty):
+    class stop_lon(longitude):
         comment = [locstr(STOP_LON_DEF, "en")]
         domain = [Stop]
+        seeAlso = [STOP_URL]
 
-    class zone_id(id, FunctionalProperty):
+    class zone_id(id):
         comment = [locstr(ZONE_ID_DEF, "en")]
         domain = [Stop]
+        seeAlso = [STOP_URL]
 
-    class stop_url(url_field, FunctionalProperty):
+    class stop_url(url_field):
         comment = [locstr(STOP_URL_DEF, "en")]
         domain = [Stop]
+        seeAlso = [STOP_URL]
 
-    class location_type(enum, FunctionalProperty):
+    class location_type(enum):
         comment = [locstr(LOCATION_TYPE_DEF, "en")]
         domain = [Stop]
         range = [LocationTypeDatatype]
+        seeAlso = [STOP_URL]
 
-    class parent_station(id, FunctionalProperty):
+    class parent_station(id):
         comment = [locstr(PARENT_STATION_DEF, "en")]
         domain = [Stop]
+        seeAlso = [STOP_URL]
 
-    class stop_timezone(timezone, FunctionalProperty):
+    class stop_timezone(timezone):
         comment = [locstr(STOP_TIMEZONE_DEF, "en")]
         domain = [Stop]
+        seeAlso = [STOP_URL]
 
-    class wheelchair_boarding(enum, FunctionalProperty):
+    class wheelchair_boarding(enum):
         comment = [locstr(WHEELCHAIR_BOARDING_DEF, "en")]
         domain = [Stop]
         range = [WheelchairBoardingType]
+        seeAlso = [STOP_URL]
 
-    class level_id(Field, FunctionalProperty):
+    class level_id(Field):
         comment = [locstr(LEVEL_ID_DEF, "en")]
         domain = [Stop]
         range = [Level]
+        seeAlso = [STOP_URL]
 
-    class platform_code(text, FunctionalProperty):
+    class platform_code(text):
         comment = [locstr(PLATFORM_CODE_DEF, "en")]
         domain = [Stop]
+        seeAlso = [STOP_URL]
 
-    class stop_access(enum, FunctionalProperty):
+    class stop_access(enum):
         comment = [locstr(STOP_ACCESS_DEF, "en")]
         domain = [Stop]
         range = [StopAccessType]
+        seeAlso = [STOP_URL]
 
 # endregion

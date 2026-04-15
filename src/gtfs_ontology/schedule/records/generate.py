@@ -1,34 +1,35 @@
 from gtfs_ontology.schedule.core import *
+from gtfs_ontology.schedule.term_definitions.generate import Record
 
 with gtfs:
 
     class Agency(Record, foaf.Agent):
-        seeAlso = ["<https://gtfs.org/documentation/schedule/reference/#agencytxt>"]
+        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#agencytxt"]
 
 
     class Stop(Record, geo.SpatialThing, schema.BusStop):
-        pass
+        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#stopstxt"]
 
 
     class Route(Record):
-        pass
+        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#routestxt"]
 
 
     class Trip(Record):
-        pass
+        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#tripstxt"]
 
 
     class StopTime(Record):
-        pass
+        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#stop_timestxt"]
 
 
     class Calendar(Record):
-        pass
+        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#calendartxt"]
 
 
     class CalendarDate(Record):
-        pass
+        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#calendar_datestxt"]
 
 
     class Level(Record):
-        pass
+        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#agencytxt"]

@@ -41,3 +41,7 @@ Purchassable fare products that can be used to pay for or validate travel.
 EFFECTIVE_FARE_LEG_DEF = """
 A sub-journey of two or more legs that should be treated as a single leg for matching rules in fare_leg_rules.txt for the purposes of fare calculation.
 """
+
+DATESET_FILE = """
+A file that is part of a dataset, that has records and fields.
+"""

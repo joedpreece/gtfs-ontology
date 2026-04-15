@@ -1,31 +1,28 @@
 from gtfs_ontology.core import *
 from gtfs_ontology.schedule.term_definitions.generate import Field
 from gtfs_ontology.schedule.field_types.definitions import *
+from gtfs_ontology.schedule.field_types.currency_codes import *
+from gtfs_ontology.schedule.field_types.timezones import *
 
 with gtfs:
 
-    class Color(Datatype):
+    class color_datatype(Datatype):
         equivalent_to = [ConstrainedDatatype(
             base_datatype=str,
             pattern=r"^[0-9A-F]{6}$"  # uppercase only
         )]
 
-    # TODO Complete this list.
-    class LanguageCode(Datatype):
+    class currency_code_datatype(Datatype):
         equivalent_to = [
             OneOf(
-                [
-                    "EN",
-                ]
+                currency_codes
             )
         ]
 
-    class Timezone(Datatype):
+    class timezone_datatype(Datatype):
         equivalent_to = [
             OneOf(
-                [
-                    "Europe/London",
-                ]
+                timezone_ids
             )
         ]
 
@@ -33,16 +30,22 @@ with gtfs:
         pass
 
     class color(Field):
-        range = [Color]
+        comment = [locstr(COLOR_DEF, "en")]
+        range = [color_datatype]
         seeAlso = ["https://htmlcolorcodes.com/"]
 
     class currency_code(Field):
-        range = [str]
+        comment = [locstr(CURRENCY_CODE_DEF, "en")]
+        range = [currency_code_datatype]
+        seeAlso = ["https://en.wikipedia.org/wiki/ISO_4217#Active_codes"]
 
     class currency_amount(Field):
+        comment = [locstr(CURRENCY_AMOUNT_DEF, "en")]
         range = [float]
+        seeAlso = ["https://en.wikipedia.org/wiki/ISO_4217#Active_codes"]
 
     class date(Field):
+        comment = [locstr(DATE_DEF, "en")]
         range = [datetime.date]
 
     class email_field(Field, email):
@@ -50,40 +53,64 @@ with gtfs:
         range = [str]
 
     class enum(Field):
+        comment = [locstr(ENUM_DEF, "en")]
         range = [enumerated_datatype]
 
     class id(Field):
+        comment = [locstr(ID_DEF, "en")]
         range = [str]
 
     class language_code(Field):
-        range = [LanguageCode]
+        comment = [locstr(LANGUAGE_CODE_DEF, "en")]
+        range = [str]
+        seeAlso = [
+            "http://www.rfc-editor.org/rfc/bcp/bcp47.txt",
+            "https://www.w3.org/International/articles/language-tags/"
+        ]
 
     class latitude(Field):
+        comment = [locstr(LATITUDE_DEF, "en")]
         range = [geo.latitude]
 
     class longitude(Field):
+        comment = [locstr(LONGITUDE_DEF, "en")]
         range = [geo.longitude]
 
     class num_float(Field):
+        name = "float"
+        comment = [locstr(NUM_FLOAT_DEF, "en")]
         range = [float]
 
     class num_int(Field):
+        name = "integer"
+        comment = [locstr(NUM_INT_DEF, "en")]
         range = [int]
 
     class phone_number(Field):
+        comment = [locstr(PHONE_NUMBER_DEF, "en")]
         range = [str]
 
     class time(Field):
+        comment = [locstr(TIME_DEF, "en")]
         range = [datetime.time]
 
     class local_time(Field):
+        comment = [locstr(LOCAL_TIME_DEF, "en")]
         range = [datetime.time]
 
     class text(Field):
+        comment = [locstr(TEXT_DEF, "en")]
         range = [str]
 
     class timezone(Field):
-        range = [Timezone]
+        comment = [locstr(TIMEZONE_DEF, "en")]
+        range = [timezone_datatype]
+        seeAlso = [
+            "https://www.iana.org/time-zones",
+            "https://en.wikipedia.org/wiki/List_of_tz_zones",
+        ]
 
     class url_field(Field):
+        comment = [locstr(URL_DEF, "en")]
         range = [schema.url]
+        seeAlso = ["http://www.w3.org/Addressing/URL/4_URI_Recommentations.html"]

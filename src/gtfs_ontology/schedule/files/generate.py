@@ -1,26 +1,35 @@
-from gtfs_ontology.schedule.core import *
+from gtfs_ontology.core import *
 from gtfs_ontology.schedule.term_definitions.generate import DatasetFile
+from gtfs_ontology.schedule.files.definitions import *
 
+DATASET_FILES_URL = "https://gtfs.org/documentation/schedule/reference/#dataset-files"
 
 with gtfs:
 
     class AgencyFile(DatasetFile):
-        comment = "Transit agencies with service represented in this dataset."
+        comment = [locstr(AGENCY_DEF), "en"]
+        seeAlso = [DATASET_FILES_URL]
 
     class StopFile(DatasetFile):
-        comment = "Stops where vehicles pick up or drop off riders. Also defines stations and station entrances."
+        comment = [locstr(STOPS_DEF), "en"]
+        seeAlso = [DATASET_FILES_URL]
 
     class RouteFile(DatasetFile):
-        comment = "Transit routes. A route is a group of trips that are displayed to riders as a single service."
+        comment = [locstr(ROUTES_DEF), "en"]
+        seeAlso = [DATASET_FILES_URL]
 
     class TripFile(DatasetFile):
-        comment = "Trips for each route. A trip is a sequence of two or more stops that occur during a specific time period."
+        comment = [locstr(TRIPS_DEF), "en"]
+        seeAlso = [DATASET_FILES_URL]
 
     class StopTimeFile(DatasetFile):
-        comment = "Times that a vehicle arrives at and departs from stops for each trip."
+        comment = [locstr(STOP_TIMES_DEF), "en"]
+        seeAlso = [DATASET_FILES_URL]
 
     class CalendarFile(DatasetFile):
-        comment = "Service dates specified using a weekly schedule with start and end dates."
+        comment = [locstr(CALENDAR_DEF), "en"]
+        seeAlso = [DATASET_FILES_URL]
 
     class CalendarDateFile(DatasetFile):
-        comment = "Exceptions for the services defined in the calendar.txt."
+        comment = [locstr(CALENDAR_DATES_DEF), "en"]
+        seeAlso = [DATASET_FILES_URL]

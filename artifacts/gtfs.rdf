@@ -61,23 +61,40 @@ The field should contain the same information than its parent field (on which it
 
 <owl:DatatypeProperty rdf:about="#color">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
-  <rdfs:range rdf:resource="#Color"/>
+  <rdfs:range rdf:resource="#color_datatype"/>
+  <rdfs:comment xml:lang="en">
+A color encoded as a six-digit hexadecimal number. Refer to https://htmlcolorcodes.com to generate a valid value (the leading "#" must not be included).
+Example: FFFFFF for white, 000000 for black or 0039A6 for the A,C,E lines in NYMTA.
+</rdfs:comment>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://htmlcolorcodes.com/</rdfs:seeAlso>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#currency_code">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:range rdf:resource="#currency_code_datatype"/>
+  <rdfs:comment xml:lang="en">
+An ISO 4217 alphabetical currency code. For the list of current currency, refer to https://en.wikipedia.org/wiki/ISO_4217#Active_codes.
+Example: CAD for Canadian dollars, EUR for euros or JPY for Japanese yen.
+</rdfs:comment>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/ISO_4217#Active_codes</rdfs:seeAlso>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#currency_amount">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:comment xml:lang="en">
+A decimal value indicating a currency amount. The number of decimal places is specified by ISO 4217 for the accompanying Currency code. All financial calculations should be processed as decimal, currency, or another equivalent type suitable for financial calculations depending on the programming language used to consume data. Processing currency amounts as float is discouraged due to gains or losses of money during calculations.
+</rdfs:comment>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/ISO_4217#Active_codes</rdfs:seeAlso>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#date">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  <rdfs:comment xml:lang="en">
+Service day in the YYYYMMDD format. Since time within a service day may be above 24:00:00, a service day may contain information for the subsequent day(s).
+Example: 20180913 for September 13th, 2018.
+</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#email_field">
@@ -93,80 +110,128 @@ Example: example@example.com
 <owl:DatatypeProperty rdf:about="#enum">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="#enumerated_datatype"/>
+  <rdfs:comment xml:lang="en">
+An option from a set of predefined constants defined in the "Description" column.
+Example: The route_type field contains a 0 for tram, a 1 for subway...
+</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#id">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:comment xml:lang="en">
+An ID field value is an internal ID, not intended to be shown to riders, and is a sequence of any UTF-8 characters. Using only printable ASCII characters is recommended. An ID is labeled "unique ID" when it must be unique within a file. IDs defined in one .txt file are often referenced in another .txt file. IDs that reference an ID in another table are labeled "foreign ID".
+Example: The stop_id field in stops.txt is a "unique ID". The parent_station field in stops.txt is a "foreign ID referencing stops.stop_id".
+</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#language_code">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
-  <rdfs:range rdf:resource="#LanguageCode"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:comment xml:lang="en">
+An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to http://www.rfc-editor.org/rfc/bcp/bcp47.txt and https://www.w3.org/International/articles/language-tags/.
+Example: en for English, en-US for American English or de for German.
+</rdfs:comment>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.w3.org/International/articles/language-tags/</rdfs:seeAlso>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.rfc-editor.org/rfc/bcp/bcp47.txt</rdfs:seeAlso>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#latitude">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="https://www.w3.org/2003/01/geo/wgs84_pos#latitude"/>
+  <rdfs:comment xml:lang="en">
+WGS84 latitude in decimal degrees. The value must be greater than or equal to -90.0 and less than or equal to 90.0.
+Example: 41.890169 for the Colosseum in Rome.
+</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#longitude">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="https://www.w3.org/2003/01/geo/wgs84_pos#longitude"/>
+  <rdfs:comment xml:lang="en">
+WGS84 longitude in decimal degrees. The value must be greater than or equal to -180.0 and less than or equal to 180.0.
+Example: 12.492269 for the Colosseum in Rome.
+</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#num_float">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:comment xml:lang="en">
+A floating point number.
+</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#num_int">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:comment xml:lang="en">
+An integer.
+</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#phone_number">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:comment xml:lang="en">
+A phone number.
+</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#time">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
+  <rdfs:comment xml:lang="en">
+Time in the HH:MM:SS format (H:MM:SS is also accepted). The time is measured from "noon minus 12h" of the service day (effectively midnight except for days on which daylight savings time changes occur). For times occurring after midnight on the service day, enter the time as a value greater than 24:00:00 in HH:MM:SS.
+Example: 14:30:00 for 2:30PM or 25:35:00 for 1:35AM on the next day.
+</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#local_time">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
+  <rdfs:comment xml:lang="en">
+Time in the HH:MM:SS format (H:MM:SS is also accepted). Represents a wall-clock time shown in the local time of the specified location.
+</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#text">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:comment xml:lang="en">
+A string of UTF-8 characters, which is aimed to be displayed and which must therefore be human readable.
+</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#timezone">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
-  <rdfs:range rdf:resource="#Timezone"/>
+  <rdfs:range rdf:resource="#timezone_datatype"/>
+  <rdfs:comment xml:lang="en">
+TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but may contain an underscore. Refer to http://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
+Example: Asia/Tokyo, America/Los_Angeles or Africa/Cairo.
+</rdfs:comment>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/List_of_tz_zones</rdfs:seeAlso>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.iana.org/time-zones</rdfs:seeAlso>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#url_field">
   <rdfs:subPropertyOf rdf:resource="#Field"/>
   <rdfs:range rdf:resource="https://schema.org/url"/>
+  <rdfs:comment xml:lang="en">
+TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but may contain an underscore. Refer to http://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
+Example: Asia/Tokyo, America/Los_Angeles or Africa/Cairo.
+</rdfs:comment>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/Addressing/URL/4_URI_Recommentations.html</rdfs:seeAlso>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#agency_id">
   <rdfs:subPropertyOf rdf:resource="#id"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Agency"/>
-  <rdfs:domain rdf:resource="#Route"/>
   <rdfs:comment xml:lang="en">
 Identifies a transit brand which is often synonymous with a transit agency. In some cases, a single agency operates multiple separate services and agencies and brands are distinct. This document uses the term “agency” in place of “brand”. A dataset may contain data from multiple agencies.
 </rdfs:comment>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#agencytxt</rdfs:seeAlso>
-  <rdfs:comment xml:lang="en">
-When used on Route: Agency for the specified route.
-</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#agency_name">
@@ -244,7 +309,6 @@ Email address actively monitored by the agency’s customer service department. 
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Agency"/>
   <rdfs:range rdf:resource="#CEMVSupportDatatype"/>
-  <rdfs:domain rdf:resource="#Route"/>
   <rdfs:comment xml:lang="en">
 Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.
 
@@ -261,369 +325,6 @@ If both agency.cemv_support and routes.cemv_support are provided for the same se
 This field is independent of all other fare-related files and may be used separately. If there is conflicting information between this field and any fare-related file (such as fare_media.txt, fare_products.txt, or fare_leg_rules.txt), the information in those files shall take precedence over agency.cemv_support.
 </rdfs:comment>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#agencytxt</rdfs:seeAlso>
-  <rdfs:comment xml:lang="en">
-When used on Route:
-
-Indicates if riders can access a transit service (i.e., trip) associated with this route by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.
-
-Support for cEMVs should only be indicated if all services under this route are accessible with the use of cEMV cards or mobile devices as fare media.
-
-Valid options are:
-
-0 or empty - No cEMV information for trips associated with this route.
-1 - Riders may use cEMVs as fare media for trips associated with this route.
-2 - cEMVs are not supported as fare media for trips associated with this route.
-
-If both agency.cemv_support and routes.cemv_support are provided for the same service, the value in routes.cemv_support shall take precedence.
-
-This field is independent of all other fare-related files and may be used separately. If there is conflicting information between this field and any fare-related file (such as fare_media.txt, fare_products.txt, or fare_leg_rules.txt), the information in those files shall take precedence over agency.cemv_support.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#stop_id">
-  <rdfs:subPropertyOf rdf:resource="#id"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:domain rdf:resource="#StopTime"/>
-  <rdfs:comment xml:lang="en">
-Identifies a location: stop/platform, station, entrance/exit, generic node or boarding area (see location_type).
-
-ID must be unique across all stops.stop_id, locations.geojson id, and location_groups.location_group_id values.
-
-Multiple routes may use the same stop_id.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#stop_code">
-  <rdfs:subPropertyOf rdf:resource="#text"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:comment xml:lang="en">
-Name of the location. The stop_name should match the agency's rider-facing name for the location as printed on a timetable, published online, or represented on signage. For translations into other languages, use translations.txt.
-
-When the location is a boarding area (location_type=4), the stop_name should contains the name of the boarding area as displayed by the agency. It could be just one letter (like on some European intercity railway stations), or text like “Wheelchair boarding area” (NYC’s Subway) or “Head of short trains” (Paris’ RER).
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#stop_name">
-  <rdfs:subPropertyOf rdf:resource="#text"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:comment xml:lang="en">
-Indicates how the stop is accessed for a particular station. Valid options are:
-
-0 - The stop/platform cannot be directly accessed from the street network. It must be accessed from a station entrance if there is one defined for the station, otherwise the station itself. If there are pathways defined for the station, they must be used to access the stop/platform.
-1 - Consuming applications should generate directions for access directly to the stop, independent of any entrances or pathways of the parent station.
-
-When stop_access is empty, the access for the specified stop or platform is considered undefined.
-
-Conditionally Forbidden:
-- Forbidden for locations which are stations (location_type=1), entrances (location_type=2), generic nodes (location_type=3) or boarding areas (location_type=4).
-- Forbidden if parent_station is empty.
-- Optional otherwise.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#tts_stop_name">
-  <rdfs:subPropertyOf rdf:resource="#text"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:comment xml:lang="en">
-Readable version of the stop_name.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#stop_desc">
-  <rdfs:subPropertyOf rdf:resource="#text"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:comment xml:lang="en">
-Description of the location that provides useful, quality information. Should not be a duplicate of stop_name.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#stop_lat">
-  <rdfs:subPropertyOf rdf:resource="#latitude"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:comment xml:lang="en">
-Latitude of the location.
-
-For stops/platforms (location_type=0) and boarding area (location_type=4), the coordinates must be the ones of the bus pole — if exists — and otherwise of where the travelers are boarding the vehicle (on the sidewalk or the platform, and not on the roadway or the track where the vehicle stops). 
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#stop_lon">
-  <rdfs:subPropertyOf rdf:resource="#longitude"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:comment xml:lang="en">
-Longitude of the location.
-
-For stops/platforms (location_type=0) and boarding area (location_type=4), the coordinates must be the ones of the bus pole — if exists — and otherwise of where the travelers are boarding the vehicle (on the sidewalk or the platform, and not on the roadway or the track where the vehicle stops).
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#zone_id">
-  <rdfs:subPropertyOf rdf:resource="#id"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:comment xml:lang="en">
-Identifies the fare zone for a stop. If this record represents a station or station entrance, the zone_id is ignored.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#stop_url">
-  <rdfs:subPropertyOf rdf:resource="#url_field"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:comment xml:lang="en">
-URL of a web page about the location. This should be different from the agency.agency_url and the routes.route_url field values.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#location_type">
-  <rdfs:subPropertyOf rdf:resource="#enum"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:range rdf:resource="#LocationTypeDatatype"/>
-  <rdfs:comment xml:lang="en">
-Location type. Valid options are:
-
-0 (or empty) - Stop (or Platform). A location where passengers board or disembark from a transit vehicle. Is called a platform when defined within a parent_station.
-1 - Station. A physical structure or area that contains one or more platform.
-2 - Entrance/Exit. A location where passengers can enter or exit a station from the street. If an entrance/exit belongs to multiple stations, it may be linked by pathways to both, but the data provider must pick one of them as parent.
-3 - Generic Node. A location within a station, not matching any other location_type, that may be used to link together pathways define in pathways.txt.
-4 - Boarding Area. A specific location on a platform, where passengers can board and/or alight vehicles.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#parent_station">
-  <rdfs:subPropertyOf rdf:resource="#Field"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:range rdf:resource="#Stop"/>
-  <rdfs:comment xml:lang="en">
-Defines hierarchy between the different locations defined in stops.txt. It contains the ID of the parent location, as followed:
-
-- Stop/platform (location_type=0): the parent_station field contains the ID of a station.
-- Station (location_type=1): this field must be empty.
-- Entrance/exit (location_type=2) or generic node (location_type=3): the parent_station field contains the ID of a station (location_type=1)
-- Boarding Area (location_type=4): the parent_station field contains ID of a platform.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#stop_timezone">
-  <rdfs:subPropertyOf rdf:resource="#timezone"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:comment xml:lang="en">
-Timezone of the location. If the location has a parent station, it inherits the parent station’s timezone instead of applying its own. Stations and parentless stops with empty stop_timezone inherit the timezone specified by agency.agency_timezone. The times provided in stop_times.txt are in the timezone specified by agency.agency_timezone, not stop_timezone. This ensures that the time values in a trip always increase over the course of a trip, regardless of which timezones the trip crosses.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#wheelchair_boarding">
-  <rdfs:subPropertyOf rdf:resource="#enum"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:range rdf:resource="#WheelchairBoardingType"/>
-  <rdfs:comment xml:lang="en">
-Indicates whether wheelchair boardings are possible from the location. Valid options are:
-
-For parentless stops:
-0 or empty - No accessibility information for the stop.
-1 - Some vehicles at this stop can be boarded by a rider in a wheelchair.
-2 - Wheelchair boarding is not possible at this stop.
-
-For child stops:
-0 or empty - Stop will inherit its wheelchair_boarding behavior from the parent station, if specified in the parent.
-1 - There exists some accessible path from outside the station to the specific stop/platform.
-2 - There exists no accessible path from outside the station to the specific stop/platform.
-
-For station entrances/exits:
-0 or empty - Station entrance will inherit its wheelchair_boarding behavior from the parent station, if specified for the parent.
-1 - Station entrance is wheelchair accessible.
-2 - No accessible path from station entrance to stops/platforms.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#level_id">
-  <rdfs:subPropertyOf rdf:resource="#Field"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:range rdf:resource="#Level"/>
-  <rdfs:comment xml:lang="en">
-Level of the location. The same level may be used by multiple unlinked stations.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#platform_code">
-  <rdfs:subPropertyOf rdf:resource="#text"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:comment xml:lang="en">
-Platform identifier for a platform stop (a stop belonging to a station). This should be just the platform identifier (eg. "G" or "3"). Words like “platform” or "track" (or the feed’s language-specific equivalent) should not be included. This allows feed consumers to more easily internationalize and localize the platform identifier into other languages.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#stop_access">
-  <rdfs:subPropertyOf rdf:resource="#enum"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Stop"/>
-  <rdfs:range rdf:resource="#StopAccessType"/>
-  <rdfs:comment xml:lang="en">
-Indicates how the stop is accessed for a particular station. Valid options are:
-
-0 - The stop/platform cannot be directly accessed from the street network. It must be accessed from a station entrance if there is one defined for the station, otherwise the station itself. If there are pathways defined for the station, they must be used to access the stop/platform.
-1 - Consuming applications should generate directions for access directly to the stop, independent of any entrances or pathways of the parent station.
-
-When stop_access is empty, the access for the specified stop or platform is considered undefined.
-
-Conditionally Forbidden:
-- Forbidden for locations which are stations (location_type=1), entrances (location_type=2), generic nodes (location_type=3) or boarding areas (location_type=4).
-- Forbidden if parent_station is empty.
-- Optional otherwise.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#route_id">
-  <rdfs:subPropertyOf rdf:resource="#id"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  <rdfs:comment xml:lang="en">
-Identifies a route.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#route_short_name">
-  <rdfs:subPropertyOf rdf:resource="#text"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:comment xml:lang="en">
-Short name of a route. Often a short, abstract identifier (e.g., "32", "100X", "Green") that riders use to identify a route. Both route_short_name and route_long_name may be defined.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#route_long_name">
-  <rdfs:subPropertyOf rdf:resource="#text"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:comment xml:lang="en">
-Full name of a route. This name is generally more descriptive than the route_short_name and often includes the route's destination or stop. Both route_short_name and route_long_name may be defined.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#route_desc">
-  <rdfs:subPropertyOf rdf:resource="#text"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:comment xml:lang="en">
-Description of a route that provides useful, quality information. Should not be a duplicate of route_short_name or route_long_name. 
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#route_type">
-  <rdfs:subPropertyOf rdf:resource="#enum"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:range rdf:resource="#RouteTypeDatatype"/>
-  <rdfs:comment xml:lang="en">
-Indicates the type of transportation used on a route. Valid options are:
-
-0 - Tram, Streetcar, Light rail. Any light rail or street level system within a metropolitan area.
-1 - Subway, Metro. Any underground rail system within a metropolitan area.
-2 - Rail. Used for intercity or long-distance travel.
-3 - Bus. Used for short- and long-distance bus routes.
-4 - Ferry. Used for short- and long-distance boat service.
-5 - Cable tram. Used for street-level rail cars where the cable runs beneath the vehicle (e.g., cable car in San Francisco).
-6 - Aerial lift, suspended cable car (e.g., gondola lift, aerial tramway). Cable transport where cabins, cars, gondolas or open chairs are suspended by means of one or more cables.
-7 - Funicular. Any rail system designed for steep inclines.
-11 - Trolleybus. Electric buses that draw power from overhead wires using poles.
-12 - Monorail. Railway in which the track consists of a single rail or a beam.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#route_url">
-  <rdfs:subPropertyOf rdf:resource="#url_field"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:comment xml:lang="en">
-URL of a web page about the particular route. Should be different from the agency.agency_url value.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#route_color">
-  <rdfs:subPropertyOf rdf:resource="#color"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:comment xml:lang="en">
-Route color designation that matches public facing material. Defaults to white (FFFFFF) when omitted or left empty. The color difference between route_color and route_text_color should provide sufficient contrast when viewed on a black and white screen.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#route_text_color">
-  <rdfs:subPropertyOf rdf:resource="#color"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:comment xml:lang="en">
-Legible color to use for text drawn against a background of route_color. Defaults to black (000000) when omitted or left empty. The color difference between route_color and route_text_color should provide sufficient contrast when viewed on a black and white screen.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#route_sort_order">
-  <rdfs:subPropertyOf rdf:resource="#num_int"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:range rdf:resource="#NonNegativeInteger"/>
-  <rdfs:comment xml:lang="en">
-Orders the routes in a way which is ideal for presentation to customers. Routes with smaller route_sort_order values should be displayed first.
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#continuous_pickup">
-  <rdfs:subPropertyOf rdf:resource="#enum"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:domain rdf:resource="#StopTime"/>
-  <rdfs:range rdf:resource="#ContinuousPickupDatatype"/>
-  <rdfs:comment xml:lang="en">
-Indicates that the rider can board the transit vehicle at any point along the vehicle’s travel path as described by shapes.txt, on every trip of the route. Valid options are:
-
-0 - Continuous stopping pickup.
-1 or empty - No continuous stopping pickup.
-2 - Must phone agency to arrange continuous stopping pickup.
-3 - Must coordinate with driver to arrange continuous stopping pickup.
-
-Values for routes.continuous_pickup may be overridden by defining values in stop_times.continuous_pickup for specific stop_times along the route. 
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#continuous_drop_off">
-  <rdfs:subPropertyOf rdf:resource="#enum"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:domain rdf:resource="#StopTime"/>
-  <rdfs:range rdf:resource="#ContinuousDropOffDatatype"/>
-  <rdfs:comment xml:lang="en">
-Indicates that the rider can alight from the transit vehicle at any point along the vehicle’s travel path as described by shapes.txt, on every trip of the route. Valid options are:
-
-0 - Continuous stopping drop off.
-1 or empty - No continuous stopping drop off.
-2 - Must phone agency to arrange continuous stopping drop off.
-3 - Must coordinate with driver to arrange continuous stopping drop off.
-
-Values for routes.continuous_drop_off may be overridden by defining values in stop_times.continuous_drop_off for specific stop_times along the route. 
-</rdfs:comment>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#network_id">
-  <rdfs:subPropertyOf rdf:resource="#id"/>
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Route"/>
-  <rdfs:comment xml:lang="en">
-Identifies a group of routes. Multiple rows in routes.txt may have the same network_id.
-</rdfs:comment>
 </owl:DatatypeProperty>
 
 <owl:Class rdf:about="https://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">
@@ -731,6 +432,9 @@ A sub-journey of two or more legs that should be treated as a single leg for mat
 
 <owl:Class rdf:about="#DatasetFile">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment xml:lang="en">
+A file that is part of a dataset, that has records and fields.
+</rdfs:comment>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#dataset-files</rdfs:seeAlso>
 </owl:Class>
 
@@ -742,37 +446,77 @@ A sub-journey of two or more legs that should be treated as a single leg for mat
       <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
     </owl:Restriction>
   </rdfs:subClassOf>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transit agencies with service represented in this dataset.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Transit agencies with service represented in this dataset.
+</rdfs:comment>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#dataset-files</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#StopFile">
   <rdfs:subClassOf rdf:resource="#DatasetFile"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stops where vehicles pick up or drop off riders. Also defines stations and station entrances.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Stops where vehicles pick up or drop off riders. Also defines stations and station entrances.
+
+Conditionally Required:
+- Optional if demand-responsive zones are defined in locations.geojson.
+- Required otherwise.
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#dataset-files</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#RouteFile">
   <rdfs:subClassOf rdf:resource="#DatasetFile"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transit routes. A route is a group of trips that are displayed to riders as a single service.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Transit routes. A route is a group of trips that are displayed to riders as a single service.
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#dataset-files</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#TripFile">
   <rdfs:subClassOf rdf:resource="#DatasetFile"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trips for each route. A trip is a sequence of two or more stops that occur during a specific time period.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Trips for each route. A trip is a sequence of two or more stops that occur during a specific time period.
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#dataset-files</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#StopTimeFile">
   <rdfs:subClassOf rdf:resource="#DatasetFile"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Times that a vehicle arrives at and departs from stops for each trip.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Times that a vehicle arrives at and departs from stops for each trip.
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#dataset-files</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#CalendarFile">
   <rdfs:subClassOf rdf:resource="#DatasetFile"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Service dates specified using a weekly schedule with start and end dates.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Service dates specified using a weekly schedule with start and end dates.
+
+Conditionally Required:
+- Required unless all dates of service are defined in calendar_dates.txt.
+- Optional otherwise.
+</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#dataset-files</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#CalendarDateFile">
   <rdfs:subClassOf rdf:resource="#DatasetFile"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exceptions for the services defined in the calendar.txt.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+Exceptions for the services defined in the calendar.txt.
+
+Conditionally Required:
+- Required if calendar.txt is omitted. In which case calendar_dates.txt must contain all dates of service.
+- Optional otherwise.
+</rdfs:comment>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#dataset-files</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#Agency">
@@ -796,37 +540,44 @@ A sub-journey of two or more legs that should be treated as a single leg for mat
       </owl:intersectionOf>
     </owl:Class>
   </rdfs:subClassOf>
-  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;https://gtfs.org/documentation/schedule/reference/#agencytxt&gt;</rdfs:seeAlso>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#agencytxt</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#Stop">
   <rdfs:subClassOf rdf:resource="#Record"/>
   <rdfs:subClassOf rdf:resource="https://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
   <rdfs:subClassOf rdf:resource="https://schema.org/BusStop"/>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#stopstxt</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#Route">
   <rdfs:subClassOf rdf:resource="#Record"/>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#routestxt</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#Trip">
   <rdfs:subClassOf rdf:resource="#Record"/>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#tripstxt</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#StopTime">
   <rdfs:subClassOf rdf:resource="#Record"/>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#stop_timestxt</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#Calendar">
   <rdfs:subClassOf rdf:resource="#Record"/>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#calendartxt</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#CalendarDate">
   <rdfs:subClassOf rdf:resource="#Record"/>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#calendar_datestxt</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#Level">
   <rdfs:subClassOf rdf:resource="#Record"/>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#agencytxt</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#DatatypeDescription">
@@ -881,199 +632,21 @@ A sub-journey of two or more legs that should be treated as a single leg for mat
 <owl:Class rdf:about="#CEMVSupportDatatypeDescription0">
   <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
   <rdfs:comment xml:lang="en">No cEMV information for trips associated with this agency.</rdfs:comment>
-  <rdfs:comment xml:lang="en">No cEMV information for trips associated with this route.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#CEMVSupportDatatypeDescription1">
   <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
   <rdfs:comment xml:lang="en">Riders may use cEMVs as fare media for trips associated with this agency.</rdfs:comment>
-  <rdfs:comment xml:lang="en">Riders may use cEMVs as fare media for trips associated with this route.</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#CEMVSupportDatatypeDescription2">
   <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
   <rdfs:comment xml:lang="en">cEMVs are not supported as fare media for trips associated with this agency.</rdfs:comment>
-  <rdfs:comment xml:lang="en">cEMVs are not supported as fare media for trips associated with this route.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#StopLocation">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A location where passengers board or disembark from a transit vehicle.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#Platform">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A location where passengers board or disembark from a transit vehicle. Is called a platform when defined within a parent_station.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#Station">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical structure or area that contains one or more platform.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#EntranceOrExit">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A location where passengers can enter or exit a station from the street. If an entrance/exit belongs to multiple stations, it may be linked by pathways to both, but the data provider must pick one of them as parent.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#GenericNode">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A location within a station, not matching any other location_type, that may be used to link together pathways define in pathways.txt.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#BoardingArea">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specific location on a platform, where passengers can board and/or alight vehicles.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#WheelchairBoardingParentlessStop0">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No accessibility information for the stop.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#WheelchairBoardingParentlessStop1">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wheelchair boardings are possible from the stop.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#WheelchairBoardingParentlessStop2">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wheelchair boarding is not possible at this stop.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#WheelchairBoardingChildStop0">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stop will inherit its wheelchair_boarding behavior from the parent station, if specified in the parent.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#WheelchairBoardingChildStop1">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There exists some accessible path from outside the station to the specific stop/platform.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#WheelchairBoardingChildStop2">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There exists no accessible path from outside the station to the specific stop/platform.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#WheelchairBoardingEntranceExit0">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Station entrance will inherit its wheelchair_boarding behavior from the parent station, if specified for the parent.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#WheelchairBoardingEntranceExit1">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Station entrance is wheelchair accessible.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#WheelchairBoardingEntranceExit2">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No accessible path from station entrance to stops/platforms.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#StopAccessTypeDescription0">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The stop/platform cannot be directly accessed from the street network. It must be accessed from a station entrance if there is one defined for the station, otherwise the station itself. If there are pathways defined for the station, they must be used to access the stop/platform.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#StopAccessTypeDescription1">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Consuming applications should generate directions for access directly to the stop, independent of any entrances or pathways of the parent station.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#RouteTypeDatatypeDescription0">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tram, Streetcar, Light rail. Any light rail or street level system within a metropolitan area.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#RouteTypeDatatypeDescription1">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subway, Metro. Any underground rail system within a metropolitan area.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#RouteTypeDatatypeDescription2">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rail. Used for intercity or long-distance travel.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#RouteTypeDatatypeDescription3">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bus. Used for short- and long-distance bus routes.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#RouteTypeDatatypeDescription4">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ferry. Used for short- and long-distance boat service.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#RouteTypeDatatypeDescription5">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cable tram. Used for street-level rail cars where the cable runs beneath the vehicle (e.g., cable car in San Francisco).</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#RouteTypeDatatypeDescription6">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aerial lift, suspended cable car (e.g., gondola lift, aerial tramway). Cable transport where cabins, cars, gondolas or open chairs are suspended by means of one or more cables.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#RouteTypeDatatypeDescription7">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Funicular. Any rail system designed for steep inclines.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#RouteTypeDatatypeDescription11">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trolleybus. Electric buses that draw power from overhead wires using poles.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#RouteTypeDatatypeDescription12">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Monorail. Railway in which the track consists of a single rail or a beam.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#ContinuousPickupDatatypeDescription0">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Continuous stopping pickup.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#ContinuousPickupDatatypeDescription1">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No continuous stopping pickup.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#ContinuousPickupDatatypeDescription2">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Must phone agency to arrange continuous stopping pickup.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#ContinuousPickupDatatypeDescription3">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Must coordinate with driver to arrange continuous stopping pickup.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#ContinuousDropOffDatatypeDescription0">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Continuous stopping drop off.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#ContinuousDropOffDatatypeDescription1">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No continuous stopping drop off.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#ContinuousDropOffDatatypeDescription2">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Must phone agency to arrange continuous stopping drop off.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#ContinuousDropOffDatatypeDescription3">
-  <rdfs:subClassOf rdf:resource="#DatatypeDescription"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Must coordinate with driver to arrange continuous stopping drop off. </rdfs:comment>
 </owl:Class>
 
 <rdfs:Datatype rdf:about="https://schema.org/url"/>
 
-<rdfs:Datatype rdf:about="#Color">
+<rdfs:Datatype rdf:about="#color_datatype">
   <owl:equivalentClass>
     <rdfs:Datatype>
       <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -1091,26 +664,2361 @@ A sub-journey of two or more legs that should be treated as a single leg for mat
   </owl:equivalentClass>
 </rdfs:Datatype>
 
-<rdfs:Datatype rdf:about="#LanguageCode">
+<rdfs:Datatype rdf:about="#currency_code_datatype">
   <owl:equivalentClass>
     <rdfs:Datatype>
       <owl:oneOf>
         <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EN</rdf:first>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AED</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AFN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ALL</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AMD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AOA</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ARS</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AUD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AWG</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AZN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BAM</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BBD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BDT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BHD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BIF</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BMD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BND</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BOB</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BOV</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BRL</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BWP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BYN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BZD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CAD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CDF</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHF</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CHW</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CLF</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CLP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CNY</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">COP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">COU</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CRC</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CUP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CVE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CZK</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DJF</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DKK</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DZD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EGP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ERN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ETB</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EUR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FJD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FKP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GBP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GEL</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GHS</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GIP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GMD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GNF</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GTQ</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GYD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HKD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HNL</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HTG</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HUF</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IDR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ILS</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IQD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IRR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISK</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JMD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JOD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JPY</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KES</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KGS</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KHR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KMF</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KPW</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KRW</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KWD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KYD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KZT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LAK</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LBP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LKR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LRD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LSL</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LYD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MAD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MDL</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MGA</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MKD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MMK</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MNT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MOP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MRU</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MUR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MVR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MWK</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MXN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MXV</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MYR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MZN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NAD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NGN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIO</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NOK</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NPR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NZD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OMR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PAB</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PEN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PGK</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PHP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PKR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PYG</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QAR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RON</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RSD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RUB</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RWF</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SAR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SBD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SCR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SDG</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SEK</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SGD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SHP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SLE</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOS</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SRD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SSP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">STN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SVC</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SYP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SZL</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">THB</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TJS</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TMT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TND</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TOP</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TRY</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TTD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TWD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TZS</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UAH</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UGX</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UYI</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UYU</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UYW</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UZS</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VED</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VES</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VND</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VUV</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WST</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAF</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAG</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAU</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XBA</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XBB</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XBC</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XBD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XCD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XCG</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XDR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XOF</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XPD</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XPF</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XPT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XSU</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XTS</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XUA</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XXX</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YER</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZAR</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZMW</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZWG</rdf:first>
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
         </rdf:Description>
       </owl:oneOf>
     </rdfs:Datatype>
   </owl:equivalentClass>
 </rdfs:Datatype>
 
-<rdfs:Datatype rdf:about="#Timezone">
+<rdfs:Datatype rdf:about="#timezone_datatype">
   <owl:equivalentClass>
     <rdfs:Datatype>
       <owl:oneOf>
         <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+12</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+11</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Niue</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Pago_Pago</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US/Samoa</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Samoa</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Midway</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+10</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Honolulu</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US/Hawaii</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Johnston</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HST</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Rarotonga</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Tahiti</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Adak</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US/Aleutian</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Atka</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Marquesas</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+9</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Gambier</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Anchorage</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US/Alaska</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Juneau</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Metlakatla</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Nome</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Sitka</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Yakutat</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+8</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Pitcairn</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Los_Angeles</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US/Pacific</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PST8PDT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Tijuana</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mexico/BajaNorte</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Ensenada</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Santa_Isabel</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Vancouver</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canada/Pacific</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+7</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Dawson_Creek</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Dawson</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Fort_Nelson</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Hermosillo</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Mazatlan</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mexico/BajaSur</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Phoenix</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MST</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US/Arizona</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Creston</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Whitehorse</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canada/Yukon</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Boise</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Cambridge_Bay</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Ciudad_Juarez</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Denver</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MST7MDT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Navajo</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US/Mountain</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Shiprock</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Edmonton</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canada/Mountain</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Yellowknife</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Inuvik</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+6</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Bahia_Banderas</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Belize</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Chihuahua</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Costa_Rica</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/El_Salvador</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Galapagos</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Guatemala</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Managua</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Merida</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Mexico_City</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mexico/General</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Monterrey</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Regina</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canada/Saskatchewan</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Swift_Current</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Tegucigalpa</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/North_Dakota/Beulah</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/North_Dakota/Center</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Chicago</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CST6CDT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US/Central</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pacific/Easter</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chile/EasterIsland</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Indiana/Knox</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US/Indiana-Starke</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Knox_IN</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Matamoros</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Menominee</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/North_Dakota/New_Salem</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Ojinaga</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Rankin_Inlet</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Resolute</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Indiana/Tell_City</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Winnipeg</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canada/Central</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Rainy_River</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+5</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Bogota</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Cancun</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Eirunepe</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Guayaquil</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Jamaica</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jamaica</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Lima</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Panama</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EST</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Atikokan</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Cayman</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Coral_Harbour</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Rio_Branco</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brazil/Acre</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Porto_Acre</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Detroit</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US/Michigan</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Grand_Turk</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Havana</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cuba</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Indiana/Indianapolis</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US/East-Indiana</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Indianapolis</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Fort_Wayne</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Iqaluit</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Pangnirtung</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Kentucky/Louisville</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Louisville</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Indiana/Marengo</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Kentucky/Monticello</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/New_York</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EST5EDT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US/Eastern</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Indiana/Petersburg</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Port-au-Prince</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Toronto</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canada/Eastern</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Nassau</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Montreal</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Nipigon</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Thunder_Bay</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Indiana/Vevay</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Indiana/Vincennes</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Indiana/Winamac</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+4</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Barbados</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Boa_Vista</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Campo_Grande</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Caracas</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Cuiaba</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Guyana</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/La_Paz</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Manaus</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brazil/West</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Martinique</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Porto_Velho</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Puerto_Rico</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Virgin</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Anguilla</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Antigua</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Aruba</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Blanc-Sablon</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Curacao</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Dominica</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Grenada</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Guadeloupe</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Kralendijk</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Lower_Princes</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Marigot</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Montserrat</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Port_of_Spain</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/St_Barthelemy</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/St_Kitts</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/St_Lucia</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/St_Thomas</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/St_Vincent</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Tortola</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Santo_Domingo</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atlantic/Bermuda</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Glace_Bay</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Goose_Bay</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Halifax</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canada/Atlantic</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Moncton</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Santiago</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chile/Continental</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Thule</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/St_Johns</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canada/Newfoundland</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+3</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Araguaina</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Asuncion</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Bahia</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Belem</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/Buenos_Aires</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Buenos_Aires</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/Catamarca</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Catamarca</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/ComodRivadavia</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Cayenne</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/Cordoba</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Cordoba</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Rosario</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Coyhaique</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Fortaleza</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/Jujuy</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Jujuy</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/La_Rioja</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Maceio</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/Mendoza</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Mendoza</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Montevideo</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Antarctica/Palmer</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Paramaribo</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Punta_Arenas</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Recife</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/Rio_Gallegos</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Antarctica/Rothera</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/Salta</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/San_Juan</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/San_Luis</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Santarem</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Sao_Paulo</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brazil/East</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atlantic/Stanley</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/Tucuman</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Argentina/Ushuaia</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Miquelon</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+2</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Noronha</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brazil/DeNoronha</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atlantic/South_Georgia</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Nuuk</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Godthab</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Scoresbysund</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+1</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atlantic/Cape_Verde</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atlantic/Azores</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Factory</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GMT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT+0</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT-0</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/GMT0</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/Greenwich</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GMT+0</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GMT-0</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GMT0</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Greenwich</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/UTC</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/UCT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/Universal</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etc/Zulu</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UCT</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UTC</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Universal</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zulu</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Abidjan</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iceland</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Accra</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Bamako</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Banjul</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Conakry</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Dakar</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Freetown</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Lome</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Nouakchott</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Ouagadougou</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atlantic/Reykjavik</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atlantic/St_Helena</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Timbuktu</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Bissau</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">America/Danmarkshavn</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Monrovia</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Africa/Sao_Tome</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atlantic/Canary</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Europe/Dublin</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eire</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atlantic/Faroe</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atlantic/Faeroe</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Europe/Lisbon</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Portugal</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WET</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
       <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Europe/London</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GB</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GB-Eire</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Europe/Guernsey</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Europe/Isle_of_Man</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Europe/Jersey</rdf:first>
+        <rdf:rest>
+        <rdf:Description>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Europe/Belfast</rdf:first>
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
+        </rdf:Description>
+        </rdf:rest>
         </rdf:Description>
       </owl:oneOf>
     </rdfs:Datatype>
@@ -1151,197 +3059,6 @@ A sub-journey of two or more legs that should be treated as a single leg for mat
         <rdf:Description>
       <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-      </owl:oneOf>
-    </rdfs:Datatype>
-  </owl:equivalentClass>
-</rdfs:Datatype>
-
-<rdfs:Datatype rdf:about="#LocationTypeDatatype">
-  <rdf:type rdf:resource="#enumerated_datatype"/>
-  <owl:equivalentClass>
-    <rdfs:Datatype>
-      <owl:oneOf>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-      </owl:oneOf>
-    </rdfs:Datatype>
-  </owl:equivalentClass>
-</rdfs:Datatype>
-
-<rdfs:Datatype rdf:about="#WheelchairBoardingType">
-  <rdf:type rdf:resource="#enumerated_datatype"/>
-  <owl:equivalentClass>
-    <rdfs:Datatype>
-      <owl:oneOf>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-      </owl:oneOf>
-    </rdfs:Datatype>
-  </owl:equivalentClass>
-</rdfs:Datatype>
-
-<rdfs:Datatype rdf:about="#StopAccessType">
-  <rdf:type rdf:resource="#enumerated_datatype"/>
-  <owl:equivalentClass>
-    <rdfs:Datatype>
-      <owl:oneOf>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-      </owl:oneOf>
-    </rdfs:Datatype>
-  </owl:equivalentClass>
-</rdfs:Datatype>
-
-<rdfs:Datatype rdf:about="#RouteTypeDatatype">
-  <owl:equivalentClass>
-    <rdfs:Datatype>
-      <owl:oneOf>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-      </owl:oneOf>
-    </rdfs:Datatype>
-  </owl:equivalentClass>
-</rdfs:Datatype>
-
-<rdfs:Datatype rdf:about="#ContinuousPickupDatatype">
-  <owl:equivalentClass>
-    <rdfs:Datatype>
-      <owl:oneOf>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-        </rdf:rest>
-        </rdf:Description>
-      </owl:oneOf>
-    </rdfs:Datatype>
-  </owl:equivalentClass>
-</rdfs:Datatype>
-
-<rdfs:Datatype rdf:about="#ContinuousDropOffDatatype">
-  <owl:equivalentClass>
-    <rdfs:Datatype>
-      <owl:oneOf>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
-        <rdf:rest>
-        <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-        </rdf:Description>
-        </rdf:rest>
         </rdf:Description>
         </rdf:rest>
         </rdf:Description>

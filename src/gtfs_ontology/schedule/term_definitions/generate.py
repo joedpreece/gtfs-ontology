@@ -1,6 +1,4 @@
-from owlready2 import locstr, Thing, DataProperty
-
-from gtfs_ontology.core import gtfs, dcat
+from gtfs_ontology.core import *
 from gtfs_ontology.schedule.term_definitions.definitions import *
 
 TERM_DEFINITIONS_URL = "https://gtfs.org/documentation/schedule/reference/#term-definitions"
@@ -15,7 +13,7 @@ with gtfs:
         comment = [locstr(RECORD_DEF, "en")]
         seeAlso = [TERM_DEFINITIONS_URL]
 
-    class Field(DataProperty):
+    class Field(DataProperty, FunctionalProperty):
         comment = [locstr(FIELD_DEF, "en")]
         seeAlso = [TERM_DEFINITIONS_URL]
 
@@ -53,5 +51,5 @@ with gtfs:
 
     # This is an additional concept that is not part of the GTFS specification.
     class DatasetFile(Thing):
-        # comment = [locstr(FIELD_DEF, "en")]
+        comment = [locstr(DATESET_FILE, "en")]
         seeAlso = ["https://gtfs.org/documentation/schedule/reference/#dataset-files"]
