@@ -7,6 +7,7 @@ import gtfs_ontology.schedule.core
 
 import gtfs_ontology.schedule.term_definitions.generate
 import gtfs_ontology.schedule.files.generate
+import gtfs_ontology.schedule.files.dl_rules
 import gtfs_ontology.schedule.field_types.generate
 import gtfs_ontology.schedule.records.generate
 

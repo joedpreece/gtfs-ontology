@@ -1,36 +1,27 @@
 from gtfs_ontology.schedule import *
+from gtfs_ontology.schedule.term_definitions.generate import Dataset, DatasetFile, \
+    Record
 
-# with gtfs:
-#
-# # region Field type
-#
+with gtfs:
+
 #     class NonNegativeInteger(Datatype):
 #         equivalent_to = [ConstrainedDatatype(
 #             base_datatype=int,
 #             min_inclusive=0
 #         )]
-#
-# # endregion
-#
-# # region Additional classes
-#
+
 #     class DatatypeDescription(Thing):
 #         comment = "A description provided to compliment an enumerated datatype."
-#
-# # endregion
-#
-# # region Additional object properties
-#
-#     class hasDataset(ObjectProperty):
-#         domain = [GTFSSchedule]
-#         range = [Dataset]
-#
-#     class hasAgency(ObjectProperty):
-#         domain = [AgencyFile]
-#         range = [Agency]
-#
-#     class hasFile(ObjectProperty):
-#         domain = [Dataset]
-#         range = [DatasetFile]
-#
-# # endregion
+
+
+    class hasDataset(ObjectProperty):
+        domain = [GTFSSchedule]
+        range = [Dataset]
+
+    class hasFile(ObjectProperty):
+        domain = [Dataset]
+        range = [DatasetFile]
+
+    class hasRecord(ObjectProperty):
+        domain = [DatasetFile]
+        range = [Record]

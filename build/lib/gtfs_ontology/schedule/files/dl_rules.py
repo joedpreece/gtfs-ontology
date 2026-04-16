@@ -5,12 +5,12 @@ from gtfs_ontology.schedule.core import hasRecord, hasFile
 from gtfs_ontology.schedule.files.generate import AgencyFile, StopFile, RouteFile, \
     TripFile, StopTimeFile
 from gtfs_ontology.schedule.records.generate import Agency, Stop
-from gtfs_ontology.schedule.term_definitions.generate import Dataset
+from gtfs_ontology.schedule.term_definitions.generate import DatasetFile
 
 with gtfs:
 
     # 1i
-    Dataset.is_a.append(
+    DatasetFile.is_a.append(
         hasFile.exactly(1, AgencyFile)
     )
 
@@ -32,7 +32,7 @@ with gtfs:
     )
 
     # 2i
-    Dataset.is_a.append(
+    DatasetFile.is_a.append(
         hasFile.exactly(1, StopFile)
     )
 
