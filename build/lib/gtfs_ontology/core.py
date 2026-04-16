@@ -5,7 +5,7 @@ from importlib.metadata import version
 __version__ = version("gtfs-ontology")
 
 # Namespaces and external ontologies
-gtfs = get_ontology(f"https://w3id.org/gtfs/")
+gtfs = get_ontology(f"https://gtfs.org/ontology/v{__version__}")
 dcterms = gtfs.get_namespace("http://purl.org/dc/terms/")
 foaf = get_ontology("https://xmlns.com/foaf/spec/index.rdf").load()
 dcat = get_ontology("https://www.w3.org/ns/dcat3.rdf").load()
@@ -45,7 +45,6 @@ with gtfs:
         "An OWL ontology describing entities, relationships, and data structures found in the General Transit Feed Specification (GTFS).",
         "en"
     )]
-    # gtfs.metadata.versionIRI = f"{gtfs.base_iri}/v{__version__}"
     gtfs.metadata.versionInfo = f"{__version__}"
     gtfs.metadata.creator = ["Joseph D. Preece"]
 
