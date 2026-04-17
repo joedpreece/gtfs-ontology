@@ -1,7 +1,7 @@
-from gtfs_ontology.realtime.core import Stop
 from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.field_types.generate import enumerated_datatype, text, \
     url_field, enum, timezone, id
+from gtfs_ontology.schedule.records.generate import Stop
 from gtfs_ontology.schedule.stops.definitions import *
 from gtfs_ontology.schedule.term_definitions.generate import Field
 

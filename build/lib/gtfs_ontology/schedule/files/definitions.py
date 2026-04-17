@@ -37,3 +37,7 @@ Conditionally Required:
 - Required if calendar.txt is omitted. In which case calendar_dates.txt must contain all dates of service.
 - Optional otherwise.
 """
+
+DATASET_WITHOUT_CALENDAR_FILE_DEF = """
+A dataset that does not contain calendar.txt.
+"""

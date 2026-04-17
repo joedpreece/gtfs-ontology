@@ -7,7 +7,7 @@ with gtfs:
         seeAlso = ["https://gtfs.org/documentation/schedule/reference/#agencytxt"]
 
 
-    class Stop(Record, geo.SpatialThing, schema.BusStop):
+    class Stop(Record, geo.SpatialThing):
         seeAlso = ["https://gtfs.org/documentation/schedule/reference/#stopstxt"]
 
 
@@ -23,12 +23,15 @@ with gtfs:
         seeAlso = ["https://gtfs.org/documentation/schedule/reference/#stop_timestxt"]
 
 
-    class Calendar(Record):
-        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#calendartxt"]
+    class Service(Record):
+        seeAlso = [
+            "https://gtfs.org/documentation/schedule/reference/#calendartxt",
+            "https://gtfs.org/documentation/schedule/reference/#calendar_datestxt"
+        ]
 
 
-    class CalendarDate(Record):
-        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#calendar_datestxt"]
+    # class CalendarDate(Record):
+    #     seeAlso = ["https://gtfs.org/documentation/schedule/reference/#calendar_datestxt"]
 
 
     class Level(Record):

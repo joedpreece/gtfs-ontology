@@ -7,31 +7,31 @@ DATASET_FILES_URL = "https://gtfs.org/documentation/schedule/reference/#dataset-
 with gtfs:
 
     class AgencyFile(DatasetFile):
-        comment = [locstr(AGENCY_DEF), "en"]
+        comment = [locstr(AGENCY_DEF, "en")]
         seeAlso = [DATASET_FILES_URL]
 
     class StopFile(DatasetFile):
-        comment = [locstr(STOPS_DEF), "en"]
+        comment = [locstr(STOPS_DEF, "en")]
         seeAlso = [DATASET_FILES_URL]
 
     class RouteFile(DatasetFile):
-        comment = [locstr(ROUTES_DEF), "en"]
+        comment = [locstr(ROUTES_DEF, "en")]
         seeAlso = [DATASET_FILES_URL]
 
     class TripFile(DatasetFile):
-        comment = [locstr(TRIPS_DEF), "en"]
+        comment = [locstr(TRIPS_DEF, "en")]
         seeAlso = [DATASET_FILES_URL]
 
     class StopTimeFile(DatasetFile):
-        comment = [locstr(STOP_TIMES_DEF), "en"]
+        comment = [locstr(STOP_TIMES_DEF, "en")]
         seeAlso = [DATASET_FILES_URL]
 
     class CalendarFile(DatasetFile):
-        comment = [locstr(CALENDAR_DEF), "en"]
+        comment = [locstr(CALENDAR_DEF, "en")]
         seeAlso = [DATASET_FILES_URL]
 
     class CalendarDateFile(DatasetFile):
-        comment = [locstr(CALENDAR_DATES_DEF), "en"]
+        comment = [locstr(CALENDAR_DATES_DEF, "en")]
         seeAlso = [DATASET_FILES_URL]
 
     AllDisjoint([AgencyFile, StopFile, RouteFile, TripFile, StopTimeFile, CalendarFile, CalendarDateFile])
@@ -40,16 +40,9 @@ with gtfs:
         domain = [Dataset]
         range = [DatasetFile]
 
+    class DatasetWithoutCalendarFile(Dataset):
+        comment = [locstr(DATASET_WITHOUT_CALENDAR_FILE_DEF, "en")]
+        seeAlso = [CalendarFile]
+
     # region DL Rules
-
-    DatasetFile.is_a.append(
-        hasFile.exactly(1, AgencyFile) &
-        hasFile.exactly(1, StopFile) &
-        hasFile.exactly(1, RouteFile) &
-        hasFile.exactly(1, TripFile) &
-        hasFile.exactly(1, StopTimeFile) &
-        hasFile.exactly(1, CalendarFile) &
-        hasFile.exactly(1, CalendarDateFile)
-    )
-
     # endregion

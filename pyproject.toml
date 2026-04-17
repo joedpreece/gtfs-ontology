@@ -1,6 +1,6 @@
 [project]
 name = "gtfs-ontology"
-version = "0.1.0"
+version = "0.2.0-dev"
 description = "Source code to produce an OWL ontology for the General Transit Feed Specification."
 authors = [
     {name = "Joseph Preece", email = "joseph.preece@glasgow.ac.uk"}

@@ -111,34 +111,3 @@ with gtfs:
         domain = [Agency]
         range = [CEMVSupportDatatype]
         seeAlso = [AGENCY_DEFINITIONS_URL]
-
-# endregion
-
-# region OWLDL Rules
-
-    # # Every agency has to have exactly one agency_name, agency_url, and agency_timezone.
-    # gtfs.Agency.is_a.append(
-    #     agency_name.exactly(1) &
-    #     agency_url.exactly(1) &
-    #     agency_timezone.exactly(1)
-    # )
-    #
-    # # An agency file must have at least one agency.
-    # gtfs.AgencyFile.is_a.append(
-    #     hasAgency.min(1)
-    # )
-    #
-    # # If an agency file has multiple agencies, then it is a multiple agency file, and all agencies must have agency ids.
-    # AgencyFileWithMultipleAgencies.equivalent_to.append(
-    #     gtfs.AgencyFile &
-    #     gtfs.hasAgency.only(agency_id.exactly(1)) &
-    #     gtfs.hasAgency.min(2, gtfs.Agency)
-    # )
-    #
-    # # If an agency file has exactly one agency, then it is a single agency file.
-    # AgencyFileWithSingleAgency.equivalent_to.append(
-    #     gtfs.AgencyFile &
-    #     gtfs.hasAgency.exactly(1, gtfs.Agency)
-    # )
-
-# endregion

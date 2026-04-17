@@ -3,8 +3,9 @@ from gtfs_ontology.schedule.agencies.generate import AgencyFileWithMultipleAgenc
     AgencyFileWithSingleAgency
 from gtfs_ontology.schedule.core import hasRecord, hasFile
 from gtfs_ontology.schedule.files.generate import AgencyFile, StopFile, RouteFile, \
-    TripFile, StopTimeFile
-from gtfs_ontology.schedule.records.generate import Agency, Stop
+    TripFile, StopTimeFile, CalendarDateFile, CalendarFile, DatasetWithoutCalendarFile
+from gtfs_ontology.schedule.records.generate import Agency, Stop, Service, StopTime, \
+    Trip, Route
 from gtfs_ontology.schedule.term_definitions.generate import Dataset
 
 with gtfs:
@@ -41,14 +42,63 @@ with gtfs:
         hasRecord.min(1, Stop)
     )
 
-    # TODO Continue creating DL rules.
+    # 3i
+    Dataset.is_a.append(
+        hasFile.exactly(1, RouteFile)
+    )
 
-    # DatasetFile.is_a.append(
-    #     hasFile.exactly(1, AgencyFile) &
-    #     hasFile.exactly(1, StopFile) &
-    #     hasFile.exactly(1, RouteFile) &
-    #     hasFile.exactly(1, TripFile) &
-    #     hasFile.exactly(1, StopTimeFile) &
-    #     hasFile.exactly(1, CalendarFile) &
-    #     hasFile.exactly(1, CalendarDateFile)
-    # )
+    # 3ii
+    RouteFile.is_a.append(
+        hasRecord.min(1, Route)
+    )
+
+    # 4i
+    Dataset.is_a.append(
+        hasFile.exactly(1, TripFile)
+    )
+
+    # 4ii
+    TripFile.is_a.append(
+        hasRecord.min(1, Trip)
+    )
+
+    # 5i
+    Dataset.is_a.append(
+        hasFile.exactly(1, StopTimeFile)
+    )
+
+    # 5ii
+    StopTimeFile.is_a.append(
+        hasRecord.min(1, StopTime)
+    )
+
+    # 6i
+    CalendarFile.is_a.append(
+        hasRecord.min(1, Service)
+    )
+
+    # 6ii
+    DatasetWithoutCalendarFile.equivalent_to.append(
+        Dataset &
+        hasFile.exactly(0, CalendarFile)
+    )
+
+    # 6iii
+    Dataset.is_a.append(
+        hasFile.max(1, CalendarFile)
+    )
+
+    # 7i
+    DatasetWithoutCalendarFile.is_a.append(
+        hasFile.exactly(1, CalendarDateFile)
+    )
+
+    # 7ii
+    CalendarDateFile.is_a.append(
+        hasRecord.min(1, Service)
+    )
+
+    # 7iii
+    Dataset.is_a.append(
+        hasFile.max(1, CalendarDateFile)
+    )

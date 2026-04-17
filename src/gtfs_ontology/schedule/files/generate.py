@@ -40,5 +40,9 @@ with gtfs:
         domain = [Dataset]
         range = [DatasetFile]
 
+    class DatasetWithoutCalendarFile(Dataset):
+        comment = [locstr(DATASET_WITHOUT_CALENDAR_FILE_DEF, "en")]
+        seeAlso = [CalendarFile]
+
     # region DL Rules
     # endregion

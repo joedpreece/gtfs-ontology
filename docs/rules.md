@@ -32,11 +32,15 @@
 6. `CalendarFile`
 
    1. A `CalendarFile` must have at least one `Service`.
+   2. A `DatasetWihtoutCalendarFile` is a `Dataset` with no `CalendarFile`.
+   3. A `Dataset` has a maximum of one `CalendarFile`.
 
 7. `CalendarDatesFile`
 
    1. A `Dataset` must have a `CalendarDatesFile` if there is no `CalendarFile`.
    2. A `CalendarDatesFile` must have at least one `Service`.
+   3. A `Dataset` has a maximum of one `CalendarDatesFile`.
+
 
 
 ## Agencies

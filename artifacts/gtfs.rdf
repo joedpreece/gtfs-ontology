@@ -10,7 +10,7 @@
 <owl:Ontology rdf:about="https://w3id.org/gtfs">
   <rdfs:label xml:lang="en">The GTFS Ontology</rdfs:label>
   <rdfs:comment xml:lang="en">An OWL ontology describing entities, relationships, and data structures found in the General Transit Feed Specification (GTFS).</rdfs:comment>
-  <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1.0</owl:versionInfo>
+  <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.2.0.dev0</owl:versionInfo>
   <term:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Joseph D. Preece</term:creator>
 </owl:Ontology>
 
@@ -28,6 +28,8 @@
   <rdfs:domain rdf:resource="DatasetFile"/>
   <rdfs:range rdf:resource="Record"/>
 </owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="isRecordOf"/>
 
 <owl:DatatypeProperty rdf:about="https://www.w3.org/2003/01/geo/wgs84_pos#latitude"/>
 
@@ -685,9 +687,8 @@ Identifies a group of routes. Multiple rows in routes.txt may have the same netw
 
 <owl:DatatypeProperty rdf:about="service_id">
   <rdfs:subPropertyOf rdf:resource="id"/>
-  <rdfs:domain rdf:resource="Calendar"/>
+  <rdfs:domain rdf:resource="Service"/>
   <rdfs:domain rdf:resource="Trip"/>
-  <rdfs:domain rdf:resource="CalendarDate"/>
   <rdfs:comment xml:lang="en">
 Identifies a set of dates when service is available for one or more routes.
 </rdfs:comment>
@@ -701,7 +702,7 @@ Identifies a set of dates when a service exception occurs for one or more routes
 
 <owl:DatatypeProperty rdf:about="monday">
   <rdfs:subPropertyOf rdf:resource="enum"/>
-  <rdfs:domain rdf:resource="Calendar"/>
+  <rdfs:domain rdf:resource="Service"/>
   <rdfs:range rdf:resource="CalendarDatatype"/>
   <rdfs:comment xml:lang="en">
 Indicates whether the service operates on all Mondays in the date range specified by the start_date and end_date fields. Note that exceptions for particular dates may be listed in calendar_dates.txt. Valid options are:
@@ -714,7 +715,7 @@ Indicates whether the service operates on all Mondays in the date range specifie
 
 <owl:DatatypeProperty rdf:about="tuesday">
   <rdfs:subPropertyOf rdf:resource="enum"/>
-  <rdfs:domain rdf:resource="Calendar"/>
+  <rdfs:domain rdf:resource="Service"/>
   <rdfs:range rdf:resource="CalendarDatatype"/>
   <rdfs:comment xml:lang="en">
 Functions in the same way as monday except applies to Tuesdays
@@ -724,7 +725,7 @@ Functions in the same way as monday except applies to Tuesdays
 
 <owl:DatatypeProperty rdf:about="wednesday">
   <rdfs:subPropertyOf rdf:resource="enum"/>
-  <rdfs:domain rdf:resource="Calendar"/>
+  <rdfs:domain rdf:resource="Service"/>
   <rdfs:range rdf:resource="CalendarDatatype"/>
   <rdfs:comment xml:lang="en">
 Functions in the same way as monday except applies to Tuesdays
@@ -734,7 +735,7 @@ Functions in the same way as monday except applies to Tuesdays
 
 <owl:DatatypeProperty rdf:about="thursday">
   <rdfs:subPropertyOf rdf:resource="enum"/>
-  <rdfs:domain rdf:resource="Calendar"/>
+  <rdfs:domain rdf:resource="Service"/>
   <rdfs:range rdf:resource="CalendarDatatype"/>
   <rdfs:comment xml:lang="en">
 Functions in the same way as monday except applies to Tuesdays
@@ -744,7 +745,7 @@ Functions in the same way as monday except applies to Tuesdays
 
 <owl:DatatypeProperty rdf:about="friday">
   <rdfs:subPropertyOf rdf:resource="enum"/>
-  <rdfs:domain rdf:resource="Calendar"/>
+  <rdfs:domain rdf:resource="Service"/>
   <rdfs:range rdf:resource="CalendarDatatype"/>
   <rdfs:comment xml:lang="en">
 Functions in the same way as monday except applies to Tuesdays
@@ -754,7 +755,7 @@ Functions in the same way as monday except applies to Tuesdays
 
 <owl:DatatypeProperty rdf:about="saturday">
   <rdfs:subPropertyOf rdf:resource="enum"/>
-  <rdfs:domain rdf:resource="Calendar"/>
+  <rdfs:domain rdf:resource="Service"/>
   <rdfs:range rdf:resource="CalendarDatatype"/>
   <rdfs:comment xml:lang="en">
 Functions in the same way as monday except applies to Tuesdays
@@ -764,7 +765,7 @@ Functions in the same way as monday except applies to Tuesdays
 
 <owl:DatatypeProperty rdf:about="sunday">
   <rdfs:subPropertyOf rdf:resource="enum"/>
-  <rdfs:domain rdf:resource="Calendar"/>
+  <rdfs:domain rdf:resource="Service"/>
   <rdfs:range rdf:resource="CalendarDatatype"/>
   <rdfs:comment xml:lang="en">
 Functions in the same way as monday except applies to Sundays.
@@ -774,7 +775,7 @@ Functions in the same way as monday except applies to Sundays.
 
 <owl:DatatypeProperty rdf:about="start_date">
   <rdfs:subPropertyOf rdf:resource="date"/>
-  <rdfs:domain rdf:resource="Calendar"/>
+  <rdfs:domain rdf:resource="Service"/>
   <rdfs:comment xml:lang="en">
 Start service day for the service interval.
 </rdfs:comment>
@@ -783,7 +784,7 @@ Start service day for the service interval.
 
 <owl:DatatypeProperty rdf:about="end_date">
   <rdfs:subPropertyOf rdf:resource="date"/>
-  <rdfs:domain rdf:resource="Calendar"/>
+  <rdfs:domain rdf:resource="Service"/>
   <rdfs:comment xml:lang="en">
 End service day for the service interval. This service day is included in the interval.
 </rdfs:comment>
@@ -1044,7 +1045,7 @@ Identifies the alighting booking rule at this stop time.
 
 <owl:DatatypeProperty rdf:about="calendar_dates_date">
   <rdfs:subPropertyOf rdf:resource="date"/>
-  <rdfs:domain rdf:resource="CalendarDate"/>
+  <rdfs:domain rdf:resource="Service"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</rdfs:comment>
   <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
 Date when service exception occurs.
@@ -1054,7 +1055,7 @@ Date when service exception occurs.
 
 <owl:DatatypeProperty rdf:about="exception_type">
   <rdfs:subPropertyOf rdf:resource="enum"/>
-  <rdfs:domain rdf:resource="CalendarDate"/>
+  <rdfs:domain rdf:resource="Service"/>
   <rdfs:range rdf:resource="ExceptionTypeDatatype"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
 Indicates whether service is available on the date specified in the date field. Valid options are:
@@ -1119,6 +1120,41 @@ The specification currently supports the following types of information:
       <owl:onProperty rdf:resource="hasFile"/>
       <owl:onClass rdf:resource="StopFile"/>
       <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="hasFile"/>
+      <owl:onClass rdf:resource="RouteFile"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="hasFile"/>
+      <owl:onClass rdf:resource="TripFile"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="hasFile"/>
+      <owl:onClass rdf:resource="StopTimeFile"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="hasFile"/>
+      <owl:onClass rdf:resource="CalendarFile"/>
+      <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="hasFile"/>
+      <owl:onClass rdf:resource="CalendarDateFile"/>
+      <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
     </owl:Restriction>
   </rdfs:subClassOf>
   <rdfs:comment xml:lang="en">
@@ -1227,6 +1263,13 @@ Conditionally Required:
 
 <owl:Class rdf:about="RouteFile">
   <rdfs:subClassOf rdf:resource="DatasetFile"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="hasRecord"/>
+      <owl:onClass rdf:resource="Route"/>
+      <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
   <rdfs:comment xml:lang="en">
 Transit routes. A route is a group of trips that are displayed to riders as a single service.
 </rdfs:comment>
@@ -1235,6 +1278,13 @@ Transit routes. A route is a group of trips that are displayed to riders as a si
 
 <owl:Class rdf:about="TripFile">
   <rdfs:subClassOf rdf:resource="DatasetFile"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="hasRecord"/>
+      <owl:onClass rdf:resource="Trip"/>
+      <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
   <rdfs:comment xml:lang="en">
 Trips for each route. A trip is a sequence of two or more stops that occur during a specific time period.
 </rdfs:comment>
@@ -1243,6 +1293,13 @@ Trips for each route. A trip is a sequence of two or more stops that occur durin
 
 <owl:Class rdf:about="StopTimeFile">
   <rdfs:subClassOf rdf:resource="DatasetFile"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="hasRecord"/>
+      <owl:onClass rdf:resource="StopTime"/>
+      <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
   <rdfs:comment xml:lang="en">
 Times that a vehicle arrives at and departs from stops for each trip.
 </rdfs:comment>
@@ -1251,6 +1308,13 @@ Times that a vehicle arrives at and departs from stops for each trip.
 
 <owl:Class rdf:about="CalendarFile">
   <rdfs:subClassOf rdf:resource="DatasetFile"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="hasRecord"/>
+      <owl:onClass rdf:resource="Service"/>
+      <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
   <rdfs:comment xml:lang="en">
 Service dates specified using a weekly schedule with start and end dates.
 
@@ -1263,6 +1327,13 @@ Conditionally Required:
 
 <owl:Class rdf:about="CalendarDateFile">
   <rdfs:subClassOf rdf:resource="DatasetFile"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="hasRecord"/>
+      <owl:onClass rdf:resource="Service"/>
+      <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
   <rdfs:comment xml:lang="en">
 Exceptions for the services defined in the calendar.txt.
 
@@ -1273,16 +1344,192 @@ Conditionally Required:
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#dataset-files</rdfs:seeAlso>
 </owl:Class>
 
+<owl:Class rdf:about="DatasetWithoutCalendarFile">
+  <rdfs:subClassOf rdf:resource="Dataset"/>
+  <rdfs:seeAlso rdf:resource="CalendarFile"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="Dataset"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="hasFile"/>
+          <owl:onClass rdf:resource="CalendarFile"/>
+          <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="hasFile"/>
+      <owl:onClass rdf:resource="CalendarDateFile"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment xml:lang="en">
+A dataset that does not contain calendar.txt.
+</rdfs:comment>
+</owl:Class>
+
 <owl:Class rdf:about="Agency">
   <rdfs:subClassOf rdf:resource="Record"/>
   <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="agency_id"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="agency_name"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="agency_url"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="agency_timezone"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="agency_lang"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="agency_phone"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="agency_fare_url"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="agency_email"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="cemv_support"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#agencytxt</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="Stop">
   <rdfs:subClassOf rdf:resource="Record"/>
   <rdfs:subClassOf rdf:resource="https://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
-  <rdfs:subClassOf rdf:resource="https://schema.org/BusStop"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_id"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_code"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_name"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="tts_stop_name"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_desc"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_lat"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_lon"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="zone_id"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_url"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="location_type"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="parent_station"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_timezone"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="wheelchair_boarding"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="level_id"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="platform_code"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_access"/>
+      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#stopstxt</rdfs:seeAlso>
 </owl:Class>
 
@@ -1301,13 +1548,9 @@ Conditionally Required:
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#stop_timestxt</rdfs:seeAlso>
 </owl:Class>
 
-<owl:Class rdf:about="Calendar">
+<owl:Class rdf:about="Service">
   <rdfs:subClassOf rdf:resource="Record"/>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#calendartxt</rdfs:seeAlso>
-</owl:Class>
-
-<owl:Class rdf:about="CalendarDate">
-  <rdfs:subClassOf rdf:resource="Record"/>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#calendar_datestxt</rdfs:seeAlso>
 </owl:Class>
 
@@ -1349,6 +1592,556 @@ Conditionally Required:
     </owl:Class>
   </owl:equivalentClass>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An agency file with multiple agencies.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="AgencyOfAgencyFileWithMultipleAgencies">
+  <rdfs:subClassOf rdf:resource="Agency"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="Agency"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="isRecordOf"/>
+          <owl:allValuesFrom rdf:resource="AgencyFileWithMultipleAgencies"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="agency_id"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="StopOrPlatform">
+  <rdfs:subClassOf rdf:resource="Stop"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="Stop"/>
+        <owl:Class>
+          <owl:unionOf rdf:parseType="Collection">
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="location_type"/>
+              <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+            </owl:Restriction>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="location_type"/>
+              <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+            </owl:Restriction>
+          </owl:unionOf>
+        </owl:Class>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_name"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_lat"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_lon"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment xml:lang="en">
+A location where passengers board or disembark from a transit vehicle.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="StopLocation">
+  <rdfs:subClassOf rdf:resource="StopOrPlatform"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="StopOrPlatform"/>
+        <rdf:Description rdf:about="ParentlessStop"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+A location where passengers board or disembark from a transit vehicle.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="Platform">
+  <rdfs:subClassOf rdf:resource="StopOrPlatform"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="StopOrPlatform"/>
+        <rdf:Description rdf:about="ChildStop"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+Is called a platform when defined within a parent_station.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="Station">
+  <rdfs:subClassOf rdf:resource="Stop"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="Stop"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="location_type"/>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_name"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_lat"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_lon"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="parent_station"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_access"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment xml:lang="en">
+A physical structure or area that contains one or more platform.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="EntranceOrExit">
+  <rdfs:subClassOf rdf:resource="Stop"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="Stop"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="location_type"/>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_name"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_lat"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_lon"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="parent_station"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_access"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment xml:lang="en">
+A location where passengers can enter or exit a station from the street. If an entrance/exit belongs to multiple stations, it may be linked by pathways to both, but the data provider must pick one of them as parent.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="GenericNode">
+  <rdfs:subClassOf rdf:resource="Stop"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="Stop"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="location_type"/>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="parent_station"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_access"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment xml:lang="en">
+A location within a station, not matching any other location_type, that may be used to link together pathways define in pathways.txt.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="BoardingArea">
+  <rdfs:subClassOf rdf:resource="Stop"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="Stop"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="location_type"/>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</owl:hasValue>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="parent_station"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_access"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment xml:lang="en">
+A specific location on a platform, where passengers can board and/or alight vehicles.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="ParentlessStop">
+  <rdfs:subClassOf rdf:resource="Stop"/>
+  <owl:disjointWith rdf:resource="ChildStop"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="Stop"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="parent_station"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="stop_access"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment xml:lang="en">
+A parentless stop is a stop that does not reference a parent station.
+It represents a standalone boarding or alighting location that is not a child of another stop.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="ChildStop">
+  <rdfs:subClassOf rdf:resource="Stop"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="Stop"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="parent_station"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+A child stop is a sub-location of a station rather than a standalone stop or station.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="RecordWithAccessibilityInformation">
+  <rdfs:subClassOf rdf:resource="Record"/>
+  <rdfs:comment xml:lang="en">
+Indicates whether wheelchair boardings are possible from the location. 
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="StopWithNoAccessibilityInformation">
+  <rdfs:subClassOf rdf:resource="ParentlessStop"/>
+  <rdfs:subClassOf rdf:resource="RecordWithAccessibilityInformation"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="ParentlessStop"/>
+        <owl:Class>
+          <owl:unionOf rdf:parseType="Collection">
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="wheelchair_boarding"/>
+              <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+            </owl:Restriction>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="wheelchair_boarding"/>
+              <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+            </owl:Restriction>
+          </owl:unionOf>
+        </owl:Class>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+No accessibility information for the stop.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="StopWithPartialWheelchairAccessibility">
+  <rdfs:subClassOf rdf:resource="ParentlessStop"/>
+  <rdfs:subClassOf rdf:resource="RecordWithAccessibilityInformation"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="ParentlessStop"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="wheelchair_boarding"/>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+Some vehicles at this stop can be boarded by a rider in a wheelchair.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="StopWithNoWheelchairAccessibility">
+  <rdfs:subClassOf rdf:resource="ParentlessStop"/>
+  <rdfs:subClassOf rdf:resource="RecordWithAccessibilityInformation"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="ParentlessStop"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="wheelchair_boarding"/>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+Wheelchair boarding is not possible at this stop. 
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="StopInheritingAccessibilityFromStation">
+  <rdfs:subClassOf rdf:resource="ChildStop"/>
+  <rdfs:subClassOf rdf:resource="RecordWithAccessibilityInformation"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="ChildStop"/>
+        <owl:Class>
+          <owl:unionOf rdf:parseType="Collection">
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="wheelchair_boarding"/>
+              <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+            </owl:Restriction>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="wheelchair_boarding"/>
+              <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+            </owl:Restriction>
+          </owl:unionOf>
+        </owl:Class>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+Stop will inherit its wheelchair_boarding behavior from the parent station, if specified in the parent.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="StopWithAccessiblePathFromOutsideStation">
+  <rdfs:subClassOf rdf:resource="ChildStop"/>
+  <rdfs:subClassOf rdf:resource="RecordWithAccessibilityInformation"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="ChildStop"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="wheelchair_boarding"/>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+There exists some accessible path from outside the station to the specific stop/platform.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="StopWithNoAccessiblePathFromOutsideStation">
+  <rdfs:subClassOf rdf:resource="ChildStop"/>
+  <rdfs:subClassOf rdf:resource="RecordWithAccessibilityInformation"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="ChildStop"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="wheelchair_boarding"/>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+There exists no accessible path from outside the station to the specific stop/platform.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="EntranceInheritingAccessibilityFromStation">
+  <rdfs:subClassOf rdf:resource="EntranceOrExit"/>
+  <rdfs:subClassOf rdf:resource="RecordWithAccessibilityInformation"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="EntranceOrExit"/>
+        <owl:Class>
+          <owl:unionOf rdf:parseType="Collection">
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="wheelchair_boarding"/>
+              <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+            </owl:Restriction>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="wheelchair_boarding"/>
+              <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+            </owl:Restriction>
+          </owl:unionOf>
+        </owl:Class>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+Station entrance will inherit its wheelchair_boarding behavior from the parent station, if specified for the parent.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="WheelchairAccessibleEntrance">
+  <rdfs:subClassOf rdf:resource="EntranceOrExit"/>
+  <rdfs:subClassOf rdf:resource="RecordWithAccessibilityInformation"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="EntranceOrExit"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="wheelchair_boarding"/>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+Station entrance is wheelchair accessible.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="EntranceWithNoAccessiblePathToPlatforms">
+  <rdfs:subClassOf rdf:resource="EntranceOrExit"/>
+  <rdfs:subClassOf rdf:resource="RecordWithAccessibilityInformation"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="EntranceOrExit"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="wheelchair_boarding"/>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+No accessible path from station entrance to stops/platforms.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="StopWithStopAccessInformation">
+  <rdfs:subClassOf rdf:resource="Stop"/>
+  <rdfs:comment xml:lang="en">
+Indicates how the stop is accessed for a particular station. Valid options are:
+
+0 - The stop/platform cannot be directly accessed from the street network. It must be accessed from a station entrance if there is one defined for the station, otherwise the station itself. If there are pathways defined for the station, they must be used to access the stop/platform.
+1 - Consuming applications should generate directions for access directly to the stop, independent of any entrances or pathways of the parent station.
+
+When stop_access is empty, the access for the specified stop or platform is considered undefined.
+
+Conditionally Forbidden:
+- Forbidden for locations which are stations (location_type=1), entrances (location_type=2), generic nodes (location_type=3) or boarding areas (location_type=4).
+- Forbidden if parent_station is empty.
+- Optional otherwise.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="StopAccessibleViaStationOnly">
+  <rdfs:subClassOf rdf:resource="StopOrPlatform"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="StopOrPlatform"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="stop_access"/>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+The stop/platform cannot be directly accessed from the street network. It must be accessed from a station entrance if there is one defined for the station, otherwise the station itself. If there are pathways defined for the station, they must be used to access the stop/platform.
+</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="StopDirectlyAccessibleFromStreet">
+  <rdfs:subClassOf rdf:resource="StopOrPlatform"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="StopOrPlatform"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="stop_access"/>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:comment xml:lang="en">
+Consuming applications should generate directions for access directly to the stop, independent of any entrances or pathways of the parent station.
+</rdfs:comment>
 </owl:Class>
 
 <rdfs:Datatype rdf:about="https://schema.org/url"/>
@@ -4156,6 +4949,17 @@ Conditionally Required:
     </rdfs:Datatype>
   </owl:equivalentClass>
 </rdfs:Datatype>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="StopLocation"/>
+    <rdf:Description rdf:about="Platform"/>
+    <rdf:Description rdf:about="Station"/>
+    <rdf:Description rdf:about="EntranceOrExit"/>
+    <rdf:Description rdf:about="GenericNode"/>
+    <rdf:Description rdf:about="BoardingArea"/>
+  </owl:members>
+</owl:AllDisjointClasses>
 
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">

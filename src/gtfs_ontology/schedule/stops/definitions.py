@@ -107,3 +107,88 @@ Conditionally Forbidden:
 - Forbidden if parent_station is empty.
 - Optional otherwise.
 """
+
+STOP_OR_PLATFORM_DEF = """
+A location where passengers board or disembark from a transit vehicle.
+"""
+
+STOP_LOCATION_DEF = """
+A location where passengers board or disembark from a transit vehicle.
+"""
+
+PLATFORM_DEF = """
+Is called a platform when defined within a parent_station.
+"""
+
+STATION_DEF = """
+A physical structure or area that contains one or more platform.
+"""
+
+ENTRANCE_OR_EXIT_DEF = """
+A location where passengers can enter or exit a station from the street. If an entrance/exit belongs to multiple stations, it may be linked by pathways to both, but the data provider must pick one of them as parent.
+"""
+
+GENERIC_NODE_DEF = """
+A location within a station, not matching any other location_type, that may be used to link together pathways define in pathways.txt.
+"""
+
+BOARDING_AREA_DEF = """
+A specific location on a platform, where passengers can board and/or alight vehicles.
+"""
+
+PARENTLESS_STOP_DEF = """
+A parentless stop is a stop that does not reference a parent station.
+It represents a standalone boarding or alighting location that is not a child of another stop.
+"""
+
+CHILD_STOP_DEF = """
+A child stop is a sub-location of a station rather than a standalone stop or station.
+"""
+
+RECORD_WITH_ACCESSIBILITY_DEF = """
+Indicates whether wheelchair boardings are possible from the location. 
+"""
+
+WHEELCHAIR_BOARDING_PARENTLESS_STOP_0_DEF = """
+No accessibility information for the stop.
+"""
+
+WHEELCHAIR_BOARDING_PARENTLESS_STOP_1_DEF = """
+Some vehicles at this stop can be boarded by a rider in a wheelchair.
+"""
+
+WHEELCHAIR_BOARDING_PARENTLESS_STOP_2_DEF = """
+Wheelchair boarding is not possible at this stop. 
+"""
+
+WHEELCHAIR_BOARDING_CHILD_STOP_0_DEF = """
+Stop will inherit its wheelchair_boarding behavior from the parent station, if specified in the parent.
+"""
+
+WHEELCHAIR_BOARDING_CHILD_STOP_1_DEF = """
+There exists some accessible path from outside the station to the specific stop/platform.
+"""
+
+WHEELCHAIR_BOARDING_CHILD_STOP_2_DEF = """
+There exists no accessible path from outside the station to the specific stop/platform.
+"""
+
+WHEELCHAIR_BOARDING_ENTRANCEEXIT_0_DEF = """
+Station entrance will inherit its wheelchair_boarding behavior from the parent station, if specified for the parent.
+"""
+
+WHEELCHAIR_BOARDING_ENTRANCEEXIT_1_DEF = """
+Station entrance is wheelchair accessible.
+"""
+
+WHEELCHAIR_BOARDING_ENTRANCEEXIT_2_DEF = """
+No accessible path from station entrance to stops/platforms.
+"""
+
+STOP_ACCESS_0_DEF = """
+The stop/platform cannot be directly accessed from the street network. It must be accessed from a station entrance if there is one defined for the station, otherwise the station itself. If there are pathways defined for the station, they must be used to access the stop/platform.
+"""
+
+STOP_ACCESS_1_DEF = """
+Consuming applications should generate directions for access directly to the stop, independent of any entrances or pathways of the parent station.
+"""

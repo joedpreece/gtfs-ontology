@@ -25,3 +25,6 @@ with gtfs:
     class hasRecord(ObjectProperty):
         domain = [DatasetFile]
         range = [Record]
+
+    class isRecordOf(ObjectProperty):
+        inverse_of = hasRecord

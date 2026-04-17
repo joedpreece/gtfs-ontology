@@ -2,7 +2,7 @@ from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.calendar.generate import service_id
 from gtfs_ontology.schedule.calendar_dates.definitions import *
 from gtfs_ontology.schedule.field_types.generate import date, enum, enumerated_datatype
-from gtfs_ontology.schedule.records.generate import CalendarDate
+from gtfs_ontology.schedule.records.generate import Service
 
 CALENDAR_DATES_URL = "https://gtfs.org/documentation/schedule/reference/#calendar_datestxt"
 
@@ -38,17 +38,17 @@ with gtfs:
     # region Data Properties
 
     service_id.comment.append(locstr(SERVICE_ID, "en"))
-    service_id.domain.append(CalendarDate)
+    service_id.domain.append(Service)
     service_id.seeAlso.append(CALENDAR_DATES_URL)
 
     class calendar_dates_date(date):
         comment = [locstr(DATE_DEF), "en"]
-        domain = [CalendarDate]
+        domain = [Service]
         seeAlso = [CALENDAR_DATES_URL]
 
     class exception_type(enum):
         comment = [locstr(EXCEPTION_TYPE_DEF), "en"]
-        domain = [CalendarDate]
+        domain = [Service]
         range = [ExceptionTypeDatatype]
         seeAlso = [CALENDAR_DATES_URL]
 
