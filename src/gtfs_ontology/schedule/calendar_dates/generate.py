@@ -42,12 +42,12 @@ with gtfs:
     service_id.seeAlso.append(CALENDAR_DATES_URL)
 
     class calendar_dates_date(date):
-        comment = [locstr(DATE_DEF), "en"]
+        comment = [locstr(DATE_DEF, "en")]
         domain = [Service]
         seeAlso = [CALENDAR_DATES_URL]
 
     class exception_type(enum):
-        comment = [locstr(EXCEPTION_TYPE_DEF), "en"]
+        comment = [locstr(EXCEPTION_TYPE_DEF, "en")]
         domain = [Service]
         range = [ExceptionTypeDatatype]
         seeAlso = [CALENDAR_DATES_URL]

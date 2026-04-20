@@ -112,7 +112,7 @@ def rdfox_proc():
     run_cmd(proc, "endpoint start")
     run_cmd(proc, "dstore create test")
     run_cmd(proc, "active test")
-    run_cmd(proc, "prefix gtfs: <https://gtfs.org/ontology#>")
+    run_cmd(proc, "prefix gtfs: <https://w3id.org/gtfs#>")
     run_cmd(proc, "set query.answer-format application/sparql-results+json")
 
     yield proc
@@ -162,3 +162,11 @@ def rdfox_ask(rdfox_proc):
     def _query(q):
         return run_cmd(rdfox_proc, f'ask {q}')
     return _query
+
+@pytest.fixture(scope="module")
+def import_rules(rdfox_proc, rules_path: str):
+    """
+    Imports the datalog rules for validating agencies into RDFox.
+    """
+
+    run_cmd(rdfox_proc, f'import "{str(rules_path)}"')

@@ -1,5 +1,3 @@
-[gtfs:Violation, rdf:type, owl:Class] .
-
 # An AgencyFile is an AgencyFileWithMultipleAgencies if it has more than one Agency.
 [?f, rdf:type, gtfs:AgencyFileWithMultipleAgencies] :-
     [?f, rdf:type, gtfs:AgencyFile] ,
@@ -29,21 +27,25 @@
     FILTER(?a1 != ?a2).
 
 # Check for the required name field.
+[?a, gtfs:violationDetail, "This `Agency` does not have an `agency_name`."] ,
 [?a, rdf:type, gtfs:Violation] :-
     [?a, rdf:type, gtfs:Agency] ,
     NOT EXISTS ?n IN ([?a, gtfs:agency_name, ?n]) .
 
 # Check for the required URL field.
+[?a, gtfs:violationDetail, "This `Agency` does not have an `agency_url`."] ,
 [?a, rdf:type, gtfs:Violation] :-
     [?a, rdf:type, gtfs:Agency] ,
     NOT EXISTS ?u IN ([?a, gtfs:agency_url, ?u]) .
 
 # Check for the required timezone field.
+[?a, gtfs:violationDetail, "This `Agency` does not have an `agency_timezone`."] ,
 [?a, rdf:type, gtfs:Violation] :-
     [?a, rdf:type, gtfs:Agency] ,
     NOT EXISTS ?t IN ([?a, gtfs:agency_timezone, ?t]) .
 
 # Check if agencies within a multiple agency file have unique ids.
+[?d, gtfs:violationDetail, "This `Agency` does not have an `agency_name`."] ,
 [?a, rdf:type, gtfs:Violation] :-
     [?f, rdf:type, gtfs:AgencyFileWithMultipleAgencies],
     [?f, gtfs:hasAgency, ?a],

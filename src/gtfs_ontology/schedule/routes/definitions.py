@@ -92,3 +92,55 @@ If both agency.cemv_support and routes.cemv_support are provided for the same se
 
 This field is independent of all other fare-related files and may be used separately. If there is conflicting information between this field and any fare-related file (such as fare_media.txt, fare_products.txt, or fare_leg_rules.txt), the information in those files shall take precedence over agency.cemv_support.
 """
+
+TRAM_ROUTE_DEF = """
+Any light rail or street level system within a metropolitan area.
+"""
+
+SUBWAY_ROUTE_DEF = """
+Any underground rail system within a metropolitan area.
+"""
+
+RAIL_DEF = """
+Used for intercity or long-distance travel.
+"""
+
+BUS_DEF = """
+Used for short- and long-distance bus routes.
+"""
+
+FERRY_DEF = """
+Used for short- and long-distance boat service.
+"""
+
+CABLE_TRAM_DEF = """
+Used for street-level rail cars where the cable runs beneath the vehicle (e.g., cable car in San Francisco).
+"""
+
+AERIAL_LIFT_DEF = """
+Cable transport where cabins, cars, gondolas or open chairs are suspended by means of one or more cables.
+"""
+
+FUNICULAR_DEF = """
+Any rail system designed for steep inclines.
+"""
+
+TROLLEYBUS_DEF = """
+Electric buses that draw power from overhead wires using poles.
+"""
+
+MONORAIL_DEF = """
+Railway in which the track consists of a single rail or a beam.
+"""
+
+CEMV_NO_INFORMATION = """
+No cEMV information for trips associated with this route. 
+"""
+
+CEMV_SUPPORTED = """
+Riders may use cEMVs as fare media for trips associated with this route. 
+"""
+
+CEMV_NOT_SUPPORTED = """
+cEMVs are not supported as fare media for trips associated with this route. 
+"""

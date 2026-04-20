@@ -18,7 +18,11 @@ import gtfs_ontology.schedule.stops.generate
 import gtfs_ontology.schedule.stops.dl_rules
 
 import gtfs_ontology.schedule.routes.generate
+import gtfs_ontology.schedule.routes.dl_rules
+
 import gtfs_ontology.schedule.trips.generate
+import gtfs_ontology.schedule.trips.dl_rules
+
 import gtfs_ontology.schedule.stop_times.generate
 import gtfs_ontology.schedule.calendar.generate
 import gtfs_ontology.schedule.calendar_dates.generate

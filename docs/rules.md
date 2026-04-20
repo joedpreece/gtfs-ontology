@@ -52,17 +52,20 @@
 
 2. `agency_name`
 
-   1. An `Agency` must have an `agency_name`.
+   1. An `Agency` must have one `agency_name`.
 
 3. `agency_url`
 
-   1. An `Agency` must have an `agency_url`.
+   1. An `Agency` must have one `agency_url`.
 
 4. `agency_timezone`
 
-   1. An `Agency` must have an `agency_timezone`.
+   1. An `Agency` must have one `agency_timezone`.
 
 5. `agency_lang`
+
+   1. An `Agency` must have at most one `agency_lang`. 
+
 6. `agency_phone`
 7. `agency_fare_url`
 8. `agency_email`

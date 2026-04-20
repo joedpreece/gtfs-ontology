@@ -5,7 +5,7 @@ from importlib.metadata import version
 __version__ = version("gtfs-ontology")
 
 # Namespaces and external ontologies
-gtfs = get_ontology(f"https://w3id.org/gtfs/")
+gtfs = get_ontology(f"https://w3id.org/gtfs")
 dcterms = gtfs.get_namespace("http://purl.org/dc/terms/")
 foaf = get_ontology("https://xmlns.com/foaf/spec/index.rdf").load()
 dcat = get_ontology("https://www.w3.org/ns/dcat3.rdf").load()
@@ -85,6 +85,14 @@ with gtfs:
     class GTFSRealtime(FeedSpecification):
         comment = [locstr(GTFS_REALTIME_DEF, "en")]
         seeAlso = ["https://gtfs.org/documentation/overview/#gtfs-realtime"]
+
+    class Violation(Thing):
+        comment = [locstr("A violation of a GTFS specification.", "en")]
+
+    class violationDetail(DataProperty):
+        comment = [locstr("A description of the violation.", "en")]
+        domain = [Violation]
+        range = [str]
 
 # endregion
 

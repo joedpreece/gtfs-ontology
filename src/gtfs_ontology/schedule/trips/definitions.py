@@ -62,3 +62,47 @@ Indicates whether cars are allowed. Valid options are:
 1 - Vehicle being used on this particular trip can accommodate at least one car.
 2 - No cars are allowed on this trip.
 """
+
+DIRECTION_A = """
+Travel in one direction (e.g. outbound travel).
+"""
+
+DIRECTION_B = """
+Travel in one direction (e.g. outbound travel).
+"""
+
+WHEELCHAIR_ACCESSIBLE_0_DEF = """
+No accessibility information for the trip.
+"""
+
+WHEELCHAIR_ACCESSIBLE_1_DEF = """
+Vehicle being used on this particular trip can accommodate at least one rider in a wheelchair.
+"""
+
+WHEELCHAIR_ACCESSIBLE_2_DEF = """
+No riders in wheelchairs can be accommodated on this trip.
+"""
+
+BIKES_ALLOWED_0_DEF = """
+No bike information for the trip.
+"""
+
+BIKES_ALLOWED_1_DEF = """
+Vehicle being used on this particular trip can accommodate at least one bicycle.
+"""
+
+BIKES_ALLOWED_2_DEF = """
+No bicycles are allowed on this trip.
+"""
+
+CARS_ALLOWED_0_DEF = """
+No car information for the trip.
+"""
+
+CARS_ALLOWED_1_DEF = """
+Vehicle being used on this particular trip can accommodate at least one car.
+"""
+
+CARS_ALLOWED_2_DEF = """
+No cars are allowed on this trip.
+"""
