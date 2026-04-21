@@ -6,66 +6,21 @@ from gtfs_ontology.schedule.term_definitions.generate import Record
 with gtfs:
 
     Stop.is_a.append(
-        stop_id.exactly(1)
-    )
-
-    Stop.is_a.append(
-        stop_code.max(1)
-    )
-
-    Stop.is_a.append(
-        stop_name.max(1)
-    )
-
-    Stop.is_a.append(
-        tts_stop_name.max(1)
-    )
-
-    Stop.is_a.append(
-        stop_desc.max(1)
-    )
-
-    Stop.is_a.append(
-        stop_lat.max(1)
-    )
-
-    Stop.is_a.append(
-        stop_lon.max(1)
-    )
-
-    Stop.is_a.append(
-        zone_id.max(1)
-    )
-
-    Stop.is_a.append(
-        stop_url.max(1)
-    )
-
-    Stop.is_a.append(
-        location_type.max(1)
-    )
-
-    Stop.is_a.append(
-        parent_station.max(1)
-    )
-
-    Stop.is_a.append(
-        stop_timezone.max(1)
-    )
-
-    Stop.is_a.append(
-        wheelchair_boarding.max(1)
-    )
-
-    Stop.is_a.append(
-        level_id.max(1)
-    )
-
-    Stop.is_a.append(
-        platform_code.max(1)
-    )
-
-    Stop.is_a.append(
+        stop_id.exactly(1) &
+        stop_code.max(1) &
+        stop_name.max(1) &
+        tts_stop_name.max(1) &
+        stop_desc.max(1) &
+        stop_lat.max(1) &
+        stop_lon.max(1) &
+        zone_id.max(1) &
+        stop_url.max(1) &
+        location_type.max(1) &
+        parent_station.max(1) &
+        stop_timezone.max(1) &
+        wheelchair_boarding.max(1) &
+        level_id.max(1) &
+        platform_code.max(1) &
         stop_access.max(1)
     )
 
@@ -149,46 +104,22 @@ with gtfs:
     )
 
     StopOrPlatform.is_a.append(
-        stop_name.exactly(1)
-    )
-
-    Station.is_a.append(
-        stop_name.exactly(1)
-    )
-
-    EntranceOrExit.is_a.append(
-        stop_name.exactly(1)
-    )
-
-    # stop_lat
-
-    StopOrPlatform.is_a.append(
-        stop_lat.exactly(1)
-    )
-
-    Station.is_a.append(
-        stop_lat.exactly(1)
-    )
-
-    EntranceOrExit.is_a.append(
-        stop_lat.exactly(1)
-    )
-
-    StopOrPlatform.is_a.append(
+        stop_name.exactly(1) &
+        stop_lat.exactly(1) &
         stop_lon.exactly(1)
     )
 
     Station.is_a.append(
-        stop_lon.exactly(1)
+        stop_name.exactly(1) &
+        stop_lat.exactly(1) &
+        stop_lon.exactly(1) &
+        parent_station.exactly(0)
     )
 
     EntranceOrExit.is_a.append(
-        stop_lon.exactly(1)
-    )
-
-    # parent_station
-
-    EntranceOrExit.is_a.append(
+        stop_name.exactly(1) &
+        stop_lat.exactly(1) &
+        stop_lon.exactly(1) &
         parent_station.exactly(1)
     )
 
@@ -200,11 +131,8 @@ with gtfs:
         parent_station.exactly(1)
     )
 
-    Station.is_a.append(
-        parent_station.exactly(0)
-    )
-
     # wheelchair_boarding
+
     class RecordWithAccessibilityInformation(Record):
         comment = [locstr(RECORD_WITH_ACCESSIBILITY_DEF, "en")]
 

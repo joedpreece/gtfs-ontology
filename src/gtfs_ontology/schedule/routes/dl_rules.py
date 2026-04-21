@@ -1,20 +1,48 @@
 from gtfs_ontology.schedule import *
+from gtfs_ontology.schedule.agencies.generate import AgencyFileWithMultipleAgencies
+from gtfs_ontology.schedule.core import isRecordOf, isFileOf, hasFile, hasRecord
+from gtfs_ontology.schedule.files.generate import RouteFile, StopTimeFile
 from gtfs_ontology.schedule.records.generate import StopTime
 from gtfs_ontology.schedule.routes.generate import *
+from gtfs_ontology.schedule.stop_times.generate import start_pickup_drop_off_window, \
+    end_pickup_drop_off_window
+from gtfs_ontology.schedule.term_definitions.generate import Dataset
 
 with gtfs:
 
     # route_id
 
     Route.is_a.append(
-        route_id.exactly(1)
+        route_id.exactly(1) &
+        agency_id.max(1) &
+        route_short_name.max(1) &
+        route_long_name.max(1) &
+        route_desc.max(1) &
+        route_type.exactly(1) &
+        route_url.max(1) &
+        route_color.max(1) &
+        route_text_color.max(1) &
+        route_sort_order.max(1) &
+        continuous_pickup.max(1) &
+        continuous_drop_off.max(1) &
+        network_id.max(1) &
+        cemv_support.max(1)
     )
 
-    # agency_id
-
-    Route.is_a.append(
-        agency_id.max(1)
-    )
+    class RouteWithAgencyID(Route):
+        equivalent_to = [
+            Route &
+            isRecordOf.some(
+                RouteFile &
+                isFileOf.some(
+                    Dataset &
+                    hasFile.some(AgencyFileWithMultipleAgencies)
+                )
+            )
+        ]
+        is_a = [
+            agency_id.exactly(1)
+        ]
 
     # route_short_name
 
@@ -23,14 +51,9 @@ with gtfs:
             Route &
             route_long_name.exactly(0)
         ]
-
-    Route.is_a.append(
-        route_short_name.max(1)
-    )
-
-    RouteWithNoLongName.is_a.append(
-        route_short_name.exactly(1)
-    )
+        is_a = [
+            route_short_name.exactly(1)
+        ]
 
     # route_long_name
 
@@ -39,27 +62,9 @@ with gtfs:
             Route &
             route_short_name.exactly(0)
         ]
-
-
-    Route.is_a.append(
-        route_long_name.max(1)
-    )
-
-    RouteWithNoShortName.is_a.append(
-        route_long_name.exactly(1)
-    )
-
-    # route_desc
-
-    Route.is_a.append(
-        route_desc.max(1)
-    )
-
-    # route_type
-
-    Route.is_a.append(
-        route_type.exactly(1)
-    )
+        is_a = [
+            route_long_name.exactly(1)
+        ]
 
     class TramRoute(Route):
         comment = [locstr(TRAM_ROUTE_DEF, "en")]
@@ -131,35 +136,29 @@ with gtfs:
             route_type.value(12)
         ]
 
-    # route_url
-
-    Route.is_a.append(
-        route_url.max(1)
-    )
-
-    # route_color
-
-    Route.is_a.append(
-        route_color.max(1)
-    )
-
-    # route_text_color
-
-    Route.is_a.append(
-        route_text_color.max(1)
-    )
-
-    # route_sort_order
-
-    Route.is_a.append(
-        route_sort_order.max(1)
-    )
-
-    # continuous_pickup
-
-    Route.is_a.append(
-        continuous_pickup.max(1)
-    )
+    class RouteWithContinuousDropOff(Route):
+        equivalent_to = [
+            Route &
+            isFileOf.some(
+                RouteFile &
+                isRecordOf.some(
+                    Dataset
+                    & hasFile.some(
+                        StopTimeFile &
+                        hasRecord.some(
+                            StopTime &
+                            (
+                                start_pickup_drop_off_window.exactly(1) |
+                                end_pickup_drop_off_window.exactly(1)
+                            )
+                        )
+                    )
+                )
+            )
+        ]
+        is_a = [
+            continuous_drop_off.exactly(1)
+        ]
 
     ## TODO: Encode the conditionally forbidden
     class StopTimeWithPickupDropOffWindow(StopTime):
@@ -167,23 +166,9 @@ with gtfs:
 
     # continuous_drop_off
 
-    Route.is_a.append(
-        continuous_drop_off.max(1)
-    )
-
     ## TODO: Encode the conditionally forbidden
 
     # network_id
-
-    Route.is_a.append(
-        network_id.max(1)
-    )
-
-    # cemv_support
-
-    Route.is_a.append(
-        cemv_support.max(1)
-    )
 
     class RouteWithNoCEMVInformation(Route):
         comment = [locstr(CEMV_NO_INFORMATION, "en")]

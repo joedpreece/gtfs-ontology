@@ -8,54 +8,30 @@ from rdflib import RDF, OWL
 
 with gtfs:
 
-    class AgencyOfAgencyFileWithMultipleAgencies(Agency):
+    class AgencyWithinAgencyFileWithMultipleAgencies(Agency):
         pass
 
     # TODO Consider that `agency_id` must be unique.
 
     # 1i
-    AgencyOfAgencyFileWithMultipleAgencies.equivalent_to.append(
+    AgencyWithinAgencyFileWithMultipleAgencies.equivalent_to.append(
         Agency &
         isRecordOf.only(AgencyFileWithMultipleAgencies)
     )
 
-    AgencyOfAgencyFileWithMultipleAgencies.is_a.append(
+    AgencyWithinAgencyFileWithMultipleAgencies.is_a.append(
         agency_id.exactly(1)
     )
 
     Agency.is_a.append(
-        agency_id.max(1)
-    )
-
-    Agency.is_a.append(
-        agency_name.exactly(1)
-    )
-
-    Agency.is_a.append(
-        agency_url.exactly(1)
-    )
-
-    Agency.is_a.append(
-        agency_timezone.exactly(1)
-    )
-
-    Agency.is_a.append(
-        agency_lang.max(1)
-    )
-
-    Agency.is_a.append(
-        agency_phone.max(1)
-    )
-
-    Agency.is_a.append(
-        agency_fare_url.max(1)
-    )
-
-    Agency.is_a.append(
-        agency_email.max(1)
-    )
-
-    Agency.is_a.append(
+        agency_id.max(1) &
+        agency_name.exactly(1) &
+        agency_url.exactly(1) &
+        agency_timezone.exactly(1) &
+        agency_lang.max(1) &
+        agency_phone.max(1) &
+        agency_fare_url.max(1) &
+        agency_email.max(1) &
         cemv_support.max(1)
     )
 

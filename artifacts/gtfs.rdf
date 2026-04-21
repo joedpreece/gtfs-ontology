@@ -24,6 +24,8 @@
   <rdfs:range rdf:resource="#DatasetFile"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#isFileOf"/>
+
 <owl:ObjectProperty rdf:about="#hasRecord">
   <rdfs:domain rdf:resource="#DatasetFile"/>
   <rdfs:range rdf:resource="#Record"/>
@@ -1384,58 +1386,46 @@ A dataset that does not contain calendar.txt.
   <rdfs:subClassOf rdf:resource="#Record"/>
   <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
   <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#agency_id"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#agency_name"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#agency_url"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#agency_timezone"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#agency_lang"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#agency_phone"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#agency_fare_url"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#agency_email"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#cemv_support"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#agency_id"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#agency_name"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#agency_url"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#agency_timezone"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#agency_lang"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#agency_phone"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#agency_fare_url"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#agency_email"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#cemv_support"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
   </rdfs:subClassOf>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#agencytxt</rdfs:seeAlso>
 </owl:Class>
@@ -1444,100 +1434,74 @@ A dataset that does not contain calendar.txt.
   <rdfs:subClassOf rdf:resource="#Record"/>
   <rdfs:subClassOf rdf:resource="https://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
   <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_id"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_code"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_name"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#tts_stop_name"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_desc"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_lat"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_lon"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#zone_id"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_url"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#location_type"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#parent_station"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_timezone"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#wheelchair_boarding"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#level_id"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#platform_code"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_access"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_id"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_code"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_name"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#tts_stop_name"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_desc"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_lat"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_lon"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#zone_id"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_url"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#location_type"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#parent_station"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_timezone"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#wheelchair_boarding"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#level_id"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#platform_code"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_access"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
   </rdfs:subClassOf>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#stopstxt</rdfs:seeAlso>
 </owl:Class>
@@ -1545,88 +1509,66 @@ A dataset that does not contain calendar.txt.
 <owl:Class rdf:about="#Route">
   <rdfs:subClassOf rdf:resource="#Record"/>
   <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#route_id"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#agency_id"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#route_short_name"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#route_long_name"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#route_desc"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#route_type"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#route_url"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#route_color"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#route_text_color"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#route_sort_order"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#continuous_pickup"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#continuous_drop_off"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#network_id"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#cemv_support"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#route_id"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#agency_id"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#route_short_name"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#route_long_name"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#route_desc"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#route_type"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#route_url"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#route_color"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#route_text_color"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#route_sort_order"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#continuous_pickup"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#continuous_drop_off"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#network_id"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#cemv_support"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
   </rdfs:subClassOf>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#routestxt</rdfs:seeAlso>
 </owl:Class>
@@ -1634,70 +1576,54 @@ A dataset that does not contain calendar.txt.
 <owl:Class rdf:about="#Trip">
   <rdfs:subClassOf rdf:resource="#Record"/>
   <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#route_id"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#service_id"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#trip_id"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#trip_headsign"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#trip_short_name"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#direction_id"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#block_id"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#shape_id"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#wheelchair_accessible"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#bikes_allowed"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#cars_allowed"/>
-      <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    </owl:Restriction>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#route_id"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#service_id"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#trip_id"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#trip_headsign"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#trip_short_name"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#direction_id"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#block_id"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#shape_id"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#wheelchair_accessible"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#bikes_allowed"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#cars_allowed"/>
+          <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
   </rdfs:subClassOf>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#tripstxt</rdfs:seeAlso>
 </owl:Class>
@@ -1709,8 +1635,8 @@ A dataset that does not contain calendar.txt.
 
 <owl:Class rdf:about="#Service">
   <rdfs:subClassOf rdf:resource="#Record"/>
-  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#calendar_datestxt</rdfs:seeAlso>
   <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#calendartxt</rdfs:seeAlso>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://gtfs.org/documentation/schedule/reference/#calendar_datestxt</rdfs:seeAlso>
 </owl:Class>
 
 <owl:Class rdf:about="#Level">
@@ -1753,7 +1679,7 @@ A dataset that does not contain calendar.txt.
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An agency file with multiple agencies.</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#AgencyOfAgencyFileWithMultipleAgencies">
+<owl:Class rdf:about="#AgencyWithinAgencyFileWithMultipleAgencies">
   <rdfs:subClassOf rdf:resource="#Agency"/>
   <owl:equivalentClass>
     <owl:Class>
@@ -1796,22 +1722,22 @@ A dataset that does not contain calendar.txt.
     </owl:Class>
   </owl:equivalentClass>
   <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_name"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_lat"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_lon"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_name"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_lat"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_lon"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
   </rdfs:subClassOf>
   <rdfs:comment xml:lang="en">
 A location where passengers board or disembark from a transit vehicle.
@@ -1862,28 +1788,26 @@ Is called a platform when defined within a parent_station.
     </owl:Class>
   </owl:equivalentClass>
   <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_name"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_lat"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_lon"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#parent_station"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
-    </owl:Restriction>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_name"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_lat"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_lon"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#parent_station"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
   </rdfs:subClassOf>
   <rdfs:subClassOf>
     <owl:Restriction>
@@ -1910,28 +1834,26 @@ A physical structure or area that contains one or more platform.
     </owl:Class>
   </owl:equivalentClass>
   <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_name"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_lat"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#stop_lon"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#parent_station"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_name"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_lat"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#stop_lon"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#parent_station"/>
+          <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
   </rdfs:subClassOf>
   <rdfs:subClassOf>
     <owl:Restriction>
@@ -2303,8 +2225,55 @@ Consuming applications should generate directions for access directly to the sto
 </rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#RouteWithAgencyID">
+  <rdfs:subClassOf rdf:resource="#Route"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#agency_id"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Route"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#isRecordOf"/>
+          <owl:someValuesFrom>
+            <owl:Class>
+              <owl:intersectionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#RouteFile"/>
+                <owl:Restriction>
+                  <owl:onProperty rdf:resource="#isFileOf"/>
+                  <owl:someValuesFrom>
+                    <owl:Class>
+                      <owl:intersectionOf rdf:parseType="Collection">
+                        <rdf:Description rdf:about="#Dataset"/>
+                        <owl:Restriction>
+                          <owl:onProperty rdf:resource="#hasFile"/>
+                          <owl:someValuesFrom rdf:resource="#AgencyFileWithMultipleAgencies"/>
+                        </owl:Restriction>
+                      </owl:intersectionOf>
+                    </owl:Class>
+                  </owl:someValuesFrom>
+                </owl:Restriction>
+              </owl:intersectionOf>
+            </owl:Class>
+          </owl:someValuesFrom>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
 <owl:Class rdf:about="#RouteWithNoLongName">
   <rdfs:subClassOf rdf:resource="#Route"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#route_short_name"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
   <owl:equivalentClass>
     <owl:Class>
       <owl:intersectionOf rdf:parseType="Collection">
@@ -2316,16 +2285,16 @@ Consuming applications should generate directions for access directly to the sto
       </owl:intersectionOf>
     </owl:Class>
   </owl:equivalentClass>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#route_short_name"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
 </owl:Class>
 
 <owl:Class rdf:about="#RouteWithNoShortName">
   <rdfs:subClassOf rdf:resource="#Route"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#route_long_name"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
   <owl:equivalentClass>
     <owl:Class>
       <owl:intersectionOf rdf:parseType="Collection">
@@ -2337,12 +2306,6 @@ Consuming applications should generate directions for access directly to the sto
       </owl:intersectionOf>
     </owl:Class>
   </owl:equivalentClass>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#route_long_name"/>
-      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    </owl:Restriction>
-  </rdfs:subClassOf>
 </owl:Class>
 
 <owl:Class rdf:about="#TramRoute">
@@ -2525,6 +2488,75 @@ Railway in which the track consists of a single rail or a beam.
 </rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#RouteWithContinuousDropOff">
+  <rdfs:subClassOf rdf:resource="#Route"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#continuous_drop_off"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Route"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#isFileOf"/>
+          <owl:someValuesFrom>
+            <owl:Class>
+              <owl:intersectionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#RouteFile"/>
+                <owl:Restriction>
+                  <owl:onProperty rdf:resource="#isRecordOf"/>
+                  <owl:someValuesFrom>
+                    <owl:Class>
+                      <owl:intersectionOf rdf:parseType="Collection">
+                        <rdf:Description rdf:about="#Dataset"/>
+                        <owl:Restriction>
+                          <owl:onProperty rdf:resource="#hasFile"/>
+                          <owl:someValuesFrom>
+                            <owl:Class>
+                              <owl:intersectionOf rdf:parseType="Collection">
+                                <rdf:Description rdf:about="#StopTimeFile"/>
+                                <owl:Restriction>
+                                  <owl:onProperty rdf:resource="#hasRecord"/>
+                                  <owl:someValuesFrom>
+                                    <owl:Class>
+                                      <owl:intersectionOf rdf:parseType="Collection">
+                                        <rdf:Description rdf:about="#StopTime"/>
+                                        <owl:Class>
+                                          <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                              <owl:onProperty rdf:resource="#start_pickup_drop_off_window"/>
+                                              <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                              <owl:onProperty rdf:resource="#end_pickup_drop_off_window"/>
+                                              <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                                            </owl:Restriction>
+                                          </owl:unionOf>
+                                        </owl:Class>
+                                      </owl:intersectionOf>
+                                    </owl:Class>
+                                  </owl:someValuesFrom>
+                                </owl:Restriction>
+                              </owl:intersectionOf>
+                            </owl:Class>
+                          </owl:someValuesFrom>
+                        </owl:Restriction>
+                      </owl:intersectionOf>
+                    </owl:Class>
+                  </owl:someValuesFrom>
+                </owl:Restriction>
+              </owl:intersectionOf>
+            </owl:Class>
+          </owl:someValuesFrom>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
 <owl:Class rdf:about="#StopTimeWithPickupDropOffWindow">
   <rdfs:subClassOf rdf:resource="#StopTime"/>
 </owl:Class>
@@ -2581,6 +2613,100 @@ Riders may use cEMVs as fare media for trips associated with this route.
   <rdfs:comment xml:lang="en">
 cEMVs are not supported as fare media for trips associated with this route. 
 </rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#TripWithShapeID">
+  <rdfs:subClassOf rdf:resource="#Trip"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Trip"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#isRecordOf"/>
+          <owl:someValuesFrom>
+            <owl:Class>
+              <owl:intersectionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#TripFile"/>
+                <owl:Restriction>
+                  <owl:onProperty rdf:resource="#isFileOf"/>
+                  <owl:someValuesFrom>
+                    <owl:Class>
+                      <owl:intersectionOf rdf:parseType="Collection">
+                        <rdf:Description rdf:about="#Dataset"/>
+                        <owl:Restriction>
+                          <owl:onProperty rdf:resource="#hasFile"/>
+                          <owl:someValuesFrom>
+                            <owl:Class>
+                              <owl:unionOf rdf:parseType="Collection">
+                                <owl:Class>
+                                  <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="#RouteFile"/>
+                                    <owl:Restriction>
+                                      <owl:onProperty rdf:resource="#hasRecord"/>
+                                      <owl:someValuesFrom>
+                                        <owl:Class>
+                                          <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="#Route"/>
+                                            <owl:Class>
+                                              <owl:unionOf rdf:parseType="Collection">
+                                                <owl:Restriction>
+                                                  <owl:onProperty rdf:resource="#continuous_pickup"/>
+                                                  <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                                                </owl:Restriction>
+                                                <owl:Restriction>
+                                                  <owl:onProperty rdf:resource="#continuous_drop_off"/>
+                                                  <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                                                </owl:Restriction>
+                                              </owl:unionOf>
+                                            </owl:Class>
+                                          </owl:intersectionOf>
+                                        </owl:Class>
+                                      </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                  </owl:intersectionOf>
+                                </owl:Class>
+                                <owl:Class>
+                                  <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="#StopTimeFile"/>
+                                    <owl:Restriction>
+                                      <owl:onProperty rdf:resource="#hasRecord"/>
+                                      <owl:someValuesFrom>
+                                        <owl:Class>
+                                          <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="#StopTime"/>
+                                            <owl:Class>
+                                              <owl:unionOf rdf:parseType="Collection">
+                                                <owl:Restriction>
+                                                  <owl:onProperty rdf:resource="#continuous_pickup"/>
+                                                  <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+                                                </owl:Restriction>
+                                                <owl:Restriction>
+                                                  <owl:onProperty rdf:resource="#continuous_drop_off"/>
+                                                  <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+                                                </owl:Restriction>
+                                              </owl:unionOf>
+                                            </owl:Class>
+                                          </owl:intersectionOf>
+                                        </owl:Class>
+                                      </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                  </owl:intersectionOf>
+                                </owl:Class>
+                              </owl:unionOf>
+                            </owl:Class>
+                          </owl:someValuesFrom>
+                        </owl:Restriction>
+                      </owl:intersectionOf>
+                    </owl:Class>
+                  </owl:someValuesFrom>
+                </owl:Restriction>
+              </owl:intersectionOf>
+            </owl:Class>
+          </owl:someValuesFrom>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
 </owl:Class>
 
 <owl:Class rdf:about="#TripInDirectionA">

@@ -1,5 +1,11 @@
 from gtfs_ontology.schedule import *
+from gtfs_ontology.schedule.core import isRecordOf, isFileOf, hasFile, hasRecord
+from gtfs_ontology.schedule.files.generate import RouteFile, StopTimeFile, TripFile
+from gtfs_ontology.schedule.records.generate import Route, StopTime
+from gtfs_ontology.schedule.routes.generate import continuous_pickup, \
+    continuous_drop_off
 from gtfs_ontology.schedule.stops.dl_rules import RecordWithAccessibilityInformation
+from gtfs_ontology.schedule.term_definitions.generate import Dataset
 from gtfs_ontology.schedule.trips.generate import *
 
 with gtfs:
@@ -7,38 +13,54 @@ with gtfs:
     # route_id
 
     Trip.is_a.append(
-        route_id.exactly(1)
+        route_id.exactly(1) &
+        service_id.exactly(1) &
+        trip_id.exactly(1) &
+        trip_headsign.max(1) &
+        trip_short_name.max(1) &
+        direction_id.max(1) &
+        block_id.max(1) &
+        shape_id.max(1) &
+        wheelchair_accessible.max(1) &
+        bikes_allowed.max(1) &
+        cars_allowed.max(1)
     )
 
-    # service_id
-
-    Trip.is_a.append(
-        service_id.exactly(1)
-    )
-
-    # trip_id
-
-    Trip.is_a.append(
-        trip_id.exactly(1)
-    )
-
-    # trip_headsign
-
-    Trip.is_a.append(
-        trip_headsign.max(1)
-    )
-
-    # trip_short_name
-
-    Trip.is_a.append(
-        trip_short_name.max(1)
-    )
-
-    # direction_id
-
-    Trip.is_a.append(
-        direction_id.max(1)
-    )
+    class TripWithShapeID(Trip):
+        equivalent_to = [
+            Trip &
+            isRecordOf.some(
+                TripFile &
+                isFileOf.some(
+                    Dataset &
+                    hasFile.some(
+                        (
+                            RouteFile &
+                            hasRecord.some(
+                                Route &
+                                (
+                                    continuous_pickup.exactly(1) |
+                                    continuous_drop_off.exactly(1)
+                                )
+                            )
+                        ) |
+                        (
+                            StopTimeFile &
+                            hasRecord.some(
+                                StopTime &
+                                (
+                                    continuous_pickup.exactly(0) |
+                                    continuous_drop_off.exactly(0)
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        ]
+        is_a = [
+            shape_id.exactly(1)
+        ]
 
     class TripInDirectionA(Trip):
         comment = [locstr(DIRECTION_A, "en")]
@@ -56,23 +78,9 @@ with gtfs:
 
     # block_id
 
-    Trip.is_a.append(
-        block_id.max(1)
-    )
-
-    # shape_id
-
-    Trip.is_a.append(
-        shape_id.max(1)
-    )
-
     ## TODO: Add conditional requirement here
 
     # wheelchair_accessible
-
-    Trip.is_a.append(
-        wheelchair_accessible.max(1)
-    )
 
     class TripWithNoWheelchairAccessibilityInformation(Trip, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_ACCESSIBLE_0_DEF, "en")]
@@ -100,10 +108,6 @@ with gtfs:
 
     # bikes_allowed
 
-    Trip.is_a.append(
-        bikes_allowed.max(1)
-    )
-
     class TripWithNoBikesAllowedInformation(Trip):
         comment = [locstr(BIKES_ALLOWED_0_DEF, "en")]
         equivalent_to = [
@@ -129,10 +133,6 @@ with gtfs:
         ]
 
     # cars_allowed
-
-    Trip.is_a.append(
-        cars_allowed.max(1)
-    )
 
     class TripWithNoCarsAllowedInformation(Trip):
         comment = [locstr(CARS_ALLOWED_0_DEF, "en")]
