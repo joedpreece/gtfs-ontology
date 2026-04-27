@@ -5,6 +5,7 @@ from gtfs_ontology.schedule.term_definitions.generate import Record
 
 with gtfs:
 
+    # Requirements
     Stop.is_a.append(
         stop_id.exactly(1) &
         stop_code.max(1) &
@@ -24,112 +25,90 @@ with gtfs:
         stop_access.max(1)
     )
 
-    class StopOrPlatform(Stop):
-        comment = [locstr(STOP_OR_PLATFORM_DEF, "en")]
-
-    class StopLocation(StopOrPlatform):
-        comment = [locstr(STOP_LOCATION_DEF, "en")]
-
-    class Platform(StopOrPlatform):
-        comment = [locstr(PLATFORM_DEF, "en")]
-
-    class Station(Stop):
-        comment = [locstr(STATION_DEF, "en")]
-
-    class EntranceOrExit(Stop):
-        comment = [locstr(ENTRANCE_OR_EXIT_DEF, "en")]
-
-    class GenericNode(Stop):
-        comment = [locstr(GENERIC_NODE_DEF, "en")]
-
-    class BoardingArea(Stop):
-        comment = [locstr(BOARDING_AREA_DEF, "en")]
-
     class ParentlessStop(Stop):
         comment = [locstr(PARENTLESS_STOP_DEF, "en")]
+        equivalent_to = [
+            Stop &
+            parent_station.exactly(0)
+        ]
 
     class ChildStop(Stop):
         comment = [locstr(CHILD_STOP_DEF, "en")]
-
-    AllDisjoint([StopLocation, Platform, Station, EntranceOrExit, GenericNode, BoardingArea])
+        equivalent_to = [
+            Stop &
+            parent_station.exactly(1)
+        ]
 
     AllDisjoint([ParentlessStop, ChildStop])
 
-    ChildStop.equivalent_to.append(
-        Stop &
-        parent_station.exactly(1)
-    )
+    class StopOrPlatform(Stop):
+        comment = [locstr(STOP_OR_PLATFORM_DEF, "en")]
+        is_a = [
+            stop_name.exactly(1) &
+            stop_lat.exactly(1) &
+            stop_lon.exactly(1)
+        ]
+        equivalent_to = [
+            Stop &
+            (
+                location_type.value(0) |
+                location_type.exactly(0)
+            )
+        ]
 
-    ParentlessStop.equivalent_to.append(
-        Stop &
-        parent_station.exactly(0)
-    )
+    class StopLocation(StopOrPlatform):
+        comment = [locstr(STOP_LOCATION_DEF, "en")]
+        equivalent_to = [
+            StopOrPlatform &
+            ParentlessStop
+        ]
 
-    StopOrPlatform.equivalent_to.append(
-        Stop &
-        (
-            location_type.value(0) |
-            location_type.exactly(0)
-        )
-    )
+    class Platform(StopOrPlatform):
+        comment = [locstr(PLATFORM_DEF, "en")]
+        equivalent_to = [
+            StopOrPlatform &
+            ChildStop
+        ]
 
-    StopLocation.equivalent_to.append(
-        StopOrPlatform &
-        ParentlessStop
-    )
+    class Station(ParentlessStop):
+        comment = [locstr(STATION_DEF, "en")]
+        is_a = [
+            stop_name.exactly(1) &
+            stop_lat.exactly(1) &
+            stop_lon.exactly(1)
+        ]
+        equivalent_to = [
+            Stop &
+            location_type.value(1)
+        ]
 
-    Platform.equivalent_to.append(
-        StopOrPlatform &
-        ChildStop
-    )
+    class EntranceOrExit(ChildStop):
+        comment = [locstr(ENTRANCE_OR_EXIT_DEF, "en")]
+        is_a = [
+            stop_name.exactly(1) &
+            stop_lat.exactly(1) &
+            stop_lon.exactly(1)
+        ]
+        equivalent_to = [
+            Stop &
+            location_type.value(2)
+        ]
 
-    Station.equivalent_to.append(
-        Stop &
-        location_type.value(2)
-    )
+    class GenericNode(ChildStop):
+        comment = [locstr(GENERIC_NODE_DEF, "en")]
+        equivalent_to = [
+            Stop &
+            location_type.value(3)
+        ]
 
-    EntranceOrExit.equivalent_to.append(
-        Stop &
-        location_type.value(2)
-    )
+    class BoardingArea(ChildStop):
+        comment = [locstr(BOARDING_AREA_DEF, "en")]
+        equivalent_to = [
+            Stop &
+            location_type.value(4)
+        ]
 
-    GenericNode.equivalent_to.append(
-        Stop &
-        location_type.value(3)
-    )
-
-    BoardingArea.equivalent_to.append(
-        Stop &
-        location_type.value(4)
-    )
-
-    StopOrPlatform.is_a.append(
-        stop_name.exactly(1) &
-        stop_lat.exactly(1) &
-        stop_lon.exactly(1)
-    )
-
-    Station.is_a.append(
-        stop_name.exactly(1) &
-        stop_lat.exactly(1) &
-        stop_lon.exactly(1) &
-        parent_station.exactly(0)
-    )
-
-    EntranceOrExit.is_a.append(
-        stop_name.exactly(1) &
-        stop_lat.exactly(1) &
-        stop_lon.exactly(1) &
-        parent_station.exactly(1)
-    )
-
-    GenericNode.is_a.append(
-        parent_station.exactly(1)
-    )
-
-    BoardingArea.is_a.append(
-        parent_station.exactly(1)
-    )
+    AllDisjoint([StopLocation, Platform, Station, EntranceOrExit, GenericNode, BoardingArea])
 
     # wheelchair_boarding
 
@@ -138,129 +117,94 @@ with gtfs:
 
     class StopWithNoAccessibilityInformation(ParentlessStop, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_PARENTLESS_STOP_0_DEF, "en")]
+        equivalent_to = [
+            ParentlessStop &
+            (
+                    wheelchair_boarding.value(0) |
+                    wheelchair_boarding.exactly(0)
+            )
+        ]
 
     class StopWithPartialWheelchairAccessibility(ParentlessStop, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_PARENTLESS_STOP_1_DEF, "en")]
+        equivalent_to = [
+            ParentlessStop &
+            wheelchair_boarding.value(1)
+        ]
 
     class StopWithNoWheelchairAccessibility(ParentlessStop, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_PARENTLESS_STOP_2_DEF, "en")]
+        equivalent_to = [
+            ParentlessStop &
+            wheelchair_boarding.value(2)
+        ]
 
 
     class StopInheritingAccessibilityFromStation(ChildStop, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_CHILD_STOP_0_DEF, "en")]
+        equivalent_to = [
+            ChildStop &
+            (
+                    wheelchair_boarding.value(0) |
+                    wheelchair_boarding.exactly(0)
+            )
+        ]
 
 
     class StopWithAccessiblePathFromOutsideStation(ChildStop, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_CHILD_STOP_1_DEF, "en")]
+        equivalent_to = [
+            ChildStop &
+            wheelchair_boarding.value(1)
+        ]
 
 
     class StopWithNoAccessiblePathFromOutsideStation(ChildStop, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_CHILD_STOP_2_DEF, "en")]
+        equivalent_to = [
+            ChildStop &
+            wheelchair_boarding.value(2)
+        ]
 
 
     class EntranceInheritingAccessibilityFromStation(EntranceOrExit, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_ENTRANCEEXIT_0_DEF, "en")]
+        equivalent_to = [
+            EntranceOrExit &
+            (
+                    wheelchair_boarding.value(0) |
+                    wheelchair_boarding.exactly(0)
+            )
+        ]
 
 
     class WheelchairAccessibleEntrance(EntranceOrExit, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_ENTRANCEEXIT_1_DEF, "en")]
+        equivalent_to = [
+            EntranceOrExit &
+            wheelchair_boarding.value(1)
+        ]
 
 
     class EntranceWithNoAccessiblePathToPlatforms(EntranceOrExit, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_ENTRANCEEXIT_2_DEF, "en")]
-
-
-    StopWithNoAccessibilityInformation.equivalent_to.append(
-        ParentlessStop &
-        (
-            wheelchair_boarding.value(0) |
-            wheelchair_boarding.exactly(0)
-        )
-    )
-
-    StopWithPartialWheelchairAccessibility.equivalent_to.append(
-        ParentlessStop &
-        wheelchair_boarding.value(1)
-    )
-
-    StopWithNoWheelchairAccessibility.equivalent_to.append(
-        ParentlessStop &
-        wheelchair_boarding.value(2)
-    )
-
-    StopInheritingAccessibilityFromStation.equivalent_to.append(
-        ChildStop &
-        (
-            wheelchair_boarding.value(0) |
-            wheelchair_boarding.exactly(0)
-        )
-    )
-
-    StopWithAccessiblePathFromOutsideStation.equivalent_to.append(
-        ChildStop &
-        wheelchair_boarding.value(1)
-    )
-
-    StopWithNoAccessiblePathFromOutsideStation.equivalent_to.append(
-        ChildStop &
-        wheelchair_boarding.value(2)
-    )
-
-    EntranceInheritingAccessibilityFromStation.equivalent_to.append(
-        EntranceOrExit &
-        (
-            wheelchair_boarding.value(0) |
-            wheelchair_boarding.exactly(0)
-        )
-    )
-
-    WheelchairAccessibleEntrance.equivalent_to.append(
-        EntranceOrExit &
-        wheelchair_boarding.value(1)
-    )
-
-    EntranceWithNoAccessiblePathToPlatforms.equivalent_to.append(
-        EntranceOrExit &
-        wheelchair_boarding.value(1)
-    )
+        equivalent_to = [
+            EntranceOrExit &
+            wheelchair_boarding.value(2)
+        ]
 
     # stop_access
     class StopWithStopAccessInformation(Stop):
         comment = [locstr(STOP_ACCESS_DEF, "en")]
 
-    class StopAccessibleViaStationOnly(StopOrPlatform):
+    class StopAccessibleViaStationOnly(ChildStop, StopOrPlatform):
         comment = [locstr(STOP_ACCESS_0_DEF, "en")]
+        equivalent_to = [
+            stop_access.value(0)
+        ]
 
-    class StopDirectlyAccessibleFromStreet(StopOrPlatform):
+    class StopDirectlyAccessibleFromStreet(ChildStop, StopOrPlatform):
         comment = [locstr(STOP_ACCESS_1_DEF, "en")]
-
-
-    StopAccessibleViaStationOnly.equivalent_to.append(
-        StopOrPlatform &
-        stop_access.value(0)
-    )
-
-    StopDirectlyAccessibleFromStreet.equivalent_to.append(
-        StopOrPlatform &
-        stop_access.value(1)
-    )
-
-    Station.is_a.append(
-        stop_access.exactly(0)
-    )
-
-    EntranceOrExit.is_a.append(
-        stop_access.exactly(0)
-    )
-
-    GenericNode.is_a.append(
-        stop_access.exactly(0)
-    )
-
-    BoardingArea.is_a.append(
-        stop_access.exactly(0)
-    )
-
-    ParentlessStop.is_a.append(
-        stop_access.exactly(0)
-    )
+        equivalent_to = [
+            stop_access.value(1)
+        ]

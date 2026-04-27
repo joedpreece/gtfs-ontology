@@ -1,6 +1,6 @@
 from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.field_types.generate import num_int, text, enum, num_float, \
-    id, enumerated_datatype, time
+    id, time
 from gtfs_ontology.schedule.records.generate import StopTime
 from gtfs_ontology.schedule.stop_times.definitions import *
 from gtfs_ontology.schedule.stops.generate import stop_id
@@ -11,28 +11,9 @@ STOP_TIMES_URL = "https://gtfs.org/documentation/schedule/reference/#stoptxt"
 
 with gtfs:
 
-    # region Classes
-
-    # class PickupTypeDatatypeDescription(DatatypeDescription):
-    #     pass
-    #
-    # class PickupTypeDatatypeDescription0(PickupTypeDatatypeDescription):
-    #     comment = [locstr("Regularly scheduled pickup.", "en")]
-    #
-    # class PickupTypeDatatypeDescription1(PickupTypeDatatypeDescription):
-    #     comment = [locstr("No pickup available.", "en")]
-    #
-    # class PickupTypeDatatypeDescription2(PickupTypeDatatypeDescription):
-    #     comment = [locstr("Must phone agency to arrange pickup.", "en")]
-    #
-    # class PickupTypeDatatypeDescription3(PickupTypeDatatypeDescription):
-    #     comment = [locstr("Must coordinate with driver to arrange pickup.", "en")]
-
-    # endregion
-
     # region Datatypes
 
-    class PickupTypeDatatype(enumerated_datatype):
+    class pickup_type_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -44,7 +25,7 @@ with gtfs:
             )
         ]
 
-    class DropOffTypeDatatype(enumerated_datatype):
+    class drop_off_type_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -56,7 +37,7 @@ with gtfs:
             )
         ]
 
-    class ContinuousPickupDatatype(enumerated_datatype):
+    class continuous_pickup_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -68,7 +49,7 @@ with gtfs:
             )
         ]
 
-    class ContinuousDropOffDatatype(enumerated_datatype):
+    class continuous_drop_off_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -80,7 +61,7 @@ with gtfs:
             )
         ]
 
-    class TimepointDatatype(Datatype):
+    class timepoint_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -146,25 +127,25 @@ with gtfs:
     class pickup_type(enum):
         comment = [locstr(PICKUP_TYPE_DEF, "en")]
         domain = [StopTime]
-        range = [PickupTypeDatatype]
+        range = [pickup_type_enum]
         seeAlso = [STOP_TIMES_URL]
 
     class drop_off_type(enum):
         comment = [locstr(DROP_OFF_TYPE_DEF, "en")]
         domain = [StopTime]
-        range = [DropOffTypeDatatype]
+        range = [drop_off_type_enum]
         seeAlso = [STOP_TIMES_URL]
 
     class continuous_pickup(enum):
         comment = [locstr(CONTINUOUS_PICKUP_DEF, "en")]
         domain = [StopTime]
-        range = [ContinuousPickupDatatype]
+        range = [continuous_pickup_enum]
         seeAlso = [STOP_TIMES_URL]
 
     class continuous_drop_off(enum):
         comment = [locstr(CONTINUOUS_DROP_OFF_DEF, "en")]
         domain = [StopTime]
-        range = [ContinuousDropOffDatatype]
+        range = [continuous_drop_off_enum]
         seeAlso = [STOP_TIMES_URL]
 
     class shape_dist_traveled(num_float):
@@ -175,7 +156,7 @@ with gtfs:
     class timepoint(enum):
         comment = [locstr(TIMEPOINT_DEF, "en")]
         domain = [StopTime]
-        range = [TimepointDatatype]
+        range = [timepoint_enum]
         seeAlso = [STOP_TIMES_URL]
 
     class pickup_booking_rule_id(id):

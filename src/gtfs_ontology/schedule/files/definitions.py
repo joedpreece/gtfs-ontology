@@ -38,6 +38,10 @@ Conditionally Required:
 - Optional otherwise.
 """
 
-DATASET_WITHOUT_CALENDAR_FILE_DEF = """
-A dataset that does not contain calendar.txt.
+AGENCY_FILE_WITH_SINGLE_AGENCY_DEF = """
+An agency file with a single agency.
+"""
+
+AGENCY_FILE_WITH_MULTIPLE_AGENCIES_DEF = """
+An agency file with multiple agencies.
 """

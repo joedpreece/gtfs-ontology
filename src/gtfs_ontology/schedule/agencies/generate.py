@@ -1,29 +1,12 @@
 from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.agencies.definitions import *
-from gtfs_ontology.schedule.field_types.generate import enumerated_datatype, text, \
+from gtfs_ontology.schedule.field_types.generate import text, \
     url_field, timezone, language_code, phone_number, email_field, enum, id
-from gtfs_ontology.schedule.files.generate import AgencyFile
 from gtfs_ontology.schedule.records.generate import Agency
 
 with gtfs:
 
-# region Additional classes
-
-    class AgencyFileWithSingleAgency(AgencyFile):
-        comment = "An agency file with a single agency."
-
-
-    class AgencyFileWithMultipleAgencies(AgencyFile):
-        comment = "An agency file with multiple agencies."
-
-
-    AllDisjoint([AgencyFileWithSingleAgency, AgencyFileWithMultipleAgencies])
-
-# endregion
-
-# region Agency specific datatypes and descriptions
-
-    class CEMVSupportDatatype(enumerated_datatype):
+    class cemv_support_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -33,28 +16,6 @@ with gtfs:
                 ]
             )
         ]
-
-
-    # class CEMVSupportDatatypeDescription0(DatatypeDescription):
-    #     comment = [
-    #         locstr("No cEMV information for trips associated with this agency.", "en")]
-    #
-    #
-    # class CEMVSupportDatatypeDescription1(DatatypeDescription):
-    #     comment = [locstr(
-    #         "Riders may use cEMVs as fare media for trips associated with this agency.",
-    #         "en")]
-    #
-    #
-    # class CEMVSupportDatatypeDescription2(DatatypeDescription):
-    #     comment = [locstr(
-    #         "cEMVs are not supported as fare media for trips associated with this agency.",
-    #         "en")]
-
-
-# endregion
-
-# region Fields
 
     AGENCY_DEFINITIONS_URL = "https://gtfs.org/documentation/schedule/reference/#agencytxt"
 
@@ -109,5 +70,5 @@ with gtfs:
     class cemv_support(enum):
         comment = [locstr(CEMV_SUPPORT_DEF, "en")]
         domain = [Agency]
-        range = [CEMVSupportDatatype]
+        range = [cemv_support_enum]
         seeAlso = [AGENCY_DEFINITIONS_URL]

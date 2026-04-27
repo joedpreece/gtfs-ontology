@@ -28,7 +28,6 @@ with gtfs:
 
     class TripWithShapeID(Trip):
         equivalent_to = [
-            Trip &
             isRecordOf.some(
                 TripFile &
                 isFileOf.some(
@@ -49,8 +48,8 @@ with gtfs:
                             hasRecord.some(
                                 StopTime &
                                 (
-                                    continuous_pickup.exactly(0) |
-                                    continuous_drop_off.exactly(0)
+                                    continuous_pickup.exactly(1) |
+                                    continuous_drop_off.exactly(1)
                                 )
                             )
                         )
@@ -65,14 +64,12 @@ with gtfs:
     class TripInDirectionA(Trip):
         comment = [locstr(DIRECTION_A, "en")]
         equivalent_to = [
-            Trip &
             direction_id.value(0)
         ]
 
     class TripInDirectionB(Trip):
         comment = [locstr(DIRECTION_B, "en")]
         equivalent_to = [
-            Trip &
             direction_id.value(1)
         ]
 
@@ -85,7 +82,6 @@ with gtfs:
     class TripWithNoWheelchairAccessibilityInformation(Trip, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_ACCESSIBLE_0_DEF, "en")]
         equivalent_to = [
-            Trip &
             (
                 wheelchair_accessible.value(0) |
                 wheelchair_accessible.exactly(0)
@@ -95,14 +91,12 @@ with gtfs:
     class TripWithAtLeastOneWheelchairSpace(Trip, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_ACCESSIBLE_1_DEF, "en")]
         equivalent_to = [
-            Trip &
             wheelchair_accessible.value(1)
         ]
 
     class TripWithNoWheelchairAccessibility(Trip, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_ACCESSIBLE_2_DEF, "en")]
         equivalent_to = [
-            Trip &
             wheelchair_accessible.value(2)
         ]
 
@@ -111,24 +105,21 @@ with gtfs:
     class TripWithNoBikesAllowedInformation(Trip):
         comment = [locstr(BIKES_ALLOWED_0_DEF, "en")]
         equivalent_to = [
-            Trip &
             (
-                    bikes_allowed.value(0) |
-                    bikes_allowed.exactly(0)
+                bikes_allowed.value(0) |
+                bikes_allowed.exactly(0)
             )
         ]
 
     class TripWithAtLeastOneBicycleSpace(Trip):
         comment = [locstr(BIKES_ALLOWED_1_DEF, "en")]
         equivalent_to = [
-            Trip &
             bikes_allowed.value(1)
         ]
 
     class TripWithNoBicycleSpaces(Trip):
         comment = [locstr(BIKES_ALLOWED_2_DEF, "en")]
         equivalent_to = [
-            Trip &
             bikes_allowed.value(2)
         ]
 
@@ -137,23 +128,20 @@ with gtfs:
     class TripWithNoCarsAllowedInformation(Trip):
         comment = [locstr(CARS_ALLOWED_0_DEF, "en")]
         equivalent_to = [
-            Trip &
             (
-                    cars_allowed.value(0) |
-                    cars_allowed.exactly(0)
+                cars_allowed.value(0) |
+                cars_allowed.exactly(0)
             )
         ]
 
     class TripWithAtLeastOneCarSpace(Trip):
         comment = [locstr(CARS_ALLOWED_1_DEF, "en")]
         equivalent_to = [
-            Trip &
             cars_allowed.value(1)
         ]
 
     class TripWithNoCarSpaces(Trip):
         comment = [locstr(CARS_ALLOWED_2_DEF, "en")]
         equivalent_to = [
-            Trip &
             cars_allowed.value(2)
         ]

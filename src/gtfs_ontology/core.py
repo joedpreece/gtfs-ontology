@@ -35,8 +35,8 @@ with gtfs:
     class url(Datatype):
         namespace = schema
 
-    class BusStop(Thing):
-        namespace = schema
+    # class BusStop(Thing):
+    #     namespace = schema
 
 # Define the metadata for the ontology
 with gtfs:
@@ -86,13 +86,13 @@ with gtfs:
         comment = [locstr(GTFS_REALTIME_DEF, "en")]
         seeAlso = ["https://gtfs.org/documentation/overview/#gtfs-realtime"]
 
-    class Violation(Thing):
-        comment = [locstr("A violation of a GTFS specification.", "en")]
-
-    class violationDetail(DataProperty):
-        comment = [locstr("A description of the violation.", "en")]
-        domain = [Violation]
-        range = [str]
+    # class Violation(Thing):
+    #     comment = [locstr("A violation of a GTFS specification.", "en")]
+    #
+    # class violationDetail(DataProperty):
+    #     comment = [locstr("A description of the violation.", "en")]
+    #     domain = [Violation]
+    #     range = [str]
 
 # endregion
 

@@ -1,6 +1,6 @@
 from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.calendar.generate import service_id
-from gtfs_ontology.schedule.field_types.generate import enumerated_datatype, text, id, \
+from gtfs_ontology.schedule.field_types.generate import text, id, \
     enum
 from gtfs_ontology.schedule.records.generate import Trip
 from gtfs_ontology.schedule.routes.generate import route_id
@@ -12,7 +12,7 @@ with gtfs:
 
     # region Datatypes
 
-    class DirectionIDDatatype(enumerated_datatype):
+    class direction_id_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -22,7 +22,7 @@ with gtfs:
             )
         ]
 
-    class WheelchairAccessibleDatatype(enumerated_datatype):
+    class wheelchair_accessible_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -33,7 +33,7 @@ with gtfs:
             )
         ]
 
-    class BikesAllowedDatatype(enumerated_datatype):
+    class bikes_allowed_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -44,7 +44,7 @@ with gtfs:
             )
         ]
 
-    class CarsAllowedDatatype(enumerated_datatype):
+    class cars_allowed_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -86,7 +86,7 @@ with gtfs:
     class direction_id(enum):
         comment = [locstr(DIRECTION_ID_DEF, "en")]
         domain = [Trip]
-        range = [DirectionIDDatatype]
+        range = [direction_id_enum]
         seeAlso = [TRIPS_URL]
 
     class block_id(id):
@@ -102,19 +102,19 @@ with gtfs:
     class wheelchair_accessible(enum):
         comment = [locstr(WHEELCHAIR_ACCESSIBLE_DEF, "en")]
         domain = [Trip]
-        range = [WheelchairAccessibleDatatype]
+        range = [wheelchair_accessible_enum]
         seeAlso = [TRIPS_URL]
 
     class bikes_allowed(enum):
         comment = [locstr(BIKES_ALLOWED_DEF, "en")]
         domain = [Trip]
-        range = [BikesAllowedDatatype]
+        range = [bikes_allowed_enum]
         seeAlso = [TRIPS_URL]
 
     class cars_allowed(enum):
         comment = [locstr(CARS_ALLOWED_DEF, "en")]
         domain = [Trip]
-        range = [CarsAllowedDatatype]
+        range = [cars_allowed_enum]
         seeAlso = [TRIPS_URL]
 
     # endregion

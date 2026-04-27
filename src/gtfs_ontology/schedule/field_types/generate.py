@@ -6,37 +6,34 @@ from gtfs_ontology.schedule.field_types.timezones import *
 
 with gtfs:
 
-    class color_datatype(Datatype):
+    class color_pattern(Datatype):
         equivalent_to = [ConstrainedDatatype(
             base_datatype=str,
             pattern=r"^[0-9A-F]{6}$"  # uppercase only
         )]
 
-    class currency_code_datatype(Datatype):
+    class currency_code_enum(Datatype):
         equivalent_to = [
             OneOf(
                 currency_codes
             )
         ]
 
-    class timezone_datatype(Datatype):
+    class timezone_enum(Datatype):
         equivalent_to = [
             OneOf(
                 timezone_ids
             )
         ]
 
-    class enumerated_datatype(Datatype):
-        pass
-
     class color(Field):
         comment = [locstr(COLOR_DEF, "en")]
-        range = [color_datatype]
+        range = [color_pattern]
         seeAlso = ["https://htmlcolorcodes.com/"]
 
     class currency_code(Field):
         comment = [locstr(CURRENCY_CODE_DEF, "en")]
-        range = [currency_code_datatype]
+        range = [currency_code_enum]
         seeAlso = ["https://en.wikipedia.org/wiki/ISO_4217#Active_codes"]
 
     class currency_amount(Field):
@@ -54,7 +51,6 @@ with gtfs:
 
     class enum(Field):
         comment = [locstr(ENUM_DEF, "en")]
-        range = [enumerated_datatype]
 
     class id(Field):
         comment = [locstr(ID_DEF, "en")]
@@ -104,7 +100,7 @@ with gtfs:
 
     class timezone(Field):
         comment = [locstr(TIMEZONE_DEF, "en")]
-        range = [timezone_datatype]
+        range = [timezone_enum]
         seeAlso = [
             "https://www.iana.org/time-zones",
             "https://en.wikipedia.org/wiki/List_of_tz_zones",

@@ -1,6 +1,6 @@
 from gtfs_ontology.schedule import *
-from gtfs_ontology.schedule.agencies.generate import AgencyFileWithMultipleAgencies
 from gtfs_ontology.schedule.core import isRecordOf, isFileOf, hasFile, hasRecord
+from gtfs_ontology.schedule.files.dl_rules import AgencyFileWithMultipleAgencies
 from gtfs_ontology.schedule.files.generate import RouteFile, StopTimeFile
 from gtfs_ontology.schedule.records.generate import StopTime
 from gtfs_ontology.schedule.routes.generate import *
@@ -10,7 +10,7 @@ from gtfs_ontology.schedule.term_definitions.generate import Dataset
 
 with gtfs:
 
-    # route_id
+    # Requirements
 
     Route.is_a.append(
         route_id.exactly(1) &
@@ -31,10 +31,9 @@ with gtfs:
 
     class RouteWithAgencyID(Route):
         equivalent_to = [
-            Route &
-            isRecordOf.some(
+            isRecordOf.only(
                 RouteFile &
-                isFileOf.some(
+                isFileOf.only(
                     Dataset &
                     hasFile.some(AgencyFileWithMultipleAgencies)
                 )
@@ -48,7 +47,6 @@ with gtfs:
 
     class RouteWithNoLongName(Route):
         equivalent_to = [
-            Route &
             route_long_name.exactly(0)
         ]
         is_a = [
@@ -59,7 +57,6 @@ with gtfs:
 
     class RouteWithNoShortName(Route):
         equivalent_to = [
-            Route &
             route_short_name.exactly(0)
         ]
         is_a = [
@@ -69,79 +66,91 @@ with gtfs:
     class TramRoute(Route):
         comment = [locstr(TRAM_ROUTE_DEF, "en")]
         equivalent_to = [
-            Route &
             route_type.value(0)
         ]
 
     class SubwayRoute(Route):
         comment = [locstr(SUBWAY_ROUTE_DEF, "en")]
         equivalent_to = [
-            Route &
             route_type.value(1)
         ]
 
     class RailRoute(Route):
         comment = [locstr(RAIL_DEF, "en")]
         equivalent_to = [
-            Route &
             route_type.value(2)
         ]
 
     class BusRoute(Route):
         comment = [locstr(BUS_DEF, "en")]
         equivalent_to = [
-            Route &
             route_type.value(3)
         ]
 
     class FerryRoute(Route):
         comment = [locstr(FERRY_DEF, "en")]
         equivalent_to = [
-            Route &
             route_type.value(4)
         ]
 
     class CableTramRoute(Route):
         comment = [locstr(CABLE_TRAM_DEF, "en")]
         equivalent_to = [
-            Route &
             route_type.value(5)
         ]
 
     class AerialLiftRoute(Route):
         comment = [locstr(AERIAL_LIFT_DEF, "en")]
         equivalent_to = [
-            Route &
             route_type.value(6)
         ]
 
     class FunicularRoute(Route):
         comment = [locstr(FUNICULAR_DEF, "en")]
         equivalent_to = [
-            Route &
             route_type.value(7)
         ]
 
     class TrolleybusRoute(Route):
         comment = [locstr(TROLLEYBUS_DEF, "en")]
         equivalent_to = [
-            Route &
             route_type.value(11)
         ]
 
     class MonorailRoute(Route):
         comment = [locstr(MONORAIL_DEF, "en")]
         equivalent_to = [
-            Route &
             route_type.value(12)
+        ]
+
+    class RouteWithContinuousPickup(Route):
+        equivalent_to = [
+            isFileOf.only(
+                RouteFile &
+                isRecordOf.only(
+                    Dataset
+                    & hasFile.some(
+                        StopTimeFile &
+                        hasRecord.some(
+                            StopTime &
+                            (
+                                start_pickup_drop_off_window.exactly(1) |
+                                end_pickup_drop_off_window.exactly(1)
+                            )
+                        )
+                    )
+                )
+            )
+        ]
+        is_a = [
+            continuous_pickup.exactly(1)
         ]
 
     class RouteWithContinuousDropOff(Route):
         equivalent_to = [
-            Route &
-            isFileOf.some(
+            isFileOf.only(
                 RouteFile &
-                isRecordOf.some(
+                isRecordOf.only(
                     Dataset
                     & hasFile.some(
                         StopTimeFile &
@@ -161,32 +170,23 @@ with gtfs:
         ]
 
     ## TODO: Encode the conditionally forbidden
-    class StopTimeWithPickupDropOffWindow(StopTime):
-        pass
-
-    # continuous_drop_off
-
-    ## TODO: Encode the conditionally forbidden
 
     # network_id
 
     class RouteWithNoCEMVInformation(Route):
         comment = [locstr(CEMV_NO_INFORMATION, "en")]
         equivalent_to = [
-            Route &
             cemv_support.value(0)
         ]
 
     class RouteWithCEMVSupport(Route):
         comment = [locstr(CEMV_SUPPORTED, "en")]
         equivalent_to = [
-            Route &
             cemv_support.value(1)
         ]
 
     class RouteWithNoCEMVSupport(Route):
         comment = [locstr(CEMV_NOT_SUPPORTED, "en")]
         equivalent_to = [
-            Route &
             cemv_support.value(2)
         ]

@@ -6,8 +6,10 @@ import gtfs_ontology.core
 import gtfs_ontology.schedule.core
 
 import gtfs_ontology.schedule.term_definitions.generate
+
 import gtfs_ontology.schedule.files.generate
 import gtfs_ontology.schedule.files.dl_rules
+
 import gtfs_ontology.schedule.field_types.generate
 import gtfs_ontology.schedule.records.generate
 
@@ -24,8 +26,13 @@ import gtfs_ontology.schedule.trips.generate
 import gtfs_ontology.schedule.trips.dl_rules
 
 import gtfs_ontology.schedule.stop_times.generate
+import gtfs_ontology.schedule.stop_times.dl_rules
+
 import gtfs_ontology.schedule.calendar.generate
+import gtfs_ontology.schedule.calendar.dl_rules
+
 import gtfs_ontology.schedule.calendar_dates.generate
+import gtfs_ontology.schedule.calendar_dates.dl_rules
 
 def generate_ontology(
         path: Path

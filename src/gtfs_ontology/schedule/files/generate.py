@@ -35,14 +35,3 @@ with gtfs:
         seeAlso = [DATASET_FILES_URL]
 
     AllDisjoint([AgencyFile, StopFile, RouteFile, TripFile, StopTimeFile, CalendarFile, CalendarDateFile])
-
-    class hasFile(ObjectProperty):
-        domain = [Dataset]
-        range = [DatasetFile]
-
-    class DatasetWithoutCalendarFile(Dataset):
-        comment = [locstr(DATASET_WITHOUT_CALENDAR_FILE_DEF, "en")]
-        seeAlso = [CalendarFile]
-
-    # region DL Rules
-    # endregion

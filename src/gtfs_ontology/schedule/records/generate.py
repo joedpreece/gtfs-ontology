@@ -28,11 +28,3 @@ with gtfs:
             "https://gtfs.org/documentation/schedule/reference/#calendartxt",
             "https://gtfs.org/documentation/schedule/reference/#calendar_datestxt"
         ]
-
-
-    # class CalendarDate(Record):
-    #     seeAlso = ["https://gtfs.org/documentation/schedule/reference/#calendar_datestxt"]
-
-
-    class Level(Record):
-        seeAlso = ["https://gtfs.org/documentation/schedule/reference/#agencytxt"]

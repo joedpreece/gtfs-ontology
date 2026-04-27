@@ -1,5 +1,5 @@
 from gtfs_ontology.schedule import *
-from gtfs_ontology.schedule.field_types.generate import enumerated_datatype, text, \
+from gtfs_ontology.schedule.field_types.generate import text, \
     url_field, enum, timezone, id
 from gtfs_ontology.schedule.records.generate import Stop
 from gtfs_ontology.schedule.stops.definitions import *
@@ -11,7 +11,7 @@ with gtfs:
 
 # region Enumerated datatypes
 
-    class LocationTypeDatatype(enumerated_datatype):
+    class location_type_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -42,7 +42,7 @@ with gtfs:
     # class BoardingArea(DatatypeDescription):
     #     comment = "A specific location on a platform, where passengers can board and/or alight vehicles."
 
-    class WheelchairBoardingType(enumerated_datatype):
+    class wheelchair_boarding_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -80,7 +80,7 @@ with gtfs:
     # class WheelchairBoardingEntranceExit2(DatatypeDescription):
     #     comment = "No accessible path from station entrance to stops/platforms."
 
-    class StopAccessType(enumerated_datatype):
+    class stop_access_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -148,7 +148,7 @@ with gtfs:
     class location_type(enum):
         comment = [locstr(LOCATION_TYPE_DEF, "en")]
         domain = [Stop]
-        range = [LocationTypeDatatype]
+        range = [location_type_enum]
         seeAlso = [STOP_URL]
 
     class parent_station(id):
@@ -164,7 +164,7 @@ with gtfs:
     class wheelchair_boarding(enum):
         comment = [locstr(WHEELCHAIR_BOARDING_DEF, "en")]
         domain = [Stop]
-        range = [WheelchairBoardingType]
+        range = [wheelchair_boarding_enum]
         seeAlso = [STOP_URL]
 
     class level_id(Field):
@@ -181,7 +181,7 @@ with gtfs:
     class stop_access(enum):
         comment = [locstr(STOP_ACCESS_DEF, "en")]
         domain = [Stop]
-        range = [StopAccessType]
+        range = [stop_access_enum]
         seeAlso = [STOP_URL]
 
 # endregion

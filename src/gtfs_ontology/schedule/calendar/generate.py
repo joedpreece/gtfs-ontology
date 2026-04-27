@@ -1,7 +1,6 @@
 from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.calendar.definitions import *
-from gtfs_ontology.schedule.field_types.generate import enum, id, date, \
-    enumerated_datatype
+from gtfs_ontology.schedule.field_types.generate import enum, id, date
 from gtfs_ontology.schedule.records.generate import Service
 
 CALENDAR_URL = "https://gtfs.org/documentation/schedule/reference/#calendartxt"
@@ -23,7 +22,7 @@ with gtfs:
 
     # region Datatypes
 
-    class CalendarDatatype(enumerated_datatype):
+    class weekday_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -45,43 +44,43 @@ with gtfs:
     class monday(enum):
         comment = [locstr(MONDAY_DEF, "en")]
         domain = [Service]
-        range = [CalendarDatatype]
+        range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
 
     class tuesday(enum):
         comment = [locstr(TUESDAY_DEF, "en")]
         domain = [Service]
-        range = [CalendarDatatype]
+        range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
 
     class wednesday(enum):
         comment = [locstr(WEDNESDAY_DEF, "en")]
         domain = [Service]
-        range = [CalendarDatatype]
+        range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
 
     class thursday(enum):
         comment = [locstr(THURSDAY_DEF, "en")]
         domain = [Service]
-        range = [CalendarDatatype]
+        range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
 
     class friday(enum):
         comment = [locstr(FRIDAY_DEF, "en")]
         domain = [Service]
-        range = [CalendarDatatype]
+        range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
 
     class saturday(enum):
         comment = [locstr(SATURDAY_DEF, "en")]
         domain = [Service]
-        range = [CalendarDatatype]
+        range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
 
     class sunday(enum):
         comment = [locstr(SUNDAY_DEF, "en")]
         domain = [Service]
-        range = [CalendarDatatype]
+        range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
 
     class start_date(date):

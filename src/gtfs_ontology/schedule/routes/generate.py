@@ -1,7 +1,7 @@
 from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.agencies.generate import agency_id, cemv_support
 from gtfs_ontology.schedule.field_types.generate import text, enum, url_field, color, \
-    num_int, id, enumerated_datatype
+    num_int, id
 from gtfs_ontology.schedule.records.generate import Route
 from gtfs_ontology.schedule.routes.definitions import *
 
@@ -11,7 +11,7 @@ with gtfs:
 
     # region Datatypes
 
-    class RouteTypeDatatype(enumerated_datatype):
+    class route_type_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -29,7 +29,7 @@ with gtfs:
             )
         ]
 
-    class ContinuousPickupDatatype(enumerated_datatype):
+    class continuous_pickup_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -41,7 +41,7 @@ with gtfs:
             )
         ]
 
-    class ContinuousDropOffDatatype(enumerated_datatype):
+    class continuous_drop_off_enum(Datatype):
         equivalent_to = [
             OneOf(
                 [
@@ -52,86 +52,6 @@ with gtfs:
                 ]
             )
         ]
-
-    # endregion
-
-    # region Classes
-
-    # class RouteTypeDatatypeDescription0(DatatypeDescription):
-    #     comment = "Tram, Streetcar, Light rail. Any light rail or street level system within a metropolitan area."
-    #
-    #
-    # class RouteTypeDatatypeDescription1(DatatypeDescription):
-    #     comment = "Subway, Metro. Any underground rail system within a metropolitan area."
-    #
-    #
-    # class RouteTypeDatatypeDescription2(DatatypeDescription):
-    #     comment = "Rail. Used for intercity or long-distance travel."
-    #
-    #
-    # class RouteTypeDatatypeDescription3(DatatypeDescription):
-    #     comment = "Bus. Used for short- and long-distance bus routes."
-    #
-    #
-    # class RouteTypeDatatypeDescription4(DatatypeDescription):
-    #     comment = "Ferry. Used for short- and long-distance boat service."
-    #
-    #
-    # class RouteTypeDatatypeDescription5(DatatypeDescription):
-    #     comment = "Cable tram. Used for street-level rail cars where the cable runs beneath the vehicle (e.g., cable car in San Francisco)."
-    #
-    #
-    # class RouteTypeDatatypeDescription6(DatatypeDescription):
-    #     comment = "Aerial lift, suspended cable car (e.g., gondola lift, aerial tramway). Cable transport where cabins, cars, gondolas or open chairs are suspended by means of one or more cables."
-    #
-    #
-    # class RouteTypeDatatypeDescription7(DatatypeDescription):
-    #     comment = "Funicular. Any rail system designed for steep inclines."
-    #
-    #
-    # class RouteTypeDatatypeDescription11(DatatypeDescription):
-    #     comment = "Trolleybus. Electric buses that draw power from overhead wires using poles."
-    #
-    #
-    # class RouteTypeDatatypeDescription12(DatatypeDescription):
-    #     comment = "Monorail. Railway in which the track consists of a single rail or a beam."
-    #
-    #
-    # class ContinuousPickupDatatypeDescription0(DatatypeDescription):
-    #     comment = "Continuous stopping pickup."
-    #
-    # class ContinuousPickupDatatypeDescription1(DatatypeDescription):
-    #     comment = "No continuous stopping pickup."
-    #
-    # class ContinuousPickupDatatypeDescription2(DatatypeDescription):
-    #     comment = "Must phone agency to arrange continuous stopping pickup."
-    #
-    # class ContinuousPickupDatatypeDescription3(DatatypeDescription):
-    #     comment = "Must coordinate with driver to arrange continuous stopping pickup."
-    #
-    #
-    # class ContinuousDropOffDatatypeDescription0(DatatypeDescription):
-    #     comment = "Continuous stopping drop off."
-    #
-    # class ContinuousDropOffDatatypeDescription1(DatatypeDescription):
-    #     comment = "No continuous stopping drop off."
-    #
-    # class ContinuousDropOffDatatypeDescription2(DatatypeDescription):
-    #     comment = "Must phone agency to arrange continuous stopping drop off."
-    #
-    # class ContinuousDropOffDatatypeDescription3(DatatypeDescription):
-    #     comment = "Must coordinate with driver to arrange continuous stopping drop off. "
-    #
-    # CEMVSupportDatatypeDescription0.comment.append(
-    #     locstr("No cEMV information for trips associated with this route.", "en"))
-    # CEMVSupportDatatypeDescription1.comment.append(
-    #     locstr("Riders may use cEMVs as fare media for trips associated with this route.", "en"))
-    # CEMVSupportDatatypeDescription2.comment.append(
-    #     locstr("cEMVs are not supported as fare media for trips associated with this route.", "en"))
-
-    # endregion
-
-    # region Data Properties
 
     class route_id(id):
         comment = [locstr(ROUTE_ID_DEF, "en")]
@@ -160,7 +80,7 @@ with gtfs:
     class route_type(enum):
         comment = [locstr(ROUTE_TYPE_DEF, "en")]
         domain = [Route]
-        range = [RouteTypeDatatype]
+        range = [route_type_enum]
         seeAlso = [ROUTES_URL]
 
     class route_url(url_field):
@@ -186,13 +106,13 @@ with gtfs:
     class continuous_pickup(enum):
         comment = [locstr(CONTINUOUS_PICKUP_DEF, "en")]
         domain = [Route]
-        range = [ContinuousPickupDatatype]
+        range = [continuous_pickup_enum]
         seeAlso = [ROUTES_URL]
 
     class continuous_drop_off(enum):
         comment = [locstr(CONTINUOUS_DROPOFF_DEF, "en")]
         domain = [Route]
-        range = [ContinuousDropOffDatatype]
+        range = [continuous_drop_off_enum]
         seeAlso = [ROUTES_URL]
 
     class network_id(id):
