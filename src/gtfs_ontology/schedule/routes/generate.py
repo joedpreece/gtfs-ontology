@@ -1,6 +1,6 @@
 from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.agencies.generate import agency_id, cemv_support
-from gtfs_ontology.schedule.field_types.generate import text, enum, url_field, color, \
+from gtfs_ontology.schedule.field_types.generate import text, enum, url, color, \
     num_int, id
 from gtfs_ontology.schedule.records.generate import Route
 from gtfs_ontology.schedule.routes.definitions import *
@@ -82,8 +82,9 @@ with gtfs:
         domain = [Route]
         range = [route_type_enum]
         seeAlso = [ROUTES_URL]
+        relatedMatch = [gtfs_linked.RouteType]
 
-    class route_url(url_field):
+    class route_url(url):
         comment = [locstr(ROUTE_URL_DEF, "en")]
         domain = [Route]
         seeAlso = [ROUTES_URL]

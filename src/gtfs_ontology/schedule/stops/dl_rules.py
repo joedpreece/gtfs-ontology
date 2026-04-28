@@ -81,6 +81,7 @@ with gtfs:
             Stop &
             location_type.value(1)
         ]
+        closeMatch = [gtfs_linked.Station]
 
     class EntranceOrExit(ChildStop):
         comment = [locstr(ENTRANCE_OR_EXIT_DEF, "en")]

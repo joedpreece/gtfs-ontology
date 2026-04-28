@@ -1,7 +1,7 @@
 from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.agencies.definitions import *
 from gtfs_ontology.schedule.field_types.generate import text, \
-    url_field, timezone, language_code, phone_number, email_field, enum, id
+    url, timezone, language_code, phone_number, email, enum, id
 from gtfs_ontology.schedule.records.generate import Agency
 
 with gtfs:
@@ -31,7 +31,7 @@ with gtfs:
         seeAlso = [AGENCY_DEFINITIONS_URL]
 
 
-    class agency_url(url_field):
+    class agency_url(url):
         comment = [locstr(AGENCY_URL_DEF, "en")]
         domain = [Agency]
         seeAlso = [AGENCY_DEFINITIONS_URL]
@@ -55,13 +55,13 @@ with gtfs:
         seeAlso = [AGENCY_DEFINITIONS_URL]
 
 
-    class agency_fare_url(url_field):
+    class agency_fare_url(url):
         comment = [locstr(AGENCY_FARE_URL_DEF, "en")]
         domain = [Agency]
         seeAlso = [AGENCY_DEFINITIONS_URL]
 
 
-    class agency_email(email_field):
+    class agency_email(email):
         comment = [locstr(AGENCY_EMAIL_DEF, "en")]
         domain = [Agency]
         seeAlso = [AGENCY_DEFINITIONS_URL]

@@ -1,1 +1,0 @@
-from gtfs_ontology.core import *

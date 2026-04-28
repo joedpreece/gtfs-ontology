@@ -1,9 +1,9 @@
 from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.field_types.generate import text, \
-    url_field, enum, timezone, id
+    url, enum, timezone, id
 from gtfs_ontology.schedule.records.generate import Stop
 from gtfs_ontology.schedule.stops.definitions import *
-from gtfs_ontology.schedule.term_definitions.generate import Field
+from gtfs_ontology.schedule.term_definitions.generate import field
 
 STOP_URL = "https://gtfs.org/documentation/schedule/reference/#stopstxt"
 
@@ -140,7 +140,7 @@ with gtfs:
         domain = [Stop]
         seeAlso = [STOP_URL]
 
-    class stop_url(url_field):
+    class stop_url(url):
         comment = [locstr(STOP_URL_DEF, "en")]
         domain = [Stop]
         seeAlso = [STOP_URL]
@@ -167,7 +167,7 @@ with gtfs:
         range = [wheelchair_boarding_enum]
         seeAlso = [STOP_URL]
 
-    class level_id(Field):
+    class level_id(field):
         comment = [locstr(LEVEL_ID_DEF, "en")]
         domain = [Stop]
         # range = [Level]

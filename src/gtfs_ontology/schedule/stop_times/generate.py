@@ -4,7 +4,6 @@ from gtfs_ontology.schedule.field_types.generate import num_int, text, enum, num
 from gtfs_ontology.schedule.records.generate import StopTime
 from gtfs_ontology.schedule.stop_times.definitions import *
 from gtfs_ontology.schedule.stops.generate import stop_id
-from gtfs_ontology.schedule.term_definitions.generate import FieldValue
 from gtfs_ontology.schedule.trips.generate import trip_id
 
 STOP_TIMES_URL = "https://gtfs.org/documentation/schedule/reference/#stoptxt"
@@ -98,7 +97,7 @@ with gtfs:
         domain = [StopTime]
         seeAlso = [STOP_TIMES_URL]
 
-    class location_id(FieldValue, FunctionalProperty):
+    class location_id(id):
         comment = [locstr(LOCATION_ID_DEF, "en")]
         domain = [StopTime]
         seeAlso = [STOP_TIMES_URL]

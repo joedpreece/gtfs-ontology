@@ -1,5 +1,8 @@
 from pathlib import Path
 
+from rdflib import Namespace, Graph
+from rdflib.namespace import NamespaceManager
+
 from gtfs_ontology.core import gtfs
 
 import gtfs_ontology.core
@@ -37,4 +40,14 @@ import gtfs_ontology.schedule.calendar_dates.dl_rules
 def generate_ontology(
         path: Path
 ):
+
     gtfs.save(file=str(path.resolve()))
+
+    g = Graph()
+    g.parse(str(path.resolve()), format="xml")
+
+    new_manager = NamespaceManager(g)
+    g.namespace_manager = new_manager
+
+    g.bind("gtfs_linked", Namespace("http://vocab.gtfs.org/terms#"), override=True)
+    g.serialize(destination="artifacts/gtfs_prefixed.ttl", format="turtle")

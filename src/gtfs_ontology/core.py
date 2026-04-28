@@ -5,15 +5,19 @@ from importlib.metadata import version
 __version__ = version("gtfs-ontology")
 
 # Namespaces and external ontologies
-gtfs = get_ontology(f"https://w3id.org/gtfs")
+gtfs = get_ontology(f"https://w3id.org/gtfs#")
+
+skos = gtfs.get_namespace("http://www.w3.org/2004/02/skos/core#")
 dcterms = gtfs.get_namespace("http://purl.org/dc/terms/")
-foaf = get_ontology("https://xmlns.com/foaf/spec/index.rdf").load()
-dcat = get_ontology("https://www.w3.org/ns/dcat3.rdf").load()
-geo = gtfs.get_namespace("https://www.w3.org/2003/01/geo/wgs84_pos")
+geo = gtfs.get_namespace("http://www.w3.org/2003/01/geo/wgs84_pos#")
 schema = gtfs.get_namespace("https://schema.org/")
+foaf = gtfs.get_namespace("http://xmlns.com/foaf/0.1/")
+dcat = gtfs.get_namespace("http://www.w3.org/ns/dcat#")
+gtfs_linked = gtfs.get_namespace("http://vocab.gtfs.org/terms#")
 
 # Where ontologies are not loaded, define the terms used here
 with gtfs:
+
     class creator(AnnotationProperty):
         namespace = dcterms  # => http://purl.org/dc/terms/creator
 
@@ -35,17 +39,56 @@ with gtfs:
     class url(Datatype):
         namespace = schema
 
+    class Agent(Thing):
+        namespace = foaf
+
+    class Dataset(Thing):
+        namespace = dcat
+
+    class closeMatch(AnnotationProperty):
+        namespace = skos
+
+    class relatedMatch(AnnotationProperty):
+        namespace = skos
+
+    class Feed(Thing):
+        namespace = gtfs_linked
+
+    class Agency(Thing):
+        namespace = gtfs_linked
+
+    class Route(Thing):
+        namespace = gtfs_linked
+
+    class RouteType(Thing):
+        namespace = gtfs_linked
+
+    class Service(Thing):
+        namespace = gtfs_linked
+
+    class Station(Thing):
+        namespace = gtfs_linked
+
+    class Stop(Thing):
+        namespace = gtfs_linked
+
+    class StopTime(Thing):
+        namespace = gtfs_linked
+
+    class Trip(Thing):
+        namespace = gtfs_linked
+
     # class BusStop(Thing):
     #     namespace = schema
 
 # Define the metadata for the ontology
 with gtfs:
-    gtfs.metadata.label = [locstr("The GTFS Ontology", "en")]
+    gtfs.metadata.label = [locstr("A GTFS Ontology", "en")]
     gtfs.metadata.comment = [locstr(
         "An OWL ontology describing entities, relationships, and data structures found in the General Transit Feed Specification (GTFS).",
         "en"
     )]
-    # gtfs.metadata.versionIRI = f"{gtfs.base_iri}/v{__version__}"
+    # gtfs.metadata.versionIRI = [f"{gtfs.base_iri}/v{__version__}"]
     gtfs.metadata.versionInfo = f"{__version__}"
     gtfs.metadata.creator = ["Joseph D. Preece"]
 
@@ -95,5 +138,3 @@ with gtfs:
     #     range = [str]
 
 # endregion
-
-    # TODO NOTE: Any Field that has an instance, becomes a FieldValue.
