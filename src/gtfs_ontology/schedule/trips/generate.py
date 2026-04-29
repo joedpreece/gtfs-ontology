@@ -88,6 +88,7 @@ with gtfs:
         domain = [Trip]
         range = [direction_id_enum]
         seeAlso = [TRIPS_URL]
+        closeMatch = [gtfs_linked.direction]
 
     class block_id(id):
         comment = [locstr(BLOCK_ID_DEF, "en")]
@@ -110,6 +111,7 @@ with gtfs:
         domain = [Trip]
         range = [bikes_allowed_enum]
         seeAlso = [TRIPS_URL]
+        closeMatch = [gtfs_linked.bikesAllowed]
 
     class cars_allowed(enum):
         comment = [locstr(CARS_ALLOWED_DEF, "en")]

@@ -30,6 +30,7 @@ with gtfs:
         comment = [locstr(COLOR_DEF, "en")]
         range = [color_pattern]
         seeAlso = ["https://htmlcolorcodes.com/"]
+        closeMatch = [gtfs_linked.color]
 
     class currency_code(field):
         comment = [locstr(CURRENCY_CODE_DEF, "en")]

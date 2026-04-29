@@ -46,42 +46,49 @@ with gtfs:
         domain = [Service]
         range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
+        closeMatch = [gtfs_linked.monday]
 
     class tuesday(enum):
         comment = [locstr(TUESDAY_DEF, "en")]
         domain = [Service]
         range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
+        closeMatch = [gtfs_linked.tuesday]
 
     class wednesday(enum):
         comment = [locstr(WEDNESDAY_DEF, "en")]
         domain = [Service]
         range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
+        closeMatch = [gtfs_linked.wednesday]
 
     class thursday(enum):
         comment = [locstr(THURSDAY_DEF, "en")]
         domain = [Service]
         range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
+        closeMatch = [gtfs_linked.thursday]
 
     class friday(enum):
         comment = [locstr(FRIDAY_DEF, "en")]
         domain = [Service]
         range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
+        closeMatch = [gtfs_linked.friday]
 
     class saturday(enum):
         comment = [locstr(SATURDAY_DEF, "en")]
         domain = [Service]
         range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
+        closeMatch = [gtfs_linked.saturday]
 
     class sunday(enum):
         comment = [locstr(SUNDAY_DEF, "en")]
         domain = [Service]
         range = [weekday_enum]
         seeAlso = [CALENDAR_URL]
+        closeMatch = [gtfs_linked.sunday]
 
     class start_date(date):
         comment = [locstr(START_DATE_DEF, "en")]

@@ -220,6 +220,8 @@ with gtfs:
                 end_pickup_drop_off_window.exactly(0)
             )
         ]
+        broadMatch = [gtfs_linked.PickupType]
+
 
     class NoContinuousStoppingPickup(StopTime):
         comment = [locstr("No continuous stopping pickup.", "en")]
@@ -227,6 +229,8 @@ with gtfs:
             continuous_pickup.value(1) |
             continuous_pickup.exactly(0)
         ]
+        broadMatch = [gtfs_linked.PickupType]
+
 
     class AgencyArrangedContinuousStoppingPickup(StopTime):
         comment = [locstr("Must phone agency to arrange continuous stopping pickup.", "en")]
@@ -237,6 +241,8 @@ with gtfs:
                 end_pickup_drop_off_window.exactly(0)
             )
         ]
+        broadMatch = [gtfs_linked.PickupType]
+
 
     class DriverCoordinatedContinuousStoppingPickup(StopTime):
         comment = [locstr("Must coordinate with driver to arrange continuous stopping pickup. ", "en")]
@@ -247,6 +253,8 @@ with gtfs:
                 end_pickup_drop_off_window.exactly(0)
             )
         ]
+        broadMatch = [gtfs_linked.PickupType]
+
 
     class ContinuousStoppingDropOff(StopTime):
         comment = [locstr("Continuous stopping drop off.", "en")]
@@ -257,6 +265,8 @@ with gtfs:
                 end_pickup_drop_off_window.exactly(0)
             )
         ]
+        broadMatch = [gtfs_linked.DropOffType]
+
 
     class NoContinuousStoppingDropOff(StopTime):
         comment = [locstr("No continuous stopping drop off.", "en")]
@@ -264,6 +274,8 @@ with gtfs:
             continuous_drop_off.value(1) |
             continuous_drop_off.exactly(0)
         ]
+        broadMatch = [gtfs_linked.DropOffType]
+
 
     class AgencyArrangedContinuousStoppingDropOff(StopTime):
         comment = [locstr("Must phone agency to arrange continuous stopping drop off.", "en")]
@@ -274,6 +286,7 @@ with gtfs:
                 end_pickup_drop_off_window.exactly(0)
             )
         ]
+        broadMatch = [gtfs_linked.DropOffType]
 
     class DriverCoordinatedContinuousStoppingDropOff(StopTime):
         comment = [locstr("Must coordinate with driver to arrange continuous stopping drop off.", "en")]
@@ -284,3 +297,4 @@ with gtfs:
                 end_pickup_drop_off_window.exactly(0)
             )
         ]
+        broadMatch = [gtfs_linked.DropOffType]

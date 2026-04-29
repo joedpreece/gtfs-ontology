@@ -68,60 +68,70 @@ with gtfs:
         equivalent_to = [
             route_type.value(0)
         ]
+        broadMatch = [gtfs_linked.RouteType]
 
     class SubwayRoute(Route):
         comment = [locstr(SUBWAY_ROUTE_DEF, "en")]
         equivalent_to = [
             route_type.value(1)
         ]
+        broadMatch = [gtfs_linked.RouteType]
 
     class RailRoute(Route):
         comment = [locstr(RAIL_DEF, "en")]
         equivalent_to = [
             route_type.value(2)
         ]
+        broadMatch = [gtfs_linked.RouteType]
 
     class BusRoute(Route):
         comment = [locstr(BUS_DEF, "en")]
         equivalent_to = [
             route_type.value(3)
         ]
+        broadMatch = [gtfs_linked.RouteType]
 
     class FerryRoute(Route):
         comment = [locstr(FERRY_DEF, "en")]
         equivalent_to = [
             route_type.value(4)
         ]
+        broadMatch = [gtfs_linked.RouteType]
 
     class CableTramRoute(Route):
         comment = [locstr(CABLE_TRAM_DEF, "en")]
         equivalent_to = [
             route_type.value(5)
         ]
+        broadMatch = [gtfs_linked.RouteType]
 
     class AerialLiftRoute(Route):
         comment = [locstr(AERIAL_LIFT_DEF, "en")]
         equivalent_to = [
             route_type.value(6)
         ]
+        broadMatch = [gtfs_linked.RouteType]
 
     class FunicularRoute(Route):
         comment = [locstr(FUNICULAR_DEF, "en")]
         equivalent_to = [
             route_type.value(7)
         ]
+        broadMatch = [gtfs_linked.RouteType]
 
     class TrolleybusRoute(Route):
         comment = [locstr(TROLLEYBUS_DEF, "en")]
         equivalent_to = [
             route_type.value(11)
         ]
+        broadMatch = [gtfs_linked.RouteType]
 
     class MonorailRoute(Route):
         comment = [locstr(MONORAIL_DEF, "en")]
         equivalent_to = [
             route_type.value(12)
         ]
+        broadMatch = [gtfs_linked.RouteType]
 
     class RouteWithContinuousPickup(Route):
         equivalent_to = [

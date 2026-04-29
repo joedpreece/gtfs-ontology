@@ -82,11 +82,13 @@ with gtfs:
         comment = [locstr(ARRIVAL_TIME_DEF, "en")]
         domain = [StopTime]
         seeAlso = [STOP_TIMES_URL]
+        closeMatch = [gtfs_linked.arrivalTime]
 
     class departure_time(time):
         comment = [locstr(DEPARTURE_TIME_DEF, "en")]
         domain = [StopTime]
         seeAlso = [STOP_TIMES_URL]
+        closeMatch = [gtfs_linked.departureTime]
 
     stop_id.comment.append(locstr(STOP_ID_DEF, "en"))
     stop_id.domain.append(StopTime)
@@ -107,11 +109,13 @@ with gtfs:
         domain = [StopTime]
         # range = [NonNegativeInteger]
         seeAlso = [STOP_TIMES_URL]
+        closeMatch = [gtfs_linked.stopSequence]
 
     class stop_headsign(text):
         comment = [locstr(STOP_HEADSIGN_DEF, "en")]
         domain = [StopTime]
         seeAlso = [STOP_TIMES_URL]
+        closeMatch = [gtfs_linked.headsign]
 
     class start_pickup_drop_off_window(time):
         comment = [locstr(START_PICKUP_DROP_OFF_WINDOW_DEF, "en")]
@@ -151,6 +155,7 @@ with gtfs:
         comment = [locstr(SHAPE_DIST_TRAVELED_DEF, "en")]
         domain = [StopTime]
         seeAlso = [STOP_TIMES_URL]
+        closeMatch = [gtfs_linked.distanceTraveled]
 
     class timepoint(enum):
         comment = [locstr(TIMEPOINT_DEF, "en")]

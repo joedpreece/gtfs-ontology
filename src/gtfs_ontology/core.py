@@ -51,6 +51,9 @@ with gtfs:
     class relatedMatch(AnnotationProperty):
         namespace = skos
 
+    class broadMatch(AnnotationProperty):
+        namespace = skos
+
     class Feed(Thing):
         namespace = gtfs_linked
 
@@ -76,6 +79,60 @@ with gtfs:
         namespace = gtfs_linked
 
     class Trip(Thing):
+        namespace = gtfs_linked
+
+    class DropOffType(Thing):
+        namespace = gtfs_linked
+
+    class PickupType(Thing):
+        namespace = gtfs_linked
+
+    class WheelchairBoardingStatus(Thing):
+        namespace = gtfs_linked
+
+    class arrivalTime(DataProperty):
+        namespace = gtfs_linked
+
+    class bikesAllowed(DataProperty):
+        namespace = gtfs_linked
+
+    class color(DataProperty):
+        namespace = gtfs_linked
+
+    class departureTime(DataProperty):
+        namespace = gtfs_linked
+
+    class direction(DataProperty):
+        namespace = gtfs_linked
+
+    class distanceTraveled(DataProperty):
+        namespace = gtfs_linked
+
+    class headsign(DataProperty):
+        namespace = gtfs_linked
+
+    class stopSequence(DataProperty):
+        namespace = gtfs_linked
+
+    class monday(DataProperty):
+        namespace = gtfs_linked
+
+    class tuesday(DataProperty):
+        namespace = gtfs_linked
+
+    class wednesday(DataProperty):
+        namespace = gtfs_linked
+
+    class thursday(DataProperty):
+        namespace = gtfs_linked
+
+    class friday(DataProperty):
+        namespace = gtfs_linked
+
+    class saturday(DataProperty):
+        namespace = gtfs_linked
+
+    class sunday(DataProperty):
         namespace = gtfs_linked
 
     # class BusStop(Thing):
@@ -120,6 +177,7 @@ with gtfs:
 
     class FeedSpecification(Thing):
         comment = [locstr("A specification for a transit feed.", "en")]
+        closeMatch = [gtfs_linked.Feed]
 
     class GTFSSchedule(FeedSpecification):
         comment = [locstr(GTFS_SCHEDULE_DEF, "en")]

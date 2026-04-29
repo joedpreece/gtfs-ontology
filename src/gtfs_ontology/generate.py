@@ -45,9 +45,10 @@ def generate_ontology(
 
     g = Graph()
     g.parse(str(path.resolve()), format="xml")
+    path.unlink()
 
     new_manager = NamespaceManager(g)
     g.namespace_manager = new_manager
 
     g.bind("gtfs_linked", Namespace("http://vocab.gtfs.org/terms#"), override=True)
-    g.serialize(destination="artifacts/gtfs_prefixed.ttl", format="turtle")
+    g.serialize(destination="artifacts/gtfs.ttl", format="turtle")

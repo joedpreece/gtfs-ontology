@@ -12,8 +12,7 @@
 
 dcterms:creator a owl:AnnotationProperty .
 
-gtfs_linked:Feed a owl:Class ;
-    rdfs:subClassOf owl:Thing .
+skos:broadMatch a owl:AnnotationProperty .
 
 skos:closeMatch a owl:AnnotationProperty .
 
@@ -34,7 +33,8 @@ Cable transport where cabins, cars, gondolas or open chairs are suspended by mea
     rdfs:subClassOf :Route ;
     owl:equivalentClass [ a owl:Restriction ;
             owl:hasValue 6 ;
-            owl:onProperty :route_type ] .
+            owl:onProperty :route_type ] ;
+    skos:broadMatch gtfs_linked:RouteType .
 
 :AgencyArrangedContinuousStoppingDropOff a owl:Class ;
     rdfs:comment "Must phone agency to arrange continuous stopping drop off."@en ;
@@ -47,7 +47,8 @@ Cable transport where cabins, cars, gondolas or open chairs are suspended by mea
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
                                     owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] .
+                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ;
+    skos:broadMatch gtfs_linked:DropOffType .
 
 :AgencyArrangedContinuousStoppingPickup a owl:Class ;
     rdfs:comment "Must phone agency to arrange continuous stopping pickup."@en ;
@@ -60,7 +61,8 @@ Cable transport where cabins, cars, gondolas or open chairs are suspended by mea
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
                                     owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] .
+                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ;
+    skos:broadMatch gtfs_linked:PickupType .
 
 :AgencyArrangedDropOff a owl:Class ;
     rdfs:comment "Must phone agency to arrange drop off."@en ;
@@ -104,7 +106,8 @@ Used for short- and long-distance bus routes.
     rdfs:subClassOf :Route ;
     owl:equivalentClass [ a owl:Restriction ;
             owl:hasValue 3 ;
-            owl:onProperty :route_type ] .
+            owl:onProperty :route_type ] ;
+    skos:broadMatch gtfs_linked:RouteType .
 
 :CableTramRoute a owl:Class ;
     rdfs:comment """
@@ -113,7 +116,8 @@ Used for street-level rail cars where the cable runs beneath the vehicle (e.g., 
     rdfs:subClassOf :Route ;
     owl:equivalentClass [ a owl:Restriction ;
             owl:hasValue 5 ;
-            owl:onProperty :route_type ] .
+            owl:onProperty :route_type ] ;
+    skos:broadMatch gtfs_linked:RouteType .
 
 :CalendarDateService a owl:Class ;
     rdfs:subClassOf [ a owl:Class ;
@@ -162,7 +166,8 @@ Used for street-level rail cars where the cable runs beneath the vehicle (e.g., 
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
                                     owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] .
+                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ;
+    skos:broadMatch gtfs_linked:DropOffType .
 
 :ContinuousStoppingPickup a owl:Class ;
     rdfs:comment "Continuous stopping pickup."@en ;
@@ -175,7 +180,8 @@ Used for street-level rail cars where the cable runs beneath the vehicle (e.g., 
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
                                     owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] .
+                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ;
+    skos:broadMatch gtfs_linked:PickupType .
 
 :DatasetWithoutCalendarFile a owl:Class ;
     rdfs:comment "A dataset with a calendar file."@en ;
@@ -201,7 +207,8 @@ Used for street-level rail cars where the cable runs beneath the vehicle (e.g., 
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
                                     owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] .
+                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ;
+    skos:broadMatch gtfs_linked:DropOffType .
 
 :DriverCoordinatedContinuousStoppingPickup a owl:Class ;
     rdfs:comment "Must coordinate with driver to arrange continuous stopping pickup. "@en ;
@@ -214,7 +221,8 @@ Used for street-level rail cars where the cable runs beneath the vehicle (e.g., 
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
                                     owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] .
+                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ;
+    skos:broadMatch gtfs_linked:PickupType .
 
 :DriverCoordinatedDropOff a owl:Class ;
     rdfs:comment "Must coordinate with driver to arrange drop off."@en ;
@@ -268,7 +276,8 @@ Used for short- and long-distance boat service.
     rdfs:subClassOf :Route ;
     owl:equivalentClass [ a owl:Restriction ;
             owl:hasValue 4 ;
-            owl:onProperty :route_type ] .
+            owl:onProperty :route_type ] ;
+    skos:broadMatch gtfs_linked:RouteType .
 
 :FunicularRoute a owl:Class ;
     rdfs:comment """
@@ -277,7 +286,8 @@ Any rail system designed for steep inclines.
     rdfs:subClassOf :Route ;
     owl:equivalentClass [ a owl:Restriction ;
             owl:hasValue 7 ;
-            owl:onProperty :route_type ] .
+            owl:onProperty :route_type ] ;
+    skos:broadMatch gtfs_linked:RouteType .
 
 :GTFSRealtime a owl:Class ;
     rdfs:comment """
@@ -299,7 +309,8 @@ Railway in which the track consists of a single rail or a beam.
     rdfs:subClassOf :Route ;
     owl:equivalentClass [ a owl:Restriction ;
             owl:hasValue 12 ;
-            owl:onProperty :route_type ] .
+            owl:onProperty :route_type ] ;
+    skos:broadMatch gtfs_linked:RouteType .
 
 :NoContinuousStoppingDropOff a owl:Class ;
     rdfs:comment "No continuous stopping drop off."@en ;
@@ -309,7 +320,8 @@ Railway in which the track consists of a single rail or a beam.
                         owl:hasValue 1 ;
                         owl:onProperty :continuous_drop_off ] [ a owl:Restriction ;
                         owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :continuous_drop_off ] ) ] .
+                        owl:onProperty :continuous_drop_off ] ) ] ;
+    skos:broadMatch gtfs_linked:DropOffType .
 
 :NoContinuousStoppingPickup a owl:Class ;
     rdfs:comment "No continuous stopping pickup."@en ;
@@ -319,7 +331,8 @@ Railway in which the track consists of a single rail or a beam.
                         owl:hasValue 1 ;
                         owl:onProperty :continuous_pickup ] [ a owl:Restriction ;
                         owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :continuous_pickup ] ) ] .
+                        owl:onProperty :continuous_pickup ] ) ] ;
+    skos:broadMatch gtfs_linked:PickupType .
 
 :NoDropOffAvailable a owl:Class ;
     rdfs:comment "No drop off available."@en ;
@@ -342,7 +355,8 @@ Used for intercity or long-distance travel.
     rdfs:subClassOf :Route ;
     owl:equivalentClass [ a owl:Restriction ;
             owl:hasValue 2 ;
-            owl:onProperty :route_type ] .
+            owl:onProperty :route_type ] ;
+    skos:broadMatch gtfs_linked:RouteType .
 
 :RegularlyScheduledDropOff a owl:Class ;
     rdfs:comment "Regularly scheduled drop off. "@en ;
@@ -748,7 +762,8 @@ Any underground rail system within a metropolitan area.
     rdfs:subClassOf :Route ;
     owl:equivalentClass [ a owl:Restriction ;
             owl:hasValue 1 ;
-            owl:onProperty :route_type ] .
+            owl:onProperty :route_type ] ;
+    skos:broadMatch gtfs_linked:RouteType .
 
 :TramRoute a owl:Class ;
     rdfs:comment """
@@ -757,7 +772,8 @@ Any light rail or street level system within a metropolitan area.
     rdfs:subClassOf :Route ;
     owl:equivalentClass [ a owl:Restriction ;
             owl:hasValue 0 ;
-            owl:onProperty :route_type ] .
+            owl:onProperty :route_type ] ;
+    skos:broadMatch gtfs_linked:RouteType .
 
 :TripInDirectionA a owl:Class ;
     rdfs:comment """
@@ -911,7 +927,8 @@ Electric buses that draw power from overhead wires using poles.
     rdfs:subClassOf :Route ;
     owl:equivalentClass [ a owl:Restriction ;
             owl:hasValue 11 ;
-            owl:onProperty :route_type ] .
+            owl:onProperty :route_type ] ;
+    skos:broadMatch gtfs_linked:RouteType .
 
 :WheelchairAccessibleEntrance a owl:Class ;
     rdfs:comment """
@@ -971,7 +988,7 @@ Example: 12.492269 for the Colosseum in Rome.
 gtfs_linked:Agency a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
-gtfs_linked:RouteType a owl:Class ;
+gtfs_linked:Feed a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
 gtfs_linked:Service a owl:Class ;
@@ -985,6 +1002,39 @@ gtfs_linked:Stop a owl:Class ;
 
 gtfs_linked:Trip a owl:Class ;
     rdfs:subClassOf owl:Thing .
+
+gtfs_linked:WheelchairBoardingStatus a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+gtfs_linked:arrivalTime a owl:DatatypeProperty .
+
+gtfs_linked:bikesAllowed a owl:DatatypeProperty .
+
+gtfs_linked:color a owl:DatatypeProperty .
+
+gtfs_linked:departureTime a owl:DatatypeProperty .
+
+gtfs_linked:direction a owl:DatatypeProperty .
+
+gtfs_linked:distanceTraveled a owl:DatatypeProperty .
+
+gtfs_linked:friday a owl:DatatypeProperty .
+
+gtfs_linked:headsign a owl:DatatypeProperty .
+
+gtfs_linked:monday a owl:DatatypeProperty .
+
+gtfs_linked:saturday a owl:DatatypeProperty .
+
+gtfs_linked:stopSequence a owl:DatatypeProperty .
+
+gtfs_linked:sunday a owl:DatatypeProperty .
+
+gtfs_linked:thursday a owl:DatatypeProperty .
+
+gtfs_linked:tuesday a owl:DatatypeProperty .
+
+gtfs_linked:wednesday a owl:DatatypeProperty .
 
 <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> a owl:Class ;
     rdfs:subClassOf owl:Thing .
@@ -1219,7 +1269,8 @@ Functions in the same way as monday except applies to Tuesdays
     rdfs:domain :Service ;
     rdfs:range :weekday_enum ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:friday .
 
 :language_code a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1253,7 +1304,8 @@ Indicates whether the service operates on all Mondays in the date range specifie
     rdfs:domain :Service ;
     rdfs:range :weekday_enum ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:monday .
 
 :network_id a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1348,7 +1400,8 @@ Functions in the same way as monday except applies to Tuesdays
     rdfs:domain :Service ;
     rdfs:range :weekday_enum ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:saturday .
 
 :shape_dist_traveled a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1356,7 +1409,8 @@ Actual distance traveled along the associated shape, from the first stop to the 
 """@en ;
     rdfs:domain :StopTime ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :num_float .
+    rdfs:subPropertyOf :num_float ;
+    skos:closeMatch gtfs_linked:distanceTraveled .
 
 :start_date a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1396,7 +1450,8 @@ A stop_headsign value specified for one stop_time does not apply to subsequent s
 """@en ;
     rdfs:domain :StopTime ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :text .
+    rdfs:subPropertyOf :text ;
+    skos:closeMatch gtfs_linked:headsign .
 
 :stop_sequence a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1406,7 +1461,8 @@ Travel within the same location group or GeoJSON location requires two records i
 """@en ;
     rdfs:domain :StopTime ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :num_int .
+    rdfs:subPropertyOf :num_int ;
+    skos:closeMatch gtfs_linked:stopSequence .
 
 :stop_timezone a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1431,7 +1487,8 @@ Functions in the same way as monday except applies to Sundays.
     rdfs:domain :Service ;
     rdfs:range :weekday_enum ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:sunday .
 
 :thursday a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1440,7 +1497,8 @@ Functions in the same way as monday except applies to Tuesdays
     rdfs:domain :Service ;
     rdfs:range :weekday_enum ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:thursday .
 
 :timepoint_enum a rdfs:Datatype ;
     owl:equivalentClass [ a rdfs:Datatype ;
@@ -1483,7 +1541,8 @@ Functions in the same way as monday except applies to Tuesdays
     rdfs:domain :Service ;
     rdfs:range :weekday_enum ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:tuesday .
 
 :wednesday a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1492,7 +1551,8 @@ Functions in the same way as monday except applies to Tuesdays
     rdfs:domain :Service ;
     rdfs:range :weekday_enum ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:wednesday .
 
 :wheelchair_accessible_enum a rdfs:Datatype ;
     owl:equivalentClass [ a rdfs:Datatype ;
@@ -1522,7 +1582,8 @@ dcat:Dataset a owl:Class ;
 
 :FeedSpecification a owl:Class ;
     rdfs:comment "A specification for a transit feed."@en ;
-    rdfs:subClassOf owl:Thing .
+    rdfs:subClassOf owl:Thing ;
+    skos:closeMatch gtfs_linked:Feed .
 
 :StopFile a owl:Class ;
     rdfs:comment """
@@ -1546,7 +1607,8 @@ Example: FFFFFF for white, 000000 for black or 0039A6 for the A,C,E lines in NYM
 """@en ;
     rdfs:range :color_pattern ;
     rdfs:seeAlso "https://htmlcolorcodes.com/"^^xsd:string ;
-    rdfs:subPropertyOf :field .
+    rdfs:subPropertyOf :field ;
+    skos:closeMatch gtfs_linked:color .
 
 :num_int a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1651,7 +1713,8 @@ Indicates the direction of travel for a trip. This field should not be used in r
     rdfs:domain :Trip ;
     rdfs:range :direction_id_enum ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:direction .
 
 :parent_station a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1723,6 +1786,12 @@ Indicates if arrival and departure times for a stop are strictly adhered to by t
     rdfs:range :timepoint_enum ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
     rdfs:subPropertyOf :enum .
+
+gtfs_linked:DropOffType a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+gtfs_linked:PickupType a owl:Class ;
+    rdfs:subClassOf owl:Thing .
 
 gtfs_linked:StopTime a owl:Class ;
     rdfs:subClassOf owl:Thing .
@@ -1834,7 +1903,8 @@ Indicates whether bikes are allowed. Valid options are:
     rdfs:domain :Trip ;
     rdfs:range :bikes_allowed_enum ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:bikesAllowed .
 
 :cars_allowed a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1901,7 +1971,8 @@ If exact arrival and departure times (timepoint=1) are not available, estimated 
 """@en ;
     rdfs:domain :StopTime ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :time .
+    rdfs:subPropertyOf :time ;
+    skos:closeMatch gtfs_linked:departureTime .
 
 :isRecordOf a owl:ObjectProperty .
 
@@ -2060,7 +2131,8 @@ Arrival time at the stop (defined by stop_times.stop_id) for a specific trip (de
 """@en ;
     rdfs:domain :StopTime ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :time .
+    rdfs:subPropertyOf :time ;
+    skos:closeMatch gtfs_linked:arrivalTime .
 
 :location_group_id a owl:DatatypeProperty ;
     rdfs:comment """
@@ -2147,6 +2219,9 @@ Indicates that the rider can board the transit vehicle at any point along the ve
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
     rdfs:subPropertyOf :enum .
 
+gtfs_linked:RouteType a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
 :route_type a owl:DatatypeProperty ;
     rdfs:comment """
 Indicates the type of transportation used on a route. Valid options are:
@@ -2172,7 +2247,8 @@ Indicates the type of transportation used on a route. Valid options are:
     rdfs:comment """
 Indicates whether wheelchair boardings are possible from the location. 
 """@en ;
-    rdfs:subClassOf :Record .
+    rdfs:subClassOf :Record ;
+    skos:relatedMatch gtfs_linked:WheelchairBoardingStatus .
 
 :text a owl:DatatypeProperty ;
     rdfs:comment """
@@ -2441,8 +2517,8 @@ Example: The route_type field contains a 0 for tram, a 1 for subway...
     skos:closeMatch gtfs_linked:StopTime .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( :StopLocation :Platform :Station :EntranceOrExit :GenericNode :BoardingArea ) .
+    owl:members ( :AgencyFile :StopFile :RouteFile :TripFile :StopTimeFile :CalendarFile :CalendarDateFile ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( :AgencyFile :StopFile :RouteFile :TripFile :StopTimeFile :CalendarFile :CalendarDateFile ) .
+    owl:members ( :StopLocation :Platform :Station :EntranceOrExit :GenericNode :BoardingArea ) .
 

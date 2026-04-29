@@ -115,6 +115,7 @@ with gtfs:
 
     class RecordWithAccessibilityInformation(Record):
         comment = [locstr(RECORD_WITH_ACCESSIBILITY_DEF, "en")]
+        relatedMatch = [gtfs_linked.WheelchairBoardingStatus]
 
     class StopWithNoAccessibilityInformation(ParentlessStop, RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_PARENTLESS_STOP_0_DEF, "en")]
