@@ -2,7 +2,7 @@ from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.agencies.generate import agency_id, cemv_support
 from gtfs_ontology.schedule.field_types.generate import text, enum, url, color, \
     num_int, id
-from gtfs_ontology.schedule.records.generate import Route
+from gtfs_ontology.schedule.records.generate import Route, Trip
 from gtfs_ontology.schedule.routes.definitions import *
 
 ROUTES_URL = "https://gtfs.org/documentation/schedule/reference/#routestxt"
@@ -55,10 +55,9 @@ with gtfs:
 
     class route_id(id):
         comment = [locstr(ROUTE_ID_DEF, "en")]
-        domain = [Route]
+        domain = [Route | Trip]
         seeAlso = [ROUTES_URL]
 
-    agency_id.domain.append(Route)
     agency_id.comment.append(locstr(AGENCY_ID_DEF, "en"))
     agency_id.seeAlso.append(ROUTES_URL)
 
@@ -106,13 +105,13 @@ with gtfs:
 
     class continuous_pickup(enum):
         comment = [locstr(CONTINUOUS_PICKUP_DEF, "en")]
-        domain = [Route]
+        domain = [Route | gtfs.StopTime]
         range = [continuous_pickup_enum]
         seeAlso = [ROUTES_URL]
 
     class continuous_drop_off(enum):
         comment = [locstr(CONTINUOUS_DROPOFF_DEF, "en")]
-        domain = [Route]
+        domain = [Route | gtfs.StopTime]
         range = [continuous_drop_off_enum]
         seeAlso = [ROUTES_URL]
 
@@ -121,7 +120,6 @@ with gtfs:
         domain = [Route]
         seeAlso = [ROUTES_URL]
 
-    cemv_support.domain.append(Route)
     cemv_support.comment.append(locstr(CEMV_SUPPORT_DEF, "en"))
     cemv_support.seeAlso.append(ROUTES_URL)
 

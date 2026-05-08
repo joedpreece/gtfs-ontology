@@ -12,6 +12,12 @@
 
 dcterms:creator a owl:AnnotationProperty .
 
+gtfs_linked:DropOffType a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+gtfs_linked:PickupType a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
 skos:broadMatch a owl:AnnotationProperty .
 
 skos:closeMatch a owl:AnnotationProperty .
@@ -26,477 +32,246 @@ schema:telephone a owl:DatatypeProperty .
     rdfs:comment "An OWL ontology describing entities, relationships, and data structures found in the General Transit Feed Specification (GTFS)."@en ;
     owl:versionInfo "0.2.0"^^xsd:string .
 
-:AerialLiftRoute a owl:Class ;
-    rdfs:comment """
-Cable transport where cabins, cars, gondolas or open chairs are suspended by means of one or more cables.
-"""@en ;
-    rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 6 ;
-            owl:onProperty :route_type ] ;
-    skos:broadMatch gtfs_linked:RouteType .
-
-:AgencyArrangedContinuousStoppingDropOff a owl:Class ;
-    rdfs:comment "Must phone agency to arrange continuous stopping drop off."@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:hasValue 2 ;
-                        owl:onProperty :continuous_drop_off ] [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ;
-    skos:broadMatch gtfs_linked:DropOffType .
-
-:AgencyArrangedContinuousStoppingPickup a owl:Class ;
-    rdfs:comment "Must phone agency to arrange continuous stopping pickup."@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:hasValue 2 ;
-                        owl:onProperty :continuous_pickup ] [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ;
-    skos:broadMatch gtfs_linked:PickupType .
-
-:AgencyArrangedDropOff a owl:Class ;
-    rdfs:comment "Must phone agency to arrange drop off."@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 2 ;
-            owl:onProperty :drop_off_type ] .
-
-:AgencyArrangedPickup a owl:Class ;
-    rdfs:comment "Must phone agency to arrange pickup."@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 2 ;
-            owl:onProperty :pickup_type ] .
-
-:AgencyFileWithSingleAgency a owl:Class ;
-    rdfs:comment """
-An agency file with a single agency.
-"""@en ;
-    rdfs:subClassOf :AgencyFile ;
-    owl:disjointWith :AgencyFileWithMultipleAgencies ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onClass :Agency ;
-            owl:onProperty :hasRecord ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
-
-:AgencyWithinAgencyFileWithMultipleAgencies a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :agency_id ],
-        :Agency ;
+:AgencyRecommendedAgencyID a owl:Class ;
+    rdfs:subClassOf :Recommendation ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( :Agency [ a owl:Restriction ;
-                        owl:allValuesFrom :AgencyFileWithMultipleAgencies ;
+                        owl:allValuesFrom :AgencyFileWithSingleAgency ;
                         owl:onProperty :isRecordOf ] ) ] .
 
-:BusRoute a owl:Class ;
-    rdfs:comment """
-Used for short- and long-distance bus routes.
-"""@en ;
-    rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 3 ;
-            owl:onProperty :route_type ] ;
-    skos:broadMatch gtfs_linked:RouteType .
+:AgencyWithCEMVSupport a owl:Class ;
+    rdfs:subClassOf :RecordWithCEMVInformation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Agency [ a owl:Restriction ;
+                        owl:hasValue 1 ;
+                        owl:onProperty :cemv_support ] ) ] .
 
-:CableTramRoute a owl:Class ;
-    rdfs:comment """
-Used for street-level rail cars where the cable runs beneath the vehicle (e.g., cable car in San Francisco).
-"""@en ;
-    rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 5 ;
-            owl:onProperty :route_type ] ;
-    skos:broadMatch gtfs_linked:RouteType .
+:AgencyWithNoCEMVInformation a owl:Class ;
+    rdfs:subClassOf :RecordWithCEMVInformation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Agency [ a owl:Class ;
+                        owl:unionOf ( [ a owl:Restriction ;
+                                    owl:hasValue 0 ;
+                                    owl:onProperty :cemv_support ] [ a owl:Restriction ;
+                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                                    owl:onProperty :cemv_support ] ) ] ) ] .
+
+:AgencyWithoutCEMVSupport a owl:Class ;
+    rdfs:subClassOf :RecordWithCEMVInformation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Agency [ a owl:Restriction ;
+                        owl:hasValue 2 ;
+                        owl:onProperty :cemv_support ] ) ] .
+
+:ApproximateStopTime a owl:Class ;
+    rdfs:comment "Times are considered approximate."@en ;
+    rdfs:subClassOf :StopTime ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :StopTime [ a owl:Restriction ;
+                        owl:hasValue 0 ;
+                        owl:onProperty :timepoint ] ) ] .
 
 :CalendarDateService a owl:Class ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :service_id ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :calendar_dates_date ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :exception_type ] ) ],
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :exception_type ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :calendar_dates_date ],
         :Service .
 
 :CalendarService a owl:Class ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :service_id ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :monday ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :tuesday ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :wednesday ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :thursday ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :friday ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :saturday ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :sunday ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :start_date ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :end_date ] ) ],
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :thursday ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :start_date ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :friday ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :saturday ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :monday ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :tuesday ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :sunday ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :end_date ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :wednesday ],
         :Service .
 
-:ContinuousStoppingDropOff a owl:Class ;
-    rdfs:comment "Continuous stopping drop off."@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:hasValue 0 ;
-                        owl:onProperty :continuous_drop_off ] [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ;
-    skos:broadMatch gtfs_linked:DropOffType .
-
-:ContinuousStoppingPickup a owl:Class ;
-    rdfs:comment "Continuous stopping pickup."@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:hasValue 0 ;
-                        owl:onProperty :continuous_pickup ] [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ;
-    skos:broadMatch gtfs_linked:PickupType .
-
 :DatasetWithoutCalendarFile a owl:Class ;
-    rdfs:comment "A dataset with a calendar file."@en ;
+    rdfs:comment "A dataset without a calendar file."@en ;
     rdfs:seeAlso :CalendarFile ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass :CalendarDateFile ;
             owl:onProperty :hasFile ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         :Dataset ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onClass :CalendarFile ;
-            owl:onProperty :hasFile ;
-            owl:qualifiedCardinality "0"^^xsd:nonNegativeInteger ] .
-
-:DriverCoordinatedContinuousStoppingDropOff a owl:Class ;
-    rdfs:comment "Must coordinate with driver to arrange continuous stopping drop off."@en ;
-    rdfs:subClassOf :StopTime ;
     owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:hasValue 3 ;
-                        owl:onProperty :continuous_drop_off ] [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ;
-    skos:broadMatch gtfs_linked:DropOffType .
+            owl:intersectionOf ( :Dataset [ a owl:Restriction ;
+                        owl:onClass :CalendarFile ;
+                        owl:onProperty :hasFile ;
+                        owl:qualifiedCardinality "0"^^xsd:nonNegativeInteger ] ) ] .
 
-:DriverCoordinatedContinuousStoppingPickup a owl:Class ;
-    rdfs:comment "Must coordinate with driver to arrange continuous stopping pickup. "@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:hasValue 3 ;
-                        owl:onProperty :continuous_pickup ] [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ;
-    skos:broadMatch gtfs_linked:PickupType .
-
-:DriverCoordinatedDropOff a owl:Class ;
-    rdfs:comment "Must coordinate with driver to arrange drop off."@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 3 ;
-            owl:onProperty :drop_off_type ] .
-
-:DriverCoordinatedPickup a owl:Class ;
-    rdfs:comment "Driver coordinated pickup."@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:hasValue 3 ;
-                        owl:onProperty :pickup_type ] [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] .
-
-:EntranceInheritingAccessibilityFromStation a owl:Class ;
-    rdfs:comment """
-Station entrance will inherit its wheelchair_boarding behavior from the parent station, if specified for the parent.
-"""@en ;
-    rdfs:subClassOf :EntranceOrExit,
-        :RecordWithAccessibilityInformation ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :EntranceOrExit [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:hasValue 0 ;
-                                    owl:onProperty :wheelchair_boarding ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :wheelchair_boarding ] ) ] ) ] .
-
-:EntranceWithNoAccessiblePathToPlatforms a owl:Class ;
-    rdfs:comment """
-No accessible path from station entrance to stops/platforms.
-"""@en ;
-    rdfs:subClassOf :EntranceOrExit,
-        :RecordWithAccessibilityInformation ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :EntranceOrExit [ a owl:Restriction ;
-                        owl:hasValue 2 ;
-                        owl:onProperty :wheelchair_boarding ] ) ] .
-
-:FerryRoute a owl:Class ;
-    rdfs:comment """
-Used for short- and long-distance boat service.
-"""@en ;
-    rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 4 ;
-            owl:onProperty :route_type ] ;
-    skos:broadMatch gtfs_linked:RouteType .
-
-:FunicularRoute a owl:Class ;
-    rdfs:comment """
-Any rail system designed for steep inclines.
-"""@en ;
-    rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 7 ;
-            owl:onProperty :route_type ] ;
-    skos:broadMatch gtfs_linked:RouteType .
-
-:GTFSRealtime a owl:Class ;
-    rdfs:comment """
-GTFS Realtime is a feed specification that allows public transportation agencies to provide up-to-date information about current arrival and departure times, service alerts, and vehicle position, allowing users to smoothly plan their trips.
-
-The specification currently supports the following types of information:
-
-    Trip updates - delays, cancellations, changed routes
-    Service alerts - stop moved, unforeseen events affecting a station, route or the entire network
-    Vehicle positions - information about the vehicles including location and congestion level
-"""@en ;
-    rdfs:seeAlso "https://gtfs.org/documentation/overview/#gtfs-realtime"^^xsd:string ;
-    rdfs:subClassOf :FeedSpecification .
-
-:MonorailRoute a owl:Class ;
-    rdfs:comment """
-Railway in which the track consists of a single rail or a beam.
-"""@en ;
-    rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 12 ;
-            owl:onProperty :route_type ] ;
-    skos:broadMatch gtfs_linked:RouteType .
-
-:NoContinuousStoppingDropOff a owl:Class ;
-    rdfs:comment "No continuous stopping drop off."@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
+:ExactStopTime a owl:Class ;
+    rdfs:comment "Times are considered exact."@en ;
+    rdfs:subClassOf [ a owl:Class ;
             owl:unionOf ( [ a owl:Restriction ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onProperty :arrival_time ] [ a owl:Restriction ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onProperty :departure_time ] ) ],
+        :StopTime ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :StopTime [ a owl:Restriction ;
                         owl:hasValue 1 ;
-                        owl:onProperty :continuous_drop_off ] [ a owl:Restriction ;
-                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :continuous_drop_off ] ) ] ;
-    skos:broadMatch gtfs_linked:DropOffType .
+                        owl:onProperty :timepoint ] ) ] .
 
-:NoContinuousStoppingPickup a owl:Class ;
-    rdfs:comment "No continuous stopping pickup."@en ;
-    rdfs:subClassOf :StopTime ;
+:Optional a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:OptionalAgencyID a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_id ],
+        :Requirement .
+
+:RequiredAgencyID a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_id ],
+        :Requirement ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( [ a owl:Restriction ;
-                        owl:hasValue 1 ;
-                        owl:onProperty :continuous_pickup ] [ a owl:Restriction ;
-                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :continuous_pickup ] ) ] ;
-    skos:broadMatch gtfs_linked:PickupType .
+            owl:intersectionOf ( :Agency [ a owl:Restriction ;
+                        owl:allValuesFrom :AgencyFileWithMultipleAgencies ;
+                        owl:onProperty :isRecordOf ] ) ] .
 
-:NoDropOffAvailable a owl:Class ;
-    rdfs:comment "No drop off available."@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 1 ;
-            owl:onProperty :drop_off_type ] .
-
-:NoPickupAvailable a owl:Class ;
-    rdfs:comment "No pickup available."@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 1 ;
-            owl:onProperty :pickup_type ] .
-
-:RailRoute a owl:Class ;
-    rdfs:comment """
-Used for intercity or long-distance travel.
-"""@en ;
-    rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 2 ;
-            owl:onProperty :route_type ] ;
-    skos:broadMatch gtfs_linked:RouteType .
-
-:RegularlyScheduledDropOff a owl:Class ;
-    rdfs:comment "Regularly scheduled drop off. "@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:hasValue 0 ;
-                                    owl:onProperty :drop_off_type ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :drop_off_type ] ) ] [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] .
-
-:RegularlyScheduledPickup a owl:Class ;
-    rdfs:comment "Regularly scheduled pickup. "@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:hasValue 0 ;
-                                    owl:onProperty :pickup_type ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :pickup_type ] ) ] [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] .
-
-:RouteWithAgencyID a owl:Class ;
+:RouteRequiresAgencyID a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :agency_id ],
         :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:allValuesFrom [ a owl:Class ;
-                    owl:intersectionOf ( :RouteFile [ a owl:Restriction ;
-                                owl:allValuesFrom [ a owl:Class ;
-                                        owl:intersectionOf ( :Dataset [ a owl:Restriction ;
-                                                    owl:onProperty :hasFile ;
-                                                    owl:someValuesFrom :AgencyFileWithMultipleAgencies ] ) ] ;
-                                owl:onProperty :isFileOf ] ) ] ;
-            owl:onProperty :isRecordOf ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:allValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( :RouteFile [ a owl:Restriction ;
+                                            owl:allValuesFrom [ a owl:Class ;
+                                                    owl:intersectionOf ( dcat:Dataset [ a owl:Restriction ;
+                                                                owl:onProperty :hasFile ;
+                                                                owl:someValuesFrom :AgencyFileWithMultipleAgencies ] ) ] ;
+                                            owl:onProperty :isFileOf ] ) ] ;
+                        owl:onProperty :isRecordOf ] ) ] .
+
+:RouteRequiresContinuousDropOff a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :continuous_drop_off ],
+        :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:allValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( :RouteFile [ a owl:Restriction ;
+                                            owl:allValuesFrom [ a owl:Class ;
+                                                    owl:intersectionOf ( dcat:Dataset [ a owl:Restriction ;
+                                                                owl:onProperty :hasFile ;
+                                                                owl:someValuesFrom [ a owl:Class ;
+                                                                        owl:intersectionOf ( :StopTimeFile [ a owl:Restriction ;
+                                                                                    owl:onProperty :hasRecord ;
+                                                                                    owl:someValuesFrom [ a owl:Class ;
+                                                                                            owl:intersectionOf ( :StopTime [ a owl:Class ;
+                                                                                                        owl:unionOf ( [ a owl:Restriction ;
+                                                                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                    owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
+                                                                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ] ) ] ] ) ] ;
+                                            owl:onProperty :isRecordOf ] ) ] ;
+                        owl:onProperty :isFileOf ] ) ] .
+
+:RouteRequiresContinuousPickup a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :continuous_pickup ],
+        :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:allValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( :RouteFile [ a owl:Restriction ;
+                                            owl:allValuesFrom [ a owl:Class ;
+                                                    owl:intersectionOf ( dcat:Dataset [ a owl:Restriction ;
+                                                                owl:onProperty :hasFile ;
+                                                                owl:someValuesFrom [ a owl:Class ;
+                                                                        owl:intersectionOf ( :StopTimeFile [ a owl:Restriction ;
+                                                                                    owl:onProperty :hasRecord ;
+                                                                                    owl:someValuesFrom [ a owl:Class ;
+                                                                                            owl:intersectionOf ( :StopTime [ a owl:Class ;
+                                                                                                        owl:unionOf ( [ a owl:Restriction ;
+                                                                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                    owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
+                                                                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ] ) ] ] ) ] ;
+                                            owl:onProperty :isRecordOf ] ) ] ;
+                        owl:onProperty :isFileOf ] ) ] .
+
+:RouteRequiresLongName a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_long_name ],
+        :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                        owl:onProperty :route_short_name ] ) ] .
+
+:RouteRequiresShortName a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_short_name ],
+        :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                        owl:onProperty :route_long_name ] ) ] .
 
 :RouteWithCEMVSupport a owl:Class ;
     rdfs:comment """
 Riders may use cEMVs as fare media for trips associated with this route. 
 """@en ;
     rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 1 ;
-            owl:onProperty :cemv_support ] .
-
-:RouteWithContinuousDropOff a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :continuous_drop_off ],
-        :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:allValuesFrom [ a owl:Class ;
-                    owl:intersectionOf ( :RouteFile [ a owl:Restriction ;
-                                owl:allValuesFrom [ a owl:Class ;
-                                        owl:intersectionOf ( :Dataset [ a owl:Restriction ;
-                                                    owl:onProperty :hasFile ;
-                                                    owl:someValuesFrom [ a owl:Class ;
-                                                            owl:intersectionOf ( :StopTimeFile [ a owl:Restriction ;
-                                                                        owl:onProperty :hasRecord ;
-                                                                        owl:someValuesFrom [ a owl:Class ;
-                                                                                owl:intersectionOf ( gtfs_linked:StopTime [ a owl:Class ;
-                                                                                            owl:unionOf ( [ a owl:Restriction ;
-                                                                                                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                        owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                                                                                                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                        owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ] ) ] ] ) ] ;
-                                owl:onProperty :isRecordOf ] ) ] ;
-            owl:onProperty :isFileOf ] .
-
-:RouteWithContinuousPickup a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :continuous_pickup ],
-        :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:allValuesFrom [ a owl:Class ;
-                    owl:intersectionOf ( :RouteFile [ a owl:Restriction ;
-                                owl:allValuesFrom [ a owl:Class ;
-                                        owl:intersectionOf ( :Dataset [ a owl:Restriction ;
-                                                    owl:onProperty :hasFile ;
-                                                    owl:someValuesFrom [ a owl:Class ;
-                                                            owl:intersectionOf ( :StopTimeFile [ a owl:Restriction ;
-                                                                        owl:onProperty :hasRecord ;
-                                                                        owl:someValuesFrom [ a owl:Class ;
-                                                                                owl:intersectionOf ( gtfs_linked:StopTime [ a owl:Class ;
-                                                                                            owl:unionOf ( [ a owl:Restriction ;
-                                                                                                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                        owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                                                                                                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                        owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] ] ) ] ] ) ] ;
-                                owl:onProperty :isRecordOf ] ) ] ;
-            owl:onProperty :isFileOf ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 1 ;
+                        owl:onProperty :cemv_support ] ) ] .
 
 :RouteWithNoCEMVInformation a owl:Class ;
     rdfs:comment """
 No cEMV information for trips associated with this route. 
 """@en ;
     rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 0 ;
-            owl:onProperty :cemv_support ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 0 ;
+                        owl:onProperty :cemv_support ] ) ] .
 
 :RouteWithNoCEMVSupport a owl:Class ;
     rdfs:comment """
 cEMVs are not supported as fare media for trips associated with this route. 
 """@en ;
     rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 2 ;
-            owl:onProperty :cemv_support ] .
-
-:RouteWithNoLongName a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :route_short_name ],
-        :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:cardinality "0"^^xsd:nonNegativeInteger ;
-            owl:onProperty :route_long_name ] .
-
-:RouteWithNoShortName a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :route_long_name ],
-        :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:cardinality "0"^^xsd:nonNegativeInteger ;
-            owl:onProperty :route_short_name ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 2 ;
+                        owl:onProperty :cemv_support ] ) ] .
 
 :StopAccessibleViaStationOnly a owl:Class ;
     rdfs:comment """
@@ -518,78 +293,17 @@ Consuming applications should generate directions for access directly to the sto
             owl:hasValue 1 ;
             owl:onProperty :stop_access ] .
 
-:StopInheritingAccessibilityFromStation a owl:Class ;
-    rdfs:comment """
-Stop will inherit its wheelchair_boarding behavior from the parent station, if specified in the parent.
-"""@en ;
-    rdfs:subClassOf :ChildStop,
-        :RecordWithAccessibilityInformation ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :ChildStop [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:hasValue 0 ;
-                                    owl:onProperty :wheelchair_boarding ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :wheelchair_boarding ] ) ] ) ] .
-
-:StopTimeApproximateTime a owl:Class ;
-    rdfs:comment "Times are considered approximate."@en ;
-    rdfs:subClassOf :StopTime ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 0 ;
-            owl:onProperty :timepoint ] .
-
-:StopTimeExactTime a owl:Class ;
-    rdfs:comment "Times are considered exact."@en ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:unionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :arrival_time ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :departure_time ] ) ],
-        :StopTime ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 1 ;
-            owl:onProperty :timepoint ] .
-
 :StopTimeFirst a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :arrival_time ],
-        :StopTime .
+        :StopTimeRequiresArrivalTime .
 
 :StopTimeLast a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :arrival_time ],
-        :StopTime .
-
-:StopTimeWithEndPickupDropOffWindow a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :end_pickup_drop_off_window ],
-        :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :location_id ] [ a owl:Restriction ;
-                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :location_group_id ] ) ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :start_pickup_drop_off_window ] ) ] .
-
-:StopTimeWithNoEndPickupDropOffWindow a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "0"^^xsd:nonNegativeInteger ;
-            owl:onProperty :start_pickup_drop_off_window ],
-        :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( [ a owl:Restriction ;
-                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :arrival_time ] [ a owl:Restriction ;
-                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :departure_time ] ) ] .
+        :StopTimeRequiresArrivalTime .
 
 :StopTimeWithNoLocationGroupID a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -597,35 +311,12 @@ Stop will inherit its wheelchair_boarding behavior from the parent station, if s
             owl:onProperty :location_group_id ],
         :StopTime ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_id ] [ a owl:Restriction ;
+            owl:unionOf ( [ a owl:Class ;
+                        owl:intersectionOf ( :StopTime [ a owl:Restriction ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onProperty :stop_id ] ) ] [ a owl:Restriction ;
                         owl:cardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onProperty :location_id ] ) ] .
-
-:StopTimeWithNoLocationID a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "0"^^xsd:nonNegativeInteger ;
-            owl:onProperty :location_id ],
-        :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_id ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :location_group_id ] ) ] .
-
-:StopTimeWithNoStartPickupDropOffWindow a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "0"^^xsd:nonNegativeInteger ;
-            owl:onProperty :start_pickup_drop_off_window ],
-        :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( [ a owl:Restriction ;
-                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :arrival_time ] [ a owl:Restriction ;
-                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :departure_time ] ) ] .
 
 :StopTimeWithNoStopID a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -633,9 +324,10 @@ Stop will inherit its wheelchair_boarding behavior from the parent station, if s
             owl:onProperty :stop_id ],
         :StopTime ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :location_id ] [ a owl:Restriction ;
+            owl:unionOf ( [ a owl:Class ;
+                        owl:intersectionOf ( :StopTime [ a owl:Restriction ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onProperty :location_id ] ) ] [ a owl:Restriction ;
                         owl:cardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onProperty :location_group_id ] ) ] .
 
@@ -648,26 +340,12 @@ Stop will inherit its wheelchair_boarding behavior from the parent station, if s
                         owl:onProperty :departure_time ] ) ],
         :StopTime ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :end_pickup_drop_off_window ] ) ] .
-
-:StopTimeWithStartPickupDropOffWindow a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :start_pickup_drop_off_window ],
-        :StopTime ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Class ;
+            owl:intersectionOf ( :StopTime [ a owl:Class ;
                         owl:unionOf ( [ a owl:Restriction ;
                                     owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :location_id ] [ a owl:Restriction ;
+                                    owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
                                     owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :location_group_id ] ) ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :end_pickup_drop_off_window ] ) ] .
+                                    owl:onProperty :end_pickup_drop_off_window ] ) ] ) ] .
 
 :StopTimeWithStopID a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -675,69 +353,11 @@ Stop will inherit its wheelchair_boarding behavior from the parent station, if s
             owl:onProperty :stop_id ],
         :StopTime ;
     owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
+            owl:intersectionOf ( :StopTime [ a owl:Restriction ;
                         owl:cardinality "0"^^xsd:nonNegativeInteger ;
                         owl:onProperty :location_id ] [ a owl:Restriction ;
                         owl:cardinality "0"^^xsd:nonNegativeInteger ;
                         owl:onProperty :location_group_id ] ) ] .
-
-:StopWithAccessiblePathFromOutsideStation a owl:Class ;
-    rdfs:comment """
-There exists some accessible path from outside the station to the specific stop/platform.
-"""@en ;
-    rdfs:subClassOf :ChildStop,
-        :RecordWithAccessibilityInformation ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :ChildStop [ a owl:Restriction ;
-                        owl:hasValue 1 ;
-                        owl:onProperty :wheelchair_boarding ] ) ] .
-
-:StopWithNoAccessibilityInformation a owl:Class ;
-    rdfs:comment """
-No accessibility information for the stop.
-"""@en ;
-    rdfs:subClassOf :ParentlessStop,
-        :RecordWithAccessibilityInformation ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :ParentlessStop [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:hasValue 0 ;
-                                    owl:onProperty :wheelchair_boarding ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :wheelchair_boarding ] ) ] ) ] .
-
-:StopWithNoAccessiblePathFromOutsideStation a owl:Class ;
-    rdfs:comment """
-There exists no accessible path from outside the station to the specific stop/platform.
-"""@en ;
-    rdfs:subClassOf :ChildStop,
-        :RecordWithAccessibilityInformation ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :ChildStop [ a owl:Restriction ;
-                        owl:hasValue 2 ;
-                        owl:onProperty :wheelchair_boarding ] ) ] .
-
-:StopWithNoWheelchairAccessibility a owl:Class ;
-    rdfs:comment """
-Wheelchair boarding is not possible at this stop. 
-"""@en ;
-    rdfs:subClassOf :ParentlessStop,
-        :RecordWithAccessibilityInformation ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :ParentlessStop [ a owl:Restriction ;
-                        owl:hasValue 2 ;
-                        owl:onProperty :wheelchair_boarding ] ) ] .
-
-:StopWithPartialWheelchairAccessibility a owl:Class ;
-    rdfs:comment """
-Some vehicles at this stop can be boarded by a rider in a wheelchair.
-"""@en ;
-    rdfs:subClassOf :ParentlessStop,
-        :RecordWithAccessibilityInformation ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :ParentlessStop [ a owl:Restriction ;
-                        owl:hasValue 1 ;
-                        owl:onProperty :wheelchair_boarding ] ) ] .
 
 :StopWithStopAccessInformation a owl:Class ;
     rdfs:comment """
@@ -755,61 +375,45 @@ Conditionally Forbidden:
 """@en ;
     rdfs:subClassOf :Stop .
 
-:SubwayRoute a owl:Class ;
-    rdfs:comment """
-Any underground rail system within a metropolitan area.
-"""@en ;
-    rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 1 ;
-            owl:onProperty :route_type ] ;
-    skos:broadMatch gtfs_linked:RouteType .
-
-:TramRoute a owl:Class ;
-    rdfs:comment """
-Any light rail or street level system within a metropolitan area.
-"""@en ;
-    rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 0 ;
-            owl:onProperty :route_type ] ;
-    skos:broadMatch gtfs_linked:RouteType .
-
 :TripInDirectionA a owl:Class ;
     rdfs:comment """
 Travel in one direction (e.g. outbound travel).
 """@en ;
     rdfs:subClassOf :Trip ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 0 ;
-            owl:onProperty :direction_id ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Trip [ a owl:Restriction ;
+                        owl:hasValue 0 ;
+                        owl:onProperty :direction_id ] ) ] .
 
 :TripInDirectionB a owl:Class ;
     rdfs:comment """
 Travel in one direction (e.g. outbound travel).
 """@en ;
     rdfs:subClassOf :Trip ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 1 ;
-            owl:onProperty :direction_id ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Trip [ a owl:Restriction ;
+                        owl:hasValue 1 ;
+                        owl:onProperty :direction_id ] ) ] .
 
 :TripWithAtLeastOneBicycleSpace a owl:Class ;
     rdfs:comment """
 Vehicle being used on this particular trip can accommodate at least one bicycle.
 """@en ;
     rdfs:subClassOf :Trip ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 1 ;
-            owl:onProperty :bikes_allowed ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Trip [ a owl:Restriction ;
+                        owl:hasValue 1 ;
+                        owl:onProperty :bikes_allowed ] ) ] .
 
 :TripWithAtLeastOneCarSpace a owl:Class ;
     rdfs:comment """
 Vehicle being used on this particular trip can accommodate at least one car.
 """@en ;
     rdfs:subClassOf :Trip ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 1 ;
-            owl:onProperty :cars_allowed ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Trip [ a owl:Restriction ;
+                        owl:hasValue 1 ;
+                        owl:onProperty :cars_allowed ] ) ] .
 
 :TripWithAtLeastOneWheelchairSpace a owl:Class ;
     rdfs:comment """
@@ -817,18 +421,20 @@ Vehicle being used on this particular trip can accommodate at least one rider in
 """@en ;
     rdfs:subClassOf :RecordWithAccessibilityInformation,
         :Trip ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 1 ;
-            owl:onProperty :wheelchair_accessible ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Trip [ a owl:Restriction ;
+                        owl:hasValue 1 ;
+                        owl:onProperty :wheelchair_accessible ] ) ] .
 
 :TripWithNoBicycleSpaces a owl:Class ;
     rdfs:comment """
 No bicycles are allowed on this trip.
 """@en ;
     rdfs:subClassOf :Trip ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 2 ;
-            owl:onProperty :bikes_allowed ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Trip [ a owl:Restriction ;
+                        owl:hasValue 2 ;
+                        owl:onProperty :bikes_allowed ] ) ] .
 
 :TripWithNoBikesAllowedInformation a owl:Class ;
     rdfs:comment """
@@ -836,20 +442,22 @@ No bike information for the trip.
 """@en ;
     rdfs:subClassOf :Trip ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( [ a owl:Restriction ;
-                        owl:hasValue 0 ;
-                        owl:onProperty :bikes_allowed ] [ a owl:Restriction ;
-                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :bikes_allowed ] ) ] .
+            owl:intersectionOf ( :Trip [ a owl:Class ;
+                        owl:unionOf ( [ a owl:Restriction ;
+                                    owl:hasValue 0 ;
+                                    owl:onProperty :bikes_allowed ] [ a owl:Restriction ;
+                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                                    owl:onProperty :bikes_allowed ] ) ] ) ] .
 
 :TripWithNoCarSpaces a owl:Class ;
     rdfs:comment """
 No cars are allowed on this trip.
 """@en ;
     rdfs:subClassOf :Trip ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 2 ;
-            owl:onProperty :cars_allowed ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Trip [ a owl:Restriction ;
+                        owl:hasValue 2 ;
+                        owl:onProperty :cars_allowed ] ) ] .
 
 :TripWithNoCarsAllowedInformation a owl:Class ;
     rdfs:comment """
@@ -857,11 +465,12 @@ No car information for the trip.
 """@en ;
     rdfs:subClassOf :Trip ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( [ a owl:Restriction ;
-                        owl:hasValue 0 ;
-                        owl:onProperty :cars_allowed ] [ a owl:Restriction ;
-                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :cars_allowed ] ) ] .
+            owl:intersectionOf ( :Trip [ a owl:Class ;
+                        owl:unionOf ( [ a owl:Restriction ;
+                                    owl:hasValue 0 ;
+                                    owl:onProperty :cars_allowed ] [ a owl:Restriction ;
+                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                                    owl:onProperty :cars_allowed ] ) ] ) ] .
 
 :TripWithNoWheelchairAccessibility a owl:Class ;
     rdfs:comment """
@@ -869,9 +478,10 @@ No riders in wheelchairs can be accommodated on this trip.
 """@en ;
     rdfs:subClassOf :RecordWithAccessibilityInformation,
         :Trip ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 2 ;
-            owl:onProperty :wheelchair_accessible ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Trip [ a owl:Restriction ;
+                        owl:hasValue 2 ;
+                        owl:onProperty :wheelchair_accessible ] ) ] .
 
 :TripWithNoWheelchairAccessibilityInformation a owl:Class ;
     rdfs:comment """
@@ -880,66 +490,12 @@ No accessibility information for the trip.
     rdfs:subClassOf :RecordWithAccessibilityInformation,
         :Trip ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( [ a owl:Restriction ;
-                        owl:hasValue 0 ;
-                        owl:onProperty :wheelchair_accessible ] [ a owl:Restriction ;
-                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :wheelchair_accessible ] ) ] .
-
-:TripWithShapeID a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :shape_id ],
-        :Trip ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:onProperty :isRecordOf ;
-            owl:someValuesFrom [ a owl:Class ;
-                    owl:intersectionOf ( :TripFile [ a owl:Restriction ;
-                                owl:onProperty :isFileOf ;
-                                owl:someValuesFrom [ a owl:Class ;
-                                        owl:intersectionOf ( dcat:Dataset [ a owl:Restriction ;
-                                                    owl:onProperty :hasFile ;
-                                                    owl:someValuesFrom [ a owl:Class ;
-                                                            owl:unionOf ( [ a owl:Class ;
-                                                                        owl:intersectionOf ( :RouteFile [ a owl:Restriction ;
-                                                                                    owl:onProperty :hasRecord ;
-                                                                                    owl:someValuesFrom [ a owl:Class ;
-                                                                                            owl:intersectionOf ( gtfs_linked:Route [ a owl:Class ;
-                                                                                                        owl:unionOf ( [ a owl:Restriction ;
-                                                                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                                    owl:onProperty :continuous_pickup ] [ a owl:Restriction ;
-                                                                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                                    owl:onProperty :continuous_drop_off ] ) ] ) ] ] ) ] [ a owl:Class ;
-                                                                        owl:intersectionOf ( :StopTimeFile [ a owl:Restriction ;
-                                                                                    owl:onProperty :hasRecord ;
-                                                                                    owl:someValuesFrom [ a owl:Class ;
-                                                                                            owl:intersectionOf ( gtfs_linked:StopTime [ a owl:Class ;
-                                                                                                        owl:unionOf ( [ a owl:Restriction ;
-                                                                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                                    owl:onProperty :continuous_pickup ] [ a owl:Restriction ;
-                                                                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                                    owl:onProperty :continuous_drop_off ] ) ] ) ] ] ) ] ) ] ] ) ] ] ) ] ] .
-
-:TrolleybusRoute a owl:Class ;
-    rdfs:comment """
-Electric buses that draw power from overhead wires using poles.
-"""@en ;
-    rdfs:subClassOf :Route ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:hasValue 11 ;
-            owl:onProperty :route_type ] ;
-    skos:broadMatch gtfs_linked:RouteType .
-
-:WheelchairAccessibleEntrance a owl:Class ;
-    rdfs:comment """
-Station entrance is wheelchair accessible.
-"""@en ;
-    rdfs:subClassOf :EntranceOrExit,
-        :RecordWithAccessibilityInformation ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :EntranceOrExit [ a owl:Restriction ;
-                        owl:hasValue 1 ;
-                        owl:onProperty :wheelchair_boarding ] ) ] .
+            owl:intersectionOf ( :Trip [ a owl:Class ;
+                        owl:unionOf ( [ a owl:Restriction ;
+                                    owl:hasValue 0 ;
+                                    owl:onProperty :wheelchair_accessible ] [ a owl:Restriction ;
+                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                                    owl:onProperty :wheelchair_accessible ] ) ] ) ] .
 
 :currency_amount a owl:DatatypeProperty ;
     rdfs:comment """
@@ -958,10 +514,6 @@ Example: CAD for Canadian dollars, EUR for euros or JPY for Japanese yen.
     rdfs:seeAlso "https://en.wikipedia.org/wiki/ISO_4217#Active_codes"^^xsd:string ;
     rdfs:subPropertyOf :field .
 
-:hasDataset a owl:ObjectProperty ;
-    rdfs:domain :GTFSSchedule ;
-    rdfs:range :Dataset .
-
 :latitude a owl:DatatypeProperty ;
     rdfs:comment """
 WGS84 latitude in decimal degrees. The value must be greater than or equal to -90.0 and less than or equal to 90.0.
@@ -974,7 +526,7 @@ Example: 41.890169 for the Colosseum in Rome.
     rdfs:comment """
 Time in the HH:MM:SS format (H:MM:SS is also accepted). Represents a wall-clock time shown in the local time of the specified location.
 """@en ;
-    rdfs:range xsd:time ;
+    rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf :field .
 
 :longitude a owl:DatatypeProperty ;
@@ -991,6 +543,9 @@ gtfs_linked:Agency a owl:Class ;
 gtfs_linked:Feed a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
+gtfs_linked:Route a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
 gtfs_linked:Service a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
@@ -998,9 +553,6 @@ gtfs_linked:Station a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
 gtfs_linked:Stop a owl:Class ;
-    rdfs:subClassOf owl:Thing .
-
-gtfs_linked:Trip a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
 gtfs_linked:WheelchairBoardingStatus a owl:Class ;
@@ -1044,7 +596,28 @@ foaf:Agent a owl:Class ;
 
 schema:email a owl:DatatypeProperty .
 
-schema:url a rdfs:Datatype .
+:AerialLiftRoute a owl:Class ;
+    rdfs:comment """
+Cable transport where cabins, cars, gondolas or open chairs are suspended by means of one or more cables.
+"""@en ;
+    rdfs:subClassOf :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 6 ;
+                        owl:onProperty :route_type ] ) ] ;
+    skos:broadMatch gtfs_linked:RouteType .
+
+:AgencyFileWithSingleAgency a owl:Class ;
+    rdfs:comment """
+An agency file with a single agency.
+"""@en ;
+    rdfs:subClassOf :AgencyFile ;
+    owl:disjointWith :AgencyFileWithMultipleAgencies ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :AgencyFile [ a owl:Restriction ;
+                        owl:onClass :Agency ;
+                        owl:onProperty :hasRecord ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
 
 :BoardingArea a owl:Class ;
     rdfs:comment """
@@ -1056,6 +629,129 @@ A specific location on a platform, where passengers can board and/or alight vehi
                         owl:hasValue 4 ;
                         owl:onProperty :location_type ] ) ] .
 
+:BusRoute a owl:Class ;
+    rdfs:comment """
+Used for short- and long-distance bus routes.
+"""@en ;
+    rdfs:subClassOf :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 3 ;
+                        owl:onProperty :route_type ] ) ] ;
+    skos:broadMatch gtfs_linked:RouteType .
+
+:CableTramRoute a owl:Class ;
+    rdfs:comment """
+Used for street-level rail cars where the cable runs beneath the vehicle (e.g., cable car in San Francisco).
+"""@en ;
+    rdfs:subClassOf :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 5 ;
+                        owl:onProperty :route_type ] ) ] ;
+    skos:broadMatch gtfs_linked:RouteType .
+
+:ChildStopInheritingAccessibilityFromParent a owl:Class ;
+    rdfs:comment """
+Stop will inherit its wheelchair_boarding behavior from the parent station, if specified in the parent.
+"""@en ;
+    rdfs:subClassOf :RecordWithAccessibilityInformation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :ChildStop [ a owl:Class ;
+                        owl:unionOf ( [ a owl:Restriction ;
+                                    owl:hasValue 0 ;
+                                    owl:onProperty :wheelchair_boarding ] [ a owl:Restriction ;
+                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                                    owl:onProperty :wheelchair_boarding ] ) ] ) ] .
+
+:ChildStopWithAccessiblePathFromOutsideStation a owl:Class ;
+    rdfs:comment """
+There exists some accessible path from outside the station to the specific stop/platform.
+"""@en ;
+    rdfs:subClassOf :RecordWithAccessibilityInformation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :ChildStop [ a owl:Restriction ;
+                        owl:hasValue 1 ;
+                        owl:onProperty :wheelchair_boarding ] ) ] .
+
+:ChildStopWithNoAccessiblePathFromOutsideStation a owl:Class ;
+    rdfs:comment """
+There exists no accessible path from outside the station to the specific stop/platform.
+"""@en ;
+    rdfs:subClassOf :RecordWithAccessibilityInformation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :ChildStop [ a owl:Restriction ;
+                        owl:hasValue 2 ;
+                        owl:onProperty :wheelchair_boarding ] ) ] .
+
+:EntranceInheritingAccessibilityFromStation a owl:Class ;
+    rdfs:comment """
+Station entrance will inherit its wheelchair_boarding behavior from the parent station, if specified for the parent.
+"""@en ;
+    rdfs:subClassOf :RecordWithAccessibilityInformation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :EntranceOrExit [ a owl:Class ;
+                        owl:unionOf ( [ a owl:Restriction ;
+                                    owl:hasValue 0 ;
+                                    owl:onProperty :wheelchair_boarding ] [ a owl:Restriction ;
+                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                                    owl:onProperty :wheelchair_boarding ] ) ] ) ] .
+
+:EntranceWithNoAccessiblePathToPlatforms a owl:Class ;
+    rdfs:comment """
+No accessible path from station entrance to stops/platforms.
+"""@en ;
+    rdfs:subClassOf :RecordWithAccessibilityInformation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :EntranceOrExit [ a owl:Restriction ;
+                        owl:hasValue 2 ;
+                        owl:onProperty :wheelchair_boarding ] ) ] .
+
+:EntranceWithWheelchairAccessibility a owl:Class ;
+    rdfs:comment """
+Station entrance is wheelchair accessible.
+"""@en ;
+    rdfs:subClassOf :RecordWithAccessibilityInformation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :EntranceOrExit [ a owl:Restriction ;
+                        owl:hasValue 1 ;
+                        owl:onProperty :wheelchair_boarding ] ) ] .
+
+:FerryRoute a owl:Class ;
+    rdfs:comment """
+Used for short- and long-distance boat service.
+"""@en ;
+    rdfs:subClassOf :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 4 ;
+                        owl:onProperty :route_type ] ) ] ;
+    skos:broadMatch gtfs_linked:RouteType .
+
+:FunicularRoute a owl:Class ;
+    rdfs:comment """
+Any rail system designed for steep inclines.
+"""@en ;
+    rdfs:subClassOf :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 7 ;
+                        owl:onProperty :route_type ] ) ] ;
+    skos:broadMatch gtfs_linked:RouteType .
+
+:GTFSRealtime a owl:Class ;
+    rdfs:comment """
+GTFS Realtime is a feed specification that allows public transportation agencies to provide up-to-date information about current arrival and departure times, service alerts, and vehicle position, allowing users to smoothly plan their trips.
+
+The specification currently supports the following types of information:
+
+    Trip updates - delays, cancellations, changed routes
+    Service alerts - stop moved, unforeseen events affecting a station, route or the entire network
+    Vehicle positions - information about the vehicles including location and congestion level
+"""@en ;
+    rdfs:seeAlso "https://gtfs.org/documentation/overview/#gtfs-realtime"^^xsd:string ;
+    rdfs:subClassOf :FeedSpecification .
+
 :GTFSSchedule a owl:Class ;
     rdfs:comment """
 GTFS Schedule is a feed specification that defines a common format for static public transportation information. It is composed of a collection of simple files, mostly text files (.txt) that are contained in a single ZIP file.
@@ -1065,7 +761,8 @@ Each file describes a particular aspect of transit information such as stops, ro
 Along with this basic set of files, additional (optional) files can also be grouped to provide information of other service elements, such as fares, translations, transfers, in-station pathways, etc. Currently there are more than 15 optional files that extend the basic elements of GTFS, including locations.geojson which introduced a new format besides text files (.txt) which can be used to represent geographical areas. 
 """@en ;
     rdfs:seeAlso "https://gtfs.org/documentation/overview/#gtfs-schedule"^^xsd:string ;
-    rdfs:subClassOf :FeedSpecification .
+    rdfs:subClassOf :FeedSpecification ;
+    owl:disjointWith :GTFSRealtime .
 
 :GenericNode a owl:Class ;
     rdfs:comment """
@@ -1077,6 +774,50 @@ A location within a station, not matching any other location_type, that may be u
                         owl:hasValue 3 ;
                         owl:onProperty :location_type ] ) ] .
 
+:MonorailRoute a owl:Class ;
+    rdfs:comment """
+Railway in which the track consists of a single rail or a beam.
+"""@en ;
+    rdfs:subClassOf :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 12 ;
+                        owl:onProperty :route_type ] ) ] ;
+    skos:broadMatch gtfs_linked:RouteType .
+
+:ParentlessStopWithNoAccessibilityInformation a owl:Class ;
+    rdfs:comment """
+No accessibility information for the stop.
+"""@en ;
+    rdfs:subClassOf :RecordWithAccessibilityInformation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :ParentlessStop [ a owl:Class ;
+                        owl:unionOf ( [ a owl:Restriction ;
+                                    owl:hasValue 0 ;
+                                    owl:onProperty :wheelchair_boarding ] [ a owl:Restriction ;
+                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                                    owl:onProperty :wheelchair_boarding ] ) ] ) ] .
+
+:ParentlessStopWithNoWheelchairAccessibility a owl:Class ;
+    rdfs:comment """
+Wheelchair boarding is not possible at this stop. 
+"""@en ;
+    rdfs:subClassOf :RecordWithAccessibilityInformation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :ParentlessStop [ a owl:Restriction ;
+                        owl:hasValue 2 ;
+                        owl:onProperty :wheelchair_boarding ] ) ] .
+
+:ParentlessStopWithPartialWheelchairAccessibility a owl:Class ;
+    rdfs:comment """
+Some vehicles at this stop can be boarded by a rider in a wheelchair.
+"""@en ;
+    rdfs:subClassOf :RecordWithAccessibilityInformation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :ParentlessStop [ a owl:Restriction ;
+                        owl:hasValue 1 ;
+                        owl:onProperty :wheelchair_boarding ] ) ] .
+
 :Platform a owl:Class ;
     rdfs:comment """
 Is called a platform when defined within a parent_station.
@@ -1085,18 +826,33 @@ Is called a platform when defined within a parent_station.
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( :StopOrPlatform :ChildStop ) ] .
 
+:RailRoute a owl:Class ;
+    rdfs:comment """
+Used for intercity or long-distance travel.
+"""@en ;
+    rdfs:subClassOf :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 2 ;
+                        owl:onProperty :route_type ] ) ] ;
+    skos:broadMatch gtfs_linked:RouteType .
+
+:Recommendation a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
 :Station a owl:Class ;
     rdfs:comment """
 A physical structure or area that contains one or more platform.
 """@en ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_name ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_lat ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_lon ] ) ],
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lon ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_name ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lat ],
         :ParentlessStop ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( :Stop [ a owl:Restriction ;
@@ -1111,6 +867,39 @@ A location where passengers board or disembark from a transit vehicle.
     rdfs:subClassOf :StopOrPlatform ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( :StopOrPlatform :ParentlessStop ) ] .
+
+:SubwayRoute a owl:Class ;
+    rdfs:comment """
+Any underground rail system within a metropolitan area.
+"""@en ;
+    rdfs:subClassOf :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 1 ;
+                        owl:onProperty :route_type ] ) ] ;
+    skos:broadMatch gtfs_linked:RouteType .
+
+:TramRoute a owl:Class ;
+    rdfs:comment """
+Any light rail or street level system within a metropolitan area.
+"""@en ;
+    rdfs:subClassOf :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 0 ;
+                        owl:onProperty :route_type ] ) ] ;
+    skos:broadMatch gtfs_linked:RouteType .
+
+:TrolleybusRoute a owl:Class ;
+    rdfs:comment """
+Electric buses that draw power from overhead wires using poles.
+"""@en ;
+    rdfs:subClassOf :Route ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Route [ a owl:Restriction ;
+                        owl:hasValue 11 ;
+                        owl:onProperty :route_type ] ) ] ;
+    skos:broadMatch gtfs_linked:RouteType .
 
 :agency_email a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1225,6 +1014,15 @@ Identifies the alighting booking rule at this stop time.
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
     rdfs:subPropertyOf :id .
 
+:drop_off_type a owl:DatatypeProperty ;
+    rdfs:comment """
+Indicates drop off method.
+"""@en ;
+    rdfs:domain :StopTime ;
+    rdfs:range :drop_off_type_enum ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
+    rdfs:subPropertyOf :enum .
+
 :drop_off_type_enum a rdfs:Datatype ;
     owl:equivalentClass [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 2 3 ) ] .
@@ -1237,14 +1035,6 @@ Example: example@example.com
     rdfs:range xsd:string ;
     rdfs:subPropertyOf schema:email,
         :field .
-
-:end_date a owl:DatatypeProperty ;
-    rdfs:comment """
-End service day for the service interval. This service day is included in the interval.
-"""@en ;
-    rdfs:domain :Service ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :date .
 
 :exception_type a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1262,15 +1052,9 @@ Indicates whether service is available on the date specified in the date field. 
     owl:equivalentClass [ a rdfs:Datatype ;
             owl:oneOf ( 1 2 ) ] .
 
-:friday a owl:DatatypeProperty ;
-    rdfs:comment """
-Functions in the same way as monday except applies to Tuesdays
-"""@en ;
-    rdfs:domain :Service ;
-    rdfs:range :weekday_enum ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum ;
-    skos:closeMatch gtfs_linked:friday .
+:hasDataset a owl:ObjectProperty ;
+    rdfs:domain :GTFSSchedule ;
+    rdfs:range :Dataset .
 
 :language_code a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1293,19 +1077,6 @@ Level of the location. The same level may be used by multiple unlinked stations.
 :location_type_enum a rdfs:Datatype ;
     owl:equivalentClass [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 2 3 4 ) ] .
-
-:monday a owl:DatatypeProperty ;
-    rdfs:comment """
-Indicates whether the service operates on all Mondays in the date range specified by the start_date and end_date fields. Note that exceptions for particular dates may be listed in calendar_dates.txt. Valid options are:
-
-1 - Service is available for all Mondays in the date range.
-0 - Service is not available for Mondays in the date range.
-"""@en ;
-    rdfs:domain :Service ;
-    rdfs:range :weekday_enum ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum ;
-    skos:closeMatch gtfs_linked:monday .
 
 :network_id a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1336,6 +1107,15 @@ Identifies the boarding booking rule at this stop time.
     rdfs:domain :StopTime ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
     rdfs:subPropertyOf :id .
+
+:pickup_type a owl:DatatypeProperty ;
+    rdfs:comment """
+Indicates pickup method.
+"""@en ;
+    rdfs:domain :StopTime ;
+    rdfs:range :pickup_type_enum ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
+    rdfs:subPropertyOf :enum .
 
 :pickup_type_enum a rdfs:Datatype ;
     owl:equivalentClass [ a rdfs:Datatype ;
@@ -1393,16 +1173,6 @@ URL of a web page about the particular route. Should be different from the agenc
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#routestxt"^^xsd:string ;
     rdfs:subPropertyOf :url .
 
-:saturday a owl:DatatypeProperty ;
-    rdfs:comment """
-Functions in the same way as monday except applies to Tuesdays
-"""@en ;
-    rdfs:domain :Service ;
-    rdfs:range :weekday_enum ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum ;
-    skos:closeMatch gtfs_linked:saturday .
-
 :shape_dist_traveled a owl:DatatypeProperty ;
     rdfs:comment """
 Actual distance traveled along the associated shape, from the first stop to the stop specified in this record. This field specifies how much of the shape to draw between any two stops during a trip. Must be in the same units used in shapes.txt. Values used for shape_dist_traveled must increase along with stop_sequence; they must not be used to show reverse travel along a route.
@@ -1412,13 +1182,17 @@ Actual distance traveled along the associated shape, from the first stop to the 
     rdfs:subPropertyOf :num_float ;
     skos:closeMatch gtfs_linked:distanceTraveled .
 
-:start_date a owl:DatatypeProperty ;
+:shape_id a owl:DatatypeProperty ;
     rdfs:comment """
-Start service day for the service interval.
+Identifies a geospatial shape describing the vehicle travel path for a trip.
+
+Conditionally Required:
+- Required if the trip has a continuous pickup or drop-off behavior defined either in routes.txt or in stop_times.txt.
+- Optional otherwise.
 """@en ;
-    rdfs:domain :Service ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :date .
+    rdfs:domain :Trip ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
+    rdfs:subPropertyOf :id .
 
 :stop_access_enum a rdfs:Datatype ;
     owl:equivalentClass [ a rdfs:Datatype ;
@@ -1480,26 +1254,6 @@ URL of a web page about the location. This should be different from the agency.a
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stopstxt"^^xsd:string ;
     rdfs:subPropertyOf :url .
 
-:sunday a owl:DatatypeProperty ;
-    rdfs:comment """
-Functions in the same way as monday except applies to Sundays.
-"""@en ;
-    rdfs:domain :Service ;
-    rdfs:range :weekday_enum ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum ;
-    skos:closeMatch gtfs_linked:sunday .
-
-:thursday a owl:DatatypeProperty ;
-    rdfs:comment """
-Functions in the same way as monday except applies to Tuesdays
-"""@en ;
-    rdfs:domain :Service ;
-    rdfs:range :weekday_enum ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum ;
-    skos:closeMatch gtfs_linked:thursday .
-
 :timepoint_enum a rdfs:Datatype ;
     owl:equivalentClass [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 ) ] .
@@ -1534,6 +1288,180 @@ Readable version of the stop_name.
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stopstxt"^^xsd:string ;
     rdfs:subPropertyOf :text .
 
+:wheelchair_accessible_enum a rdfs:Datatype ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 ) ] .
+
+:wheelchair_boarding_enum a rdfs:Datatype ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 ) ] .
+
+:zone_id a owl:DatatypeProperty ;
+    rdfs:comment """
+Identifies the fare zone for a stop. If this record represents a station or station entrance, the zone_id is ignored.
+"""@en ;
+    rdfs:domain :Stop ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stopstxt"^^xsd:string ;
+    rdfs:subPropertyOf :id .
+
+gtfs_linked:StopTime a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+gtfs_linked:Trip a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#latitude> a owl:DatatypeProperty .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#longitude> a owl:DatatypeProperty .
+
+:StopFile a owl:Class ;
+    rdfs:comment """
+Stops where vehicles pick up or drop off riders. Also defines stations and station entrances.
+
+Conditionally Required:
+- Optional if demand-responsive zones are defined in locations.geojson.
+- Required otherwise.
+"""@en ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#dataset-files"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass :Stop ;
+            owl:onProperty :hasRecord ],
+        :DatasetFile .
+
+:StopTimeRequiresArrivalTime a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :arrival_time ],
+        :Requirement .
+
+:TripFile a owl:Class ;
+    rdfs:comment """
+Trips for each route. A trip is a sequence of two or more stops that occur during a specific time period.
+"""@en ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#dataset-files"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass :Trip ;
+            owl:onProperty :hasRecord ],
+        :DatasetFile .
+
+:color a owl:DatatypeProperty ;
+    rdfs:comment """
+A color encoded as a six-digit hexadecimal number. Refer to https://htmlcolorcodes.com to generate a valid value (the leading "#" must not be included).
+Example: FFFFFF for white, 000000 for black or 0039A6 for the A,C,E lines in NYMTA.
+"""@en ;
+    rdfs:range :color_pattern ;
+    rdfs:seeAlso "https://htmlcolorcodes.com/"^^xsd:string ;
+    rdfs:subPropertyOf :field ;
+    skos:closeMatch gtfs_linked:color .
+
+:end_date a owl:DatatypeProperty ;
+    rdfs:comment """
+End service day for the service interval. This service day is included in the interval.
+"""@en ;
+    rdfs:domain :Service ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
+    rdfs:subPropertyOf :date .
+
+:friday a owl:DatatypeProperty ;
+    rdfs:comment """
+Functions in the same way as monday except applies to Tuesdays
+"""@en ;
+    rdfs:domain :Service ;
+    rdfs:range :weekday_enum ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:friday .
+
+:monday a owl:DatatypeProperty ;
+    rdfs:comment """
+Indicates whether the service operates on all Mondays in the date range specified by the start_date and end_date fields. Note that exceptions for particular dates may be listed in calendar_dates.txt. Valid options are:
+
+1 - Service is available for all Mondays in the date range.
+0 - Service is not available for Mondays in the date range.
+"""@en ;
+    rdfs:domain :Service ;
+    rdfs:range :weekday_enum ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:monday .
+
+:num_int a owl:DatatypeProperty ;
+    rdfs:comment """
+An integer.
+"""@en ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :field .
+
+:route_id a owl:DatatypeProperty ;
+    rdfs:comment """
+Identifies a route.
+"""@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Route :Trip ) ] ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#routestxt"^^xsd:string,
+        "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
+    rdfs:subPropertyOf :id .
+
+:saturday a owl:DatatypeProperty ;
+    rdfs:comment """
+Functions in the same way as monday except applies to Tuesdays
+"""@en ;
+    rdfs:domain :Service ;
+    rdfs:range :weekday_enum ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:saturday .
+
+:start_date a owl:DatatypeProperty ;
+    rdfs:comment """
+Start service day for the service interval.
+"""@en ;
+    rdfs:domain :Service ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
+    rdfs:subPropertyOf :date .
+
+:sunday a owl:DatatypeProperty ;
+    rdfs:comment """
+Functions in the same way as monday except applies to Sundays.
+"""@en ;
+    rdfs:domain :Service ;
+    rdfs:range :weekday_enum ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:sunday .
+
+:thursday a owl:DatatypeProperty ;
+    rdfs:comment """
+Functions in the same way as monday except applies to Tuesdays
+"""@en ;
+    rdfs:domain :Service ;
+    rdfs:range :weekday_enum ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
+    rdfs:subPropertyOf :enum ;
+    skos:closeMatch gtfs_linked:thursday .
+
+:timezone a owl:DatatypeProperty ;
+    rdfs:comment """
+TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but may contain an underscore. Refer to http://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
+Example: Asia/Tokyo, America/Los_Angeles or Africa/Cairo.
+"""@en ;
+    rdfs:range :timezone_enum ;
+    rdfs:seeAlso "https://en.wikipedia.org/wiki/List_of_tz_zones"^^xsd:string,
+        "https://www.iana.org/time-zones"^^xsd:string ;
+    rdfs:subPropertyOf :field .
+
+:trip_id a owl:DatatypeProperty ;
+    rdfs:comment """
+Identifies a trip.
+"""@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Trip gtfs_linked:StopTime ) ] ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string,
+        "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
+    rdfs:subPropertyOf :id .
+
 :tuesday a owl:DatatypeProperty ;
     rdfs:comment """
 Functions in the same way as monday except applies to Tuesdays
@@ -1554,120 +1482,16 @@ Functions in the same way as monday except applies to Tuesdays
     rdfs:subPropertyOf :enum ;
     skos:closeMatch gtfs_linked:wednesday .
 
-:wheelchair_accessible_enum a rdfs:Datatype ;
-    owl:equivalentClass [ a rdfs:Datatype ;
-            owl:oneOf ( 0 1 2 ) ] .
-
-:wheelchair_boarding_enum a rdfs:Datatype ;
-    owl:equivalentClass [ a rdfs:Datatype ;
-            owl:oneOf ( 0 1 2 ) ] .
-
-:zone_id a owl:DatatypeProperty ;
-    rdfs:comment """
-Identifies the fare zone for a stop. If this record represents a station or station entrance, the zone_id is ignored.
-"""@en ;
-    rdfs:domain :Stop ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stopstxt"^^xsd:string ;
-    rdfs:subPropertyOf :id .
-
-gtfs_linked:Route a owl:Class ;
-    rdfs:subClassOf owl:Thing .
-
-<http://www.w3.org/2003/01/geo/wgs84_pos#latitude> a owl:DatatypeProperty .
-
-<http://www.w3.org/2003/01/geo/wgs84_pos#longitude> a owl:DatatypeProperty .
-
-dcat:Dataset a owl:Class ;
-    rdfs:subClassOf owl:Thing .
-
-:FeedSpecification a owl:Class ;
-    rdfs:comment "A specification for a transit feed."@en ;
-    rdfs:subClassOf owl:Thing ;
-    skos:closeMatch gtfs_linked:Feed .
-
-:StopFile a owl:Class ;
-    rdfs:comment """
-Stops where vehicles pick up or drop off riders. Also defines stations and station entrances.
-
-Conditionally Required:
-- Optional if demand-responsive zones are defined in locations.geojson.
-- Required otherwise.
-"""@en ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#dataset-files"^^xsd:string ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass :Stop ;
-            owl:onProperty :hasRecord ],
-        :DatasetFile .
-
-:color a owl:DatatypeProperty ;
-    rdfs:comment """
-A color encoded as a six-digit hexadecimal number. Refer to https://htmlcolorcodes.com to generate a valid value (the leading "#" must not be included).
-Example: FFFFFF for white, 000000 for black or 0039A6 for the A,C,E lines in NYMTA.
-"""@en ;
-    rdfs:range :color_pattern ;
-    rdfs:seeAlso "https://htmlcolorcodes.com/"^^xsd:string ;
-    rdfs:subPropertyOf :field ;
-    skos:closeMatch gtfs_linked:color .
-
-:num_int a owl:DatatypeProperty ;
-    rdfs:comment """
-An integer.
-"""@en ;
-    rdfs:range xsd:integer ;
-    rdfs:subPropertyOf :field .
-
-:route_id a owl:DatatypeProperty ;
-    rdfs:comment """
-Identifies a route.
-"""@en ;
-    rdfs:domain :Route,
-        :Trip ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#routestxt"^^xsd:string,
-        "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
-    rdfs:subPropertyOf :id .
-
-:shape_id a owl:DatatypeProperty ;
-    rdfs:comment """
-Identifies a geospatial shape describing the vehicle travel path for a trip.
-
-Conditionally Required:
-- Required if the trip has a continuous pickup or drop-off behavior defined either in routes.txt or in stop_times.txt.
-- Optional otherwise.
-"""@en ;
-    rdfs:domain :Trip ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
-    rdfs:subPropertyOf :id .
-
-:timezone a owl:DatatypeProperty ;
-    rdfs:comment """
-TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but may contain an underscore. Refer to http://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
-Example: Asia/Tokyo, America/Los_Angeles or Africa/Cairo.
-"""@en ;
-    rdfs:range :timezone_enum ;
-    rdfs:seeAlso "https://en.wikipedia.org/wiki/List_of_tz_zones"^^xsd:string,
-        "https://www.iana.org/time-zones"^^xsd:string ;
-    rdfs:subPropertyOf :field .
-
-:trip_id a owl:DatatypeProperty ;
-    rdfs:comment """
-Identifies a trip.
-"""@en ;
-    rdfs:domain :StopTime,
-        :Trip ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string,
-        "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
-    rdfs:subPropertyOf :id .
-
 :AgencyFileWithMultipleAgencies a owl:Class ;
     rdfs:comment """
 An agency file with multiple agencies.
 """@en ;
     rdfs:subClassOf :AgencyFile ;
-    owl:equivalentClass [ a owl:Restriction ;
-            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-            owl:onClass :Agency ;
-            owl:onProperty :hasRecord ] .
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :AgencyFile [ a owl:Restriction ;
+                        owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Agency ;
+                        owl:onProperty :hasRecord ] ) ] .
 
 :CalendarDateFile a owl:Class ;
     rdfs:comment """
@@ -1684,24 +1508,81 @@ Conditionally Required:
             owl:onProperty :hasRecord ],
         :DatasetFile .
 
-:TripFile a owl:Class ;
+:FeedSpecification a owl:Class ;
+    rdfs:comment "A specification for a transit feed."@en ;
+    rdfs:subClassOf owl:Thing ;
+    skos:closeMatch gtfs_linked:Feed .
+
+:RecordWithCEMVInformation a owl:Class ;
+    rdfs:subClassOf :Record .
+
+:Requirement a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:continuous_drop_off a owl:DatatypeProperty ;
     rdfs:comment """
-Trips for each route. A trip is a sequence of two or more stops that occur during a specific time period.
+Indicates that the rider can alight from the transit vehicle at any point along the vehicle’s travel path as described by shapes.txt, from this stop_time to the next stop_time in the trip’s stop_sequence.
+"""@en,
+        """
+Indicates that the rider can alight from the transit vehicle at any point along the vehicle’s travel path as described by shapes.txt, on every trip of the route. Valid options are:
+
+0 - Continuous stopping drop off.
+1 or empty - No continuous stopping drop off.
+2 - Must phone agency to arrange continuous stopping drop off.
+3 - Must coordinate with driver to arrange continuous stopping drop off.
+
+Values for routes.continuous_drop_off may be overridden by defining values in stop_times.continuous_drop_off for specific stop_times along the route. 
 """@en ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#dataset-files"^^xsd:string ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass :Trip ;
-            owl:onProperty :hasRecord ],
-        :DatasetFile .
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Route :StopTime ) ] ;
+    rdfs:range :continuous_drop_off_enum ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#routestxt"^^xsd:string,
+        "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
+    rdfs:subPropertyOf :enum .
+
+:continuous_pickup a owl:DatatypeProperty ;
+    rdfs:comment """
+Indicates that the rider can board the transit vehicle at any point along the vehicle’s travel path as described by shapes.txt, from this stop_time to the next stop_time in the trip’s stop_sequence.
+"""@en,
+        """
+Indicates that the rider can board the transit vehicle at any point along the vehicle’s travel path as described by shapes.txt, on every trip of the route. Valid options are:
+
+0 - Continuous stopping pickup.
+1 or empty - No continuous stopping pickup.
+2 - Must phone agency to arrange continuous stopping pickup.
+3 - Must coordinate with driver to arrange continuous stopping pickup.
+
+Values for routes.continuous_pickup may be overridden by defining values in stop_times.continuous_pickup for specific stop_times along the route. 
+"""@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Route :StopTime ) ] ;
+    rdfs:range :continuous_pickup_enum ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#routestxt"^^xsd:string,
+        "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
+    rdfs:subPropertyOf :enum .
 
 :date a owl:DatatypeProperty ;
     rdfs:comment """
 Service day in the YYYYMMDD format. Since time within a service day may be above 24:00:00, a service day may contain information for the subsequent day(s).
 Example: 20180913 for September 13th, 2018.
 """@en ;
-    rdfs:range xsd:date ;
+    rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf :field .
+
+:departure_time a owl:DatatypeProperty ;
+    rdfs:comment """
+Departure time from the stop (defined by stop_times.stop_id) for a specific trip (defined by stop_times.trip_id) in the time zone specified by agency.agency_timezone, not stops.stop_timezone.
+
+If there are not separate times for arrival and departure at a stop, arrival_time and departure_time should be the same.
+
+For times occurring after midnight on the service day, enter the time as a value greater than 24:00:00 in HH:MM:SS.
+
+If exact arrival and departure times (timepoint=1) are not available, estimated or interpolated arrival and departure times (timepoint=0) should be provided.
+"""@en ;
+    rdfs:domain :StopTime ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
+    rdfs:subPropertyOf :time ;
+    skos:closeMatch gtfs_linked:departureTime .
 
 :direction_id a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1752,8 +1633,8 @@ Identifies a set of dates when a service exception occurs for one or more routes
         """
 Identifies a set of dates when service is available for one or more routes.
 """@en ;
-    rdfs:domain :Service,
-        :Trip ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Service gtfs_linked:Trip ) ] ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendar_datestxt"^^xsd:string,
         "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string,
         "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
@@ -1787,25 +1668,8 @@ Indicates if arrival and departure times for a stop are strictly adhered to by t
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
     rdfs:subPropertyOf :enum .
 
-gtfs_linked:DropOffType a owl:Class ;
+dcat:Dataset a owl:Class ;
     rdfs:subClassOf owl:Thing .
-
-gtfs_linked:PickupType a owl:Class ;
-    rdfs:subClassOf owl:Thing .
-
-gtfs_linked:StopTime a owl:Class ;
-    rdfs:subClassOf owl:Thing .
-
-:AgencyFile a owl:Class ;
-    rdfs:comment """
-Transit agencies with service represented in this dataset.
-"""@en ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#dataset-files"^^xsd:string ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass :Agency ;
-            owl:onProperty :hasRecord ],
-        :DatasetFile .
 
 :CalendarFile a owl:Class ;
     rdfs:comment """
@@ -1822,20 +1686,63 @@ Conditionally Required:
             owl:onProperty :hasRecord ],
         :DatasetFile .
 
-:agency_id a owl:DatatypeProperty ;
+:EntranceOrExit a owl:Class ;
     rdfs:comment """
-Identifies a transit brand which is often synonymous with a transit agency. In some cases, a single agency operates multiple separate services and agencies and brands are distinct. This document uses the term “agency” in place of “brand”. A dataset may contain data from multiple agencies.
-"""@en,
-        """
-When used on Route: Agency for the specified route.
+A location where passengers can enter or exit a station from the street. If an entrance/exit belongs to multiple stations, it may be linked by pathways to both, but the data provider must pick one of them as parent.
 """@en ;
-    rdfs:domain :Agency,
-        :Route ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#agencytxt"^^xsd:string,
-        "https://gtfs.org/documentation/schedule/reference/#routestxt"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_name ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lat ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lon ],
+        :ChildStop ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Stop [ a owl:Restriction ;
+                        owl:hasValue 2 ;
+                        owl:onProperty :location_type ] ) ] .
+
+:end_pickup_drop_off_window a owl:DatatypeProperty ;
+    rdfs:comment """
+Time that on-demand service ends in a GeoJSON location, location group, or stop.
+"""@en ;
+    rdfs:domain :StopTime ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
+    rdfs:subPropertyOf :time .
+
+:isFileOf a owl:ObjectProperty ;
+    owl:inverseOf :hasFile .
+
+:location_group_id a owl:DatatypeProperty ;
+    rdfs:comment """
+Identifies the serviced location group that indicates groups of stops where riders may request pickup or drop off. All location groups serviced during a trip must have a record in stop_times.txt. Multiple trips and routes may service the same location group.
+
+On-demand service using location groups should be referenced in the sequence in which service is available at those location groups. A data consumer should assume that travel is possible from one stop or location to any stop or location later in the trip, provided that the pickup/drop_off_type of each stop_time and the time constraints of each start/end_pickup_drop_off_window do not forbid it.
+"""@en ;
+    rdfs:domain :StopTime ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
     rdfs:subPropertyOf :id .
 
-:isFileOf a owl:ObjectProperty .
+:location_id a owl:DatatypeProperty ;
+    rdfs:comment """
+Identifies the GeoJSON location that corresponds to serviced zone where riders may request pickup or drop off. All GeoJSON locations serviced during a trip must have a record in stop_times.txt. Multiple trips and routes may service the same GeoJSON location.
+
+On-demand service within locations should be referenced in the sequence in which service is available in those locations. A data consumer should assume that travel is possible from one stop or location to any stop or location later in the trip, provided that the pickup/drop_off_type of each stop_time and the time constraints of each start/end_pickup_drop_off_window do not forbid it.
+"""@en ;
+    rdfs:domain :StopTime ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
+    rdfs:subPropertyOf :id .
+
+:start_pickup_drop_off_window a owl:DatatypeProperty ;
+    rdfs:comment """
+Time that on-demand service becomes available in a GeoJSON location, location group, or stop.
+"""@en ;
+    rdfs:domain :StopTime ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
+    rdfs:subPropertyOf :time .
 
 :stop_lat a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1880,7 +1787,7 @@ Conditionally Forbidden:
 Time in the HH:MM:SS format (H:MM:SS is also accepted). The time is measured from "noon minus 12h" of the service day (effectively midnight except for days on which daylight savings time changes occur). For times occurring after midnight on the service day, enter the time as a value greater than 24:00:00 in HH:MM:SS.
 Example: 14:30:00 for 2:30PM or 25:35:00 for 1:35AM on the next day.
 """@en ;
-    rdfs:range xsd:time ;
+    rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf :field .
 
 :url a owl:DatatypeProperty ;
@@ -1888,9 +1795,90 @@ Example: 14:30:00 for 2:30PM or 25:35:00 for 1:35AM on the next day.
 TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but may contain an underscore. Refer to http://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
 Example: Asia/Tokyo, America/Los_Angeles or Africa/Cairo.
 """@en ;
-    rdfs:range schema:url ;
+    rdfs:range xsd:string ;
     rdfs:seeAlso "http://www.w3.org/Addressing/URL/4_URI_Recommentations.html"^^xsd:string ;
     rdfs:subPropertyOf :field .
+
+:Dataset a owl:Class ;
+    rdfs:comment """
+A complete set of files defined by this specification reference. Altering the dataset creates a new version of the dataset. Datasets should be published at a public, permanent URL, including the zip file name. (e.g., https://www.agency.org/gtfs/gtfs.zip).
+"""@en ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#term-definitions"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass :AgencyFile ;
+                        owl:onProperty :hasFile ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass :StopFile ;
+                        owl:onProperty :hasFile ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass :RouteFile ;
+                        owl:onProperty :hasFile ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass :TripFile ;
+                        owl:onProperty :hasFile ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass :StopTimeFile ;
+                        owl:onProperty :hasFile ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :CalendarDateFile ;
+                        owl:onProperty :hasFile ] [ a owl:Restriction ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :CalendarFile ;
+                        owl:onProperty :hasFile ] ) ],
+        [ a owl:Restriction ;
+            owl:onClass :StopTimeFile ;
+            owl:onProperty :hasFile ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        dcat:Dataset .
+
+:ParentlessStop a owl:Class ;
+    rdfs:comment """
+A parentless stop is a stop that does not reference a parent station.
+It represents a standalone boarding or alighting location that is not a child of another stop.
+"""@en ;
+    rdfs:subClassOf :Stop ;
+    owl:disjointWith :ChildStop ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Stop [ a owl:Restriction ;
+                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                        owl:onProperty :parent_station ] ) ] .
+
+:RouteFile a owl:Class ;
+    rdfs:comment """
+Transit routes. A route is a group of trips that are displayed to riders as a single service.
+"""@en ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#dataset-files"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass :Route ;
+            owl:onProperty :hasRecord ],
+        :DatasetFile .
+
+:StopTimeFile a owl:Class ;
+    rdfs:comment """
+Times that a vehicle arrives at and departs from stops for each trip.
+"""@en ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#dataset-files"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass :StopTime ;
+            owl:onProperty :hasRecord ],
+        :DatasetFile .
+
+:agency_id a owl:DatatypeProperty ;
+    rdfs:comment """
+Identifies a transit brand which is often synonymous with a transit agency. In some cases, a single agency operates multiple separate services and agencies and brands are distinct. This document uses the term “agency” in place of “brand”. A dataset may contain data from multiple agencies.
+"""@en,
+        """
+When used on Route: Agency for the specified route.
+"""@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Agency :Route ) ] ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#agencytxt"^^xsd:string,
+        "https://gtfs.org/documentation/schedule/reference/#routestxt"^^xsd:string ;
+    rdfs:subPropertyOf :id .
 
 :bikes_allowed a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1918,6 +1906,106 @@ Indicates whether cars are allowed. Valid options are:
     rdfs:range :cars_allowed_enum ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
     rdfs:subPropertyOf :enum .
+
+:stop_id a owl:DatatypeProperty ;
+    rdfs:comment """
+Identifies a location: stop/platform, station, entrance/exit, generic node or boarding area (see location_type).
+
+ID must be unique across all stops.stop_id, locations.geojson id, and location_groups.location_group_id values.
+
+Multiple routes may use the same stop_id.
+"""@en,
+        """
+Identifies the serviced stop. All stops serviced during a trip must have a record in stop_times.txt. Referenced locations must be stops/platforms, i.e. their stops.location_type value must be 0 or empty. A stop may be serviced multiple times in the same trip, and multiple trips and routes may service the same stop.
+
+On-demand service using stops should be referenced in the sequence in which service is available at those stops. A data consumer should assume that travel is possible from one stop or location to any stop or location later in the trip, provided that the pickup/drop_off_type of each stop_time and the time constraints of each start/end_pickup_drop_off_window do not forbid it.
+
+Conditionally Required:
+- Required if stop_times.location_group_id AND stop_times.location_id are NOT defined.
+- Forbidden if stop_times.location_group_id or stop_times.location_id are defined.
+"""@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Stop :StopTime ) ] ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stopstxt"^^xsd:string,
+        "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
+    rdfs:subPropertyOf :id .
+
+:wheelchair_accessible a owl:DatatypeProperty ;
+    rdfs:comment """
+Indicates wheelchair accessibility. Valid options are:
+
+0 or empty - No accessibility information for the trip.
+1 - Vehicle being used on this particular trip can accommodate at least one rider in a wheelchair.
+2 - No riders in wheelchairs can be accommodated on this trip.
+"""@en ;
+    rdfs:domain :Trip ;
+    rdfs:range :wheelchair_accessible_enum ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
+    rdfs:subPropertyOf :enum .
+
+:AgencyFile a owl:Class ;
+    rdfs:comment """
+Transit agencies with service represented in this dataset.
+"""@en ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#dataset-files"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass :Agency ;
+            owl:onProperty :hasRecord ],
+        :DatasetFile .
+
+:StopOrPlatform a owl:Class ;
+    rdfs:comment """
+A location where passengers board or disembark from a transit vehicle.
+"""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lat ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lon ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_name ],
+        :Stop ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Stop [ a owl:Class ;
+                        owl:unionOf ( [ a owl:Restriction ;
+                                    owl:hasValue 0 ;
+                                    owl:onProperty :location_type ] [ a owl:Restriction ;
+                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                                    owl:onProperty :location_type ] ) ] ) ] .
+
+:arrival_time a owl:DatatypeProperty ;
+    rdfs:comment """
+Arrival time at the stop (defined by stop_times.stop_id) for a specific trip (defined by stop_times.trip_id) in the time zone specified by agency.agency_timezone, not stops.stop_timezone. 
+"""@en ;
+    rdfs:domain :StopTime ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
+    rdfs:subPropertyOf :time ;
+    skos:closeMatch gtfs_linked:arrivalTime .
+
+:isRecordOf a owl:ObjectProperty ;
+    owl:inverseOf :hasRecord .
+
+:location_type a owl:DatatypeProperty ;
+    rdfs:comment """
+Location type. Valid options are:
+
+0 (or empty) - Stop (or Platform). A location where passengers board or disembark from a transit vehicle. Is called a platform when defined within a parent_station.
+1 - Station. A physical structure or area that contains one or more platform.
+2 - Entrance/Exit. A location where passengers can enter or exit a station from the street. If an entrance/exit belongs to multiple stations, it may be linked by pathways to both, but the data provider must pick one of them as parent.
+3 - Generic Node. A location within a station, not matching any other location_type, that may be used to link together pathways define in pathways.txt.
+4 - Boarding Area. A specific location on a platform, where passengers can board and/or alight vehicles.
+"""@en ;
+    rdfs:domain :Stop ;
+    rdfs:range :location_type_enum ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stopstxt"^^xsd:string ;
+    rdfs:subPropertyOf :enum .
+
+:weekday_enum a rdfs:Datatype ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 ) ] .
 
 :cemv_support a owl:DatatypeProperty ;
     rdfs:comment """
@@ -1952,245 +2040,22 @@ If both agency.cemv_support and routes.cemv_support are provided for the same se
 
 This field is independent of all other fare-related files and may be used separately. If there is conflicting information between this field and any fare-related file (such as fare_media.txt, fare_products.txt, or fare_leg_rules.txt), the information in those files shall take precedence over agency.cemv_support.
 """@en ;
-    rdfs:domain :Agency,
-        :Route ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Agency :Route ) ] ;
     rdfs:range :cemv_support_enum ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#agencytxt"^^xsd:string,
         "https://gtfs.org/documentation/schedule/reference/#routestxt"^^xsd:string ;
     rdfs:subPropertyOf :enum .
 
-:departure_time a owl:DatatypeProperty ;
+:ChildStop a owl:Class ;
     rdfs:comment """
-Departure time from the stop (defined by stop_times.stop_id) for a specific trip (defined by stop_times.trip_id) in the time zone specified by agency.agency_timezone, not stops.stop_timezone.
-
-If there are not separate times for arrival and departure at a stop, arrival_time and departure_time should be the same.
-
-For times occurring after midnight on the service day, enter the time as a value greater than 24:00:00 in HH:MM:SS.
-
-If exact arrival and departure times (timepoint=1) are not available, estimated or interpolated arrival and departure times (timepoint=0) should be provided.
-"""@en ;
-    rdfs:domain :StopTime ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :time ;
-    skos:closeMatch gtfs_linked:departureTime .
-
-:isRecordOf a owl:ObjectProperty .
-
-:wheelchair_accessible a owl:DatatypeProperty ;
-    rdfs:comment """
-Indicates wheelchair accessibility. Valid options are:
-
-0 or empty - No accessibility information for the trip.
-1 - Vehicle being used on this particular trip can accommodate at least one rider in a wheelchair.
-2 - No riders in wheelchairs can be accommodated on this trip.
-"""@en ;
-    rdfs:domain :Trip ;
-    rdfs:range :wheelchair_accessible_enum ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
-
-:Dataset a owl:Class ;
-    rdfs:comment """
-A complete set of files defined by this specification reference. Altering the dataset creates a new version of the dataset. Datasets should be published at a public, permanent URL, including the zip file name. (e.g., https://www.agency.org/gtfs/gtfs.zip).
-"""@en ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#term-definitions"^^xsd:string ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass :StopTimeFile ;
-            owl:onProperty :hasFile ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:onClass :AgencyFile ;
-                        owl:onProperty :hasFile ;
-                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
-                        owl:onClass :StopFile ;
-                        owl:onProperty :hasFile ;
-                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
-                        owl:onClass :RouteFile ;
-                        owl:onProperty :hasFile ;
-                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
-                        owl:onClass :TripFile ;
-                        owl:onProperty :hasFile ;
-                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
-                        owl:onClass :StopTimeFile ;
-                        owl:onProperty :hasFile ;
-                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
-                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onClass :CalendarDateFile ;
-                        owl:onProperty :hasFile ] [ a owl:Restriction ;
-                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onClass :CalendarFile ;
-                        owl:onProperty :hasFile ] ) ],
-        dcat:Dataset .
-
-:RouteFile a owl:Class ;
-    rdfs:comment """
-Transit routes. A route is a group of trips that are displayed to riders as a single service.
-"""@en ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#dataset-files"^^xsd:string ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass :Route ;
-            owl:onProperty :hasRecord ],
-        :DatasetFile .
-
-:StopOrPlatform a owl:Class ;
-    rdfs:comment """
-A location where passengers board or disembark from a transit vehicle.
-"""@en ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_name ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_lat ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_lon ] ) ],
-        :Stop ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Stop [ a owl:Class ;
-                        owl:unionOf ( [ a owl:Restriction ;
-                                    owl:hasValue 0 ;
-                                    owl:onProperty :location_type ] [ a owl:Restriction ;
-                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onProperty :location_type ] ) ] ) ] .
-
-:StopTimeFile a owl:Class ;
-    rdfs:comment """
-Times that a vehicle arrives at and departs from stops for each trip.
-"""@en ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#dataset-files"^^xsd:string ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass :StopTime ;
-            owl:onProperty :hasRecord ],
-        :DatasetFile .
-
-:drop_off_type a owl:DatatypeProperty ;
-    rdfs:comment """
-Indicates drop off method.
-"""@en ;
-    rdfs:domain :StopTime ;
-    rdfs:range :drop_off_type_enum ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
-
-:pickup_type a owl:DatatypeProperty ;
-    rdfs:comment """
-Indicates pickup method.
-"""@en ;
-    rdfs:domain :StopTime ;
-    rdfs:range :pickup_type_enum ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
-
-:stop_id a owl:DatatypeProperty ;
-    rdfs:comment """
-Identifies a location: stop/platform, station, entrance/exit, generic node or boarding area (see location_type).
-
-ID must be unique across all stops.stop_id, locations.geojson id, and location_groups.location_group_id values.
-
-Multiple routes may use the same stop_id.
-"""@en,
-        """
-Identifies the serviced stop. All stops serviced during a trip must have a record in stop_times.txt. Referenced locations must be stops/platforms, i.e. their stops.location_type value must be 0 or empty. A stop may be serviced multiple times in the same trip, and multiple trips and routes may service the same stop.
-
-On-demand service using stops should be referenced in the sequence in which service is available at those stops. A data consumer should assume that travel is possible from one stop or location to any stop or location later in the trip, provided that the pickup/drop_off_type of each stop_time and the time constraints of each start/end_pickup_drop_off_window do not forbid it.
-
-Conditionally Required:
-- Required if stop_times.location_group_id AND stop_times.location_id are NOT defined.
-- Forbidden if stop_times.location_group_id or stop_times.location_id are defined.
-"""@en ;
-    rdfs:domain :Stop,
-        :StopTime ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stopstxt"^^xsd:string,
-        "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :id .
-
-:EntranceOrExit a owl:Class ;
-    rdfs:comment """
-A location where passengers can enter or exit a station from the street. If an entrance/exit belongs to multiple stations, it may be linked by pathways to both, but the data provider must pick one of them as parent.
-"""@en ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_name ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_lat ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_lon ] ) ],
-        :ChildStop ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Stop [ a owl:Restriction ;
-                        owl:hasValue 2 ;
-                        owl:onProperty :location_type ] ) ] .
-
-:arrival_time a owl:DatatypeProperty ;
-    rdfs:comment """
-Arrival time at the stop (defined by stop_times.stop_id) for a specific trip (defined by stop_times.trip_id) in the time zone specified by agency.agency_timezone, not stops.stop_timezone. 
-"""@en ;
-    rdfs:domain :StopTime ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :time ;
-    skos:closeMatch gtfs_linked:arrivalTime .
-
-:location_group_id a owl:DatatypeProperty ;
-    rdfs:comment """
-Identifies the serviced location group that indicates groups of stops where riders may request pickup or drop off. All location groups serviced during a trip must have a record in stop_times.txt. Multiple trips and routes may service the same location group.
-
-On-demand service using location groups should be referenced in the sequence in which service is available at those location groups. A data consumer should assume that travel is possible from one stop or location to any stop or location later in the trip, provided that the pickup/drop_off_type of each stop_time and the time constraints of each start/end_pickup_drop_off_window do not forbid it.
-"""@en ;
-    rdfs:domain :StopTime ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :id .
-
-:location_id a owl:DatatypeProperty ;
-    rdfs:comment """
-Identifies the GeoJSON location that corresponds to serviced zone where riders may request pickup or drop off. All GeoJSON locations serviced during a trip must have a record in stop_times.txt. Multiple trips and routes may service the same GeoJSON location.
-
-On-demand service within locations should be referenced in the sequence in which service is available in those locations. A data consumer should assume that travel is possible from one stop or location to any stop or location later in the trip, provided that the pickup/drop_off_type of each stop_time and the time constraints of each start/end_pickup_drop_off_window do not forbid it.
-"""@en ;
-    rdfs:domain :StopTime ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :id .
-
-:location_type a owl:DatatypeProperty ;
-    rdfs:comment """
-Location type. Valid options are:
-
-0 (or empty) - Stop (or Platform). A location where passengers board or disembark from a transit vehicle. Is called a platform when defined within a parent_station.
-1 - Station. A physical structure or area that contains one or more platform.
-2 - Entrance/Exit. A location where passengers can enter or exit a station from the street. If an entrance/exit belongs to multiple stations, it may be linked by pathways to both, but the data provider must pick one of them as parent.
-3 - Generic Node. A location within a station, not matching any other location_type, that may be used to link together pathways define in pathways.txt.
-4 - Boarding Area. A specific location on a platform, where passengers can board and/or alight vehicles.
-"""@en ;
-    rdfs:domain :Stop ;
-    rdfs:range :location_type_enum ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stopstxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
-
-:weekday_enum a rdfs:Datatype ;
-    owl:equivalentClass [ a rdfs:Datatype ;
-            owl:oneOf ( 0 1 ) ] .
-
-:ParentlessStop a owl:Class ;
-    rdfs:comment """
-A parentless stop is a stop that does not reference a parent station.
-It represents a standalone boarding or alighting location that is not a child of another stop.
+A child stop is a sub-location of a station rather than a standalone stop or station.
 """@en ;
     rdfs:subClassOf :Stop ;
-    owl:disjointWith :ChildStop ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( :Stop [ a owl:Restriction ;
-                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onProperty :parent_station ] ) ] .
-
-:Record a owl:Class ;
-    rdfs:comment """
-A basic data structure comprised of a number of different field values describing a single entity (e.g. transit agency, stop, route, etc.). Represented, in a table, as a row.
-"""@en ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#term-definitions"^^xsd:string ;
-    rdfs:subClassOf owl:Thing .
 
 :DatasetFile a owl:Class ;
     rdfs:comment """
@@ -2199,25 +2064,12 @@ A file that is part of a dataset, that has records and fields.
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#dataset-files"^^xsd:string ;
     rdfs:subClassOf owl:Thing .
 
-:continuous_drop_off a owl:DatatypeProperty ;
+:Record a owl:Class ;
     rdfs:comment """
-Indicates that the rider can alight from the transit vehicle at any point along the vehicle’s travel path as described by shapes.txt, from this stop_time to the next stop_time in the trip’s stop_sequence.
+A basic data structure comprised of a number of different field values describing a single entity (e.g. transit agency, stop, route, etc.). Represented, in a table, as a row.
 """@en ;
-    rdfs:domain :Route,
-        :StopTime ;
-    rdfs:range :continuous_drop_off_enum ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
-
-:continuous_pickup a owl:DatatypeProperty ;
-    rdfs:comment """
-Indicates that the rider can board the transit vehicle at any point along the vehicle’s travel path as described by shapes.txt, from this stop_time to the next stop_time in the trip’s stop_sequence.
-"""@en ;
-    rdfs:domain :Route,
-        :StopTime ;
-    rdfs:range :continuous_pickup_enum ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :enum .
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#term-definitions"^^xsd:string ;
+    rdfs:subClassOf owl:Thing .
 
 gtfs_linked:RouteType a owl:Class ;
     rdfs:subClassOf owl:Thing .
@@ -2257,19 +2109,10 @@ A string of UTF-8 characters, which is aimed to be displayed and which must ther
     rdfs:range xsd:string ;
     rdfs:subPropertyOf :field .
 
-:ChildStop a owl:Class ;
-    rdfs:comment """
-A child stop is a sub-location of a station rather than a standalone stop or station.
-"""@en ;
-    rdfs:subClassOf :Stop ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( :Stop [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :parent_station ] ) ] .
-
 :hasRecord a owl:ObjectProperty ;
     rdfs:domain :DatasetFile ;
-    rdfs:range :Record .
+    rdfs:range :Record ;
+    owl:inverseOf :isRecordOf .
 
 :wheelchair_boarding a owl:DatatypeProperty ;
     rdfs:comment """
@@ -2295,36 +2138,6 @@ For station entrances/exits:
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stopstxt"^^xsd:string ;
     rdfs:subPropertyOf :enum .
 
-:Agency a owl:Class ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#agencytxt"^^xsd:string ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :agency_id ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :agency_name ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :agency_url ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :agency_timezone ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :agency_lang ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :agency_phone ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :agency_fare_url ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :agency_email ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :cemv_support ] ) ],
-        foaf:Agent,
-        :Record ;
-    skos:closeMatch gtfs_linked:Agency .
-
-:hasFile a owl:ObjectProperty ;
-    rdfs:domain :Dataset ;
-    rdfs:range :DatasetFile .
-
 :id a owl:DatatypeProperty ;
     rdfs:comment """
 An ID field value is an internal ID, not intended to be shown to riders, and is a sequence of any UTF-8 characters. Using only printable ASCII characters is recommended. An ID is labeled "unique ID" when it must be unique within a file. IDs defined in one .txt file are often referenced in another .txt file. IDs that reference an ID in another table are labeled "foreign ID".
@@ -2333,30 +2146,54 @@ Example: The stop_id field in stops.txt is a "unique ID". The parent_station fie
     rdfs:range xsd:string ;
     rdfs:subPropertyOf :field .
 
-:end_pickup_drop_off_window a owl:DatatypeProperty ;
-    rdfs:comment """
-Time that on-demand service ends in a GeoJSON location, location group, or stop.
-"""@en ;
-    rdfs:domain :StopTime ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :time .
+:hasFile a owl:ObjectProperty ;
+    rdfs:domain :Dataset ;
+    rdfs:range :DatasetFile ;
+    owl:inverseOf :isFileOf .
 
 :Service a owl:Class ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#calendar_datestxt"^^xsd:string,
         "https://gtfs.org/documentation/schedule/reference/#calendartxt"^^xsd:string ;
-    rdfs:subClassOf :Record ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :service_id ],
+        :Record ;
     skos:closeMatch gtfs_linked:Service .
 
-:start_pickup_drop_off_window a owl:DatatypeProperty ;
-    rdfs:comment """
-Time that on-demand service becomes available in a GeoJSON location, location group, or stop.
-"""@en ;
-    rdfs:domain :StopTime ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stoptxt"^^xsd:string ;
-    rdfs:subPropertyOf :time .
+:Agency a owl:Class ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#agencytxt"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :cemv_support ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_fare_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_lang ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_timezone ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_phone ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_id ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_name ],
+        foaf:Agent,
+        :Record ;
+    skos:closeMatch gtfs_linked:Agency .
 
-:field a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
+:field a owl:DatatypeProperty ;
     rdfs:comment """
 A property of an object or entity. Represented, in a table, as a column. The field exists if added in a file as a header. It may or may not have field values defined.
 """@en ;
@@ -2369,156 +2206,228 @@ Example: The route_type field contains a 0 for tram, a 1 for subway...
 """@en ;
     rdfs:subPropertyOf :field .
 
-:Trip a owl:Class ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :route_id ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :service_id ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :trip_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :trip_headsign ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :trip_short_name ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :direction_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :block_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :shape_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :wheelchair_accessible ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :bikes_allowed ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :cars_allowed ] ) ],
-        :Record ;
-    skos:closeMatch gtfs_linked:Trip .
-
 :Stop a owl:Class ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stopstxt"^^xsd:string ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_code ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_name ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :tts_stop_name ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_desc ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_lat ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_lon ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :zone_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_url ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :location_type ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :parent_station ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_timezone ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :wheelchair_boarding ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :level_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :platform_code ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_access ] ) ],
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_desc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :platform_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_access ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :tts_stop_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :zone_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lon ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :parent_station ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :location_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_url ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :wheelchair_boarding ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_timezone ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :level_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lat ],
         <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing>,
         :Record ;
     skos:closeMatch gtfs_linked:Stop .
 
-:Route a owl:Class ;
-    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#routestxt"^^xsd:string ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :route_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :agency_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :route_short_name ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :route_long_name ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :route_desc ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :route_type ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :route_url ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :route_color ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :route_text_color ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :route_sort_order ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :continuous_pickup ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :continuous_drop_off ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :network_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :cemv_support ] ) ],
-        :Record ;
-    skos:closeMatch gtfs_linked:Route .
-
 :StopTime a owl:Class ;
     rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#stop_timestxt"^^xsd:string ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :trip_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :arrival_time ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :departure_time ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :location_group_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :location_id ] [ a owl:Restriction ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_sequence ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :stop_headsign ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :start_pickup_drop_off_window ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :end_pickup_drop_off_window ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :pickup_type ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :drop_off_type ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :continuous_pickup ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :continuous_drop_off ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :shape_dist_traveled ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :timepoint ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :pickup_booking_rule_id ] [ a owl:Restriction ;
-                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :drop_off_booking_rule_id ] ) ],
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :start_pickup_drop_off_window ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :arrival_time ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :location_group_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :pickup_booking_rule_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :timepoint ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :continuous_drop_off ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_sequence ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :drop_off_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :departure_time ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :continuous_pickup ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :location_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :drop_off_booking_rule_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :shape_dist_traveled ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_headsign ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :end_pickup_drop_off_window ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :trip_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :pickup_type ],
         :Record ;
     skos:closeMatch gtfs_linked:StopTime .
 
+:Trip a owl:Class ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#tripstxt"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :trip_short_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :shape_id ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :service_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :wheelchair_accessible ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :direction_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :bikes_allowed ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :trip_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :block_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :trip_headsign ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :cars_allowed ],
+        :Record ;
+    skos:closeMatch gtfs_linked:Trip .
+
+:Route a owl:Class ;
+    rdfs:seeAlso "https://gtfs.org/documentation/schedule/reference/#routestxt"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :continuous_drop_off ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_color ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_sort_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :continuous_pickup ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_long_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :cemv_support ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_short_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_desc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_text_color ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :network_id ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_url ],
+        :Record ;
+    skos:closeMatch gtfs_linked:Route .
+
 [] a owl:AllDisjointClasses ;
-    owl:members ( :AgencyFile :StopFile :RouteFile :TripFile :StopTimeFile :CalendarFile :CalendarDateFile ) .
+    owl:members ( :ParentlessStopWithNoAccessibilityInformation :ParentlessStopWithPartialWheelchairAccessibility :ParentlessStopWithNoWheelchairAccessibility :ChildStopInheritingAccessibilityFromParent :ChildStopWithNoAccessiblePathFromOutsideStation :ChildStopWithAccessiblePathFromOutsideStation ) .
+
+[] a owl:AllDisjointProperties ;
+    owl:members ( :hasDataset :hasFile :hasRecord ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Agency :Stop :Route :Service :StopTime :Trip ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :TramRoute :SubwayRoute :RailRoute :BusRoute :FerryRoute :CableTramRoute :AerialLiftRoute :FunicularRoute :TrolleybusRoute :MonorailRoute ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :EntranceInheritingAccessibilityFromStation :EntranceWithWheelchairAccessibility :EntranceWithNoAccessiblePathToPlatforms ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( :StopLocation :Platform :Station :EntranceOrExit :GenericNode :BoardingArea ) .
+
+[] a owl:AllDisjointProperties ;
+    owl:members ( :service_id :monday :tuesday :wednesday :thursday :friday :saturday :sunday :start_date :end_date ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :DatasetFile :FeedSpecification :Record :Dataset ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :AgencyFile :StopFile :RouteFile :TripFile :StopTimeFile :CalendarFile :CalendarDateFile ) .
 

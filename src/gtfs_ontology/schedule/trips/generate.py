@@ -60,17 +60,15 @@ with gtfs:
 
     # region Data Properties
 
-    route_id.domain.append(Trip)
     route_id.comment.append(locstr(ROUTE_ID_DEF, "en"))
     route_id.seeAlso.append(TRIPS_URL)
 
-    service_id.domain.append(Trip)
     service_id.comment.append(locstr(SERVICE_ID_DEF, "en"))
     service_id.seeAlso.append(TRIPS_URL)
 
     class trip_id(id):
         comment = [locstr(TRIP_ID_DEF, "en")]
-        domain = [Trip]
+        domain = [Trip | StopTime]
         seeAlso = [TRIPS_URL]
 
     class trip_headsign(text):

@@ -1,36 +1,53 @@
 from gtfs_ontology.schedule import *
+from gtfs_ontology.schedule.routes.generate import *
 from gtfs_ontology.schedule.core import isRecordOf, isFileOf, hasFile, hasRecord
 from gtfs_ontology.schedule.files.dl_rules import AgencyFileWithMultipleAgencies
 from gtfs_ontology.schedule.files.generate import RouteFile, StopTimeFile
 from gtfs_ontology.schedule.records.generate import StopTime
-from gtfs_ontology.schedule.routes.generate import *
 from gtfs_ontology.schedule.stop_times.generate import start_pickup_drop_off_window, \
     end_pickup_drop_off_window
-from gtfs_ontology.schedule.term_definitions.generate import Dataset
 
 with gtfs:
 
+    # AllDisjoint([
+    #     route_id,
+    #     agency_id,
+    #     route_short_name,
+    #     route_long_name,
+    #     route_desc,
+    #     route_type,
+    #     route_url,
+    #     route_color,
+    #     route_text_color,
+    #     route_sort_order,
+    #     continuous_pickup,
+    #     continuous_drop_off,
+    #     network_id,
+    #     cemv_support
+    # ])
+
     # Requirements
 
-    Route.is_a.append(
-        route_id.exactly(1) &
-        agency_id.max(1) &
-        route_short_name.max(1) &
-        route_long_name.max(1) &
-        route_desc.max(1) &
-        route_type.exactly(1) &
-        route_url.max(1) &
-        route_color.max(1) &
-        route_text_color.max(1) &
-        route_sort_order.max(1) &
-        continuous_pickup.max(1) &
-        continuous_drop_off.max(1) &
-        network_id.max(1) &
+    Route.is_a.extend([
+        route_id.exactly(1),
+        agency_id.max(1),
+        route_short_name.max(1),
+        route_long_name.max(1),
+        route_desc.max(1),
+        route_type.exactly(1),
+        route_url.max(1),
+        route_color.max(1),
+        route_text_color.max(1),
+        route_sort_order.max(1),
+        continuous_pickup.max(1),
+        continuous_drop_off.max(1),
+        network_id.max(1),
         cemv_support.max(1)
-    )
+    ])
 
-    class RouteWithAgencyID(Route):
+    class RouteRequiresAgencyID(Route):
         equivalent_to = [
+            Route &
             isRecordOf.only(
                 RouteFile &
                 isFileOf.only(
@@ -45,8 +62,9 @@ with gtfs:
 
     # route_short_name
 
-    class RouteWithNoLongName(Route):
+    class RouteRequiresShortName(Route):
         equivalent_to = [
+            Route &
             route_long_name.exactly(0)
         ]
         is_a = [
@@ -55,8 +73,9 @@ with gtfs:
 
     # route_long_name
 
-    class RouteWithNoShortName(Route):
+    class RouteRequiresLongName(Route):
         equivalent_to = [
+            Route &
             route_short_name.exactly(0)
         ]
         is_a = [
@@ -66,6 +85,7 @@ with gtfs:
     class TramRoute(Route):
         comment = [locstr(TRAM_ROUTE_DEF, "en")]
         equivalent_to = [
+            Route &
             route_type.value(0)
         ]
         broadMatch = [gtfs_linked.RouteType]
@@ -73,6 +93,7 @@ with gtfs:
     class SubwayRoute(Route):
         comment = [locstr(SUBWAY_ROUTE_DEF, "en")]
         equivalent_to = [
+            Route &
             route_type.value(1)
         ]
         broadMatch = [gtfs_linked.RouteType]
@@ -80,6 +101,7 @@ with gtfs:
     class RailRoute(Route):
         comment = [locstr(RAIL_DEF, "en")]
         equivalent_to = [
+            Route &
             route_type.value(2)
         ]
         broadMatch = [gtfs_linked.RouteType]
@@ -87,6 +109,7 @@ with gtfs:
     class BusRoute(Route):
         comment = [locstr(BUS_DEF, "en")]
         equivalent_to = [
+            Route &
             route_type.value(3)
         ]
         broadMatch = [gtfs_linked.RouteType]
@@ -94,6 +117,7 @@ with gtfs:
     class FerryRoute(Route):
         comment = [locstr(FERRY_DEF, "en")]
         equivalent_to = [
+            Route &
             route_type.value(4)
         ]
         broadMatch = [gtfs_linked.RouteType]
@@ -101,6 +125,7 @@ with gtfs:
     class CableTramRoute(Route):
         comment = [locstr(CABLE_TRAM_DEF, "en")]
         equivalent_to = [
+            Route &
             route_type.value(5)
         ]
         broadMatch = [gtfs_linked.RouteType]
@@ -108,6 +133,7 @@ with gtfs:
     class AerialLiftRoute(Route):
         comment = [locstr(AERIAL_LIFT_DEF, "en")]
         equivalent_to = [
+            Route &
             route_type.value(6)
         ]
         broadMatch = [gtfs_linked.RouteType]
@@ -115,6 +141,7 @@ with gtfs:
     class FunicularRoute(Route):
         comment = [locstr(FUNICULAR_DEF, "en")]
         equivalent_to = [
+            Route &
             route_type.value(7)
         ]
         broadMatch = [gtfs_linked.RouteType]
@@ -122,6 +149,7 @@ with gtfs:
     class TrolleybusRoute(Route):
         comment = [locstr(TROLLEYBUS_DEF, "en")]
         equivalent_to = [
+            Route &
             route_type.value(11)
         ]
         broadMatch = [gtfs_linked.RouteType]
@@ -129,19 +157,34 @@ with gtfs:
     class MonorailRoute(Route):
         comment = [locstr(MONORAIL_DEF, "en")]
         equivalent_to = [
+            Route &
             route_type.value(12)
         ]
         broadMatch = [gtfs_linked.RouteType]
 
-    class RouteWithContinuousPickup(Route):
+    AllDisjoint([
+        TramRoute,
+        SubwayRoute,
+        RailRoute,
+        BusRoute,
+        FerryRoute,
+        CableTramRoute,
+        AerialLiftRoute,
+        FunicularRoute,
+        TrolleybusRoute,
+        MonorailRoute,
+    ])
+
+    class RouteRequiresContinuousPickup(Route):
         equivalent_to = [
+            Route &
             isFileOf.only(
                 RouteFile &
                 isRecordOf.only(
                     Dataset
                     & hasFile.some(
-                        StopTimeFile &
-                        hasRecord.some(
+                        gtfs.StopTimeFile &
+                        gtfs.hasRecord.some(
                             StopTime &
                             (
                                 start_pickup_drop_off_window.exactly(1) |
@@ -156,8 +199,9 @@ with gtfs:
             continuous_pickup.exactly(1)
         ]
 
-    class RouteWithContinuousDropOff(Route):
+    class RouteRequiresContinuousDropOff(Route):
         equivalent_to = [
+            Route &
             isFileOf.only(
                 RouteFile &
                 isRecordOf.only(
@@ -179,24 +223,25 @@ with gtfs:
             continuous_drop_off.exactly(1)
         ]
 
-    ## TODO: Encode the conditionally forbidden
-
     # network_id
 
     class RouteWithNoCEMVInformation(Route):
         comment = [locstr(CEMV_NO_INFORMATION, "en")]
         equivalent_to = [
+            Route &
             cemv_support.value(0)
         ]
 
     class RouteWithCEMVSupport(Route):
         comment = [locstr(CEMV_SUPPORTED, "en")]
         equivalent_to = [
+            Route &
             cemv_support.value(1)
         ]
 
     class RouteWithNoCEMVSupport(Route):
         comment = [locstr(CEMV_NOT_SUPPORTED, "en")]
         equivalent_to = [
+            Route &
             cemv_support.value(2)
         ]

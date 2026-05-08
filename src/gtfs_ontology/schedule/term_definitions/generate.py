@@ -13,7 +13,7 @@ with gtfs:
         comment = [locstr(RECORD_DEF, "en")]
         seeAlso = [TERM_DEFINITIONS_URL]
 
-    class field(DataProperty, FunctionalProperty):
+    class field(DataProperty):
         comment = [locstr(FIELD_DEF, "en")]
         seeAlso = [TERM_DEFINITIONS_URL]
 

@@ -1,3 +1,3 @@
-# An OWL GTFS Ontology
+# GTFS Ontology
 
-For the artifact, please download [`gtfs.rdf`](artifacts/gtfs.rdf).
+For the artifact, please download [`gtfs.ttl`](artifacts/gtfs.ttl).

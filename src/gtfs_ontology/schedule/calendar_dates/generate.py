@@ -19,7 +19,6 @@ with gtfs:
         ]
 
     service_id.comment.append(locstr(SERVICE_ID, "en"))
-    service_id.domain.append(Service)
     service_id.seeAlso.append(CALENDAR_DATES_URL)
 
     class calendar_dates_date(date):

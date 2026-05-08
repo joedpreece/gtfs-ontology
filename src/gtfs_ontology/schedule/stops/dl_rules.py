@@ -1,29 +1,49 @@
 from gtfs_ontology.schedule import *
+from gtfs_ontology.schedule.core import Requirement
 from gtfs_ontology.schedule.records.generate import Stop
 from gtfs_ontology.schedule.stops.generate import *
 from gtfs_ontology.schedule.term_definitions.generate import Record
 
 with gtfs:
 
+    # AllDisjoint([
+    #     stop_id,
+    #     stop_code,
+    #     stop_name,
+    #     tts_stop_name,
+    #     stop_desc,
+    #     stop_lat,
+    #     stop_lon,
+    #     zone_id,
+    #     stop_url,
+    #     location_type,
+    #     parent_station,
+    #     stop_timezone,
+    #     wheelchair_boarding,
+    #     level_id,
+    #     platform_code,
+    #     stop_access,
+    # ])
+
     # Requirements
-    Stop.is_a.append(
-        stop_id.exactly(1) &
-        stop_code.max(1) &
-        stop_name.max(1) &
-        tts_stop_name.max(1) &
-        stop_desc.max(1) &
-        stop_lat.max(1) &
-        stop_lon.max(1) &
-        zone_id.max(1) &
-        stop_url.max(1) &
-        location_type.max(1) &
-        parent_station.max(1) &
-        stop_timezone.max(1) &
-        wheelchair_boarding.max(1) &
-        level_id.max(1) &
-        platform_code.max(1) &
+    Stop.is_a.extend([
+        stop_id.exactly(1),
+        stop_code.max(1),
+        stop_name.max(1),
+        tts_stop_name.max(1),
+        stop_desc.max(1),
+        stop_lat.max(1),
+        stop_lon.max(1),
+        zone_id.max(1),
+        stop_url.max(1),
+        location_type.max(1),
+        parent_station.max(1),
+        stop_timezone.max(1),
+        wheelchair_boarding.max(1),
+        level_id.max(1),
+        platform_code.max(1),
         stop_access.max(1)
-    )
+    ])
 
     class ParentlessStop(Stop):
         comment = [locstr(PARENTLESS_STOP_DEF, "en")]
@@ -44,9 +64,9 @@ with gtfs:
     class StopOrPlatform(Stop):
         comment = [locstr(STOP_OR_PLATFORM_DEF, "en")]
         is_a = [
-            stop_name.exactly(1) &
-            stop_lat.exactly(1) &
-            stop_lon.exactly(1)
+            stop_name.exactly(1),
+            stop_lat.exactly(1),
+            stop_lon.exactly(1),
         ]
         equivalent_to = [
             Stop &
@@ -73,9 +93,9 @@ with gtfs:
     class Station(ParentlessStop):
         comment = [locstr(STATION_DEF, "en")]
         is_a = [
-            stop_name.exactly(1) &
-            stop_lat.exactly(1) &
-            stop_lon.exactly(1)
+            stop_name.exactly(1),
+            stop_lat.exactly(1),
+            stop_lon.exactly(1),
         ]
         equivalent_to = [
             Stop &
@@ -86,9 +106,9 @@ with gtfs:
     class EntranceOrExit(ChildStop):
         comment = [locstr(ENTRANCE_OR_EXIT_DEF, "en")]
         is_a = [
-            stop_name.exactly(1) &
-            stop_lat.exactly(1) &
-            stop_lon.exactly(1)
+            stop_name.exactly(1),
+            stop_lat.exactly(1),
+            stop_lon.exactly(1),
         ]
         equivalent_to = [
             Stop &
@@ -111,13 +131,34 @@ with gtfs:
 
     AllDisjoint([StopLocation, Platform, Station, EntranceOrExit, GenericNode, BoardingArea])
 
+    #
+    # class StopRequiresName(Requirement):
+    #     is_a = [
+    #         stop_name.exactly(1),
+    #     ]
+    #     equivalent_to = [
+    #         StopOrPlatform |
+    #         Station |
+    #         EntranceOrExit
+    #     ]
+    #
+    # class StopRequiresLatitude(Requirement):
+    #     is_a = [
+    #         stop_lat.exactly(1),
+    #     ]
+    #     equivalent_to = [
+    #         StopOrPlatform |
+    #         Station |
+    #         EntranceOrExit
+    #     ]
+
     # wheelchair_boarding
 
     class RecordWithAccessibilityInformation(Record):
         comment = [locstr(RECORD_WITH_ACCESSIBILITY_DEF, "en")]
         relatedMatch = [gtfs_linked.WheelchairBoardingStatus]
 
-    class StopWithNoAccessibilityInformation(ParentlessStop, RecordWithAccessibilityInformation):
+    class ParentlessStopWithNoAccessibilityInformation(RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_PARENTLESS_STOP_0_DEF, "en")]
         equivalent_to = [
             ParentlessStop &
@@ -127,14 +168,14 @@ with gtfs:
             )
         ]
 
-    class StopWithPartialWheelchairAccessibility(ParentlessStop, RecordWithAccessibilityInformation):
+    class ParentlessStopWithPartialWheelchairAccessibility(RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_PARENTLESS_STOP_1_DEF, "en")]
         equivalent_to = [
             ParentlessStop &
             wheelchair_boarding.value(1)
         ]
 
-    class StopWithNoWheelchairAccessibility(ParentlessStop, RecordWithAccessibilityInformation):
+    class ParentlessStopWithNoWheelchairAccessibility(RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_PARENTLESS_STOP_2_DEF, "en")]
         equivalent_to = [
             ParentlessStop &
@@ -142,7 +183,7 @@ with gtfs:
         ]
 
 
-    class StopInheritingAccessibilityFromStation(ChildStop, RecordWithAccessibilityInformation):
+    class ChildStopInheritingAccessibilityFromParent(RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_CHILD_STOP_0_DEF, "en")]
         equivalent_to = [
             ChildStop &
@@ -153,7 +194,7 @@ with gtfs:
         ]
 
 
-    class StopWithAccessiblePathFromOutsideStation(ChildStop, RecordWithAccessibilityInformation):
+    class ChildStopWithAccessiblePathFromOutsideStation(RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_CHILD_STOP_1_DEF, "en")]
         equivalent_to = [
             ChildStop &
@@ -161,7 +202,7 @@ with gtfs:
         ]
 
 
-    class StopWithNoAccessiblePathFromOutsideStation(ChildStop, RecordWithAccessibilityInformation):
+    class ChildStopWithNoAccessiblePathFromOutsideStation(RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_CHILD_STOP_2_DEF, "en")]
         equivalent_to = [
             ChildStop &
@@ -169,7 +210,7 @@ with gtfs:
         ]
 
 
-    class EntranceInheritingAccessibilityFromStation(EntranceOrExit, RecordWithAccessibilityInformation):
+    class EntranceInheritingAccessibilityFromStation(RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_ENTRANCEEXIT_0_DEF, "en")]
         equivalent_to = [
             EntranceOrExit &
@@ -180,7 +221,7 @@ with gtfs:
         ]
 
 
-    class WheelchairAccessibleEntrance(EntranceOrExit, RecordWithAccessibilityInformation):
+    class EntranceWithWheelchairAccessibility(RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_ENTRANCEEXIT_1_DEF, "en")]
         equivalent_to = [
             EntranceOrExit &
@@ -188,7 +229,7 @@ with gtfs:
         ]
 
 
-    class EntranceWithNoAccessiblePathToPlatforms(EntranceOrExit, RecordWithAccessibilityInformation):
+    class EntranceWithNoAccessiblePathToPlatforms(RecordWithAccessibilityInformation):
         comment = [locstr(WHEELCHAIR_BOARDING_ENTRANCEEXIT_2_DEF, "en")]
         equivalent_to = [
             EntranceOrExit &
@@ -210,3 +251,18 @@ with gtfs:
         equivalent_to = [
             stop_access.value(1)
         ]
+
+    AllDisjoint([
+        ParentlessStopWithNoAccessibilityInformation,
+        ParentlessStopWithPartialWheelchairAccessibility,
+        ParentlessStopWithNoWheelchairAccessibility,
+        ChildStopInheritingAccessibilityFromParent,
+        ChildStopWithNoAccessiblePathFromOutsideStation,
+        ChildStopWithAccessiblePathFromOutsideStation,
+    ])
+
+    AllDisjoint([
+        EntranceInheritingAccessibilityFromStation,
+        EntranceWithWheelchairAccessibility,
+        EntranceWithNoAccessiblePathToPlatforms,
+    ])

@@ -36,8 +36,8 @@ with gtfs:
     class telephone(DataProperty):
         namespace = schema
 
-    class url(Datatype):
-        namespace = schema
+    # class url(Datatype):
+    #     namespace = schema
 
     class Agent(Thing):
         namespace = foaf
@@ -187,12 +187,6 @@ with gtfs:
         comment = [locstr(GTFS_REALTIME_DEF, "en")]
         seeAlso = ["https://gtfs.org/documentation/overview/#gtfs-realtime"]
 
-    # class Violation(Thing):
-    #     comment = [locstr("A violation of a GTFS specification.", "en")]
-    #
-    # class violationDetail(DataProperty):
-    #     comment = [locstr("A description of the violation.", "en")]
-    #     domain = [Violation]
-    #     range = [str]
+    AllDisjoint([GTFSSchedule, GTFSRealtime])
 
 # endregion

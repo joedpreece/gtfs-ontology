@@ -10,6 +10,8 @@ from gtfs_ontology.schedule.term_definitions.generate import Dataset
 
 with gtfs:
 
+    AllDisjoint([AgencyFile, StopFile, RouteFile, TripFile, StopTimeFile, CalendarFile, CalendarDateFile])
+
     # 1i
     Dataset.is_a.append(
         hasFile.exactly(1, AgencyFile) &
@@ -29,12 +31,14 @@ with gtfs:
     class AgencyFileWithSingleAgency(AgencyFile):
         comment = [locstr(AGENCY_FILE_WITH_SINGLE_AGENCY_DEF, "en")]#
         equivalent_to = [
+            AgencyFile &
             hasRecord.exactly(1, Agency)
         ]
 
     class AgencyFileWithMultipleAgencies(AgencyFile):
         comment = [locstr(AGENCY_FILE_WITH_MULTIPLE_AGENCIES_DEF, "en")]
         equivalent_to = [
+            AgencyFile &
             hasRecord.min(2, Agency)
         ]
 
@@ -75,11 +79,12 @@ with gtfs:
     )
 
     class DatasetWithoutCalendarFile(Dataset):
-        comment = [locstr("A dataset with a calendar file.", "en")]
+        comment = [locstr("A dataset without a calendar file.", "en")]
         seeAlso = [CalendarFile]
         is_a = [
             hasFile.exactly(1, CalendarDateFile)
         ]
         equivalent_to = [
+            Dataset &
             hasFile.exactly(0, CalendarFile)
         ]

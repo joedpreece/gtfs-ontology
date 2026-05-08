@@ -1,8 +1,8 @@
-from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.agencies.definitions import *
-from gtfs_ontology.schedule.field_types.generate import text, \
-    url, timezone, language_code, phone_number, email, enum, id
-from gtfs_ontology.schedule.records.generate import Agency
+from gtfs_ontology.schedule.field_types.generate import *
+from gtfs_ontology.schedule.records.generate import Agency, Route
+
+AGENCY_DEFINITIONS_URL = "https://gtfs.org/documentation/schedule/reference/#agencytxt"
 
 with gtfs:
 
@@ -17,11 +17,10 @@ with gtfs:
             )
         ]
 
-    AGENCY_DEFINITIONS_URL = "https://gtfs.org/documentation/schedule/reference/#agencytxt"
 
     class agency_id(id):
         comment = [locstr(AGENCY_ID_DEF, "en")]
-        domain = [Agency]
+        domain = [Agency | Route]
         seeAlso = [AGENCY_DEFINITIONS_URL]
 
 
@@ -69,6 +68,6 @@ with gtfs:
 
     class cemv_support(enum):
         comment = [locstr(CEMV_SUPPORT_DEF, "en")]
-        domain = [Agency]
+        domain = [Agency | Route]
         range = [cemv_support_enum]
         seeAlso = [AGENCY_DEFINITIONS_URL]

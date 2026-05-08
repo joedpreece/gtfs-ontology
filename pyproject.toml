@@ -6,5 +6,5 @@ authors = [
     {name = "Joseph Preece", email = "joseph.preece@glasgow.ac.uk"}
 ]
 dependencies = [
-    "owlready2",
+    "owlready2 == 0.50",
 ]

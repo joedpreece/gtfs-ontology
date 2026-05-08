@@ -33,5 +33,3 @@ with gtfs:
     class CalendarDateFile(DatasetFile):
         comment = [locstr(CALENDAR_DATES_DEF, "en")]
         seeAlso = [DATASET_FILES_URL]
-
-    AllDisjoint([AgencyFile, StopFile, RouteFile, TripFile, StopTimeFile, CalendarFile, CalendarDateFile])

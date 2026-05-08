@@ -6,15 +6,19 @@ from rdflib.namespace import NamespaceManager
 from gtfs_ontology.core import gtfs
 
 import gtfs_ontology.core
+
 import gtfs_ontology.schedule.core
 
 import gtfs_ontology.schedule.term_definitions.generate
+import gtfs_ontology.schedule.term_definitions.dl_rules
 
 import gtfs_ontology.schedule.files.generate
 import gtfs_ontology.schedule.files.dl_rules
 
 import gtfs_ontology.schedule.field_types.generate
+
 import gtfs_ontology.schedule.records.generate
+import gtfs_ontology.schedule.records.dl_rules
 
 import gtfs_ontology.schedule.agencies.generate
 import gtfs_ontology.schedule.agencies.dl_rules
@@ -45,7 +49,7 @@ def generate_ontology(
 
     g = Graph()
     g.parse(str(path.resolve()), format="xml")
-    path.unlink()
+    # path.unlink()
 
     new_manager = NamespaceManager(g)
     g.namespace_manager = new_manager

@@ -13,11 +13,26 @@ with gtfs:
         range = [DatasetFile]
 
     class isFileOf(ObjectProperty):
-        inverse_of = hasFile
+        inverse_property = hasFile
 
     class hasRecord(ObjectProperty):
         domain = [DatasetFile]
         range = [Record]
 
     class isRecordOf(ObjectProperty):
-        inverse_of = hasRecord
+        inverse_property = hasRecord
+
+    class Requirement(Thing):
+        pass
+
+    class Recommendation(Thing):
+        pass
+
+    class Optional(Thing):
+        pass
+
+    AllDisjoint([
+        hasDataset,
+        hasFile,
+        hasRecord,
+    ])

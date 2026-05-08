@@ -7,19 +7,6 @@ CALENDAR_URL = "https://gtfs.org/documentation/schedule/reference/#calendartxt"
 
 with gtfs:
 
-    # region Classes
-
-    # class CalendarDatatypeDescription(DatatypeDescription):
-    #     pass
-    #
-    # class CalendarDatatypeDescription0(CalendarDatatypeDescription):
-    #     comment = "Service is available for all Mondays in the date range."
-    #
-    # class CalendarDatatypeDescription1(CalendarDatatypeDescription):
-    #     comment = "Service is not available for Mondays in the date range."
-
-    # endregion
-
     # region Datatypes
 
     class weekday_enum(Datatype):
@@ -38,7 +25,7 @@ with gtfs:
 
     class service_id(id):
         comment = [locstr(SERVICE_ID_DEF, "en")]
-        domain = [Service]
+        domain = [Service | Trip]
         seeAlso = [CALENDAR_URL]
 
     class monday(enum):

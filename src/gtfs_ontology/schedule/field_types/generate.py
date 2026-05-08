@@ -1,3 +1,5 @@
+import datetime
+
 from gtfs_ontology.schedule import *
 from gtfs_ontology.schedule.term_definitions.generate import field
 from gtfs_ontology.schedule.field_types.definitions import *
@@ -44,7 +46,7 @@ with gtfs:
 
     class date(field):
         comment = [locstr(DATE_DEF, "en")]
-        range = [datetime.date]
+        range = [datetime.datetime]
 
     class email(field, schema.email):
         comment = [locstr(EMAIL_DEF, "en")]
@@ -87,11 +89,11 @@ with gtfs:
 
     class time(field):
         comment = [locstr(TIME_DEF, "en")]
-        range = [datetime.time]
+        range = [datetime.datetime]
 
     class local_time(field):
         comment = [locstr(LOCAL_TIME_DEF, "en")]
-        range = [datetime.time]
+        range = [datetime.datetime]
 
     class text(field):
         comment = [locstr(TEXT_DEF, "en")]
@@ -107,5 +109,26 @@ with gtfs:
 
     class url(field):
         comment = [locstr(URL_DEF, "en")]
-        range = [schema.url]
+        range = [str]
         seeAlso = ["http://www.w3.org/Addressing/URL/4_URI_Recommentations.html"]
+
+    # AllDisjoint([
+    #     color,
+    #     currency_code,
+    #     currency_amount,
+    #     date,
+    #     email,
+    #     enum,
+    #     id,
+    #     language_code,
+    #     latitude,
+    #     longitude,
+    #     num_float,
+    #     num_int,
+    #     phone_number,
+    #     time,
+    #     local_time,
+    #     text,
+    #     timezone,
+    #     url
+    # ])

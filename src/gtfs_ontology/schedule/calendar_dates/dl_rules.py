@@ -6,7 +6,6 @@ with gtfs:
 
     class CalendarDateService(Service):
         is_a = [
-            service_id.exactly(1) &
-            calendar_dates_date.exactly(1) &
+            calendar_dates_date.exactly(1),
             exception_type.exactly(1)
         ]
