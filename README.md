@@ -1,5 +1,7 @@
 # GTFS Ontology
 
+[![DOI](https://zenodo.org/badge/1170808376.svg)](https://doi.org/10.5281/zenodo.20082554)
+
 ## Artifact
 For the artifact, please download [`gtfs.ttl`](artifacts/gtfs.ttl).
 
