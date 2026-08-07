@@ -1,0 +1,552 @@
+<https://transit.ac.uk/ontologies/gtfs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://transit.ac.uk/ontologies/gtfs> <http://www.w3.org/2002/07/owl#versionIRI> <https://transit.ac.uk/ontologies/gtfs/0.1.0> .
+<https://transit.ac.uk/ontologies/gtfs> <http://purl.org/dc/terms/created> "2026-06-19"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://transit.ac.uk/ontologies/gtfs> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0> .
+<https://transit.ac.uk/ontologies/gtfs> <http://purl.org/dc/terms/source> <https://gtfs.org/documentation/overview/> .
+<https://transit.ac.uk/ontologies/gtfs> <http://purl.org/dc/terms/title> "A GTFS Application Ontology" .
+<https://transit.ac.uk/ontologies/gtfs> <http://purl.org/vocab/vann/preferredNamespacePrefix> "dvla" .
+<https://transit.ac.uk/ontologies/gtfs> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://transit.ac.uk/ontologies/gtfs> .
+<https://transit.ac.uk/ontologies/gtfs> <http://www.w3.org/2000/01/rdf-schema#label> "gtfs"@en .
+<https://transit.ac.uk/ontologies/gtfs> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# http://www.w3.org/2001/XMLSchema#time
+<http://www.w3.org/2001/XMLSchema#time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id
+<https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#BookingRule> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#hasAgency
+<https://transit.ac.uk/ontologies/gtfs#hasAgency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#hasAgency> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
+<https://transit.ac.uk/ontologies/gtfs#hasAgency> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Agency> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#hasLevel
+<https://transit.ac.uk/ontologies/gtfs#hasLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#hasLevel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#hasLevel> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Level> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#hasLocation
+<https://transit.ac.uk/ontologies/gtfs#hasLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#hasLocation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#hasLocation> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Location> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#hasLocationGroup
+<https://transit.ac.uk/ontologies/gtfs#hasLocationGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#hasLocationGroup> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#hasLocationGroup> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#LocationGroup> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#hasRoute
+<https://transit.ac.uk/ontologies/gtfs#hasRoute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#hasRoute> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#hasRoute> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Route> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#hasService
+<https://transit.ac.uk/ontologies/gtfs#hasService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#hasService> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#hasService> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Service> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#hasShape
+<https://transit.ac.uk/ontologies/gtfs#hasShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#hasShape> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#hasShape> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Shape> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#hasStop
+<https://transit.ac.uk/ontologies/gtfs#hasStop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#hasStop> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#hasStop> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#hasTrip
+<https://transit.ac.uk/ontologies/gtfs#hasTrip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#hasTrip> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#hasTrip> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#parent_station
+<https://transit.ac.uk/ontologies/gtfs#parent_station> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#parent_station> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#parent_station> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id
+<https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#BookingRule> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://transit.ac.uk/ontologies/gtfs#agency_email
+<https://transit.ac.uk/ontologies/gtfs#agency_email> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#agency_email> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
+<https://transit.ac.uk/ontologies/gtfs#agency_email> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://transit.ac.uk/ontologies/gtfs#agency_email> <http://www.w3.org/2000/01/rdf-schema#comment> "Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency."@en .
+# 
+# https://transit.ac.uk/ontologies/gtfs#agency_fare_url
+<https://transit.ac.uk/ontologies/gtfs#agency_fare_url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#agency_fare_url> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
+<https://transit.ac.uk/ontologies/gtfs#agency_fare_url> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://transit.ac.uk/ontologies/gtfs#agency_fare_url> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares."@en .
+# 
+# https://transit.ac.uk/ontologies/gtfs#agency_id
+<https://transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
+<https://transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies."@en .
+# 
+# https://transit.ac.uk/ontologies/gtfs#agency_lang
+<https://transit.ac.uk/ontologies/gtfs#agency_lang> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#agency_lang> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
+<https://transit.ac.uk/ontologies/gtfs#agency_lang> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://transit.ac.uk/ontologies/gtfs#agency_lang> <http://www.w3.org/2000/01/rdf-schema#comment> "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."@en .
+# 
+# https://transit.ac.uk/ontologies/gtfs#agency_name
+<https://transit.ac.uk/ontologies/gtfs#agency_name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#agency_name> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
+<https://transit.ac.uk/ontologies/gtfs#agency_name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://transit.ac.uk/ontologies/gtfs#agency_name> <http://www.w3.org/2000/01/rdf-schema#comment> "Full name of the transit agency."@en .
+# 
+# https://transit.ac.uk/ontologies/gtfs#agency_phone
+<https://transit.ac.uk/ontologies/gtfs#agency_phone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#agency_phone> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
+<https://transit.ac.uk/ontologies/gtfs#agency_phone> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://transit.ac.uk/ontologies/gtfs#agency_phone> <http://www.w3.org/2000/01/rdf-schema#comment> "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."@en .
+# 
+# https://transit.ac.uk/ontologies/gtfs#agency_timezone
+<https://transit.ac.uk/ontologies/gtfs#agency_timezone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#agency_timezone> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
+<https://transit.ac.uk/ontologies/gtfs#agency_timezone> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://transit.ac.uk/ontologies/gtfs#agency_timezone> <http://www.w3.org/2000/01/rdf-schema#comment> "Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone."@en .
+# 
+# https://transit.ac.uk/ontologies/gtfs#agency_url
+<https://transit.ac.uk/ontologies/gtfs#agency_url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#agency_url> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
+<https://transit.ac.uk/ontologies/gtfs#agency_url> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://transit.ac.uk/ontologies/gtfs#agency_url> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of the transit agency."@en .
+# 
+# https://transit.ac.uk/ontologies/gtfs#arrival_time
+<https://transit.ac.uk/ontologies/gtfs#arrival_time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#arrival_time> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#arrival_time> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#time> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#bikes_allowed
+<https://transit.ac.uk/ontologies/gtfs#bikes_allowed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#bikes_allowed> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#bikes_allowed> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#block_id
+<https://transit.ac.uk/ontologies/gtfs#block_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#block_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#block_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#cars_allowed
+<https://transit.ac.uk/ontologies/gtfs#cars_allowed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#cars_allowed> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#cars_allowed> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#cemv_support
+<https://transit.ac.uk/ontologies/gtfs#cemv_support> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#cemv_support> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#Route> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#Agency> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#cemv_support> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://transit.ac.uk/ontologies/gtfs#cemv_support> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media."@en .
+# 
+# https://transit.ac.uk/ontologies/gtfs#continuous_drop_off
+<https://transit.ac.uk/ontologies/gtfs#continuous_drop_off> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#continuous_drop_off> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#Route> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#continuous_drop_off> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#continuous_pickup
+<https://transit.ac.uk/ontologies/gtfs#continuous_pickup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#continuous_pickup> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#Route> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#continuous_pickup> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#date
+<https://transit.ac.uk/ontologies/gtfs#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#date> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Service> .
+<https://transit.ac.uk/ontologies/gtfs#date> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#departure_time
+<https://transit.ac.uk/ontologies/gtfs#departure_time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#departure_time> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#departure_time> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#time> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#direction_id
+<https://transit.ac.uk/ontologies/gtfs#direction_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#direction_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#direction_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#drop_off_type
+<https://transit.ac.uk/ontologies/gtfs#drop_off_type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#drop_off_type> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#drop_off_type> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#end_date
+<https://transit.ac.uk/ontologies/gtfs#end_date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#end_date> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Service> .
+<https://transit.ac.uk/ontologies/gtfs#end_date> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window
+<https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#time> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#exception_type
+<https://transit.ac.uk/ontologies/gtfs#exception_type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#exception_type> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Service> .
+<https://transit.ac.uk/ontologies/gtfs#exception_type> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#friday
+<https://transit.ac.uk/ontologies/gtfs#friday> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#friday> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Service> .
+<https://transit.ac.uk/ontologies/gtfs#friday> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#location_type
+<https://transit.ac.uk/ontologies/gtfs#location_type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#location_type> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#location_type> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#monday
+<https://transit.ac.uk/ontologies/gtfs#monday> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#monday> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Service> .
+<https://transit.ac.uk/ontologies/gtfs#monday> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#network_id
+<https://transit.ac.uk/ontologies/gtfs#network_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#network_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
+<https://transit.ac.uk/ontologies/gtfs#network_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#pickup_type
+<https://transit.ac.uk/ontologies/gtfs#pickup_type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#pickup_type> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#pickup_type> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#platform_code
+<https://transit.ac.uk/ontologies/gtfs#platform_code> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#platform_code> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#platform_code> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#route_color
+<https://transit.ac.uk/ontologies/gtfs#route_color> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#route_color> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
+<https://transit.ac.uk/ontologies/gtfs#route_color> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#route_desc
+<https://transit.ac.uk/ontologies/gtfs#route_desc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#route_desc> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
+<https://transit.ac.uk/ontologies/gtfs#route_desc> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#route_id
+<https://transit.ac.uk/ontologies/gtfs#route_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#route_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
+<https://transit.ac.uk/ontologies/gtfs#route_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#route_long_name
+<https://transit.ac.uk/ontologies/gtfs#route_long_name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#route_long_name> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
+<https://transit.ac.uk/ontologies/gtfs#route_long_name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#route_short_name
+<https://transit.ac.uk/ontologies/gtfs#route_short_name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#route_short_name> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
+<https://transit.ac.uk/ontologies/gtfs#route_short_name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#route_sort_order
+<https://transit.ac.uk/ontologies/gtfs#route_sort_order> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#route_sort_order> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
+<https://transit.ac.uk/ontologies/gtfs#route_sort_order> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#route_text_color
+<https://transit.ac.uk/ontologies/gtfs#route_text_color> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#route_text_color> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
+<https://transit.ac.uk/ontologies/gtfs#route_text_color> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#route_type
+<https://transit.ac.uk/ontologies/gtfs#route_type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#route_type> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
+<https://transit.ac.uk/ontologies/gtfs#route_type> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#route_url
+<https://transit.ac.uk/ontologies/gtfs#route_url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#route_url> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
+<https://transit.ac.uk/ontologies/gtfs#route_url> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#safe_duration_factor
+<https://transit.ac.uk/ontologies/gtfs#safe_duration_factor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#safe_duration_factor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#safe_duration_factor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#safe_duration_offset
+<https://transit.ac.uk/ontologies/gtfs#safe_duration_offset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#safe_duration_offset> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#safe_duration_offset> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#saturday
+<https://transit.ac.uk/ontologies/gtfs#saturday> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#saturday> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Service> .
+<https://transit.ac.uk/ontologies/gtfs#saturday> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#service_id
+<https://transit.ac.uk/ontologies/gtfs#service_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#service_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Service> .
+<https://transit.ac.uk/ontologies/gtfs#service_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled
+<https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#start_date
+<https://transit.ac.uk/ontologies/gtfs#start_date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#start_date> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Service> .
+<https://transit.ac.uk/ontologies/gtfs#start_date> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window
+<https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#time> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#stop_access
+<https://transit.ac.uk/ontologies/gtfs#stop_access> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#stop_access> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#stop_access> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#stop_code
+<https://transit.ac.uk/ontologies/gtfs#stop_code> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#stop_code> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#stop_code> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#stop_desc
+<https://transit.ac.uk/ontologies/gtfs#stop_desc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#stop_desc> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#stop_desc> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#stop_headsign
+<https://transit.ac.uk/ontologies/gtfs#stop_headsign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#stop_headsign> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#stop_headsign> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#stop_id
+<https://transit.ac.uk/ontologies/gtfs#stop_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#stop_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#stop_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#stop_lat
+<https://transit.ac.uk/ontologies/gtfs#stop_lat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#stop_lat> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#stop_lat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#stop_lon
+<https://transit.ac.uk/ontologies/gtfs#stop_lon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#stop_lon> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#stop_lon> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#stop_name
+<https://transit.ac.uk/ontologies/gtfs#stop_name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#stop_name> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#stop_name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#stop_sequence
+<https://transit.ac.uk/ontologies/gtfs#stop_sequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#stop_sequence> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#stop_sequence> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#stop_timezone
+<https://transit.ac.uk/ontologies/gtfs#stop_timezone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#stop_timezone> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#stop_timezone> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#stop_url
+<https://transit.ac.uk/ontologies/gtfs#stop_url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#stop_url> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#stop_url> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#sunday
+<https://transit.ac.uk/ontologies/gtfs#sunday> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#sunday> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Service> .
+<https://transit.ac.uk/ontologies/gtfs#sunday> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#thursday
+<https://transit.ac.uk/ontologies/gtfs#thursday> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#thursday> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Service> .
+<https://transit.ac.uk/ontologies/gtfs#thursday> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#timepoint
+<https://transit.ac.uk/ontologies/gtfs#timepoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#timepoint> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+<https://transit.ac.uk/ontologies/gtfs#timepoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#trip_headsign
+<https://transit.ac.uk/ontologies/gtfs#trip_headsign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#trip_headsign> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#trip_headsign> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#trip_id
+<https://transit.ac.uk/ontologies/gtfs#trip_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#trip_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#trip_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#trip_short_name
+<https://transit.ac.uk/ontologies/gtfs#trip_short_name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#trip_short_name> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#trip_short_name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#tts_stop_name
+<https://transit.ac.uk/ontologies/gtfs#tts_stop_name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#tts_stop_name> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#tts_stop_name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#tuesday
+<https://transit.ac.uk/ontologies/gtfs#tuesday> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#tuesday> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Service> .
+<https://transit.ac.uk/ontologies/gtfs#tuesday> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#wednesday
+<https://transit.ac.uk/ontologies/gtfs#wednesday> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#wednesday> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Service> .
+<https://transit.ac.uk/ontologies/gtfs#wednesday> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible
+<https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+<https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding
+<https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#zone_id
+<https://transit.ac.uk/ontologies/gtfs#zone_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://transit.ac.uk/ontologies/gtfs#zone_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#zone_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://transit.ac.uk/ontologies/gtfs#Agency
+<https://transit.ac.uk/ontologies/gtfs#Agency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#Agency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#BookingRule
+<https://transit.ac.uk/ontologies/gtfs#BookingRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#BookingRule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#Level
+<https://transit.ac.uk/ontologies/gtfs#Level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#Level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#Location
+<https://transit.ac.uk/ontologies/gtfs#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#LocationGroup
+<https://transit.ac.uk/ontologies/gtfs#LocationGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#LocationGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#Route
+<https://transit.ac.uk/ontologies/gtfs#Route> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#Route> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#Service
+<https://transit.ac.uk/ontologies/gtfs#Service> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#Service> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#Shape
+<https://transit.ac.uk/ontologies/gtfs#Shape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#Shape> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#Stop
+<https://transit.ac.uk/ontologies/gtfs#Stop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#Stop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#StopTime
+<https://transit.ac.uk/ontologies/gtfs#StopTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#StopTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#Trip
+<https://transit.ac.uk/ontologies/gtfs#Trip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#Trip> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

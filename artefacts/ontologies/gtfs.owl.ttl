@@ -1,0 +1,380 @@
+@prefix : <https://transit.ac.uk/ontologies/gtfs#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:agency_email a owl:DatatypeProperty ;
+    rdfs:comment "Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency."@en ;
+    rdfs:domain :Agency ;
+    rdfs:range xsd:string .
+
+:agency_fare_url a owl:DatatypeProperty ;
+    rdfs:comment "URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares."@en ;
+    rdfs:domain :Agency ;
+    rdfs:range xsd:string .
+
+:agency_id a owl:DatatypeProperty ;
+    rdfs:comment "Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies."@en ;
+    rdfs:domain :Agency ;
+    rdfs:range xsd:string .
+
+:agency_lang a owl:DatatypeProperty ;
+    rdfs:comment "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."@en ;
+    rdfs:domain :Agency ;
+    rdfs:range xsd:string .
+
+:agency_name a owl:DatatypeProperty ;
+    rdfs:comment "Full name of the transit agency."@en ;
+    rdfs:domain :Agency ;
+    rdfs:range xsd:string .
+
+:agency_phone a owl:DatatypeProperty ;
+    rdfs:comment "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."@en ;
+    rdfs:domain :Agency ;
+    rdfs:range xsd:string .
+
+:agency_timezone a owl:DatatypeProperty ;
+    rdfs:comment "Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone."@en ;
+    rdfs:domain :Agency ;
+    rdfs:range xsd:string .
+
+:agency_url a owl:DatatypeProperty ;
+    rdfs:comment "URL of the transit agency."@en ;
+    rdfs:domain :Agency ;
+    rdfs:range xsd:string .
+
+:arrival_time a owl:DatatypeProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range xsd:time .
+
+:bikes_allowed a owl:DatatypeProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range xsd:integer .
+
+:block_id a owl:DatatypeProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range xsd:integer .
+
+:cars_allowed a owl:DatatypeProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range xsd:integer .
+
+:cemv_support a owl:DatatypeProperty ;
+    rdfs:comment "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Agency :Route ) ] ;
+    rdfs:range xsd:integer .
+
+:continuous_drop_off a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Route :StopTime ) ] ;
+    rdfs:range xsd:integer .
+
+:continuous_pickup a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Route :StopTime ) ] ;
+    rdfs:range xsd:integer .
+
+:date a owl:DatatypeProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:date .
+
+:departure_time a owl:DatatypeProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range xsd:time .
+
+:direction_id a owl:DatatypeProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range xsd:integer .
+
+:drop_off_booking_rule_id a owl:ObjectProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range :BookingRule .
+
+:drop_off_type a owl:DatatypeProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range xsd:integer .
+
+:end_date a owl:DatatypeProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:date .
+
+:end_pickup_drop_off_window a owl:DatatypeProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range xsd:time .
+
+:exception_type a owl:DatatypeProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:friday a owl:DatatypeProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasAgency a owl:ObjectProperty ;
+    rdfs:domain :Route ;
+    rdfs:range :Agency .
+
+:hasLevel a owl:ObjectProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range :Level .
+
+:hasLocation a owl:ObjectProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range :Location .
+
+:hasLocationGroup a owl:ObjectProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range :LocationGroup .
+
+:hasRoute a owl:ObjectProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range :Route .
+
+:hasService a owl:ObjectProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range :Service .
+
+:hasShape a owl:ObjectProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range :Shape .
+
+:hasStop a owl:ObjectProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range :Stop .
+
+:hasTrip a owl:ObjectProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range :Trip .
+
+:location_type a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:integer .
+
+:monday a owl:DatatypeProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:network_id a owl:DatatypeProperty ;
+    rdfs:domain :Route ;
+    rdfs:range xsd:integer .
+
+:parent_station a owl:ObjectProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range :Stop .
+
+:pickup_booking_rule_id a owl:ObjectProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range :BookingRule .
+
+:pickup_type a owl:DatatypeProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range xsd:integer .
+
+:platform_code a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:string .
+
+:route_color a owl:DatatypeProperty ;
+    rdfs:domain :Route ;
+    rdfs:range xsd:string .
+
+:route_desc a owl:DatatypeProperty ;
+    rdfs:domain :Route ;
+    rdfs:range xsd:string .
+
+:route_id a owl:DatatypeProperty ;
+    rdfs:domain :Route ;
+    rdfs:range xsd:string .
+
+:route_long_name a owl:DatatypeProperty ;
+    rdfs:domain :Route ;
+    rdfs:range xsd:string .
+
+:route_short_name a owl:DatatypeProperty ;
+    rdfs:domain :Route ;
+    rdfs:range xsd:string .
+
+:route_sort_order a owl:DatatypeProperty ;
+    rdfs:domain :Route ;
+    rdfs:range xsd:integer .
+
+:route_text_color a owl:DatatypeProperty ;
+    rdfs:domain :Route ;
+    rdfs:range xsd:string .
+
+:route_type a owl:DatatypeProperty ;
+    rdfs:domain :Route ;
+    rdfs:range xsd:integer .
+
+:route_url a owl:DatatypeProperty ;
+    rdfs:domain :Route ;
+    rdfs:range xsd:string .
+
+:safe_duration_factor a owl:DatatypeProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range xsd:decimal .
+
+:safe_duration_offset a owl:DatatypeProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range xsd:decimal .
+
+:saturday a owl:DatatypeProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:service_id a owl:DatatypeProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:string .
+
+:shape_dist_traveled a owl:DatatypeProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range xsd:decimal .
+
+:start_date a owl:DatatypeProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:date .
+
+:start_pickup_drop_off_window a owl:DatatypeProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range xsd:time .
+
+:stop_access a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:integer .
+
+:stop_code a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:string .
+
+:stop_desc a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:string .
+
+:stop_headsign a owl:DatatypeProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range xsd:string .
+
+:stop_id a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:string .
+
+:stop_lat a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:decimal .
+
+:stop_lon a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:decimal .
+
+:stop_name a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:string .
+
+:stop_sequence a owl:DatatypeProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range xsd:string .
+
+:stop_timezone a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:string .
+
+:stop_url a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:string .
+
+:sunday a owl:DatatypeProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:thursday a owl:DatatypeProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:timepoint a owl:DatatypeProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range xsd:integer .
+
+:trip_headsign a owl:DatatypeProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range xsd:string .
+
+:trip_id a owl:DatatypeProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range xsd:string .
+
+:trip_short_name a owl:DatatypeProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range xsd:string .
+
+:tts_stop_name a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:string .
+
+:tuesday a owl:DatatypeProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:wednesday a owl:DatatypeProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:wheelchair_accessible a owl:DatatypeProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range xsd:integer .
+
+:wheelchair_boarding a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:integer .
+
+:zone_id a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:string .
+
+<https://transit.ac.uk/ontologies/gtfs> a owl:Ontology ;
+    rdfs:label "gtfs"@en ;
+    dcterms:created "2026-06-19"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0> ;
+    dcterms:source <https://gtfs.org/documentation/overview/> ;
+    dcterms:title "A GTFS Application Ontology" ;
+    vann:preferredNamespacePrefix "dvla" ;
+    vann:preferredNamespaceUri <https://transit.ac.uk/ontologies/gtfs> ;
+    owl:versionIRI <https://transit.ac.uk/ontologies/gtfs/0.1.0> ;
+    owl:versionInfo "0.1.0" .
+
+:Level a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Location a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:LocationGroup a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Shape a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:BookingRule a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Agency a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Service a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Trip a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Route a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Stop a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:StopTime a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+

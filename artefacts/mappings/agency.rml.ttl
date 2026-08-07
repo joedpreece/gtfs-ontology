@@ -1,0 +1,41 @@
+@prefix : <https://transit.ac.uk/mappings/gtfs#> .
+@prefix gtfs: <https://transit.ac.uk/ontologies/gtfs#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix sd: <https://w3id.org/okn/o/sd#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:AgencyMapping a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation rml:CSV ;
+            rml:source [ a sd:DatasetSpecification ;
+                    sd:name "agency.txt" ] ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "agency_url" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:agency_url ],
+        [ rr:objectMap [ rml:reference "agency_name" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:agency_name ],
+        [ rr:objectMap [ rml:reference "agency_timezone" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:agency_timezone ],
+        [ rr:objectMap [ rml:reference "agency_id" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:agency_id ],
+        [ rr:objectMap [ rml:reference "agency_lang" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:agency_lang ],
+        [ rr:objectMap [ rml:reference "agency_phone" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:agency_phone ],
+        [ rr:objectMap [ rml:reference "cemv_support" ;
+                    rr:datatype xsd:integer ] ;
+            rr:predicate gtfs:cemv_support ],
+        [ rr:objectMap [ rml:reference "agency_fare_url" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:agency_fare_url ],
+        [ rr:objectMap [ rml:reference "agency_email" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:agency_email ] ;
+    rr:subjectMap [ rr:class gtfs:Agency ;
+            rr:template "https://transit.ac.uk/graphs/gtfs/Agency/{agency_id}" ] .
+

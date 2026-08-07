@@ -1,0 +1,1933 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://transit.ac.uk/ontologies/gtfs", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "undefined" : "A GTFS Application Ontology"
+    },
+    "iri" : "https://transit.ac.uk/ontologies/gtfs",
+    "version" : "0.1.0",
+    "labels" : {
+      "en" : "gtfs"
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0",
+        "type" : "iri"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2026-06-19",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "dvla",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://transit.ac.uk/ontologies/gtfs",
+        "type" : "iri"
+      } ],
+      "source" : [ {
+        "identifier" : "source",
+        "language" : "undefined",
+        "value" : "https://gtfs.org/documentation/overview/",
+        "type" : "iri"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "0.1.0",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "A GTFS Application Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "25",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "23",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "41",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "21",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "53",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "57",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "60",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "61",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "62",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "59",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "64",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "65",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "71",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "77",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "78",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "79",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "80",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "73",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "29",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "85",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "86",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "97",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "70",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "103",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "99",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "106",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "107",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "82",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "114",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "118",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "119",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "120",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "105",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "122",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "113",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "123",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "116",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "129",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "109",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "84",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "96",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "135",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "111",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "137",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "101",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "139",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "48",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "50",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "67",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#LocationGroup",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LocationGroup"
+    },
+    "id" : "0"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "7",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Route",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Route"
+    },
+    "id" : "5"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "24",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "25",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "30",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "31",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Agency",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agency"
+    },
+    "id" : "17"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "32",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "33",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "23",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "36",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#time",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "40",
+    "label" : {
+      "IRI-based" : "time"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "41",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "21",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "51",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#time",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "52",
+    "label" : {
+      "IRI-based" : "time"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "5", "11" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "53"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "56",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "5", "11" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "57"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "60",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "61",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "17", "5" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "62"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "59",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "63",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "64",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "65",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Location",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Location"
+    },
+    "id" : "71"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "3",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#time",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "77",
+    "label" : {
+      "IRI-based" : "time"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "78",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "79",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "80",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "76",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "73",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "29",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "85",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "86",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Level",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Level"
+    },
+    "id" : "97"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "6",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "70",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "103",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "99",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "106",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "27",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "44",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "107",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#StopTime",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StopTime"
+    },
+    "id" : "11"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "82",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "114",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "55",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "118",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "119",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "120",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "105",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "122",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "113",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "123",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "116",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "38",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "129",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Service",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Service"
+    },
+    "id" : "20"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "109",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "84",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "90",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "96",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "135",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "111",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Shape",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Shape"
+    },
+    "id" : "15"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "137",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "101",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "139",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "48",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#time",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "50",
+    "label" : {
+      "IRI-based" : "time"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "35",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#BookingRule",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BookingRule"
+    },
+    "id" : "12"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "18",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "67",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Trip",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Trip"
+    },
+    "id" : "14"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Stop",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Stop"
+    },
+    "id" : "2"
+  } ],
+  "property" : [ {
+    "id" : "1",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "4",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "8",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "16",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "19",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "37",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "39",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "42",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "43",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "45",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "46",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "49",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "54",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "58",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "66",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "68",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "69",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "72",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "74",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "75",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "81",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "83",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "87",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "88",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "89",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "92",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "93",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "94",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "95",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "98",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "100",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "102",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "104",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "108",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "110",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "112",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "115",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "117",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "121",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "124",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "125",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "126",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "127",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "128",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "130",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "131",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "132",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "133",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "134",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "136",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "138",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "140",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "141",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "142",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "143",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "144",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "145",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "146",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "147",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "148",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "149",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "150",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "151",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "152",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "153",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "154",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "155",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "156",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "157",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "158",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "159",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_access",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "stop_access"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "1"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_url",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "route_url"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "4"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "route_id"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "8"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "pickup_booking_rule_id"
+    },
+    "domain" : "11",
+    "attributes" : [ "object" ],
+    "id" : "10"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasShape",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "hasShape"
+    },
+    "domain" : "14",
+    "attributes" : [ "object" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_email",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "agency_email"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "16"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#date",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "date"
+    },
+    "domain" : "20",
+    "attributes" : [ "datatype" ],
+    "id" : "19"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#drop_off_type",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "drop_off_type"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_desc",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "route_desc"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "26"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "29",
+    "label" : {
+      "IRI-based" : "shape_dist_traveled"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#bikes_allowed",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "bikes_allowed"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype" ],
+    "id" : "34"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_url",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "stop_url"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "37"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#parent_station",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "parent_station"
+    },
+    "domain" : "2",
+    "attributes" : [ "object" ],
+    "id" : "39"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "40",
+    "label" : {
+      "IRI-based" : "end_pickup_drop_off_window"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype" ],
+    "id" : "42"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_color",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "44",
+    "label" : {
+      "IRI-based" : "route_color"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "43"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasService",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "hasService"
+    },
+    "domain" : "14",
+    "attributes" : [ "object" ],
+    "id" : "45"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#pickup_type",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "pickup_type"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype" ],
+    "id" : "46"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_url",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "agency_url"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "URL of the transit agency."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "47"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#arrival_time",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "50",
+    "label" : {
+      "IRI-based" : "arrival_time"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype" ],
+    "id" : "49"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#tuesday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "55",
+    "label" : {
+      "IRI-based" : "tuesday"
+    },
+    "domain" : "20",
+    "attributes" : [ "datatype" ],
+    "id" : "54"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#cars_allowed",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "59",
+    "label" : {
+      "IRI-based" : "cars_allowed"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype" ],
+    "id" : "58"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_fare_url",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "67",
+    "label" : {
+      "IRI-based" : "agency_fare_url"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "66"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#continuous_drop_off",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "60",
+    "label" : {
+      "IRI-based" : "continuous_drop_off"
+    },
+    "domain" : "53",
+    "attributes" : [ "datatype" ],
+    "id" : "68"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_sort_order",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "70",
+    "label" : {
+      "IRI-based" : "route_sort_order"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "69"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#start_date",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "73",
+    "label" : {
+      "IRI-based" : "start_date"
+    },
+    "domain" : "20",
+    "attributes" : [ "datatype" ],
+    "id" : "72"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "drop_off_booking_rule_id"
+    },
+    "domain" : "11",
+    "attributes" : [ "object" ],
+    "id" : "74"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#saturday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "76",
+    "label" : {
+      "IRI-based" : "saturday"
+    },
+    "domain" : "20",
+    "attributes" : [ "datatype" ],
+    "id" : "75"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#zone_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "82",
+    "label" : {
+      "IRI-based" : "zone_id"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "81"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_lon",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "84",
+    "label" : {
+      "IRI-based" : "stop_lon"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "83"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#friday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "30",
+    "label" : {
+      "IRI-based" : "friday"
+    },
+    "domain" : "20",
+    "attributes" : [ "datatype" ],
+    "id" : "87"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#continuous_pickup",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "51",
+    "label" : {
+      "IRI-based" : "continuous_pickup"
+    },
+    "domain" : "57",
+    "attributes" : [ "datatype" ],
+    "id" : "88"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_timezone",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "90",
+    "label" : {
+      "IRI-based" : "stop_timezone"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "89"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#cemv_support",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "56",
+    "label" : {
+      "IRI-based" : "cemv_support"
+    },
+    "domain" : "62",
+    "comment" : {
+      "en" : "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "91"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "77",
+    "label" : {
+      "IRI-based" : "start_pickup_drop_off_window"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype" ],
+    "id" : "92"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#departure_time",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "52",
+    "label" : {
+      "IRI-based" : "departure_time"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype" ],
+    "id" : "93"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_headsign",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "63",
+    "label" : {
+      "IRI-based" : "stop_headsign"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype" ],
+    "id" : "94"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_sequence",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "96",
+    "label" : {
+      "IRI-based" : "stop_sequence"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype" ],
+    "id" : "95"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_type",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "99",
+    "label" : {
+      "IRI-based" : "route_type"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "98"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_phone",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "101",
+    "label" : {
+      "IRI-based" : "agency_phone"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "100"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_desc",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "78",
+    "label" : {
+      "IRI-based" : "stop_desc"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "102"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#trip_headsign",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "105",
+    "label" : {
+      "IRI-based" : "trip_headsign"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype" ],
+    "id" : "104"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_name",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "109",
+    "label" : {
+      "IRI-based" : "stop_name"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "108"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_lang",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "111",
+    "label" : {
+      "IRI-based" : "agency_lang"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "110"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#trip_short_name",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "113",
+    "label" : {
+      "IRI-based" : "trip_short_name"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype" ],
+    "id" : "112"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#sunday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "116",
+    "label" : {
+      "IRI-based" : "sunday"
+    },
+    "domain" : "20",
+    "attributes" : [ "datatype" ],
+    "id" : "115"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_code",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "79",
+    "label" : {
+      "IRI-based" : "stop_code"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "117"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#safe_duration_offset",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "85",
+    "label" : {
+      "IRI-based" : "safe_duration_offset"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype" ],
+    "id" : "121"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#direction_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "direction_id"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype" ],
+    "id" : "124"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#exception_type",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "31",
+    "label" : {
+      "IRI-based" : "exception_type"
+    },
+    "domain" : "20",
+    "attributes" : [ "datatype" ],
+    "id" : "125"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#timepoint",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "122",
+    "label" : {
+      "IRI-based" : "timepoint"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype" ],
+    "id" : "126"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasAgency",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "hasAgency"
+    },
+    "domain" : "5",
+    "attributes" : [ "object" ],
+    "id" : "127"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasLocation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "71",
+    "label" : {
+      "IRI-based" : "hasLocation"
+    },
+    "domain" : "11",
+    "attributes" : [ "object" ],
+    "id" : "128"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#thursday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "129",
+    "label" : {
+      "IRI-based" : "thursday"
+    },
+    "domain" : "20",
+    "attributes" : [ "datatype" ],
+    "id" : "130"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasLocationGroup",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "hasLocationGroup"
+    },
+    "domain" : "11",
+    "attributes" : [ "object" ],
+    "id" : "131"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#service_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "80",
+    "label" : {
+      "IRI-based" : "service_id"
+    },
+    "domain" : "20",
+    "attributes" : [ "datatype" ],
+    "id" : "132"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasStop",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasStop"
+    },
+    "domain" : "11",
+    "attributes" : [ "object" ],
+    "id" : "133"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "119",
+    "label" : {
+      "IRI-based" : "wheelchair_accessible"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype" ],
+    "id" : "134"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#platform_code",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "platform_code"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "136"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "114",
+    "label" : {
+      "IRI-based" : "wheelchair_boarding"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "138"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#monday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "monday"
+    },
+    "domain" : "20",
+    "attributes" : [ "datatype" ],
+    "id" : "140"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasLevel",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "97",
+    "label" : {
+      "IRI-based" : "hasLevel"
+    },
+    "domain" : "2",
+    "attributes" : [ "object" ],
+    "id" : "141"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_lat",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "64",
+    "label" : {
+      "IRI-based" : "stop_lat"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "142"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#safe_duration_factor",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "86",
+    "label" : {
+      "IRI-based" : "safe_duration_factor"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype" ],
+    "id" : "143"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasRoute",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "hasRoute"
+    },
+    "domain" : "14",
+    "attributes" : [ "object" ],
+    "id" : "144"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "65",
+    "label" : {
+      "IRI-based" : "stop_id"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "145"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_timezone",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "139",
+    "label" : {
+      "IRI-based" : "agency_timezone"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "146"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#end_date",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "end_date"
+    },
+    "domain" : "20",
+    "attributes" : [ "datatype" ],
+    "id" : "147"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#wednesday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "120",
+    "label" : {
+      "IRI-based" : "wednesday"
+    },
+    "domain" : "20",
+    "attributes" : [ "datatype" ],
+    "id" : "148"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_name",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "137",
+    "label" : {
+      "IRI-based" : "agency_name"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "Full name of the transit agency."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "149"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#block_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "61",
+    "label" : {
+      "IRI-based" : "block_id"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype" ],
+    "id" : "150"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#location_type",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "33",
+    "label" : {
+      "IRI-based" : "location_type"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "151"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasTrip",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "hasTrip"
+    },
+    "domain" : "11",
+    "attributes" : [ "object" ],
+    "id" : "152"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_text_color",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "106",
+    "label" : {
+      "IRI-based" : "route_text_color"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "153"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "135",
+    "label" : {
+      "IRI-based" : "agency_id"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "154"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_short_name",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "103",
+    "label" : {
+      "IRI-based" : "route_short_name"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "155"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#tts_stop_name",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "118",
+    "label" : {
+      "IRI-based" : "tts_stop_name"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "156"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#trip_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "123",
+    "label" : {
+      "IRI-based" : "trip_id"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype" ],
+    "id" : "157"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_long_name",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "107",
+    "label" : {
+      "IRI-based" : "route_long_name"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "158"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#network_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "network_id"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "159"
+  } ]
+}

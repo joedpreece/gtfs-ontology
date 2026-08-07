@@ -1,0 +1,622 @@
+@prefix : <https://transit.ac.uk/ontologies/gtfs#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://transit.ac.uk/ontologies/gtfs#> .
+
+<https://transit.ac.uk/ontologies/gtfs> rdf:type owl:Ontology ;
+                                         owl:versionIRI <https://transit.ac.uk/ontologies/gtfs/0.1.0> ;
+                                         <http://purl.org/dc/terms/created> "2026-06-19"^^xsd:date ;
+                                         <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0> ;
+                                         <http://purl.org/dc/terms/source> <https://gtfs.org/documentation/overview/> ;
+                                         <http://purl.org/dc/terms/title> "A GTFS Application Ontology" ;
+                                         <http://purl.org/vocab/vann/preferredNamespacePrefix> "dvla" ;
+                                         <http://purl.org/vocab/vann/preferredNamespaceUri> <https://transit.ac.uk/ontologies/gtfs> ;
+                                         rdfs:label "gtfs"@en ;
+                                         owl:versionInfo "0.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#time
+xsd:time rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id
+:drop_off_booking_rule_id rdf:type owl:ObjectProperty ;
+                          rdfs:domain :StopTime ;
+                          rdfs:range :BookingRule .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#hasAgency
+:hasAgency rdf:type owl:ObjectProperty ;
+           rdfs:domain :Route ;
+           rdfs:range :Agency .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#hasLevel
+:hasLevel rdf:type owl:ObjectProperty ;
+          rdfs:domain :Stop ;
+          rdfs:range :Level .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             rdfs:domain :StopTime ;
+             rdfs:range :Location .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#hasLocationGroup
+:hasLocationGroup rdf:type owl:ObjectProperty ;
+                  rdfs:domain :StopTime ;
+                  rdfs:range :LocationGroup .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#hasRoute
+:hasRoute rdf:type owl:ObjectProperty ;
+          rdfs:domain :Trip ;
+          rdfs:range :Route .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#hasService
+:hasService rdf:type owl:ObjectProperty ;
+            rdfs:domain :Trip ;
+            rdfs:range :Service .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#hasShape
+:hasShape rdf:type owl:ObjectProperty ;
+          rdfs:domain :Trip ;
+          rdfs:range :Shape .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#hasStop
+:hasStop rdf:type owl:ObjectProperty ;
+         rdfs:domain :StopTime ;
+         rdfs:range :Stop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#hasTrip
+:hasTrip rdf:type owl:ObjectProperty ;
+         rdfs:domain :StopTime ;
+         rdfs:range :Trip .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#parent_station
+:parent_station rdf:type owl:ObjectProperty ;
+                rdfs:domain :Stop ;
+                rdfs:range :Stop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id
+:pickup_booking_rule_id rdf:type owl:ObjectProperty ;
+                        rdfs:domain :StopTime ;
+                        rdfs:range :BookingRule .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://transit.ac.uk/ontologies/gtfs#agency_email
+:agency_email rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Agency ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency."@en .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#agency_fare_url
+:agency_fare_url rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Agency ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares."@en .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#agency_id
+:agency_id rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Agency ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies."@en .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#agency_lang
+:agency_lang rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Agency ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."@en .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#agency_name
+:agency_name rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Agency ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Full name of the transit agency."@en .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#agency_phone
+:agency_phone rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Agency ;
+              rdfs:range xsd:string ;
+              rdfs:comment "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."@en .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#agency_timezone
+:agency_timezone rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Agency ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone."@en .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#agency_url
+:agency_url rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Agency ;
+            rdfs:range xsd:string ;
+            rdfs:comment "URL of the transit agency."@en .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#arrival_time
+:arrival_time rdf:type owl:DatatypeProperty ;
+              rdfs:domain :StopTime ;
+              rdfs:range xsd:time .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#bikes_allowed
+:bikes_allowed rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Trip ;
+               rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#block_id
+:block_id rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Trip ;
+          rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#cars_allowed
+:cars_allowed rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Trip ;
+              rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#cemv_support
+:cemv_support rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Agency
+                                          :Route
+                                        )
+                          ] ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media."@en .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#continuous_drop_off
+:continuous_drop_off rdf:type owl:DatatypeProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( :Route
+                                                 :StopTime
+                                               )
+                                 ] ;
+                     rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#continuous_pickup
+:continuous_pickup rdf:type owl:DatatypeProperty ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Route
+                                               :StopTime
+                                             )
+                               ] ;
+                   rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#date
+:date rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Service ;
+      rdfs:range xsd:date .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#departure_time
+:departure_time rdf:type owl:DatatypeProperty ;
+                rdfs:domain :StopTime ;
+                rdfs:range xsd:time .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#direction_id
+:direction_id rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Trip ;
+              rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#drop_off_type
+:drop_off_type rdf:type owl:DatatypeProperty ;
+               rdfs:domain :StopTime ;
+               rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#end_date
+:end_date rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Service ;
+          rdfs:range xsd:date .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window
+:end_pickup_drop_off_window rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :StopTime ;
+                            rdfs:range xsd:time .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#exception_type
+:exception_type rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Service ;
+                rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#friday
+:friday rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Service ;
+        rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#location_type
+:location_type rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Stop ;
+               rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#monday
+:monday rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Service ;
+        rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#network_id
+:network_id rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Route ;
+            rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#pickup_type
+:pickup_type rdf:type owl:DatatypeProperty ;
+             rdfs:domain :StopTime ;
+             rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#platform_code
+:platform_code rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Stop ;
+               rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#route_color
+:route_color rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Route ;
+             rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#route_desc
+:route_desc rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Route ;
+            rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#route_id
+:route_id rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Route ;
+          rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#route_long_name
+:route_long_name rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Route ;
+                 rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#route_short_name
+:route_short_name rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Route ;
+                  rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#route_sort_order
+:route_sort_order rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Route ;
+                  rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#route_text_color
+:route_text_color rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Route ;
+                  rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#route_type
+:route_type rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Route ;
+            rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#route_url
+:route_url rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Route ;
+           rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#safe_duration_factor
+:safe_duration_factor rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Trip ;
+                      rdfs:range xsd:decimal .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#safe_duration_offset
+:safe_duration_offset rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Trip ;
+                      rdfs:range xsd:decimal .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#saturday
+:saturday rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Service ;
+          rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#service_id
+:service_id rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Service ;
+            rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled
+:shape_dist_traveled rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :StopTime ;
+                     rdfs:range xsd:decimal .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#start_date
+:start_date rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Service ;
+            rdfs:range xsd:date .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window
+:start_pickup_drop_off_window rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :StopTime ;
+                              rdfs:range xsd:time .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#stop_access
+:stop_access rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Stop ;
+             rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#stop_code
+:stop_code rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Stop ;
+           rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#stop_desc
+:stop_desc rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Stop ;
+           rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#stop_headsign
+:stop_headsign rdf:type owl:DatatypeProperty ;
+               rdfs:domain :StopTime ;
+               rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#stop_id
+:stop_id rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Stop ;
+         rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#stop_lat
+:stop_lat rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Stop ;
+          rdfs:range xsd:decimal .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#stop_lon
+:stop_lon rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Stop ;
+          rdfs:range xsd:decimal .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#stop_name
+:stop_name rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Stop ;
+           rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#stop_sequence
+:stop_sequence rdf:type owl:DatatypeProperty ;
+               rdfs:domain :StopTime ;
+               rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#stop_timezone
+:stop_timezone rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Stop ;
+               rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#stop_url
+:stop_url rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Stop ;
+          rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#sunday
+:sunday rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Service ;
+        rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#thursday
+:thursday rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Service ;
+          rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#timepoint
+:timepoint rdf:type owl:DatatypeProperty ;
+           rdfs:domain :StopTime ;
+           rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#trip_headsign
+:trip_headsign rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Trip ;
+               rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#trip_id
+:trip_id rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Trip ;
+         rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#trip_short_name
+:trip_short_name rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Trip ;
+                 rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#tts_stop_name
+:tts_stop_name rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Stop ;
+               rdfs:range xsd:string .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#tuesday
+:tuesday rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Service ;
+         rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#wednesday
+:wednesday rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Service ;
+           rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible
+:wheelchair_accessible rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Trip ;
+                       rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding
+:wheelchair_boarding rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Stop ;
+                     rdfs:range xsd:integer .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#zone_id
+:zone_id rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Stop ;
+         rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://transit.ac.uk/ontologies/gtfs#Agency
+:Agency rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#BookingRule
+:BookingRule rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#Level
+:Level rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#LocationGroup
+:LocationGroup rdf:type owl:Class ;
+               rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#Route
+:Route rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#Service
+:Service rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#Shape
+:Shape rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#Stop
+:Stop rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#StopTime
+:StopTime rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#Trip
+:Trip rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
