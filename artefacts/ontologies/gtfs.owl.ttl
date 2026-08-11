@@ -48,7 +48,7 @@
 
 :arrival_time a owl:DatatypeProperty ;
     rdfs:domain :StopTime ;
-    rdfs:range xsd:time .
+    rdfs:range xsd:string .
 
 :bikes_allowed a owl:DatatypeProperty ;
     rdfs:domain :Trip ;
@@ -56,7 +56,7 @@
 
 :block_id a owl:DatatypeProperty ;
     rdfs:domain :Trip ;
-    rdfs:range xsd:integer .
+    rdfs:range xsd:string .
 
 :cars_allowed a owl:DatatypeProperty ;
     rdfs:domain :Trip ;
@@ -84,7 +84,7 @@
 
 :departure_time a owl:DatatypeProperty ;
     rdfs:domain :StopTime ;
-    rdfs:range xsd:time .
+    rdfs:range xsd:string .
 
 :direction_id a owl:DatatypeProperty ;
     rdfs:domain :Trip ;

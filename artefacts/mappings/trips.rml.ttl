@@ -1,0 +1,53 @@
+@prefix : <https://transit.ac.uk/mappings/gtfs#> .
+@prefix gtfs: <https://transit.ac.uk/ontologies/gtfs#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix sd: <https://w3id.org/okn/o/sd#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:TripMapping a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation rml:CSV ;
+            rml:source [ a sd:DatasetSpecification ;
+                    sd:name "trips.txt" ] ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "safe_duration_factor" ;
+                    rr:datatype xsd:decimal ] ;
+            rr:predicate gtfs:safe_duration_factor ],
+        [ rr:objectMap [ rml:reference "trip_short_name" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:trip_short_name ],
+        [ rr:objectMap [ rml:reference "safe_duration_offset" ;
+                    rr:datatype xsd:decimal ] ;
+            rr:predicate gtfs:safe_duration_offset ],
+        [ rr:objectMap [ rml:reference "trip_id" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:trip_id ],
+        [ rr:objectMap [ rml:reference "bikes_allowed" ;
+                    rr:datatype xsd:integer ] ;
+            rr:predicate gtfs:bikes_allowed ],
+        [ rr:objectMap [ rml:reference "trip_headsign" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:trip_headsign ],
+        [ rr:objectMap [ rr:template "https://transit.ac.uk/graphs/gtfs/Route/{route_id}" ;
+                    rr:termType rr:IRI ] ;
+            rr:predicate gtfs:hasRoute ],
+        [ rr:objectMap [ rml:reference "wheelchair_accessible" ;
+                    rr:datatype xsd:integer ] ;
+            rr:predicate gtfs:wheelchair_accessible ],
+        [ rr:objectMap [ rml:reference "block_id" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:block_id ],
+        [ rr:objectMap [ rr:template "https://transit.ac.uk/graphs/gtfs/Shape/{shape_id}" ;
+                    rr:termType rr:IRI ] ;
+            rr:predicate gtfs:hasShape ],
+        [ rr:objectMap [ rr:template "https://transit.ac.uk/graphs/gtfs/Service/{service_id}" ;
+                    rr:termType rr:IRI ] ;
+            rr:predicate gtfs:hasService ],
+        [ rr:objectMap [ rml:reference "direction_id" ;
+                    rr:datatype xsd:integer ] ;
+            rr:predicate gtfs:direction_id ],
+        [ rr:objectMap [ rml:reference "cars_allowed" ;
+                    rr:datatype xsd:integer ] ;
+            rr:predicate gtfs:cars_allowed ] ;
+    rr:subjectMap [ rr:class gtfs:Trip ;
+            rr:template "https://transit.ac.uk/graphs/gtfs/Trip/{trip_id}" ] .
+

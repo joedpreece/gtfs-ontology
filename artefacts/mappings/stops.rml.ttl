@@ -8,52 +8,52 @@
 :StopMapping a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation rml:CSV ;
             rml:source [ a sd:DatasetSpecification ;
-                    sd:name "stop.txt" ] ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rml:reference "stop_id" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:stop_id ],
-        [ rr:objectMap [ rml:reference "stop_url" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:stop_url ],
-        [ rr:objectMap [ rml:reference "stop_lon" ;
-                    rr:datatype xsd:decimal ] ;
-            rr:predicate gtfs:stop_lon ],
-        [ rr:objectMap [ rml:reference "stop_code" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:stop_code ],
-        [ rr:objectMap [ rml:reference "stop_name" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:stop_name ],
-        [ rr:objectMap [ rml:reference "stop_access" ;
+                    sd:name "stops.txt" ] ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "stop_access" ;
                     rr:datatype xsd:integer ] ;
             rr:predicate gtfs:stop_access ],
-        [ rr:objectMap [ rml:reference "platform_code" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:platform_code ],
-        [ rr:objectMap [ rml:reference "tts_stop_name" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:tts_stop_name ],
-        [ rr:objectMap [ rr:template "https://transit.ac.uk/graphs/gtfs/Stop/{stop_id}" ;
-                    rr:termType rr:IRI ] ;
-            rr:predicate gtfs:parent_station ],
-        [ rr:objectMap [ rml:reference "stop_desc" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:stop_desc ],
-        [ rr:objectMap [ rml:reference "stop_timezone" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:stop_timezone ],
-        [ rr:objectMap [ rml:reference "wheelchair_boarding" ;
-                    rr:datatype xsd:integer ] ;
-            rr:predicate gtfs:wheelchair_boarding ],
         [ rr:objectMap [ rr:template "https://transit.ac.uk/graphs/gtfs/Level/{level_id}" ;
                     rr:termType rr:IRI ] ;
             rr:predicate gtfs:hasLevel ],
+        [ rr:objectMap [ rml:reference "stop_url" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:stop_url ],
+        [ rr:objectMap [ rml:reference "platform_code" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:platform_code ],
+        [ rr:objectMap [ rml:reference "stop_timezone" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:stop_timezone ],
+        [ rr:objectMap [ rml:reference "stop_lon" ;
+                    rr:datatype xsd:decimal ] ;
+            rr:predicate gtfs:stop_lon ],
         [ rr:objectMap [ rml:reference "stop_lat" ;
                     rr:datatype xsd:decimal ] ;
             rr:predicate gtfs:stop_lat ],
+        [ rr:objectMap [ rml:reference "stop_desc" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:stop_desc ],
+        [ rr:objectMap [ rr:template "https://transit.ac.uk/graphs/gtfs/Stop/{stop_id}" ;
+                    rr:termType rr:IRI ] ;
+            rr:predicate gtfs:parent_station ],
+        [ rr:objectMap [ rml:reference "stop_name" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:stop_name ],
+        [ rr:objectMap [ rml:reference "stop_id" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:stop_id ],
         [ rr:objectMap [ rml:reference "zone_id" ;
                     rr:datatype xsd:string ] ;
             rr:predicate gtfs:zone_id ],
+        [ rr:objectMap [ rml:reference "tts_stop_name" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:tts_stop_name ],
+        [ rr:objectMap [ rml:reference "wheelchair_boarding" ;
+                    rr:datatype xsd:integer ] ;
+            rr:predicate gtfs:wheelchair_boarding ],
+        [ rr:objectMap [ rml:reference "stop_code" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:stop_code ],
         [ rr:objectMap [ rml:reference "location_type" ;
                     rr:datatype xsd:integer ] ;
             rr:predicate gtfs:location_type ] ;

@@ -1,0 +1,68 @@
+@prefix : <https://transit.ac.uk/mappings/gtfs#> .
+@prefix gtfs: <https://transit.ac.uk/ontologies/gtfs#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix sd: <https://w3id.org/okn/o/sd#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:StopTimeMapping a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation rml:CSV ;
+            rml:source [ a sd:DatasetSpecification ;
+                    sd:name "stop_times.txt" ] ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "https://transit.ac.uk/graphs/gtfs/BookingRule/{drop_off_booking_rule_id}" ;
+                    rr:termType rr:IRI ] ;
+            rr:predicate gtfs:drop_off_booking_rule_id ],
+        [ rr:objectMap [ rml:reference "timepoint" ;
+                    rr:datatype xsd:integer ] ;
+            rr:predicate gtfs:timepoint ],
+        [ rr:objectMap [ rr:template "https://transit.ac.uk/graphs/gtfs/Stop/{stop_id}" ;
+                    rr:termType rr:IRI ] ;
+            rr:predicate gtfs:hasStop ],
+        [ rr:objectMap [ rr:template "https://transit.ac.uk/graphs/gtfs/BookingRule/{pickup_booking_rule_id}" ;
+                    rr:termType rr:IRI ] ;
+            rr:predicate gtfs:pickup_booking_rule_id ],
+        [ rr:objectMap [ rml:reference "end_pickup_drop_off_window" ;
+                    rr:datatype xsd:time ] ;
+            rr:predicate gtfs:end_pickup_drop_off_window ],
+        [ rr:objectMap [ rml:reference "pickup_type" ;
+                    rr:datatype xsd:integer ] ;
+            rr:predicate gtfs:pickup_type ],
+        [ rr:objectMap [ rml:reference "drop_off_type" ;
+                    rr:datatype xsd:integer ] ;
+            rr:predicate gtfs:drop_off_type ],
+        [ rr:objectMap [ rml:reference "stop_headsign" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:stop_headsign ],
+        [ rr:objectMap [ rml:reference "stop_sequence" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:stop_sequence ],
+        [ rr:objectMap [ rml:reference "continuous_drop_off" ;
+                    rr:datatype xsd:integer ] ;
+            rr:predicate gtfs:continuous_drop_off ],
+        [ rr:objectMap [ rr:template "https://transit.ac.uk/graphs/gtfs/LocationGroup/{location_group_id}" ;
+                    rr:termType rr:IRI ] ;
+            rr:predicate gtfs:hasLocationGroup ],
+        [ rr:objectMap [ rml:reference "continuous_pickup" ;
+                    rr:datatype xsd:integer ] ;
+            rr:predicate gtfs:continuous_pickup ],
+        [ rr:objectMap [ rr:template "https://transit.ac.uk/graphs/gtfs/Location/{location_id}" ;
+                    rr:termType rr:IRI ] ;
+            rr:predicate gtfs:hasLocation ],
+        [ rr:objectMap [ rml:reference "trip_id" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:trip_id ],
+        [ rr:objectMap [ rml:reference "shape_dist_traveled" ;
+                    rr:datatype xsd:decimal ] ;
+            rr:predicate gtfs:shape_dist_traveled ],
+        [ rr:objectMap [ rml:reference "departure_time" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:departure_time ],
+        [ rr:objectMap [ rml:reference "arrival_time" ;
+                    rr:datatype xsd:string ] ;
+            rr:predicate gtfs:arrival_time ],
+        [ rr:objectMap [ rml:reference "start_pickup_drop_off_window" ;
+                    rr:datatype xsd:time ] ;
+            rr:predicate gtfs:start_pickup_drop_off_window ] ;
+    rr:subjectMap [ rr:class gtfs:Trip ;
+            rr:template "https://transit.ac.uk/graphs/gtfs/StopTime/{trip_id}_{stop_sequence}" ] .
+

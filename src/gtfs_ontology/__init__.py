@@ -31,11 +31,23 @@ ONTOLOGY_FILE = ONTOLOGIES_DIR / "gtfs.owl.ttl"
 
 AGENCY_FILE = DATA_DIR / "agency.txt"
 AGENCY_RML_FILE = MAPPINGS_DIR / "agency.rml.ttl"
-AGENCY_KG_FILE = GRAPHS_DIR / "agency.ttl"
+AGENCY_KG_FILE = GRAPHS_DIR / "agency.nt"
 
-STOP_FILE = DATA_DIR / "stop.txt"
-STOP_RML_FILE = MAPPINGS_DIR / "stop.rml.ttl"
-STOP_KG_FILE = GRAPHS_DIR / "stop.ttl"
+STOP_FILE = DATA_DIR / "stops.txt"
+STOP_RML_FILE = MAPPINGS_DIR / "stops.rml.ttl"
+STOP_KG_FILE = GRAPHS_DIR / "stops.nt"
+
+ROUTE_FILE = DATA_DIR / "routes.txt"
+ROUTE_RML_FILE = MAPPINGS_DIR / "routes.rml.ttl"
+ROUTE_KG_FILE = GRAPHS_DIR / "routes.nt"
+
+TRIP_FILE = DATA_DIR / "trips.txt"
+TRIP_RML_FILE = MAPPINGS_DIR / "trips.rml.ttl"
+TRIP_KG_FILE = GRAPHS_DIR / "trips.nt"
+
+STOP_TIME_FILE = DATA_DIR / "stop_times.txt"
+STOP_TIME_RML_FILE = MAPPINGS_DIR / "stop_times.rml.ttl"
+STOP_TIME_KG_FILE = GRAPHS_DIR / "stop_times.nt"
 
 # Namespaces
 ONTOLOGY_PREFIX = "gtfs"

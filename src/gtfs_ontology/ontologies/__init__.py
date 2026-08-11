@@ -289,7 +289,7 @@ with gtfs:
 
     class block_id(DataProperty):
         domain = [Trip]
-        range = [int]
+        range = [str]
 
     class hasShape(ObjectProperty):
         domain = [Trip]
@@ -323,11 +323,11 @@ with gtfs:
 
     class arrival_time(DataProperty):
         domain = [StopTime]
-        range = [datetime.time]
+        range = [str]
 
     class departure_time(DataProperty):
         domain = [StopTime]
-        range = [datetime.time]
+        range = [str]
 
     class hasStop(ObjectProperty):
         domain = [StopTime]
