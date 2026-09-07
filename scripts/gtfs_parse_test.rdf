@@ -1,0 +1,862 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/gtfs"
+         xmlns="http://example.org/gtfs#">
+
+<owl:Ontology rdf:about="http://example.org/gtfs"/>
+
+<owl:ObjectProperty rdf:about="#hasAgency">
+  <rdfs:range rdf:resource="#Agency"/>
+  <owl:inverseOf rdf:resource="#isAgencyOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isAgencyOf">
+  <rdfs:domain rdf:resource="#Agency"/>
+  <owl:inverseOf rdf:resource="#hasAgency"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasStop">
+  <rdfs:range rdf:resource="#Stop"/>
+  <owl:inverseOf rdf:resource="#isStopOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isStopOf">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <owl:inverseOf rdf:resource="#hasStop"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRoute">
+  <rdfs:range rdf:resource="#Route"/>
+  <owl:inverseOf rdf:resource="#isRouteOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isRouteOf">
+  <rdfs:domain rdf:resource="#Route"/>
+  <owl:inverseOf rdf:resource="#hasRoute"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTrip">
+  <rdfs:range rdf:resource="#Trip"/>
+  <owl:inverseOf rdf:resource="#isTripOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isTripOf">
+  <rdfs:domain rdf:resource="#Trip"/>
+  <owl:inverseOf rdf:resource="#hasTrip"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasStopTime">
+  <rdfs:range rdf:resource="#StopTime"/>
+  <owl:inverseOf rdf:resource="#isStopTimeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isStopTimeOf">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <owl:inverseOf rdf:resource="#hasStopTime"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCalendar">
+  <rdfs:range rdf:resource="#Calendar"/>
+  <owl:inverseOf rdf:resource="#isCalendarOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isCalendarOf">
+  <rdfs:domain rdf:resource="#Calendar"/>
+  <owl:inverseOf rdf:resource="#hasCalendar"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCalendarDate">
+  <rdfs:range rdf:resource="#CalendarDate"/>
+  <owl:inverseOf rdf:resource="#isCalendarDateOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isCalendarDateOf">
+  <rdfs:domain rdf:resource="#CalendarDate"/>
+  <owl:inverseOf rdf:resource="#hasCalendarDate"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFareAttribute">
+  <rdfs:range rdf:resource="#FareAttribute"/>
+  <owl:inverseOf rdf:resource="#isFareAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFareAttributeOf">
+  <rdfs:domain rdf:resource="#FareAttribute"/>
+  <owl:inverseOf rdf:resource="#hasFareAttribute"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFareRule">
+  <rdfs:range rdf:resource="#FareRule"/>
+  <owl:inverseOf rdf:resource="#isFareRuleOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFareRuleOf">
+  <rdfs:domain rdf:resource="#FareRule"/>
+  <owl:inverseOf rdf:resource="#hasFareRule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTimeframe">
+  <rdfs:range rdf:resource="#Timeframe"/>
+  <owl:inverseOf rdf:resource="#isTimeframeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isTimeframeOf">
+  <rdfs:domain rdf:resource="#Timeframe"/>
+  <owl:inverseOf rdf:resource="#hasTimeframe"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRiderCategory">
+  <rdfs:range rdf:resource="#RiderCategory"/>
+  <owl:inverseOf rdf:resource="#isRiderCategoryOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isRiderCategoryOf">
+  <rdfs:domain rdf:resource="#RiderCategory"/>
+  <owl:inverseOf rdf:resource="#hasRiderCategory"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFareMedia">
+  <rdfs:range rdf:resource="#FareMedia"/>
+  <owl:inverseOf rdf:resource="#isFareMediaOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFareMediaOf">
+  <rdfs:domain rdf:resource="#FareMedia"/>
+  <owl:inverseOf rdf:resource="#hasFareMedia"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFareProduct">
+  <rdfs:range rdf:resource="#FareProduct"/>
+  <owl:inverseOf rdf:resource="#isFareProductOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFareProductOf">
+  <rdfs:domain rdf:resource="#FareProduct"/>
+  <owl:inverseOf rdf:resource="#hasFareProduct"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFareLegRule">
+  <rdfs:range rdf:resource="#FareLegRule"/>
+  <owl:inverseOf rdf:resource="#isFareLegRuleOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFareLegRuleOf">
+  <rdfs:domain rdf:resource="#FareLegRule"/>
+  <owl:inverseOf rdf:resource="#hasFareLegRule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFareLegJoinRule">
+  <rdfs:range rdf:resource="#FareLegJoinRule"/>
+  <owl:inverseOf rdf:resource="#isFareLegJoinRuleOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFareLegJoinRuleOf">
+  <rdfs:domain rdf:resource="#FareLegJoinRule"/>
+  <owl:inverseOf rdf:resource="#hasFareLegJoinRule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFareTransferRule">
+  <rdfs:range rdf:resource="#FareTransferRule"/>
+  <owl:inverseOf rdf:resource="#isFareTransferRuleOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFareTransferRuleOf">
+  <rdfs:domain rdf:resource="#FareTransferRule"/>
+  <owl:inverseOf rdf:resource="#hasFareTransferRule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasArea">
+  <rdfs:range rdf:resource="#Area"/>
+  <owl:inverseOf rdf:resource="#isAreaOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isAreaOf">
+  <rdfs:domain rdf:resource="#Area"/>
+  <owl:inverseOf rdf:resource="#hasArea"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasStopArea">
+  <rdfs:range rdf:resource="#StopArea"/>
+  <owl:inverseOf rdf:resource="#isStopAreaOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isStopAreaOf">
+  <rdfs:domain rdf:resource="#StopArea"/>
+  <owl:inverseOf rdf:resource="#hasStopArea"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasNetwork">
+  <rdfs:range rdf:resource="#Network"/>
+  <owl:inverseOf rdf:resource="#isNetworkOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isNetworkOf">
+  <rdfs:domain rdf:resource="#Network"/>
+  <owl:inverseOf rdf:resource="#hasNetwork"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRouteNetwork">
+  <rdfs:range rdf:resource="#RouteNetwork"/>
+  <owl:inverseOf rdf:resource="#isRouteNetworkOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isRouteNetworkOf">
+  <rdfs:domain rdf:resource="#RouteNetwork"/>
+  <owl:inverseOf rdf:resource="#hasRouteNetwork"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasShape">
+  <rdfs:range rdf:resource="#Shape"/>
+  <owl:inverseOf rdf:resource="#isShapeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isShapeOf">
+  <rdfs:domain rdf:resource="#Shape"/>
+  <owl:inverseOf rdf:resource="#hasShape"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFrequency">
+  <rdfs:range rdf:resource="#Frequency"/>
+  <owl:inverseOf rdf:resource="#isFrequencyOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFrequencyOf">
+  <rdfs:domain rdf:resource="#Frequency"/>
+  <owl:inverseOf rdf:resource="#hasFrequency"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTransfer">
+  <rdfs:range rdf:resource="#Transfer"/>
+  <owl:inverseOf rdf:resource="#isTransferOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isTransferOf">
+  <rdfs:domain rdf:resource="#Transfer"/>
+  <owl:inverseOf rdf:resource="#hasTransfer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasPathway">
+  <rdfs:range rdf:resource="#Pathway"/>
+  <owl:inverseOf rdf:resource="#isPathwayOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isPathwayOf">
+  <rdfs:domain rdf:resource="#Pathway"/>
+  <owl:inverseOf rdf:resource="#hasPathway"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLevel">
+  <rdfs:range rdf:resource="#Level"/>
+  <owl:inverseOf rdf:resource="#isLevelOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isLevelOf">
+  <rdfs:domain rdf:resource="#Level"/>
+  <owl:inverseOf rdf:resource="#hasLevel"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLocationGroup">
+  <rdfs:range rdf:resource="#LocationGroup"/>
+  <owl:inverseOf rdf:resource="#isLocationGroupOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isLocationGroupOf">
+  <rdfs:domain rdf:resource="#LocationGroup"/>
+  <owl:inverseOf rdf:resource="#hasLocationGroup"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLocationGroupStop">
+  <rdfs:range rdf:resource="#LocationGroupStop"/>
+  <owl:inverseOf rdf:resource="#isLocationGroupStopOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isLocationGroupStopOf">
+  <rdfs:domain rdf:resource="#LocationGroupStop"/>
+  <owl:inverseOf rdf:resource="#hasLocationGroupStop"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLocation">
+  <rdfs:range rdf:resource="#Location"/>
+  <owl:inverseOf rdf:resource="#isLocationOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isLocationOf">
+  <rdfs:domain rdf:resource="#Location"/>
+  <owl:inverseOf rdf:resource="#hasLocation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasBookingRule">
+  <rdfs:range rdf:resource="#BookingRule"/>
+  <owl:inverseOf rdf:resource="#isBookingRuleOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isBookingRuleOf">
+  <rdfs:domain rdf:resource="#BookingRule"/>
+  <owl:inverseOf rdf:resource="#hasBookingRule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTranslation">
+  <rdfs:range rdf:resource="#Translation"/>
+  <owl:inverseOf rdf:resource="#isTranslationOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isTranslationOf">
+  <rdfs:domain rdf:resource="#Translation"/>
+  <owl:inverseOf rdf:resource="#hasTranslation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFeedInfo">
+  <rdfs:range rdf:resource="#FeedInfo"/>
+  <owl:inverseOf rdf:resource="#isFeedInfoOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFeedInfoOf">
+  <rdfs:domain rdf:resource="#FeedInfo"/>
+  <owl:inverseOf rdf:resource="#hasFeedInfo"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttribution">
+  <rdfs:range rdf:resource="#Attribution"/>
+  <owl:inverseOf rdf:resource="#isAttributionOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isAttributionOf">
+  <rdfs:domain rdf:resource="#Attribution"/>
+  <owl:inverseOf rdf:resource="#hasAttribution"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#agency_id">
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Agency for the specified route. Conditionally Required: - Required if multiple agencies are defined in agency.txt. - Recommended otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#agency_name">
+  <rdfs:domain rdf:resource="#Agency"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Full name of the transit agency.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#agency_url">
+  <rdfs:domain rdf:resource="#Agency"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URL of the transit agency.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#agency_timezone">
+  <rdfs:domain rdf:resource="#Agency"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#agency_lang">
+  <rdfs:domain rdf:resource="#Agency"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#agency_phone">
+  <rdfs:domain rdf:resource="#Agency"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's "503-238-RIDE") is permitted, but the field must not contain any other descriptive text.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#agency_fare_url">
+  <rdfs:domain rdf:resource="#Agency"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#agency_email">
+  <rdfs:domain rdf:resource="#Agency"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#cemv_support">
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates if riders can access a transit service (i.e., trip) associated with this route by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media. Support for cEMVs should only be indicated if all services under this route are accessible with the use of cEMV cards or mobile devices as fare media. Valid options are: 0 or empty - No cEMV information for trips associated with this route. 1 - Riders may use cEMVs as fare media for trips associated with this route. 2 - cEMVs are not supported as fare media for trips associated with this route. If both agency.cemv_support and routes.cemv_support are provided for the same service, the value in routes.cemv_support shall take precedence. This field is independent of all other fare-related files and may be used separately. If there is conflicting information between this field and any fare-related file (such as fare_media.txt, fare_products.txt, or fare_leg_rules.txt), the information in those files shall take precedence over agency.cemv_support.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop_id">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies the serviced stop. All stops serviced during a trip must have a record in stop_times.txt. Referenced locations must be stops/platforms, i.e. their stops.location_type value must be 0 or empty. A stop may be serviced multiple times in the same trip, and multiple trips and routes may service the same stop. On-demand service using stops should be referenced in the sequence in which service is available at those stops. A data consumer should assume that travel is possible from one stop or location to any stop or location later in the trip, provided that the pickup/drop_off_type of each stop_time and the time constraints of each start/end_pickup_drop_off_window do not forbid it. Conditionally Required: - Required if stop_times.location_group_id AND stop_times.location_id are NOT defined. - Forbidden if stop_times.location_group_id or stop_times.location_id are defined.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop_code">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Short text or a number that identifies the location for riders. These codes are often used in phone-based transit information systems or printed on signage to make it easier for riders to get information for a particular location. The stop_code may be the same as stop_id if it is public facing. This field should be left empty for locations without a code presented to riders.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop_name">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name of the location. The stop_name should match the agency's rider-facing name for the location as printed on a timetable, published online, or represented on signage. For translations into other languages, use translations.txt. When the location is a boarding area (location_type=4), the stop_name should contains the name of the boarding area as displayed by the agency. It could be just one letter (like on some European intercity railway stations), or text like “Wheelchair boarding area” (NYC’s Subway) or “Head of short trains” (Paris’ RER). Conditionally Required: - Required for locations which are stops (location_type=0), stations (location_type=1) or entrances/exits (location_type=2). - Optional for locations which are generic nodes (location_type=3) or boarding areas (location_type=4).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#tts_stop_name">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Readable version of the stop_name. See "Text-to-speech field" in the Term Definitions for more.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop_desc">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Description of the location that provides useful, quality information. Should not be a duplicate of stop_name.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop_lat">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Latitude of the location. For stops/platforms (location_type=0) and boarding area (location_type=4), the coordinates must be the ones of the bus pole — if exists — and otherwise of where the travelers are boarding the vehicle (on the sidewalk or the platform, and not on the roadway or the track where the vehicle stops). Conditionally Required: - Required for locations which are stops (location_type=0), stations (location_type=1) or entrances/exits (location_type=2). - Optional for locations which are generic nodes (location_type=3) or boarding areas (location_type=4).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop_lon">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Longitude of the location. For stops/platforms (location_type=0) and boarding area (location_type=4), the coordinates must be the ones of the bus pole — if exists — and otherwise of where the travelers are boarding the vehicle (on the sidewalk or the platform, and not on the roadway or the track where the vehicle stops). Conditionally Required: - Required for locations which are stops (location_type=0), stations (location_type=1) or entrances/exits (location_type=2). - Optional for locations which are generic nodes (location_type=3) or boarding areas (location_type=4).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#zone_id">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies the fare zone for a stop. If this record represents a station or station entrance, the zone_id is ignored.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop_url">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URL of a web page about the location. This should be different from the agency.agency_url and the routes.route_url field values.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#location_type">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Location type. Valid options are: 0 (or empty) - Stop (or Platform). A location where passengers board or disembark from a transit vehicle. Is called a platform when defined within a parent_station. 1 - Station. A physical structure or area that contains one or more platform. 2 - Entrance/Exit. A location where passengers can enter or exit a station from the street. If an entrance/exit belongs to multiple stations, it may be linked by pathways to both, but the data provider must pick one of them as parent. 3 - Generic Node. A location within a station, not matching any other location_type, that may be used to link together pathways define in pathways.txt. 4 - Boarding Area. A specific location on a platform, where passengers can board and/or alight vehicles.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#parent_station">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Defines hierarchy between the different locations defined in stops.txt. It contains the ID of the parent location, as followed: - Stop/platform (location_type=0): the parent_station field contains the ID of a station. - Station (location_type=1): this field must be empty. - Entrance/exit (location_type=2) or generic node (location_type=3): the parent_station field contains the ID of a station (location_type=1) - Boarding Area (location_type=4): the parent_station field contains ID of a platform. Conditionally Required: - Required for locations which are entrances (location_type=2), generic nodes (location_type=3) or boarding areas (location_type=4). - Optional for stops/platforms (location_type=0). - Forbidden for stations (location_type=1).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop_timezone">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Timezone of the location. If the location has a parent station, it inherits the parent station’s timezone instead of applying its own. Stations and parentless stops with empty stop_timezone inherit the timezone specified by agency.agency_timezone. The times provided in stop_times.txt are in the timezone specified by agency.agency_timezone, not stop_timezone. This ensures that the time values in a trip always increase over the course of a trip, regardless of which timezones the trip crosses.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#wheelchair_boarding">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether wheelchair boardings are possible from the location. Valid options are: For parentless stops: 0 or empty - No accessibility information for the stop. 1 - Some vehicles at this stop can be boarded by a rider in a wheelchair. 2 - Wheelchair boarding is not possible at this stop. For child stops: 0 or empty - Stop will inherit its wheelchair_boarding behavior from the parent station, if specified in the parent. 1 - There exists some accessible path from outside the station to the specific stop/platform. 2 - There exists no accessible path from outside the station to the specific stop/platform.  For station entrances/exits: 0 or empty - Station entrance will inherit its wheelchair_boarding behavior from the parent station, if specified for the parent. 1 - Station entrance is wheelchair accessible. 2 - No accessible path from station entrance to stops/platforms.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#level_id">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Level of the location. The same level may be used by multiple unlinked stations.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#platform_code">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Platform identifier for a platform stop (a stop belonging to a station). This should be just the platform identifier (eg. "G" or "3"). Words like “platform” or "track" (or the feed’s language-specific equivalent) should not be included. This allows feed consumers to more easily internationalize and localize the platform identifier into other languages.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop_access">
+  <rdfs:domain rdf:resource="#Stop"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates how the stop is accessed for a particular station. Valid options are: 0 - The stop/platform cannot be directly accessed from the street network. It must be accessed from a station entrance if there is one defined for the station, otherwise the station itself. If there are pathways defined for the station, they must be used to access the stop/platform. 1 - Consuming applications should generate directions for access directly to the stop, independent of any entrances or pathways of the parent station. When stop_access is empty, the access for the specified stop or platform is considered undefined. Conditionally Forbidden: - Forbidden for locations which are stations (location_type=1), entrances (location_type=2), generic nodes (location_type=3) or boarding areas (location_type=4). - Forbidden if parent_station is empty.  - Optional otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_id">
+  <rdfs:domain rdf:resource="#Trip"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies a route.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_short_name">
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Short name of a route. Often a short, abstract identifier (e.g., "32", "100X", "Green") that riders use to identify a route. Both route_short_name and route_long_name may be defined. Conditionally Required: - Required if routes.route_long_name is empty. - Recommended if there is a brief service designation. This should be the commonly-known passenger name of the service, and should be no longer than 12 characters.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_long_name">
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Full name of a route. This name is generally more descriptive than the route_short_name and often includes the route's destination or stop. Both route_short_name and route_long_name may be defined. Conditionally Required: - Required if routes.route_short_name is empty. - Optional otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_desc">
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Description of a route that provides useful, quality information. Should not be a duplicate of route_short_name or route_long_name. Example: "A" trains operate between Inwood-207 St, Manhattan and Far Rockaway-Mott Avenue, Queens at all times. Also from about 6AM until about midnight, additional "A" trains operate between Inwood-207 St and Lefferts Boulevard (trains typically alternate between Lefferts Blvd and Far Rockaway).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_type">
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the type of transportation used on a route. Valid options are: 0 - Tram, Streetcar, Light rail. Any light rail or street level system within a metropolitan area. 1 - Subway, Metro. Any underground rail system within a metropolitan area. 2 - Rail. Used for intercity or long-distance travel. 3 - Bus. Used for short- and long-distance bus routes. 4 - Ferry. Used for short- and long-distance boat service. 5 - Cable tram. Used for street-level rail cars where the cable runs beneath the vehicle (e.g., cable car in San Francisco). 6 - Aerial lift, suspended cable car (e.g., gondola lift, aerial tramway). Cable transport where cabins, cars, gondolas or open chairs are suspended by means of one or more cables. 7 - Funicular. Any rail system designed for steep inclines. 11 - Trolleybus. Electric buses that draw power from overhead wires using poles. 12 - Monorail. Railway in which the track consists of a single rail or a beam.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_url">
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URL of a web page about the particular route. Should be different from the agency.agency_url value.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_color">
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Route color designation that matches public facing material. Defaults to white (FFFFFF) when omitted or left empty. The color difference between route_color and route_text_color should provide sufficient contrast when viewed on a black and white screen.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_text_color">
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legible color to use for text drawn against a background of route_color. Defaults to black (000000) when omitted or left empty. The color difference between route_color and route_text_color should provide sufficient contrast when viewed on a black and white screen.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#route_sort_order">
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orders the routes in a way which is ideal for presentation to customers. Routes with smaller route_sort_order values should be displayed first.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#continuous_pickup">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that the rider can board the transit vehicle at any point along the vehicle’s travel path as described by shapes.txt, from this stop_time to the next stop_time in the trip’s stop_sequence. Valid options are: 0 - Continuous stopping pickup. 1 or empty - No continuous stopping pickup. 2 - Must phone agency to arrange continuous stopping pickup. 3 - Must coordinate with driver to arrange continuous stopping pickup. If this field is populated, it overrides any continuous pickup behavior defined in routes.txt. If this field is empty, the stop_time inherits any continuous pickup behavior defined in routes.txt. Conditionally Forbidden: - Any value other than 1 or empty is Forbidden if start_pickup_drop_off_window or end_pickup_drop_off_window are defined.  - Optional otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#continuous_drop_off">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that the rider can alight from the transit vehicle at any point along the vehicle’s travel path as described by shapes.txt, from this stop_time to the next stop_time in the trip’s stop_sequence. Valid options are: 0 - Continuous stopping drop off. 1 or empty - No continuous stopping drop off. 2 - Must phone agency to arrange continuous stopping drop off. 3 - Must coordinate with driver to arrange continuous stopping drop off. If this field is populated, it overrides any continuous drop-off behavior defined in routes.txt. If this field is empty, the stop_time inherits any continuous drop-off behavior defined in routes.txt. Conditionally Forbidden: - Any value other than 1 or empty is Forbidden if start_pickup_drop_off_window or end_pickup_drop_off_window are defined.  - Optional otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#network_id">
+  <rdfs:domain rdf:resource="#Route"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies a group of routes. Multiple rows in routes.txt may have the same network_id. Conditionally Forbidden: - Forbidden if the route_networks.txt or networks.txt file exists. - Optional otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#service_id">
+  <rdfs:domain rdf:resource="#CalendarDate"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies a set of dates when a service exception occurs for one or more routes. Each (service_id, date) pair may only appear once in calendar_dates.txt if using calendar.txt and calendar_dates.txt in conjunction. If a service_id value appears in both calendar.txt and calendar_dates.txt, the information in calendar_dates.txt modifies the service information specified in calendar.txt.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#trip_id">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies a trip.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#trip_headsign">
+  <rdfs:domain rdf:resource="#Trip"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Text that appears on signage identifying the trip's destination to riders. This field is recommended for all services with headsign text displayed on the vehicle which may be used to distinguish amongst trips in a route.  If the headsign changes during a trip, values for trip_headsign may be overridden by defining values in stop_times.stop_headsign for specific stop_times along the trip.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#trip_short_name">
+  <rdfs:domain rdf:resource="#Trip"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Public facing text used to identify the trip to riders, for instance, to identify train numbers for commuter rail trips. If riders do not commonly rely on trip names, trip_short_name should be empty. A trip_short_name value, if provided, should uniquely identify a trip within a service day; it should not be used for destination names or limited/express designations.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#direction_id">
+  <rdfs:domain rdf:resource="#Trip"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the direction of travel for a trip. This field should not be used in routing; it provides a way to separate trips by direction when publishing time tables. Valid options are: 0 - Travel in one direction (e.g. outbound travel). 1 - Travel in the opposite direction (e.g. inbound travel).Example: The trip_headsign and direction_id fields may be used together to assign a name to travel in each direction for a set of trips. A trips.txt file could contain these records for use in time tables: trip_id,...,trip_headsign,direction_id 1234,...,Airport,0 1505,...,Downtown,1</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#block_id">
+  <rdfs:domain rdf:resource="#Trip"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies the block to which the trip belongs. A block consists of a single trip or many sequential trips made using the same vehicle, defined by shared service days and block_id. A block_id may have trips with different service days, making distinct blocks. See the example below. To provide in-seat transfers information, transfers of transfer_type 4 should be provided instead.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#shape_id">
+  <rdfs:domain rdf:resource="#Trip"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies a geospatial shape describing the vehicle travel path for a trip. Conditionally Required: - Required if the trip has a continuous pickup or drop-off behavior defined either in routes.txt or in stop_times.txt. - Optional otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#wheelchair_accessible">
+  <rdfs:domain rdf:resource="#Trip"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates wheelchair accessibility. Valid options are: 0 or empty - No accessibility information for the trip. 1 - Vehicle being used on this particular trip can accommodate at least one rider in a wheelchair. 2 - No riders in wheelchairs can be accommodated on this trip.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#bikes_allowed">
+  <rdfs:domain rdf:resource="#Trip"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether bikes are allowed. Valid options are: 0 or empty - No bike information for the trip. 1 - Vehicle being used on this particular trip can accommodate at least one bicycle. 2 - No bicycles are allowed on this trip.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#cars_allowed">
+  <rdfs:domain rdf:resource="#Trip"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether cars are allowed. Valid options are: 0 or empty - No car information for the trip. 1 - Vehicle being used on this particular trip can accommodate at least one car. 2 - No cars are allowed on this trip.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#safe_duration_factor">
+  <rdfs:domain rdf:resource="#Trip"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Multiplier applied to travel time estimates calculated for on-demand trips. See "Calculating on-demand trip time estimates with safe duration fields" section below for guidance on how to use this and the safe_duration_offset fields.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#safe_duration_offset">
+  <rdfs:domain rdf:resource="#Trip"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fixed offset value in seconds applied to travel time estimates calculated for on-demand trips. See "Calculating on-demand trip time estimates with safe duration fields" section below for guidance on how to use this and the safe_duration_factor fields.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#arrival_time">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arrival time at the stop (defined by stop_times.stop_id) for a specific trip (defined by stop_times.trip_id) in the time zone specified by agency.agency_timezone, not stops.stop_timezone. If there are not separate times for arrival and departure at a stop, arrival_time and departure_time should be the same. For times occurring after midnight on the service day, enter the time as a value greater than 24:00:00 in HH:MM:SS.  If exact arrival and departure times (timepoint=1) are not available, estimated or interpolated arrival and departure times (timepoint=0) should be provided. Conditionally Required: - Required for the first and last stop in a trip (defined by stop_times.stop_sequence). - Required for timepoint=1. - Forbidden when start_pickup_drop_off_window or end_pickup_drop_off_window are defined. - Optional otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#departure_time">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Departure time from the stop (defined by stop_times.stop_id) for a specific trip (defined by stop_times.trip_id) in the time zone specified by agency.agency_timezone, not stops.stop_timezone. If there are not separate times for arrival and departure at a stop, arrival_time and departure_time should be the same. For times occurring after midnight on the service day, enter the time as a value greater than 24:00:00 in HH:MM:SS.  If exact arrival and departure times (timepoint=1) are not available, estimated or interpolated arrival and departure times (timepoint=0) should be provided. Conditionally Required: - Required for timepoint=1. - Forbidden when start_pickup_drop_off_window or end_pickup_drop_off_window are defined. - Optional otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#location_group_id">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies the serviced location group that indicates groups of stops where riders may request pickup or drop off. All location groups serviced during a trip must have a record in stop_times.txt. Multiple trips and routes may service the same location group. On-demand service using location groups should be referenced in the sequence in which service is available at those location groups. A data consumer should assume that travel is possible from one stop or location to any stop or location later in the trip, provided that the pickup/drop_off_type of each stop_time and the time constraints of each start/end_pickup_drop_off_window do not forbid it. Conditionally Forbidden: - Forbidden if stop_times.stop_id or stop_times.location_id are defined.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#location_id">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies the GeoJSON location that corresponds to serviced zone where riders may request pickup or drop off. All GeoJSON locations serviced during a trip must have a record in stop_times.txt. Multiple trips and routes may service the same GeoJSON location. On-demand service within locations should be referenced in the sequence in which service is available in those locations. A data consumer should assume that travel is possible from one stop or location to any stop or location later in the trip, provided that the pickup/drop_off_type of each stop_time and the time constraints of each start/end_pickup_drop_off_window do not forbid it. Conditionally Forbidden: - Forbidden if stop_times.stop_id or stop_times.location_group_id are defined.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop_sequence">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Order of stops, location groups, or GeoJSON locations for a particular trip. The values must increase along the trip but do not need to be consecutive.Example: The first location on the trip could have a stop_sequence=1, the second location on the trip could have a stop_sequence=23, the third location could have a stop_sequence=40, and so on. Travel within the same location group or GeoJSON location requires two records in stop_times.txt with the same location_group_id or location_id.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#stop_headsign">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Text that appears on signage identifying the trip's destination to riders. This field overrides the default trips.trip_headsign when the headsign changes between stops. If the headsign is displayed for an entire trip, trips.trip_headsign should be used instead. A stop_headsign value specified for one stop_time does not apply to subsequent stop_times in the same trip. If you want to override the trip_headsign for multiple stop_times in the same trip, the stop_headsign value must be repeated in each stop_time row.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#start_pickup_drop_off_window">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time that on-demand service becomes available in a GeoJSON location, location group, or stop. Conditionally Required: - Required if stop_times.location_group_id or stop_times.location_id is defined. - Required if end_pickup_drop_off_window is defined. - Forbidden if arrival_time or departure_time is defined. - Optional otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#end_pickup_drop_off_window">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time that on-demand service ends in a GeoJSON location, location group, or stop. Conditionally Required: - Required if stop_times.location_group_id or stop_times.location_id is defined. - Required if start_pickup_drop_off_window is defined. - Forbidden if arrival_time or departure_time is defined. - Optional otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#pickup_type">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates pickup method. Valid options are: 0 or empty - Regularly scheduled pickup. 1 - No pickup available. 2 - Must phone agency to arrange pickup. 3 - Must coordinate with driver to arrange pickup.  Conditionally Forbidden: - pickup_type=0 forbidden if start_pickup_drop_off_window or end_pickup_drop_off_window are defined.  - pickup_type=3 forbidden if start_pickup_drop_off_window or end_pickup_drop_off_window are defined.  - Optional otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#drop_off_type">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates drop off method. Valid options are: 0 or empty - Regularly scheduled drop off. 1 - No drop off available. 2 - Must phone agency to arrange drop off. 3 - Must coordinate with driver to arrange drop off.  Conditionally Forbidden:  - drop_off_type=0 forbidden if start_pickup_drop_off_window or end_pickup_drop_off_window are defined.  - Optional otherwise.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#shape_dist_traveled">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actual distance traveled along the associated shape, from the first stop to the stop specified in this record. This field specifies how much of the shape to draw between any two stops during a trip. Must be in the same units used in shapes.txt. Values used for shape_dist_traveled must increase along with stop_sequence; they must not be used to show reverse travel along a route. Recommended for routes that have looping or inlining (the vehicle crosses or travels over the same portion of alignment in one trip). See shapes.shape_dist_traveled. Example: If a bus travels a distance of 5.25 kilometers from the start of the shape to the stop,shape_dist_traveled=5.25.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#timepoint">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates if arrival and departure times for a stop are strictly adhered to by the vehicle or if they are instead approximate and/or interpolated times. This field allows a GTFS producer to provide interpolated stop-times, while indicating that the times are approximate. Valid options are: 0 - Times are considered approximate. 1 - Times are considered exact. All records of stop_times.txt with defined arrival or departure times should have timepoint values populated. If no timepoint values are provided, all times are considered exact.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#pickup_booking_rule_id">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies the boarding booking rule at this stop time. Recommended when pickup_type=2.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#drop_off_booking_rule_id">
+  <rdfs:domain rdf:resource="#StopTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies the alighting booking rule at this stop time. Recommended when drop_off_type=2.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#monday">
+  <rdfs:domain rdf:resource="#Calendar"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether the service operates on all Mondays in the date range specified by the start_date and end_date fields. Note that exceptions for particular dates may be listed in calendar_dates.txt. Valid options are: 1 - Service is available for all Mondays in the date range. 0 - Service is not available for Mondays in the date range.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#tuesday">
+  <rdfs:domain rdf:resource="#Calendar"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Functions in the same way as monday except applies to Tuesdays</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#wednesday">
+  <rdfs:domain rdf:resource="#Calendar"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Functions in the same way as monday except applies to Wednesdays</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#thursday">
+  <rdfs:domain rdf:resource="#Calendar"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Functions in the same way as monday except applies to Thursdays</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#friday">
+  <rdfs:domain rdf:resource="#Calendar"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Functions in the same way as monday except applies to Fridays</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#saturday">
+  <rdfs:domain rdf:resource="#Calendar"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Functions in the same way as monday except applies to Saturdays.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#sunday">
+  <rdfs:domain rdf:resource="#Calendar"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Functions in the same way as monday except applies to Sundays.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#start_date">
+  <rdfs:domain rdf:resource="#Calendar"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Start service day for the service interval.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#end_date">
+  <rdfs:domain rdf:resource="#Calendar"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">End service day for the service interval. This service day is included in the interval.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#date">
+  <rdfs:domain rdf:resource="#CalendarDate"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date when service exception occurs.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#exception_type">
+  <rdfs:domain rdf:resource="#CalendarDate"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether service is available on the date specified in the date field. Valid options are:  1 - Service has been added for the specified date. 2 - Service has been removed for the specified date.Example: Suppose a route has one set of trips available on holidays and another set of trips available on all other days. One service_id could correspond to the regular service schedule and another service_id could correspond to the holiday schedule. For a particular holiday, the calendar_dates.txt file could be used to add the holiday to the holiday service_id and to remove the holiday from the regular service_id schedule.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Agency">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transit agencies with service represented in this dataset.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Stop">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stops where vehicles pick up or drop off riders. Also defines stations and station entrances. Conditionally Required:  - Optional if demand-responsive zones are defined in locations.geojson. - Required otherwise.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Route">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transit routes. A route is a group of trips that are displayed to riders as a single service.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Trip">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trips for each route. A trip is a sequence of two or more stops that occur during a specific time period.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#StopTime">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Times that a vehicle arrives at and departs from stops for each trip.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Calendar">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Service dates specified using a weekly schedule with start and end dates. Conditionally Required:  - Required unless all dates of service are defined in calendar_dates.txt.  - Optional otherwise.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#CalendarDate">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exceptions for the services defined in the calendar.txt. Conditionally Required:  - Required if calendar.txt is omitted. In which case calendar_dates.txt must contain all dates of service. - Optional otherwise.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#FareAttribute">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fare information for a transit agency's routes.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#FareRule">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rules to apply fares for itineraries.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Timeframe">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date and time periods to use in fare rules for fares that depend on date and time factors.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RiderCategory">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Defines categories of riders (e.g. elderly, student).</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#FareMedia">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To describe the fare media that can be employed to use fare products. File fare_media.txt describes concepts that are not represented in fare_attributes.txt and fare_rules.txt. As such, the use of fare_media.txt is entirely separate from files fare_attributes.txt and fare_rules.txt.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#FareProduct">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To describe the different types of tickets or fares that can be purchased by riders. File fare_products.txt describes fare products that are not represented in fare_attributes.txt and fare_rules.txt. As such, the use of fare_products.txt is entirely separate from files fare_attributes.txt and fare_rules.txt.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#FareLegRule">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fare rules for individual legs of travel. File fare_leg_rules.txt provides a more detailed method for modeling fare structures. As such, the use of fare_leg_rules.txt is entirely separate from files fare_attributes.txt and fare_rules.txt.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#FareLegJoinRule">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rules for defining two or more legs should be considered as a single effective fare leg for the purposes of matching against rules in fare_leg_rules.txt</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#FareTransferRule">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fare rules for transfers between legs of travel. Along with fare_leg_rules.txt, file fare_transfer_rules.txt provides a more detailed method for modeling fare structures. As such, the use of fare_transfer_rules.txt is entirely separate from files fare_attributes.txt and fare_rules.txt.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Area">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Area grouping of locations.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#StopArea">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rules to assign stops to areas.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Network">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Network grouping of routes. Conditionally Forbidden: - Forbidden if network_id exists in routes.txt. - Optional otherwise.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RouteNetwork">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rules to assign routes to networks. Conditionally Forbidden: - Forbidden if network_id exists in routes.txt. - Optional otherwise.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Shape">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rules for mapping vehicle travel paths, sometimes referred to as route alignments.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Frequency">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Headway (time between trips) for headway-based service or a compressed representation of fixed-schedule service.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Transfer">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rules for making connections at transfer points between routes.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Pathway">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathways linking together locations within stations.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Level">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Levels within stations. Conditionally Required: - Required when describing pathways with elevators (pathway_mode=5). - Optional otherwise.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#LocationGroup">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group of stops that together indicate locations where a rider may request pickup or drop off.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#LocationGroupStop">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rules to assign stops to location groups.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Location">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zones for rider pickup or drop-off requests by on-demand services, represented as GeoJSON polygons.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#BookingRule">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Booking information for rider-requested services.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Translation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Translations of customer-facing dataset values.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#FeedInfo">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dataset metadata, including publisher, version, and expiration information. Conditionally Required: - Required if translations.txt is provided. - Recommended otherwise.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Attribution">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dataset attributions.</rdfs:comment>
+</owl:Class>
+
+
+</rdf:RDF>
