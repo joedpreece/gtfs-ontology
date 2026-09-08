@@ -67,12 +67,6 @@ xsd:time rdf:type rdfs:Datatype .
                           rdfs:range :BookingRule .
 
 
-###  https://transit.ac.uk/ontologies/gtfs#hasAgency
-:hasAgency rdf:type owl:ObjectProperty ;
-           rdfs:domain :Route ;
-           rdfs:range :Agency .
-
-
 ###  https://transit.ac.uk/ontologies/gtfs#hasLevel
 :hasLevel rdf:type owl:ObjectProperty ;
           rdfs:domain :Stop ;
@@ -89,6 +83,12 @@ xsd:time rdf:type rdfs:Datatype .
 :hasLocationGroup rdf:type owl:ObjectProperty ;
                   rdfs:domain :StopTime ;
                   rdfs:range :LocationGroup .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#hasParentStation
+:hasParentStation rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Stop ;
+                  rdfs:range :Stop .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#hasRoute
@@ -121,10 +121,22 @@ xsd:time rdf:type rdfs:Datatype .
          rdfs:range :Trip .
 
 
-###  https://transit.ac.uk/ontologies/gtfs#parent_station
-:parent_station rdf:type owl:ObjectProperty ;
-                rdfs:domain :Stop ;
-                rdfs:range :Stop .
+###  https://transit.ac.uk/ontologies/gtfs#isParentStationOf
+:isParentStationOf rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :hasParentStation ;
+                   rdfs:domain :Stop ;
+                   rdfs:range :Stop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#operatedBy
+:operatedBy rdf:type owl:ObjectProperty ;
+            owl:inverseOf :operatesRoute ;
+            rdfs:domain :Route ;
+            rdfs:range :Agency .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#operatesRoute
+:operatesRoute rdf:type owl:ObjectProperty .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id
@@ -141,62 +153,70 @@ xsd:time rdf:type rdfs:Datatype .
 :agency_email rdf:type owl:DatatypeProperty ;
               rdfs:domain :Agency ;
               rdfs:range xsd:string ;
-              rdfs:comment "Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency."@en .
+              rdfs:comment "Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency."@en ;
+              rdfs:label "agency email address"@en .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_fare_url
 :agency_fare_url rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Agency ;
                  rdfs:range xsd:string ;
-                 rdfs:comment "URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares."@en .
+                 rdfs:comment "URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares."@en ;
+                 rdfs:label "agency fare URL"@en .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_id
 :agency_id rdf:type owl:DatatypeProperty ;
            rdfs:domain :Agency ;
            rdfs:range xsd:string ;
-           rdfs:comment "Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies."@en .
+           rdfs:comment "Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies."@en ;
+           rdfs:label "agency ID"@en .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_lang
 :agency_lang rdf:type owl:DatatypeProperty ;
              rdfs:domain :Agency ;
              rdfs:range xsd:string ;
-             rdfs:comment "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."@en .
+             rdfs:comment "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."@en ;
+             rdfs:label "agency language"@en .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_name
 :agency_name rdf:type owl:DatatypeProperty ;
              rdfs:domain :Agency ;
              rdfs:range xsd:string ;
-             rdfs:comment "Full name of the transit agency."@en .
+             rdfs:comment "Full name of the transit agency."@en ;
+             rdfs:label "agency name"@en .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_phone
 :agency_phone rdf:type owl:DatatypeProperty ;
               rdfs:domain :Agency ;
               rdfs:range xsd:string ;
-              rdfs:comment "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."@en .
+              rdfs:comment "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."@en ;
+              rdfs:label "agency phone number"@en .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_timezone
 :agency_timezone rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Agency ;
                  rdfs:range xsd:string ;
-                 rdfs:comment "Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone."@en .
+                 rdfs:comment "Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone."@en ;
+                 rdfs:label "agency timezone"@en .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_url
 :agency_url rdf:type owl:DatatypeProperty ;
             rdfs:domain :Agency ;
             rdfs:range xsd:string ;
-            rdfs:comment "URL of the transit agency."@en .
+            rdfs:comment "URL of the transit agency."@en ;
+            rdfs:label "agency URL"@en .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#arrival_time
 :arrival_time rdf:type owl:DatatypeProperty ;
               rdfs:domain :StopTime ;
-              rdfs:range xsd:time .
+              rdfs:range xsd:string .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#bikes_allowed
@@ -208,7 +228,7 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#block_id
 :block_id rdf:type owl:DatatypeProperty ;
           rdfs:domain :Trip ;
-          rdfs:range xsd:integer .
+          rdfs:range xsd:string .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#cars_allowed
@@ -225,7 +245,8 @@ xsd:time rdf:type rdfs:Datatype .
                                         )
                           ] ;
               rdfs:range xsd:integer ;
-              rdfs:comment "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media."@en .
+              rdfs:comment "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media."@en ;
+              rdfs:label "CEMV Support"@en .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#continuous_drop_off
@@ -257,7 +278,7 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#departure_time
 :departure_time rdf:type owl:DatatypeProperty ;
                 rdfs:domain :StopTime ;
-                rdfs:range xsd:time .
+                rdfs:range xsd:string .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#direction_id
@@ -566,11 +587,33 @@ xsd:time rdf:type rdfs:Datatype .
 
 ###  https://transit.ac.uk/ontologies/gtfs#Agency
 :Agency rdf:type owl:Class ;
-        rdfs:subClassOf owl:Thing .
+        rdfs:subClassOf owl:Thing ;
+        owl:hasKey ( :agency_id
+                   ) .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#BookingRule
 :BookingRule rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#CalendarDateService
+:CalendarDateService rdf:type owl:Class ;
+                     rdfs:subClassOf :Service .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#CalendarService
+:CalendarService rdf:type owl:Class ;
+                 rdfs:subClassOf :Service .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#FareMedium
+:FareMedium rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#FareProduct
+:FareProduct rdf:type owl:Class ;
              rdfs:subClassOf owl:Thing .
 
 
@@ -617,6 +660,28 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#Trip
 :Trip rdf:type owl:Class ;
       rdfs:subClassOf owl:Thing .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Agency
+                :BookingRule
+                :CalendarDateService
+                :CalendarService
+                :Level
+                :Location
+                :LocationGroup
+                :Route
+                :Service
+                :Shape
+                :Stop
+                :StopTime
+                :Trip
+              )
+] .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -64,11 +64,6 @@
 <https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
 <https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#BookingRule> .
 # 
-# https://transit.ac.uk/ontologies/gtfs#hasAgency
-<https://transit.ac.uk/ontologies/gtfs#hasAgency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://transit.ac.uk/ontologies/gtfs#hasAgency> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
-<https://transit.ac.uk/ontologies/gtfs#hasAgency> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Agency> .
-# 
 # https://transit.ac.uk/ontologies/gtfs#hasLevel
 <https://transit.ac.uk/ontologies/gtfs#hasLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://transit.ac.uk/ontologies/gtfs#hasLevel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
@@ -83,6 +78,11 @@
 <https://transit.ac.uk/ontologies/gtfs#hasLocationGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://transit.ac.uk/ontologies/gtfs#hasLocationGroup> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
 <https://transit.ac.uk/ontologies/gtfs#hasLocationGroup> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#LocationGroup> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#hasParentStation
+<https://transit.ac.uk/ontologies/gtfs#hasParentStation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#hasParentStation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#hasParentStation> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Stop> .
 # 
 # https://transit.ac.uk/ontologies/gtfs#hasRoute
 <https://transit.ac.uk/ontologies/gtfs#hasRoute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -109,10 +109,20 @@
 <https://transit.ac.uk/ontologies/gtfs#hasTrip> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
 <https://transit.ac.uk/ontologies/gtfs#hasTrip> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Trip> .
 # 
-# https://transit.ac.uk/ontologies/gtfs#parent_station
-<https://transit.ac.uk/ontologies/gtfs#parent_station> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://transit.ac.uk/ontologies/gtfs#parent_station> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
-<https://transit.ac.uk/ontologies/gtfs#parent_station> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+# https://transit.ac.uk/ontologies/gtfs#isParentStationOf
+<https://transit.ac.uk/ontologies/gtfs#isParentStationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#isParentStationOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://transit.ac.uk/ontologies/gtfs#hasParentStation> .
+<https://transit.ac.uk/ontologies/gtfs#isParentStationOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+<https://transit.ac.uk/ontologies/gtfs#isParentStationOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#operatedBy
+<https://transit.ac.uk/ontologies/gtfs#operatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://transit.ac.uk/ontologies/gtfs#operatedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://transit.ac.uk/ontologies/gtfs#operatesRoute> .
+<https://transit.ac.uk/ontologies/gtfs#operatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Route> .
+<https://transit.ac.uk/ontologies/gtfs#operatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://transit.ac.uk/ontologies/gtfs#Agency> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#operatesRoute
+<https://transit.ac.uk/ontologies/gtfs#operatesRoute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 # 
 # https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id
 <https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -133,53 +143,61 @@
 <https://transit.ac.uk/ontologies/gtfs#agency_email> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
 <https://transit.ac.uk/ontologies/gtfs#agency_email> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://transit.ac.uk/ontologies/gtfs#agency_email> <http://www.w3.org/2000/01/rdf-schema#comment> "Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency."@en .
+<https://transit.ac.uk/ontologies/gtfs#agency_email> <http://www.w3.org/2000/01/rdf-schema#label> "agency email address"@en .
 # 
 # https://transit.ac.uk/ontologies/gtfs#agency_fare_url
 <https://transit.ac.uk/ontologies/gtfs#agency_fare_url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://transit.ac.uk/ontologies/gtfs#agency_fare_url> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
 <https://transit.ac.uk/ontologies/gtfs#agency_fare_url> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://transit.ac.uk/ontologies/gtfs#agency_fare_url> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares."@en .
+<https://transit.ac.uk/ontologies/gtfs#agency_fare_url> <http://www.w3.org/2000/01/rdf-schema#label> "agency fare URL"@en .
 # 
 # https://transit.ac.uk/ontologies/gtfs#agency_id
 <https://transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
 <https://transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies."@en .
+<https://transit.ac.uk/ontologies/gtfs#agency_id> <http://www.w3.org/2000/01/rdf-schema#label> "agency ID"@en .
 # 
 # https://transit.ac.uk/ontologies/gtfs#agency_lang
 <https://transit.ac.uk/ontologies/gtfs#agency_lang> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://transit.ac.uk/ontologies/gtfs#agency_lang> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
 <https://transit.ac.uk/ontologies/gtfs#agency_lang> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://transit.ac.uk/ontologies/gtfs#agency_lang> <http://www.w3.org/2000/01/rdf-schema#comment> "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."@en .
+<https://transit.ac.uk/ontologies/gtfs#agency_lang> <http://www.w3.org/2000/01/rdf-schema#label> "agency language"@en .
 # 
 # https://transit.ac.uk/ontologies/gtfs#agency_name
 <https://transit.ac.uk/ontologies/gtfs#agency_name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://transit.ac.uk/ontologies/gtfs#agency_name> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
 <https://transit.ac.uk/ontologies/gtfs#agency_name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://transit.ac.uk/ontologies/gtfs#agency_name> <http://www.w3.org/2000/01/rdf-schema#comment> "Full name of the transit agency."@en .
+<https://transit.ac.uk/ontologies/gtfs#agency_name> <http://www.w3.org/2000/01/rdf-schema#label> "agency name"@en .
 # 
 # https://transit.ac.uk/ontologies/gtfs#agency_phone
 <https://transit.ac.uk/ontologies/gtfs#agency_phone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://transit.ac.uk/ontologies/gtfs#agency_phone> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
 <https://transit.ac.uk/ontologies/gtfs#agency_phone> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://transit.ac.uk/ontologies/gtfs#agency_phone> <http://www.w3.org/2000/01/rdf-schema#comment> "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."@en .
+<https://transit.ac.uk/ontologies/gtfs#agency_phone> <http://www.w3.org/2000/01/rdf-schema#label> "agency phone number"@en .
 # 
 # https://transit.ac.uk/ontologies/gtfs#agency_timezone
 <https://transit.ac.uk/ontologies/gtfs#agency_timezone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://transit.ac.uk/ontologies/gtfs#agency_timezone> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
 <https://transit.ac.uk/ontologies/gtfs#agency_timezone> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://transit.ac.uk/ontologies/gtfs#agency_timezone> <http://www.w3.org/2000/01/rdf-schema#comment> "Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone."@en .
+<https://transit.ac.uk/ontologies/gtfs#agency_timezone> <http://www.w3.org/2000/01/rdf-schema#label> "agency timezone"@en .
 # 
 # https://transit.ac.uk/ontologies/gtfs#agency_url
 <https://transit.ac.uk/ontologies/gtfs#agency_url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://transit.ac.uk/ontologies/gtfs#agency_url> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Agency> .
 <https://transit.ac.uk/ontologies/gtfs#agency_url> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://transit.ac.uk/ontologies/gtfs#agency_url> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of the transit agency."@en .
+<https://transit.ac.uk/ontologies/gtfs#agency_url> <http://www.w3.org/2000/01/rdf-schema#label> "agency URL"@en .
 # 
 # https://transit.ac.uk/ontologies/gtfs#arrival_time
 <https://transit.ac.uk/ontologies/gtfs#arrival_time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://transit.ac.uk/ontologies/gtfs#arrival_time> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
-<https://transit.ac.uk/ontologies/gtfs#arrival_time> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#time> .
+<https://transit.ac.uk/ontologies/gtfs#arrival_time> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 # 
 # https://transit.ac.uk/ontologies/gtfs#bikes_allowed
 <https://transit.ac.uk/ontologies/gtfs#bikes_allowed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -189,7 +207,7 @@
 # https://transit.ac.uk/ontologies/gtfs#block_id
 <https://transit.ac.uk/ontologies/gtfs#block_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://transit.ac.uk/ontologies/gtfs#block_id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#Trip> .
-<https://transit.ac.uk/ontologies/gtfs#block_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://transit.ac.uk/ontologies/gtfs#block_id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 # 
 # https://transit.ac.uk/ontologies/gtfs#cars_allowed
 <https://transit.ac.uk/ontologies/gtfs#cars_allowed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -209,6 +227,7 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://transit.ac.uk/ontologies/gtfs#cemv_support> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
 <https://transit.ac.uk/ontologies/gtfs#cemv_support> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media."@en .
+<https://transit.ac.uk/ontologies/gtfs#cemv_support> <http://www.w3.org/2000/01/rdf-schema#label> "CEMV Support"@en .
 # 
 # https://transit.ac.uk/ontologies/gtfs#continuous_drop_off
 <https://transit.ac.uk/ontologies/gtfs#continuous_drop_off> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -244,7 +263,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://transit.ac.uk/ontologies/gtfs#departure_time
 <https://transit.ac.uk/ontologies/gtfs#departure_time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://transit.ac.uk/ontologies/gtfs#departure_time> <http://www.w3.org/2000/01/rdf-schema#domain> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
-<https://transit.ac.uk/ontologies/gtfs#departure_time> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#time> .
+<https://transit.ac.uk/ontologies/gtfs#departure_time> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 # 
 # https://transit.ac.uk/ontologies/gtfs#direction_id
 <https://transit.ac.uk/ontologies/gtfs#direction_id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -508,10 +527,30 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://transit.ac.uk/ontologies/gtfs#Agency
 <https://transit.ac.uk/ontologies/gtfs#Agency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://transit.ac.uk/ontologies/gtfs#Agency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://transit.ac.uk/ontologies/gtfs#Agency> <http://www.w3.org/2002/07/owl#hasKey> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#agency_id> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 # 
 # https://transit.ac.uk/ontologies/gtfs#BookingRule
 <https://transit.ac.uk/ontologies/gtfs#BookingRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://transit.ac.uk/ontologies/gtfs#BookingRule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#CalendarDateService
+<https://transit.ac.uk/ontologies/gtfs#CalendarDateService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#CalendarDateService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://transit.ac.uk/ontologies/gtfs#Service> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#CalendarService
+<https://transit.ac.uk/ontologies/gtfs#CalendarService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#CalendarService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://transit.ac.uk/ontologies/gtfs#Service> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#FareMedium
+<https://transit.ac.uk/ontologies/gtfs#FareMedium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#FareMedium> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# https://transit.ac.uk/ontologies/gtfs#FareProduct
+<https://transit.ac.uk/ontologies/gtfs#FareProduct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://transit.ac.uk/ontologies/gtfs#FareProduct> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
 # 
 # https://transit.ac.uk/ontologies/gtfs#Level
 <https://transit.ac.uk/ontologies/gtfs#Level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -548,5 +587,56 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://transit.ac.uk/ontologies/gtfs#Trip
 <https://transit.ac.uk/ontologies/gtfs#Trip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://transit.ac.uk/ontologies/gtfs#Trip> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid11 <http://www.w3.org/2002/07/owl#members> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#Trip> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#StopTime> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#Stop> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#Shape> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#Service> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#Route> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#LocationGroup> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#Location> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#Level> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#CalendarService> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#CalendarDateService> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#BookingRule> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://transit.ac.uk/ontologies/gtfs#Agency> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

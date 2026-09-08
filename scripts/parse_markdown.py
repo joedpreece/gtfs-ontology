@@ -50,10 +50,18 @@ def rename2(
 ):
     for name, field_type, presence, description in fields:
 
-        prop = types.new_class(name, (DataProperty,))
 
-        prop.domain = [onto[class_name]]
-        prop.comment = [description]
+        if name == "parent_station":
+            prop = types.new_class("hasParentStation", (DataProperty,))
+            prop.domain = [onto[class_name]]
+            prop.comment = [description]
+
+        else:
+
+            prop = types.new_class(name, (DataProperty,))
+
+            prop.domain = [onto[class_name]]
+            prop.comment = [description]
 
 
 from owlready2 import *

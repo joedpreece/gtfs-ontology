@@ -6,42 +6,62 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+dcterms:created a owl:AnnotationProperty .
+
+dcterms:license a owl:AnnotationProperty .
+
+dcterms:source a owl:AnnotationProperty .
+
+dcterms:title a owl:AnnotationProperty .
+
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+
+:FareMedium a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:FareProduct a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
 :agency_email a owl:DatatypeProperty ;
+    rdfs:label "agency email address"@en ;
     rdfs:comment "Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency."@en ;
     rdfs:domain :Agency ;
     rdfs:range xsd:string .
 
 :agency_fare_url a owl:DatatypeProperty ;
+    rdfs:label "agency fare URL"@en ;
     rdfs:comment "URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares."@en ;
     rdfs:domain :Agency ;
     rdfs:range xsd:string .
 
-:agency_id a owl:DatatypeProperty ;
-    rdfs:comment "Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies."@en ;
-    rdfs:domain :Agency ;
-    rdfs:range xsd:string .
-
 :agency_lang a owl:DatatypeProperty ;
+    rdfs:label "agency language"@en ;
     rdfs:comment "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."@en ;
     rdfs:domain :Agency ;
     rdfs:range xsd:string .
 
 :agency_name a owl:DatatypeProperty ;
+    rdfs:label "agency name"@en ;
     rdfs:comment "Full name of the transit agency."@en ;
     rdfs:domain :Agency ;
     rdfs:range xsd:string .
 
 :agency_phone a owl:DatatypeProperty ;
+    rdfs:label "agency phone number"@en ;
     rdfs:comment "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."@en ;
     rdfs:domain :Agency ;
     rdfs:range xsd:string .
 
 :agency_timezone a owl:DatatypeProperty ;
+    rdfs:label "agency timezone"@en ;
     rdfs:comment "Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone."@en ;
     rdfs:domain :Agency ;
     rdfs:range xsd:string .
 
 :agency_url a owl:DatatypeProperty ;
+    rdfs:label "agency URL"@en ;
     rdfs:comment "URL of the transit agency."@en ;
     rdfs:domain :Agency ;
     rdfs:range xsd:string .
@@ -63,6 +83,7 @@
     rdfs:range xsd:integer .
 
 :cemv_support a owl:DatatypeProperty ;
+    rdfs:label "CEMV Support"@en ;
     rdfs:comment "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media."@en ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( :Agency :Route ) ] ;
@@ -114,10 +135,6 @@
     rdfs:domain :Service ;
     rdfs:range xsd:integer .
 
-:hasAgency a owl:ObjectProperty ;
-    rdfs:domain :Route ;
-    rdfs:range :Agency .
-
 :hasLevel a owl:ObjectProperty ;
     rdfs:domain :Stop ;
     rdfs:range :Level .
@@ -161,10 +178,6 @@
 :network_id a owl:DatatypeProperty ;
     rdfs:domain :Route ;
     rdfs:range xsd:integer .
-
-:parent_station a owl:ObjectProperty ;
-    rdfs:domain :Stop ;
-    rdfs:range :Stop .
 
 :pickup_booking_rule_id a owl:ObjectProperty ;
     rdfs:domain :StopTime ;
@@ -345,6 +358,38 @@
     owl:versionIRI <https://transit.ac.uk/ontologies/gtfs/0.1.0> ;
     owl:versionInfo "0.1.0" .
 
+:CalendarDateService a owl:Class ;
+    rdfs:subClassOf :Service .
+
+:CalendarService a owl:Class ;
+    rdfs:subClassOf :Service .
+
+:agency_id a owl:DatatypeProperty ;
+    rdfs:label "agency ID"@en ;
+    rdfs:comment "Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies."@en ;
+    rdfs:domain :Agency ;
+    rdfs:range xsd:string .
+
+:hasParentStation a owl:ObjectProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range :Stop ;
+    owl:inverseOf :isParentStationOf .
+
+:isParentStationOf a owl:ObjectProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range :Stop ;
+    owl:inverseOf :hasParentStation .
+
+:operatedBy a owl:ObjectProperty ;
+    rdfs:domain :Route ;
+    rdfs:range :Agency ;
+    owl:inverseOf :operatesRoute .
+
+:operatesRoute a owl:ObjectProperty ;
+    owl:inverseOf :operatedBy .
+
+xsd:time a rdfs:Datatype .
+
 :Level a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
@@ -357,14 +402,14 @@
 :Shape a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
+xsd:date a rdfs:Datatype .
+
 :BookingRule a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
 :Agency a owl:Class ;
-    rdfs:subClassOf owl:Thing .
-
-:Service a owl:Class ;
-    rdfs:subClassOf owl:Thing .
+    rdfs:subClassOf owl:Thing ;
+    owl:hasKey ( :agency_id ) .
 
 :Trip a owl:Class ;
     rdfs:subClassOf owl:Thing .
@@ -372,9 +417,15 @@
 :Route a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
-:Stop a owl:Class ;
+:Service a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
 :StopTime a owl:Class ;
     rdfs:subClassOf owl:Thing .
+
+:Stop a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Agency :Stop :Route :Trip :StopTime :Service :CalendarService :CalendarDateService :Level :Shape :LocationGroup :Location :BookingRule ) .
 

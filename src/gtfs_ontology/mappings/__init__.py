@@ -12,7 +12,7 @@ from gtfs_ontology.ontologies import Agency, agency_id, agency_name, agency_url,
     location_type, parent_station, stop_timezone, wheelchair_boarding, platform_code, \
     stop_access, hasLevel, Route, route_id, route_short_name, route_long_name, \
     route_desc, route_type, route_url, route_color, route_text_color, route_sort_order, \
-    continuous_pickup, continuous_drop_off, network_id, hasAgency, hasRoute, hasService, \
+    continuous_pickup, continuous_drop_off, network_id, operatedBy, hasRoute, hasService, \
     hasShape, trip_headsign, trip_short_name, direction_id, block_id, \
     wheelchair_accessible, bikes_allowed, cars_allowed, safe_duration_factor, \
     safe_duration_offset, trip_id, Trip, hasStop, hasLocation, hasLocationGroup, \
@@ -255,7 +255,7 @@ def build_route_mapping():
     ]
 
     object_properties = [
-        (hasAgency, f"{gtfs_kg_iri}/Agency/{{agency_id}}"),
+        (operatedBy, f"{gtfs_kg_iri}/Agency/{{agency_id}}"),
     ]
 
     for column_name, data_property in data_properties:

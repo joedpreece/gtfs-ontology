@@ -5,6 +5,10 @@ This section provides details for each class and property defined by gtfs.
  <ul class="hlist">
   <li><a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency"> <span>Agency</span> </a></li>
   <li><a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule"> <span>Booking Rule</span> </a></li>
+  <li><a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService"> <span>Calendar Date Service</span> </a></li>
+  <li><a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService"> <span>Calendar Service</span> </a></li>
+  <li><a href="#FareMedium" title="https://transit.ac.uk/ontologies/gtfs#FareMedium"> <span>Fare Medium</span> </a></li>
+  <li><a href="#FareProduct" title="https://transit.ac.uk/ontologies/gtfs#FareProduct"> <span>Fare Product</span> </a></li>
   <li><a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level"> <span>Level</span> </a></li>
   <li><a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location"> <span>Location</span> </a></li>
   <li><a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup"> <span>Location Group</span> </a></li>
@@ -29,13 +33,25 @@ This section provides details for each class and property defined by gtfs.
     is in domain of
    </dt>
    <dd>
-    <a href="#agency_email" title="https://transit.ac.uk/ontologies/gtfs#agency_email">agency email</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_fare_url" title="https://transit.ac.uk/ontologies/gtfs#agency_fare_url">agency fare url</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_id" title="https://transit.ac.uk/ontologies/gtfs#agency_id">agency id</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_lang" title="https://transit.ac.uk/ontologies/gtfs#agency_lang">agency lang</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_name" title="https://transit.ac.uk/ontologies/gtfs#agency_name">agency name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_phone" title="https://transit.ac.uk/ontologies/gtfs#agency_phone">agency phone</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_timezone" title="https://transit.ac.uk/ontologies/gtfs#agency_timezone">agency timezone</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_url" title="https://transit.ac.uk/ontologies/gtfs#agency_url">agency url</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#cemv_support" title="https://transit.ac.uk/ontologies/gtfs#cemv_support">cemv support</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#cemv_support" title="https://transit.ac.uk/ontologies/gtfs#cemv_support">CEMV Support</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_id" title="https://transit.ac.uk/ontologies/gtfs#agency_id">agency ID</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_url" title="https://transit.ac.uk/ontologies/gtfs#agency_url">agency URL</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_email" title="https://transit.ac.uk/ontologies/gtfs#agency_email">agency email address</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_fare_url" title="https://transit.ac.uk/ontologies/gtfs#agency_fare_url">agency fare URL</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_lang" title="https://transit.ac.uk/ontologies/gtfs#agency_lang">agency language</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_name" title="https://transit.ac.uk/ontologies/gtfs#agency_name">agency name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_phone" title="https://transit.ac.uk/ontologies/gtfs#agency_phone">agency phone number</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#agency_timezone" title="https://transit.ac.uk/ontologies/gtfs#agency_timezone">agency timezone</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#hasAgency" title="https://transit.ac.uk/ontologies/gtfs#hasAgency">has Agency</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#operatedBy" title="https://transit.ac.uk/ontologies/gtfs#operatedBy">operated By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has keys
+   </dt>
+   <dd>
+    <a href="#agency_id" title="https://transit.ac.uk/ontologies/gtfs#agency_id">agency ID</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -55,6 +71,72 @@ This section provides details for each class and property defined by gtfs.
    <dd>
     <a href="#drop_off_booking_rule_id" title="https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id">drop off booking rule id</a> <sup class="type-op" title="object property">op</sup>, <a href="#pickup_booking_rule_id" title="https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id">pickup booking rule id</a> <sup class="type-op" title="object property">op</sup>
    </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CalendarDateService">
+  <h3>Calendar Date Service<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#CalendarDateService</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CalendarService">
+  <h3>Calendar Service<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#CalendarService</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FareMedium">
+  <h3>Fare Medium<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#FareMedium</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FareProduct">
+  <h3>Fare Product<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#FareProduct</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="Level">
@@ -72,6 +154,12 @@ This section provides details for each class and property defined by gtfs.
    </dt>
    <dd>
     <a href="#hasLevel" title="https://transit.ac.uk/ontologies/gtfs#hasLevel">has Level</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -91,6 +179,12 @@ This section provides details for each class and property defined by gtfs.
    <dd>
     <a href="#hasLocation" title="https://transit.ac.uk/ontologies/gtfs#hasLocation">has Location</a> <sup class="type-op" title="object property">op</sup>
    </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="LocationGroup">
@@ -109,6 +203,12 @@ This section provides details for each class and property defined by gtfs.
    <dd>
     <a href="#hasLocationGroup" title="https://transit.ac.uk/ontologies/gtfs#hasLocationGroup">has Location Group</a> <sup class="type-op" title="object property">op</sup>
    </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="Route">
@@ -125,13 +225,19 @@ This section provides details for each class and property defined by gtfs.
     is in domain of
    </dt>
    <dd>
-    <a href="#cemv_support" title="https://transit.ac.uk/ontologies/gtfs#cemv_support">cemv support</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#continuous_drop_off" title="https://transit.ac.uk/ontologies/gtfs#continuous_drop_off">continuous drop off</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#continuous_pickup" title="https://transit.ac.uk/ontologies/gtfs#continuous_pickup">continuous pickup</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasAgency" title="https://transit.ac.uk/ontologies/gtfs#hasAgency">has Agency</a> <sup class="type-op" title="object property">op</sup>, <a href="#network_id" title="https://transit.ac.uk/ontologies/gtfs#network_id">network id</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_color" title="https://transit.ac.uk/ontologies/gtfs#route_color">route color</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_desc" title="https://transit.ac.uk/ontologies/gtfs#route_desc">route desc</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_id" title="https://transit.ac.uk/ontologies/gtfs#route_id">route id</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_long_name" title="https://transit.ac.uk/ontologies/gtfs#route_long_name">route long name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_short_name" title="https://transit.ac.uk/ontologies/gtfs#route_short_name">route short name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_sort_order" title="https://transit.ac.uk/ontologies/gtfs#route_sort_order">route sort order</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_text_color" title="https://transit.ac.uk/ontologies/gtfs#route_text_color">route text color</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_type" title="https://transit.ac.uk/ontologies/gtfs#route_type">route type</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_url" title="https://transit.ac.uk/ontologies/gtfs#route_url">route url</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#cemv_support" title="https://transit.ac.uk/ontologies/gtfs#cemv_support">CEMV Support</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#continuous_drop_off" title="https://transit.ac.uk/ontologies/gtfs#continuous_drop_off">continuous drop off</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#continuous_pickup" title="https://transit.ac.uk/ontologies/gtfs#continuous_pickup">continuous pickup</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#network_id" title="https://transit.ac.uk/ontologies/gtfs#network_id">network id</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#operatedBy" title="https://transit.ac.uk/ontologies/gtfs#operatedBy">operated By</a> <sup class="type-op" title="object property">op</sup>, <a href="#route_color" title="https://transit.ac.uk/ontologies/gtfs#route_color">route color</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_desc" title="https://transit.ac.uk/ontologies/gtfs#route_desc">route desc</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_id" title="https://transit.ac.uk/ontologies/gtfs#route_id">route id</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_long_name" title="https://transit.ac.uk/ontologies/gtfs#route_long_name">route long name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_short_name" title="https://transit.ac.uk/ontologies/gtfs#route_short_name">route short name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_sort_order" title="https://transit.ac.uk/ontologies/gtfs#route_sort_order">route sort order</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_text_color" title="https://transit.ac.uk/ontologies/gtfs#route_text_color">route text color</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_type" title="https://transit.ac.uk/ontologies/gtfs#route_type">route type</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#route_url" title="https://transit.ac.uk/ontologies/gtfs#route_url">route url</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
     <a href="#hasRoute" title="https://transit.ac.uk/ontologies/gtfs#hasRoute">has Route</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -146,6 +252,12 @@ This section provides details for each class and property defined by gtfs.
     <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     is in domain of
    </dt>
    <dd>
@@ -156,6 +268,12 @@ This section provides details for each class and property defined by gtfs.
    </dt>
    <dd>
     <a href="#hasService" title="https://transit.ac.uk/ontologies/gtfs#hasService">has Service</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -175,6 +293,12 @@ This section provides details for each class and property defined by gtfs.
    <dd>
     <a href="#hasShape" title="https://transit.ac.uk/ontologies/gtfs#hasShape">has Shape</a> <sup class="type-op" title="object property">op</sup>
    </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
  <div class="entity" id="Stop">
@@ -191,13 +315,19 @@ This section provides details for each class and property defined by gtfs.
     is in domain of
    </dt>
    <dd>
-    <a href="#hasLevel" title="https://transit.ac.uk/ontologies/gtfs#hasLevel">has Level</a> <sup class="type-op" title="object property">op</sup>, <a href="#location_type" title="https://transit.ac.uk/ontologies/gtfs#location_type">location type</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#parent_station" title="https://transit.ac.uk/ontologies/gtfs#parent_station">parent station</a> <sup class="type-op" title="object property">op</sup>, <a href="#platform_code" title="https://transit.ac.uk/ontologies/gtfs#platform_code">platform code</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_access" title="https://transit.ac.uk/ontologies/gtfs#stop_access">stop access</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_code" title="https://transit.ac.uk/ontologies/gtfs#stop_code">stop code</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_desc" title="https://transit.ac.uk/ontologies/gtfs#stop_desc">stop desc</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_id" title="https://transit.ac.uk/ontologies/gtfs#stop_id">stop id</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_lat" title="https://transit.ac.uk/ontologies/gtfs#stop_lat">stop lat</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_lon" title="https://transit.ac.uk/ontologies/gtfs#stop_lon">stop lon</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_name" title="https://transit.ac.uk/ontologies/gtfs#stop_name">stop name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_timezone" title="https://transit.ac.uk/ontologies/gtfs#stop_timezone">stop timezone</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_url" title="https://transit.ac.uk/ontologies/gtfs#stop_url">stop url</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#tts_stop_name" title="https://transit.ac.uk/ontologies/gtfs#tts_stop_name">tts stop name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#wheelchair_boarding" title="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding">wheelchair boarding</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#zone_id" title="https://transit.ac.uk/ontologies/gtfs#zone_id">zone id</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#hasLevel" title="https://transit.ac.uk/ontologies/gtfs#hasLevel">has Level</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasParentStation" title="https://transit.ac.uk/ontologies/gtfs#hasParentStation">has Parent Station</a> <sup class="type-op" title="object property">op</sup>, <a href="#isParentStationOf" title="https://transit.ac.uk/ontologies/gtfs#isParentStationOf">is Parent Station Of</a> <sup class="type-op" title="object property">op</sup>, <a href="#location_type" title="https://transit.ac.uk/ontologies/gtfs#location_type">location type</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#platform_code" title="https://transit.ac.uk/ontologies/gtfs#platform_code">platform code</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_access" title="https://transit.ac.uk/ontologies/gtfs#stop_access">stop access</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_code" title="https://transit.ac.uk/ontologies/gtfs#stop_code">stop code</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_desc" title="https://transit.ac.uk/ontologies/gtfs#stop_desc">stop desc</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_id" title="https://transit.ac.uk/ontologies/gtfs#stop_id">stop id</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_lat" title="https://transit.ac.uk/ontologies/gtfs#stop_lat">stop lat</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_lon" title="https://transit.ac.uk/ontologies/gtfs#stop_lon">stop lon</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_name" title="https://transit.ac.uk/ontologies/gtfs#stop_name">stop name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_timezone" title="https://transit.ac.uk/ontologies/gtfs#stop_timezone">stop timezone</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_url" title="https://transit.ac.uk/ontologies/gtfs#stop_url">stop url</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#tts_stop_name" title="https://transit.ac.uk/ontologies/gtfs#tts_stop_name">tts stop name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#wheelchair_boarding" title="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding">wheelchair boarding</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#zone_id" title="https://transit.ac.uk/ontologies/gtfs#zone_id">zone id</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#hasStop" title="https://transit.ac.uk/ontologies/gtfs#hasStop">has Stop</a> <sup class="type-op" title="object property">op</sup>, <a href="#parent_station" title="https://transit.ac.uk/ontologies/gtfs#parent_station">parent station</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasParentStation" title="https://transit.ac.uk/ontologies/gtfs#hasParentStation">has Parent Station</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasStop" title="https://transit.ac.uk/ontologies/gtfs#hasStop">has Stop</a> <sup class="type-op" title="object property">op</sup>, <a href="#isParentStationOf" title="https://transit.ac.uk/ontologies/gtfs#isParentStationOf">is Parent Station Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -216,6 +346,12 @@ This section provides details for each class and property defined by gtfs.
    </dt>
    <dd>
     <a href="#arrival_time" title="https://transit.ac.uk/ontologies/gtfs#arrival_time">arrival time</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#continuous_drop_off" title="https://transit.ac.uk/ontologies/gtfs#continuous_drop_off">continuous drop off</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#continuous_pickup" title="https://transit.ac.uk/ontologies/gtfs#continuous_pickup">continuous pickup</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#departure_time" title="https://transit.ac.uk/ontologies/gtfs#departure_time">departure time</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#drop_off_booking_rule_id" title="https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id">drop off booking rule id</a> <sup class="type-op" title="object property">op</sup>, <a href="#drop_off_type" title="https://transit.ac.uk/ontologies/gtfs#drop_off_type">drop off type</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#end_pickup_drop_off_window" title="https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window">end pickup drop off window</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasLocation" title="https://transit.ac.uk/ontologies/gtfs#hasLocation">has Location</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasLocationGroup" title="https://transit.ac.uk/ontologies/gtfs#hasLocationGroup">has Location Group</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasStop" title="https://transit.ac.uk/ontologies/gtfs#hasStop">has Stop</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTrip" title="https://transit.ac.uk/ontologies/gtfs#hasTrip">has Trip</a> <sup class="type-op" title="object property">op</sup>, <a href="#pickup_booking_rule_id" title="https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id">pickup booking rule id</a> <sup class="type-op" title="object property">op</sup>, <a href="#pickup_type" title="https://transit.ac.uk/ontologies/gtfs#pickup_type">pickup type</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#shape_dist_traveled" title="https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled">shape dist traveled</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#start_pickup_drop_off_window" title="https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window">start pickup drop off window</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_headsign" title="https://transit.ac.uk/ontologies/gtfs#stop_headsign">stop headsign</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_sequence" title="https://transit.ac.uk/ontologies/gtfs#stop_sequence">stop sequence</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#timepoint" title="https://transit.ac.uk/ontologies/gtfs#timepoint">timepoint</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -241,22 +377,29 @@ This section provides details for each class and property defined by gtfs.
    <dd>
     <a href="#hasTrip" title="https://transit.ac.uk/ontologies/gtfs#hasTrip">has Trip</a> <sup class="type-op" title="object property">op</sup>
    </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>
+   </dd>
   </dl>
  </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
  <h3 id="properties" class="list">Object Properties</h3>
  <ul class="hlist">
   <li><a href="#drop_off_booking_rule_id" title="https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id"> <span>drop off booking rule id</span> </a></li>
-  <li><a href="#hasAgency" title="https://transit.ac.uk/ontologies/gtfs#hasAgency"> <span>has Agency</span> </a></li>
   <li><a href="#hasLevel" title="https://transit.ac.uk/ontologies/gtfs#hasLevel"> <span>has Level</span> </a></li>
   <li><a href="#hasLocation" title="https://transit.ac.uk/ontologies/gtfs#hasLocation"> <span>has Location</span> </a></li>
   <li><a href="#hasLocationGroup" title="https://transit.ac.uk/ontologies/gtfs#hasLocationGroup"> <span>has Location Group</span> </a></li>
+  <li><a href="#hasParentStation" title="https://transit.ac.uk/ontologies/gtfs#hasParentStation"> <span>has Parent Station</span> </a></li>
   <li><a href="#hasRoute" title="https://transit.ac.uk/ontologies/gtfs#hasRoute"> <span>has Route</span> </a></li>
   <li><a href="#hasService" title="https://transit.ac.uk/ontologies/gtfs#hasService"> <span>has Service</span> </a></li>
   <li><a href="#hasShape" title="https://transit.ac.uk/ontologies/gtfs#hasShape"> <span>has Shape</span> </a></li>
   <li><a href="#hasStop" title="https://transit.ac.uk/ontologies/gtfs#hasStop"> <span>has Stop</span> </a></li>
   <li><a href="#hasTrip" title="https://transit.ac.uk/ontologies/gtfs#hasTrip"> <span>has Trip</span> </a></li>
-  <li><a href="#parent_station" title="https://transit.ac.uk/ontologies/gtfs#parent_station"> <span>parent station</span> </a></li>
+  <li><a href="#isParentStationOf" title="https://transit.ac.uk/ontologies/gtfs#isParentStationOf"> <span>is Parent Station Of</span> </a></li>
+  <li><a href="#operatedBy" title="https://transit.ac.uk/ontologies/gtfs#operatedBy"> <span>operated By</span> </a></li>
   <li><a href="#pickup_booking_rule_id" title="https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id"> <span>pickup booking rule id</span> </a></li>
  </ul>
  <div class="entity" id="drop_off_booking_rule_id">
@@ -275,26 +418,6 @@ This section provides details for each class and property defined by gtfs.
     </dt>
     <dd>
      <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="hasAgency">
-  <h3>has Agency<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#hasAgency</p>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -355,6 +478,32 @@ This section provides details for each class and property defined by gtfs.
     </dt>
     <dd>
      <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasParentStation">
+  <h3>has Parent Station<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#hasParentStation</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isParentStationOf" title="https://transit.ac.uk/ontologies/gtfs#isParentStationOf">is Parent Station Of</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -459,9 +608,9 @@ This section provides details for each class and property defined by gtfs.
    </dl>
   </div>
  </div>
- <div class="entity" id="parent_station">
-  <h3>parent station<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#parent_station</p>
+ <div class="entity" id="isParentStationOf">
+  <h3>is Parent Station Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#isParentStationOf</p>
   <div class="description">
    <dl>
     <dt>
@@ -475,6 +624,38 @@ This section provides details for each class and property defined by gtfs.
     </dt>
     <dd>
      <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasParentStation" title="https://transit.ac.uk/ontologies/gtfs#hasParentStation">has Parent Station</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="operatedBy">
+  <h3>operated By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#operatedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="https://transit.ac.uk/ontologies/gtfs#operatesRoute" target="_blank" title="https://transit.ac.uk/ontologies/gtfs#operatesRoute">operates Route</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -502,19 +683,19 @@ This section provides details for each class and property defined by gtfs.
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
  <h3 id="dataproperties-headline" class="list">Data Properties</h3>
  <ul class="hlist">
-  <li><a href="#agency_email" title="https://transit.ac.uk/ontologies/gtfs#agency_email"> <span>agency email</span> </a></li>
-  <li><a href="#agency_fare_url" title="https://transit.ac.uk/ontologies/gtfs#agency_fare_url"> <span>agency fare url</span> </a></li>
-  <li><a href="#agency_id" title="https://transit.ac.uk/ontologies/gtfs#agency_id"> <span>agency id</span> </a></li>
-  <li><a href="#agency_lang" title="https://transit.ac.uk/ontologies/gtfs#agency_lang"> <span>agency lang</span> </a></li>
-  <li><a href="#agency_name" title="https://transit.ac.uk/ontologies/gtfs#agency_name"> <span>agency name</span> </a></li>
-  <li><a href="#agency_phone" title="https://transit.ac.uk/ontologies/gtfs#agency_phone"> <span>agency phone</span> </a></li>
-  <li><a href="#agency_timezone" title="https://transit.ac.uk/ontologies/gtfs#agency_timezone"> <span>agency timezone</span> </a></li>
-  <li><a href="#agency_url" title="https://transit.ac.uk/ontologies/gtfs#agency_url"> <span>agency url</span> </a></li>
+  <li><a href="#agency_email" title="https://transit.ac.uk/ontologies/gtfs#agency_email">agency email address</a></li>
+  <li><a href="#agency_fare_url" title="https://transit.ac.uk/ontologies/gtfs#agency_fare_url">agency fare URL</a></li>
+  <li><a href="#agency_id" title="https://transit.ac.uk/ontologies/gtfs#agency_id">agency ID</a></li>
+  <li><a href="#agency_lang" title="https://transit.ac.uk/ontologies/gtfs#agency_lang">agency language</a></li>
+  <li><a href="#agency_name" title="https://transit.ac.uk/ontologies/gtfs#agency_name">agency name</a></li>
+  <li><a href="#agency_phone" title="https://transit.ac.uk/ontologies/gtfs#agency_phone">agency phone number</a></li>
+  <li><a href="#agency_timezone" title="https://transit.ac.uk/ontologies/gtfs#agency_timezone">agency timezone</a></li>
+  <li><a href="#agency_url" title="https://transit.ac.uk/ontologies/gtfs#agency_url">agency URL</a></li>
   <li><a href="#arrival_time" title="https://transit.ac.uk/ontologies/gtfs#arrival_time"> <span>arrival time</span> </a></li>
   <li><a href="#bikes_allowed" title="https://transit.ac.uk/ontologies/gtfs#bikes_allowed"> <span>bikes allowed</span> </a></li>
   <li><a href="#block_id" title="https://transit.ac.uk/ontologies/gtfs#block_id"> <span>block id</span> </a></li>
   <li><a href="#cars_allowed" title="https://transit.ac.uk/ontologies/gtfs#cars_allowed"> <span>cars allowed</span> </a></li>
-  <li><a href="#cemv_support" title="https://transit.ac.uk/ontologies/gtfs#cemv_support"> <span>cemv support</span> </a></li>
+  <li><a href="#cemv_support" title="https://transit.ac.uk/ontologies/gtfs#cemv_support">CEMV Support</a></li>
   <li><a href="#continuous_drop_off" title="https://transit.ac.uk/ontologies/gtfs#continuous_drop_off"> <span>continuous drop off</span> </a></li>
   <li><a href="#continuous_pickup" title="https://transit.ac.uk/ontologies/gtfs#continuous_pickup"> <span>continuous pickup</span> </a></li>
   <li><a href="#date" title="https://transit.ac.uk/ontologies/gtfs#date"> <span>date</span> </a></li>
@@ -571,7 +752,7 @@ This section provides details for each class and property defined by gtfs.
   <li><a href="#zone_id" title="https://transit.ac.uk/ontologies/gtfs#zone_id"> <span>zone id</span> </a></li>
  </ul>
  <div class="entity" id="agency_email">
-  <h3>agency email<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <h3>agency email address<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#agency_email</p>
   <div class="comment">
    <span class="markdown">Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency.</span>
@@ -594,7 +775,7 @@ This section provides details for each class and property defined by gtfs.
   </div>
  </div>
  <div class="entity" id="agency_fare_url">
-  <h3>agency fare url<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <h3>agency fare URL<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#agency_fare_url</p>
   <div class="comment">
    <span class="markdown">URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares.</span>
@@ -617,7 +798,7 @@ This section provides details for each class and property defined by gtfs.
   </div>
  </div>
  <div class="entity" id="agency_id">
-  <h3>agency id<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <h3>agency ID<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#agency_id</p>
   <div class="comment">
    <span class="markdown">Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term "agency" in place of "brand". A dataset may contain data from multiple agencies.</span>
@@ -640,7 +821,7 @@ This section provides details for each class and property defined by gtfs.
   </div>
  </div>
  <div class="entity" id="agency_lang">
-  <h3>agency lang<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <h3>agency language<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#agency_lang</p>
   <div class="comment">
    <span class="markdown">Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset.</span>
@@ -686,7 +867,7 @@ This section provides details for each class and property defined by gtfs.
   </div>
  </div>
  <div class="entity" id="agency_phone">
-  <h3>agency phone<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <h3>agency phone number<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#agency_phone</p>
   <div class="comment">
    <span class="markdown">A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's "503-238-RIDE") is permitted, but the field must not contain any other descriptive text.</span>
@@ -732,7 +913,7 @@ This section provides details for each class and property defined by gtfs.
   </div>
  </div>
  <div class="entity" id="agency_url">
-  <h3>agency url<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <h3>agency URL<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#agency_url</p>
   <div class="comment">
    <span class="markdown">URL of the transit agency.</span>
@@ -769,7 +950,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#time" target="_blank" title="http://www.w3.org/2001/XMLSchema#time">time</a>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
     </dd>
    </dl>
   </div>
@@ -809,7 +990,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
     </dd>
    </dl>
   </div>
@@ -835,7 +1016,7 @@ This section provides details for each class and property defined by gtfs.
   </div>
  </div>
  <div class="entity" id="cemv_support">
-  <h3>cemv support<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <h3>CEMV Support<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#cemv_support</p>
   <div class="comment">
    <span class="markdown">Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media.</span>
@@ -932,7 +1113,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#time" target="_blank" title="http://www.w3.org/2001/XMLSchema#time">time</a>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
     </dd>
    </dl>
   </div>
