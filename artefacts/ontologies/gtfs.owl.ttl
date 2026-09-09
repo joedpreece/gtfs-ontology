@@ -18,10 +18,10 @@ vann:preferredNamespacePrefix a owl:AnnotationProperty .
 
 vann:preferredNamespaceUri a owl:AnnotationProperty .
 
-:FareMedium a owl:Class ;
+:CEMVSupportedRecord a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
-:FareProduct a owl:Class ;
+:CEMVUnsupportedRecord a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
 :agency_email a owl:DatatypeProperty ;
@@ -72,7 +72,8 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 
 :bikes_allowed a owl:DatatypeProperty ;
     rdfs:domain :Trip ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 ) ] .
 
 :block_id a owl:DatatypeProperty ;
     rdfs:domain :Trip ;
@@ -80,27 +81,31 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 
 :cars_allowed a owl:DatatypeProperty ;
     rdfs:domain :Trip ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 ) ] .
 
 :cemv_support a owl:DatatypeProperty ;
     rdfs:label "CEMV Support"@en ;
     rdfs:comment "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media."@en ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( :Agency :Route ) ] ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 ) ] .
 
 :continuous_drop_off a owl:DatatypeProperty ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( :Route :StopTime ) ] ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 3 ) ] .
 
 :continuous_pickup a owl:DatatypeProperty ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( :Route :StopTime ) ] ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 3 ) ] .
 
 :date a owl:DatatypeProperty ;
-    rdfs:domain :Service ;
+    rdfs:domain :CalendarDateService ;
     rdfs:range xsd:date .
 
 :departure_time a owl:DatatypeProperty ;
@@ -109,7 +114,8 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 
 :direction_id a owl:DatatypeProperty ;
     rdfs:domain :Trip ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 ) ] .
 
 :drop_off_booking_rule_id a owl:ObjectProperty ;
     rdfs:domain :StopTime ;
@@ -120,7 +126,7 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     rdfs:range xsd:integer .
 
 :end_date a owl:DatatypeProperty ;
-    rdfs:domain :Service ;
+    rdfs:domain :CalendarService ;
     rdfs:range xsd:date .
 
 :end_pickup_drop_off_window a owl:DatatypeProperty ;
@@ -128,12 +134,14 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     rdfs:range xsd:time .
 
 :exception_type a owl:DatatypeProperty ;
-    rdfs:domain :Service ;
-    rdfs:range xsd:integer .
+    rdfs:domain :CalendarDateService ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 ) ] .
 
 :friday a owl:DatatypeProperty ;
-    rdfs:domain :Service ;
-    rdfs:range xsd:integer .
+    rdfs:domain :CalendarService ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 ) ] .
 
 :hasLevel a owl:ObjectProperty ;
     rdfs:domain :Stop ;
@@ -163,17 +171,10 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     rdfs:domain :StopTime ;
     rdfs:range :Stop .
 
-:hasTrip a owl:ObjectProperty ;
-    rdfs:domain :StopTime ;
-    rdfs:range :Trip .
-
-:location_type a owl:DatatypeProperty ;
-    rdfs:domain :Stop ;
-    rdfs:range xsd:integer .
-
 :monday a owl:DatatypeProperty ;
-    rdfs:domain :Service ;
-    rdfs:range xsd:integer .
+    rdfs:domain :CalendarService ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 ) ] .
 
 :network_id a owl:DatatypeProperty ;
     rdfs:domain :Route ;
@@ -199,10 +200,6 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     rdfs:domain :Route ;
     rdfs:range xsd:string .
 
-:route_id a owl:DatatypeProperty ;
-    rdfs:domain :Route ;
-    rdfs:range xsd:string .
-
 :route_long_name a owl:DatatypeProperty ;
     rdfs:domain :Route ;
     rdfs:range xsd:string .
@@ -221,7 +218,8 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 
 :route_type a owl:DatatypeProperty ;
     rdfs:domain :Route ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 3 4 5 6 7 11 12 ) ] .
 
 :route_url a owl:DatatypeProperty ;
     rdfs:domain :Route ;
@@ -236,8 +234,9 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     rdfs:range xsd:decimal .
 
 :saturday a owl:DatatypeProperty ;
-    rdfs:domain :Service ;
-    rdfs:range xsd:integer .
+    rdfs:domain :CalendarService ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 ) ] .
 
 :service_id a owl:DatatypeProperty ;
     rdfs:domain :Service ;
@@ -248,7 +247,7 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     rdfs:range xsd:decimal .
 
 :start_date a owl:DatatypeProperty ;
-    rdfs:domain :Service ;
+    rdfs:domain :CalendarService ;
     rdfs:range xsd:date .
 
 :start_pickup_drop_off_window a owl:DatatypeProperty ;
@@ -257,7 +256,8 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 
 :stop_access a owl:DatatypeProperty ;
     rdfs:domain :Stop ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 ) ] .
 
 :stop_code a owl:DatatypeProperty ;
     rdfs:domain :Stop ;
@@ -271,26 +271,6 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     rdfs:domain :StopTime ;
     rdfs:range xsd:string .
 
-:stop_id a owl:DatatypeProperty ;
-    rdfs:domain :Stop ;
-    rdfs:range xsd:string .
-
-:stop_lat a owl:DatatypeProperty ;
-    rdfs:domain :Stop ;
-    rdfs:range xsd:decimal .
-
-:stop_lon a owl:DatatypeProperty ;
-    rdfs:domain :Stop ;
-    rdfs:range xsd:decimal .
-
-:stop_name a owl:DatatypeProperty ;
-    rdfs:domain :Stop ;
-    rdfs:range xsd:string .
-
-:stop_sequence a owl:DatatypeProperty ;
-    rdfs:domain :StopTime ;
-    rdfs:range xsd:string .
-
 :stop_timezone a owl:DatatypeProperty ;
     rdfs:domain :Stop ;
     rdfs:range xsd:string .
@@ -300,22 +280,20 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     rdfs:range xsd:string .
 
 :sunday a owl:DatatypeProperty ;
-    rdfs:domain :Service ;
-    rdfs:range xsd:integer .
+    rdfs:domain :CalendarService ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 ) ] .
 
 :thursday a owl:DatatypeProperty ;
-    rdfs:domain :Service ;
-    rdfs:range xsd:integer .
+    rdfs:domain :CalendarService ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 ) ] .
 
 :timepoint a owl:DatatypeProperty ;
     rdfs:domain :StopTime ;
     rdfs:range xsd:integer .
 
 :trip_headsign a owl:DatatypeProperty ;
-    rdfs:domain :Trip ;
-    rdfs:range xsd:string .
-
-:trip_id a owl:DatatypeProperty ;
     rdfs:domain :Trip ;
     rdfs:range xsd:string .
 
@@ -328,20 +306,24 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     rdfs:range xsd:string .
 
 :tuesday a owl:DatatypeProperty ;
-    rdfs:domain :Service ;
-    rdfs:range xsd:integer .
+    rdfs:domain :CalendarService ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 ) ] .
 
 :wednesday a owl:DatatypeProperty ;
-    rdfs:domain :Service ;
-    rdfs:range xsd:integer .
+    rdfs:domain :CalendarService ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 ) ] .
 
 :wheelchair_accessible a owl:DatatypeProperty ;
     rdfs:domain :Trip ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 ) ] .
 
 :wheelchair_boarding a owl:DatatypeProperty ;
     rdfs:domain :Stop ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 ) ] .
 
 :zone_id a owl:DatatypeProperty ;
     rdfs:domain :Stop ;
@@ -358,11 +340,61 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     owl:versionIRI <https://transit.ac.uk/ontologies/gtfs/0.1.0> ;
     owl:versionInfo "0.1.0" .
 
-:CalendarDateService a owl:Class ;
-    rdfs:subClassOf :Service .
+:BoardingArea a owl:Class ;
+    rdfs:subClassOf :ChildStop ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Stop [ a owl:Restriction ;
+                        owl:hasValue 4 ;
+                        owl:onProperty :location_type ] ) ] .
 
-:CalendarService a owl:Class ;
-    rdfs:subClassOf :Service .
+:EntranceOrExit a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lon ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lat ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_name ],
+        :ChildStop ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Stop [ a owl:Restriction ;
+                        owl:hasValue 2 ;
+                        owl:onProperty :location_type ] ) ] .
+
+:GenericNode a owl:Class ;
+    rdfs:subClassOf :ChildStop ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Stop [ a owl:Restriction ;
+                        owl:hasValue 3 ;
+                        owl:onProperty :location_type ] ) ] .
+
+:Platform a owl:Class ;
+    rdfs:subClassOf :StopOrPlatform ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :StopOrPlatform :ChildStop ) ] .
+
+:Station a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_name ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lon ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lat ],
+        :ParentlessStop ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Stop [ a owl:Restriction ;
+                        owl:hasValue 1 ;
+                        owl:onProperty :location_type ] ) ] .
+
+:StopLocation a owl:Class ;
+    rdfs:subClassOf :StopOrPlatform ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :StopOrPlatform :ParentlessStop ) ] .
 
 :agency_id a owl:DatatypeProperty ;
     rdfs:label "agency ID"@en ;
@@ -370,10 +402,9 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     rdfs:domain :Agency ;
     rdfs:range xsd:string .
 
-:hasParentStation a owl:ObjectProperty ;
-    rdfs:domain :Stop ;
-    rdfs:range :Stop ;
-    owl:inverseOf :isParentStationOf .
+:hasTrip a owl:ObjectProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range :Trip .
 
 :isParentStationOf a owl:ObjectProperty ;
     rdfs:domain :Stop ;
@@ -388,6 +419,22 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 :operatesRoute a owl:ObjectProperty ;
     owl:inverseOf :operatedBy .
 
+:route_id a owl:DatatypeProperty ;
+    rdfs:domain :Route ;
+    rdfs:range xsd:string .
+
+:stop_id a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:string .
+
+:stop_sequence a owl:DatatypeProperty ;
+    rdfs:domain :StopTime ;
+    rdfs:range xsd:string .
+
+:trip_id a owl:DatatypeProperty ;
+    rdfs:domain :Trip ;
+    rdfs:range xsd:string .
+
 xsd:time a rdfs:Datatype .
 
 :Level a owl:Class ;
@@ -399,6 +446,14 @@ xsd:time a rdfs:Datatype .
 :LocationGroup a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
+:ParentlessStop a owl:Class ;
+    rdfs:subClassOf :Stop ;
+    owl:disjointWith :ChildStop ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Stop [ a owl:Restriction ;
+                        owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                        owl:onProperty :hasParentStation ] ) ] .
+
 :Shape a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
@@ -407,24 +462,89 @@ xsd:date a rdfs:Datatype .
 :BookingRule a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
+:CalendarDateService a owl:Class ;
+    rdfs:subClassOf :Service .
+
+:hasParentStation a owl:ObjectProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range :Stop ;
+    owl:inverseOf :isParentStationOf .
+
+:stop_lat a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:decimal ;
+            owl:withRestrictions ( [ xsd:maxInclusive 90.0 ] [ xsd:minInclusive -90.0 ] ) ] .
+
+:stop_lon a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:decimal ;
+            owl:withRestrictions ( [ xsd:maxInclusive 180.0 ] [ xsd:minInclusive -180.0 ] ) ] .
+
+:stop_name a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range xsd:string .
+
+:StopOrPlatform a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_name ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lon ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lat ],
+        :Stop ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Stop [ a owl:Class ;
+                        owl:unionOf ( [ a owl:Restriction ;
+                                    owl:hasValue 0 ;
+                                    owl:onProperty :location_type ] [ a owl:Restriction ;
+                                    owl:cardinality "0"^^xsd:nonNegativeInteger ;
+                                    owl:onProperty :location_type ] ) ] ) ] .
+
+:ChildStop a owl:Class ;
+    rdfs:subClassOf :Stop ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Stop [ a owl:Restriction ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onProperty :hasParentStation ] ) ] .
+
+:Service a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:location_type a owl:DatatypeProperty ;
+    rdfs:domain :Stop ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 3 4 ) ] .
+
+:CalendarService a owl:Class ;
+    rdfs:subClassOf :Service .
+
 :Agency a owl:Class ;
     rdfs:subClassOf owl:Thing ;
     owl:hasKey ( :agency_id ) .
 
 :Trip a owl:Class ;
-    rdfs:subClassOf owl:Thing .
+    rdfs:subClassOf owl:Thing ;
+    owl:hasKey ( :trip_id ) .
 
 :Route a owl:Class ;
-    rdfs:subClassOf owl:Thing .
-
-:Service a owl:Class ;
-    rdfs:subClassOf owl:Thing .
+    rdfs:subClassOf owl:Thing ;
+    owl:hasKey ( :route_id ) .
 
 :StopTime a owl:Class ;
-    rdfs:subClassOf owl:Thing .
+    rdfs:subClassOf owl:Thing ;
+    owl:hasKey ( :stop_sequence :hasTrip ) .
 
 :Stop a owl:Class ;
-    rdfs:subClassOf owl:Thing .
+    rdfs:subClassOf owl:Thing ;
+    owl:hasKey ( :stop_id ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :StopLocation :Platform :Station :EntranceOrExit :GenericNode :BoardingArea ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( :Agency :Stop :Route :Trip :StopTime :Service :CalendarService :CalendarDateService :Level :Shape :LocationGroup :Location :BookingRule ) .

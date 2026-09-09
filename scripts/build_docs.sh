@@ -18,5 +18,5 @@ docker run --rm \
   -rewriteAll \
   -webVowl \
   -oops \
-  -includeImportedOntologies \
-  -noPlaceHolderText
+  -noPlaceHolderText \
+#  -includeImportedOntologies \

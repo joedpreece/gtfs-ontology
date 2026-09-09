@@ -15,7 +15,7 @@ docker run --rm \
   $IMAGE \
   robot validate-profile \
   --profile DL \
-  --input /data/artefacts/ontologies/ies-common.ttl \
-  --output /data/artefacts/ontologies/ies-common-dl-report.txt
+  --input /data/artefacts/ontologies/gtfs.owl.ttl \
+  --output /data/artefacts/ontologies/gtfs-dl-report.txt
 
 echo "Done."

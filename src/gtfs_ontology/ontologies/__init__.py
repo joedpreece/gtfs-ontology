@@ -42,7 +42,7 @@ WIDOCO = Namespace("https://w3id.org/widoco/vocab#")
 gtfs = get_ontology(gtfs_owl_iri)
 gtfs_uri_ref = URIRef(gtfs_owl_iri)
 
-# Ontology metadata
+# region Ontology metadata
 with gtfs:
 
     g = default_world.as_rdflib_graph()
@@ -70,11 +70,81 @@ with gtfs:
     g.add((VANN.preferredNamespaceUri, RDF.type, OWL.AnnotationProperty))
     g.add((VANN.preferredNamespacePrefix, RDF.type, OWL.AnnotationProperty))
 
-    # Add the datatypes to comply with DL profile.
+# region Add the datatypes to comply with DL profile.
+
+with gtfs:
+
     g.add((XSD.date, RDF.type, RDFS.Datatype))
     g.add((XSD.time, RDF.type, RDFS.Datatype))
 
-# Define the classes
+    lat_type = ConstrainedDatatype(base_datatype=float, min_inclusive=-90, max_inclusive=90)
+    lon_type = ConstrainedDatatype(base_datatype=float, min_inclusive=-180, max_inclusive=180)
+
+    color_type = ConstrainedDatatype(base_datatype=str, pattern=r"^[0-9A-F]{6}$")
+
+    currency_code_type = OneOf([
+    "AED", "AFN", "ALL", "AMD", "AOA", "ARS", "AUD", "AWG", "AZN",
+    "BAM", "BBD", "BDT", "BHD", "BIF", "BMD", "BND", "BOB", "BOV",
+    "BRL", "BSD", "BTN", "BWP", "BYN", "BZD", "CAD", "CDF", "CHE",
+    "CHF", "CHW", "CLF", "CLP", "CNY", "COP", "COU", "CRC", "CUP",
+    "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB",
+    "EUR", "FJD", "FKP", "GBP", "GEL", "GHS", "GIP", "GMD", "GNF",
+    "GTQ", "GYD", "HKD", "HNL", "HTG", "HUF", "IDR", "ILS", "INR",
+    "IQD", "IRR", "ISK", "JMD", "JOD", "JPY", "KES", "KGS", "KHR",
+    "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR",
+    "LRD", "LSL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT",
+    "MOP", "MRU", "MUR", "MVR", "MWK", "MXN", "MXV", "MYR", "MZN",
+    "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN",
+    "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB",
+    "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLE",
+    "SOS", "SRD", "SSP", "STN", "SVC", "SYP", "SZL", "THB", "TJS",
+    "TMT", "TND", "TOP", "TRY", "TTD", "TWD", "TZS", "UAH", "UGX",
+    "USD", "USN", "UYI", "UYU", "UYW", "UZS", "VED", "VES", "VND",
+    "VUV", "WST", "XAD", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC",
+    "XBD", "XCD", "XCG", "XDR", "XOF", "XPD", "XPF", "XPT", "XSU",
+    "XTS", "XUA", "XXX", "YER", "ZAR", "ZMW", "ZWG"
+    ])
+
+    location_type_enum = OneOf([
+        0,
+        1,
+        2,
+        3,
+        4
+    ])
+
+    wheelchair_boarding_enum = OneOf([
+        0,
+        1,
+        2,
+    ])
+
+    stop_access_enum = OneOf([
+        0,
+        1,
+    ])
+
+    route_type_enum = OneOf([
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        11,
+        12
+    ])
+
+    pickup_enum = OneOf([
+        0,
+        1,
+        2,
+        3
+    ])
+
+# region Define the classes
 with gtfs:
 
     class Agency(Thing):
@@ -101,12 +171,6 @@ with gtfs:
     class CalendarDateService(Service):
         pass
 
-    class FareMedium(Thing):
-        pass
-
-    class FareProduct(Thing):
-        pass
-
     class Level(Thing):
         pass
 
@@ -124,6 +188,7 @@ with gtfs:
 
     AllDisjoint([Agency, Stop, Route, Trip, StopTime, Service, CalendarService, CalendarDateService, Level, Shape, LocationGroup, Location, BookingRule])
 
+# region Agency
 with gtfs:
 
     class agency_id(DataProperty):
@@ -182,8 +247,16 @@ with gtfs:
     class cemv_support(DataProperty):
         comment = [locstr(definitions["cemv_support"], "en")]
         label = [locstr("CEMV Support", "en")]
-        domain = [Agency | Route]
-        range = [int]
+        domain = [Or([Agency, Route])]
+        range = [OneOf([0, 1, 2])]
+
+    class CEMVSupportedRecord(Thing):
+        pass
+
+    class CEMVUnsupportedRecord(Thing):
+        pass
+
+# region Stops
 
 with gtfs:
 
@@ -191,6 +264,11 @@ with gtfs:
         # comment = [locstr(definitions["stop_id"], "en")]
         domain = [Stop]
         range = [str]
+
+    # Add the stop_id as the primary key
+    list_node = BNode()
+    Collection(g, list_node, [URIRef(stop_id.iri)])
+    g.add((URIRef(Stop.iri), OWL.hasKey, list_node))
 
     class stop_code(DataProperty):
         domain = [Stop]
@@ -210,11 +288,11 @@ with gtfs:
 
     class stop_lat(DataProperty):
         domain = [Stop]
-        range = [float]
+        range = [lat_type]
 
     class stop_lon(DataProperty):
         domain = [Stop]
-        range = [float]
+        range = [lon_type]
 
     class zone_id(DataProperty):
         domain = [Stop]
@@ -226,7 +304,7 @@ with gtfs:
 
     class location_type(DataProperty):
         domain = [Stop]
-        range = [int]
+        range = [OneOf([0, 1, 2, 3, 4])]
 
     class hasParentStation(ObjectProperty):
         domain = [Stop]
@@ -243,7 +321,7 @@ with gtfs:
 
     class wheelchair_boarding(DataProperty):
         domain = [Stop]
-        range = [int]
+        range = [OneOf([0, 1, 2])]
 
     class hasLevel(ObjectProperty):
         domain = [Stop]
@@ -255,13 +333,101 @@ with gtfs:
 
     class stop_access(DataProperty):
         domain = [Stop]
-        range = [int]
+        range = [OneOf([0, 1])]
+
+# region Stop DL
+
+    class ParentlessStop(Stop):
+        equivalent_to = [
+            Stop &
+            hasParentStation.exactly(0)
+        ]
+
+    class ChildStop(Stop):
+        equivalent_to = [
+            Stop &
+            hasParentStation.exactly(1)
+        ]
+
+    AllDisjoint([ParentlessStop, ChildStop])
+
+    class StopOrPlatform(Stop):
+        is_a = [
+            stop_name.exactly(1),
+            stop_lat.exactly(1),
+            stop_lon.exactly(1),
+        ]
+        equivalent_to = [
+            And([
+                Stop,
+                Or([
+                    location_type.value(0),
+                    location_type.exactly(0)
+                ])
+            ])
+
+        ]
+
+    class StopLocation(StopOrPlatform):
+        equivalent_to = [
+            StopOrPlatform &
+            ParentlessStop
+        ]
+
+    class Platform(StopOrPlatform):
+        equivalent_to = [
+            StopOrPlatform &
+            ChildStop
+        ]
+
+    class Station(ParentlessStop):
+        is_a = [
+            stop_name.exactly(1),
+            stop_lat.exactly(1),
+            stop_lon.exactly(1),
+        ]
+        equivalent_to = [
+            Stop &
+            location_type.value(1)
+        ]
+
+    class EntranceOrExit(ChildStop):
+        is_a = [
+            stop_name.exactly(1),
+            stop_lat.exactly(1),
+            stop_lon.exactly(1),
+        ]
+        equivalent_to = [
+            Stop &
+            location_type.value(2)
+        ]
+
+    class GenericNode(ChildStop):
+        equivalent_to = [
+            Stop &
+            location_type.value(3)
+        ]
+
+    class BoardingArea(ChildStop):
+        equivalent_to = [
+            Stop &
+            location_type.value(4)
+        ]
+
+    AllDisjoint([StopLocation, Platform, Station, EntranceOrExit, GenericNode, BoardingArea])
+
+# region Routes
 
 with gtfs:
 
     class route_id(DataProperty):
         domain = [Route]
         range = [str]
+
+    # Add the route_id as the primary key
+    list_node = BNode()
+    Collection(g, list_node, [URIRef(route_id.iri)])
+    g.add((URIRef(Route.iri), OWL.hasKey, list_node))
 
     class operatedBy(ObjectProperty):
         domain = [Route]
@@ -284,7 +450,7 @@ with gtfs:
 
     class route_type(DataProperty):
         domain = [Route]
-        range = [int]
+        range = [OneOf([0, 1, 2, 3, 4, 5, 6, 7, 11, 12])]
 
     class route_url(DataProperty):
         domain = [Route]
@@ -304,15 +470,17 @@ with gtfs:
 
     class continuous_pickup(DataProperty):
         domain = [Route | StopTime]
-        range = [int]
+        range = [OneOf([0, 1, 2, 3])]
 
     class continuous_drop_off(DataProperty):
         domain = [Route | StopTime]
-        range = [int]
+        range = [OneOf([0, 1, 2, 3])]
 
     class network_id(DataProperty):
         domain = [Route]
         range = [int]
+
+# region Trips
 
 with gtfs:
 
@@ -328,6 +496,11 @@ with gtfs:
         domain = [Trip]
         range = [str]
 
+    # Add the trip_id as the primary key
+    list_node = BNode()
+    Collection(g, list_node, [URIRef(trip_id.iri)])
+    g.add((URIRef(Trip.iri), OWL.hasKey, list_node))
+
     class trip_headsign(DataProperty):
         domain = [Trip]
         range = [str]
@@ -338,7 +511,7 @@ with gtfs:
 
     class direction_id(DataProperty):
         domain = [Trip]
-        range = [int]
+        range = [OneOf([0, 1])]
 
     class block_id(DataProperty):
         domain = [Trip]
@@ -350,15 +523,15 @@ with gtfs:
 
     class wheelchair_accessible(DataProperty):
         domain = [Trip]
-        range = [int]
+        range = [OneOf([0, 1, 2])]
 
     class bikes_allowed(DataProperty):
         domain = [Trip]
-        range = [int]
+        range = [OneOf([0, 1, 2])]
 
     class cars_allowed(DataProperty):
         domain = [Trip]
-        range = [int]
+        range = [OneOf([0, 1, 2])]
 
     class safe_duration_factor(DataProperty):
         domain = [Trip]
@@ -367,6 +540,8 @@ with gtfs:
     class safe_duration_offset(DataProperty):
         domain = [Trip]
         range = [float]
+
+# region Stop Times
 
 with gtfs:
 
@@ -397,6 +572,11 @@ with gtfs:
     class stop_sequence(DataProperty):
         domain = [StopTime]
         range = [str]
+
+    # Add the trip_id as the primary key
+    list_node = BNode()
+    Collection(g, list_node, [URIRef(stop_sequence.iri), URIRef(hasTrip.iri)])
+    g.add((URIRef(StopTime.iri), OWL.hasKey, list_node))
 
     class stop_headsign(DataProperty):
         domain = [StopTime]
@@ -434,6 +614,8 @@ with gtfs:
         domain = [StopTime]
         range = [BookingRule]
 
+# region Services
+
 with gtfs:
 
     class service_id(DataProperty):
@@ -441,48 +623,48 @@ with gtfs:
         range = [str]
 
     class monday(DataProperty):
-        domain = [Service]
-        range = [int]
+        domain = [CalendarService]
+        range = [OneOf([0, 1])]
 
     class tuesday(DataProperty):
-        domain = [Service]
-        range = [int]
+        domain = [CalendarService]
+        range = [OneOf([0, 1])]
 
     class wednesday(DataProperty):
-        domain = [Service]
-        range = [int]
+        domain = [CalendarService]
+        range = [OneOf([0, 1])]
 
     class thursday(DataProperty):
-        domain = [Service]
-        range = [int]
+        domain = [CalendarService]
+        range = [OneOf([0, 1])]
 
     class friday(DataProperty):
-        domain = [Service]
-        range = [int]
+        domain = [CalendarService]
+        range = [OneOf([0, 1])]
 
     class saturday(DataProperty):
-        domain = [Service]
-        range = [int]
+        domain = [CalendarService]
+        range = [OneOf([0, 1])]
 
     class sunday(DataProperty):
-        domain = [Service]
-        range = [int]
+        domain = [CalendarService]
+        range = [OneOf([0, 1])]
 
     class start_date(DataProperty):
-        domain = [Service]
+        domain = [CalendarService]
         range = [datetime.date]
 
     class end_date(DataProperty):
-        domain = [Service]
+        domain = [CalendarService]
         range = [datetime.date]
 
     class date(DataProperty):
-        domain = [Service]
+        domain = [CalendarDateService]
         range = [datetime.date]
 
     class exception_type(DataProperty):
-        domain = [Service]
-        range = [int]
+        domain = [CalendarDateService]
+        range = [OneOf([0, 1])]
 
 def build_ontology():
 

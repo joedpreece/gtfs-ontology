@@ -4,18 +4,29 @@ This section provides details for each class and property defined by gtfs.
  <h3 id="classes-headline" class="list">Classes</h3>
  <ul class="hlist">
   <li><a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency"> <span>Agency</span> </a></li>
+  <li><a href="#BoardingArea" title="https://transit.ac.uk/ontologies/gtfs#BoardingArea"> <span>Boarding Area</span> </a></li>
   <li><a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule"> <span>Booking Rule</span> </a></li>
+  <li><a href="#CEMVSupportedRecord" title="https://transit.ac.uk/ontologies/gtfs#CEMVSupportedRecord"> <span>C E M V Supported Record</span> </a></li>
+  <li><a href="#CEMVUnsupportedRecord" title="https://transit.ac.uk/ontologies/gtfs#CEMVUnsupportedRecord"> <span>C E M V Unsupported Record</span> </a></li>
   <li><a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService"> <span>Calendar Date Service</span> </a></li>
   <li><a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService"> <span>Calendar Service</span> </a></li>
+  <li><a href="#ChildStop" title="https://transit.ac.uk/ontologies/gtfs#ChildStop"> <span>Child Stop</span> </a></li>
+  <li><a href="#EntranceOrExit" title="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"> <span>Entrance Or Exit</span> </a></li>
   <li><a href="#FareMedium" title="https://transit.ac.uk/ontologies/gtfs#FareMedium"> <span>Fare Medium</span> </a></li>
   <li><a href="#FareProduct" title="https://transit.ac.uk/ontologies/gtfs#FareProduct"> <span>Fare Product</span> </a></li>
+  <li><a href="#GenericNode" title="https://transit.ac.uk/ontologies/gtfs#GenericNode"> <span>Generic Node</span> </a></li>
   <li><a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level"> <span>Level</span> </a></li>
   <li><a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location"> <span>Location</span> </a></li>
   <li><a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup"> <span>Location Group</span> </a></li>
+  <li><a href="#ParentlessStop" title="https://transit.ac.uk/ontologies/gtfs#ParentlessStop"> <span>Parentless Stop</span> </a></li>
+  <li><a href="#Platform" title="https://transit.ac.uk/ontologies/gtfs#Platform"> <span>Platform</span> </a></li>
   <li><a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route"> <span>Route</span> </a></li>
   <li><a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service"> <span>Service</span> </a></li>
   <li><a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape"> <span>Shape</span> </a></li>
+  <li><a href="#Station" title="https://transit.ac.uk/ontologies/gtfs#Station"> <span>Station</span> </a></li>
   <li><a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop"> <span>Stop</span> </a></li>
+  <li><a href="#StopLocation" title="https://transit.ac.uk/ontologies/gtfs#StopLocation"> <span>Stop Location</span> </a></li>
+  <li><a href="#StopOrPlatform" title="https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"> <span>Stop Or Platform</span> </a></li>
   <li><a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime"> <span>Stop Time</span> </a></li>
   <li><a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip"> <span>Trip</span> </a></li>
  </ul>
@@ -55,6 +66,30 @@ This section provides details for each class and property defined by gtfs.
    </dd>
   </dl>
  </div>
+ <div class="entity" id="BoardingArea">
+  <h3>Boarding Area<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#BoardingArea</p>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#location_type" title="https://transit.ac.uk/ontologies/gtfs#location_type">location type</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">value</span> 4)
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#ChildStop" title="https://transit.ac.uk/ontologies/gtfs#ChildStop">Child Stop</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#EntranceOrExit" title="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit">Entrance Or Exit</a> <sup class="type-c" title="class">c</sup>, <a href="#GenericNode" title="https://transit.ac.uk/ontologies/gtfs#GenericNode">Generic Node</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://transit.ac.uk/ontologies/gtfs#Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Station" title="https://transit.ac.uk/ontologies/gtfs#Station">Station</a> <sup class="type-c" title="class">c</sup>, <a href="#StopLocation" title="https://transit.ac.uk/ontologies/gtfs#StopLocation">Stop Location</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="BookingRule">
   <h3>Booking Rule<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#BookingRule</p>
@@ -76,6 +111,30 @@ This section provides details for each class and property defined by gtfs.
    </dt>
    <dd>
     <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CEMVSupportedRecord">
+  <h3>C E M V Supported Record<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#CEMVSupportedRecord</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CEMVUnsupportedRecord">
+  <h3>C E M V Unsupported Record<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#CEMVUnsupportedRecord</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -115,6 +174,60 @@ This section provides details for each class and property defined by gtfs.
    </dd>
   </dl>
  </div>
+ <div class="entity" id="ChildStop">
+  <h3>Child Stop<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#ChildStop</p>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#hasParentStation" title="https://transit.ac.uk/ontologies/gtfs#hasParentStation">has Parent Station</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 1)
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#BoardingArea" title="https://transit.ac.uk/ontologies/gtfs#BoardingArea">Boarding Area</a> <sup class="type-c" title="class">c</sup>, <a href="#EntranceOrExit" title="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit">Entrance Or Exit</a> <sup class="type-c" title="class">c</sup>, <a href="#GenericNode" title="https://transit.ac.uk/ontologies/gtfs#GenericNode">Generic Node</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ParentlessStop" title="https://transit.ac.uk/ontologies/gtfs#ParentlessStop">Parentless Stop</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EntranceOrExit">
+  <h3>Entrance Or Exit<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#EntranceOrExit</p>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#location_type" title="https://transit.ac.uk/ontologies/gtfs#location_type">location type</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">value</span> 2)
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#ChildStop" title="https://transit.ac.uk/ontologies/gtfs#ChildStop">Child Stop</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#BoardingArea" title="https://transit.ac.uk/ontologies/gtfs#BoardingArea">Boarding Area</a> <sup class="type-c" title="class">c</sup>, <a href="#GenericNode" title="https://transit.ac.uk/ontologies/gtfs#GenericNode">Generic Node</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://transit.ac.uk/ontologies/gtfs#Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Station" title="https://transit.ac.uk/ontologies/gtfs#Station">Station</a> <sup class="type-c" title="class">c</sup>, <a href="#StopLocation" title="https://transit.ac.uk/ontologies/gtfs#StopLocation">Stop Location</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="FareMedium">
   <h3>Fare Medium<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#FareMedium</p>
@@ -136,6 +249,30 @@ This section provides details for each class and property defined by gtfs.
    </dt>
    <dd>
     <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="GenericNode">
+  <h3>Generic Node<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#GenericNode</p>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#location_type" title="https://transit.ac.uk/ontologies/gtfs#location_type">location type</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">value</span> 3)
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#ChildStop" title="https://transit.ac.uk/ontologies/gtfs#ChildStop">Child Stop</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#BoardingArea" title="https://transit.ac.uk/ontologies/gtfs#BoardingArea">Boarding Area</a> <sup class="type-c" title="class">c</sup>, <a href="#EntranceOrExit" title="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit">Entrance Or Exit</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://transit.ac.uk/ontologies/gtfs#Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Station" title="https://transit.ac.uk/ontologies/gtfs#Station">Station</a> <sup class="type-c" title="class">c</sup>, <a href="#StopLocation" title="https://transit.ac.uk/ontologies/gtfs#StopLocation">Stop Location</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -211,6 +348,60 @@ This section provides details for each class and property defined by gtfs.
    </dd>
   </dl>
  </div>
+ <div class="entity" id="ParentlessStop">
+  <h3>Parentless Stop<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#ParentlessStop</p>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#hasParentStation" title="https://transit.ac.uk/ontologies/gtfs#hasParentStation">has Parent Station</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 0)
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Station" title="https://transit.ac.uk/ontologies/gtfs#Station">Station</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ChildStop" title="https://transit.ac.uk/ontologies/gtfs#ChildStop">Child Stop</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Platform">
+  <h3>Platform<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#Platform</p>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#ChildStop" title="https://transit.ac.uk/ontologies/gtfs#ChildStop">Child Stop</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> <a href="#StopOrPlatform" title="https://transit.ac.uk/ontologies/gtfs#StopOrPlatform">Stop Or Platform</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#StopOrPlatform" title="https://transit.ac.uk/ontologies/gtfs#StopOrPlatform">Stop Or Platform</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#BoardingArea" title="https://transit.ac.uk/ontologies/gtfs#BoardingArea">Boarding Area</a> <sup class="type-c" title="class">c</sup>, <a href="#EntranceOrExit" title="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit">Entrance Or Exit</a> <sup class="type-c" title="class">c</sup>, <a href="#GenericNode" title="https://transit.ac.uk/ontologies/gtfs#GenericNode">Generic Node</a> <sup class="type-c" title="class">c</sup>, <a href="#Station" title="https://transit.ac.uk/ontologies/gtfs#Station">Station</a> <sup class="type-c" title="class">c</sup>, <a href="#StopLocation" title="https://transit.ac.uk/ontologies/gtfs#StopLocation">Stop Location</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="Route">
   <h3>Route<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#Route</p>
@@ -232,6 +423,12 @@ This section provides details for each class and property defined by gtfs.
    </dt>
    <dd>
     <a href="#hasRoute" title="https://transit.ac.uk/ontologies/gtfs#hasRoute">has Route</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has keys
+   </dt>
+   <dd>
+    <a href="#route_id" title="https://transit.ac.uk/ontologies/gtfs#route_id">route id</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is disjoint with
@@ -301,6 +498,30 @@ This section provides details for each class and property defined by gtfs.
    </dd>
   </dl>
  </div>
+ <div class="entity" id="Station">
+  <h3>Station<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#Station</p>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#location_type" title="https://transit.ac.uk/ontologies/gtfs#location_type">location type</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">value</span> 1)
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#ParentlessStop" title="https://transit.ac.uk/ontologies/gtfs#ParentlessStop">Parentless Stop</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#BoardingArea" title="https://transit.ac.uk/ontologies/gtfs#BoardingArea">Boarding Area</a> <sup class="type-c" title="class">c</sup>, <a href="#EntranceOrExit" title="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit">Entrance Or Exit</a> <sup class="type-c" title="class">c</sup>, <a href="#GenericNode" title="https://transit.ac.uk/ontologies/gtfs#GenericNode">Generic Node</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://transit.ac.uk/ontologies/gtfs#Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#StopLocation" title="https://transit.ac.uk/ontologies/gtfs#StopLocation">Stop Location</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="Stop">
   <h3>Stop<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#Stop</p>
@@ -310,6 +531,12 @@ This section provides details for each class and property defined by gtfs.
    </dt>
    <dd>
     <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#ChildStop" title="https://transit.ac.uk/ontologies/gtfs#ChildStop">Child Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#ParentlessStop" title="https://transit.ac.uk/ontologies/gtfs#ParentlessStop">Parentless Stop</a> <sup class="type-c" title="class">c</sup>, <a href="#StopOrPlatform" title="https://transit.ac.uk/ontologies/gtfs#StopOrPlatform">Stop Or Platform</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -324,10 +551,64 @@ This section provides details for each class and property defined by gtfs.
     <a href="#hasParentStation" title="https://transit.ac.uk/ontologies/gtfs#hasParentStation">has Parent Station</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasStop" title="https://transit.ac.uk/ontologies/gtfs#hasStop">has Stop</a> <sup class="type-op" title="object property">op</sup>, <a href="#isParentStationOf" title="https://transit.ac.uk/ontologies/gtfs#isParentStationOf">is Parent Station Of</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
+    has keys
+   </dt>
+   <dd>
+    <a href="#stop_id" title="https://transit.ac.uk/ontologies/gtfs#stop_id">stop id</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
     is disjoint with
    </dt>
    <dd>
     <a href="#Agency" title="https://transit.ac.uk/ontologies/gtfs#Agency">Agency</a> <sup class="type-c" title="class">c</sup>, <a href="#BookingRule" title="https://transit.ac.uk/ontologies/gtfs#BookingRule">Booking Rule</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarDateService" title="https://transit.ac.uk/ontologies/gtfs#CalendarDateService">Calendar Date Service</a> <sup class="type-c" title="class">c</sup>, <a href="#CalendarService" title="https://transit.ac.uk/ontologies/gtfs#CalendarService">Calendar Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Level" title="https://transit.ac.uk/ontologies/gtfs#Level">Level</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="https://transit.ac.uk/ontologies/gtfs#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#LocationGroup" title="https://transit.ac.uk/ontologies/gtfs#LocationGroup">Location Group</a> <sup class="type-c" title="class">c</sup>, <a href="#Route" title="https://transit.ac.uk/ontologies/gtfs#Route">Route</a> <sup class="type-c" title="class">c</sup>, <a href="#Service" title="https://transit.ac.uk/ontologies/gtfs#Service">Service</a> <sup class="type-c" title="class">c</sup>, <a href="#Shape" title="https://transit.ac.uk/ontologies/gtfs#Shape">Shape</a> <sup class="type-c" title="class">c</sup>, <a href="#StopTime" title="https://transit.ac.uk/ontologies/gtfs#StopTime">Stop Time</a> <sup class="type-c" title="class">c</sup>, <a href="#Trip" title="https://transit.ac.uk/ontologies/gtfs#Trip">Trip</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="StopLocation">
+  <h3>Stop Location<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#StopLocation</p>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#ParentlessStop" title="https://transit.ac.uk/ontologies/gtfs#ParentlessStop">Parentless Stop</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> <a href="#StopOrPlatform" title="https://transit.ac.uk/ontologies/gtfs#StopOrPlatform">Stop Or Platform</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#StopOrPlatform" title="https://transit.ac.uk/ontologies/gtfs#StopOrPlatform">Stop Or Platform</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#BoardingArea" title="https://transit.ac.uk/ontologies/gtfs#BoardingArea">Boarding Area</a> <sup class="type-c" title="class">c</sup>, <a href="#EntranceOrExit" title="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit">Entrance Or Exit</a> <sup class="type-c" title="class">c</sup>, <a href="#GenericNode" title="https://transit.ac.uk/ontologies/gtfs#GenericNode">Generic Node</a> <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="https://transit.ac.uk/ontologies/gtfs#Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#Station" title="https://transit.ac.uk/ontologies/gtfs#Station">Station</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="StopOrPlatform">
+  <h3>Stop Or Platform<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://transit.ac.uk/ontologies/gtfs#StopOrPlatform</p>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> ((<a href="#location_type" title="https://transit.ac.uk/ontologies/gtfs#location_type">location type</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">value</span> 0) <span class="logic">or</span> (<a href="#location_type" title="https://transit.ac.uk/ontologies/gtfs#location_type">location type</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 0))
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Stop" title="https://transit.ac.uk/ontologies/gtfs#Stop">Stop</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Platform" title="https://transit.ac.uk/ontologies/gtfs#Platform">Platform</a> <sup class="type-c" title="class">c</sup>, <a href="#StopLocation" title="https://transit.ac.uk/ontologies/gtfs#StopLocation">Stop Location</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -346,6 +627,12 @@ This section provides details for each class and property defined by gtfs.
    </dt>
    <dd>
     <a href="#arrival_time" title="https://transit.ac.uk/ontologies/gtfs#arrival_time">arrival time</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#continuous_drop_off" title="https://transit.ac.uk/ontologies/gtfs#continuous_drop_off">continuous drop off</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#continuous_pickup" title="https://transit.ac.uk/ontologies/gtfs#continuous_pickup">continuous pickup</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#departure_time" title="https://transit.ac.uk/ontologies/gtfs#departure_time">departure time</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#drop_off_booking_rule_id" title="https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id">drop off booking rule id</a> <sup class="type-op" title="object property">op</sup>, <a href="#drop_off_type" title="https://transit.ac.uk/ontologies/gtfs#drop_off_type">drop off type</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#end_pickup_drop_off_window" title="https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window">end pickup drop off window</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasLocation" title="https://transit.ac.uk/ontologies/gtfs#hasLocation">has Location</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasLocationGroup" title="https://transit.ac.uk/ontologies/gtfs#hasLocationGroup">has Location Group</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasStop" title="https://transit.ac.uk/ontologies/gtfs#hasStop">has Stop</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTrip" title="https://transit.ac.uk/ontologies/gtfs#hasTrip">has Trip</a> <sup class="type-op" title="object property">op</sup>, <a href="#pickup_booking_rule_id" title="https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id">pickup booking rule id</a> <sup class="type-op" title="object property">op</sup>, <a href="#pickup_type" title="https://transit.ac.uk/ontologies/gtfs#pickup_type">pickup type</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#shape_dist_traveled" title="https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled">shape dist traveled</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#start_pickup_drop_off_window" title="https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window">start pickup drop off window</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_headsign" title="https://transit.ac.uk/ontologies/gtfs#stop_headsign">stop headsign</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#stop_sequence" title="https://transit.ac.uk/ontologies/gtfs#stop_sequence">stop sequence</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#timepoint" title="https://transit.ac.uk/ontologies/gtfs#timepoint">timepoint</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    has keys
+   </dt>
+   <dd>
+    <a href="#hasTrip" title="https://transit.ac.uk/ontologies/gtfs#hasTrip">has Trip</a> <sup class="type-op" title="object property">op</sup> , <a href="#trip_id" title="https://transit.ac.uk/ontologies/gtfs#trip_id">trip id</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is disjoint with
@@ -376,6 +663,12 @@ This section provides details for each class and property defined by gtfs.
    </dt>
    <dd>
     <a href="#hasTrip" title="https://transit.ac.uk/ontologies/gtfs#hasTrip">has Trip</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has keys
+   </dt>
+   <dd>
+    <a href="#trip_id" title="https://transit.ac.uk/ontologies/gtfs#trip_id">trip id</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is disjoint with
@@ -970,7 +1263,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+     { "0" , "1" , "2" }
     </dd>
    </dl>
   </div>
@@ -1010,7 +1303,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+     { "0" , "1" , "2" }
     </dd>
    </dl>
   </div>
@@ -1033,7 +1326,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+     { "0" , "1" , "2" }
     </dd>
    </dl>
   </div>
@@ -1053,7 +1346,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+     { "0" , "1" , "2" , "3" }
     </dd>
    </dl>
   </div>
@@ -1073,7 +1366,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+     { "0" , "1" , "2" , "3" }
     </dd>
    </dl>
   </div>
@@ -1133,7 +1426,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+     { "0" , "1" }
     </dd>
    </dl>
   </div>
@@ -1253,7 +1546,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+     { "0" , "1" , "2" , "3" , "4" }
     </dd>
    </dl>
   </div>
@@ -1493,7 +1786,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+     { "0" , "1" , "11" , "12" , "2" , "3" , "4" , "5" , "6" , "7" }
     </dd>
    </dl>
   </div>
@@ -1673,7 +1966,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+     { "0" , "1" }
     </dd>
    </dl>
   </div>
@@ -1772,9 +2065,7 @@ This section provides details for each class and property defined by gtfs.
     <dt>
      has range
     </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
+    <dd></dd>
    </dl>
   </div>
  </div>
@@ -1792,9 +2083,7 @@ This section provides details for each class and property defined by gtfs.
     <dt>
      has range
     </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
+    <dd></dd>
    </dl>
   </div>
  </div>
@@ -2073,7 +2362,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+     { "0" , "1" , "2" }
     </dd>
    </dl>
   </div>
@@ -2093,7 +2382,7 @@ This section provides details for each class and property defined by gtfs.
      has range
     </dt>
     <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+     { "0" , "1" , "2" }
     </dd>
    </dl>
   </div>

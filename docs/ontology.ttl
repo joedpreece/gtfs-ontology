@@ -222,7 +222,18 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#bikes_allowed
 :bikes_allowed rdf:type owl:DatatypeProperty ;
                rdfs:domain :Trip ;
-               rdfs:range xsd:integer .
+               rdfs:range [ rdf:type rdfs:Datatype ;
+                            owl:oneOf [ rdf:type rdf:List ;
+                                        rdf:first 0 ;
+                                        rdf:rest [ rdf:type rdf:List ;
+                                                   rdf:first 1 ;
+                                                   rdf:rest [ rdf:type rdf:List ;
+                                                              rdf:first 2 ;
+                                                              rdf:rest rdf:nil
+                                                            ]
+                                                 ]
+                                      ]
+                          ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#block_id
@@ -234,7 +245,18 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#cars_allowed
 :cars_allowed rdf:type owl:DatatypeProperty ;
               rdfs:domain :Trip ;
-              rdfs:range xsd:integer .
+              rdfs:range [ rdf:type rdfs:Datatype ;
+                           owl:oneOf [ rdf:type rdf:List ;
+                                       rdf:first 0 ;
+                                       rdf:rest [ rdf:type rdf:List ;
+                                                  rdf:first 1 ;
+                                                  rdf:rest [ rdf:type rdf:List ;
+                                                             rdf:first 2 ;
+                                                             rdf:rest rdf:nil
+                                                           ]
+                                                ]
+                                     ]
+                         ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#cemv_support
@@ -244,7 +266,18 @@ xsd:time rdf:type rdfs:Datatype .
                                           :Route
                                         )
                           ] ;
-              rdfs:range xsd:integer ;
+              rdfs:range [ rdf:type rdfs:Datatype ;
+                           owl:oneOf [ rdf:type rdf:List ;
+                                       rdf:first 0 ;
+                                       rdf:rest [ rdf:type rdf:List ;
+                                                  rdf:first 1 ;
+                                                  rdf:rest [ rdf:type rdf:List ;
+                                                             rdf:first 2 ;
+                                                             rdf:rest rdf:nil
+                                                           ]
+                                                ]
+                                     ]
+                         ] ;
               rdfs:comment "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media."@en ;
               rdfs:label "CEMV Support"@en .
 
@@ -256,7 +289,21 @@ xsd:time rdf:type rdfs:Datatype .
                                                  :StopTime
                                                )
                                  ] ;
-                     rdfs:range xsd:integer .
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:oneOf [ rdf:type rdf:List ;
+                                              rdf:first 0 ;
+                                              rdf:rest [ rdf:type rdf:List ;
+                                                         rdf:first 1 ;
+                                                         rdf:rest [ rdf:type rdf:List ;
+                                                                    rdf:first 2 ;
+                                                                    rdf:rest [ rdf:type rdf:List ;
+                                                                               rdf:first 3 ;
+                                                                               rdf:rest rdf:nil
+                                                                             ]
+                                                                  ]
+                                                       ]
+                                            ]
+                                ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#continuous_pickup
@@ -266,7 +313,21 @@ xsd:time rdf:type rdfs:Datatype .
                                                :StopTime
                                              )
                                ] ;
-                   rdfs:range xsd:integer .
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:oneOf [ rdf:type rdf:List ;
+                                            rdf:first 0 ;
+                                            rdf:rest [ rdf:type rdf:List ;
+                                                       rdf:first 1 ;
+                                                       rdf:rest [ rdf:type rdf:List ;
+                                                                  rdf:first 2 ;
+                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                             rdf:first 3 ;
+                                                                             rdf:rest rdf:nil
+                                                                           ]
+                                                                ]
+                                                     ]
+                                          ]
+                              ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#date
@@ -284,7 +345,15 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#direction_id
 :direction_id rdf:type owl:DatatypeProperty ;
               rdfs:domain :Trip ;
-              rdfs:range xsd:integer .
+              rdfs:range [ rdf:type rdfs:Datatype ;
+                           owl:oneOf [ rdf:type rdf:List ;
+                                       rdf:first 0 ;
+                                       rdf:rest [ rdf:type rdf:List ;
+                                                  rdf:first 1 ;
+                                                  rdf:rest rdf:nil
+                                                ]
+                                     ]
+                         ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#drop_off_type
@@ -320,7 +389,24 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#location_type
 :location_type rdf:type owl:DatatypeProperty ;
                rdfs:domain :Stop ;
-               rdfs:range xsd:integer .
+               rdfs:range [ rdf:type rdfs:Datatype ;
+                            owl:oneOf [ rdf:type rdf:List ;
+                                        rdf:first 0 ;
+                                        rdf:rest [ rdf:type rdf:List ;
+                                                   rdf:first 1 ;
+                                                   rdf:rest [ rdf:type rdf:List ;
+                                                              rdf:first 2 ;
+                                                              rdf:rest [ rdf:type rdf:List ;
+                                                                         rdf:first 3 ;
+                                                                         rdf:rest [ rdf:type rdf:List ;
+                                                                                    rdf:first 4 ;
+                                                                                    rdf:rest rdf:nil
+                                                                                  ]
+                                                                       ]
+                                                            ]
+                                                 ]
+                                      ]
+                          ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#monday
@@ -392,7 +478,39 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#route_type
 :route_type rdf:type owl:DatatypeProperty ;
             rdfs:domain :Route ;
-            rdfs:range xsd:integer .
+            rdfs:range [ rdf:type rdfs:Datatype ;
+                         owl:oneOf [ rdf:type rdf:List ;
+                                     rdf:first 0 ;
+                                     rdf:rest [ rdf:type rdf:List ;
+                                                rdf:first 1 ;
+                                                rdf:rest [ rdf:type rdf:List ;
+                                                           rdf:first 11 ;
+                                                           rdf:rest [ rdf:type rdf:List ;
+                                                                      rdf:first 12 ;
+                                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                                 rdf:first 2 ;
+                                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                                            rdf:first 3 ;
+                                                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                                                       rdf:first 4 ;
+                                                                                                       rdf:rest [ rdf:type rdf:List ;
+                                                                                                                  rdf:first 5 ;
+                                                                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                                                                             rdf:first 6 ;
+                                                                                                                             rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                        rdf:first 7 ;
+                                                                                                                                        rdf:rest rdf:nil
+                                                                                                                                      ]
+                                                                                                                           ]
+                                                                                                                ]
+                                                                                                     ]
+                                                                                          ]
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                       ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#route_url
@@ -446,7 +564,15 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#stop_access
 :stop_access rdf:type owl:DatatypeProperty ;
              rdfs:domain :Stop ;
-             rdfs:range xsd:integer .
+             rdfs:range [ rdf:type rdfs:Datatype ;
+                          owl:oneOf [ rdf:type rdf:List ;
+                                      rdf:first 0 ;
+                                      rdf:rest [ rdf:type rdf:List ;
+                                                 rdf:first 1 ;
+                                                 rdf:rest rdf:nil
+                                               ]
+                                    ]
+                        ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_code
@@ -476,13 +602,27 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#stop_lat
 :stop_lat rdf:type owl:DatatypeProperty ;
           rdfs:domain :Stop ;
-          rdfs:range xsd:decimal .
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:onDatatype xsd:decimal ;
+                       owl:withRestrictions ( [ xsd:minInclusive -90.0
+                                              ]
+                                              [ xsd:maxInclusive 90.0
+                                              ]
+                                            )
+                     ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_lon
 :stop_lon rdf:type owl:DatatypeProperty ;
           rdfs:domain :Stop ;
-          rdfs:range xsd:decimal .
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:onDatatype xsd:decimal ;
+                       owl:withRestrictions ( [ xsd:minInclusive -180.0
+                                              ]
+                                              [ xsd:maxInclusive 180.0
+                                              ]
+                                            )
+                     ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_name
@@ -566,13 +706,35 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible
 :wheelchair_accessible rdf:type owl:DatatypeProperty ;
                        rdfs:domain :Trip ;
-                       rdfs:range xsd:integer .
+                       rdfs:range [ rdf:type rdfs:Datatype ;
+                                    owl:oneOf [ rdf:type rdf:List ;
+                                                rdf:first 0 ;
+                                                rdf:rest [ rdf:type rdf:List ;
+                                                           rdf:first 1 ;
+                                                           rdf:rest [ rdf:type rdf:List ;
+                                                                      rdf:first 2 ;
+                                                                      rdf:rest rdf:nil
+                                                                    ]
+                                                         ]
+                                              ]
+                                  ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding
 :wheelchair_boarding rdf:type owl:DatatypeProperty ;
                      rdfs:domain :Stop ;
-                     rdfs:range xsd:integer .
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:oneOf [ rdf:type rdf:List ;
+                                              rdf:first 0 ;
+                                              rdf:rest [ rdf:type rdf:List ;
+                                                         rdf:first 1 ;
+                                                         rdf:rest [ rdf:type rdf:List ;
+                                                                    rdf:first 2 ;
+                                                                    rdf:rest rdf:nil
+                                                                  ]
+                                                       ]
+                                            ]
+                                ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#zone_id
@@ -592,9 +754,32 @@ xsd:time rdf:type rdfs:Datatype .
                    ) .
 
 
+###  https://transit.ac.uk/ontologies/gtfs#BoardingArea
+:BoardingArea rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :Stop
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :location_type ;
+                                                           owl:hasValue 4
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :ChildStop .
+
+
 ###  https://transit.ac.uk/ontologies/gtfs#BookingRule
 :BookingRule rdf:type owl:Class ;
              rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#CEMVSupportedRecord
+:CEMVSupportedRecord rdf:type owl:Class ;
+                     rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#CEMVUnsupportedRecord
+:CEMVUnsupportedRecord rdf:type owl:Class ;
+                       rdfs:subClassOf owl:Thing .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#CalendarDateService
@@ -607,6 +792,45 @@ xsd:time rdf:type rdfs:Datatype .
                  rdfs:subClassOf :Service .
 
 
+###  https://transit.ac.uk/ontologies/gtfs#ChildStop
+:ChildStop rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Stop
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasParentStation ;
+                                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Stop ;
+           owl:disjointWith :ParentlessStop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#EntranceOrExit
+:EntranceOrExit rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :Stop
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :location_type ;
+                                                             owl:hasValue 2
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf :ChildStop ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :stop_lat ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :stop_lon ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :stop_name ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] .
+
+
 ###  https://transit.ac.uk/ontologies/gtfs#FareMedium
 :FareMedium rdf:type owl:Class ;
             rdfs:subClassOf owl:Thing .
@@ -615,6 +839,19 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#FareProduct
 :FareProduct rdf:type owl:Class ;
              rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#GenericNode
+:GenericNode rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :Stop
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :location_type ;
+                                                          owl:hasValue 3
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf :ChildStop .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#Level
@@ -632,9 +869,34 @@ xsd:time rdf:type rdfs:Datatype .
                rdfs:subClassOf owl:Thing .
 
 
+###  https://transit.ac.uk/ontologies/gtfs#ParentlessStop
+:ParentlessStop rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :Stop
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasParentStation ;
+                                                             owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf :Stop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#Platform
+:Platform rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :ChildStop
+                                                     :StopOrPlatform
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :StopOrPlatform .
+
+
 ###  https://transit.ac.uk/ontologies/gtfs#Route
 :Route rdf:type owl:Class ;
-       rdfs:subClassOf owl:Thing .
+       rdfs:subClassOf owl:Thing ;
+       owl:hasKey ( :route_id
+                  ) .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#Service
@@ -647,19 +909,93 @@ xsd:time rdf:type rdfs:Datatype .
        rdfs:subClassOf owl:Thing .
 
 
+###  https://transit.ac.uk/ontologies/gtfs#Station
+:Station rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( :Stop
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :location_type ;
+                                                      owl:hasValue 1
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+         rdfs:subClassOf :ParentlessStop ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :stop_lat ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :stop_lon ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :stop_name ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] .
+
+
 ###  https://transit.ac.uk/ontologies/gtfs#Stop
 :Stop rdf:type owl:Class ;
-      rdfs:subClassOf owl:Thing .
+      rdfs:subClassOf owl:Thing ;
+      owl:hasKey ( :stop_id
+                 ) .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#StopLocation
+:StopLocation rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :ParentlessStop
+                                                         :StopOrPlatform
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :StopOrPlatform .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#StopOrPlatform
+:StopOrPlatform rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :Stop
+                                                           [ rdf:type owl:Class ;
+                                                             owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :location_type ;
+                                                                             owl:hasValue 0
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :location_type ;
+                                                                             owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                                           ]
+                                                                         )
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf :Stop ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :stop_lat ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :stop_lon ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :stop_name ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#StopTime
 :StopTime rdf:type owl:Class ;
-          rdfs:subClassOf owl:Thing .
+          rdfs:subClassOf owl:Thing ;
+          owl:hasKey ( :hasTrip
+                       :trip_id
+                     ) .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#Trip
 :Trip rdf:type owl:Class ;
-      rdfs:subClassOf owl:Thing .
+      rdfs:subClassOf owl:Thing ;
+      owl:hasKey ( :trip_id
+                 ) .
 
 
 #################################################################
@@ -680,6 +1016,17 @@ xsd:time rdf:type rdfs:Datatype .
                 :Stop
                 :StopTime
                 :Trip
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BoardingArea
+                :EntranceOrExit
+                :GenericNode
+                :Platform
+                :Station
+                :StopLocation
               )
 ] .
 
