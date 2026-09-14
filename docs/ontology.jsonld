@@ -1,120 +1,1773 @@
 [ {
   "@id" : "_:genid1",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid3"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid184",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid186"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid186",
+  "http://www.w3.org/2001/XMLSchema#pattern" : [ {
+    "@value" : "^\\d{4}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])$"
+  } ]
+}, {
+  "@id" : "_:genid187",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid189"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid189",
+  "http://www.w3.org/2001/XMLSchema#pattern" : [ {
+    "@value" : "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+  } ]
+}, {
+  "@id" : "_:genid190",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid192"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid192",
+  "http://www.w3.org/2001/XMLSchema#pattern" : [ {
+    "@value" : "^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$"
+  } ]
+}, {
+  "@id" : "_:genid193",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid197"
+    }, {
+      "@id" : "_:genid195"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid195",
+  "http://www.w3.org/2001/XMLSchema#maxInclusive" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "90.0"
+  } ]
+}, {
+  "@id" : "_:genid197",
+  "http://www.w3.org/2001/XMLSchema#minInclusive" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "-90.0"
+  } ]
+}, {
+  "@id" : "_:genid198",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid200"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid200",
+  "http://www.w3.org/2001/XMLSchema#pattern" : [ {
+    "@value" : "^\\d+:[0-5]\\d:[0-5]\\d$"
+  } ]
+}, {
+  "@id" : "_:genid201",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid205"
+    }, {
+      "@id" : "_:genid203"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid203",
+  "http://www.w3.org/2001/XMLSchema#maxInclusive" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "180.0"
+  } ]
+}, {
+  "@id" : "_:genid205",
+  "http://www.w3.org/2001/XMLSchema#minInclusive" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "-180.0"
+  } ]
+}, {
+  "@id" : "_:genid206",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid208"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid208",
+  "http://www.w3.org/2001/XMLSchema#minInclusive" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "0.0"
+  } ]
+}, {
+  "@id" : "_:genid209",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid211"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid211",
+  "http://www.w3.org/2001/XMLSchema#pattern" : [ {
+    "@value" : "^\\+?[1-9]\\d{1,14}$"
+  } ]
+}, {
+  "@id" : "_:genid212",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid214"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid214",
+  "http://www.w3.org/2001/XMLSchema#pattern" : [ {
+    "@value" : "^\\d+:[0-5]\\d:[0-5]\\d$"
+  } ]
+}, {
+  "@id" : "_:genid215",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-      "@value" : "0"
+      "@value" : "Africa/Abidjan"
     }, {
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-      "@value" : "1"
+      "@value" : "Africa/Accra"
     }, {
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-      "@value" : "2"
+      "@value" : "Africa/Addis_Ababa"
+    }, {
+      "@value" : "Africa/Algiers"
+    }, {
+      "@value" : "Africa/Asmara"
+    }, {
+      "@value" : "Africa/Asmera"
+    }, {
+      "@value" : "Africa/Bamako"
+    }, {
+      "@value" : "Africa/Bangui"
+    }, {
+      "@value" : "Africa/Banjul"
+    }, {
+      "@value" : "Africa/Bissau"
+    }, {
+      "@value" : "Africa/Blantyre"
+    }, {
+      "@value" : "Africa/Brazzaville"
+    }, {
+      "@value" : "Africa/Bujumbura"
+    }, {
+      "@value" : "Africa/Cairo"
+    }, {
+      "@value" : "Africa/Casablanca"
+    }, {
+      "@value" : "Africa/Ceuta"
+    }, {
+      "@value" : "Africa/Conakry"
+    }, {
+      "@value" : "Africa/Dakar"
+    }, {
+      "@value" : "Africa/Dar_es_Salaam"
+    }, {
+      "@value" : "Africa/Djibouti"
+    }, {
+      "@value" : "Africa/Douala"
+    }, {
+      "@value" : "Africa/El_Aaiun"
+    }, {
+      "@value" : "Africa/Freetown"
+    }, {
+      "@value" : "Africa/Gaborone"
+    }, {
+      "@value" : "Africa/Harare"
+    }, {
+      "@value" : "Africa/Johannesburg"
+    }, {
+      "@value" : "Africa/Juba"
+    }, {
+      "@value" : "Africa/Kampala"
+    }, {
+      "@value" : "Africa/Khartoum"
+    }, {
+      "@value" : "Africa/Kigali"
+    }, {
+      "@value" : "Africa/Kinshasa"
+    }, {
+      "@value" : "Africa/Lagos"
+    }, {
+      "@value" : "Africa/Libreville"
+    }, {
+      "@value" : "Africa/Lome"
+    }, {
+      "@value" : "Africa/Luanda"
+    }, {
+      "@value" : "Africa/Lubumbashi"
+    }, {
+      "@value" : "Africa/Lusaka"
+    }, {
+      "@value" : "Africa/Malabo"
+    }, {
+      "@value" : "Africa/Maputo"
+    }, {
+      "@value" : "Africa/Maseru"
+    }, {
+      "@value" : "Africa/Mbabane"
+    }, {
+      "@value" : "Africa/Mogadishu"
+    }, {
+      "@value" : "Africa/Monrovia"
+    }, {
+      "@value" : "Africa/Nairobi"
+    }, {
+      "@value" : "Africa/Ndjamena"
+    }, {
+      "@value" : "Africa/Niamey"
+    }, {
+      "@value" : "Africa/Nouakchott"
+    }, {
+      "@value" : "Africa/Ouagadougou"
+    }, {
+      "@value" : "Africa/Porto-Novo"
+    }, {
+      "@value" : "Africa/Sao_Tome"
+    }, {
+      "@value" : "Africa/Timbuktu"
+    }, {
+      "@value" : "Africa/Tripoli"
+    }, {
+      "@value" : "Africa/Tunis"
+    }, {
+      "@value" : "Africa/Windhoek"
+    }, {
+      "@value" : "America/Adak"
+    }, {
+      "@value" : "America/Anchorage"
+    }, {
+      "@value" : "America/Anguilla"
+    }, {
+      "@value" : "America/Antigua"
+    }, {
+      "@value" : "America/Araguaina"
+    }, {
+      "@value" : "America/Argentina/Buenos_Aires"
+    }, {
+      "@value" : "America/Argentina/Catamarca"
+    }, {
+      "@value" : "America/Argentina/ComodRivadavia"
+    }, {
+      "@value" : "America/Argentina/Cordoba"
+    }, {
+      "@value" : "America/Argentina/Jujuy"
+    }, {
+      "@value" : "America/Argentina/La_Rioja"
+    }, {
+      "@value" : "America/Argentina/Mendoza"
+    }, {
+      "@value" : "America/Argentina/Rio_Gallegos"
+    }, {
+      "@value" : "America/Argentina/Salta"
+    }, {
+      "@value" : "America/Argentina/San_Juan"
+    }, {
+      "@value" : "America/Argentina/San_Luis"
+    }, {
+      "@value" : "America/Argentina/Tucuman"
+    }, {
+      "@value" : "America/Argentina/Ushuaia"
+    }, {
+      "@value" : "America/Aruba"
+    }, {
+      "@value" : "America/Asuncion"
+    }, {
+      "@value" : "America/Atikokan"
+    }, {
+      "@value" : "America/Atka"
+    }, {
+      "@value" : "America/Bahia"
+    }, {
+      "@value" : "America/Bahia_Banderas"
+    }, {
+      "@value" : "America/Barbados"
+    }, {
+      "@value" : "America/Belem"
+    }, {
+      "@value" : "America/Belize"
+    }, {
+      "@value" : "America/Blanc-Sablon"
+    }, {
+      "@value" : "America/Boa_Vista"
+    }, {
+      "@value" : "America/Bogota"
+    }, {
+      "@value" : "America/Boise"
+    }, {
+      "@value" : "America/Buenos_Aires"
+    }, {
+      "@value" : "America/Cambridge_Bay"
+    }, {
+      "@value" : "America/Campo_Grande"
+    }, {
+      "@value" : "America/Cancun"
+    }, {
+      "@value" : "America/Caracas"
+    }, {
+      "@value" : "America/Catamarca"
+    }, {
+      "@value" : "America/Cayenne"
+    }, {
+      "@value" : "America/Cayman"
+    }, {
+      "@value" : "America/Chicago"
+    }, {
+      "@value" : "America/Chihuahua"
+    }, {
+      "@value" : "America/Ciudad_Juarez"
+    }, {
+      "@value" : "America/Coral_Harbour"
+    }, {
+      "@value" : "America/Cordoba"
+    }, {
+      "@value" : "America/Costa_Rica"
+    }, {
+      "@value" : "America/Coyhaique"
+    }, {
+      "@value" : "America/Creston"
+    }, {
+      "@value" : "America/Cuiaba"
+    }, {
+      "@value" : "America/Curacao"
+    }, {
+      "@value" : "America/Danmarkshavn"
+    }, {
+      "@value" : "America/Dawson"
+    }, {
+      "@value" : "America/Dawson_Creek"
+    }, {
+      "@value" : "America/Denver"
+    }, {
+      "@value" : "America/Detroit"
+    }, {
+      "@value" : "America/Dominica"
+    }, {
+      "@value" : "America/Edmonton"
+    }, {
+      "@value" : "America/Eirunepe"
+    }, {
+      "@value" : "America/El_Salvador"
+    }, {
+      "@value" : "America/Ensenada"
+    }, {
+      "@value" : "America/Fort_Nelson"
+    }, {
+      "@value" : "America/Fort_Wayne"
+    }, {
+      "@value" : "America/Fortaleza"
+    }, {
+      "@value" : "America/Glace_Bay"
+    }, {
+      "@value" : "America/Godthab"
+    }, {
+      "@value" : "America/Goose_Bay"
+    }, {
+      "@value" : "America/Grand_Turk"
+    }, {
+      "@value" : "America/Grenada"
+    }, {
+      "@value" : "America/Guadeloupe"
+    }, {
+      "@value" : "America/Guatemala"
+    }, {
+      "@value" : "America/Guayaquil"
+    }, {
+      "@value" : "America/Guyana"
+    }, {
+      "@value" : "America/Halifax"
+    }, {
+      "@value" : "America/Havana"
+    }, {
+      "@value" : "America/Hermosillo"
+    }, {
+      "@value" : "America/Indiana/Indianapolis"
+    }, {
+      "@value" : "America/Indiana/Knox"
+    }, {
+      "@value" : "America/Indiana/Marengo"
+    }, {
+      "@value" : "America/Indiana/Petersburg"
+    }, {
+      "@value" : "America/Indiana/Tell_City"
+    }, {
+      "@value" : "America/Indiana/Vevay"
+    }, {
+      "@value" : "America/Indiana/Vincennes"
+    }, {
+      "@value" : "America/Indiana/Winamac"
+    }, {
+      "@value" : "America/Indianapolis"
+    }, {
+      "@value" : "America/Inuvik"
+    }, {
+      "@value" : "America/Iqaluit"
+    }, {
+      "@value" : "America/Jamaica"
+    }, {
+      "@value" : "America/Jujuy"
+    }, {
+      "@value" : "America/Juneau"
+    }, {
+      "@value" : "America/Kentucky/Louisville"
+    }, {
+      "@value" : "America/Kentucky/Monticello"
+    }, {
+      "@value" : "America/Knox_IN"
+    }, {
+      "@value" : "America/Kralendijk"
+    }, {
+      "@value" : "America/La_Paz"
+    }, {
+      "@value" : "America/Lima"
+    }, {
+      "@value" : "America/Los_Angeles"
+    }, {
+      "@value" : "America/Louisville"
+    }, {
+      "@value" : "America/Lower_Princes"
+    }, {
+      "@value" : "America/Maceio"
+    }, {
+      "@value" : "America/Managua"
+    }, {
+      "@value" : "America/Manaus"
+    }, {
+      "@value" : "America/Marigot"
+    }, {
+      "@value" : "America/Martinique"
+    }, {
+      "@value" : "America/Matamoros"
+    }, {
+      "@value" : "America/Mazatlan"
+    }, {
+      "@value" : "America/Mendoza"
+    }, {
+      "@value" : "America/Menominee"
+    }, {
+      "@value" : "America/Merida"
+    }, {
+      "@value" : "America/Metlakatla"
+    }, {
+      "@value" : "America/Mexico_City"
+    }, {
+      "@value" : "America/Miquelon"
+    }, {
+      "@value" : "America/Moncton"
+    }, {
+      "@value" : "America/Monterrey"
+    }, {
+      "@value" : "America/Montevideo"
+    }, {
+      "@value" : "America/Montreal"
+    }, {
+      "@value" : "America/Montserrat"
+    }, {
+      "@value" : "America/Nassau"
+    }, {
+      "@value" : "America/New_York"
+    }, {
+      "@value" : "America/Nipigon"
+    }, {
+      "@value" : "America/Nome"
+    }, {
+      "@value" : "America/Noronha"
+    }, {
+      "@value" : "America/North_Dakota/Beulah"
+    }, {
+      "@value" : "America/North_Dakota/Center"
+    }, {
+      "@value" : "America/North_Dakota/New_Salem"
+    }, {
+      "@value" : "America/Nuuk"
+    }, {
+      "@value" : "America/Ojinaga"
+    }, {
+      "@value" : "America/Panama"
+    }, {
+      "@value" : "America/Pangnirtung"
+    }, {
+      "@value" : "America/Paramaribo"
+    }, {
+      "@value" : "America/Phoenix"
+    }, {
+      "@value" : "America/Port-au-Prince"
+    }, {
+      "@value" : "America/Port_of_Spain"
+    }, {
+      "@value" : "America/Porto_Acre"
+    }, {
+      "@value" : "America/Porto_Velho"
+    }, {
+      "@value" : "America/Puerto_Rico"
+    }, {
+      "@value" : "America/Punta_Arenas"
+    }, {
+      "@value" : "America/Rainy_River"
+    }, {
+      "@value" : "America/Rankin_Inlet"
+    }, {
+      "@value" : "America/Recife"
+    }, {
+      "@value" : "America/Regina"
+    }, {
+      "@value" : "America/Resolute"
+    }, {
+      "@value" : "America/Rio_Branco"
+    }, {
+      "@value" : "America/Rosario"
+    }, {
+      "@value" : "America/Santa_Isabel"
+    }, {
+      "@value" : "America/Santarem"
+    }, {
+      "@value" : "America/Santiago"
+    }, {
+      "@value" : "America/Santo_Domingo"
+    }, {
+      "@value" : "America/Sao_Paulo"
+    }, {
+      "@value" : "America/Scoresbysund"
+    }, {
+      "@value" : "America/Shiprock"
+    }, {
+      "@value" : "America/Sitka"
+    }, {
+      "@value" : "America/St_Barthelemy"
+    }, {
+      "@value" : "America/St_Johns"
+    }, {
+      "@value" : "America/St_Kitts"
+    }, {
+      "@value" : "America/St_Lucia"
+    }, {
+      "@value" : "America/St_Thomas"
+    }, {
+      "@value" : "America/St_Vincent"
+    }, {
+      "@value" : "America/Swift_Current"
+    }, {
+      "@value" : "America/Tegucigalpa"
+    }, {
+      "@value" : "America/Thule"
+    }, {
+      "@value" : "America/Thunder_Bay"
+    }, {
+      "@value" : "America/Tijuana"
+    }, {
+      "@value" : "America/Toronto"
+    }, {
+      "@value" : "America/Tortola"
+    }, {
+      "@value" : "America/Vancouver"
+    }, {
+      "@value" : "America/Virgin"
+    }, {
+      "@value" : "America/Whitehorse"
+    }, {
+      "@value" : "America/Winnipeg"
+    }, {
+      "@value" : "America/Yakutat"
+    }, {
+      "@value" : "America/Yellowknife"
+    }, {
+      "@value" : "Antarctica/Casey"
+    }, {
+      "@value" : "Antarctica/Davis"
+    }, {
+      "@value" : "Antarctica/DumontDUrville"
+    }, {
+      "@value" : "Antarctica/Macquarie"
+    }, {
+      "@value" : "Antarctica/Mawson"
+    }, {
+      "@value" : "Antarctica/McMurdo"
+    }, {
+      "@value" : "Antarctica/Palmer"
+    }, {
+      "@value" : "Antarctica/Rothera"
+    }, {
+      "@value" : "Antarctica/South_Pole"
+    }, {
+      "@value" : "Antarctica/Syowa"
+    }, {
+      "@value" : "Antarctica/Troll"
+    }, {
+      "@value" : "Antarctica/Vostok"
+    }, {
+      "@value" : "Arctic/Longyearbyen"
+    }, {
+      "@value" : "Asia/Aden"
+    }, {
+      "@value" : "Asia/Almaty"
+    }, {
+      "@value" : "Asia/Amman"
+    }, {
+      "@value" : "Asia/Anadyr"
+    }, {
+      "@value" : "Asia/Aqtau"
+    }, {
+      "@value" : "Asia/Aqtobe"
+    }, {
+      "@value" : "Asia/Ashgabat"
+    }, {
+      "@value" : "Asia/Ashkhabad"
+    }, {
+      "@value" : "Asia/Atyrau"
+    }, {
+      "@value" : "Asia/Baghdad"
+    }, {
+      "@value" : "Asia/Bahrain"
+    }, {
+      "@value" : "Asia/Baku"
+    }, {
+      "@value" : "Asia/Bangkok"
+    }, {
+      "@value" : "Asia/Barnaul"
+    }, {
+      "@value" : "Asia/Beirut"
+    }, {
+      "@value" : "Asia/Bishkek"
+    }, {
+      "@value" : "Asia/Brunei"
+    }, {
+      "@value" : "Asia/Calcutta"
+    }, {
+      "@value" : "Asia/Chita"
+    }, {
+      "@value" : "Asia/Choibalsan"
+    }, {
+      "@value" : "Asia/Chongqing"
+    }, {
+      "@value" : "Asia/Chungking"
+    }, {
+      "@value" : "Asia/Colombo"
+    }, {
+      "@value" : "Asia/Dacca"
+    }, {
+      "@value" : "Asia/Damascus"
+    }, {
+      "@value" : "Asia/Dhaka"
+    }, {
+      "@value" : "Asia/Dili"
+    }, {
+      "@value" : "Asia/Dubai"
+    }, {
+      "@value" : "Asia/Dushanbe"
+    }, {
+      "@value" : "Asia/Famagusta"
+    }, {
+      "@value" : "Asia/Gaza"
+    }, {
+      "@value" : "Asia/Harbin"
+    }, {
+      "@value" : "Asia/Hebron"
+    }, {
+      "@value" : "Asia/Ho_Chi_Minh"
+    }, {
+      "@value" : "Asia/Hong_Kong"
+    }, {
+      "@value" : "Asia/Hovd"
+    }, {
+      "@value" : "Asia/Irkutsk"
+    }, {
+      "@value" : "Asia/Istanbul"
+    }, {
+      "@value" : "Asia/Jakarta"
+    }, {
+      "@value" : "Asia/Jayapura"
+    }, {
+      "@value" : "Asia/Jerusalem"
+    }, {
+      "@value" : "Asia/Kabul"
+    }, {
+      "@value" : "Asia/Kamchatka"
+    }, {
+      "@value" : "Asia/Karachi"
+    }, {
+      "@value" : "Asia/Kashgar"
+    }, {
+      "@value" : "Asia/Kathmandu"
+    }, {
+      "@value" : "Asia/Katmandu"
+    }, {
+      "@value" : "Asia/Khandyga"
+    }, {
+      "@value" : "Asia/Kolkata"
+    }, {
+      "@value" : "Asia/Krasnoyarsk"
+    }, {
+      "@value" : "Asia/Kuala_Lumpur"
+    }, {
+      "@value" : "Asia/Kuching"
+    }, {
+      "@value" : "Asia/Kuwait"
+    }, {
+      "@value" : "Asia/Macao"
+    }, {
+      "@value" : "Asia/Macau"
+    }, {
+      "@value" : "Asia/Magadan"
+    }, {
+      "@value" : "Asia/Makassar"
+    }, {
+      "@value" : "Asia/Manila"
+    }, {
+      "@value" : "Asia/Muscat"
+    }, {
+      "@value" : "Asia/Nicosia"
+    }, {
+      "@value" : "Asia/Novokuznetsk"
+    }, {
+      "@value" : "Asia/Novosibirsk"
+    }, {
+      "@value" : "Asia/Omsk"
+    }, {
+      "@value" : "Asia/Oral"
+    }, {
+      "@value" : "Asia/Phnom_Penh"
+    }, {
+      "@value" : "Asia/Pontianak"
+    }, {
+      "@value" : "Asia/Pyongyang"
+    }, {
+      "@value" : "Asia/Qatar"
+    }, {
+      "@value" : "Asia/Qostanay"
+    }, {
+      "@value" : "Asia/Qyzylorda"
+    }, {
+      "@value" : "Asia/Rangoon"
+    }, {
+      "@value" : "Asia/Riyadh"
+    }, {
+      "@value" : "Asia/Saigon"
+    }, {
+      "@value" : "Asia/Sakhalin"
+    }, {
+      "@value" : "Asia/Samarkand"
+    }, {
+      "@value" : "Asia/Seoul"
+    }, {
+      "@value" : "Asia/Shanghai"
+    }, {
+      "@value" : "Asia/Singapore"
+    }, {
+      "@value" : "Asia/Srednekolymsk"
+    }, {
+      "@value" : "Asia/Taipei"
+    }, {
+      "@value" : "Asia/Tashkent"
+    }, {
+      "@value" : "Asia/Tbilisi"
+    }, {
+      "@value" : "Asia/Tehran"
+    }, {
+      "@value" : "Asia/Tel_Aviv"
+    }, {
+      "@value" : "Asia/Thimbu"
+    }, {
+      "@value" : "Asia/Thimphu"
+    }, {
+      "@value" : "Asia/Tokyo"
+    }, {
+      "@value" : "Asia/Tomsk"
+    }, {
+      "@value" : "Asia/Ujung_Pandang"
+    }, {
+      "@value" : "Asia/Ulaanbaatar"
+    }, {
+      "@value" : "Asia/Ulan_Bator"
+    }, {
+      "@value" : "Asia/Urumqi"
+    }, {
+      "@value" : "Asia/Ust-Nera"
+    }, {
+      "@value" : "Asia/Vientiane"
+    }, {
+      "@value" : "Asia/Vladivostok"
+    }, {
+      "@value" : "Asia/Yakutsk"
+    }, {
+      "@value" : "Asia/Yangon"
+    }, {
+      "@value" : "Asia/Yekaterinburg"
+    }, {
+      "@value" : "Asia/Yerevan"
+    }, {
+      "@value" : "Atlantic/Azores"
+    }, {
+      "@value" : "Atlantic/Bermuda"
+    }, {
+      "@value" : "Atlantic/Canary"
+    }, {
+      "@value" : "Atlantic/Cape_Verde"
+    }, {
+      "@value" : "Atlantic/Faeroe"
+    }, {
+      "@value" : "Atlantic/Faroe"
+    }, {
+      "@value" : "Atlantic/Jan_Mayen"
+    }, {
+      "@value" : "Atlantic/Madeira"
+    }, {
+      "@value" : "Atlantic/Reykjavik"
+    }, {
+      "@value" : "Atlantic/South_Georgia"
+    }, {
+      "@value" : "Atlantic/St_Helena"
+    }, {
+      "@value" : "Atlantic/Stanley"
+    }, {
+      "@value" : "Australia/ACT"
+    }, {
+      "@value" : "Australia/Adelaide"
+    }, {
+      "@value" : "Australia/Brisbane"
+    }, {
+      "@value" : "Australia/Broken_Hill"
+    }, {
+      "@value" : "Australia/Canberra"
+    }, {
+      "@value" : "Australia/Currie"
+    }, {
+      "@value" : "Australia/Darwin"
+    }, {
+      "@value" : "Australia/Eucla"
+    }, {
+      "@value" : "Australia/Hobart"
+    }, {
+      "@value" : "Australia/LHI"
+    }, {
+      "@value" : "Australia/Lindeman"
+    }, {
+      "@value" : "Australia/Lord_Howe"
+    }, {
+      "@value" : "Australia/Melbourne"
+    }, {
+      "@value" : "Australia/NSW"
+    }, {
+      "@value" : "Australia/North"
+    }, {
+      "@value" : "Australia/Perth"
+    }, {
+      "@value" : "Australia/Queensland"
+    }, {
+      "@value" : "Australia/South"
+    }, {
+      "@value" : "Australia/Sydney"
+    }, {
+      "@value" : "Australia/Tasmania"
+    }, {
+      "@value" : "Australia/Victoria"
+    }, {
+      "@value" : "Australia/West"
+    }, {
+      "@value" : "Australia/Yancowinna"
+    }, {
+      "@value" : "Brazil/Acre"
+    }, {
+      "@value" : "Brazil/DeNoronha"
+    }, {
+      "@value" : "Brazil/East"
+    }, {
+      "@value" : "Brazil/West"
+    }, {
+      "@value" : "CET"
+    }, {
+      "@value" : "CST6CDT"
+    }, {
+      "@value" : "Canada/Atlantic"
+    }, {
+      "@value" : "Canada/Central"
+    }, {
+      "@value" : "Canada/Eastern"
+    }, {
+      "@value" : "Canada/Mountain"
+    }, {
+      "@value" : "Canada/Newfoundland"
+    }, {
+      "@value" : "Canada/Pacific"
+    }, {
+      "@value" : "Canada/Saskatchewan"
+    }, {
+      "@value" : "Canada/Yukon"
+    }, {
+      "@value" : "Chile/Continental"
+    }, {
+      "@value" : "Chile/EasterIsland"
+    }, {
+      "@value" : "Cuba"
+    }, {
+      "@value" : "EET"
+    }, {
+      "@value" : "EST"
+    }, {
+      "@value" : "EST5EDT"
+    }, {
+      "@value" : "Egypt"
+    }, {
+      "@value" : "Eire"
+    }, {
+      "@value" : "Etc/GMT"
+    }, {
+      "@value" : "Etc/GMT+0"
+    }, {
+      "@value" : "Etc/GMT+1"
+    }, {
+      "@value" : "Etc/GMT+10"
+    }, {
+      "@value" : "Etc/GMT+11"
+    }, {
+      "@value" : "Etc/GMT+12"
+    }, {
+      "@value" : "Etc/GMT+2"
+    }, {
+      "@value" : "Etc/GMT+3"
+    }, {
+      "@value" : "Etc/GMT+4"
+    }, {
+      "@value" : "Etc/GMT+5"
+    }, {
+      "@value" : "Etc/GMT+6"
+    }, {
+      "@value" : "Etc/GMT+7"
+    }, {
+      "@value" : "Etc/GMT+8"
+    }, {
+      "@value" : "Etc/GMT+9"
+    }, {
+      "@value" : "Etc/GMT-0"
+    }, {
+      "@value" : "Etc/GMT-1"
+    }, {
+      "@value" : "Etc/GMT-10"
+    }, {
+      "@value" : "Etc/GMT-11"
+    }, {
+      "@value" : "Etc/GMT-12"
+    }, {
+      "@value" : "Etc/GMT-13"
+    }, {
+      "@value" : "Etc/GMT-14"
+    }, {
+      "@value" : "Etc/GMT-2"
+    }, {
+      "@value" : "Etc/GMT-3"
+    }, {
+      "@value" : "Etc/GMT-4"
+    }, {
+      "@value" : "Etc/GMT-5"
+    }, {
+      "@value" : "Etc/GMT-6"
+    }, {
+      "@value" : "Etc/GMT-7"
+    }, {
+      "@value" : "Etc/GMT-8"
+    }, {
+      "@value" : "Etc/GMT-9"
+    }, {
+      "@value" : "Etc/GMT0"
+    }, {
+      "@value" : "Etc/Greenwich"
+    }, {
+      "@value" : "Etc/UCT"
+    }, {
+      "@value" : "Etc/UTC"
+    }, {
+      "@value" : "Etc/Universal"
+    }, {
+      "@value" : "Etc/Zulu"
+    }, {
+      "@value" : "Europe/Amsterdam"
+    }, {
+      "@value" : "Europe/Andorra"
+    }, {
+      "@value" : "Europe/Astrakhan"
+    }, {
+      "@value" : "Europe/Athens"
+    }, {
+      "@value" : "Europe/Belfast"
+    }, {
+      "@value" : "Europe/Belgrade"
+    }, {
+      "@value" : "Europe/Berlin"
+    }, {
+      "@value" : "Europe/Bratislava"
+    }, {
+      "@value" : "Europe/Brussels"
+    }, {
+      "@value" : "Europe/Bucharest"
+    }, {
+      "@value" : "Europe/Budapest"
+    }, {
+      "@value" : "Europe/Busingen"
+    }, {
+      "@value" : "Europe/Chisinau"
+    }, {
+      "@value" : "Europe/Copenhagen"
+    }, {
+      "@value" : "Europe/Dublin"
+    }, {
+      "@value" : "Europe/Gibraltar"
+    }, {
+      "@value" : "Europe/Guernsey"
+    }, {
+      "@value" : "Europe/Helsinki"
+    }, {
+      "@value" : "Europe/Isle_of_Man"
+    }, {
+      "@value" : "Europe/Istanbul"
+    }, {
+      "@value" : "Europe/Jersey"
+    }, {
+      "@value" : "Europe/Kaliningrad"
+    }, {
+      "@value" : "Europe/Kiev"
+    }, {
+      "@value" : "Europe/Kirov"
+    }, {
+      "@value" : "Europe/Kyiv"
+    }, {
+      "@value" : "Europe/Lisbon"
+    }, {
+      "@value" : "Europe/Ljubljana"
+    }, {
+      "@value" : "Europe/London"
+    }, {
+      "@value" : "Europe/Luxembourg"
+    }, {
+      "@value" : "Europe/Madrid"
+    }, {
+      "@value" : "Europe/Malta"
+    }, {
+      "@value" : "Europe/Mariehamn"
+    }, {
+      "@value" : "Europe/Minsk"
+    }, {
+      "@value" : "Europe/Monaco"
+    }, {
+      "@value" : "Europe/Moscow"
+    }, {
+      "@value" : "Europe/Nicosia"
+    }, {
+      "@value" : "Europe/Oslo"
+    }, {
+      "@value" : "Europe/Paris"
+    }, {
+      "@value" : "Europe/Podgorica"
+    }, {
+      "@value" : "Europe/Prague"
+    }, {
+      "@value" : "Europe/Riga"
+    }, {
+      "@value" : "Europe/Rome"
+    }, {
+      "@value" : "Europe/Samara"
+    }, {
+      "@value" : "Europe/San_Marino"
+    }, {
+      "@value" : "Europe/Sarajevo"
+    }, {
+      "@value" : "Europe/Saratov"
+    }, {
+      "@value" : "Europe/Simferopol"
+    }, {
+      "@value" : "Europe/Skopje"
+    }, {
+      "@value" : "Europe/Sofia"
+    }, {
+      "@value" : "Europe/Stockholm"
+    }, {
+      "@value" : "Europe/Tallinn"
+    }, {
+      "@value" : "Europe/Tirane"
+    }, {
+      "@value" : "Europe/Tiraspol"
+    }, {
+      "@value" : "Europe/Ulyanovsk"
+    }, {
+      "@value" : "Europe/Uzhgorod"
+    }, {
+      "@value" : "Europe/Vaduz"
+    }, {
+      "@value" : "Europe/Vatican"
+    }, {
+      "@value" : "Europe/Vienna"
+    }, {
+      "@value" : "Europe/Vilnius"
+    }, {
+      "@value" : "Europe/Volgograd"
+    }, {
+      "@value" : "Europe/Warsaw"
+    }, {
+      "@value" : "Europe/Zagreb"
+    }, {
+      "@value" : "Europe/Zaporozhye"
+    }, {
+      "@value" : "Europe/Zurich"
+    }, {
+      "@value" : "Factory"
+    }, {
+      "@value" : "GB"
+    }, {
+      "@value" : "GB-Eire"
+    }, {
+      "@value" : "GMT"
+    }, {
+      "@value" : "GMT+0"
+    }, {
+      "@value" : "GMT-0"
+    }, {
+      "@value" : "GMT0"
+    }, {
+      "@value" : "Greenwich"
+    }, {
+      "@value" : "HST"
+    }, {
+      "@value" : "Hongkong"
+    }, {
+      "@value" : "Iceland"
+    }, {
+      "@value" : "Indian/Antananarivo"
+    }, {
+      "@value" : "Indian/Chagos"
+    }, {
+      "@value" : "Indian/Christmas"
+    }, {
+      "@value" : "Indian/Cocos"
+    }, {
+      "@value" : "Indian/Comoro"
+    }, {
+      "@value" : "Indian/Kerguelen"
+    }, {
+      "@value" : "Indian/Mahe"
+    }, {
+      "@value" : "Indian/Maldives"
+    }, {
+      "@value" : "Indian/Mauritius"
+    }, {
+      "@value" : "Indian/Mayotte"
+    }, {
+      "@value" : "Indian/Reunion"
+    }, {
+      "@value" : "Iran"
+    }, {
+      "@value" : "Israel"
+    }, {
+      "@value" : "Jamaica"
+    }, {
+      "@value" : "Japan"
+    }, {
+      "@value" : "Kwajalein"
+    }, {
+      "@value" : "Libya"
+    }, {
+      "@value" : "MET"
+    }, {
+      "@value" : "MST"
+    }, {
+      "@value" : "MST7MDT"
+    }, {
+      "@value" : "Mexico/BajaNorte"
+    }, {
+      "@value" : "Mexico/BajaSur"
+    }, {
+      "@value" : "Mexico/General"
+    }, {
+      "@value" : "NZ"
+    }, {
+      "@value" : "NZ-CHAT"
+    }, {
+      "@value" : "Navajo"
+    }, {
+      "@value" : "PRC"
+    }, {
+      "@value" : "PST8PDT"
+    }, {
+      "@value" : "Pacific/Apia"
+    }, {
+      "@value" : "Pacific/Auckland"
+    }, {
+      "@value" : "Pacific/Bougainville"
+    }, {
+      "@value" : "Pacific/Chatham"
+    }, {
+      "@value" : "Pacific/Chuuk"
+    }, {
+      "@value" : "Pacific/Easter"
+    }, {
+      "@value" : "Pacific/Efate"
+    }, {
+      "@value" : "Pacific/Enderbury"
+    }, {
+      "@value" : "Pacific/Fakaofo"
+    }, {
+      "@value" : "Pacific/Fiji"
+    }, {
+      "@value" : "Pacific/Funafuti"
+    }, {
+      "@value" : "Pacific/Galapagos"
+    }, {
+      "@value" : "Pacific/Gambier"
+    }, {
+      "@value" : "Pacific/Guadalcanal"
+    }, {
+      "@value" : "Pacific/Guam"
+    }, {
+      "@value" : "Pacific/Honolulu"
+    }, {
+      "@value" : "Pacific/Johnston"
+    }, {
+      "@value" : "Pacific/Kanton"
+    }, {
+      "@value" : "Pacific/Kiritimati"
+    }, {
+      "@value" : "Pacific/Kosrae"
+    }, {
+      "@value" : "Pacific/Kwajalein"
+    }, {
+      "@value" : "Pacific/Majuro"
+    }, {
+      "@value" : "Pacific/Marquesas"
+    }, {
+      "@value" : "Pacific/Midway"
+    }, {
+      "@value" : "Pacific/Nauru"
+    }, {
+      "@value" : "Pacific/Niue"
+    }, {
+      "@value" : "Pacific/Norfolk"
+    }, {
+      "@value" : "Pacific/Noumea"
+    }, {
+      "@value" : "Pacific/Pago_Pago"
+    }, {
+      "@value" : "Pacific/Palau"
+    }, {
+      "@value" : "Pacific/Pitcairn"
+    }, {
+      "@value" : "Pacific/Pohnpei"
+    }, {
+      "@value" : "Pacific/Ponape"
+    }, {
+      "@value" : "Pacific/Port_Moresby"
+    }, {
+      "@value" : "Pacific/Rarotonga"
+    }, {
+      "@value" : "Pacific/Saipan"
+    }, {
+      "@value" : "Pacific/Samoa"
+    }, {
+      "@value" : "Pacific/Tahiti"
+    }, {
+      "@value" : "Pacific/Tarawa"
+    }, {
+      "@value" : "Pacific/Tongatapu"
+    }, {
+      "@value" : "Pacific/Truk"
+    }, {
+      "@value" : "Pacific/Wake"
+    }, {
+      "@value" : "Pacific/Wallis"
+    }, {
+      "@value" : "Pacific/Yap"
+    }, {
+      "@value" : "Poland"
+    }, {
+      "@value" : "Portugal"
+    }, {
+      "@value" : "ROC"
+    }, {
+      "@value" : "ROK"
+    }, {
+      "@value" : "Singapore"
+    }, {
+      "@value" : "Turkey"
+    }, {
+      "@value" : "UCT"
+    }, {
+      "@value" : "US/Alaska"
+    }, {
+      "@value" : "US/Aleutian"
+    }, {
+      "@value" : "US/Arizona"
+    }, {
+      "@value" : "US/Central"
+    }, {
+      "@value" : "US/East-Indiana"
+    }, {
+      "@value" : "US/Eastern"
+    }, {
+      "@value" : "US/Hawaii"
+    }, {
+      "@value" : "US/Indiana-Starke"
+    }, {
+      "@value" : "US/Michigan"
+    }, {
+      "@value" : "US/Mountain"
+    }, {
+      "@value" : "US/Pacific"
+    }, {
+      "@value" : "US/Samoa"
+    }, {
+      "@value" : "UTC"
+    }, {
+      "@value" : "Universal"
+    }, {
+      "@value" : "W-SU"
+    }, {
+      "@value" : "WET"
+    }, {
+      "@value" : "Zulu"
     } ]
   } ]
 }, {
-  "@id" : "_:genid101",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+  "@id" : "_:genid3",
+  "http://www.w3.org/2001/XMLSchema#pattern" : [ {
+    "@value" : "^[0-9A-F]{6}$"
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ ]
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+      "@value" : "AED"
     }, {
-      "@id" : "_:genid103"
+      "@value" : "AFN"
+    }, {
+      "@value" : "ALL"
+    }, {
+      "@value" : "AMD"
+    }, {
+      "@value" : "AOA"
+    }, {
+      "@value" : "ARS"
+    }, {
+      "@value" : "AUD"
+    }, {
+      "@value" : "AWG"
+    }, {
+      "@value" : "AZN"
+    }, {
+      "@value" : "BAM"
+    }, {
+      "@value" : "BBD"
+    }, {
+      "@value" : "BDT"
+    }, {
+      "@value" : "BHD"
+    }, {
+      "@value" : "BIF"
+    }, {
+      "@value" : "BMD"
+    }, {
+      "@value" : "BND"
+    }, {
+      "@value" : "BOB"
+    }, {
+      "@value" : "BOV"
+    }, {
+      "@value" : "BRL"
+    }, {
+      "@value" : "BSD"
+    }, {
+      "@value" : "BTN"
+    }, {
+      "@value" : "BWP"
+    }, {
+      "@value" : "BYN"
+    }, {
+      "@value" : "BZD"
+    }, {
+      "@value" : "CAD"
+    }, {
+      "@value" : "CDF"
+    }, {
+      "@value" : "CHE"
+    }, {
+      "@value" : "CHF"
+    }, {
+      "@value" : "CHW"
+    }, {
+      "@value" : "CLF"
+    }, {
+      "@value" : "CLP"
+    }, {
+      "@value" : "CNY"
+    }, {
+      "@value" : "COP"
+    }, {
+      "@value" : "COU"
+    }, {
+      "@value" : "CRC"
+    }, {
+      "@value" : "CUP"
+    }, {
+      "@value" : "CVE"
+    }, {
+      "@value" : "CZK"
+    }, {
+      "@value" : "DJF"
+    }, {
+      "@value" : "DKK"
+    }, {
+      "@value" : "DOP"
+    }, {
+      "@value" : "DZD"
+    }, {
+      "@value" : "EGP"
+    }, {
+      "@value" : "ERN"
+    }, {
+      "@value" : "ETB"
+    }, {
+      "@value" : "EUR"
+    }, {
+      "@value" : "FJD"
+    }, {
+      "@value" : "FKP"
+    }, {
+      "@value" : "GBP"
+    }, {
+      "@value" : "GEL"
+    }, {
+      "@value" : "GHS"
+    }, {
+      "@value" : "GIP"
+    }, {
+      "@value" : "GMD"
+    }, {
+      "@value" : "GNF"
+    }, {
+      "@value" : "GTQ"
+    }, {
+      "@value" : "GYD"
+    }, {
+      "@value" : "HKD"
+    }, {
+      "@value" : "HNL"
+    }, {
+      "@value" : "HTG"
+    }, {
+      "@value" : "HUF"
+    }, {
+      "@value" : "IDR"
+    }, {
+      "@value" : "ILS"
+    }, {
+      "@value" : "INR"
+    }, {
+      "@value" : "IQD"
+    }, {
+      "@value" : "IRR"
+    }, {
+      "@value" : "ISK"
+    }, {
+      "@value" : "JMD"
+    }, {
+      "@value" : "JOD"
+    }, {
+      "@value" : "JPY"
+    }, {
+      "@value" : "KES"
+    }, {
+      "@value" : "KGS"
+    }, {
+      "@value" : "KHR"
+    }, {
+      "@value" : "KMF"
+    }, {
+      "@value" : "KPW"
+    }, {
+      "@value" : "KRW"
+    }, {
+      "@value" : "KWD"
+    }, {
+      "@value" : "KYD"
+    }, {
+      "@value" : "KZT"
+    }, {
+      "@value" : "LAK"
+    }, {
+      "@value" : "LBP"
+    }, {
+      "@value" : "LKR"
+    }, {
+      "@value" : "LRD"
+    }, {
+      "@value" : "LSL"
+    }, {
+      "@value" : "LYD"
+    }, {
+      "@value" : "MAD"
+    }, {
+      "@value" : "MDL"
+    }, {
+      "@value" : "MGA"
+    }, {
+      "@value" : "MKD"
+    }, {
+      "@value" : "MMK"
+    }, {
+      "@value" : "MNT"
+    }, {
+      "@value" : "MOP"
+    }, {
+      "@value" : "MRU"
+    }, {
+      "@value" : "MUR"
+    }, {
+      "@value" : "MVR"
+    }, {
+      "@value" : "MWK"
+    }, {
+      "@value" : "MXN"
+    }, {
+      "@value" : "MXV"
+    }, {
+      "@value" : "MYR"
+    }, {
+      "@value" : "MZN"
+    }, {
+      "@value" : "NAD"
+    }, {
+      "@value" : "NGN"
+    }, {
+      "@value" : "NIO"
+    }, {
+      "@value" : "NOK"
+    }, {
+      "@value" : "NPR"
+    }, {
+      "@value" : "NZD"
+    }, {
+      "@value" : "OMR"
+    }, {
+      "@value" : "PAB"
+    }, {
+      "@value" : "PEN"
+    }, {
+      "@value" : "PGK"
+    }, {
+      "@value" : "PHP"
+    }, {
+      "@value" : "PKR"
+    }, {
+      "@value" : "PLN"
+    }, {
+      "@value" : "PYG"
+    }, {
+      "@value" : "QAR"
+    }, {
+      "@value" : "RON"
+    }, {
+      "@value" : "RSD"
+    }, {
+      "@value" : "RUB"
+    }, {
+      "@value" : "RWF"
+    }, {
+      "@value" : "SAR"
+    }, {
+      "@value" : "SBD"
+    }, {
+      "@value" : "SCR"
+    }, {
+      "@value" : "SDG"
+    }, {
+      "@value" : "SEK"
+    }, {
+      "@value" : "SGD"
+    }, {
+      "@value" : "SHP"
+    }, {
+      "@value" : "SLE"
+    }, {
+      "@value" : "SOS"
+    }, {
+      "@value" : "SRD"
+    }, {
+      "@value" : "SSP"
+    }, {
+      "@value" : "STN"
+    }, {
+      "@value" : "SVC"
+    }, {
+      "@value" : "SYP"
+    }, {
+      "@value" : "SZL"
+    }, {
+      "@value" : "THB"
+    }, {
+      "@value" : "TJS"
+    }, {
+      "@value" : "TMT"
+    }, {
+      "@value" : "TND"
+    }, {
+      "@value" : "TOP"
+    }, {
+      "@value" : "TRY"
+    }, {
+      "@value" : "TTD"
+    }, {
+      "@value" : "TWD"
+    }, {
+      "@value" : "TZS"
+    }, {
+      "@value" : "UAH"
+    }, {
+      "@value" : "UGX"
+    }, {
+      "@value" : "USD"
+    }, {
+      "@value" : "USN"
+    }, {
+      "@value" : "UYI"
+    }, {
+      "@value" : "UYU"
+    }, {
+      "@value" : "UYW"
+    }, {
+      "@value" : "UZS"
+    }, {
+      "@value" : "VED"
+    }, {
+      "@value" : "VES"
+    }, {
+      "@value" : "VND"
+    }, {
+      "@value" : "VUV"
+    }, {
+      "@value" : "WST"
+    }, {
+      "@value" : "XAD"
+    }, {
+      "@value" : "XAF"
+    }, {
+      "@value" : "XAG"
+    }, {
+      "@value" : "XAU"
+    }, {
+      "@value" : "XBA"
+    }, {
+      "@value" : "XBB"
+    }, {
+      "@value" : "XBC"
+    }, {
+      "@value" : "XBD"
+    }, {
+      "@value" : "XCD"
+    }, {
+      "@value" : "XCG"
+    }, {
+      "@value" : "XDR"
+    }, {
+      "@value" : "XOF"
+    }, {
+      "@value" : "XPD"
+    }, {
+      "@value" : "XPF"
+    }, {
+      "@value" : "XPT"
+    }, {
+      "@value" : "XSU"
+    }, {
+      "@value" : "XTS"
+    }, {
+      "@value" : "XUA"
+    }, {
+      "@value" : "XXX"
+    }, {
+      "@value" : "YER"
+    }, {
+      "@value" : "ZAR"
+    }, {
+      "@value" : "ZMW"
+    }, {
+      "@value" : "ZWG"
     } ]
   } ]
 }, {
-  "@id" : "_:genid103",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "1"
+  "@id" : "_:genid814",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
-  } ]
-}, {
-  "@id" : "_:genid105",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat"
-  } ]
-}, {
-  "@id" : "_:genid106",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon"
-  } ]
-}, {
-  "@id" : "_:genid107",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name"
-  } ]
-}, {
-  "@id" : "_:genid109",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
     "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStop"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
+      "@id" : "_:genid816"
     } ]
   } ]
 }, {
-  "@id" : "_:genid112",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
-    }, {
-      "@id" : "_:genid114"
-    } ]
+  "@id" : "_:genid816",
+  "http://www.w3.org/2001/XMLSchema#pattern" : [ {
+    "@value" : "^https?:\\/\\/(?:www\\.)?[A-Za-z0-9.-]+\\.[A-Za-z]{2,}(?:\\/[^\\s]*)?$"
   } ]
 }, {
-  "@id" : "_:genid114",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "_:genid118"
-    }, {
-      "@id" : "_:genid116"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid116",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "0"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
-  } ]
-}, {
-  "@id" : "_:genid118",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "0"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
-  } ]
-}, {
-  "@id" : "_:genid12",
+  "@id" : "_:genid817",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -129,87 +1782,47 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid120",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat"
+  "@id" : "_:genid821",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "2"
+    } ]
   } ]
 }, {
-  "@id" : "_:genid121",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon"
-  } ]
-}, {
-  "@id" : "_:genid122",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name"
-  } ]
-}, {
-  "@id" : "_:genid126",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
+  "@id" : "_:genid825",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#Agency"
     }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#BookingRule"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarDateService"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Level"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Location"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#LocationGroup"
-    }, {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Shape"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
     } ]
   } ]
 }, {
-  "@id" : "_:genid140",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
+  "@id" : "_:genid828",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#BoardingArea"
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
     }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
     }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#GenericNode"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Platform"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Station"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopLocation"
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "2"
     } ]
   } ]
 }, {
-  "@id" : "_:genid16",
+  "@id" : "_:genid832",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -219,7 +1832,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid19",
+  "@id" : "_:genid835",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -237,7 +1850,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid24",
+  "@id" : "_:genid840",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -247,7 +1860,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid27",
+  "@id" : "_:genid843",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -265,7 +1878,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid32",
+  "@id" : "_:genid848",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -277,7 +1890,49 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid35",
+  "@id" : "_:genid851",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "2"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "3"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid856",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "2"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid859",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid862",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -298,7 +1953,37 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid41",
+  "@id" : "_:genid868",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid871",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "2"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "3"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid876",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -334,7 +2019,91 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid5",
+  "@id" : "_:genid887",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid890",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid893",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid896",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid899",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid902",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid905",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "0"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid908",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -349,69 +2118,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid52",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
-  "http://www.w3.org/2002/07/owl#oneOf" : [ {
-    "@list" : [ {
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-      "@value" : "0"
-    }, {
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-      "@value" : "1"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid55",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
-  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
-  } ],
-  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
-    "@list" : [ {
-      "@id" : "_:genid59"
-    }, {
-      "@id" : "_:genid57"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid57",
-  "http://www.w3.org/2001/XMLSchema#maxInclusive" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "90.0"
-  } ]
-}, {
-  "@id" : "_:genid59",
-  "http://www.w3.org/2001/XMLSchema#minInclusive" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "-90.0"
-  } ]
-}, {
-  "@id" : "_:genid60",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
-  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
-  } ],
-  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
-    "@list" : [ {
-      "@id" : "_:genid64"
-    }, {
-      "@id" : "_:genid62"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid62",
-  "http://www.w3.org/2001/XMLSchema#maxInclusive" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "180.0"
-  } ]
-}, {
-  "@id" : "_:genid64",
-  "http://www.w3.org/2001/XMLSchema#minInclusive" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "-180.0"
-  } ]
-}, {
-  "@id" : "_:genid65",
+  "@id" : "_:genid912",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -426,32 +2133,17 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid69",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
-  "http://www.w3.org/2002/07/owl#oneOf" : [ {
-    "@list" : [ {
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-      "@value" : "0"
-    }, {
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-      "@value" : "1"
-    }, {
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-      "@value" : "2"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid74",
+  "@id" : "_:genid917",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
     }, {
-      "@id" : "_:genid76"
+      "@id" : "_:genid919"
     } ]
   } ]
 }, {
-  "@id" : "_:genid76",
+  "@id" : "_:genid919",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
@@ -461,17 +2153,17 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
   } ]
 }, {
-  "@id" : "_:genid78",
+  "@id" : "_:genid924",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
     }, {
-      "@id" : "_:genid80"
+      "@id" : "_:genid926"
     } ]
   } ]
 }, {
-  "@id" : "_:genid80",
+  "@id" : "_:genid926",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -481,17 +2173,17 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#hasParentStation"
   } ]
 }, {
-  "@id" : "_:genid82",
+  "@id" : "_:genid928",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
     }, {
-      "@id" : "_:genid84"
+      "@id" : "_:genid930"
     } ]
   } ]
 }, {
-  "@id" : "_:genid84",
+  "@id" : "_:genid930",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
@@ -501,7 +2193,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
   } ]
 }, {
-  "@id" : "_:genid86",
+  "@id" : "_:genid932",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -511,7 +2203,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat"
   } ]
 }, {
-  "@id" : "_:genid87",
+  "@id" : "_:genid933",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -521,7 +2213,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon"
   } ]
 }, {
-  "@id" : "_:genid88",
+  "@id" : "_:genid934",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -531,27 +2223,17 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name"
   } ]
 }, {
-  "@id" : "_:genid89",
+  "@id" : "_:genid935",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
     }, {
-      "@id" : "_:genid91"
+      "@id" : "_:genid937"
     } ]
   } ]
 }, {
-  "@id" : "_:genid9",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Agency"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid91",
+  "@id" : "_:genid937",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
@@ -561,17 +2243,17 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
   } ]
 }, {
-  "@id" : "_:genid93",
+  "@id" : "_:genid939",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
     }, {
-      "@id" : "_:genid95"
+      "@id" : "_:genid941"
     } ]
   } ]
 }, {
-  "@id" : "_:genid95",
+  "@id" : "_:genid941",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -581,13 +2263,189 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#hasParentStation"
   } ]
 }, {
-  "@id" : "_:genid97",
+  "@id" : "_:genid943",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
     }, {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid947",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+    }, {
+      "@id" : "_:genid949"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid949",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
+  } ]
+}, {
+  "@id" : "_:genid951",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat"
+  } ]
+}, {
+  "@id" : "_:genid952",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon"
+  } ]
+}, {
+  "@id" : "_:genid953",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name"
+  } ]
+}, {
+  "@id" : "_:genid955",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStop"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid958",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+    }, {
+      "@id" : "_:genid960"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid960",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid964"
+    }, {
+      "@id" : "_:genid962"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid962",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
+  } ]
+}, {
+  "@id" : "_:genid964",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
+  } ]
+}, {
+  "@id" : "_:genid966",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat"
+  } ]
+}, {
+  "@id" : "_:genid967",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon"
+  } ]
+}, {
+  "@id" : "_:genid968",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name"
+  } ]
+}, {
+  "@id" : "_:genid972",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Agency"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#BookingRule"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Level"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Location"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#LocationGroup"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Shape"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid984",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#BoardingArea"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#GenericNode"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Platform"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Station"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopLocation"
     } ]
   } ]
 }, {
@@ -610,9 +2468,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
-}, {
-  "@id" : "http://www.w3.org/2001/XMLSchema#time",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs",
@@ -664,7 +2519,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid74"
+    "@id" : "_:genid917"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#BookingRule",
@@ -689,12 +2544,27 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#hasKey" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#date"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#service_id"
+    } ]
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+  } ],
+  "http://www.w3.org/2002/07/owl#hasKey" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#service_id"
+    } ]
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop",
@@ -706,7 +2576,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStop"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid78"
+    "@id" : "_:genid924"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit",
@@ -714,26 +2584,14 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
   }, {
-    "@id" : "_:genid86"
+    "@id" : "_:genid932"
   }, {
-    "@id" : "_:genid87"
+    "@id" : "_:genid933"
   }, {
-    "@id" : "_:genid88"
+    "@id" : "_:genid934"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid82"
-  } ]
-}, {
-  "@id" : "https://transit.ac.uk/ontologies/gtfs#FareMedium",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#Thing"
-  } ]
-}, {
-  "@id" : "https://transit.ac.uk/ontologies/gtfs#FareProduct",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    "@id" : "_:genid928"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#GenericNode",
@@ -742,7 +2600,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid89"
+    "@id" : "_:genid935"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Level",
@@ -769,7 +2627,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid93"
+    "@id" : "_:genid939"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Platform",
@@ -778,7 +2636,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid97"
+    "@id" : "_:genid943"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Route",
@@ -809,14 +2667,14 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStop"
   }, {
-    "@id" : "_:genid105"
+    "@id" : "_:genid951"
   }, {
-    "@id" : "_:genid106"
+    "@id" : "_:genid952"
   }, {
-    "@id" : "_:genid107"
+    "@id" : "_:genid953"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid101"
+    "@id" : "_:genid947"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop",
@@ -836,7 +2694,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid109"
+    "@id" : "_:genid955"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform",
@@ -844,14 +2702,14 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   }, {
-    "@id" : "_:genid120"
+    "@id" : "_:genid966"
   }, {
-    "@id" : "_:genid121"
+    "@id" : "_:genid967"
   }, {
-    "@id" : "_:genid122"
+    "@id" : "_:genid968"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid112"
+    "@id" : "_:genid958"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime",
@@ -863,7 +2721,7 @@
     "@list" : [ {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#hasTrip"
     }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#trip_id"
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_sequence"
     } ]
   } ]
 }, {
@@ -892,7 +2750,7 @@
     "@value" : "agency email address"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#email"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_fare_url",
@@ -909,11 +2767,11 @@
     "@value" : "agency fare URL"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#url"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_id",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies."
@@ -926,7 +2784,7 @@
     "@value" : "agency ID"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#id"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_lang",
@@ -943,7 +2801,7 @@
     "@value" : "agency language"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#language_code"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_name",
@@ -960,7 +2818,7 @@
     "@value" : "agency name"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_phone",
@@ -977,7 +2835,7 @@
     "@value" : "agency phone number"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#phone_number"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_timezone",
@@ -994,7 +2852,7 @@
     "@value" : "agency timezone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#timezone"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_url",
@@ -1011,7 +2869,7 @@
     "@value" : "agency URL"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#url"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#arrival_time",
@@ -1020,7 +2878,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#time"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#bikes_allowed",
@@ -1029,7 +2887,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid1"
+    "@id" : "_:genid817"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#block_id",
@@ -1038,7 +2896,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#id"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#cars_allowed",
@@ -1047,51 +2905,91 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid5"
+    "@id" : "_:genid821"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#cemv_support",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media."
+    "@value" : "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media.#"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid9"
+    "@id" : "_:genid825"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "CEMV Support"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid12"
+    "@id" : "_:genid828"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#color",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "color"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#continuous_drop_off",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid16"
+    "@id" : "_:genid832"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid19"
+    "@id" : "_:genid835"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#continuous_pickup",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid24"
+    "@id" : "_:genid840"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid27"
+    "@id" : "_:genid843"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#currency_amount",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "currency amount"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid4"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#currency_code",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "currency code"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid5"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#date",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarDateService"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#date"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#dateType"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#dateType",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "date"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid184"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#departure_time",
@@ -1100,7 +2998,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#time"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#direction_id",
@@ -1109,7 +3007,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid32"
+    "@id" : "_:genid848"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id",
@@ -1127,16 +3025,26 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid851"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#email",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "email"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid187"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#end_date",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#date"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#dateType"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window",
@@ -1145,25 +3053,25 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#time"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#time"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#exception_type",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarDateService"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid856"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#friday",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid859"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#hasLevel",
@@ -1247,6 +3155,16 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ]
 }, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#id",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "id"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#isParentStationOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1259,22 +3177,60 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#hasParentStation"
   } ]
 }, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#language_code",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "language code"
+  }, {
+    "@language" : "en",
+    "@value" : "latitude"
+  }, {
+    "@language" : "en",
+    "@value" : "longitude"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid190"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#latitude",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid193"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#local_time",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "local time"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid198"
+  } ]
+}, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid35"
+    "@id" : "_:genid862"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#longitude",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid201"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#monday",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid868"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#network_id",
@@ -1283,7 +3239,17 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#id"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#nonNegativeFloat",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "non-negative float"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid206"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#operatedBy",
@@ -1301,6 +3267,16 @@
   "@id" : "https://transit.ac.uk/ontologies/gtfs#operatesRoute",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#phone_number",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "phone number"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid209"
+  } ]
+}, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1316,7 +3292,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid871"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#platform_code",
@@ -1325,7 +3301,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_color",
@@ -1334,7 +3310,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#color"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_desc",
@@ -1343,7 +3319,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_id",
@@ -1352,7 +3328,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#id"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_long_name",
@@ -1361,7 +3337,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_short_name",
@@ -1370,7 +3346,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_sort_order",
@@ -1379,7 +3355,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_text_color",
@@ -1388,7 +3364,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#color"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type",
@@ -1397,7 +3373,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid41"
+    "@id" : "_:genid876"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_url",
@@ -1406,7 +3382,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#url"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#safe_duration_factor",
@@ -1430,10 +3406,10 @@
   "@id" : "https://transit.ac.uk/ontologies/gtfs#saturday",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid887"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#service_id",
@@ -1442,7 +3418,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#id"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled",
@@ -1451,16 +3427,16 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#nonNegativeFloat"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#start_date",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#date"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#dateType"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window",
@@ -1469,7 +3445,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#time"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#time"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_access",
@@ -1478,7 +3454,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid52"
+    "@id" : "_:genid890"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_code",
@@ -1487,7 +3463,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_desc",
@@ -1496,7 +3472,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_headsign",
@@ -1505,7 +3481,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_id",
@@ -1514,7 +3490,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#id"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat",
@@ -1523,7 +3499,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid55"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#latitude"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon",
@@ -1532,7 +3508,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid60"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#longitude"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name",
@@ -1541,7 +3517,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_sequence",
@@ -1550,7 +3526,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_timezone",
@@ -1559,7 +3535,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#timezone"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_url",
@@ -1568,25 +3544,42 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#url"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#sunday",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid893"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#text",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#thursday",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid896"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#time",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "time"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid212"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#timepoint",
@@ -1595,7 +3588,17 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid899"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#timezone",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "timezone"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid215"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#trip_headsign",
@@ -1604,7 +3607,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#trip_id",
@@ -1613,7 +3616,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#id"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#trip_short_name",
@@ -1622,7 +3625,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#tts_stop_name",
@@ -1631,25 +3634,35 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#text"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#tuesday",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid902"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#url",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "url"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid814"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#wednesday",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid905"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible",
@@ -1658,7 +3671,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid65"
+    "@id" : "_:genid908"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding",
@@ -1667,7 +3680,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid69"
+    "@id" : "_:genid912"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#zone_id",
@@ -1676,6 +3689,6 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#id"
   } ]
 } ]

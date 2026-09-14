@@ -24,310 +24,387 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 :CEMVUnsupportedRecord a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
-:agency_email a owl:DatatypeProperty ;
+:agency_email a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:label "agency email address"@en ;
     rdfs:comment "Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency."@en ;
     rdfs:domain :Agency ;
-    rdfs:range xsd:string .
+    rdfs:range :email .
 
-:agency_fare_url a owl:DatatypeProperty ;
+:agency_fare_url a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:label "agency fare URL"@en ;
     rdfs:comment "URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares."@en ;
     rdfs:domain :Agency ;
-    rdfs:range xsd:string .
+    rdfs:range :url .
 
-:agency_lang a owl:DatatypeProperty ;
+:agency_lang a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:label "agency language"@en ;
     rdfs:comment "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."@en ;
     rdfs:domain :Agency ;
-    rdfs:range xsd:string .
+    rdfs:range :language_code .
 
-:agency_name a owl:DatatypeProperty ;
+:agency_name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:label "agency name"@en ;
     rdfs:comment "Full name of the transit agency."@en ;
     rdfs:domain :Agency ;
-    rdfs:range xsd:string .
+    rdfs:range :text .
 
-:agency_phone a owl:DatatypeProperty ;
+:agency_phone a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:label "agency phone number"@en ;
     rdfs:comment "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."@en ;
     rdfs:domain :Agency ;
-    rdfs:range xsd:string .
+    rdfs:range :phone_number .
 
-:agency_timezone a owl:DatatypeProperty ;
+:agency_timezone a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:label "agency timezone"@en ;
     rdfs:comment "Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone."@en ;
     rdfs:domain :Agency ;
-    rdfs:range xsd:string .
+    rdfs:range :timezone .
 
-:agency_url a owl:DatatypeProperty ;
+:agency_url a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:label "agency URL"@en ;
     rdfs:comment "URL of the transit agency."@en ;
     rdfs:domain :Agency ;
-    rdfs:range xsd:string .
+    rdfs:range :url .
 
-:arrival_time a owl:DatatypeProperty ;
+:arrival_time a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :StopTime ;
-    rdfs:range xsd:string .
+    rdfs:range :time .
 
-:bikes_allowed a owl:DatatypeProperty ;
+:bikes_allowed a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Trip ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 2 ) ] .
 
-:block_id a owl:DatatypeProperty ;
+:block_id a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Trip ;
-    rdfs:range xsd:string .
+    rdfs:range :id .
 
-:cars_allowed a owl:DatatypeProperty ;
+:cars_allowed a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Trip ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 2 ) ] .
 
-:cemv_support a owl:DatatypeProperty ;
+:cemv_support a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:label "CEMV Support"@en ;
-    rdfs:comment "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media."@en ;
+    rdfs:comment "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media.#"@en ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( :Agency :Route ) ] ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 2 ) ] .
 
-:continuous_drop_off a owl:DatatypeProperty ;
+:continuous_drop_off a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( :Route :StopTime ) ] ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 2 3 ) ] .
 
-:continuous_pickup a owl:DatatypeProperty ;
+:continuous_pickup a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( :Route :StopTime ) ] ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 2 3 ) ] .
 
-:date a owl:DatatypeProperty ;
-    rdfs:domain :CalendarDateService ;
-    rdfs:range xsd:date .
+:currency_amount a rdfs:Datatype ;
+    rdfs:label "currency amount"@en ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( () ) ] .
 
-:departure_time a owl:DatatypeProperty ;
+:currency_code a rdfs:Datatype ;
+    rdfs:label "currency code"@en ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:oneOf ( "AED"^^xsd:string "AFN"^^xsd:string "ALL"^^xsd:string "AMD"^^xsd:string "AOA"^^xsd:string "ARS"^^xsd:string "AUD"^^xsd:string "AWG"^^xsd:string "AZN"^^xsd:string "BAM"^^xsd:string "BBD"^^xsd:string "BDT"^^xsd:string "BHD"^^xsd:string "BIF"^^xsd:string "BMD"^^xsd:string "BND"^^xsd:string "BOB"^^xsd:string "BOV"^^xsd:string "BRL"^^xsd:string "BSD"^^xsd:string "BTN"^^xsd:string "BWP"^^xsd:string "BYN"^^xsd:string "BZD"^^xsd:string "CAD"^^xsd:string "CDF"^^xsd:string "CHE"^^xsd:string "CHF"^^xsd:string "CHW"^^xsd:string "CLF"^^xsd:string "CLP"^^xsd:string "CNY"^^xsd:string "COP"^^xsd:string "COU"^^xsd:string "CRC"^^xsd:string "CUP"^^xsd:string "CVE"^^xsd:string "CZK"^^xsd:string "DJF"^^xsd:string "DKK"^^xsd:string "DOP"^^xsd:string "DZD"^^xsd:string "EGP"^^xsd:string "ERN"^^xsd:string "ETB"^^xsd:string "EUR"^^xsd:string "FJD"^^xsd:string "FKP"^^xsd:string "GBP"^^xsd:string "GEL"^^xsd:string "GHS"^^xsd:string "GIP"^^xsd:string "GMD"^^xsd:string "GNF"^^xsd:string "GTQ"^^xsd:string "GYD"^^xsd:string "HKD"^^xsd:string "HNL"^^xsd:string "HTG"^^xsd:string "HUF"^^xsd:string "IDR"^^xsd:string "ILS"^^xsd:string "INR"^^xsd:string "IQD"^^xsd:string "IRR"^^xsd:string "ISK"^^xsd:string "JMD"^^xsd:string "JOD"^^xsd:string "JPY"^^xsd:string "KES"^^xsd:string "KGS"^^xsd:string "KHR"^^xsd:string "KMF"^^xsd:string "KPW"^^xsd:string "KRW"^^xsd:string "KWD"^^xsd:string "KYD"^^xsd:string "KZT"^^xsd:string "LAK"^^xsd:string "LBP"^^xsd:string "LKR"^^xsd:string "LRD"^^xsd:string "LSL"^^xsd:string "LYD"^^xsd:string "MAD"^^xsd:string "MDL"^^xsd:string "MGA"^^xsd:string "MKD"^^xsd:string "MMK"^^xsd:string "MNT"^^xsd:string "MOP"^^xsd:string "MRU"^^xsd:string "MUR"^^xsd:string "MVR"^^xsd:string "MWK"^^xsd:string "MXN"^^xsd:string "MXV"^^xsd:string "MYR"^^xsd:string "MZN"^^xsd:string "NAD"^^xsd:string "NGN"^^xsd:string "NIO"^^xsd:string "NOK"^^xsd:string "NPR"^^xsd:string "NZD"^^xsd:string "OMR"^^xsd:string "PAB"^^xsd:string "PEN"^^xsd:string "PGK"^^xsd:string "PHP"^^xsd:string "PKR"^^xsd:string "PLN"^^xsd:string "PYG"^^xsd:string "QAR"^^xsd:string "RON"^^xsd:string "RSD"^^xsd:string "RUB"^^xsd:string "RWF"^^xsd:string "SAR"^^xsd:string "SBD"^^xsd:string "SCR"^^xsd:string "SDG"^^xsd:string "SEK"^^xsd:string "SGD"^^xsd:string "SHP"^^xsd:string "SLE"^^xsd:string "SOS"^^xsd:string "SRD"^^xsd:string "SSP"^^xsd:string "STN"^^xsd:string "SVC"^^xsd:string "SYP"^^xsd:string "SZL"^^xsd:string "THB"^^xsd:string "TJS"^^xsd:string "TMT"^^xsd:string "TND"^^xsd:string "TOP"^^xsd:string "TRY"^^xsd:string "TTD"^^xsd:string "TWD"^^xsd:string "TZS"^^xsd:string "UAH"^^xsd:string "UGX"^^xsd:string "USD"^^xsd:string "USN"^^xsd:string "UYI"^^xsd:string "UYU"^^xsd:string "UYW"^^xsd:string "UZS"^^xsd:string "VED"^^xsd:string "VES"^^xsd:string "VND"^^xsd:string "VUV"^^xsd:string "WST"^^xsd:string "XAD"^^xsd:string "XAF"^^xsd:string "XAG"^^xsd:string "XAU"^^xsd:string "XBA"^^xsd:string "XBB"^^xsd:string "XBC"^^xsd:string "XBD"^^xsd:string "XCD"^^xsd:string "XCG"^^xsd:string "XDR"^^xsd:string "XOF"^^xsd:string "XPD"^^xsd:string "XPF"^^xsd:string "XPT"^^xsd:string "XSU"^^xsd:string "XTS"^^xsd:string "XUA"^^xsd:string "XXX"^^xsd:string "YER"^^xsd:string "ZAR"^^xsd:string "ZMW"^^xsd:string "ZWG"^^xsd:string ) ] .
+
+:departure_time a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :StopTime ;
-    rdfs:range xsd:string .
+    rdfs:range :time .
 
-:direction_id a owl:DatatypeProperty ;
+:direction_id a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Trip ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 ) ] .
 
-:drop_off_booking_rule_id a owl:ObjectProperty ;
+:drop_off_booking_rule_id a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain :StopTime ;
     rdfs:range :BookingRule .
 
-:drop_off_type a owl:DatatypeProperty ;
+:drop_off_type a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :StopTime ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 3 ) ] .
 
-:end_date a owl:DatatypeProperty ;
+:end_date a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :CalendarService ;
-    rdfs:range xsd:date .
+    rdfs:range :dateType .
 
-:end_pickup_drop_off_window a owl:DatatypeProperty ;
+:end_pickup_drop_off_window a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :StopTime ;
-    rdfs:range xsd:time .
+    rdfs:range :time .
 
-:exception_type a owl:DatatypeProperty ;
+:exception_type a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :CalendarDateService ;
     rdfs:range [ a rdfs:Datatype ;
-            owl:oneOf ( 0 1 ) ] .
+            owl:oneOf ( 1 2 ) ] .
 
-:friday a owl:DatatypeProperty ;
+:friday a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :CalendarService ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 ) ] .
 
-:hasLevel a owl:ObjectProperty ;
+:hasLevel a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain :Stop ;
     rdfs:range :Level .
 
-:hasLocation a owl:ObjectProperty ;
+:hasLocation a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain :StopTime ;
     rdfs:range :Location .
 
-:hasLocationGroup a owl:ObjectProperty ;
+:hasLocationGroup a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain :StopTime ;
     rdfs:range :LocationGroup .
 
-:hasRoute a owl:ObjectProperty ;
+:hasRoute a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain :Trip ;
     rdfs:range :Route .
 
-:hasService a owl:ObjectProperty ;
+:hasService a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain :Trip ;
     rdfs:range :Service .
 
-:hasShape a owl:ObjectProperty ;
+:hasShape a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain :Trip ;
     rdfs:range :Shape .
 
-:hasStop a owl:ObjectProperty ;
+:hasStop a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain :StopTime ;
     rdfs:range :Stop .
 
-:monday a owl:DatatypeProperty ;
+:local_time a rdfs:Datatype ;
+    rdfs:label "local time"@en ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^\\d+:[0-5]\\d:[0-5]\\d$"^^xsd:string ] ) ] .
+
+:monday a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :CalendarService ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 ) ] .
 
-:network_id a owl:DatatypeProperty ;
+:network_id a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Route ;
-    rdfs:range xsd:integer .
+    rdfs:range :id .
 
-:pickup_booking_rule_id a owl:ObjectProperty ;
+:pickup_booking_rule_id a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain :StopTime ;
     rdfs:range :BookingRule .
 
-:pickup_type a owl:DatatypeProperty ;
+:pickup_type a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :StopTime ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 2 3 ) ] .
 
-:platform_code a owl:DatatypeProperty ;
+:platform_code a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
-    rdfs:range xsd:string .
+    rdfs:range :text .
 
-:route_color a owl:DatatypeProperty ;
+:route_color a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Route ;
-    rdfs:range xsd:string .
+    rdfs:range :color .
 
-:route_desc a owl:DatatypeProperty ;
+:route_desc a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Route ;
-    rdfs:range xsd:string .
+    rdfs:range :text .
 
-:route_long_name a owl:DatatypeProperty ;
+:route_long_name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Route ;
-    rdfs:range xsd:string .
+    rdfs:range :text .
 
-:route_short_name a owl:DatatypeProperty ;
+:route_short_name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Route ;
-    rdfs:range xsd:string .
+    rdfs:range :text .
 
-:route_sort_order a owl:DatatypeProperty ;
+:route_sort_order a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Route ;
-    rdfs:range xsd:integer .
+    rdfs:range xsd:nonNegativeInteger .
 
-:route_text_color a owl:DatatypeProperty ;
+:route_text_color a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Route ;
-    rdfs:range xsd:string .
+    rdfs:range :color .
 
-:route_type a owl:DatatypeProperty ;
+:route_type a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Route ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 2 3 4 5 6 7 11 12 ) ] .
 
-:route_url a owl:DatatypeProperty ;
+:route_url a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Route ;
-    rdfs:range xsd:string .
+    rdfs:range :url .
 
-:safe_duration_factor a owl:DatatypeProperty ;
+:safe_duration_factor a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Trip ;
     rdfs:range xsd:decimal .
 
-:safe_duration_offset a owl:DatatypeProperty ;
+:safe_duration_offset a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Trip ;
     rdfs:range xsd:decimal .
 
-:saturday a owl:DatatypeProperty ;
+:saturday a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :CalendarService ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 ) ] .
 
-:service_id a owl:DatatypeProperty ;
-    rdfs:domain :Service ;
-    rdfs:range xsd:string .
-
-:shape_dist_traveled a owl:DatatypeProperty ;
+:shape_dist_traveled a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :StopTime ;
-    rdfs:range xsd:decimal .
+    rdfs:range :nonNegativeFloat .
 
-:start_date a owl:DatatypeProperty ;
+:start_date a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :CalendarService ;
-    rdfs:range xsd:date .
+    rdfs:range :dateType .
 
-:start_pickup_drop_off_window a owl:DatatypeProperty ;
+:start_pickup_drop_off_window a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :StopTime ;
-    rdfs:range xsd:time .
+    rdfs:range :time .
 
-:stop_access a owl:DatatypeProperty ;
+:stop_access a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 ) ] .
 
-:stop_code a owl:DatatypeProperty ;
+:stop_code a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
-    rdfs:range xsd:string .
+    rdfs:range :text .
 
-:stop_desc a owl:DatatypeProperty ;
+:stop_desc a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
-    rdfs:range xsd:string .
+    rdfs:range :text .
 
-:stop_headsign a owl:DatatypeProperty ;
+:stop_headsign a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :StopTime ;
-    rdfs:range xsd:string .
+    rdfs:range :text .
 
-:stop_timezone a owl:DatatypeProperty ;
+:stop_timezone a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
-    rdfs:range xsd:string .
+    rdfs:range :timezone .
 
-:stop_url a owl:DatatypeProperty ;
+:stop_url a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
-    rdfs:range xsd:string .
+    rdfs:range :url .
 
-:sunday a owl:DatatypeProperty ;
+:sunday a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :CalendarService ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 ) ] .
 
-:thursday a owl:DatatypeProperty ;
+:thursday a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :CalendarService ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 ) ] .
 
-:timepoint a owl:DatatypeProperty ;
+:timepoint a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :StopTime ;
-    rdfs:range xsd:integer .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf ( 0 1 ) ] .
 
-:trip_headsign a owl:DatatypeProperty ;
+:trip_headsign a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Trip ;
-    rdfs:range xsd:string .
+    rdfs:range :text .
 
-:trip_short_name a owl:DatatypeProperty ;
+:trip_short_name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Trip ;
-    rdfs:range xsd:string .
+    rdfs:range :text .
 
-:tts_stop_name a owl:DatatypeProperty ;
+:tts_stop_name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
-    rdfs:range xsd:string .
+    rdfs:range :text .
 
-:tuesday a owl:DatatypeProperty ;
+:tuesday a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :CalendarService ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 ) ] .
 
-:wednesday a owl:DatatypeProperty ;
+:wednesday a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :CalendarService ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 ) ] .
 
-:wheelchair_accessible a owl:DatatypeProperty ;
+:wheelchair_accessible a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Trip ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 2 ) ] .
 
-:wheelchair_boarding a owl:DatatypeProperty ;
+:wheelchair_boarding a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 2 ) ] .
 
-:zone_id a owl:DatatypeProperty ;
+:zone_id a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
-    rdfs:range xsd:string .
+    rdfs:range :id .
 
 <https://transit.ac.uk/ontologies/gtfs> a owl:Ontology ;
     rdfs:label "gtfs"@en ;
@@ -350,10 +427,10 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 :EntranceOrExit a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_lon ],
+            owl:onProperty :stop_lat ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_lat ],
+            owl:onProperty :stop_lon ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :stop_name ],
@@ -378,13 +455,13 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 :Station a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_name ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :stop_lon ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :stop_lat ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_name ],
         :ParentlessStop ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( :Stop [ a owl:Restriction ;
@@ -396,13 +473,26 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( :StopOrPlatform :ParentlessStop ) ] .
 
-:agency_id a owl:DatatypeProperty ;
+:agency_id a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:label "agency ID"@en ;
     rdfs:comment "Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies."@en ;
     rdfs:domain :Agency ;
-    rdfs:range xsd:string .
+    rdfs:range :id .
 
-:hasTrip a owl:ObjectProperty ;
+:date a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CalendarDateService ;
+    rdfs:range :dateType .
+
+:email a rdfs:Datatype ;
+    rdfs:label "email"@en ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"^^xsd:string ] ) ] .
+
+:hasTrip a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain :StopTime ;
     rdfs:range :Trip .
 
@@ -411,7 +501,32 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     rdfs:range :Stop ;
     owl:inverseOf :hasParentStation .
 
-:operatedBy a owl:ObjectProperty ;
+:language_code a rdfs:Datatype ;
+    rdfs:label "language code"@en,
+        "latitude"@en,
+        "longitude"@en ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$"^^xsd:string ] ) ] .
+
+:latitude a rdfs:Datatype ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:onDatatype xsd:decimal ;
+            owl:withRestrictions ( [ xsd:maxInclusive 90.0 ] [ xsd:minInclusive -90.0 ] ) ] .
+
+:longitude a rdfs:Datatype ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:onDatatype xsd:decimal ;
+            owl:withRestrictions ( [ xsd:maxInclusive 180.0 ] [ xsd:minInclusive -180.0 ] ) ] .
+
+:nonNegativeFloat a rdfs:Datatype ;
+    rdfs:label "non-negative float"@en ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:onDatatype xsd:decimal ;
+            owl:withRestrictions ( [ xsd:minInclusive 0.0 ] ) ] .
+
+:operatedBy a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain :Route ;
     rdfs:range :Agency ;
     owl:inverseOf :operatesRoute .
@@ -419,23 +534,31 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 :operatesRoute a owl:ObjectProperty ;
     owl:inverseOf :operatedBy .
 
-:route_id a owl:DatatypeProperty ;
+:phone_number a rdfs:Datatype ;
+    rdfs:label "phone number"@en ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^\\+?[1-9]\\d{1,14}$"^^xsd:string ] ) ] .
+
+:route_id a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Route ;
-    rdfs:range xsd:string .
+    rdfs:range :id .
 
-:stop_id a owl:DatatypeProperty ;
+:stop_id a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
-    rdfs:range xsd:string .
+    rdfs:range :id .
 
-:stop_sequence a owl:DatatypeProperty ;
+:stop_sequence a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :StopTime ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:nonNegativeInteger .
 
-:trip_id a owl:DatatypeProperty ;
+:trip_id a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Trip ;
-    rdfs:range xsd:string .
-
-xsd:time a rdfs:Datatype .
+    rdfs:range :id .
 
 :Level a owl:Class ;
     rdfs:subClassOf owl:Thing .
@@ -457,42 +580,63 @@ xsd:time a rdfs:Datatype .
 :Shape a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
-xsd:date a rdfs:Datatype .
+:color a rdfs:Datatype ;
+    rdfs:label "color"@en ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^[0-9A-F]{6}$"^^xsd:string ] ) ] .
+
+:service_id a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Service ;
+    rdfs:range :id .
+
+:timezone a rdfs:Datatype ;
+    rdfs:label "timezone"@en ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:oneOf ( "Etc/GMT+12"^^xsd:string "Etc/GMT+11"^^xsd:string "Pacific/Niue"^^xsd:string "Pacific/Pago_Pago"^^xsd:string "US/Samoa"^^xsd:string "Pacific/Samoa"^^xsd:string "Pacific/Midway"^^xsd:string "Etc/GMT+10"^^xsd:string "Pacific/Honolulu"^^xsd:string "US/Hawaii"^^xsd:string "Pacific/Johnston"^^xsd:string "HST"^^xsd:string "Pacific/Rarotonga"^^xsd:string "Pacific/Tahiti"^^xsd:string "America/Adak"^^xsd:string "US/Aleutian"^^xsd:string "America/Atka"^^xsd:string "Pacific/Marquesas"^^xsd:string "Etc/GMT+9"^^xsd:string "Pacific/Gambier"^^xsd:string "America/Anchorage"^^xsd:string "US/Alaska"^^xsd:string "America/Juneau"^^xsd:string "America/Metlakatla"^^xsd:string "America/Nome"^^xsd:string "America/Sitka"^^xsd:string "America/Yakutat"^^xsd:string "Etc/GMT+8"^^xsd:string "Pacific/Pitcairn"^^xsd:string "PST8PDT"^^xsd:string "America/Los_Angeles"^^xsd:string "US/Pacific"^^xsd:string "America/Tijuana"^^xsd:string "Mexico/BajaNorte"^^xsd:string "America/Ensenada"^^xsd:string "America/Santa_Isabel"^^xsd:string "Etc/GMT+7"^^xsd:string "America/Dawson_Creek"^^xsd:string "America/Dawson"^^xsd:string "America/Fort_Nelson"^^xsd:string "America/Hermosillo"^^xsd:string "America/Mazatlan"^^xsd:string "Mexico/BajaSur"^^xsd:string "America/Phoenix"^^xsd:string "MST"^^xsd:string "US/Arizona"^^xsd:string "America/Creston"^^xsd:string "America/Vancouver"^^xsd:string "Canada/Pacific"^^xsd:string "America/Whitehorse"^^xsd:string "Canada/Yukon"^^xsd:string "MST7MDT"^^xsd:string "America/Boise"^^xsd:string "America/Cambridge_Bay"^^xsd:string "America/Ciudad_Juarez"^^xsd:string "America/Denver"^^xsd:string "Navajo"^^xsd:string "US/Mountain"^^xsd:string "America/Shiprock"^^xsd:string "Etc/GMT+6"^^xsd:string "America/Bahia_Banderas"^^xsd:string "America/Belize"^^xsd:string "America/Chihuahua"^^xsd:string "America/Costa_Rica"^^xsd:string "America/Edmonton"^^xsd:string "Canada/Mountain"^^xsd:string "America/Yellowknife"^^xsd:string "America/El_Salvador"^^xsd:string "Pacific/Galapagos"^^xsd:string "America/Guatemala"^^xsd:string "America/Inuvik"^^xsd:string "America/Managua"^^xsd:string "America/Merida"^^xsd:string "America/Mexico_City"^^xsd:string "Mexico/General"^^xsd:string "America/Monterrey"^^xsd:string "America/Regina"^^xsd:string "Canada/Saskatchewan"^^xsd:string "America/Swift_Current"^^xsd:string "America/Tegucigalpa"^^xsd:string "CST6CDT"^^xsd:string "America/North_Dakota/Beulah"^^xsd:string "America/North_Dakota/Center"^^xsd:string "America/Chicago"^^xsd:string "US/Central"^^xsd:string "Pacific/Easter"^^xsd:string "Chile/EasterIsland"^^xsd:string "America/Indiana/Knox"^^xsd:string "US/Indiana-Starke"^^xsd:string "America/Knox_IN"^^xsd:string "America/Matamoros"^^xsd:string "America/Menominee"^^xsd:string "America/North_Dakota/New_Salem"^^xsd:string "America/Ojinaga"^^xsd:string "America/Rankin_Inlet"^^xsd:string "America/Resolute"^^xsd:string "America/Indiana/Tell_City"^^xsd:string "America/Winnipeg"^^xsd:string "Canada/Central"^^xsd:string "America/Rainy_River"^^xsd:string "Etc/GMT+5"^^xsd:string "America/Bogota"^^xsd:string "America/Cancun"^^xsd:string "America/Eirunepe"^^xsd:string "America/Guayaquil"^^xsd:string "America/Jamaica"^^xsd:string "Jamaica"^^xsd:string "America/Lima"^^xsd:string "America/Panama"^^xsd:string "EST"^^xsd:string "America/Atikokan"^^xsd:string "America/Cayman"^^xsd:string "America/Coral_Harbour"^^xsd:string "America/Rio_Branco"^^xsd:string "Brazil/Acre"^^xsd:string "America/Porto_Acre"^^xsd:string "EST5EDT"^^xsd:string "America/Detroit"^^xsd:string "US/Michigan"^^xsd:string "America/Grand_Turk"^^xsd:string "America/Havana"^^xsd:string "Cuba"^^xsd:string "America/Indiana/Indianapolis"^^xsd:string "US/East-Indiana"^^xsd:string "America/Indianapolis"^^xsd:string "America/Fort_Wayne"^^xsd:string "America/Iqaluit"^^xsd:string "America/Pangnirtung"^^xsd:string "America/Kentucky/Louisville"^^xsd:string "America/Louisville"^^xsd:string "America/Indiana/Marengo"^^xsd:string "America/Kentucky/Monticello"^^xsd:string "America/New_York"^^xsd:string "US/Eastern"^^xsd:string "America/Indiana/Petersburg"^^xsd:string "America/Port-au-Prince"^^xsd:string "America/Toronto"^^xsd:string "Canada/Eastern"^^xsd:string "America/Nassau"^^xsd:string "America/Montreal"^^xsd:string "America/Nipigon"^^xsd:string "America/Thunder_Bay"^^xsd:string "America/Indiana/Vevay"^^xsd:string "America/Indiana/Vincennes"^^xsd:string "America/Indiana/Winamac"^^xsd:string "Etc/GMT+4"^^xsd:string "America/Barbados"^^xsd:string "America/Boa_Vista"^^xsd:string "America/Campo_Grande"^^xsd:string "America/Caracas"^^xsd:string "America/Cuiaba"^^xsd:string "America/Guyana"^^xsd:string "America/La_Paz"^^xsd:string "America/Manaus"^^xsd:string "Brazil/West"^^xsd:string "America/Martinique"^^xsd:string "America/Porto_Velho"^^xsd:string "America/Puerto_Rico"^^xsd:string "America/Virgin"^^xsd:string "America/Anguilla"^^xsd:string "America/Antigua"^^xsd:string "America/Aruba"^^xsd:string "America/Blanc-Sablon"^^xsd:string "America/Curacao"^^xsd:string "America/Dominica"^^xsd:string "America/Grenada"^^xsd:string "America/Guadeloupe"^^xsd:string "America/Kralendijk"^^xsd:string "America/Lower_Princes"^^xsd:string "America/Marigot"^^xsd:string "America/Montserrat"^^xsd:string "America/Port_of_Spain"^^xsd:string "America/St_Barthelemy"^^xsd:string "America/St_Kitts"^^xsd:string "America/St_Lucia"^^xsd:string "America/St_Thomas"^^xsd:string "America/St_Vincent"^^xsd:string "America/Tortola"^^xsd:string "America/Santo_Domingo"^^xsd:string "Atlantic/Bermuda"^^xsd:string "America/Glace_Bay"^^xsd:string "America/Goose_Bay"^^xsd:string "America/Halifax"^^xsd:string "Canada/Atlantic"^^xsd:string "America/Moncton"^^xsd:string "America/Santiago"^^xsd:string "Chile/Continental"^^xsd:string "America/Thule"^^xsd:string "America/St_Johns"^^xsd:string "Canada/Newfoundland"^^xsd:string "Etc/GMT+3"^^xsd:string "America/Araguaina"^^xsd:string "America/Asuncion"^^xsd:string "America/Bahia"^^xsd:string "America/Belem"^^xsd:string "America/Argentina/Buenos_Aires"^^xsd:string "America/Buenos_Aires"^^xsd:string "America/Argentina/Catamarca"^^xsd:string "America/Catamarca"^^xsd:string "America/Argentina/ComodRivadavia"^^xsd:string "America/Cayenne"^^xsd:string "America/Argentina/Cordoba"^^xsd:string "America/Cordoba"^^xsd:string "America/Rosario"^^xsd:string "America/Coyhaique"^^xsd:string "America/Fortaleza"^^xsd:string "America/Argentina/Jujuy"^^xsd:string "America/Jujuy"^^xsd:string "America/Argentina/La_Rioja"^^xsd:string "America/Maceio"^^xsd:string "America/Argentina/Mendoza"^^xsd:string "America/Mendoza"^^xsd:string "America/Montevideo"^^xsd:string "Antarctica/Palmer"^^xsd:string "America/Paramaribo"^^xsd:string "America/Punta_Arenas"^^xsd:string "America/Recife"^^xsd:string "America/Argentina/Rio_Gallegos"^^xsd:string "Antarctica/Rothera"^^xsd:string "America/Argentina/Salta"^^xsd:string "America/Argentina/San_Juan"^^xsd:string "America/Argentina/San_Luis"^^xsd:string "America/Santarem"^^xsd:string "America/Sao_Paulo"^^xsd:string "Brazil/East"^^xsd:string "Atlantic/Stanley"^^xsd:string "America/Argentina/Tucuman"^^xsd:string "America/Argentina/Ushuaia"^^xsd:string "America/Miquelon"^^xsd:string "Etc/GMT+2"^^xsd:string "America/Noronha"^^xsd:string "Brazil/DeNoronha"^^xsd:string "Atlantic/South_Georgia"^^xsd:string "America/Nuuk"^^xsd:string "America/Godthab"^^xsd:string "America/Scoresbysund"^^xsd:string "Etc/GMT+1"^^xsd:string "Atlantic/Cape_Verde"^^xsd:string "Atlantic/Azores"^^xsd:string "Factory"^^xsd:string "Etc/GMT"^^xsd:string "GMT"^^xsd:string "Etc/GMT+0"^^xsd:string "Etc/GMT-0"^^xsd:string "Etc/GMT0"^^xsd:string "Etc/Greenwich"^^xsd:string "GMT+0"^^xsd:string "GMT-0"^^xsd:string "GMT0"^^xsd:string "Greenwich"^^xsd:string "Etc/UTC"^^xsd:string "Etc/UCT"^^xsd:string "Etc/Universal"^^xsd:string "Etc/Zulu"^^xsd:string "UCT"^^xsd:string "UTC"^^xsd:string "Universal"^^xsd:string "Zulu"^^xsd:string "Africa/Abidjan"^^xsd:string "Iceland"^^xsd:string "Africa/Accra"^^xsd:string "Africa/Bamako"^^xsd:string "Africa/Banjul"^^xsd:string "Africa/Conakry"^^xsd:string "Africa/Dakar"^^xsd:string "Africa/Freetown"^^xsd:string "Africa/Lome"^^xsd:string "Africa/Nouakchott"^^xsd:string "Africa/Ouagadougou"^^xsd:string "Atlantic/Reykjavik"^^xsd:string "Atlantic/St_Helena"^^xsd:string "Africa/Timbuktu"^^xsd:string "Africa/Bissau"^^xsd:string "America/Danmarkshavn"^^xsd:string "Africa/Monrovia"^^xsd:string "Africa/Sao_Tome"^^xsd:string "Atlantic/Canary"^^xsd:string "Europe/Dublin"^^xsd:string "Eire"^^xsd:string "Atlantic/Faroe"^^xsd:string "Atlantic/Faeroe"^^xsd:string "Europe/Lisbon"^^xsd:string "Portugal"^^xsd:string "WET"^^xsd:string "Europe/London"^^xsd:string "GB"^^xsd:string "GB-Eire"^^xsd:string "Europe/Guernsey"^^xsd:string "Europe/Isle_of_Man"^^xsd:string "Europe/Jersey"^^xsd:string "Europe/Belfast"^^xsd:string "Atlantic/Madeira"^^xsd:string "Antarctica/Troll"^^xsd:string "Etc/GMT-1"^^xsd:string "Africa/Algiers"^^xsd:string "Africa/Casablanca"^^xsd:string "Africa/El_Aaiun"^^xsd:string "Africa/Lagos"^^xsd:string "Africa/Bangui"^^xsd:string "Africa/Brazzaville"^^xsd:string "Africa/Douala"^^xsd:string "Africa/Kinshasa"^^xsd:string "Africa/Libreville"^^xsd:string "Africa/Luanda"^^xsd:string "Africa/Malabo"^^xsd:string "Africa/Niamey"^^xsd:string "Africa/Porto-Novo"^^xsd:string "Africa/Ndjamena"^^xsd:string "Africa/Tunis"^^xsd:string "Europe/Andorra"^^xsd:string "Europe/Belgrade"^^xsd:string "Europe/Ljubljana"^^xsd:string "Europe/Podgorica"^^xsd:string "Europe/Sarajevo"^^xsd:string "Europe/Skopje"^^xsd:string "Europe/Zagreb"^^xsd:string "Europe/Berlin"^^xsd:string "Arctic/Longyearbyen"^^xsd:string "Europe/Copenhagen"^^xsd:string "Europe/Oslo"^^xsd:string "Europe/Stockholm"^^xsd:string "Atlantic/Jan_Mayen"^^xsd:string "Europe/Brussels"^^xsd:string "CET"^^xsd:string "MET"^^xsd:string "Europe/Amsterdam"^^xsd:string "Europe/Luxembourg"^^xsd:string "Europe/Budapest"^^xsd:string "Africa/Ceuta"^^xsd:string "Europe/Gibraltar"^^xsd:string "Europe/Madrid"^^xsd:string "Europe/Malta"^^xsd:string "Europe/Paris"^^xsd:string "Europe/Monaco"^^xsd:string "Europe/Prague"^^xsd:string "Europe/Bratislava"^^xsd:string "Europe/Rome"^^xsd:string "Europe/San_Marino"^^xsd:string "Europe/Vatican"^^xsd:string "Europe/Tirane"^^xsd:string "Europe/Vienna"^^xsd:string "Europe/Warsaw"^^xsd:string "Poland"^^xsd:string "Europe/Zurich"^^xsd:string "Europe/Busingen"^^xsd:string "Europe/Vaduz"^^xsd:string "Etc/GMT-2"^^xsd:string "Africa/Johannesburg"^^xsd:string "Africa/Maseru"^^xsd:string "Africa/Mbabane"^^xsd:string "Africa/Juba"^^xsd:string "Europe/Kaliningrad"^^xsd:string "Africa/Khartoum"^^xsd:string "Africa/Maputo"^^xsd:string "Africa/Blantyre"^^xsd:string "Africa/Bujumbura"^^xsd:string "Africa/Gaborone"^^xsd:string "Africa/Harare"^^xsd:string "Africa/Kigali"^^xsd:string "Africa/Lubumbashi"^^xsd:string "Africa/Lusaka"^^xsd:string "Africa/Tripoli"^^xsd:string "Libya"^^xsd:string "Africa/Windhoek"^^xsd:string "Europe/Athens"^^xsd:string "EET"^^xsd:string "Asia/Beirut"^^xsd:string "Europe/Bucharest"^^xsd:string "Africa/Cairo"^^xsd:string "Egypt"^^xsd:string "Europe/Chisinau"^^xsd:string "Europe/Tiraspol"^^xsd:string "Asia/Famagusta"^^xsd:string "Asia/Gaza"^^xsd:string "Asia/Hebron"^^xsd:string "Europe/Helsinki"^^xsd:string "Europe/Mariehamn"^^xsd:string "Asia/Jerusalem"^^xsd:string "Israel"^^xsd:string "Asia/Tel_Aviv"^^xsd:string "Europe/Kyiv"^^xsd:string "Europe/Uzhgorod"^^xsd:string "Europe/Zaporozhye"^^xsd:string "Europe/Kiev"^^xsd:string "Asia/Nicosia"^^xsd:string "Europe/Nicosia"^^xsd:string "Europe/Riga"^^xsd:string "Europe/Sofia"^^xsd:string "Europe/Tallinn"^^xsd:string "Europe/Vilnius"^^xsd:string "Etc/GMT-3"^^xsd:string "Asia/Amman"^^xsd:string "Asia/Baghdad"^^xsd:string "Asia/Damascus"^^xsd:string "Europe/Istanbul"^^xsd:string "Turkey"^^xsd:string "Asia/Istanbul"^^xsd:string "Europe/Kirov"^^xsd:string "Europe/Minsk"^^xsd:string "Europe/Moscow"^^xsd:string "W-SU"^^xsd:string "Africa/Nairobi"^^xsd:string "Africa/Addis_Ababa"^^xsd:string "Africa/Asmara"^^xsd:string "Africa/Dar_es_Salaam"^^xsd:string "Africa/Djibouti"^^xsd:string "Africa/Kampala"^^xsd:string "Africa/Mogadishu"^^xsd:string "Indian/Antananarivo"^^xsd:string "Indian/Comoro"^^xsd:string "Indian/Mayotte"^^xsd:string "Africa/Asmera"^^xsd:string "Asia/Qatar"^^xsd:string "Asia/Bahrain"^^xsd:string "Asia/Riyadh"^^xsd:string "Antarctica/Syowa"^^xsd:string "Asia/Aden"^^xsd:string "Asia/Kuwait"^^xsd:string "Europe/Simferopol"^^xsd:string "Europe/Volgograd"^^xsd:string "Asia/Tehran"^^xsd:string "Iran"^^xsd:string "Etc/GMT-4"^^xsd:string "Europe/Astrakhan"^^xsd:string "Asia/Baku"^^xsd:string "Asia/Dubai"^^xsd:string "Asia/Muscat"^^xsd:string "Indian/Mahe"^^xsd:string "Indian/Reunion"^^xsd:string "Indian/Mauritius"^^xsd:string "Europe/Samara"^^xsd:string "Europe/Saratov"^^xsd:string "Asia/Tbilisi"^^xsd:string "Europe/Ulyanovsk"^^xsd:string "Asia/Yerevan"^^xsd:string "Asia/Kabul"^^xsd:string "Etc/GMT-5"^^xsd:string "Asia/Almaty"^^xsd:string "Asia/Aqtobe"^^xsd:string "Asia/Aqtau"^^xsd:string "Asia/Ashgabat"^^xsd:string "Asia/Ashkhabad"^^xsd:string "Asia/Atyrau"^^xsd:string "Asia/Dushanbe"^^xsd:string "Asia/Karachi"^^xsd:string "Indian/Maldives"^^xsd:string "Indian/Kerguelen"^^xsd:string "Antarctica/Mawson"^^xsd:string "Asia/Oral"^^xsd:string "Asia/Qostanay"^^xsd:string "Asia/Qyzylorda"^^xsd:string "Asia/Samarkand"^^xsd:string "Asia/Tashkent"^^xsd:string "Antarctica/Vostok"^^xsd:string "Asia/Yekaterinburg"^^xsd:string "Asia/Colombo"^^xsd:string "Asia/Kolkata"^^xsd:string "Asia/Calcutta"^^xsd:string "Asia/Kathmandu"^^xsd:string "Asia/Katmandu"^^xsd:string "Etc/GMT-6"^^xsd:string "Asia/Bishkek"^^xsd:string "Indian/Chagos"^^xsd:string "Asia/Dhaka"^^xsd:string "Asia/Dacca"^^xsd:string "Asia/Omsk"^^xsd:string "Asia/Thimphu"^^xsd:string "Asia/Thimbu"^^xsd:string "Asia/Urumqi"^^xsd:string "Asia/Kashgar"^^xsd:string "Asia/Yangon"^^xsd:string "Indian/Cocos"^^xsd:string "Asia/Rangoon"^^xsd:string "Etc/GMT-7"^^xsd:string "Asia/Bangkok"^^xsd:string "Asia/Phnom_Penh"^^xsd:string "Asia/Vientiane"^^xsd:string "Indian/Christmas"^^xsd:string "Asia/Barnaul"^^xsd:string "Antarctica/Davis"^^xsd:string "Asia/Ho_Chi_Minh"^^xsd:string "Asia/Saigon"^^xsd:string "Asia/Hovd"^^xsd:string "Asia/Jakarta"^^xsd:string "Asia/Krasnoyarsk"^^xsd:string "Asia/Novosibirsk"^^xsd:string "Asia/Novokuznetsk"^^xsd:string "Asia/Pontianak"^^xsd:string "Asia/Tomsk"^^xsd:string "Etc/GMT-8"^^xsd:string "Antarctica/Casey"^^xsd:string "Asia/Hong_Kong"^^xsd:string "Hongkong"^^xsd:string "Asia/Irkutsk"^^xsd:string "Asia/Kuching"^^xsd:string "Asia/Brunei"^^xsd:string "Asia/Macau"^^xsd:string "Asia/Macao"^^xsd:string "Asia/Makassar"^^xsd:string "Asia/Ujung_Pandang"^^xsd:string "Asia/Manila"^^xsd:string "Australia/Perth"^^xsd:string "Australia/West"^^xsd:string "Asia/Shanghai"^^xsd:string "PRC"^^xsd:string "Asia/Chongqing"^^xsd:string "Asia/Harbin"^^xsd:string "Asia/Chungking"^^xsd:string "Asia/Singapore"^^xsd:string "Singapore"^^xsd:string "Asia/Kuala_Lumpur"^^xsd:string "Asia/Taipei"^^xsd:string "ROC"^^xsd:string "Asia/Ulaanbaatar"^^xsd:string "Asia/Choibalsan"^^xsd:string "Asia/Ulan_Bator"^^xsd:string "Australia/Eucla"^^xsd:string "Etc/GMT-9"^^xsd:string "Asia/Chita"^^xsd:string "Asia/Dili"^^xsd:string "Asia/Jayapura"^^xsd:string "Asia/Khandyga"^^xsd:string "Pacific/Palau"^^xsd:string "Asia/Pyongyang"^^xsd:string "Asia/Seoul"^^xsd:string "ROK"^^xsd:string "Asia/Tokyo"^^xsd:string "Japan"^^xsd:string "Asia/Yakutsk"^^xsd:string "Australia/Darwin"^^xsd:string "Australia/North"^^xsd:string "Australia/Adelaide"^^xsd:string "Australia/South"^^xsd:string "Australia/Broken_Hill"^^xsd:string "Australia/Yancowinna"^^xsd:string "Etc/GMT-10"^^xsd:string "Australia/Brisbane"^^xsd:string "Australia/Queensland"^^xsd:string "Pacific/Guam"^^xsd:string "Pacific/Saipan"^^xsd:string "Australia/Lindeman"^^xsd:string "Pacific/Port_Moresby"^^xsd:string "Antarctica/DumontDUrville"^^xsd:string "Pacific/Chuuk"^^xsd:string "Pacific/Yap"^^xsd:string "Pacific/Truk"^^xsd:string "Asia/Ust-Nera"^^xsd:string "Asia/Vladivostok"^^xsd:string "Australia/Hobart"^^xsd:string "Australia/Tasmania"^^xsd:string "Australia/Currie"^^xsd:string "Antarctica/Macquarie"^^xsd:string "Australia/Melbourne"^^xsd:string "Australia/Victoria"^^xsd:string "Australia/Sydney"^^xsd:string "Australia/ACT"^^xsd:string "Australia/NSW"^^xsd:string "Australia/Canberra"^^xsd:string "Australia/Lord_Howe"^^xsd:string "Australia/LHI"^^xsd:string "Etc/GMT-11"^^xsd:string "Pacific/Bougainville"^^xsd:string "Pacific/Efate"^^xsd:string "Pacific/Guadalcanal"^^xsd:string "Pacific/Pohnpei"^^xsd:string "Pacific/Ponape"^^xsd:string "Pacific/Kosrae"^^xsd:string "Asia/Magadan"^^xsd:string "Pacific/Noumea"^^xsd:string "Asia/Sakhalin"^^xsd:string "Asia/Srednekolymsk"^^xsd:string "Pacific/Norfolk"^^xsd:string "Etc/GMT-12"^^xsd:string "Asia/Anadyr"^^xsd:string "Pacific/Fiji"^^xsd:string "Asia/Kamchatka"^^xsd:string "Pacific/Kwajalein"^^xsd:string "Kwajalein"^^xsd:string "Pacific/Nauru"^^xsd:string "Pacific/Tarawa"^^xsd:string "Pacific/Funafuti"^^xsd:string "Pacific/Majuro"^^xsd:string "Pacific/Wake"^^xsd:string "Pacific/Wallis"^^xsd:string "Pacific/Auckland"^^xsd:string "NZ"^^xsd:string "Antarctica/McMurdo"^^xsd:string "Antarctica/South_Pole"^^xsd:string "Pacific/Chatham"^^xsd:string "NZ-CHAT"^^xsd:string "Etc/GMT-13"^^xsd:string "Pacific/Apia"^^xsd:string "Pacific/Fakaofo"^^xsd:string "Pacific/Kanton"^^xsd:string "Pacific/Enderbury"^^xsd:string "Pacific/Tongatapu"^^xsd:string "Etc/GMT-14"^^xsd:string "Pacific/Kiritimati"^^xsd:string ) ] .
 
 :BookingRule a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
 :CalendarDateService a owl:Class ;
-    rdfs:subClassOf :Service .
+    rdfs:subClassOf :Service ;
+    owl:hasKey ( :service_id :date ) .
 
-:hasParentStation a owl:ObjectProperty ;
+:dateType a rdfs:Datatype ;
+    rdfs:label "date"@en ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^\\d{4}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])$"^^xsd:string ] ) ] .
+
+:hasParentStation a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain :Stop ;
     rdfs:range :Stop ;
     owl:inverseOf :isParentStationOf .
 
-:stop_lat a owl:DatatypeProperty ;
+:stop_lat a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
-    rdfs:range [ a rdfs:Datatype ;
-            owl:onDatatype xsd:decimal ;
-            owl:withRestrictions ( [ xsd:maxInclusive 90.0 ] [ xsd:minInclusive -90.0 ] ) ] .
+    rdfs:range :latitude .
 
-:stop_lon a owl:DatatypeProperty ;
+:stop_lon a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
-    rdfs:range [ a rdfs:Datatype ;
-            owl:onDatatype xsd:decimal ;
-            owl:withRestrictions ( [ xsd:maxInclusive 180.0 ] [ xsd:minInclusive -180.0 ] ) ] .
+    rdfs:range :longitude .
 
-:stop_name a owl:DatatypeProperty ;
+:stop_name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
-    rdfs:range xsd:string .
+    rdfs:range :text .
 
 :StopOrPlatform a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_name ],
+            owl:onProperty :stop_lon ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_lon ],
+            owl:onProperty :stop_name ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :stop_lat ],
@@ -505,6 +649,18 @@ xsd:date a rdfs:Datatype .
                                     owl:cardinality "0"^^xsd:nonNegativeInteger ;
                                     owl:onProperty :location_type ] ) ] ) ] .
 
+:time a rdfs:Datatype ;
+    rdfs:label "time"@en ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^\\d+:[0-5]\\d:[0-5]\\d$"^^xsd:string ] ) ] .
+
+:url a rdfs:Datatype ;
+    rdfs:label "url"@en ;
+    owl:equivalentClass [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^https?:\\/\\/(?:www\\.)?[A-Za-z0-9.-]+\\.[A-Za-z]{2,}(?:\\/[^\\s]*)?$"^^xsd:string ] ) ] .
+
 :ChildStop a owl:Class ;
     rdfs:subClassOf :Stop ;
     owl:equivalentClass [ a owl:Class ;
@@ -515,17 +671,27 @@ xsd:date a rdfs:Datatype .
 :Service a owl:Class ;
     rdfs:subClassOf owl:Thing .
 
-:location_type a owl:DatatypeProperty ;
+:location_type a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:domain :Stop ;
     rdfs:range [ a rdfs:Datatype ;
             owl:oneOf ( 0 1 2 3 4 ) ] .
 
+:id a rdfs:Datatype ;
+    rdfs:label "id"@en ;
+    owl:equivalentClass xsd:string .
+
 :CalendarService a owl:Class ;
-    rdfs:subClassOf :Service .
+    rdfs:subClassOf :Service ;
+    owl:disjointWith :CalendarDateService ;
+    owl:hasKey ( :service_id ) .
 
 :Agency a owl:Class ;
     rdfs:subClassOf owl:Thing ;
     owl:hasKey ( :agency_id ) .
+
+:text a rdfs:Datatype ;
+    rdfs:label "text"@en .
 
 :Trip a owl:Class ;
     rdfs:subClassOf owl:Thing ;
@@ -547,5 +713,5 @@ xsd:date a rdfs:Datatype .
     owl:members ( :StopLocation :Platform :Station :EntranceOrExit :GenericNode :BoardingArea ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( :Agency :Stop :Route :Trip :StopTime :Service :CalendarService :CalendarDateService :Level :Shape :LocationGroup :Location :BookingRule ) .
+    owl:members ( :Agency :Stop :Route :Trip :StopTime :Service :Level :Shape :LocationGroup :Location :BookingRule ) .
 

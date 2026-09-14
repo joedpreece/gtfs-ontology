@@ -1,3 +1,4 @@
+import pandas as pd
 import yaml
 from rdflib.collection import Collection
 from pathlib import Path
@@ -74,75 +75,103 @@ with gtfs:
 
 with gtfs:
 
-    g.add((XSD.date, RDF.type, RDFS.Datatype))
-    g.add((XSD.time, RDF.type, RDFS.Datatype))
+    # g.add((XSD.date, RDF.type, RDFS.Datatype))
+    # g.add((XSD.time, RDF.type, RDFS.Datatype))
 
-    lat_type = ConstrainedDatatype(base_datatype=float, min_inclusive=-90, max_inclusive=90)
-    lon_type = ConstrainedDatatype(base_datatype=float, min_inclusive=-180, max_inclusive=180)
+    class color(Datatype):
+        equivalent_to = [
+            ConstrainedDatatype(base_datatype=str, pattern=r"^[0-9A-F]{6}$")
+        ]
+    g.add((URIRef(color.iri), RDFS.label, Literal("color", "en")))
 
-    color_type = ConstrainedDatatype(base_datatype=str, pattern=r"^[0-9A-F]{6}$")
+    class currency_code(Datatype):
+        dfs = pd.read_html("https://en.wikipedia.org/wiki/ISO_4217#Active_codes",
+                           storage_options={'User-Agent': 'Mozilla/5.0'})
+        equivalent_to = [OneOf(dfs[1]["Code"].tolist())]
+    g.add((URIRef(currency_code.iri), RDFS.label, Literal("currency code", "en")))
 
-    currency_code_type = OneOf([
-    "AED", "AFN", "ALL", "AMD", "AOA", "ARS", "AUD", "AWG", "AZN",
-    "BAM", "BBD", "BDT", "BHD", "BIF", "BMD", "BND", "BOB", "BOV",
-    "BRL", "BSD", "BTN", "BWP", "BYN", "BZD", "CAD", "CDF", "CHE",
-    "CHF", "CHW", "CLF", "CLP", "CNY", "COP", "COU", "CRC", "CUP",
-    "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB",
-    "EUR", "FJD", "FKP", "GBP", "GEL", "GHS", "GIP", "GMD", "GNF",
-    "GTQ", "GYD", "HKD", "HNL", "HTG", "HUF", "IDR", "ILS", "INR",
-    "IQD", "IRR", "ISK", "JMD", "JOD", "JPY", "KES", "KGS", "KHR",
-    "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR",
-    "LRD", "LSL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT",
-    "MOP", "MRU", "MUR", "MVR", "MWK", "MXN", "MXV", "MYR", "MZN",
-    "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN",
-    "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB",
-    "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLE",
-    "SOS", "SRD", "SSP", "STN", "SVC", "SYP", "SZL", "THB", "TJS",
-    "TMT", "TND", "TOP", "TRY", "TTD", "TWD", "TZS", "UAH", "UGX",
-    "USD", "USN", "UYI", "UYU", "UYW", "UZS", "VED", "VES", "VND",
-    "VUV", "WST", "XAD", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC",
-    "XBD", "XCD", "XCG", "XDR", "XOF", "XPD", "XPF", "XPT", "XSU",
-    "XTS", "XUA", "XXX", "YER", "ZAR", "ZMW", "ZWG"
-    ])
+    class currency_amount(Datatype):
+        equivalent_to = [
+            ConstrainedDatatype(base_datatype=str)
+        ]
+    g.add((URIRef(currency_amount.iri), RDFS.label, Literal("currency amount", "en")))
 
-    location_type_enum = OneOf([
-        0,
-        1,
-        2,
-        3,
-        4
-    ])
+    class dateType(Datatype):
+        equivalent_to = [
+            ConstrainedDatatype(base_datatype=str, pattern=r"^\d{4}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])$")
+        ]
+    g.add((URIRef(dateType.iri), RDFS.label, Literal("date", "en")))
 
-    wheelchair_boarding_enum = OneOf([
-        0,
-        1,
-        2,
-    ])
+    class email(Datatype):
+        equivalent_to = [
+            ConstrainedDatatype(base_datatype=str, pattern=r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
+        ]
+    g.add((URIRef(email.iri), RDFS.label, Literal("email", "en")))
 
-    stop_access_enum = OneOf([
-        0,
-        1,
-    ])
+    class id(Datatype):
+        pass
+    g.add((URIRef(id.iri), RDFS.label, Literal("id", "en")))
+    g.add((URIRef(id.iri), OWL.equivalentClass, XSD.string))
 
-    route_type_enum = OneOf([
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        11,
-        12
-    ])
+    class language_code(Datatype):
+        equivalent_to = [
+            ConstrainedDatatype(base_datatype=str, pattern=r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
+        ]
+    g.add((URIRef(language_code.iri), RDFS.label, Literal("language code", "en")))
 
-    pickup_enum = OneOf([
-        0,
-        1,
-        2,
-        3
-    ])
+    class latitude(Datatype):
+        equivalent_to = [
+            ConstrainedDatatype(base_datatype=float, min_inclusive=-90, max_inclusive=90)
+        ]
+    g.add((URIRef(language_code.iri), RDFS.label, Literal("latitude", "en")))
+
+    class longitude(Datatype):
+        equivalent_to = [
+            ConstrainedDatatype(base_datatype=float, min_inclusive=-180, max_inclusive=180)
+        ]
+    g.add((URIRef(language_code.iri), RDFS.label, Literal("longitude", "en")))
+
+    class nonNegativeFloat(Datatype):
+        equivalent_to = [
+            ConstrainedDatatype(base_datatype=float, min_inclusive=0)
+        ]
+    g.add((URIRef(nonNegativeFloat.iri), RDFS.label, Literal("non-negative float", "en")))
+
+    class phone_number(Datatype):
+        equivalent_to = [
+            ConstrainedDatatype(base_datatype=str, pattern=r"^\+?[1-9]\d{1,14}$")
+        ]
+    g.add((URIRef(phone_number.iri), RDFS.label, Literal("phone number", "en")))
+
+    class time(Datatype):
+        equivalent_to = [
+            ConstrainedDatatype(base_datatype=str, pattern=r"^\d+:[0-5]\d:[0-5]\d$")
+        ]
+    g.add((URIRef(time.iri), RDFS.label, Literal("time", "en")))
+
+    class local_time(Datatype):
+        equivalent_to = [
+            ConstrainedDatatype(base_datatype=str, pattern=r"^\d+:[0-5]\d:[0-5]\d$")
+        ]
+    g.add((URIRef(local_time.iri), RDFS.label, Literal("local time", "en")))
+
+    class text(Datatype):
+        pass
+    g.add((URIRef(text.iri), RDFS.label, Literal("text", "en")))
+    g.add((URIRef(id.iri), OWL.equivalentClass, XSD.string))
+
+    class timezone(Datatype):
+        dfs = pd.read_html(
+            "https://en.wikipedia.org/wiki/List_of_tz_database_time_zones",
+            storage_options={'User-Agent': 'Mozilla/5.0'})
+        equivalent_to = [OneOf(dfs[0][('TZ identifier', 'TZ identifier')].tolist())]
+    g.add((URIRef(timezone.iri), RDFS.label, Literal("timezone", "en")))
+
+    class url(Datatype):
+        equivalent_to = [
+            ConstrainedDatatype(base_datatype=str, pattern=r"^https?:\/\/(?:www\.)?[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:\/[^\s]*)?$")
+        ]
+    g.add((URIRef(url.iri), RDFS.label, Literal("url", "en")))
 
 # region Define the classes
 with gtfs:
@@ -186,65 +215,70 @@ with gtfs:
     class BookingRule(Thing):
         pass
 
-    AllDisjoint([Agency, Stop, Route, Trip, StopTime, Service, CalendarService, CalendarDateService, Level, Shape, LocationGroup, Location, BookingRule])
+    AllDisjoint([Agency, Stop, Route, Trip, StopTime, Service, Level, Shape, LocationGroup, Location, BookingRule])
+
+    AllDisjoint(
+        [CalendarService, CalendarDateService])
+
+
 
 # region Agency
 with gtfs:
 
-    class agency_id(DataProperty):
+    class agency_id(DataProperty, FunctionalProperty):
         comment = [locstr(definitions["agency_id"], "en")]
         label = [locstr("agency ID", "en")]
         domain = [Agency]
-        range = [str]
+        range = [id]
 
     # Add the agency_id as the primary key
     list_node = BNode()
     Collection(g, list_node, [URIRef(agency_id.iri)])
     g.add((URIRef(Agency.iri), OWL.hasKey, list_node))
 
-    class agency_name(DataProperty):
+    class agency_name(DataProperty, FunctionalProperty):
         comment = [locstr(definitions["agency_name"], "en")]
         label = [locstr("agency name", "en")]
         domain = [Agency]
-        range = [str]
+        range = [text]
 
-    class agency_url(DataProperty):
+    class agency_url(DataProperty, FunctionalProperty):
         comment = [locstr(definitions["agency_url"], "en")]
         label = [locstr("agency URL", "en")]
         domain = [Agency]
-        range = [str]
+        range = [url]
 
-    class agency_timezone(DataProperty):
+    class agency_timezone(DataProperty, FunctionalProperty):
         comment = [locstr(definitions["agency_timezone"], "en")]
         label = [locstr("agency timezone", "en")]
         domain = [Agency]
-        range = [str]
+        range = [timezone]
 
-    class agency_lang(DataProperty):
+    class agency_lang(DataProperty, FunctionalProperty):
         comment = [locstr(definitions["agency_lang"], "en")]
         label = [locstr("agency language", "en")]
         domain = [Agency]
-        range = [str]
+        range = [language_code]
 
-    class agency_phone(DataProperty):
+    class agency_phone(DataProperty, FunctionalProperty):
         comment = [locstr(definitions["agency_phone"], "en")]
         label = [locstr("agency phone number", "en")]
         domain = [Agency]
-        range = [str]
+        range = [phone_number]
 
-    class agency_fare_url(DataProperty):
+    class agency_fare_url(DataProperty, FunctionalProperty):
         comment = [locstr(definitions["agency_fare_url"], "en")]
         label = [locstr("agency fare URL", "en")]
         domain = [Agency]
-        range = [str]
+        range = [url]
 
-    class agency_email(DataProperty):
+    class agency_email(DataProperty, FunctionalProperty):
         comment = [locstr(definitions["agency_email"], "en")]
         label = [locstr("agency email address", "en")]
         domain = [Agency]
-        range = [str]
+        range = [email]
 
-    class cemv_support(DataProperty):
+    class cemv_support(DataProperty, FunctionalProperty):
         comment = [locstr(definitions["cemv_support"], "en")]
         label = [locstr("CEMV Support", "en")]
         domain = [Or([Agency, Route])]
@@ -260,53 +294,53 @@ with gtfs:
 
 with gtfs:
 
-    class stop_id(DataProperty):
+    class stop_id(DataProperty, FunctionalProperty):
         # comment = [locstr(definitions["stop_id"], "en")]
         domain = [Stop]
-        range = [str]
+        range = [id]
 
     # Add the stop_id as the primary key
     list_node = BNode()
     Collection(g, list_node, [URIRef(stop_id.iri)])
     g.add((URIRef(Stop.iri), OWL.hasKey, list_node))
 
-    class stop_code(DataProperty):
+    class stop_code(DataProperty, FunctionalProperty):
         domain = [Stop]
-        range = [str]
+        range = [text]
 
-    class stop_name(DataProperty):
+    class stop_name(DataProperty, FunctionalProperty):
         domain = [Stop]
-        range = [str]
+        range = [text]
 
-    class tts_stop_name(DataProperty):
+    class tts_stop_name(DataProperty, FunctionalProperty):
         domain = [Stop]
-        range = [str]
+        range = [text]
 
-    class stop_desc(DataProperty):
+    class stop_desc(DataProperty, FunctionalProperty):
         domain = [Stop]
-        range = [str]
+        range = [text]
 
-    class stop_lat(DataProperty):
+    class stop_lat(DataProperty, FunctionalProperty):
         domain = [Stop]
-        range = [lat_type]
+        range = [latitude]
 
-    class stop_lon(DataProperty):
+    class stop_lon(DataProperty, FunctionalProperty):
         domain = [Stop]
-        range = [lon_type]
+        range = [longitude]
 
-    class zone_id(DataProperty):
+    class zone_id(DataProperty, FunctionalProperty):
         domain = [Stop]
-        range = [str]
+        range = [id]
 
-    class stop_url(DataProperty):
+    class stop_url(DataProperty, FunctionalProperty):
         domain = [Stop]
-        range = [str]
+        range = [url]
 
-    class location_type(DataProperty):
+    class location_type(DataProperty, FunctionalProperty):
         domain = [Stop]
         range = [OneOf([0, 1, 2, 3, 4])]
 
-    class hasParentStation(ObjectProperty):
+    class hasParentStation(ObjectProperty, FunctionalProperty):
         domain = [Stop]
         range = [Stop]
 
@@ -315,23 +349,23 @@ with gtfs:
         range = [Stop]
         inverse_property = hasParentStation
 
-    class stop_timezone(DataProperty):
+    class stop_timezone(DataProperty, FunctionalProperty):
         domain = [Stop]
-        range = [str]
+        range = [timezone]
 
-    class wheelchair_boarding(DataProperty):
+    class wheelchair_boarding(DataProperty, FunctionalProperty):
         domain = [Stop]
         range = [OneOf([0, 1, 2])]
 
-    class hasLevel(ObjectProperty):
+    class hasLevel(ObjectProperty, FunctionalProperty):
         domain = [Stop]
         range = [Level]
 
-    class platform_code(DataProperty):
+    class platform_code(DataProperty, FunctionalProperty):
         domain = [Stop]
-        range = [str]
+        range = [text]
 
-    class stop_access(DataProperty):
+    class stop_access(DataProperty, FunctionalProperty):
         domain = [Stop]
         range = [OneOf([0, 1])]
 
@@ -420,124 +454,124 @@ with gtfs:
 
 with gtfs:
 
-    class route_id(DataProperty):
+    class route_id(DataProperty, FunctionalProperty):
         domain = [Route]
-        range = [str]
+        range = [id]
 
     # Add the route_id as the primary key
     list_node = BNode()
     Collection(g, list_node, [URIRef(route_id.iri)])
     g.add((URIRef(Route.iri), OWL.hasKey, list_node))
 
-    class operatedBy(ObjectProperty):
+    class operatedBy(ObjectProperty, FunctionalProperty):
         domain = [Route]
         range = [Agency]
 
     class operatesRoute(ObjectProperty):
         inverse_property = operatedBy
 
-    class route_short_name(DataProperty):
+    class route_short_name(DataProperty, FunctionalProperty):
         domain = [Route]
-        range = [str]
+        range = [text]
 
-    class route_long_name(DataProperty):
+    class route_long_name(DataProperty, FunctionalProperty):
         domain = [Route]
-        range = [str]
+        range = [text]
 
-    class route_desc(DataProperty):
+    class route_desc(DataProperty, FunctionalProperty):
         domain = [Route]
-        range = [str]
+        range = [text]
 
-    class route_type(DataProperty):
+    class route_type(DataProperty, FunctionalProperty):
         domain = [Route]
         range = [OneOf([0, 1, 2, 3, 4, 5, 6, 7, 11, 12])]
 
-    class route_url(DataProperty):
+    class route_url(DataProperty, FunctionalProperty):
         domain = [Route]
-        range = [str]
+        range = [url]
 
-    class route_color(DataProperty):
+    class route_color(DataProperty, FunctionalProperty):
         domain = [Route]
-        range = [str]
+        range = [color]
 
-    class route_text_color(DataProperty):
+    class route_text_color(DataProperty, FunctionalProperty):
         domain = [Route]
-        range = [str]
+        range = [color]
 
-    class route_sort_order(DataProperty):
+    class route_sort_order(DataProperty, FunctionalProperty):
         domain = [Route]
-        range = [int]
+    g.add((URIRef(route_sort_order.iri), RDFS.range, XSD.nonNegativeInteger))
 
-    class continuous_pickup(DataProperty):
-        domain = [Route | StopTime]
+    class continuous_pickup(DataProperty, FunctionalProperty):
+        domain = [Or([Route, StopTime])]
         range = [OneOf([0, 1, 2, 3])]
 
-    class continuous_drop_off(DataProperty):
-        domain = [Route | StopTime]
+    class continuous_drop_off(DataProperty, FunctionalProperty):
+        domain = [Or([Route, StopTime])]
         range = [OneOf([0, 1, 2, 3])]
 
-    class network_id(DataProperty):
+    class network_id(DataProperty, FunctionalProperty):
         domain = [Route]
-        range = [int]
+        range = [id]
 
 # region Trips
 
 with gtfs:
 
-    class hasRoute(ObjectProperty):
+    class hasRoute(ObjectProperty, FunctionalProperty):
         domain = [Trip]
         range = [Route]
 
-    class hasService(ObjectProperty):
+    class hasService(ObjectProperty, FunctionalProperty):
         domain = [Trip]
         range = [Service]
 
-    class trip_id(DataProperty):
+    class trip_id(DataProperty, FunctionalProperty):
         domain = [Trip]
-        range = [str]
+        range = [id]
 
     # Add the trip_id as the primary key
     list_node = BNode()
     Collection(g, list_node, [URIRef(trip_id.iri)])
     g.add((URIRef(Trip.iri), OWL.hasKey, list_node))
 
-    class trip_headsign(DataProperty):
+    class trip_headsign(DataProperty, FunctionalProperty):
         domain = [Trip]
-        range = [str]
+        range = [text]
 
-    class trip_short_name(DataProperty):
+    class trip_short_name(DataProperty, FunctionalProperty):
         domain = [Trip]
-        range = [str]
+        range = [text]
 
-    class direction_id(DataProperty):
+    class direction_id(DataProperty, FunctionalProperty):
         domain = [Trip]
         range = [OneOf([0, 1])]
 
-    class block_id(DataProperty):
+    class block_id(DataProperty, FunctionalProperty):
         domain = [Trip]
-        range = [str]
+        range = [id]
 
-    class hasShape(ObjectProperty):
+    class hasShape(ObjectProperty, FunctionalProperty):
         domain = [Trip]
         range = [Shape]
 
-    class wheelchair_accessible(DataProperty):
+    class wheelchair_accessible(DataProperty, FunctionalProperty):
         domain = [Trip]
         range = [OneOf([0, 1, 2])]
 
-    class bikes_allowed(DataProperty):
+    class bikes_allowed(DataProperty, FunctionalProperty):
         domain = [Trip]
         range = [OneOf([0, 1, 2])]
 
-    class cars_allowed(DataProperty):
+    class cars_allowed(DataProperty, FunctionalProperty):
         domain = [Trip]
         range = [OneOf([0, 1, 2])]
 
-    class safe_duration_factor(DataProperty):
+    class safe_duration_factor(DataProperty, FunctionalProperty):
         domain = [Trip]
         range = [float]
 
-    class safe_duration_offset(DataProperty):
+    class safe_duration_offset(DataProperty, FunctionalProperty):
         domain = [Trip]
         range = [float]
 
@@ -545,72 +579,72 @@ with gtfs:
 
 with gtfs:
 
-    class hasTrip(ObjectProperty):
+    class hasTrip(ObjectProperty, FunctionalProperty):
         domain = [StopTime]
         range = [Trip]
 
-    class arrival_time(DataProperty):
+    class arrival_time(DataProperty, FunctionalProperty):
         domain = [StopTime]
-        range = [str]
+        range = [time]
 
-    class departure_time(DataProperty):
+    class departure_time(DataProperty, FunctionalProperty):
         domain = [StopTime]
-        range = [str]
+        range = [time]
 
-    class hasStop(ObjectProperty):
+    class hasStop(ObjectProperty, FunctionalProperty):
         domain = [StopTime]
         range = [Stop]
 
-    class hasLocationGroup(ObjectProperty):
+    class hasLocationGroup(ObjectProperty, FunctionalProperty):
         domain = [StopTime]
         range = [LocationGroup]
 
-    class hasLocation(ObjectProperty):
+    class hasLocation(ObjectProperty, FunctionalProperty):
         domain = [StopTime]
         range = [Location]
 
-    class stop_sequence(DataProperty):
+    class stop_sequence(DataProperty, FunctionalProperty):
         domain = [StopTime]
-        range = [str]
+    g.add((URIRef(stop_sequence.iri), RDFS.range, XSD.nonNegativeInteger))
 
-    # Add the trip_id as the primary key
+    # Add the trip_id and stop_sequence as the primary key
     list_node = BNode()
     Collection(g, list_node, [URIRef(stop_sequence.iri), URIRef(hasTrip.iri)])
     g.add((URIRef(StopTime.iri), OWL.hasKey, list_node))
 
-    class stop_headsign(DataProperty):
+    class stop_headsign(DataProperty, FunctionalProperty):
         domain = [StopTime]
-        range = [str]
+        range = [text]
 
-    class start_pickup_drop_off_window(DataProperty):
+    class start_pickup_drop_off_window(DataProperty, FunctionalProperty):
         domain = [StopTime]
-        range = [datetime.time]
+        range = [time]
 
-    class end_pickup_drop_off_window(DataProperty):
+    class end_pickup_drop_off_window(DataProperty, FunctionalProperty):
         domain = [StopTime]
-        range = [datetime.time]
+        range = [time]
 
-    class pickup_type(DataProperty):
+    class pickup_type(DataProperty, FunctionalProperty):
         domain = [StopTime]
-        range = [int]
+        range = [OneOf([0, 1, 2, 3])]
 
-    class drop_off_type(DataProperty):
+    class drop_off_type(DataProperty, FunctionalProperty):
         domain = [StopTime]
-        range = [int]
+        range = [OneOf([0, 1, 2, 3])]
 
-    class shape_dist_traveled(DataProperty):
+    class shape_dist_traveled(DataProperty, FunctionalProperty):
         domain = [StopTime]
-        range = [float]
+        range = [nonNegativeFloat]
 
-    class timepoint(DataProperty):
+    class timepoint(DataProperty, FunctionalProperty):
         domain = [StopTime]
-        range = [int]
+        range = [OneOf([0, 1])]
 
-    class pickup_booking_rule_id(ObjectProperty):
+    class pickup_booking_rule_id(ObjectProperty, FunctionalProperty):
         domain = [StopTime]
         range = [BookingRule]
 
-    class drop_off_booking_rule_id(ObjectProperty):
+    class drop_off_booking_rule_id(ObjectProperty, FunctionalProperty):
         domain = [StopTime]
         range = [BookingRule]
 
@@ -618,53 +652,63 @@ with gtfs:
 
 with gtfs:
 
-    class service_id(DataProperty):
+    class service_id(DataProperty, FunctionalProperty):
         domain = [Service]
-        range = [str]
+        range = [id]
 
-    class monday(DataProperty):
+    # Add the trip_id and stop_sequence as the primary key
+    list_node = BNode()
+    Collection(g, list_node, [URIRef(service_id.iri)])
+    g.add((URIRef(CalendarService.iri), OWL.hasKey, list_node))
+
+    class monday(DataProperty, FunctionalProperty):
         domain = [CalendarService]
         range = [OneOf([0, 1])]
 
-    class tuesday(DataProperty):
+    class tuesday(DataProperty, FunctionalProperty):
         domain = [CalendarService]
         range = [OneOf([0, 1])]
 
-    class wednesday(DataProperty):
+    class wednesday(DataProperty, FunctionalProperty):
         domain = [CalendarService]
         range = [OneOf([0, 1])]
 
-    class thursday(DataProperty):
+    class thursday(DataProperty, FunctionalProperty):
         domain = [CalendarService]
         range = [OneOf([0, 1])]
 
-    class friday(DataProperty):
+    class friday(DataProperty, FunctionalProperty):
         domain = [CalendarService]
         range = [OneOf([0, 1])]
 
-    class saturday(DataProperty):
+    class saturday(DataProperty, FunctionalProperty):
         domain = [CalendarService]
         range = [OneOf([0, 1])]
 
-    class sunday(DataProperty):
+    class sunday(DataProperty, FunctionalProperty):
         domain = [CalendarService]
         range = [OneOf([0, 1])]
 
-    class start_date(DataProperty):
+    class start_date(DataProperty, FunctionalProperty):
         domain = [CalendarService]
-        range = [datetime.date]
+        range = [dateType]
 
-    class end_date(DataProperty):
+    class end_date(DataProperty, FunctionalProperty):
         domain = [CalendarService]
-        range = [datetime.date]
+        range = [dateType]
 
-    class date(DataProperty):
+    class date(DataProperty, FunctionalProperty):
         domain = [CalendarDateService]
-        range = [datetime.date]
+        range = [dateType]
 
-    class exception_type(DataProperty):
+    # Add the trip_id and stop_sequence as the primary key
+    list_node = BNode()
+    Collection(g, list_node, [URIRef(service_id.iri), URIRef(date.iri)])
+    g.add((URIRef(CalendarDateService.iri), OWL.hasKey, list_node))
+
+    class exception_type(DataProperty, FunctionalProperty):
         domain = [CalendarDateService]
-        range = [OneOf([0, 1])]
+        range = [OneOf([1, 2])]
 
 def build_ontology():
 
