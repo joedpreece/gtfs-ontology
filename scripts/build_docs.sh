@@ -13,7 +13,7 @@ echo "Done."
 docker run --rm \
   -v "$ROOT":/data \
   $IMAGE \
-  -ontFile /data/artefacts/ontologies/gtfs.owl.ttl \
+  -ontFile /data/artefacts/ontologies/reasoned.owl.ttl \
   -outFolder /data/docs \
   -rewriteAll \
   -webVowl \

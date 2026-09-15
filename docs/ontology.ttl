@@ -2547,68 +2547,78 @@ xsd:date rdf:type rdfs:Datatype .
 #################################################################
 
 ###  https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id
-:drop_off_booking_rule_id rdf:type owl:ObjectProperty ;
+:drop_off_booking_rule_id rdf:type owl:ObjectProperty ,
+                                   owl:FunctionalProperty ;
                           rdfs:domain :StopTime ;
                           rdfs:range :BookingRule .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#hasLevel
-:hasLevel rdf:type owl:ObjectProperty ;
+:hasLevel rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :Stop ;
           rdfs:range :Level .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#hasLocation
-:hasLocation rdf:type owl:ObjectProperty ;
+:hasLocation rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain :StopTime ;
              rdfs:range :Location .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#hasLocationGroup
-:hasLocationGroup rdf:type owl:ObjectProperty ;
+:hasLocationGroup rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
                   rdfs:domain :StopTime ;
                   rdfs:range :LocationGroup .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#hasParentStation
 :hasParentStation rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :isParentStationOf ;
+                  rdf:type owl:FunctionalProperty ;
                   rdfs:domain :Stop ;
                   rdfs:range :Stop .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#hasRoute
-:hasRoute rdf:type owl:ObjectProperty ;
+:hasRoute rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :Trip ;
           rdfs:range :Route .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#hasService
-:hasService rdf:type owl:ObjectProperty ;
+:hasService rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :Trip ;
             rdfs:range :Service .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#hasShape
-:hasShape rdf:type owl:ObjectProperty ;
+:hasShape rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :Trip ;
           rdfs:range :Shape .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#hasStop
-:hasStop rdf:type owl:ObjectProperty ;
+:hasStop rdf:type owl:ObjectProperty ,
+                  owl:FunctionalProperty ;
          rdfs:domain :StopTime ;
          rdfs:range :Stop .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#hasTrip
-:hasTrip rdf:type owl:ObjectProperty ;
+:hasTrip rdf:type owl:ObjectProperty ,
+                  owl:FunctionalProperty ;
          rdfs:domain :StopTime ;
          rdfs:range :Trip .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#isParentStationOf
 :isParentStationOf rdf:type owl:ObjectProperty ;
-                   owl:inverseOf :hasParentStation ;
                    rdfs:domain :Stop ;
                    rdfs:range :Stop .
 
@@ -2616,6 +2626,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://transit.ac.uk/ontologies/gtfs#operatedBy
 :operatedBy rdf:type owl:ObjectProperty ;
             owl:inverseOf :operatesRoute ;
+            rdf:type owl:FunctionalProperty ;
             rdfs:domain :Route ;
             rdfs:range :Agency .
 
@@ -2625,7 +2636,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id
-:pickup_booking_rule_id rdf:type owl:ObjectProperty ;
+:pickup_booking_rule_id rdf:type owl:ObjectProperty ,
+                                 owl:FunctionalProperty ;
                         rdfs:domain :StopTime ;
                         rdfs:range :BookingRule .
 
@@ -2635,7 +2647,8 @@ xsd:date rdf:type rdfs:Datatype .
 #################################################################
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_email
-:agency_email rdf:type owl:DatatypeProperty ;
+:agency_email rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
               rdfs:domain :Agency ;
               rdfs:range :email ;
               rdfs:comment "Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency."@en ;
@@ -2643,7 +2656,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_fare_url
-:agency_fare_url rdf:type owl:DatatypeProperty ;
+:agency_fare_url rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
                  rdfs:domain :Agency ;
                  rdfs:range :url ;
                  rdfs:comment "URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares."@en ;
@@ -2660,7 +2674,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_lang
-:agency_lang rdf:type owl:DatatypeProperty ;
+:agency_lang rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain :Agency ;
              rdfs:range :language_code ;
              rdfs:comment "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."@en ;
@@ -2668,7 +2683,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_name
-:agency_name rdf:type owl:DatatypeProperty ;
+:agency_name rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain :Agency ;
              rdfs:range :text ;
              rdfs:comment "Full name of the transit agency."@en ;
@@ -2676,7 +2692,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_phone
-:agency_phone rdf:type owl:DatatypeProperty ;
+:agency_phone rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
               rdfs:domain :Agency ;
               rdfs:range :phone_number ;
               rdfs:comment "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."@en ;
@@ -2684,7 +2701,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_timezone
-:agency_timezone rdf:type owl:DatatypeProperty ;
+:agency_timezone rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
                  rdfs:domain :Agency ;
                  rdfs:range :timezone ;
                  rdfs:comment "Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone."@en ;
@@ -2692,7 +2710,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#agency_url
-:agency_url rdf:type owl:DatatypeProperty ;
+:agency_url rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :Agency ;
             rdfs:range :url ;
             rdfs:comment "URL of the transit agency."@en ;
@@ -2700,13 +2719,15 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#arrival_time
-:arrival_time rdf:type owl:DatatypeProperty ;
+:arrival_time rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
               rdfs:domain :StopTime ;
               rdfs:range :time .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#bikes_allowed
-:bikes_allowed rdf:type owl:DatatypeProperty ;
+:bikes_allowed rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain :Trip ;
                rdfs:range [ rdf:type rdfs:Datatype ;
                             owl:oneOf [ rdf:type rdf:List ;
@@ -2723,13 +2744,15 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#block_id
-:block_id rdf:type owl:DatatypeProperty ;
+:block_id rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :Trip ;
           rdfs:range :id .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#cars_allowed
-:cars_allowed rdf:type owl:DatatypeProperty ;
+:cars_allowed rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
               rdfs:domain :Trip ;
               rdfs:range [ rdf:type rdfs:Datatype ;
                            owl:oneOf [ rdf:type rdf:List ;
@@ -2746,7 +2769,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#cemv_support
-:cemv_support rdf:type owl:DatatypeProperty ;
+:cemv_support rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
               rdfs:domain [ rdf:type owl:Class ;
                             owl:unionOf ( :Agency
                                           :Route
@@ -2769,7 +2793,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#continuous_drop_off
-:continuous_drop_off rdf:type owl:DatatypeProperty ;
+:continuous_drop_off rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
                      rdfs:domain [ rdf:type owl:Class ;
                                    owl:unionOf ( :Route
                                                  :StopTime
@@ -2793,7 +2818,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#continuous_pickup
-:continuous_pickup rdf:type owl:DatatypeProperty ;
+:continuous_pickup rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
                    rdfs:domain [ rdf:type owl:Class ;
                                  owl:unionOf ( :Route
                                                :StopTime
@@ -2817,19 +2843,22 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#date
-:date rdf:type owl:DatatypeProperty ;
+:date rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
       rdfs:domain :CalendarDateService ;
       rdfs:range :dateType .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#departure_time
-:departure_time rdf:type owl:DatatypeProperty ;
+:departure_time rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
                 rdfs:domain :StopTime ;
                 rdfs:range :time .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#direction_id
-:direction_id rdf:type owl:DatatypeProperty ;
+:direction_id rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
               rdfs:domain :Trip ;
               rdfs:range [ rdf:type rdfs:Datatype ;
                            owl:oneOf [ rdf:type rdf:List ;
@@ -2843,7 +2872,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#drop_off_type
-:drop_off_type rdf:type owl:DatatypeProperty ;
+:drop_off_type rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain :StopTime ;
                rdfs:range [ rdf:type rdfs:Datatype ;
                             owl:oneOf [ rdf:type rdf:List ;
@@ -2863,19 +2893,22 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#end_date
-:end_date rdf:type owl:DatatypeProperty ;
+:end_date rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :CalendarService ;
           rdfs:range :dateType .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window
-:end_pickup_drop_off_window rdf:type owl:DatatypeProperty ;
+:end_pickup_drop_off_window rdf:type owl:DatatypeProperty ,
+                                     owl:FunctionalProperty ;
                             rdfs:domain :StopTime ;
                             rdfs:range :time .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#exception_type
-:exception_type rdf:type owl:DatatypeProperty ;
+:exception_type rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
                 rdfs:domain :CalendarDateService ;
                 rdfs:range [ rdf:type rdfs:Datatype ;
                              owl:oneOf [ rdf:type rdf:List ;
@@ -2889,7 +2922,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#friday
-:friday rdf:type owl:DatatypeProperty ;
+:friday rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
         rdfs:domain :CalendarService ;
         rdfs:range [ rdf:type rdfs:Datatype ;
                      owl:oneOf [ rdf:type rdf:List ;
@@ -2903,7 +2937,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#location_type
-:location_type rdf:type owl:DatatypeProperty ;
+:location_type rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain :Stop ;
                rdfs:range [ rdf:type rdfs:Datatype ;
                             owl:oneOf [ rdf:type rdf:List ;
@@ -2926,7 +2961,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#monday
-:monday rdf:type owl:DatatypeProperty ;
+:monday rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
         rdfs:domain :CalendarService ;
         rdfs:range [ rdf:type rdfs:Datatype ;
                      owl:oneOf [ rdf:type rdf:List ;
@@ -2940,13 +2976,15 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#network_id
-:network_id rdf:type owl:DatatypeProperty ;
+:network_id rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :Route ;
             rdfs:range :id .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#pickup_type
-:pickup_type rdf:type owl:DatatypeProperty ;
+:pickup_type rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain :StopTime ;
              rdfs:range [ rdf:type rdfs:Datatype ;
                           owl:oneOf [ rdf:type rdf:List ;
@@ -2966,55 +3004,64 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#platform_code
-:platform_code rdf:type owl:DatatypeProperty ;
+:platform_code rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain :Stop ;
                rdfs:range :text .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#route_color
-:route_color rdf:type owl:DatatypeProperty ;
+:route_color rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain :Route ;
              rdfs:range :color .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#route_desc
-:route_desc rdf:type owl:DatatypeProperty ;
+:route_desc rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :Route ;
             rdfs:range :text .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#route_id
-:route_id rdf:type owl:DatatypeProperty ;
+:route_id rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :Route ;
           rdfs:range :id .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#route_long_name
-:route_long_name rdf:type owl:DatatypeProperty ;
+:route_long_name rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
                  rdfs:domain :Route ;
                  rdfs:range :text .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#route_short_name
-:route_short_name rdf:type owl:DatatypeProperty ;
+:route_short_name rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
                   rdfs:domain :Route ;
                   rdfs:range :text .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#route_sort_order
-:route_sort_order rdf:type owl:DatatypeProperty ;
+:route_sort_order rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
                   rdfs:domain :Route ;
                   rdfs:range xsd:nonNegativeInteger .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#route_text_color
-:route_text_color rdf:type owl:DatatypeProperty ;
+:route_text_color rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
                   rdfs:domain :Route ;
                   rdfs:range :color .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#route_type
-:route_type rdf:type owl:DatatypeProperty ;
+:route_type rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :Route ;
             rdfs:range [ rdf:type rdfs:Datatype ;
                          owl:oneOf [ rdf:type rdf:List ;
@@ -3052,25 +3099,29 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#route_url
-:route_url rdf:type owl:DatatypeProperty ;
+:route_url rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain :Route ;
            rdfs:range :url .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#safe_duration_factor
-:safe_duration_factor rdf:type owl:DatatypeProperty ;
+:safe_duration_factor rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
                       rdfs:domain :Trip ;
                       rdfs:range xsd:decimal .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#safe_duration_offset
-:safe_duration_offset rdf:type owl:DatatypeProperty ;
+:safe_duration_offset rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
                       rdfs:domain :Trip ;
                       rdfs:range xsd:decimal .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#saturday
-:saturday rdf:type owl:DatatypeProperty ;
+:saturday rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :CalendarService ;
           rdfs:range [ rdf:type rdfs:Datatype ;
                        owl:oneOf [ rdf:type rdf:List ;
@@ -3084,31 +3135,36 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#service_id
-:service_id rdf:type owl:DatatypeProperty ;
+:service_id rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :Service ;
             rdfs:range :id .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled
-:shape_dist_traveled rdf:type owl:DatatypeProperty ;
+:shape_dist_traveled rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
                      rdfs:domain :StopTime ;
                      rdfs:range :nonNegativeFloat .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#start_date
-:start_date rdf:type owl:DatatypeProperty ;
+:start_date rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :CalendarService ;
             rdfs:range :dateType .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window
-:start_pickup_drop_off_window rdf:type owl:DatatypeProperty ;
+:start_pickup_drop_off_window rdf:type owl:DatatypeProperty ,
+                                       owl:FunctionalProperty ;
                               rdfs:domain :StopTime ;
                               rdfs:range :time .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_access
-:stop_access rdf:type owl:DatatypeProperty ;
+:stop_access rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain :Stop ;
              rdfs:range [ rdf:type rdfs:Datatype ;
                           owl:oneOf [ rdf:type rdf:List ;
@@ -3122,67 +3178,78 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_code
-:stop_code rdf:type owl:DatatypeProperty ;
+:stop_code rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain :Stop ;
            rdfs:range :text .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_desc
-:stop_desc rdf:type owl:DatatypeProperty ;
+:stop_desc rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain :Stop ;
            rdfs:range :text .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_headsign
-:stop_headsign rdf:type owl:DatatypeProperty ;
+:stop_headsign rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain :StopTime ;
                rdfs:range :text .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_id
-:stop_id rdf:type owl:DatatypeProperty ;
+:stop_id rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
          rdfs:domain :Stop ;
          rdfs:range :id .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_lat
-:stop_lat rdf:type owl:DatatypeProperty ;
+:stop_lat rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :Stop ;
           rdfs:range :latitude .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_lon
-:stop_lon rdf:type owl:DatatypeProperty ;
+:stop_lon rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :Stop ;
           rdfs:range :longitude .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_name
-:stop_name rdf:type owl:DatatypeProperty ;
+:stop_name rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain :Stop ;
            rdfs:range :text .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_sequence
-:stop_sequence rdf:type owl:DatatypeProperty ;
+:stop_sequence rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain :StopTime ;
                rdfs:range xsd:nonNegativeInteger .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_timezone
-:stop_timezone rdf:type owl:DatatypeProperty ;
+:stop_timezone rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain :Stop ;
                rdfs:range :timezone .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#stop_url
-:stop_url rdf:type owl:DatatypeProperty ;
+:stop_url rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :Stop ;
           rdfs:range :url .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#sunday
-:sunday rdf:type owl:DatatypeProperty ;
+:sunday rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
         rdfs:domain :CalendarService ;
         rdfs:range [ rdf:type rdfs:Datatype ;
                      owl:oneOf [ rdf:type rdf:List ;
@@ -3196,7 +3263,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#thursday
-:thursday rdf:type owl:DatatypeProperty ;
+:thursday rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :CalendarService ;
           rdfs:range [ rdf:type rdfs:Datatype ;
                        owl:oneOf [ rdf:type rdf:List ;
@@ -3210,7 +3278,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#timepoint
-:timepoint rdf:type owl:DatatypeProperty ;
+:timepoint rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain :StopTime ;
            rdfs:range [ rdf:type rdfs:Datatype ;
                         owl:oneOf [ rdf:type rdf:List ;
@@ -3224,31 +3293,36 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#trip_headsign
-:trip_headsign rdf:type owl:DatatypeProperty ;
+:trip_headsign rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain :Trip ;
                rdfs:range :text .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#trip_id
-:trip_id rdf:type owl:DatatypeProperty ;
+:trip_id rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
          rdfs:domain :Trip ;
          rdfs:range :id .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#trip_short_name
-:trip_short_name rdf:type owl:DatatypeProperty ;
+:trip_short_name rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
                  rdfs:domain :Trip ;
                  rdfs:range :text .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#tts_stop_name
-:tts_stop_name rdf:type owl:DatatypeProperty ;
+:tts_stop_name rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain :Stop ;
                rdfs:range :text .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#tuesday
-:tuesday rdf:type owl:DatatypeProperty ;
+:tuesday rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
          rdfs:domain :CalendarService ;
          rdfs:range [ rdf:type rdfs:Datatype ;
                       owl:oneOf [ rdf:type rdf:List ;
@@ -3262,7 +3336,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#wednesday
-:wednesday rdf:type owl:DatatypeProperty ;
+:wednesday rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain :CalendarService ;
            rdfs:range [ rdf:type rdfs:Datatype ;
                         owl:oneOf [ rdf:type rdf:List ;
@@ -3276,7 +3351,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible
-:wheelchair_accessible rdf:type owl:DatatypeProperty ;
+:wheelchair_accessible rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
                        rdfs:domain :Trip ;
                        rdfs:range [ rdf:type rdfs:Datatype ;
                                     owl:oneOf [ rdf:type rdf:List ;
@@ -3293,7 +3369,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding
-:wheelchair_boarding rdf:type owl:DatatypeProperty ;
+:wheelchair_boarding rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
                      rdfs:domain :Stop ;
                      rdfs:range [ rdf:type rdfs:Datatype ;
                                   owl:oneOf [ rdf:type rdf:List ;
@@ -3310,7 +3387,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#zone_id
-:zone_id rdf:type owl:DatatypeProperty ;
+:zone_id rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
          rdfs:domain :Stop ;
          rdfs:range :id .
 
@@ -3319,11 +3397,123 @@ xsd:date rdf:type rdfs:Datatype .
 #    Classes
 #################################################################
 
+###  https://transit.ac.uk/ontologies/gtfs#AerialLiftRoute
+:AerialLiftRoute rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :route_type ;
+                                                              owl:hasValue 6
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf :Route .
+
+
 ###  https://transit.ac.uk/ontologies/gtfs#Agency
 :Agency rdf:type owl:Class ;
-        rdfs:subClassOf owl:Thing ;
+        rdfs:subClassOf :RecordWithCEMVInformation ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :agency_name ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :agency_timezone ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :agency_url ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :agency_email ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :agency_fare_url ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :agency_id ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :agency_lang ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :agency_phone ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :cemv_support ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ;
         owl:hasKey ( :agency_id
                    ) .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#AgencyCoordinationRequiredForContinuousStoppingPickup
+:AgencyCoordinationRequiredForContinuousStoppingPickup rdf:type owl:Class ;
+                                                       owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                                                    owl:unionOf ( :Route
+                                                                                                                  :StopTime
+                                                                                                                )
+                                                                                                  ]
+                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty :continuous_pickup ;
+                                                                                                    owl:hasValue 2
+                                                                                                  ]
+                                                                                                ) ;
+                                                                             rdf:type owl:Class
+                                                                           ] ;
+                                                       rdfs:subClassOf :RecordWithPickupInformation .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#AgencyWithCEMVSupport
+:AgencyWithCEMVSupport rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Agency
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :cemv_support ;
+                                                                    owl:hasValue 1
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :Agency .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#AgencyWithNoCEMVInformation
+:AgencyWithNoCEMVInformation rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( :Agency
+                                                                        [ rdf:type owl:Class ;
+                                                                          owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :cemv_support ;
+                                                                                          owl:hasValue 0
+                                                                                        ]
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :cemv_support ;
+                                                                                          owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                                                        ]
+                                                                                      )
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ;
+                             rdfs:subClassOf :Agency .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#AgencyWithoutCEMVSupport
+:AgencyWithoutCEMVSupport rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( :Agency
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :cemv_support ;
+                                                                       owl:hasValue 2
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf :Agency .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#BoardingArea
@@ -3344,14 +3534,30 @@ xsd:date rdf:type rdfs:Datatype .
              rdfs:subClassOf owl:Thing .
 
 
-###  https://transit.ac.uk/ontologies/gtfs#CEMVSupportedRecord
-:CEMVSupportedRecord rdf:type owl:Class ;
-                     rdfs:subClassOf owl:Thing .
+###  https://transit.ac.uk/ontologies/gtfs#BusRoute
+:BusRoute rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :route_type ;
+                                                       owl:hasValue 3
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Route .
 
 
-###  https://transit.ac.uk/ontologies/gtfs#CEMVUnsupportedRecord
-:CEMVUnsupportedRecord rdf:type owl:Class ;
-                       rdfs:subClassOf owl:Thing .
+###  https://transit.ac.uk/ontologies/gtfs#CableTramRoute
+:CableTramRoute rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :route_type ;
+                                                             owl:hasValue 5
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf :Route .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#CalendarDateService
@@ -3381,7 +3587,108 @@ xsd:date rdf:type rdfs:Datatype .
                                  rdf:type owl:Class
                                ] ;
            rdfs:subClassOf :Stop ;
-           owl:disjointWith :ParentlessStop .
+           owl:disjointWith :OrphanStop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ChildStopInheritingAccessibilityFromParent
+:ChildStopInheritingAccessibilityFromParent rdf:type owl:Class ;
+                                            owl:equivalentClass [ owl:intersectionOf ( :ChildStop
+                                                                                       [ rdf:type owl:Class ;
+                                                                                         owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :wheelchair_boarding ;
+                                                                                                         owl:hasValue 0
+                                                                                                       ]
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :wheelchair_boarding ;
+                                                                                                         owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                                                                       ]
+                                                                                                     )
+                                                                                       ]
+                                                                                     ) ;
+                                                                  rdf:type owl:Class
+                                                                ] ;
+                                            rdfs:subClassOf :ChildStop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ChildStopWithAccessiblePathFromOutsideStation
+:ChildStopWithAccessiblePathFromOutsideStation rdf:type owl:Class ;
+                                               owl:equivalentClass [ owl:intersectionOf ( :ChildStop
+                                                                                          [ rdf:type owl:Restriction ;
+                                                                                            owl:onProperty :wheelchair_boarding ;
+                                                                                            owl:hasValue 1
+                                                                                          ]
+                                                                                        ) ;
+                                                                     rdf:type owl:Class
+                                                                   ] ;
+                                               rdfs:subClassOf :ChildStop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ChildStopWithNoAccessiblePathFromOutsideStation
+:ChildStopWithNoAccessiblePathFromOutsideStation rdf:type owl:Class ;
+                                                 owl:equivalentClass [ owl:intersectionOf ( :ChildStop
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty :wheelchair_boarding ;
+                                                                                              owl:hasValue 2
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ;
+                                                 rdfs:subClassOf :ChildStop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ContinuousStoppingPickup
+:ContinuousStoppingPickup rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                       owl:unionOf ( :Route
+                                                                                     :StopTime
+                                                                                   )
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :continuous_pickup ;
+                                                                       owl:hasValue 0
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf :RecordWithPickupInformation .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#DriverCoordinationRequiredForContinuousStoppingPickup
+:DriverCoordinationRequiredForContinuousStoppingPickup rdf:type owl:Class ;
+                                                       owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                                                    owl:unionOf ( :Route
+                                                                                                                  :StopTime
+                                                                                                                )
+                                                                                                  ]
+                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty :continuous_pickup ;
+                                                                                                    owl:hasValue 3
+                                                                                                  ]
+                                                                                                ) ;
+                                                                             rdf:type owl:Class
+                                                                           ] ;
+                                                       rdfs:subClassOf :RecordWithPickupInformation .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#EntranceInheritingAccessibilityFromStation
+:EntranceInheritingAccessibilityFromStation rdf:type owl:Class ;
+                                            owl:equivalentClass [ owl:intersectionOf ( :EntranceOrExit
+                                                                                       [ rdf:type owl:Class ;
+                                                                                         owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :wheelchair_boarding ;
+                                                                                                         owl:hasValue 0
+                                                                                                       ]
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :wheelchair_boarding ;
+                                                                                                         owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                                                                       ]
+                                                                                                     )
+                                                                                       ]
+                                                                                     ) ;
+                                                                  rdf:type owl:Class
+                                                                ] ;
+                                            rdfs:subClassOf :ChildStopInheritingAccessibilityFromParent ,
+                                                            :EntranceOrExit .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#EntranceOrExit
@@ -3407,6 +3714,60 @@ xsd:date rdf:type rdfs:Datatype .
                                   owl:onProperty :stop_name ;
                                   owl:cardinality "1"^^xsd:nonNegativeInteger
                                 ] .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#EntranceWithNoAccessiblePathToPlatforms
+:EntranceWithNoAccessiblePathToPlatforms rdf:type owl:Class ;
+                                         owl:equivalentClass [ owl:intersectionOf ( :EntranceOrExit
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :wheelchair_boarding ;
+                                                                                      owl:hasValue 2
+                                                                                    ]
+                                                                                  ) ;
+                                                               rdf:type owl:Class
+                                                             ] ;
+                                         rdfs:subClassOf :ChildStopWithNoAccessiblePathFromOutsideStation ,
+                                                         :EntranceOrExit .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#EntranceWithWheelchairAccessibility
+:EntranceWithWheelchairAccessibility rdf:type owl:Class ;
+                                     owl:equivalentClass [ owl:intersectionOf ( :EntranceOrExit
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :wheelchair_boarding ;
+                                                                                  owl:hasValue 1
+                                                                                ]
+                                                                              ) ;
+                                                           rdf:type owl:Class
+                                                         ] ;
+                                     rdfs:subClassOf :ChildStopWithAccessiblePathFromOutsideStation ,
+                                                     :EntranceOrExit .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#FerryRoute
+:FerryRoute rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :route_type ;
+                                                         owl:hasValue 4
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Route .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#FunicularRoute
+:FunicularRoute rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :route_type ;
+                                                             owl:hasValue 7
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf :Route .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#GenericNode
@@ -3437,17 +3798,113 @@ xsd:date rdf:type rdfs:Datatype .
                rdfs:subClassOf owl:Thing .
 
 
-###  https://transit.ac.uk/ontologies/gtfs#ParentlessStop
-:ParentlessStop rdf:type owl:Class ;
-                owl:equivalentClass [ owl:intersectionOf ( :Stop
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty :hasParentStation ;
-                                                             owl:cardinality "0"^^xsd:nonNegativeInteger
-                                                           ]
-                                                         ) ;
-                                      rdf:type owl:Class
-                                    ] ;
-                rdfs:subClassOf :Stop .
+###  https://transit.ac.uk/ontologies/gtfs#MonorailRoute
+:MonorailRoute rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :route_type ;
+                                                            owl:hasValue 12
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf :Route .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#NoContinuousStoppingPickup
+:NoContinuousStoppingPickup rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                         owl:unionOf ( :Route
+                                                                                       :StopTime
+                                                                                     )
+                                                                       ]
+                                                                       [ rdf:type owl:Class ;
+                                                                         owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :continuous_pickup ;
+                                                                                         owl:hasValue 1
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :continuous_pickup ;
+                                                                                         owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                                                       ]
+                                                                                     )
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            rdfs:subClassOf :RecordWithPickupInformation .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#OrphanStop
+:OrphanStop rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Stop
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasParentStation ;
+                                                         owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Stop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ParentStop
+:ParentStop rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Stop
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :isParentStationOf ;
+                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Stop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoAccessibilityInformation
+:ParentlessStopWithNoAccessibilityInformation rdf:type owl:Class ;
+                                              owl:equivalentClass [ owl:intersectionOf ( :OrphanStop
+                                                                                         [ rdf:type owl:Class ;
+                                                                                           owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :wheelchair_boarding ;
+                                                                                                           owl:hasValue 0
+                                                                                                         ]
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :wheelchair_boarding ;
+                                                                                                           owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                                                                         ]
+                                                                                                       )
+                                                                                         ]
+                                                                                       ) ;
+                                                                    rdf:type owl:Class
+                                                                  ] ;
+                                              rdfs:subClassOf :OrphanStop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoWheelchairAccessibility
+:ParentlessStopWithNoWheelchairAccessibility rdf:type owl:Class ;
+                                             owl:equivalentClass [ owl:intersectionOf ( :OrphanStop
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :wheelchair_boarding ;
+                                                                                          owl:hasValue 2
+                                                                                        ]
+                                                                                      ) ;
+                                                                   rdf:type owl:Class
+                                                                 ] ;
+                                             rdfs:subClassOf :OrphanStop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithPartialWheelchairAccessibility
+:ParentlessStopWithPartialWheelchairAccessibility rdf:type owl:Class ;
+                                                  owl:equivalentClass [ owl:intersectionOf ( :OrphanStop
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty :wheelchair_boarding ;
+                                                                                               owl:hasValue 1
+                                                                                             ]
+                                                                                           ) ;
+                                                                        rdf:type owl:Class
+                                                                      ] ;
+                                                  rdfs:subClassOf :OrphanStop .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#Platform
@@ -3457,19 +3914,328 @@ xsd:date rdf:type rdfs:Datatype .
                                                    ) ;
                                 rdf:type owl:Class
                               ] ;
-          rdfs:subClassOf :StopOrPlatform .
+          rdfs:subClassOf :ChildStop ,
+                          :StopOrPlatform .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#RailRoute
+:RailRoute rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :route_type ;
+                                                        owl:hasValue 2
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Route .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#RecordWithAccessibilityInformation
+:RecordWithAccessibilityInformation rdf:type owl:Class ;
+                                    rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation
+:RecordWithCEMVInformation rdf:type owl:Class ;
+                           rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation
+:RecordWithPickupInformation rdf:type owl:Class ;
+                             rdfs:subClassOf owl:Thing .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#Route
 :Route rdf:type owl:Class ;
-       rdfs:subClassOf owl:Thing ;
+       rdfs:subClassOf :RecordWithPickupInformation ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :route_id ;
+                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :route_type ;
+                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :agency_id ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :cemv_support ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :continuous_drop_off ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :continuous_pickup ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :network_id ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :route_color ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :route_desc ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :route_long_name ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :route_short_name ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :route_sort_order ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :route_text_color ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :route_url ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ;
        owl:hasKey ( :route_id
                   ) .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#RouteWithCEMVSupport
+:RouteWithCEMVSupport rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :cemv_support ;
+                                                                   owl:hasValue 1
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf :RecordWithCEMVInformation ,
+                                      :Route .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVInformation
+:RouteWithNoCEMVInformation rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :cemv_support ;
+                                                                         owl:hasValue 0
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            rdfs:subClassOf :RecordWithCEMVInformation ,
+                                            :Route .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVSupport
+:RouteWithNoCEMVSupport rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :cemv_support ;
+                                                                     owl:hasValue 2
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf :RecordWithCEMVInformation ,
+                                        :Route .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#Service
 :Service rdf:type owl:Class ;
          rdfs:subClassOf owl:Thing .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceAvailableFriday
+:ServiceAvailableFriday rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :friday ;
+                                                                     owl:hasValue 1
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceAvailableMonday
+:ServiceAvailableMonday rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :monday ;
+                                                                     owl:hasValue 1
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceAvailableSaturday
+:ServiceAvailableSaturday rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :saturday ;
+                                                                       owl:hasValue 1
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceAvailableSunday
+:ServiceAvailableSunday rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :sunday ;
+                                                                     owl:hasValue 1
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceAvailableThursday
+:ServiceAvailableThursday rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :thursday ;
+                                                                       owl:hasValue 1
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceAvailableTuesday
+:ServiceAvailableTuesday rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :tuesday ;
+                                                                      owl:hasValue 1
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceAvailableWednesday
+:ServiceAvailableWednesday rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :wednesday ;
+                                                                        owl:hasValue 1
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableFriday
+:ServiceNotAvailableFriday rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :friday ;
+                                                                        owl:hasValue 0
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableMonday
+:ServiceNotAvailableMonday rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :monday ;
+                                                                        owl:hasValue 0
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableSaturday
+:ServiceNotAvailableSaturday rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :saturday ;
+                                                                          owl:hasValue 0
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ;
+                             rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableSunday
+:ServiceNotAvailableSunday rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :sunday ;
+                                                                        owl:hasValue 0
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableThursday
+:ServiceNotAvailableThursday rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :thursday ;
+                                                                          owl:hasValue 0
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ;
+                             rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableTuesday
+:ServiceNotAvailableTuesday rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :tuesday ;
+                                                                         owl:hasValue 0
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            rdfs:subClassOf :CalendarService .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableWednesday
+:ServiceNotAvailableWednesday rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :CalendarService
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :wednesday ;
+                                                                           owl:hasValue 0
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf :CalendarService .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#Shape
@@ -3487,7 +4253,7 @@ xsd:date rdf:type rdfs:Datatype .
                                                   ) ;
                                rdf:type owl:Class
                              ] ;
-         rdfs:subClassOf :ParentlessStop ,
+         rdfs:subClassOf :OrphanStop ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :stop_lat ;
                            owl:cardinality "1"^^xsd:nonNegativeInteger
@@ -3504,19 +4270,114 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://transit.ac.uk/ontologies/gtfs#Stop
 :Stop rdf:type owl:Class ;
-      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf :RecordWithAccessibilityInformation ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasLevel ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasParentStation ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :stop_id ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :location_type ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :platform_code ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :stop_access ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :stop_code ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :stop_desc ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :stop_lat ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :stop_lon ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :stop_name ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :stop_timezone ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :stop_url ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :tts_stop_name ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :wheelchair_boarding ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :zone_id ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
       owl:hasKey ( :stop_id
                  ) .
 
 
+###  https://transit.ac.uk/ontologies/gtfs#StopAccessibleViaStationOnly
+:StopAccessibleViaStationOnly rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :ChildStop
+                                                                         :StopOrPlatform
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :stop_access ;
+                                                                           owl:hasValue 0
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf :Platform ,
+                                              :StopWithStopAccessInformation .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#StopDirectlyAccessibleFromStreet
+:StopDirectlyAccessibleFromStreet rdf:type owl:Class ;
+                                  owl:equivalentClass [ owl:intersectionOf ( :ChildStop
+                                                                             :StopOrPlatform
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :stop_access ;
+                                                                               owl:hasValue 1
+                                                                             ]
+                                                                           ) ;
+                                                        rdf:type owl:Class
+                                                      ] ;
+                                  rdfs:subClassOf :Platform ,
+                                                  :StopWithStopAccessInformation .
+
+
 ###  https://transit.ac.uk/ontologies/gtfs#StopLocation
 :StopLocation rdf:type owl:Class ;
-              owl:equivalentClass [ owl:intersectionOf ( :ParentlessStop
+              owl:equivalentClass [ owl:intersectionOf ( :OrphanStop
                                                          :StopOrPlatform
                                                        ) ;
                                     rdf:type owl:Class
                                   ] ;
-              rdfs:subClassOf :StopOrPlatform .
+              rdfs:subClassOf :OrphanStop ,
+                              :StopOrPlatform .
 
 
 ###  https://transit.ac.uk/ontologies/gtfs#StopOrPlatform
@@ -3553,22 +4414,290 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://transit.ac.uk/ontologies/gtfs#StopTime
 :StopTime rdf:type owl:Class ;
-          rdfs:subClassOf owl:Thing ;
+          rdfs:subClassOf :RecordWithPickupInformation ;
           owl:hasKey ( :hasTrip
                        :stop_sequence
                      ) .
 
 
+###  https://transit.ac.uk/ontologies/gtfs#StopWithStopAccessInformation
+:StopWithStopAccessInformation rdf:type owl:Class ;
+                               rdfs:subClassOf :Stop .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#SubwayRoute
+:SubwayRoute rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :route_type ;
+                                                          owl:hasValue 1
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf :Route .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TramRoute
+:TramRoute rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :route_type ;
+                                                        owl:hasValue 0
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Route .
+
+
 ###  https://transit.ac.uk/ontologies/gtfs#Trip
 :Trip rdf:type owl:Class ;
-      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf :RecordWithAccessibilityInformation ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasRoute ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasService ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasShape ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :trip_id ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :bikes_allowed ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :block_id ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :cars_allowed ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :direction_id ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :trip_headsign ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :trip_short_name ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :wheelchair_accessible ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
       owl:hasKey ( :trip_id
                  ) .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TripInDirectionA
+:TripInDirectionA rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :Trip
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :direction_id ;
+                                                               owl:hasValue 0
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf :Trip ;
+                  owl:disjointWith :TripInDirectionB .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TripInDirectionB
+:TripInDirectionB rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :Trip
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :direction_id ;
+                                                               owl:hasValue 1
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf :Trip .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneBicycleSpace
+:TripWithAtLeastOneBicycleSpace rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( :Trip
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :bikes_allowed ;
+                                                                             owl:hasValue 1
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
+                                rdfs:subClassOf :Trip .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneCarSpace
+:TripWithAtLeastOneCarSpace rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( :Trip
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :cars_allowed ;
+                                                                         owl:hasValue 1
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            rdfs:subClassOf :Trip .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneWheelchairSpace
+:TripWithAtLeastOneWheelchairSpace rdf:type owl:Class ;
+                                   owl:equivalentClass [ owl:intersectionOf ( :Trip
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :wheelchair_accessible ;
+                                                                                owl:hasValue 1
+                                                                              ]
+                                                                            ) ;
+                                                         rdf:type owl:Class
+                                                       ] ;
+                                   rdfs:subClassOf :Trip .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TripWithNoBicycleSpaces
+:TripWithNoBicycleSpaces rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( :Trip
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :bikes_allowed ;
+                                                                      owl:hasValue 2
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf :Trip .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TripWithNoBikesAllowedInformation
+:TripWithNoBikesAllowedInformation rdf:type owl:Class ;
+                                   owl:equivalentClass [ owl:intersectionOf ( :Trip
+                                                                              [ rdf:type owl:Class ;
+                                                                                owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty :bikes_allowed ;
+                                                                                                owl:hasValue 0
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty :bikes_allowed ;
+                                                                                                owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                            )
+                                                                              ]
+                                                                            ) ;
+                                                         rdf:type owl:Class
+                                                       ] ;
+                                   rdfs:subClassOf :Trip .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TripWithNoCarSpaces
+:TripWithNoCarSpaces rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Trip
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :cars_allowed ;
+                                                                  owl:hasValue 2
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf :Trip .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TripWithNoCarsAllowedInformation
+:TripWithNoCarsAllowedInformation rdf:type owl:Class ;
+                                  owl:equivalentClass [ owl:intersectionOf ( :Trip
+                                                                             [ rdf:type owl:Class ;
+                                                                               owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty :cars_allowed ;
+                                                                                               owl:hasValue 0
+                                                                                             ]
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty :cars_allowed ;
+                                                                                               owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                                                             ]
+                                                                                           )
+                                                                             ]
+                                                                           ) ;
+                                                        rdf:type owl:Class
+                                                      ] ;
+                                  rdfs:subClassOf :Trip .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibility
+:TripWithNoWheelchairAccessibility rdf:type owl:Class ;
+                                   owl:equivalentClass [ owl:intersectionOf ( :Trip
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :wheelchair_accessible ;
+                                                                                owl:hasValue 2
+                                                                              ]
+                                                                            ) ;
+                                                         rdf:type owl:Class
+                                                       ] ;
+                                   rdfs:subClassOf :Trip .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibilityInformation
+:TripWithNoWheelchairAccessibilityInformation rdf:type owl:Class ;
+                                              owl:equivalentClass [ owl:intersectionOf ( :Trip
+                                                                                         [ rdf:type owl:Class ;
+                                                                                           owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :wheelchair_accessible ;
+                                                                                                           owl:hasValue 0
+                                                                                                         ]
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :wheelchair_accessible ;
+                                                                                                           owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                                                                         ]
+                                                                                                       )
+                                                                                         ]
+                                                                                       ) ;
+                                                                    rdf:type owl:Class
+                                                                  ] ;
+                                              rdfs:subClassOf :Trip .
+
+
+###  https://transit.ac.uk/ontologies/gtfs#TrolleybusRoute
+:TrolleybusRoute rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Route
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :route_type ;
+                                                              owl:hasValue 11
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf :Route .
 
 
 #################################################################
 #    General axioms
 #################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AerialLiftRoute
+                :BusRoute
+                :CableTramRoute
+                :FerryRoute
+                :FunicularRoute
+                :MonorailRoute
+                :RailRoute
+                :SubwayRoute
+                :TramRoute
+                :TrolleybusRoute
+              )
+] .
+
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Agency
@@ -3593,6 +4722,62 @@ xsd:date rdf:type rdfs:Datatype .
                 :Platform
                 :Station
                 :StopLocation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ChildStopInheritingAccessibilityFromParent
+                :ChildStopWithAccessiblePathFromOutsideStation
+                :ChildStopWithNoAccessiblePathFromOutsideStation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :EntranceInheritingAccessibilityFromStation
+                :EntranceWithNoAccessiblePathToPlatforms
+                :EntranceWithWheelchairAccessibility
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ParentlessStopWithNoAccessibilityInformation
+                :ParentlessStopWithNoWheelchairAccessibility
+                :ParentlessStopWithPartialWheelchairAccessibility
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :RouteWithCEMVSupport
+                :RouteWithNoCEMVInformation
+                :RouteWithNoCEMVSupport
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :TripWithAtLeastOneBicycleSpace
+                :TripWithNoBicycleSpaces
+                :TripWithNoBikesAllowedInformation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :TripWithAtLeastOneCarSpace
+                :TripWithNoCarSpaces
+                :TripWithNoCarsAllowedInformation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :TripWithAtLeastOneWheelchairSpace
+                :TripWithNoWheelchairAccessibility
+                :TripWithNoWheelchairAccessibilityInformation
               )
 ] .
 

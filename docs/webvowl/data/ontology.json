@@ -30,6 +30,12 @@
         "value" : "dvla",
         "type" : "label"
       } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://transit.ac.uk/ontologies/gtfs",
+        "type" : "iri"
+      } ],
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
@@ -42,12 +48,6 @@
         "value" : "0.1.0",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://transit.ac.uk/ontologies/gtfs",
-        "type" : "iri"
-      } ],
       "title" : [ {
         "identifier" : "title",
         "language" : "undefined",
@@ -58,354 +58,479 @@
   },
   "namespace" : [ ],
   "class" : [ {
-    "id" : "0",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "4",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "5",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "6",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "7",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "8",
-    "type" : "rdfs:Datatype"
+    "id" : "33",
+    "type" : "owl:intersectionOf"
   }, {
     "id" : "9",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "10",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "17",
     "type" : "owl:Class"
   }, {
-    "id" : "19",
-    "type" : "owl:Class"
+    "id" : "52",
+    "type" : "owl:intersectionOf"
   }, {
-    "id" : "27",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "28",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "31",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "32",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "33",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "36",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "37",
-    "type" : "rdfs:Datatype"
+    "id" : "88",
+    "type" : "owl:intersectionOf"
   }, {
     "id" : "42",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "43",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "44",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "45",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "22",
-    "type" : "owl:Class"
-  }, {
-    "id" : "48",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "49",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "50",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "51",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "59",
     "type" : "owl:intersectionOf"
   }, {
-    "id" : "61",
+    "id" : "89",
     "type" : "owl:intersectionOf"
   }, {
-    "id" : "66",
-    "type" : "owl:Class"
+    "id" : "107",
+    "type" : "rdfs:Literal"
   }, {
-    "id" : "74",
+    "id" : "108",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "109",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "110",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "20",
     "type" : "owl:intersectionOf"
   }, {
-    "id" : "62",
-    "type" : "owl:intersectionOf"
-  }, {
-    "id" : "80",
-    "type" : "owl:intersectionOf"
-  }, {
-    "id" : "91",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "92",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "93",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "98",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "99",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "95",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "100",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "101",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "102",
+    "id" : "111",
     "type" : "rdfs:Literal"
   }, {
     "id" : "112",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "68",
-    "type" : "rdfs:Literal"
-  }, {
     "id" : "113",
     "type" : "rdfs:Literal"
-  }, {
-    "id" : "75",
-    "type" : "owl:intersectionOf"
   }, {
     "id" : "114",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "41",
+    "id" : "115",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "116",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "117",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "120",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "56",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "121",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "122",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "60",
-    "type" : "owl:intersectionOf"
-  }, {
-    "id" : "3",
+    "id" : "118",
     "type" : "rdfs:Literal"
   }, {
     "id" : "123",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "25",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "124",
-    "type" : "owl:Class"
-  }, {
-    "id" : "90",
-    "type" : "owl:Class"
-  }, {
-    "id" : "176",
-    "type" : "owl:Class"
-  }, {
-    "id" : "20",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "119",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "163",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "12",
-    "type" : "owl:Class"
-  }, {
-    "id" : "83",
     "type" : "owl:intersectionOf"
   }, {
-    "id" : "53",
-    "type" : "owl:Class"
+    "id" : "126",
+    "type" : "owl:intersectionOf"
   }, {
-    "id" : "35",
-    "type" : "owl:Class"
-  }, {
-    "id" : "226",
-    "type" : "owl:Class"
-  }, {
-    "id" : "227",
+    "id" : "127",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "128",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "167",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "228",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "229",
+    "id" : "130",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "133",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "144",
+    "id" : "135",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "16",
+    "id" : "5",
     "type" : "owl:Class"
   }, {
-    "id" : "13",
-    "type" : "owl:Class"
-  }, {
-    "id" : "15",
-    "type" : "owl:Class"
-  }, {
-    "id" : "109",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "185",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "251",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "30",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "165",
+    "id" : "137",
     "type" : "owl:unionOf"
   }, {
-    "id" : "183",
+    "id" : "140",
     "type" : "owl:unionOf"
   }, {
-    "id" : "23",
+    "id" : "143",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "181",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "250",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "47",
-    "type" : "rdfs:Datatype"
+    "id" : "68",
+    "type" : "owl:intersectionOf"
   }, {
     "id" : "146",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "2",
+    "id" : "149",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "66",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "154",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "157",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "160",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "162",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "164",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "7",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "165",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "168",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "171",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "173",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "176",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "179",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "41",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "129",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "32",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "156",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "18",
     "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "284",
+    "type" : "owl:Class"
+  }, {
+    "id" : "47",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "209",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "40",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "148",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "49",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "43",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "186",
+    "type" : "owl:Class"
+  }, {
+    "id" : "139",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "245",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "39",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "54",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  }, {
+    "id" : "159",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "56",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "175",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "178",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "132",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "44",
+    "type" : "owl:intersectionOf"
   }, {
     "id" : "77",
     "type" : "owl:intersectionOf"
   }, {
-    "id" : "111",
+    "id" : "227",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "287",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "238",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "224",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "21",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "48",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "220",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "183",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "25",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "59",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "198",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "290",
+    "type" : "owl:Class"
+  }, {
+    "id" : "151",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "153",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "142",
+    "type" : "owl:Class"
+  }, {
+    "id" : "46",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "103",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "122",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "395",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "398",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "195",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "233",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "407",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "269",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "408",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "281",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "80",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "211",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "117",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "73",
+    "id" : "57",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "245",
+    "id" : "125",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "189",
+    "id" : "64",
+    "type" : "owl:Class"
+  }, {
+    "id" : "361",
     "type" : "rdfs:Datatype"
+  }, {
+    "id" : "314",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "359",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "105",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "369",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "372",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "193",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "389",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "410",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "201",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "380",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "120",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "392",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "387",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "385",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "415",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "416",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "383",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "242",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "417",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "340",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "253",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "235",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "405",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "427",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "429",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "283",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "354",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "247",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "400",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "26",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "167",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "240",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "170",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "216",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "230",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "214",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "37",
+    "type" : "owl:Class"
+  }, {
+    "id" : "212",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "23",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "145",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "206",
+    "type" : "owl:intersectionOf"
   } ],
   "classAttribute" : [ {
-    "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "0",
-    "label" : {
-      "IRI-based" : "nonNegativeInteger"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#timezone",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoBikesAllowedInformation",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "4",
+    "instances" : 0,
     "label" : {
-      "IRI-based" : "timezone",
-      "en" : "timezone"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#url",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "5",
-    "label" : {
-      "IRI-based" : "url",
-      "en" : "url"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "6",
-    "label" : {
-      "IRI-based" : "text",
-      "en" : "text"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "7",
-    "label" : {
-      "IRI-based" : "id",
-      "en" : "id"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "8",
-    "label" : {
-      "IRI-based" : "text",
-      "en" : "text"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "9",
-    "label" : {
-      "IRI-based" : "text",
-      "en" : "text"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "10",
-    "label" : {
-      "IRI-based" : "id",
-      "en" : "id"
-    }
+      "IRI-based" : "TripWithNoBikesAllowedInformation"
+    },
+    "intersection" : [ "34" ],
+    "attributes" : [ "intersection" ],
+    "id" : "33",
+    "superClasses" : [ "34" ]
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#Route",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
@@ -413,139 +538,80 @@
     "label" : {
       "IRI-based" : "Route"
     },
-    "id" : "17"
+    "subClasses" : [ "40", "41", "42", "43", "23", "44", "45", "46", "47", "17", "48", "32", "49" ],
+    "id" : "9",
+    "superClasses" : [ "5" ]
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#Agency",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibility",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "Agency"
+      "IRI-based" : "TripWithNoWheelchairAccessibility"
     },
-    "id" : "19"
+    "intersection" : [ "34" ],
+    "attributes" : [ "intersection" ],
+    "id" : "52",
+    "superClasses" : [ "34" ]
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#longitude",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableThursday",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "27",
+    "instances" : 0,
     "label" : {
-      "IRI-based" : "longitude"
-    }
+      "IRI-based" : "ServiceNotAvailableThursday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "88",
+    "superClasses" : [ "15" ]
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#BusRoute",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "28",
+    "instances" : 0,
     "label" : {
-      "IRI-based" : "text",
-      "en" : "text"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "31",
-    "label" : {
-      "IRI-based" : "id",
-      "en" : "id"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#nonNegativeFloat",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "32",
-    "label" : {
-      "IRI-based" : "nonNegativeFloat",
-      "en" : "non-negative float"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#dateType",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "33",
-    "label" : {
-      "IRI-based" : "dateType",
-      "en" : "date"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#time",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "36",
-    "label" : {
-      "IRI-based" : "time",
-      "en" : "time"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "37",
-    "label" : {
-      "IRI-based" : "text",
-      "en" : "text"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+      "IRI-based" : "BusRoute"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
     "id" : "42",
-    "label" : {
-      "IRI-based" : "text",
-      "en" : "text"
-    }
+    "superClasses" : [ "9" ]
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "43",
-    "label" : {
-      "IRI-based" : "text",
-      "en" : "text"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "44",
-    "label" : {
-      "IRI-based" : "id",
-      "en" : "id"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#latitude",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "45",
-    "label" : {
-      "IRI-based" : "latitude"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#CalendarDateService",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneCarSpace",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "CalendarDateService"
+      "IRI-based" : "TripWithAtLeastOneCarSpace"
     },
-    "id" : "22",
-    "superClasses" : [ "35" ]
+    "intersection" : [ "34" ],
+    "attributes" : [ "intersection" ],
+    "id" : "89",
+    "superClasses" : [ "34" ]
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#url",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "48",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "107",
     "label" : {
-      "IRI-based" : "url",
-      "en" : "url"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#color",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "49",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "108",
     "label" : {
-      "IRI-based" : "color",
-      "en" : "color"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "50",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "109",
     "label" : {
-      "IRI-based" : "decimal"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "51",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "110",
     "label" : {
-      "IRI-based" : "decimal"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#ChildStop",
@@ -554,122 +620,14 @@
     "label" : {
       "IRI-based" : "ChildStop"
     },
-    "subClasses" : [ "60", "61", "62" ],
-    "intersection" : [ "2" ],
+    "subClasses" : [ "25", "59", "1", "77", "68", "26", "30" ],
+    "intersection" : [ "56" ],
     "attributes" : [ "intersection" ],
-    "id" : "59",
-    "superClasses" : [ "2" ]
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "EntranceOrExit"
-    },
-    "intersection" : [ "2" ],
-    "attributes" : [ "intersection" ],
-    "id" : "61",
-    "superClasses" : [ "59" ]
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#Level",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Level"
-    },
-    "id" : "66"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#Station",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Station"
-    },
-    "intersection" : [ "2" ],
-    "attributes" : [ "intersection" ],
-    "id" : "74",
-    "superClasses" : [ "75" ]
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#BoardingArea",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "BoardingArea"
-    },
-    "intersection" : [ "2" ],
-    "attributes" : [ "intersection" ],
-    "id" : "62",
-    "superClasses" : [ "59" ]
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#StopLocation",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "StopLocation"
-    },
-    "intersection" : [ "77", "75" ],
-    "attributes" : [ "intersection" ],
-    "id" : "80",
-    "superClasses" : [ "77" ]
+    "id" : "20",
+    "superClasses" : [ "56" ]
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "91",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "92",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "93",
-    "label" : {
-      "undefined" : "Thing"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "98",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "99",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "95",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "100",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "101",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "102",
+    "id" : "111",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -683,30 +641,11 @@
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "68",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "id" : "113",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
     }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStop",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "ParentlessStop"
-    },
-    "subClasses" : [ "74" ],
-    "intersection" : [ "2" ],
-    "attributes" : [ "intersection" ],
-    "id" : "75",
-    "superClasses" : [ "2" ]
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "id" : "114",
@@ -716,42 +655,779 @@
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "115",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "118",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableTuesday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceNotAvailableTuesday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "123",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneBicycleSpace",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TripWithAtLeastOneBicycleSpace"
+    },
+    "intersection" : [ "34" ],
+    "attributes" : [ "intersection" ],
+    "id" : "126",
+    "superClasses" : [ "34" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "127",
+    "label" : {
+      "IRI-based" : "id",
+      "en" : "id"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "130",
+    "label" : {
+      "IRI-based" : "text",
+      "en" : "text"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#color",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "133",
+    "label" : {
+      "IRI-based" : "color",
+      "en" : "color"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "135",
+    "label" : {
+      "IRI-based" : "text",
+      "en" : "text"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RecordWithPickupInformation"
+    },
+    "subClasses" : [ "54", "61", "64", "4", "9", "12" ],
+    "id" : "5"
+  }, {
+    "instances" : 0,
+    "union" : [ "9", "12" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "137"
+  }, {
+    "instances" : 0,
+    "union" : [ "9", "12" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "140"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#dateType",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "143",
+    "label" : {
+      "IRI-based" : "dateType",
+      "en" : "date"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#BoardingArea",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BoardingArea"
+    },
+    "intersection" : [ "56" ],
+    "attributes" : [ "intersection" ],
+    "id" : "68",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#time",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "146",
+    "label" : {
+      "IRI-based" : "time",
+      "en" : "time"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#dateType",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "149",
+    "label" : {
+      "IRI-based" : "dateType",
+      "en" : "date"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#time",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "66",
+    "label" : {
+      "IRI-based" : "time",
+      "en" : "time"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#timezone",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "154",
+    "label" : {
+      "IRI-based" : "timezone",
+      "en" : "timezone"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#url",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "157",
+    "label" : {
+      "IRI-based" : "url",
+      "en" : "url"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#time",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "160",
+    "label" : {
+      "IRI-based" : "time",
+      "en" : "time"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "162",
+    "label" : {
+      "IRI-based" : "id",
+      "en" : "id"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "28", "9" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "164"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#StopLocation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StopLocation"
+    },
+    "intersection" : [ "21", "145" ],
+    "attributes" : [ "intersection" ],
+    "id" : "7",
+    "superClasses" : [ "21", "145" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#EntranceInheritingAccessibilityFromStation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EntranceInheritingAccessibilityFromStation"
+    },
+    "intersection" : [ "77" ],
+    "attributes" : [ "intersection" ],
+    "id" : "165",
+    "superClasses" : [ "25", "77" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#url",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "168",
+    "label" : {
+      "IRI-based" : "url",
+      "en" : "url"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "171",
+    "label" : {
+      "IRI-based" : "id",
+      "en" : "id"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#language_code",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "173",
+    "label" : {
+      "IRI-based" : "language_code",
+      "en" : "language code"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "176",
+    "label" : {
+      "IRI-based" : "text",
+      "en" : "text"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#phone_number",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "179",
+    "label" : {
+      "IRI-based" : "phone_number",
+      "en" : "phone number"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#FunicularRoute",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FunicularRoute"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
     "id" : "41",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#email",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "51",
     "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
+      "IRI-based" : "email",
+      "en" : "email"
     }
   }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "116",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#AgencyWithCEMVSupport",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
     "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
+      "IRI-based" : "AgencyWithCEMVSupport"
+    },
+    "intersection" : [ "28" ],
+    "attributes" : [ "intersection" ],
+    "id" : "129",
+    "superClasses" : [ "28" ]
   }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "117",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVInformation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
     "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
+      "IRI-based" : "RouteWithNoCEMVInformation"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
+    "id" : "32",
+    "superClasses" : [ "18", "9" ]
   }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "120",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneWheelchairSpace",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
     "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
+      "IRI-based" : "TripWithAtLeastOneWheelchairSpace"
+    },
+    "intersection" : [ "34" ],
+    "attributes" : [ "intersection" ],
+    "id" : "156",
+    "superClasses" : [ "34" ]
   }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RecordWithCEMVInformation"
+    },
+    "subClasses" : [ "17", "23", "28", "32" ],
+    "id" : "18"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#FerryRoute",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FerryRoute"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
+    "id" : "45",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Location",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Location"
+    },
+    "id" : "284"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#SubwayRoute",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SubwayRoute"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
+    "id" : "47",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableSaturday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceAvailableSaturday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "209",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#AerialLiftRoute",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AerialLiftRoute"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
+    "id" : "40",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#EntranceWithNoAccessiblePathToPlatforms",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EntranceWithNoAccessiblePathToPlatforms"
+    },
+    "intersection" : [ "77" ],
+    "attributes" : [ "intersection" ],
+    "id" : "148",
+    "superClasses" : [ "77", "30" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TramRoute",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TramRoute"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
+    "id" : "49",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#StopTime",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StopTime"
+    },
+    "id" : "12",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Platform",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Platform"
+    },
+    "subClasses" : [ "235", "238" ],
+    "intersection" : [ "20", "145" ],
+    "attributes" : [ "intersection" ],
+    "id" : "1",
+    "superClasses" : [ "20", "145" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#CalendarService",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CalendarService"
+    },
+    "subClasses" : [ "242", "245", "214", "88", "220", "224", "227", "230", "198", "201", "123", "206", "209", "183" ],
+    "id" : "15",
+    "superClasses" : [ "186" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#CableTramRoute",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CableTramRoute"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
+    "id" : "43",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Service",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Service"
+    },
+    "subClasses" : [ "14", "15" ],
+    "id" : "186"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ParentStop",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ParentStop"
+    },
+    "intersection" : [ "56" ],
+    "attributes" : [ "intersection" ],
+    "id" : "139",
+    "superClasses" : [ "56" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableSunday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceAvailableSunday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "245",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Shape",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Shape"
+    },
+    "id" : "39"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Trip",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Trip"
+    },
+    "subClasses" : [ "126", "193", "167", "170", "89", "175", "178", "33", "156", "159", "52" ],
+    "id" : "34",
+    "superClasses" : [ "132" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#NoContinuousStoppingPickup",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NoContinuousStoppingPickup"
+    },
+    "id" : "54",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ContinuousStoppingPickup",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ContinuousStoppingPickup"
+    },
+    "id" : "61",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoCarsAllowedInformation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TripWithNoCarsAllowedInformation"
+    },
+    "intersection" : [ "34" ],
+    "attributes" : [ "intersection" ],
+    "id" : "159",
+    "superClasses" : [ "34" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Stop",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Stop"
+    },
+    "subClasses" : [ "20", "21", "139", "142", "145" ],
     "id" : "56",
+    "superClasses" : [ "132" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ChildStopWithNoAccessiblePathFromOutsideStation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
     "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
+      "IRI-based" : "ChildStopWithNoAccessiblePathFromOutsideStation"
+    },
+    "subClasses" : [ "148" ],
+    "intersection" : [ "20" ],
+    "attributes" : [ "intersection" ],
+    "id" : "30",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Agency",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agency"
+    },
+    "subClasses" : [ "151", "153", "129" ],
+    "id" : "28",
+    "superClasses" : [ "18" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TripInDirectionB",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TripInDirectionB"
+    },
+    "intersection" : [ "34" ],
+    "attributes" : [ "intersection" ],
+    "id" : "175",
+    "superClasses" : [ "34" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TripInDirectionA",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TripInDirectionA"
+    },
+    "intersection" : [ "34" ],
+    "attributes" : [ "intersection" ],
+    "id" : "178",
+    "superClasses" : [ "34" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#RecordWithAccessibilityInformation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RecordWithAccessibilityInformation"
+    },
+    "subClasses" : [ "34", "56" ],
+    "id" : "132"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVSupport",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RouteWithNoCEMVSupport"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
+    "id" : "17",
+    "superClasses" : [ "18", "9" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#CalendarDateService",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CalendarDateService"
+    },
+    "id" : "14",
+    "superClasses" : [ "186" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TrolleybusRoute",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TrolleybusRoute"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
+    "id" : "44",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EntranceOrExit"
+    },
+    "subClasses" : [ "148", "165", "240" ],
+    "intersection" : [ "56" ],
+    "attributes" : [ "intersection" ],
+    "id" : "77",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableMonday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceAvailableMonday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "227",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Level",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Level"
+    },
+    "id" : "287"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#Station",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Station"
+    },
+    "intersection" : [ "56" ],
+    "attributes" : [ "intersection" ],
+    "id" : "2",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#StopAccessibleViaStationOnly",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StopAccessibleViaStationOnly"
+    },
+    "intersection" : [ "20", "145" ],
+    "attributes" : [ "intersection" ],
+    "id" : "238",
+    "superClasses" : [ "142", "1" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableSaturday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceNotAvailableSaturday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "224",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#OrphanStop",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "OrphanStop"
+    },
+    "subClasses" : [ "212", "2", "7", "216", "211" ],
+    "intersection" : [ "56" ],
+    "attributes" : [ "intersection" ],
+    "id" : "21",
+    "superClasses" : [ "56" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#RailRoute",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RailRoute"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
+    "id" : "48",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableFriday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceNotAvailableFriday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "220",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableTuesday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceAvailableTuesday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "183",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ChildStopInheritingAccessibilityFromParent",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ChildStopInheritingAccessibilityFromParent"
+    },
+    "subClasses" : [ "165" ],
+    "intersection" : [ "20" ],
+    "attributes" : [ "intersection" ],
+    "id" : "25",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#GenericNode",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GenericNode"
+    },
+    "intersection" : [ "56" ],
+    "attributes" : [ "intersection" ],
+    "id" : "59",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableFriday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceAvailableFriday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "198",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#LocationGroup",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LocationGroup"
+    },
+    "id" : "290"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#AgencyWithNoCEMVInformation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AgencyWithNoCEMVInformation"
+    },
+    "intersection" : [ "28" ],
+    "attributes" : [ "intersection" ],
+    "id" : "151",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#AgencyWithoutCEMVSupport",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AgencyWithoutCEMVSupport"
+    },
+    "intersection" : [ "28" ],
+    "attributes" : [ "intersection" ],
+    "id" : "153",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#StopWithStopAccessInformation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StopWithStopAccessInformation"
+    },
+    "subClasses" : [ "235", "238" ],
+    "id" : "142",
+    "superClasses" : [ "56" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#MonorailRoute",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MonorailRoute"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
+    "id" : "46",
+    "superClasses" : [ "9" ]
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "121",
+    "id" : "103",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -764,134 +1440,132 @@
       "undefined" : "Literal"
     }
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#GenericNode",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "395",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "398",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "195",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "233",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "407",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "269",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "408",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "281",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "80",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoAccessibilityInformation",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "GenericNode"
+      "IRI-based" : "ParentlessStopWithNoAccessibilityInformation"
     },
-    "intersection" : [ "2" ],
+    "intersection" : [ "21" ],
     "attributes" : [ "intersection" ],
-    "id" : "60",
-    "superClasses" : [ "59" ]
+    "id" : "211",
+    "superClasses" : [ "21" ]
   }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "3",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "123",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "25",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#LocationGroup",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#timezone",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
+    "id" : "117",
     "label" : {
-      "IRI-based" : "LocationGroup"
-    },
-    "id" : "124"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#Location",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Location"
-    },
-    "id" : "90"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#CEMVUnsupportedRecord",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "CEMVUnsupportedRecord"
-    },
-    "id" : "176"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#email",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "20",
-    "label" : {
-      "IRI-based" : "email",
-      "en" : "email"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "119",
-    "label" : {
-      "IRI-based" : "id",
-      "en" : "id"
+      "IRI-based" : "timezone",
+      "en" : "timezone"
     }
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#url",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "163",
+    "id" : "57",
     "label" : {
       "IRI-based" : "url",
       "en" : "url"
     }
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#StopTime",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
+    "id" : "125",
     "label" : {
-      "IRI-based" : "StopTime"
-    },
-    "id" : "12"
+      "IRI-based" : "text",
+      "en" : "text"
+    }
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#Platform",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#AgencyCoordinationRequiredForContinuousStoppingPickup",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "Platform"
+      "IRI-based" : "AgencyCoordinationRequiredForContinuousStoppingPickup"
     },
-    "intersection" : [ "59", "77" ],
-    "attributes" : [ "intersection" ],
-    "id" : "83",
-    "superClasses" : [ "77" ]
+    "id" : "64",
+    "superClasses" : [ "5" ]
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#CalendarService",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
+    "id" : "361",
     "label" : {
-      "IRI-based" : "CalendarService"
-    },
-    "id" : "53",
-    "superClasses" : [ "35" ]
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#Service",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Service"
-    },
-    "subClasses" : [ "22", "53" ],
-    "id" : "35"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#CEMVSupportedRecord",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "CEMVSupportedRecord"
-    },
-    "id" : "226"
+      "IRI-based" : "id",
+      "en" : "id"
+    }
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "227",
+    "id" : "314",
+    "label" : {
+      "IRI-based" : "text",
+      "en" : "text"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "359",
     "label" : {
       "IRI-based" : "text",
       "en" : "text"
@@ -899,22 +1573,82 @@
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "128",
+    "id" : "105",
     "label" : {
       "IRI-based" : "id",
       "en" : "id"
     }
   }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "369",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "372",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoBicycleSpaces",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TripWithNoBicycleSpaces"
+    },
+    "intersection" : [ "34" ],
+    "attributes" : [ "intersection" ],
+    "id" : "193",
+    "superClasses" : [ "34" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "389",
+    "label" : {
+      "IRI-based" : "text",
+      "en" : "text"
+    }
+  }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "167",
+    "id" : "410",
     "label" : {
       "IRI-based" : "nonNegativeInteger"
     }
   }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableSunday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceNotAvailableSunday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "201",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#dateType",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "380",
+    "label" : {
+      "IRI-based" : "dateType",
+      "en" : "date"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#time",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "120",
+    "label" : {
+      "IRI-based" : "time",
+      "en" : "time"
+    }
+  }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "228",
+    "id" : "392",
     "label" : {
       "IRI-based" : "text",
       "en" : "text"
@@ -922,7 +1656,7 @@
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "229",
+    "id" : "387",
     "label" : {
       "IRI-based" : "text",
       "en" : "text"
@@ -930,27 +1664,219 @@
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "133",
+    "id" : "385",
     "label" : {
       "IRI-based" : "text",
       "en" : "text"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "415",
+    "label" : {
+      "IRI-based" : "id",
+      "en" : "id"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#latitude",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "416",
+    "label" : {
+      "IRI-based" : "latitude"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#longitude",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "383",
+    "label" : {
+      "IRI-based" : "longitude"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableThursday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceAvailableThursday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "242",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "417",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "340",
+    "label" : {
+      "IRI-based" : "id",
+      "en" : "id"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#nonNegativeFloat",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "253",
+    "label" : {
+      "IRI-based" : "nonNegativeFloat",
+      "en" : "non-negative float"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#StopDirectlyAccessibleFromStreet",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StopDirectlyAccessibleFromStreet"
+    },
+    "intersection" : [ "20", "145" ],
+    "attributes" : [ "intersection" ],
+    "id" : "235",
+    "superClasses" : [ "142", "1" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "405",
+    "label" : {
+      "IRI-based" : "id",
+      "en" : "id"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "427",
+    "label" : {
+      "IRI-based" : "text",
+      "en" : "text"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "429",
+    "label" : {
+      "IRI-based" : "text",
+      "en" : "text"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "283",
+    "label" : {
+      "IRI-based" : "nonNegativeInteger"
     }
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#color",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "144",
+    "id" : "354",
     "label" : {
       "IRI-based" : "color",
       "en" : "color"
     }
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#Shape",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#url",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "id" : "247",
+    "label" : {
+      "IRI-based" : "url",
+      "en" : "url"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "400",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ChildStopWithAccessiblePathFromOutsideStation",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "Shape"
+      "IRI-based" : "ChildStopWithAccessiblePathFromOutsideStation"
     },
-    "id" : "16"
+    "subClasses" : [ "240" ],
+    "intersection" : [ "20" ],
+    "attributes" : [ "intersection" ],
+    "id" : "26",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoCarSpaces",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TripWithNoCarSpaces"
+    },
+    "intersection" : [ "34" ],
+    "attributes" : [ "intersection" ],
+    "id" : "167",
+    "superClasses" : [ "34" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#EntranceWithWheelchairAccessibility",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EntranceWithWheelchairAccessibility"
+    },
+    "intersection" : [ "77" ],
+    "attributes" : [ "intersection" ],
+    "id" : "240",
+    "superClasses" : [ "77", "26" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibilityInformation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TripWithNoWheelchairAccessibilityInformation"
+    },
+    "intersection" : [ "34" ],
+    "attributes" : [ "intersection" ],
+    "id" : "170",
+    "superClasses" : [ "34" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithPartialWheelchairAccessibility",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ParentlessStopWithPartialWheelchairAccessibility"
+    },
+    "intersection" : [ "21" ],
+    "attributes" : [ "intersection" ],
+    "id" : "216",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableMonday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceNotAvailableMonday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "230",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#DriverCoordinationRequiredForContinuousStoppingPickup",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DriverCoordinationRequiredForContinuousStoppingPickup"
+    },
+    "id" : "4",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableWednesday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceAvailableWednesday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "214",
+    "superClasses" : [ "15" ]
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#BookingRule",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
@@ -958,103 +1884,29 @@
     "label" : {
       "IRI-based" : "BookingRule"
     },
-    "id" : "13"
+    "id" : "37"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#Trip",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoWheelchairAccessibility",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "Trip"
+      "IRI-based" : "ParentlessStopWithNoWheelchairAccessibility"
     },
-    "id" : "15"
+    "intersection" : [ "21" ],
+    "attributes" : [ "intersection" ],
+    "id" : "212",
+    "superClasses" : [ "21" ]
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#dateType",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#RouteWithCEMVSupport",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "109",
-    "label" : {
-      "IRI-based" : "dateType",
-      "en" : "date"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#time",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "185",
-    "label" : {
-      "IRI-based" : "time",
-      "en" : "time"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "251",
-    "label" : {
-      "IRI-based" : "id",
-      "en" : "id"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#time",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "30",
-    "label" : {
-      "IRI-based" : "time",
-      "en" : "time"
-    }
-  }, {
     "instances" : 0,
-    "union" : [ "17", "12" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "165"
-  }, {
-    "instances" : 0,
-    "union" : [ "19", "17" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "183"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#dateType",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "label" : {
+      "IRI-based" : "RouteWithCEMVSupport"
+    },
+    "intersection" : [ "9" ],
+    "attributes" : [ "intersection" ],
     "id" : "23",
-    "label" : {
-      "IRI-based" : "dateType",
-      "en" : "date"
-    }
-  }, {
-    "instances" : 0,
-    "union" : [ "17", "12" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "181"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#id",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "250",
-    "label" : {
-      "IRI-based" : "id",
-      "en" : "id"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#time",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "47",
-    "label" : {
-      "IRI-based" : "time",
-      "en" : "time"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#url",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "146",
-    "label" : {
-      "IRI-based" : "url",
-      "en" : "url"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#Stop",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Stop"
-    },
-    "subClasses" : [ "59", "77", "75" ],
-    "id" : "2"
+    "superClasses" : [ "18", "9" ]
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
@@ -1062,155 +1914,170 @@
     "label" : {
       "IRI-based" : "StopOrPlatform"
     },
-    "subClasses" : [ "80", "83" ],
-    "intersection" : [ "2" ],
+    "subClasses" : [ "7", "1" ],
+    "intersection" : [ "56" ],
     "attributes" : [ "intersection" ],
-    "id" : "77",
-    "superClasses" : [ "2" ]
+    "id" : "145",
+    "superClasses" : [ "56" ]
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#text",
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableWednesday",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "111",
+    "instances" : 0,
     "label" : {
-      "IRI-based" : "text",
-      "en" : "text"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#language_code",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "73",
-    "label" : {
-      "IRI-based" : "language_code",
-      "en" : "longitude"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#timezone",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "245",
-    "label" : {
-      "IRI-based" : "timezone",
-      "en" : "timezone"
-    }
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#phone_number",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "id" : "189",
-    "label" : {
-      "IRI-based" : "phone_number",
-      "en" : "phone number"
-    }
+      "IRI-based" : "ServiceNotAvailableWednesday"
+    },
+    "intersection" : [ "15" ],
+    "attributes" : [ "intersection" ],
+    "id" : "206",
+    "superClasses" : [ "15" ]
   } ],
   "property" : [ {
-    "id" : "1",
-    "type" : "owl:datatypeProperty"
+    "id" : "0",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "3",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "6",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "8",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "10",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "11",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "14",
-    "type" : "owl:objectProperty"
+    "id" : "13",
+    "type" : "owl:disjointWith"
   }, {
-    "id" : "18",
-    "type" : "owl:datatypeProperty"
+    "id" : "16",
+    "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "21",
-    "type" : "owl:datatypeProperty"
+    "id" : "19",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "24",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
-    "id" : "26",
-    "type" : "owl:datatypeProperty"
+    "id" : "27",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "29",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
-    "id" : "34",
+    "id" : "31",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "36",
     "type" : "owl:objectProperty"
   }, {
     "id" : "38",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "40",
+    "id" : "50",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "46",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "52",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "54",
-    "type" : "owl:objectProperty"
+    "id" : "53",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "55",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "57",
-    "type" : "owl:datatypeProperty"
-  }, {
     "id" : "58",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "60",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "62",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "63",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "64",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "65",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "67",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "69",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "70",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "71",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "72",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "73",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "74",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "76",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "78",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "79",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "81",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "82",
     "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "83",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "84",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "85",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "86",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "87",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "90",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "88",
+    "id" : "91",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "92",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "89",
-    "type" : "owl:objectProperty"
+    "id" : "93",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "94",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "95",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "96",
     "type" : "rdfs:SubClassOf"
@@ -1218,1646 +2085,2778 @@
     "id" : "97",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "103",
-    "type" : "owl:objectProperty"
+    "id" : "98",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "99",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "100",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "101",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "102",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "104",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "105",
-    "type" : "owl:datatypeProperty"
-  }, {
     "id" : "106",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "116",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "107",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "108",
+    "id" : "119",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "110",
+    "id" : "121",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "115",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "118",
+    "id" : "124",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "39",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "125",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "126",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "127",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "129",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "130",
-    "type" : "owl:disjointWith"
+    "id" : "128",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "131",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "132",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "134",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "135",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "136",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "137",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "138",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "139",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "140",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "141",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "142",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "143",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "145",
-    "type" : "owl:datatypeProperty"
+    "id" : "144",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "147",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "148",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "149",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "150",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "151",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "152",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "153",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "154",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "155",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "156",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "157",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "158",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "159",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "160",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "161",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "162",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "164",
-    "type" : "owl:datatypeProperty"
+    "id" : "163",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "166",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "168",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "169",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "170",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "171",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "172",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "173",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "174",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "175",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "177",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "178",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "179",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "180",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "181",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "182",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "184",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
-    "id" : "186",
-    "type" : "owl:datatypeProperty"
+    "id" : "185",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "187",
     "type" : "owl:disjointWith"
   }, {
     "id" : "188",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "189",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "190",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "191",
     "type" : "owl:disjointWith"
   }, {
     "id" : "192",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "193",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "194",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "195",
-    "type" : "owl:disjointWith"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "196",
-    "type" : "owl:disjointWith"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "197",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "198",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "199",
     "type" : "owl:disjointWith"
   }, {
     "id" : "200",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "202",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "201",
-    "type" : "owl:objectProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "203",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "204",
     "type" : "owl:disjointWith"
   }, {
     "id" : "205",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "206",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "207",
     "type" : "owl:disjointWith"
   }, {
     "id" : "208",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "209",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "210",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "211",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "212",
-    "type" : "owl:disjointWith"
-  }, {
     "id" : "213",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "214",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "215",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "216",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "217",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "218",
     "type" : "owl:disjointWith"
   }, {
     "id" : "219",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "220",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "221",
-    "type" : "owl:disjointWith"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "222",
     "type" : "owl:disjointWith"
   }, {
     "id" : "223",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "224",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "225",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "230",
-    "type" : "owl:datatypeProperty"
+    "id" : "226",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "228",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "229",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "231",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "232",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "233",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "234",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "235",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "236",
     "type" : "owl:disjointWith"
   }, {
     "id" : "237",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "238",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "239",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "240",
-    "type" : "owl:datatypeProperty"
-  }, {
     "id" : "241",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "242",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "243",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "244",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "246",
     "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "247",
-    "type" : "owl:disjointWith"
   }, {
     "id" : "248",
     "type" : "owl:disjointWith"
   }, {
     "id" : "249",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "250",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "251",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "252",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "253",
-    "type" : "owl:datatypeProperty"
-  }, {
     "id" : "254",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "255",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "256",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "257",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "258",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "259",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "260",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "261",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "262",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "263",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "264",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "265",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "266",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "267",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "268",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "270",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "271",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "272",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "273",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "274",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "275",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "276",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "277",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "278",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "279",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "280",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "282",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "285",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "286",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "288",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "289",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "291",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "292",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "293",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "294",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "295",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "296",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "297",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "298",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "299",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "300",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "301",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "302",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "303",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "304",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "305",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "306",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "307",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "308",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "309",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "310",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "311",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "312",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "313",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "315",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "316",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "317",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "318",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "319",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "320",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "321",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "322",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "323",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "324",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "325",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "326",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "327",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "328",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "329",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "330",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "331",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "332",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "333",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "334",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "335",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "336",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "337",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "338",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "339",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "341",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "342",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "343",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "344",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "345",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "346",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "347",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "348",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "349",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "350",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "351",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "352",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "353",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "355",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "356",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "357",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "358",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "360",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "362",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "363",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "364",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "365",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "366",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "367",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "368",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "370",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "371",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "373",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "374",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "375",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "376",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "377",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "378",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "379",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "381",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "382",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "384",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "386",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "388",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "390",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "391",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "393",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "394",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "396",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "397",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "399",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "401",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "402",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "403",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "404",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "406",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "409",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "411",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "412",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "413",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "414",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "418",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "419",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "420",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "421",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "422",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "423",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "424",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "425",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "426",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "428",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "430",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "431",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "432",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "433",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "434",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "435",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "436",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "437",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "438",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "439",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "440",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "441",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "442",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "443",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "444",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "445",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "446",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "447",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "448",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "449",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "450",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "451",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "452",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "453",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "454",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "455",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "456",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "457",
     "type" : "owl:datatypeProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_access",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "3",
-    "label" : {
-      "IRI-based" : "stop_access"
-    },
+    "range" : "2",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "0"
+  }, {
+    "range" : "5",
+    "domain" : "4",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "3"
+  }, {
+    "range" : "7",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "6"
+  }, {
+    "range" : "5",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "8"
+  }, {
+    "range" : "7",
     "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "1"
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "10"
+  }, {
+    "range" : "5",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "11"
+  }, {
+    "range" : "15",
+    "domain" : "14",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "13"
+  }, {
+    "range" : "18",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "16"
+  }, {
+    "range" : "21",
+    "domain" : "20",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "19"
+  }, {
+    "range" : "18",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "22"
+  }, {
+    "range" : "26",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "24"
+  }, {
+    "range" : "18",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "27"
+  }, {
+    "range" : "30",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "29"
+  }, {
+    "range" : "18",
+    "domain" : "32",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "31"
+  }, {
+    "range" : "30",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "35"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "13",
+    "range" : "37",
     "label" : {
       "IRI-based" : "pickup_booking_rule_id"
     },
     "domain" : "12",
-    "attributes" : [ "object" ],
-    "id" : "11"
+    "attributes" : [ "object", "functional" ],
+    "id" : "36"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#hasShape",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "16",
+    "range" : "39",
     "label" : {
       "IRI-based" : "hasShape"
     },
-    "domain" : "15",
-    "attributes" : [ "object" ],
-    "id" : "14"
+    "maxCardinality" : "1",
+    "domain" : "34",
+    "attributes" : [ "object", "functional" ],
+    "id" : "38"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_email",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "20",
+    "range" : "51",
     "label" : {
       "IRI-based" : "agency_email",
       "en" : "agency email address"
     },
-    "domain" : "19",
+    "maxCardinality" : "1",
+    "domain" : "28",
     "comment" : {
       "en" : "Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency."
     },
-    "attributes" : [ "datatype" ],
-    "id" : "18"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "50"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#date",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "23",
-    "label" : {
-      "IRI-based" : "date"
-    },
-    "domain" : "22",
-    "attributes" : [ "key", "datatype" ],
-    "id" : "21"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#bikes_allowed",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "25",
-    "label" : {
-      "IRI-based" : "bikes_allowed"
-    },
-    "domain" : "15",
-    "attributes" : [ "datatype" ],
-    "id" : "24"
+    "range" : "5",
+    "domain" : "54",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "53"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_url",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "5",
+    "range" : "57",
     "label" : {
       "IRI-based" : "stop_url"
     },
-    "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "26"
+    "maxCardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "55"
+  }, {
+    "range" : "2",
+    "domain" : "59",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "58"
+  }, {
+    "range" : "5",
+    "domain" : "61",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "60"
+  }, {
+    "range" : "7",
+    "domain" : "59",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "62"
+  }, {
+    "range" : "5",
+    "domain" : "64",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "63"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "30",
+    "range" : "66",
     "label" : {
       "IRI-based" : "end_pickup_drop_off_window"
     },
     "domain" : "12",
-    "attributes" : [ "datatype" ],
-    "id" : "29"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "65"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasService",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "35",
-    "label" : {
-      "IRI-based" : "hasService"
-    },
-    "domain" : "15",
-    "attributes" : [ "object" ],
-    "id" : "34"
+    "range" : "59",
+    "domain" : "68",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "67"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#operatedBy",
-    "inverse" : "39",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "19",
-    "label" : {
-      "IRI-based" : "operatedBy"
-    },
-    "domain" : "17",
-    "attributes" : [ "object" ],
-    "id" : "38"
+    "range" : "9",
+    "domain" : "49",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "69"
+  }, {
+    "range" : "1",
+    "domain" : "68",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "70"
+  }, {
+    "range" : "20",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "71"
+  }, {
+    "range" : "2",
+    "domain" : "68",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "72"
+  }, {
+    "range" : "20",
+    "domain" : "59",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "73"
+  }, {
+    "range" : "7",
+    "domain" : "68",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "74"
+  }, {
+    "range" : "20",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "75"
+  }, {
+    "range" : "59",
+    "domain" : "77",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "76"
+  }, {
+    "range" : "20",
+    "domain" : "77",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "78"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#pickup_type",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "41",
+    "range" : "80",
     "label" : {
       "IRI-based" : "pickup_type"
     },
     "domain" : "12",
-    "attributes" : [ "datatype" ],
-    "id" : "40"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "79"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#arrival_time",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "47",
-    "label" : {
-      "IRI-based" : "arrival_time"
-    },
-    "domain" : "12",
-    "attributes" : [ "datatype" ],
-    "id" : "46"
+    "range" : "1",
+    "domain" : "77",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "81"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#start_date",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "33",
-    "label" : {
-      "IRI-based" : "start_date"
-    },
-    "domain" : "53",
-    "attributes" : [ "datatype" ],
-    "id" : "52"
+    "range" : "20",
+    "domain" : "68",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "82"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "13",
-    "label" : {
-      "IRI-based" : "drop_off_booking_rule_id"
-    },
-    "domain" : "12",
-    "attributes" : [ "object" ],
-    "id" : "54"
+    "range" : "2",
+    "domain" : "77",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "83"
+  }, {
+    "range" : "20",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "84"
+  }, {
+    "range" : "7",
+    "domain" : "77",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "85"
+  }, {
+    "range" : "20",
+    "domain" : "30",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "86"
+  }, {
+    "range" : "1",
+    "domain" : "59",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "87"
+  }, {
+    "range" : "9",
+    "domain" : "48",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "90"
+  }, {
+    "range" : "77",
+    "domain" : "68",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "91"
+  }, {
+    "range" : "9",
+    "domain" : "32",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "92"
+  }, {
+    "range" : "9",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "93"
+  }, {
+    "range" : "9",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "94"
+  }, {
+    "range" : "9",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "95"
+  }, {
+    "range" : "9",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "96"
+  }, {
+    "range" : "9",
+    "domain" : "44",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "97"
+  }, {
+    "range" : "9",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "98"
+  }, {
+    "range" : "9",
+    "domain" : "46",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "99"
+  }, {
+    "range" : "9",
+    "domain" : "47",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "100"
+  }, {
+    "range" : "9",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "101"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#saturday",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "56",
+    "range" : "103",
     "label" : {
       "IRI-based" : "saturday"
     },
-    "domain" : "53",
-    "attributes" : [ "datatype" ],
-    "id" : "55"
+    "domain" : "15",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "102"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#zone_id",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "10",
+    "range" : "105",
     "label" : {
       "IRI-based" : "zone_id"
     },
-    "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "57"
+    "maxCardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "104"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_lon",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "27",
-    "label" : {
-      "IRI-based" : "stop_lon"
-    },
-    "cardinality" : "1",
-    "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "58"
+    "range" : "9",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "106"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_timezone",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "4",
+    "range" : "117",
     "label" : {
       "IRI-based" : "stop_timezone"
     },
-    "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "63"
+    "maxCardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "116"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "36",
+    "range" : "120",
     "label" : {
       "IRI-based" : "start_pickup_drop_off_window"
     },
     "domain" : "12",
-    "attributes" : [ "datatype" ],
-    "id" : "64"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_headsign",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "43",
-    "label" : {
-      "IRI-based" : "stop_headsign"
-    },
-    "domain" : "12",
-    "attributes" : [ "datatype" ],
-    "id" : "65"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "119"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#route_type",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "68",
+    "range" : "122",
     "label" : {
       "IRI-based" : "route_type"
     },
-    "domain" : "17",
-    "attributes" : [ "datatype" ],
-    "id" : "67"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_desc",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "42",
-    "label" : {
-      "IRI-based" : "stop_desc"
-    },
-    "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "69"
+    "cardinality" : "1",
+    "domain" : "9",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "121"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#trip_headsign",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "6",
+    "range" : "125",
     "label" : {
       "IRI-based" : "trip_headsign"
     },
-    "domain" : "15",
-    "attributes" : [ "datatype" ],
-    "id" : "70"
+    "maxCardinality" : "1",
+    "domain" : "34",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "124"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_name",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
     "range" : "28",
-    "label" : {
-      "IRI-based" : "stop_name"
-    },
-    "cardinality" : "1",
-    "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "71"
+    "domain" : "129",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "128"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_lang",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "73",
-    "label" : {
-      "IRI-based" : "agency_lang",
-      "en" : "agency language"
-    },
-    "domain" : "19",
-    "comment" : {
-      "en" : "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "72"
+    "range" : "132",
+    "domain" : "34",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "131"
   }, {
-    "range" : "2",
-    "domain" : "77",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "76"
+    "range" : "132",
+    "domain" : "56",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "134"
   }, {
-    "range" : "2",
-    "domain" : "75",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "78"
+    "range" : "56",
+    "domain" : "21",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "136"
   }, {
-    "range" : "77",
-    "domain" : "80",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "79"
+    "range" : "56",
+    "domain" : "139",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "138"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_code",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "37",
-    "label" : {
-      "IRI-based" : "stop_code"
-    },
-    "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "81"
+    "range" : "56",
+    "domain" : "142",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "141"
   }, {
-    "range" : "77",
-    "domain" : "83",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "82"
+    "range" : "56",
+    "domain" : "145",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "144"
   }, {
-    "range" : "59",
-    "domain" : "62",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "84"
+    "range" : "30",
+    "domain" : "148",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "147"
   }, {
-    "range" : "75",
-    "domain" : "74",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "85"
+    "range" : "28",
+    "domain" : "151",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "150"
   }, {
-    "range" : "35",
-    "domain" : "22",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "86"
+    "range" : "28",
+    "domain" : "153",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "152"
   }, {
-    "range" : "35",
-    "domain" : "53",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "87"
+    "range" : "34",
+    "domain" : "156",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "155"
   }, {
-    "range" : "2",
-    "domain" : "59",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "88"
+    "range" : "34",
+    "domain" : "159",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "158"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasLocation",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "90",
-    "label" : {
-      "IRI-based" : "hasLocation"
-    },
-    "domain" : "12",
-    "attributes" : [ "object" ],
-    "id" : "89"
+    "range" : "34",
+    "domain" : "52",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "161"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#thursday",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "95",
-    "label" : {
-      "IRI-based" : "thursday"
-    },
-    "domain" : "53",
-    "attributes" : [ "datatype" ],
-    "id" : "94"
+    "range" : "56",
+    "domain" : "20",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "163"
   }, {
-    "range" : "59",
-    "domain" : "60",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "96"
+    "range" : "34",
+    "domain" : "167",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "166"
   }, {
-    "range" : "59",
-    "domain" : "61",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "97"
+    "range" : "34",
+    "domain" : "170",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "169"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasStop",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "2",
-    "label" : {
-      "IRI-based" : "hasStop"
-    },
-    "domain" : "12",
-    "attributes" : [ "object" ],
-    "id" : "103"
+    "range" : "34",
+    "domain" : "89",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "172"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "101",
-    "label" : {
-      "IRI-based" : "wheelchair_boarding"
-    },
-    "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "104"
+    "range" : "34",
+    "domain" : "175",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "174"
+  }, {
+    "range" : "34",
+    "domain" : "178",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "177"
+  }, {
+    "range" : "34",
+    "domain" : "33",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "180"
+  }, {
+    "range" : "159",
+    "domain" : "89",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "181"
+  }, {
+    "range" : "15",
+    "domain" : "183",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "182"
+  }, {
+    "range" : "159",
+    "domain" : "167",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "184"
+  }, {
+    "range" : "186",
+    "domain" : "14",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "185"
+  }, {
+    "range" : "52",
+    "domain" : "156",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "187"
+  }, {
+    "range" : "186",
+    "domain" : "15",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "188"
+  }, {
+    "range" : "170",
+    "domain" : "156",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "189"
+  }, {
+    "range" : "34",
+    "domain" : "126",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "190"
+  }, {
+    "range" : "170",
+    "domain" : "52",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "191"
+  }, {
+    "range" : "34",
+    "domain" : "193",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "192"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#monday",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "102",
+    "range" : "195",
     "label" : {
       "IRI-based" : "monday"
     },
-    "domain" : "53",
-    "attributes" : [ "datatype" ],
-    "id" : "105"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#safe_duration_factor",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "50",
-    "label" : {
-      "IRI-based" : "safe_duration_factor"
-    },
     "domain" : "15",
-    "attributes" : [ "datatype" ],
-    "id" : "106"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasRoute",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "17",
-    "label" : {
-      "IRI-based" : "hasRoute"
-    },
-    "domain" : "15",
-    "attributes" : [ "object" ],
-    "id" : "107"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "194"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#end_date",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "109",
+    "range" : "149",
     "label" : {
       "IRI-based" : "end_date"
     },
-    "domain" : "53",
-    "attributes" : [ "datatype" ],
-    "id" : "108"
+    "domain" : "15",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "196"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_name",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "111",
-    "label" : {
-      "IRI-based" : "agency_name",
-      "en" : "agency name"
-    },
-    "domain" : "19",
-    "comment" : {
-      "en" : "Full name of the transit agency."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "110"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasTrip",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
     "range" : "15",
-    "label" : {
-      "IRI-based" : "hasTrip"
-    },
-    "domain" : "12",
-    "attributes" : [ "object", "key" ],
-    "id" : "115"
+    "domain" : "198",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "197"
+  }, {
+    "range" : "193",
+    "domain" : "126",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "199"
+  }, {
+    "range" : "15",
+    "domain" : "201",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "200"
+  }, {
+    "range" : "33",
+    "domain" : "126",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "202"
+  }, {
+    "range" : "15",
+    "domain" : "123",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "203"
+  }, {
+    "range" : "33",
+    "domain" : "193",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "204"
+  }, {
+    "range" : "15",
+    "domain" : "206",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "205"
+  }, {
+    "range" : "167",
+    "domain" : "89",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "207"
+  }, {
+    "range" : "15",
+    "domain" : "209",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "208"
+  }, {
+    "range" : "212",
+    "domain" : "211",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "210"
+  }, {
+    "range" : "15",
+    "domain" : "214",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "213"
+  }, {
+    "range" : "216",
+    "domain" : "211",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "215"
+  }, {
+    "range" : "15",
+    "domain" : "88",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "217"
+  }, {
+    "range" : "216",
+    "domain" : "212",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "218"
+  }, {
+    "range" : "15",
+    "domain" : "220",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "219"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_id",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "119",
+    "range" : "171",
     "label" : {
       "IRI-based" : "agency_id",
       "en" : "agency ID"
     },
-    "domain" : "19",
+    "maxCardinality" : "1",
+    "domain" : "28",
     "comment" : {
       "en" : "Identifies a transit brand which is often synonymous with a transit agency. Note that in some cases, such as when a single agency operates multiple separate services, agencies and brands are distinct. This [ontology] uses the term \"agency\" in place of \"brand\". A dataset may contain data from multiple agencies."
     },
-    "attributes" : [ "key", "functional", "datatype" ],
-    "id" : "118"
+    "attributes" : [ "key", "datatype", "functional" ],
+    "id" : "221"
+  }, {
+    "range" : "32",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "222"
+  }, {
+    "range" : "15",
+    "domain" : "224",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "223"
+  }, {
+    "range" : "17",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "225"
+  }, {
+    "range" : "15",
+    "domain" : "227",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "226"
+  }, {
+    "range" : "17",
+    "domain" : "32",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "228"
+  }, {
+    "range" : "15",
+    "domain" : "230",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "229"
+  }, {
+    "range" : "175",
+    "domain" : "178",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "231"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#operatesRoute",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "93",
+    "range" : "233",
     "label" : {
       "IRI-based" : "operatesRoute"
     },
-    "domain" : "93",
+    "domain" : "233",
     "attributes" : [ "object" ],
-    "id" : "39"
+    "id" : "232"
+  }, {
+    "range" : "1",
+    "domain" : "235",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "234"
+  }, {
+    "range" : "148",
+    "domain" : "165",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "236"
+  }, {
+    "range" : "1",
+    "domain" : "238",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "237"
+  }, {
+    "range" : "240",
+    "domain" : "165",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "239"
+  }, {
+    "range" : "15",
+    "domain" : "242",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "241"
+  }, {
+    "range" : "240",
+    "domain" : "148",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "243"
+  }, {
+    "range" : "15",
+    "domain" : "245",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "244"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#route_url",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "48",
+    "range" : "247",
     "label" : {
       "IRI-based" : "route_url"
     },
-    "domain" : "17",
-    "attributes" : [ "datatype" ],
-    "id" : "125"
+    "maxCardinality" : "1",
+    "domain" : "9",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "246"
   }, {
-    "range" : "16",
-    "domain" : "90",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "126"
+    "range" : "46",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "248"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_id",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "128",
-    "label" : {
-      "IRI-based" : "route_id"
-    },
-    "domain" : "17",
-    "attributes" : [ "key", "datatype" ],
-    "id" : "127"
+    "range" : "44",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "249"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#drop_off_type",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "123",
-    "label" : {
-      "IRI-based" : "drop_off_type"
-    },
-    "domain" : "12",
-    "attributes" : [ "datatype" ],
-    "id" : "129"
-  }, {
-    "range" : "35",
-    "domain" : "90",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "130"
-  }, {
-    "range" : "17",
-    "domain" : "90",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "131"
+    "range" : "49",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "250"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#route_desc",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "133",
+    "range" : "135",
     "label" : {
       "IRI-based" : "route_desc"
     },
-    "domain" : "17",
-    "attributes" : [ "datatype" ],
-    "id" : "132"
+    "maxCardinality" : "1",
+    "domain" : "9",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "251"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "32",
+    "range" : "253",
     "label" : {
       "IRI-based" : "shape_dist_traveled"
     },
     "domain" : "12",
-    "attributes" : [ "datatype" ],
-    "id" : "134"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "252"
   }, {
-    "range" : "12",
-    "domain" : "66",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "135"
+    "range" : "46",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "254"
   }, {
-    "range" : "2",
-    "domain" : "66",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "136"
+    "range" : "41",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "255"
   }, {
-    "range" : "124",
-    "domain" : "90",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "137"
+    "range" : "47",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "256"
   }, {
-    "range" : "15",
-    "domain" : "66",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "138"
+    "range" : "48",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "257"
   }, {
-    "range" : "17",
-    "domain" : "66",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "139"
+    "range" : "47",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "258"
   }, {
-    "range" : "124",
-    "domain" : "66",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "140"
+    "range" : "48",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "259"
   }, {
-    "range" : "16",
-    "domain" : "66",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "141"
+    "range" : "44",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "260"
   }, {
-    "range" : "35",
-    "domain" : "66",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "142"
+    "range" : "49",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "261"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#route_color",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "144",
+    "range" : "133",
     "label" : {
       "IRI-based" : "route_color"
     },
-    "domain" : "17",
-    "attributes" : [ "datatype" ],
-    "id" : "143"
+    "maxCardinality" : "1",
+    "domain" : "9",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "262"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_url",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "146",
+    "range" : "157",
     "label" : {
       "IRI-based" : "agency_url",
       "en" : "agency URL"
     },
-    "domain" : "19",
+    "cardinality" : "1",
+    "domain" : "28",
     "comment" : {
       "en" : "URL of the transit agency."
     },
-    "attributes" : [ "datatype" ],
-    "id" : "145"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "263"
   }, {
-    "range" : "15",
-    "domain" : "13",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "147"
+    "range" : "41",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "264"
   }, {
-    "range" : "12",
-    "domain" : "13",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "148"
+    "range" : "45",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "265"
   }, {
-    "range" : "90",
-    "domain" : "66",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "149"
+    "range" : "46",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "266"
   }, {
-    "range" : "35",
-    "domain" : "13",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "150"
+    "range" : "47",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "267"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#tuesday",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "116",
+    "range" : "269",
     "label" : {
       "IRI-based" : "tuesday"
     },
-    "domain" : "53",
-    "attributes" : [ "datatype" ],
-    "id" : "151"
-  }, {
-    "range" : "17",
-    "domain" : "13",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "152"
-  }, {
-    "range" : "2",
-    "domain" : "13",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "153"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#cars_allowed",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "117",
-    "label" : {
-      "IRI-based" : "cars_allowed"
-    },
     "domain" : "15",
-    "attributes" : [ "datatype" ],
-    "id" : "154"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "268"
   }, {
-    "range" : "16",
-    "domain" : "13",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "155"
+    "range" : "48",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "270"
   }, {
-    "range" : "66",
-    "domain" : "13",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "156"
+    "range" : "44",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "271"
   }, {
-    "range" : "124",
-    "domain" : "13",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "157"
+    "range" : "49",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "272"
   }, {
-    "range" : "90",
-    "domain" : "13",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "158"
+    "range" : "45",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "273"
   }, {
-    "range" : "12",
-    "domain" : "16",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "159"
+    "range" : "46",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "274"
   }, {
-    "range" : "12",
-    "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "160"
+    "range" : "41",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "275"
   }, {
-    "range" : "15",
-    "domain" : "16",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "161"
+    "range" : "186",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "276"
+  }, {
+    "range" : "56",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "277"
+  }, {
+    "range" : "39",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "278"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_fare_url",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "163",
+    "range" : "168",
     "label" : {
       "IRI-based" : "agency_fare_url",
       "en" : "agency fare URL"
     },
-    "domain" : "19",
+    "maxCardinality" : "1",
+    "domain" : "28",
     "comment" : {
       "en" : "URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares."
     },
-    "attributes" : [ "datatype" ],
-    "id" : "162"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "279"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#continuous_drop_off",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "120",
+    "range" : "281",
     "label" : {
       "IRI-based" : "continuous_drop_off"
     },
-    "domain" : "165",
-    "attributes" : [ "datatype" ],
-    "id" : "164"
+    "maxCardinality" : "1",
+    "domain" : "137",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "280"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#route_sort_order",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "167",
+    "range" : "283",
     "label" : {
       "IRI-based" : "route_sort_order"
     },
-    "domain" : "17",
-    "attributes" : [ "datatype" ],
-    "id" : "166"
+    "maxCardinality" : "1",
+    "domain" : "9",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "282"
   }, {
-    "range" : "12",
-    "domain" : "35",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "168"
+    "range" : "284",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "285"
   }, {
-    "range" : "2",
-    "domain" : "35",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "169"
+    "range" : "287",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "286"
   }, {
-    "range" : "2",
-    "domain" : "16",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "170"
+    "range" : "9",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "288"
   }, {
-    "range" : "15",
-    "domain" : "35",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "171"
+    "range" : "290",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "289"
   }, {
-    "range" : "12",
-    "domain" : "17",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "172"
+    "range" : "44",
+    "domain" : "47",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "291"
   }, {
-    "range" : "2",
-    "domain" : "17",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "173"
+    "range" : "49",
+    "domain" : "47",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "292"
   }, {
-    "range" : "16",
-    "domain" : "35",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "174"
+    "range" : "37",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "293"
   }, {
-    "range" : "15",
-    "domain" : "17",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "175"
+    "range" : "44",
+    "domain" : "49",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "294"
   }, {
-    "range" : "16",
-    "domain" : "17",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "177"
+    "range" : "44",
+    "domain" : "48",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "295"
   }, {
-    "range" : "35",
-    "domain" : "17",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "178"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#friday",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "121",
-    "label" : {
-      "IRI-based" : "friday"
-    },
-    "domain" : "53",
-    "attributes" : [ "datatype" ],
-    "id" : "179"
+    "range" : "49",
+    "domain" : "48",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "296"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#continuous_pickup",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "122",
+    "range" : "108",
     "label" : {
       "IRI-based" : "continuous_pickup"
     },
-    "domain" : "181",
-    "attributes" : [ "datatype" ],
-    "id" : "180"
+    "maxCardinality" : "1",
+    "domain" : "140",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "297"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#cemv_support",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "112",
-    "label" : {
-      "IRI-based" : "cemv_support",
-      "en" : "CEMV Support"
-    },
-    "domain" : "183",
-    "comment" : {
-      "en" : "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media.#"
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "182"
+    "range" : "47",
+    "domain" : "48",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "298"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#departure_time",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "185",
-    "label" : {
-      "IRI-based" : "departure_time"
-    },
-    "domain" : "12",
-    "attributes" : [ "datatype" ],
-    "id" : "184"
+    "range" : "47",
+    "domain" : "46",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "299"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_sequence",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "0",
-    "label" : {
-      "IRI-based" : "stop_sequence"
-    },
-    "domain" : "12",
-    "attributes" : [ "key", "datatype" ],
-    "id" : "186"
+    "range" : "48",
+    "domain" : "46",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "300"
   }, {
-    "range" : "15",
-    "domain" : "124",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "187"
+    "range" : "44",
+    "domain" : "46",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "301"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_phone",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "189",
-    "label" : {
-      "IRI-based" : "agency_phone",
-      "en" : "agency phone number"
-    },
-    "domain" : "19",
-    "comment" : {
-      "en" : "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "188"
+    "range" : "49",
+    "domain" : "46",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "302"
   }, {
-    "range" : "16",
-    "domain" : "124",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "190"
+    "range" : "47",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "303"
   }, {
-    "range" : "35",
-    "domain" : "124",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "191"
+    "range" : "48",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "304"
   }, {
-    "range" : "12",
-    "domain" : "124",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "192"
+    "range" : "44",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "305"
   }, {
-    "range" : "2",
-    "domain" : "124",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "193"
+    "range" : "49",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "306"
+  }, {
+    "range" : "290",
+    "domain" : "284",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "307"
+  }, {
+    "range" : "34",
+    "domain" : "287",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "308"
+  }, {
+    "range" : "186",
+    "domain" : "284",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "309"
+  }, {
+    "range" : "9",
+    "domain" : "284",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "310"
   }, {
     "range" : "12",
-    "domain" : "90",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "194"
-  }, {
-    "range" : "2",
-    "domain" : "90",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "195"
-  }, {
-    "range" : "17",
-    "domain" : "124",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "196"
-  }, {
-    "range" : "15",
-    "domain" : "90",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "197"
-  }, {
-    "range" : "75",
-    "domain" : "59",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "198"
-  }, {
-    "range" : "53",
-    "domain" : "22",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "199"
+    "domain" : "287",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "311"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#isParentStationOf",
-    "inverse" : "201",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "2",
+    "range" : "56",
     "label" : {
       "IRI-based" : "isParentStationOf"
     },
-    "domain" : "2",
+    "domain" : "56",
     "attributes" : [ "object" ],
-    "id" : "200"
+    "id" : "312"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#trip_short_name",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "8",
+    "range" : "314",
     "label" : {
       "IRI-based" : "trip_short_name"
     },
-    "domain" : "15",
-    "attributes" : [ "datatype" ],
-    "id" : "202"
+    "maxCardinality" : "1",
+    "domain" : "34",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "313"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasParentStation",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "2",
-    "label" : {
-      "IRI-based" : "hasParentStation"
-    },
-    "domain" : "2",
-    "attributes" : [ "object" ],
-    "id" : "201"
+    "range" : "56",
+    "domain" : "287",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "315"
   }, {
-    "range" : "80",
-    "domain" : "74",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "203"
-  }, {
-    "range" : "80",
-    "domain" : "83",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "204"
+    "range" : "39",
+    "domain" : "287",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "316"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#sunday",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "113",
+    "range" : "110",
     "label" : {
       "IRI-based" : "sunday"
     },
-    "domain" : "53",
-    "attributes" : [ "datatype" ],
-    "id" : "205"
-  }, {
-    "range" : "74",
-    "domain" : "60",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "206"
-  }, {
-    "range" : "83",
-    "domain" : "60",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "207"
-  }, {
-    "range" : "74",
-    "domain" : "83",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "208"
-  }, {
-    "range" : "80",
-    "domain" : "60",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "209"
-  }, {
-    "range" : "83",
-    "domain" : "61",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "210"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#safe_duration_offset",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "51",
-    "label" : {
-      "IRI-based" : "safe_duration_offset"
-    },
     "domain" : "15",
-    "attributes" : [ "datatype" ],
-    "id" : "211"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "317"
   }, {
-    "range" : "60",
-    "domain" : "61",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "212"
+    "range" : "290",
+    "domain" : "287",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "318"
   }, {
-    "range" : "80",
-    "domain" : "61",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "213"
+    "range" : "284",
+    "domain" : "287",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "319"
   }, {
-    "range" : "74",
-    "domain" : "61",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "214"
+    "range" : "186",
+    "domain" : "287",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "320"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#direction_id",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "114",
-    "label" : {
-      "IRI-based" : "direction_id"
-    },
-    "domain" : "15",
-    "attributes" : [ "datatype" ],
-    "id" : "215"
+    "range" : "9",
+    "domain" : "287",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "321"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#exception_type",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "98",
-    "label" : {
-      "IRI-based" : "exception_type"
-    },
-    "domain" : "22",
-    "attributes" : [ "datatype" ],
-    "id" : "216"
+    "range" : "56",
+    "domain" : "37",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "322"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#timepoint",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "99",
-    "label" : {
-      "IRI-based" : "timepoint"
-    },
-    "domain" : "12",
-    "attributes" : [ "datatype" ],
-    "id" : "217"
+    "range" : "39",
+    "domain" : "37",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "323"
   }, {
-    "range" : "74",
-    "domain" : "62",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "218"
+    "range" : "34",
+    "domain" : "37",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "324"
   }, {
-    "range" : "83",
-    "domain" : "62",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "219"
+    "range" : "12",
+    "domain" : "37",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "325"
   }, {
-    "range" : "80",
-    "domain" : "62",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "220"
+    "range" : "9",
+    "domain" : "37",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "326"
   }, {
-    "range" : "15",
-    "domain" : "12",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "221"
+    "range" : "290",
+    "domain" : "37",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "327"
   }, {
-    "range" : "15",
-    "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "222"
+    "range" : "186",
+    "domain" : "37",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "328"
+  }, {
+    "range" : "34",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "329"
+  }, {
+    "range" : "12",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "330"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#hasLocationGroup",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "124",
+    "range" : "290",
     "label" : {
       "IRI-based" : "hasLocationGroup"
     },
     "domain" : "12",
-    "attributes" : [ "object" ],
-    "id" : "223"
+    "attributes" : [ "object", "functional" ],
+    "id" : "331"
   }, {
-    "range" : "60",
-    "domain" : "62",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "224"
+    "range" : "284",
+    "domain" : "37",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "332"
   }, {
-    "range" : "61",
-    "domain" : "62",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "225"
+    "range" : "287",
+    "domain" : "37",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "333"
+  }, {
+    "range" : "56",
+    "domain" : "39",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "334"
+  }, {
+    "range" : "34",
+    "domain" : "186",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "335"
+  }, {
+    "range" : "34",
+    "domain" : "39",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "336"
+  }, {
+    "range" : "12",
+    "domain" : "39",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "337"
+  }, {
+    "range" : "39",
+    "domain" : "186",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "338"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#service_id",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "31",
+    "range" : "340",
     "label" : {
       "IRI-based" : "service_id"
     },
-    "domain" : "35",
-    "attributes" : [ "key", "datatype" ],
-    "id" : "230"
+    "domain" : "186",
+    "attributes" : [ "key", "datatype", "functional" ],
+    "id" : "339"
+  }, {
+    "range" : "12",
+    "domain" : "186",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "341"
+  }, {
+    "range" : "56",
+    "domain" : "186",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "342"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "100",
+    "range" : "114",
     "label" : {
       "IRI-based" : "wheelchair_accessible"
     },
-    "domain" : "15",
-    "attributes" : [ "datatype" ],
-    "id" : "231"
-  }, {
-    "range" : "90",
-    "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "232"
-  }, {
-    "range" : "124",
-    "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "233"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#platform_code",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "229",
-    "label" : {
-      "IRI-based" : "platform_code"
-    },
-    "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "234"
-  }, {
-    "range" : "17",
-    "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "235"
-  }, {
-    "range" : "35",
-    "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "236"
-  }, {
-    "range" : "16",
-    "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "237"
+    "maxCardinality" : "1",
+    "domain" : "34",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "343"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#hasLevel",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "66",
+    "range" : "287",
     "label" : {
       "IRI-based" : "hasLevel"
     },
-    "domain" : "2",
-    "attributes" : [ "object" ],
-    "id" : "238"
-  }, {
-    "range" : "2",
-    "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "239"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_lat",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "45",
-    "label" : {
-      "IRI-based" : "stop_lat"
-    },
-    "cardinality" : "1",
-    "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "240"
-  }, {
-    "range" : "12",
-    "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "241"
-  }, {
-    "range" : "15",
-    "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "242"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_id",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "44",
-    "label" : {
-      "IRI-based" : "stop_id"
-    },
-    "domain" : "2",
-    "attributes" : [ "key", "datatype" ],
-    "id" : "243"
+    "maxCardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "object", "functional" ],
+    "id" : "344"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_timezone",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "245",
+    "range" : "154",
     "label" : {
       "IRI-based" : "agency_timezone",
       "en" : "agency timezone"
     },
-    "domain" : "19",
+    "cardinality" : "1",
+    "domain" : "28",
     "comment" : {
       "en" : "Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone."
     },
-    "attributes" : [ "datatype" ],
-    "id" : "244"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "345"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#wednesday",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "91",
-    "label" : {
-      "IRI-based" : "wednesday"
-    },
-    "domain" : "53",
-    "attributes" : [ "datatype" ],
-    "id" : "246"
+    "range" : "56",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "346"
   }, {
-    "range" : "13",
-    "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "247"
+    "range" : "39",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "347"
   }, {
-    "range" : "66",
-    "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "248"
+    "range" : "34",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "348"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#block_id",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "250",
-    "label" : {
-      "IRI-based" : "block_id"
-    },
-    "domain" : "15",
-    "attributes" : [ "datatype" ],
-    "id" : "249"
+    "range" : "12",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "349"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#location_type",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "92",
-    "label" : {
-      "IRI-based" : "location_type"
-    },
-    "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "252"
+    "range" : "12",
+    "domain" : "290",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "350"
+  }, {
+    "range" : "56",
+    "domain" : "290",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "351"
+  }, {
+    "range" : "186",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "352"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#route_text_color",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "49",
+    "range" : "354",
     "label" : {
       "IRI-based" : "route_text_color"
     },
-    "domain" : "17",
-    "attributes" : [ "datatype" ],
-    "id" : "253"
+    "maxCardinality" : "1",
+    "domain" : "9",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "353"
   }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_short_name",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "228",
-    "label" : {
-      "IRI-based" : "route_short_name"
-    },
-    "domain" : "17",
-    "attributes" : [ "datatype" ],
-    "id" : "254"
+    "range" : "34",
+    "domain" : "290",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "355"
+  }, {
+    "range" : "39",
+    "domain" : "290",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "356"
+  }, {
+    "range" : "186",
+    "domain" : "290",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "357"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#tts_stop_name",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "9",
+    "range" : "359",
     "label" : {
       "IRI-based" : "tts_stop_name"
     },
-    "domain" : "2",
-    "attributes" : [ "datatype" ],
-    "id" : "255"
-  }, {
-    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_long_name",
-    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "227",
-    "label" : {
-      "IRI-based" : "route_long_name"
-    },
-    "domain" : "17",
-    "attributes" : [ "datatype" ],
-    "id" : "256"
+    "maxCardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "358"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#trip_id",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "7",
+    "range" : "361",
     "label" : {
       "IRI-based" : "trip_id"
     },
-    "domain" : "15",
-    "attributes" : [ "key", "datatype" ],
-    "id" : "257"
+    "cardinality" : "1",
+    "domain" : "34",
+    "attributes" : [ "key", "datatype", "functional" ],
+    "id" : "360"
+  }, {
+    "range" : "9",
+    "domain" : "290",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "362"
   }, {
     "iri" : "https://transit.ac.uk/ontologies/gtfs#network_id",
     "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
-    "range" : "251",
+    "range" : "127",
     "label" : {
       "IRI-based" : "network_id"
     },
-    "domain" : "17",
-    "attributes" : [ "datatype" ],
-    "id" : "258"
+    "maxCardinality" : "1",
+    "domain" : "9",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "363"
+  }, {
+    "range" : "56",
+    "domain" : "284",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "364"
+  }, {
+    "range" : "39",
+    "domain" : "284",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "365"
+  }, {
+    "range" : "34",
+    "domain" : "284",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "366"
+  }, {
+    "range" : "12",
+    "domain" : "284",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "367"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_access",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "369",
+    "label" : {
+      "IRI-based" : "stop_access"
+    },
+    "maxCardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "368"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#date",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "143",
+    "label" : {
+      "IRI-based" : "date"
+    },
+    "domain" : "14",
+    "attributes" : [ "key", "datatype", "functional" ],
+    "id" : "370"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#bikes_allowed",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "372",
+    "label" : {
+      "IRI-based" : "bikes_allowed"
+    },
+    "maxCardinality" : "1",
+    "domain" : "34",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "371"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasService",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "186",
+    "label" : {
+      "IRI-based" : "hasService"
+    },
+    "cardinality" : "1",
+    "domain" : "34",
+    "attributes" : [ "object", "functional" ],
+    "id" : "373"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#operatedBy",
+    "inverse" : "232",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "operatedBy"
+    },
+    "domain" : "9",
+    "attributes" : [ "object", "functional" ],
+    "id" : "374"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#arrival_time",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "160",
+    "label" : {
+      "IRI-based" : "arrival_time"
+    },
+    "domain" : "12",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "375"
+  }, {
+    "range" : "34",
+    "domain" : "56",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "376"
+  }, {
+    "range" : "12",
+    "domain" : "56",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "377"
+  }, {
+    "range" : "34",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "378"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#start_date",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "380",
+    "label" : {
+      "IRI-based" : "start_date"
+    },
+    "domain" : "15",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "379"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "37",
+    "label" : {
+      "IRI-based" : "drop_off_booking_rule_id"
+    },
+    "domain" : "12",
+    "attributes" : [ "object", "functional" ],
+    "id" : "381"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_lon",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "383",
+    "label" : {
+      "IRI-based" : "stop_lon"
+    },
+    "maxCardinality" : "1",
+    "cardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "382"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_headsign",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "385",
+    "label" : {
+      "IRI-based" : "stop_headsign"
+    },
+    "domain" : "12",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "384"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_desc",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "387",
+    "label" : {
+      "IRI-based" : "stop_desc"
+    },
+    "maxCardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "386"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_name",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "389",
+    "label" : {
+      "IRI-based" : "stop_name"
+    },
+    "maxCardinality" : "1",
+    "cardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "388"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_lang",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "173",
+    "label" : {
+      "IRI-based" : "agency_lang",
+      "en" : "agency language"
+    },
+    "maxCardinality" : "1",
+    "domain" : "28",
+    "comment" : {
+      "en" : "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "390"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_code",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "392",
+    "label" : {
+      "IRI-based" : "stop_code"
+    },
+    "maxCardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "391"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasLocation",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "284",
+    "label" : {
+      "IRI-based" : "hasLocation"
+    },
+    "domain" : "12",
+    "attributes" : [ "object", "functional" ],
+    "id" : "393"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#thursday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "395",
+    "label" : {
+      "IRI-based" : "thursday"
+    },
+    "domain" : "15",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "394"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasStop",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "56",
+    "label" : {
+      "IRI-based" : "hasStop"
+    },
+    "domain" : "12",
+    "attributes" : [ "object", "functional" ],
+    "id" : "396"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "398",
+    "label" : {
+      "IRI-based" : "wheelchair_boarding"
+    },
+    "maxCardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "397"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#safe_duration_factor",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "400",
+    "label" : {
+      "IRI-based" : "safe_duration_factor"
+    },
+    "domain" : "34",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "399"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasRoute",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "hasRoute"
+    },
+    "cardinality" : "1",
+    "domain" : "34",
+    "attributes" : [ "object", "functional" ],
+    "id" : "401"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_name",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "176",
+    "label" : {
+      "IRI-based" : "agency_name",
+      "en" : "agency name"
+    },
+    "cardinality" : "1",
+    "domain" : "28",
+    "comment" : {
+      "en" : "Full name of the transit agency."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "402"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasTrip",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "34",
+    "label" : {
+      "IRI-based" : "hasTrip"
+    },
+    "domain" : "12",
+    "attributes" : [ "key", "object", "functional" ],
+    "id" : "403"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "405",
+    "label" : {
+      "IRI-based" : "route_id"
+    },
+    "cardinality" : "1",
+    "domain" : "9",
+    "attributes" : [ "key", "datatype", "functional" ],
+    "id" : "404"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#drop_off_type",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "407",
+    "label" : {
+      "IRI-based" : "drop_off_type"
+    },
+    "domain" : "12",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "406"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#cars_allowed",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "408",
+    "label" : {
+      "IRI-based" : "cars_allowed"
+    },
+    "maxCardinality" : "1",
+    "domain" : "34",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "409"
+  }, {
+    "range" : "142",
+    "domain" : "238",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "411"
+  }, {
+    "range" : "26",
+    "domain" : "240",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "412"
+  }, {
+    "range" : "145",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "413"
+  }, {
+    "range" : "145",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "414"
+  }, {
+    "range" : "25",
+    "domain" : "165",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "418"
+  }, {
+    "range" : "142",
+    "domain" : "235",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "419"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#friday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "107",
+    "label" : {
+      "IRI-based" : "friday"
+    },
+    "domain" : "15",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "420"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#cemv_support",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "109",
+    "label" : {
+      "IRI-based" : "cemv_support",
+      "en" : "CEMV Support"
+    },
+    "maxCardinality" : "1",
+    "domain" : "164",
+    "comment" : {
+      "en" : "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media.#"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "421"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#departure_time",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "146",
+    "label" : {
+      "IRI-based" : "departure_time"
+    },
+    "domain" : "12",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "422"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_sequence",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "410",
+    "label" : {
+      "IRI-based" : "stop_sequence"
+    },
+    "domain" : "12",
+    "attributes" : [ "key", "datatype", "functional" ],
+    "id" : "423"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#agency_phone",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "179",
+    "label" : {
+      "IRI-based" : "agency_phone",
+      "en" : "agency phone number"
+    },
+    "maxCardinality" : "1",
+    "domain" : "28",
+    "comment" : {
+      "en" : "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "424"
+  }, {
+    "range" : "77",
+    "domain" : "148",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "425"
+  }, {
+    "range" : "77",
+    "domain" : "165",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "426"
+  }, {
+    "range" : "77",
+    "domain" : "240",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "428"
+  }, {
+    "range" : "21",
+    "domain" : "212",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "430"
+  }, {
+    "range" : "21",
+    "domain" : "2",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "431"
+  }, {
+    "range" : "21",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "432"
+  }, {
+    "range" : "21",
+    "domain" : "216",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "433"
+  }, {
+    "range" : "21",
+    "domain" : "211",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "434"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#hasParentStation",
+    "inverse" : "312",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "56",
+    "label" : {
+      "IRI-based" : "hasParentStation"
+    },
+    "maxCardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "object", "functional" ],
+    "id" : "435"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#safe_duration_offset",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "417",
+    "label" : {
+      "IRI-based" : "safe_duration_offset"
+    },
+    "domain" : "34",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "436"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#direction_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "111",
+    "label" : {
+      "IRI-based" : "direction_id"
+    },
+    "maxCardinality" : "1",
+    "domain" : "34",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "437"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#exception_type",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "112",
+    "label" : {
+      "IRI-based" : "exception_type"
+    },
+    "domain" : "14",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "438"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#timepoint",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "113",
+    "label" : {
+      "IRI-based" : "timepoint"
+    },
+    "domain" : "12",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "439"
+  }, {
+    "range" : "45",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "440"
+  }, {
+    "range" : "41",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "441"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#platform_code",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "130",
+    "label" : {
+      "IRI-based" : "platform_code"
+    },
+    "maxCardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "442"
+  }, {
+    "range" : "46",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "443"
+  }, {
+    "range" : "48",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "444"
+  }, {
+    "range" : "47",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "445"
+  }, {
+    "range" : "49",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "446"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_lat",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "416",
+    "label" : {
+      "IRI-based" : "stop_lat"
+    },
+    "maxCardinality" : "1",
+    "cardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "447"
+  }, {
+    "range" : "44",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "448"
+  }, {
+    "range" : "43",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "449"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#stop_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "415",
+    "label" : {
+      "IRI-based" : "stop_id"
+    },
+    "cardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "key", "datatype", "functional" ],
+    "id" : "450"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#wednesday",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "115",
+    "label" : {
+      "IRI-based" : "wednesday"
+    },
+    "domain" : "15",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "451"
+  }, {
+    "range" : "42",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "452"
+  }, {
+    "range" : "43",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "453"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#block_id",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "162",
+    "label" : {
+      "IRI-based" : "block_id"
+    },
+    "maxCardinality" : "1",
+    "domain" : "34",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "454"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#location_type",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "118",
+    "label" : {
+      "IRI-based" : "location_type"
+    },
+    "maxCardinality" : "1",
+    "domain" : "56",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "455"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_short_name",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "429",
+    "label" : {
+      "IRI-based" : "route_short_name"
+    },
+    "maxCardinality" : "1",
+    "domain" : "9",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "456"
+  }, {
+    "iri" : "https://transit.ac.uk/ontologies/gtfs#route_long_name",
+    "baseIri" : "https://transit.ac.uk/ontologies/gtfs",
+    "range" : "427",
+    "label" : {
+      "IRI-based" : "route_long_name"
+    },
+    "maxCardinality" : "1",
+    "domain" : "9",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "457"
   } ]
 }

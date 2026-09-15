@@ -215,12 +215,13 @@ with gtfs:
     class BookingRule(Thing):
         pass
 
+    class RecordWithCEMVInformation(Thing):
+        pass
+
     AllDisjoint([Agency, Stop, Route, Trip, StopTime, Service, Level, Shape, LocationGroup, Location, BookingRule])
 
     AllDisjoint(
         [CalendarService, CalendarDateService])
-
-
 
 # region Agency
 with gtfs:
@@ -284,11 +285,47 @@ with gtfs:
         domain = [Or([Agency, Route])]
         range = [OneOf([0, 1, 2])]
 
-    class CEMVSupportedRecord(Thing):
-        pass
+# region Agency DL Rules
 
-    class CEMVUnsupportedRecord(Thing):
-        pass
+    # Agency requirements
+    Agency.is_a.extend([
+        agency_id.max(1),
+        agency_name.exactly(1),
+        agency_url.exactly(1),
+        agency_timezone.exactly(1),
+        agency_lang.max(1),
+        agency_phone.max(1),
+        agency_fare_url.max(1),
+        agency_email.max(1),
+        cemv_support.max(1)
+    ])
+
+    class AgencyWithNoCEMVInformation(RecordWithCEMVInformation):
+        equivalent_to = [
+            And([
+                Agency,
+                Or([
+                    cemv_support.value(0),
+                    cemv_support.exactly(0)
+                ])
+            ])
+        ]
+
+    class AgencyWithCEMVSupport(RecordWithCEMVInformation):
+        equivalent_to = [
+            And([
+                Agency,
+                cemv_support.value(1)
+            ])
+        ]
+
+    class AgencyWithoutCEMVSupport(RecordWithCEMVInformation):
+        equivalent_to = [
+            And([
+                Agency,
+                cemv_support.value(2)
+            ])
+        ]
 
 # region Stops
 
@@ -371,20 +408,53 @@ with gtfs:
 
 # region Stop DL
 
-    class ParentlessStop(Stop):
+    # Requirements
+    Stop.is_a.extend([
+        stop_id.exactly(1),
+        stop_code.max(1),
+        stop_name.max(1),
+        tts_stop_name.max(1),
+        stop_desc.max(1),
+        stop_lat.max(1),
+        stop_lon.max(1),
+        zone_id.max(1),
+        stop_url.max(1),
+        location_type.max(1),
+        hasParentStation.max(1),
+        stop_timezone.max(1),
+        wheelchair_boarding.max(1),
+        hasLevel.max(1),
+        platform_code.max(1),
+        stop_access.max(1)
+    ])
+
+    class OrphanStop(Stop):
         equivalent_to = [
-            Stop &
-            hasParentStation.exactly(0)
+            And([
+                Stop,
+                hasParentStation.exactly(0)
+            ])
         ]
 
     class ChildStop(Stop):
         equivalent_to = [
-            Stop &
-            hasParentStation.exactly(1)
+            And([
+                Stop,
+                hasParentStation.exactly(1)
+            ])
         ]
 
-    AllDisjoint([ParentlessStop, ChildStop])
+    class ParentStop(Stop):
+        equivalent_to = [
+            And([
+                Stop,
+                isParentStationOf.exactly(1)
+            ])
+        ]
 
+    AllDisjoint([OrphanStop, ChildStop])
+
+    # Stops or platforms
     class StopOrPlatform(Stop):
         is_a = [
             stop_name.exactly(1),
@@ -399,32 +469,39 @@ with gtfs:
                     location_type.exactly(0)
                 ])
             ])
-
         ]
 
     class StopLocation(StopOrPlatform):
         equivalent_to = [
-            StopOrPlatform &
-            ParentlessStop
+            And([
+                StopOrPlatform,
+                OrphanStop
+            ])
         ]
 
     class Platform(StopOrPlatform):
         equivalent_to = [
-            StopOrPlatform &
-            ChildStop
+            And([
+                StopOrPlatform,
+                ChildStop
+            ])
         ]
 
-    class Station(ParentlessStop):
+    # Stations
+    class Station(OrphanStop):
         is_a = [
             stop_name.exactly(1),
             stop_lat.exactly(1),
             stop_lon.exactly(1),
         ]
         equivalent_to = [
-            Stop &
-            location_type.value(1)
+            And([
+                Stop,
+                location_type.value(1)
+            ])
         ]
 
+    # Entrances or exits
     class EntranceOrExit(ChildStop):
         is_a = [
             stop_name.exactly(1),
@@ -432,23 +509,156 @@ with gtfs:
             stop_lon.exactly(1),
         ]
         equivalent_to = [
-            Stop &
-            location_type.value(2)
+            And([
+                Stop,
+                location_type.value(2),
+            ])
         ]
 
+    # Generic nodes
     class GenericNode(ChildStop):
         equivalent_to = [
-            Stop &
-            location_type.value(3)
+            And([
+                Stop,
+                location_type.value(3),
+            ])
         ]
 
+    # Boarding areas
     class BoardingArea(ChildStop):
         equivalent_to = [
-            Stop &
-            location_type.value(4)
+            And([
+                Stop,
+                location_type.value(4),
+            ])
         ]
 
     AllDisjoint([StopLocation, Platform, Station, EntranceOrExit, GenericNode, BoardingArea])
+
+    # Wheelchair accessibility
+    class RecordWithAccessibilityInformation(Thing):
+        pass
+
+    class ParentlessStopWithNoAccessibilityInformation(RecordWithAccessibilityInformation):
+        equivalent_to = [
+            And([
+                OrphanStop,
+                Or([
+                    wheelchair_boarding.value(0),
+                    wheelchair_boarding.exactly(0)
+                ])
+            ])
+        ]
+
+    class ParentlessStopWithPartialWheelchairAccessibility(RecordWithAccessibilityInformation):
+        equivalent_to = [
+            And([
+                OrphanStop,
+                wheelchair_boarding.value(1)
+            ])
+        ]
+
+    class ParentlessStopWithNoWheelchairAccessibility(RecordWithAccessibilityInformation):
+        equivalent_to = [
+            And([
+                OrphanStop,
+                wheelchair_boarding.value(2)
+            ])
+        ]
+
+
+    class ChildStopInheritingAccessibilityFromParent(RecordWithAccessibilityInformation):
+        equivalent_to = [
+            And([
+                ChildStop,
+                Or([
+                    wheelchair_boarding.value(0),
+                    wheelchair_boarding.exactly(0)
+                ])
+            ])
+        ]
+
+
+    class ChildStopWithAccessiblePathFromOutsideStation(RecordWithAccessibilityInformation):
+        equivalent_to = [
+            And([
+                ChildStop,
+                wheelchair_boarding.value(1)
+            ])
+        ]
+
+
+    class ChildStopWithNoAccessiblePathFromOutsideStation(RecordWithAccessibilityInformation):
+        equivalent_to = [
+            And([
+                ChildStop,
+                wheelchair_boarding.value(2)
+            ])
+        ]
+
+
+    class EntranceInheritingAccessibilityFromStation(RecordWithAccessibilityInformation):
+        equivalent_to = [
+            EntranceOrExit &
+            (
+                    wheelchair_boarding.value(0) |
+                    wheelchair_boarding.exactly(0)
+            )
+        ]
+
+
+    class EntranceWithWheelchairAccessibility(RecordWithAccessibilityInformation):
+        equivalent_to = [
+            EntranceOrExit &
+            wheelchair_boarding.value(1)
+        ]
+
+
+    class EntranceWithNoAccessiblePathToPlatforms(RecordWithAccessibilityInformation):
+        equivalent_to = [
+            EntranceOrExit &
+            wheelchair_boarding.value(2)
+        ]
+
+    AllDisjoint([
+        ParentlessStopWithNoAccessibilityInformation,
+        ParentlessStopWithPartialWheelchairAccessibility,
+        ParentlessStopWithNoWheelchairAccessibility,
+    ])
+
+    AllDisjoint([
+        ChildStopInheritingAccessibilityFromParent,
+        ChildStopWithNoAccessiblePathFromOutsideStation,
+        ChildStopWithAccessiblePathFromOutsideStation,
+    ])
+
+    AllDisjoint([
+        EntranceInheritingAccessibilityFromStation,
+        EntranceWithWheelchairAccessibility,
+        EntranceWithNoAccessiblePathToPlatforms,
+    ])
+
+    # stop_access
+    class StopWithStopAccessInformation(Stop):
+        pass
+
+    class StopAccessibleViaStationOnly(StopWithStopAccessInformation):
+        equivalent_to = [
+            And([
+                ChildStop,
+                StopOrPlatform,
+                stop_access.value(0)
+            ])
+        ]
+
+    class StopDirectlyAccessibleFromStreet(StopWithStopAccessInformation):
+        equivalent_to = [
+            And([
+                ChildStop,
+                StopOrPlatform,
+                stop_access.value(1)
+            ])
+        ]
 
 # region Routes
 
@@ -514,6 +724,182 @@ with gtfs:
         domain = [Route]
         range = [id]
 
+# region Routes DL
+
+    Route.is_a.extend([
+        route_id.exactly(1),
+        agency_id.max(1),
+        route_short_name.max(1),
+        route_long_name.max(1),
+        route_desc.max(1),
+        route_type.exactly(1),
+        route_url.max(1),
+        route_color.max(1),
+        route_text_color.max(1),
+        route_sort_order.max(1),
+        continuous_pickup.max(1),
+        continuous_drop_off.max(1),
+        network_id.max(1),
+        cemv_support.max(1)
+    ])
+
+    class TramRoute(Route):
+        equivalent_to = [
+            Route &
+            route_type.value(0)
+        ]
+
+    class SubwayRoute(Route):
+        equivalent_to = [
+            Route &
+            route_type.value(1)
+        ]
+
+    class RailRoute(Route):
+        equivalent_to = [
+            Route &
+            route_type.value(2)
+        ]
+
+    class BusRoute(Route):
+        equivalent_to = [
+            Route &
+            route_type.value(3)
+        ]
+
+    class FerryRoute(Route):
+        equivalent_to = [
+            Route &
+            route_type.value(4)
+        ]
+
+    class CableTramRoute(Route):
+        equivalent_to = [
+            Route &
+            route_type.value(5)
+        ]
+
+    class AerialLiftRoute(Route):
+        equivalent_to = [
+            Route &
+            route_type.value(6)
+        ]
+
+    class FunicularRoute(Route):
+        equivalent_to = [
+            Route &
+            route_type.value(7)
+        ]
+
+    class TrolleybusRoute(Route):
+        equivalent_to = [
+            Route &
+            route_type.value(11)
+        ]
+
+    class MonorailRoute(Route):
+        equivalent_to = [
+            Route &
+            route_type.value(12)
+        ]
+
+    AllDisjoint([
+        TramRoute,
+        SubwayRoute,
+        RailRoute,
+        BusRoute,
+        FerryRoute,
+        CableTramRoute,
+        AerialLiftRoute,
+        FunicularRoute,
+        TrolleybusRoute,
+        MonorailRoute,
+    ])
+
+    # Pickup and dropoff
+
+    class RecordWithPickupInformation(Thing):
+        pass
+
+    class ContinuousStoppingPickup(RecordWithPickupInformation):
+        equivalent_to = [
+            And([
+                Or([
+                    Route,
+                    StopTime
+                ]),
+                continuous_pickup.value(0)
+            ])
+        ]
+
+    class NoContinuousStoppingPickup(RecordWithPickupInformation):
+        equivalent_to = [
+            And([
+                Or([
+                    Route,
+                    StopTime
+                ]),
+                Or([
+                    continuous_pickup.value(1),
+                    continuous_pickup.exactly(0)
+                ])
+            ])
+        ]
+
+    class AgencyCoordinationRequiredForContinuousStoppingPickup(RecordWithPickupInformation):
+        equivalent_to = [
+            And([
+                Or([
+                    Route,
+                    StopTime
+                ]),
+                continuous_pickup.value(2)
+            ])
+        ]
+
+    class DriverCoordinationRequiredForContinuousStoppingPickup(RecordWithPickupInformation):
+        equivalent_to = [
+            And([
+                Or([
+                    Route,
+                    StopTime
+                ]),
+                continuous_pickup.value(3)
+            ])
+        ]
+
+    AllDisjoint([
+        ContinuousStoppingPickup,
+        NoContinuousStoppingPickup,
+        AgencyCoordinationRequiredForContinuousStoppingPickup,
+        DriverCoordinationRequiredForContinuousStoppingPickup,
+    ])
+
+    # CEMV informations
+    class RouteWithNoCEMVInformation(RecordWithCEMVInformation):
+        equivalent_to = [
+            Route &
+            cemv_support.value(0)
+        ]
+
+    class RouteWithCEMVSupport(RecordWithCEMVInformation):
+        equivalent_to = [
+            Route &
+            cemv_support.value(1)
+        ]
+
+    class RouteWithNoCEMVSupport(RecordWithCEMVInformation):
+        equivalent_to = [
+            Route &
+            cemv_support.value(2)
+        ]
+
+    AllDisjoint([
+        RouteWithNoCEMVInformation,
+        RouteWithCEMVSupport,
+        RouteWithNoCEMVSupport,
+    ])
+
 # region Trips
 
 with gtfs:
@@ -574,6 +960,124 @@ with gtfs:
     class safe_duration_offset(DataProperty, FunctionalProperty):
         domain = [Trip]
         range = [float]
+
+# region Trips DL
+
+    Trip.is_a.extend([
+        hasRoute.exactly(1),
+        hasService.exactly(1),
+        trip_id.exactly(1),
+        trip_headsign.max(1),
+        trip_short_name.max(1),
+        direction_id.max(1),
+        block_id.max(1),
+        hasShape.max(1),
+        wheelchair_accessible.max(1),
+        bikes_allowed.max(1),
+        cars_allowed.max(1)
+    ])
+
+    class TripInDirectionA(Trip):
+        equivalent_to = [
+            Trip &
+            direction_id.value(0)
+        ]
+
+    class TripInDirectionB(Trip):
+        equivalent_to = [
+            Trip &
+            direction_id.value(1)
+        ]
+
+    AllDisjoint([
+        TripInDirectionA,
+        TripInDirectionB,
+    ])
+
+    class TripWithNoWheelchairAccessibilityInformation(RecordWithAccessibilityInformation):
+        equivalent_to = [
+            Trip &
+            (
+                wheelchair_accessible.value(0) |
+                wheelchair_accessible.exactly(0)
+            )
+        ]
+
+    class TripWithAtLeastOneWheelchairSpace(RecordWithAccessibilityInformation):
+        equivalent_to = [
+            Trip &
+            wheelchair_accessible.value(1)
+        ]
+
+    class TripWithNoWheelchairAccessibility(RecordWithAccessibilityInformation):
+        equivalent_to = [
+            Trip &
+            wheelchair_accessible.value(2)
+        ]
+
+    AllDisjoint([
+        TripWithNoWheelchairAccessibilityInformation,
+        TripWithAtLeastOneWheelchairSpace,
+        TripWithNoWheelchairAccessibility
+    ])
+
+    # bikes_allowed
+
+    class TripWithNoBikesAllowedInformation(Trip):
+        equivalent_to = [
+            Trip &
+            (
+                bikes_allowed.value(0) |
+                bikes_allowed.exactly(0)
+            )
+        ]
+
+    class TripWithAtLeastOneBicycleSpace(Trip):
+        equivalent_to = [
+            Trip &
+            bikes_allowed.value(1)
+        ]
+
+    class TripWithNoBicycleSpaces(Trip):
+        equivalent_to = [
+            Trip &
+            bikes_allowed.value(2)
+        ]
+
+    AllDisjoint([
+        TripWithNoBikesAllowedInformation,
+        TripWithAtLeastOneBicycleSpace,
+        TripWithNoBicycleSpaces
+    ])
+
+    # cars_allowed
+
+    class TripWithNoCarsAllowedInformation(Trip):
+        equivalent_to = [
+            Trip &
+            (
+                cars_allowed.value(0) |
+                cars_allowed.exactly(0)
+            )
+        ]
+
+    class TripWithAtLeastOneCarSpace(Trip):
+        equivalent_to = [
+            Trip &
+            cars_allowed.value(1)
+        ]
+
+    class TripWithNoCarSpaces(Trip):
+        equivalent_to = [
+            Trip &
+            cars_allowed.value(2)
+        ]
+
+    AllDisjoint([
+        TripWithNoCarsAllowedInformation,
+        TripWithAtLeastOneCarSpace,
+        TripWithNoCarSpaces
+    ])
 
 # region Stop Times
 
@@ -648,6 +1152,46 @@ with gtfs:
         domain = [StopTime]
         range = [BookingRule]
 
+# region Stop Times DL
+
+    # StopTime.is_a.extend([
+    #     trip_id.exactly(1),
+    #     arrival_time.max(1),
+    #     departure_time.max(1),
+    #     stop_id.max(1),
+    #     hasLocationGroup.max(1),
+    #     hasLocation.max(1),
+    #     stop_sequence.exactly(1),
+    #     stop_headsign.max(1),
+    #     start_pickup_drop_off_window.max(1),
+    #     end_pickup_drop_off_window.max(1),
+    #     pickup_type.max(1),
+    #     drop_off_type.max(1),
+    #     continuous_pickup.max(1),
+    #     continuous_drop_off.max(1),
+    #     shape_dist_traveled.max(1),
+    #     timepoint.max(1),
+    #     pickup_booking_rule_id.max(1),
+    #     drop_off_booking_rule_id.max(1)
+    # ])
+    #
+    # class ApproximatedStopTime(StopTime):
+    #     equivalent_to = [
+    #         And([
+    #             StopTime,
+    #             timepoint.value(0)
+    #         ])
+    #     ]
+    #
+    # class ExactStopTime(StopTime):
+    #     equivalent_to = [
+    #         And([
+    #             StopTime,
+    #             timepoint.value(1)
+    #         ])
+    #     ]
+
+
 # region Services
 
 with gtfs:
@@ -709,6 +1253,198 @@ with gtfs:
     class exception_type(DataProperty, FunctionalProperty):
         domain = [CalendarDateService]
         range = [OneOf([1, 2])]
+
+# region Service DL
+
+
+    Service.is_a.extend([
+        service_id.exactly(1),
+    ])
+
+    CalendarService.is_a.extend([
+        monday.exactly(1),
+        tuesday.exactly(1),
+        wednesday.exactly(1),
+        thursday.exactly(1),
+        friday.exactly(1),
+        saturday.exactly(1),
+        sunday.exactly(1),
+        start_date.exactly(1),
+        end_date.exactly(1),
+    ])
+
+    class ServiceAvailableMonday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                monday.value(1)
+            ])
+        ]
+
+    class ServiceNotAvailableMonday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                monday.value(0)
+            ])
+        ]
+
+    AllDisjoint([
+        ServiceAvailableMonday,
+        ServiceNotAvailableMonday,
+    ])
+
+    class ServiceAvailableTuesday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                tuesday.value(1)
+            ])
+        ]
+
+    class ServiceNotAvailableTuesday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                tuesday.value(0)
+            ])
+        ]
+
+    AllDisjoint([
+        ServiceAvailableTuesday,
+        ServiceNotAvailableTuesday,
+    ])
+
+    class ServiceAvailableWednesday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                wednesday.value(1)
+            ])
+        ]
+
+    class ServiceNotAvailableWednesday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                wednesday.value(0)
+            ])
+        ]
+
+    AllDisjoint([
+        ServiceAvailableWednesday,
+        ServiceNotAvailableWednesday,
+    ])
+
+    class ServiceAvailableThursday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                thursday.value(1)
+            ])
+        ]
+
+    class ServiceNotAvailableThursday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                thursday.value(0)
+            ])
+        ]
+
+    AllDisjoint([
+        ServiceAvailableThursday,
+        ServiceNotAvailableThursday,
+    ])
+
+    class ServiceAvailableFriday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                friday.value(1)
+            ])
+        ]
+
+    class ServiceNotAvailableFriday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                friday.value(0)
+            ])
+        ]
+
+    AllDisjoint([
+        ServiceAvailableFriday,
+        ServiceNotAvailableFriday,
+    ])
+
+    class ServiceAvailableSaturday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                saturday.value(1)
+            ])
+        ]
+
+    class ServiceNotAvailableSaturday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                saturday.value(0)
+            ])
+        ]
+
+    AllDisjoint([
+        ServiceAvailableSaturday,
+        ServiceNotAvailableSaturday,
+    ])
+
+    class ServiceAvailableSunday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                sunday.value(1)
+            ])
+        ]
+
+    class ServiceNotAvailableSunday(CalendarService):
+        equivalent_to = [
+            And([
+                CalendarService,
+                sunday.value(0)
+            ])
+        ]
+
+    AllDisjoint([
+        ServiceAvailableSunday,
+        ServiceNotAvailableSunday,
+    ])
+
+    CalendarDateService.is_a.extend([
+        date.exactly(1),
+        exception_type.exactly(1),
+    ])
+
+    class ServicedAdded(CalendarDateService):
+        equivalent_to = [
+            And([
+                CalendarDateService,
+                exception_type.value(1)
+            ])
+        ]
+
+    class ServicedRemoved(CalendarDateService):
+        equivalent_to = [
+            And([
+                CalendarDateService,
+                exception_type.value(2)
+            ])
+        ]
+
+    AllDisjoint([
+        ServicedAdded,
+        ServicedRemoved,
+    ])
 
 def build_ontology():
 

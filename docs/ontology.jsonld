@@ -10,6 +10,1836 @@
     } ]
   } ]
 }, {
+  "@id" : "_:genid1002",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"
+    }, {
+      "@id" : "_:genid1004"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1004",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid1008"
+    }, {
+      "@id" : "_:genid1006"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1006",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
+  } ]
+}, {
+  "@id" : "_:genid1008",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
+  } ]
+}, {
+  "@id" : "_:genid1010",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+    }, {
+      "@id" : "_:genid1012"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1012",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
+  } ]
+}, {
+  "@id" : "_:genid1014",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat"
+  } ]
+}, {
+  "@id" : "_:genid1015",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon"
+  } ]
+}, {
+  "@id" : "_:genid1016",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name"
+  } ]
+}, {
+  "@id" : "_:genid1017",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"
+    }, {
+      "@id" : "_:genid1019"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1019",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
+  } ]
+}, {
+  "@id" : "_:genid1021",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"
+    }, {
+      "@id" : "_:genid1023"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1023",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
+  } ]
+}, {
+  "@id" : "_:genid1025",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "_:genid1027"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1027",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "4"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type"
+  } ]
+}, {
+  "@id" : "_:genid1029",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "_:genid1031"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1031",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "7"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type"
+  } ]
+}, {
+  "@id" : "_:genid1033",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+    }, {
+      "@id" : "_:genid1035"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1035",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "3"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
+  } ]
+}, {
+  "@id" : "_:genid1037",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "_:genid1039"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1039",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "12"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type"
+  } ]
+}, {
+  "@id" : "_:genid1041",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid1049"
+    }, {
+      "@id" : "_:genid1043"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1043",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid1047"
+    }, {
+      "@id" : "_:genid1045"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1045",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#continuous_pickup"
+  } ]
+}, {
+  "@id" : "_:genid1047",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#continuous_pickup"
+  } ]
+}, {
+  "@id" : "_:genid1049",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1052",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+    }, {
+      "@id" : "_:genid1054"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1054",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#hasParentStation"
+  } ]
+}, {
+  "@id" : "_:genid1056",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+    }, {
+      "@id" : "_:genid1058"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1058",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#isParentStationOf"
+  } ]
+}, {
+  "@id" : "_:genid1060",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#OrphanStop"
+    }, {
+      "@id" : "_:genid1062"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1062",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid1066"
+    }, {
+      "@id" : "_:genid1064"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1064",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
+  } ]
+}, {
+  "@id" : "_:genid1066",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
+  } ]
+}, {
+  "@id" : "_:genid1068",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#OrphanStop"
+    }, {
+      "@id" : "_:genid1070"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1070",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
+  } ]
+}, {
+  "@id" : "_:genid1072",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#OrphanStop"
+    }, {
+      "@id" : "_:genid1074"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1074",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
+  } ]
+}, {
+  "@id" : "_:genid1076",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1079",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "_:genid1081"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1081",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type"
+  } ]
+}, {
+  "@id" : "_:genid1083",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_id"
+  } ]
+}, {
+  "@id" : "_:genid1084",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type"
+  } ]
+}, {
+  "@id" : "_:genid1085",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_id"
+  } ]
+}, {
+  "@id" : "_:genid1086",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cemv_support"
+  } ]
+}, {
+  "@id" : "_:genid1087",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#continuous_drop_off"
+  } ]
+}, {
+  "@id" : "_:genid1088",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#continuous_pickup"
+  } ]
+}, {
+  "@id" : "_:genid1089",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#network_id"
+  } ]
+}, {
+  "@id" : "_:genid1090",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_color"
+  } ]
+}, {
+  "@id" : "_:genid1091",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_desc"
+  } ]
+}, {
+  "@id" : "_:genid1092",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_long_name"
+  } ]
+}, {
+  "@id" : "_:genid1093",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_short_name"
+  } ]
+}, {
+  "@id" : "_:genid1094",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_sort_order"
+  } ]
+}, {
+  "@id" : "_:genid1095",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_text_color"
+  } ]
+}, {
+  "@id" : "_:genid1096",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_url"
+  } ]
+}, {
+  "@id" : "_:genid1098",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "_:genid1100"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1100",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cemv_support"
+  } ]
+}, {
+  "@id" : "_:genid1102",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "_:genid1104"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1104",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cemv_support"
+  } ]
+}, {
+  "@id" : "_:genid1106",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "_:genid1108"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1108",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cemv_support"
+  } ]
+}, {
+  "@id" : "_:genid1110",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1112"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1112",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#friday"
+  } ]
+}, {
+  "@id" : "_:genid1114",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1116"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1116",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#monday"
+  } ]
+}, {
+  "@id" : "_:genid1118",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1120"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1120",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#saturday"
+  } ]
+}, {
+  "@id" : "_:genid1122",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1124"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1124",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#sunday"
+  } ]
+}, {
+  "@id" : "_:genid1126",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1128"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1128",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#thursday"
+  } ]
+}, {
+  "@id" : "_:genid1130",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1132"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1132",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#tuesday"
+  } ]
+}, {
+  "@id" : "_:genid1134",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1136"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1136",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wednesday"
+  } ]
+}, {
+  "@id" : "_:genid1138",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1140"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1140",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#friday"
+  } ]
+}, {
+  "@id" : "_:genid1142",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1144"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1144",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#monday"
+  } ]
+}, {
+  "@id" : "_:genid1146",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1148"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1148",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#saturday"
+  } ]
+}, {
+  "@id" : "_:genid1150",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1152"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1152",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#sunday"
+  } ]
+}, {
+  "@id" : "_:genid1154",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1156"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1156",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#thursday"
+  } ]
+}, {
+  "@id" : "_:genid1158",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1160"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1160",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#tuesday"
+  } ]
+}, {
+  "@id" : "_:genid1162",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+    }, {
+      "@id" : "_:genid1164"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1164",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wednesday"
+  } ]
+}, {
+  "@id" : "_:genid1166",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+    }, {
+      "@id" : "_:genid1168"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1168",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
+  } ]
+}, {
+  "@id" : "_:genid1170",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat"
+  } ]
+}, {
+  "@id" : "_:genid1171",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon"
+  } ]
+}, {
+  "@id" : "_:genid1172",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name"
+  } ]
+}, {
+  "@id" : "_:genid1173",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#hasLevel"
+  } ]
+}, {
+  "@id" : "_:genid1174",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#hasParentStation"
+  } ]
+}, {
+  "@id" : "_:genid1175",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_id"
+  } ]
+}, {
+  "@id" : "_:genid1176",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
+  } ]
+}, {
+  "@id" : "_:genid1177",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#platform_code"
+  } ]
+}, {
+  "@id" : "_:genid1178",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_access"
+  } ]
+}, {
+  "@id" : "_:genid1179",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_code"
+  } ]
+}, {
+  "@id" : "_:genid1180",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_desc"
+  } ]
+}, {
+  "@id" : "_:genid1181",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat"
+  } ]
+}, {
+  "@id" : "_:genid1182",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon"
+  } ]
+}, {
+  "@id" : "_:genid1183",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name"
+  } ]
+}, {
+  "@id" : "_:genid1184",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_timezone"
+  } ]
+}, {
+  "@id" : "_:genid1185",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_url"
+  } ]
+}, {
+  "@id" : "_:genid1186",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#tts_stop_name"
+  } ]
+}, {
+  "@id" : "_:genid1187",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
+  } ]
+}, {
+  "@id" : "_:genid1188",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#zone_id"
+  } ]
+}, {
+  "@id" : "_:genid1190",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
+    }, {
+      "@id" : "_:genid1192"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1192",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_access"
+  } ]
+}, {
+  "@id" : "_:genid1195",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
+    }, {
+      "@id" : "_:genid1197"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1197",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_access"
+  } ]
+}, {
+  "@id" : "_:genid1200",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#OrphanStop"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1203",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+    }, {
+      "@id" : "_:genid1205"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1205",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid1209"
+    }, {
+      "@id" : "_:genid1207"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1207",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
+  } ]
+}, {
+  "@id" : "_:genid1209",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
+  } ]
+}, {
+  "@id" : "_:genid1211",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat"
+  } ]
+}, {
+  "@id" : "_:genid1212",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon"
+  } ]
+}, {
+  "@id" : "_:genid1213",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name"
+  } ]
+}, {
+  "@id" : "_:genid1216",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "_:genid1218"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1218",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type"
+  } ]
+}, {
+  "@id" : "_:genid1220",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "_:genid1222"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1222",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type"
+  } ]
+}, {
+  "@id" : "_:genid1224",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#hasRoute"
+  } ]
+}, {
+  "@id" : "_:genid1225",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#hasService"
+  } ]
+}, {
+  "@id" : "_:genid1226",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#hasShape"
+  } ]
+}, {
+  "@id" : "_:genid1227",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#trip_id"
+  } ]
+}, {
+  "@id" : "_:genid1228",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#bikes_allowed"
+  } ]
+}, {
+  "@id" : "_:genid1229",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#block_id"
+  } ]
+}, {
+  "@id" : "_:genid1230",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cars_allowed"
+  } ]
+}, {
+  "@id" : "_:genid1231",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#direction_id"
+  } ]
+}, {
+  "@id" : "_:genid1232",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#trip_headsign"
+  } ]
+}, {
+  "@id" : "_:genid1233",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#trip_short_name"
+  } ]
+}, {
+  "@id" : "_:genid1234",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible"
+  } ]
+}, {
+  "@id" : "_:genid1236",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    }, {
+      "@id" : "_:genid1238"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1238",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#direction_id"
+  } ]
+}, {
+  "@id" : "_:genid1240",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    }, {
+      "@id" : "_:genid1242"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1242",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#direction_id"
+  } ]
+}, {
+  "@id" : "_:genid1244",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    }, {
+      "@id" : "_:genid1246"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1246",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#bikes_allowed"
+  } ]
+}, {
+  "@id" : "_:genid1248",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    }, {
+      "@id" : "_:genid1250"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1250",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cars_allowed"
+  } ]
+}, {
+  "@id" : "_:genid1252",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    }, {
+      "@id" : "_:genid1254"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1254",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible"
+  } ]
+}, {
+  "@id" : "_:genid1256",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    }, {
+      "@id" : "_:genid1258"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1258",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#bikes_allowed"
+  } ]
+}, {
+  "@id" : "_:genid1260",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    }, {
+      "@id" : "_:genid1262"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1262",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid1266"
+    }, {
+      "@id" : "_:genid1264"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1264",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#bikes_allowed"
+  } ]
+}, {
+  "@id" : "_:genid1266",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#bikes_allowed"
+  } ]
+}, {
+  "@id" : "_:genid1268",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    }, {
+      "@id" : "_:genid1270"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1270",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cars_allowed"
+  } ]
+}, {
+  "@id" : "_:genid1272",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    }, {
+      "@id" : "_:genid1274"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1274",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid1278"
+    }, {
+      "@id" : "_:genid1276"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1276",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cars_allowed"
+  } ]
+}, {
+  "@id" : "_:genid1278",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cars_allowed"
+  } ]
+}, {
+  "@id" : "_:genid1280",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    }, {
+      "@id" : "_:genid1282"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1282",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible"
+  } ]
+}, {
+  "@id" : "_:genid1284",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    }, {
+      "@id" : "_:genid1286"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1286",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid1290"
+    }, {
+      "@id" : "_:genid1288"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1288",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible"
+  } ]
+}, {
+  "@id" : "_:genid1290",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible"
+  } ]
+}, {
+  "@id" : "_:genid1292",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "_:genid1294"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1294",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "11"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type"
+  } ]
+}, {
+  "@id" : "_:genid1296",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#AerialLiftRoute"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#BusRoute"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#CableTramRoute"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#FerryRoute"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#FunicularRoute"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#MonorailRoute"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#RailRoute"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#SubwayRoute"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#TramRoute"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#TrolleybusRoute"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1307",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Agency"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#BookingRule"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Level"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Location"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#LocationGroup"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Shape"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1319",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#BoardingArea"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#GenericNode"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Platform"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Station"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopLocation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1326",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStopInheritingAccessibilityFromParent"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStopWithAccessiblePathFromOutsideStation"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStopWithNoAccessiblePathFromOutsideStation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1330",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceInheritingAccessibilityFromStation"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceWithNoAccessiblePathToPlatforms"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceWithWheelchairAccessibility"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1334",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoAccessibilityInformation"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoWheelchairAccessibility"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithPartialWheelchairAccessibility"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1338",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#RouteWithCEMVSupport"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVInformation"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVSupport"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1342",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneBicycleSpace"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoBicycleSpaces"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoBikesAllowedInformation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1346",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneCarSpace"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoCarSpaces"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoCarsAllowedInformation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid1350",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneWheelchairSpace"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibility"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibilityInformation"
+    } ]
+  } ]
+}, {
   "@id" : "_:genid184",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#onDatatype" : [ {
@@ -2133,17 +3963,237 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid917",
+  "@id" : "_:genid916",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "_:genid918"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid918",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "6"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type"
+  } ]
+}, {
+  "@id" : "_:genid920",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_name"
+  } ]
+}, {
+  "@id" : "_:genid921",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_timezone"
+  } ]
+}, {
+  "@id" : "_:genid922",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_url"
+  } ]
+}, {
+  "@id" : "_:genid923",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_email"
+  } ]
+}, {
+  "@id" : "_:genid924",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_fare_url"
+  } ]
+}, {
+  "@id" : "_:genid925",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_id"
+  } ]
+}, {
+  "@id" : "_:genid926",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_lang"
+  } ]
+}, {
+  "@id" : "_:genid927",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_phone"
+  } ]
+}, {
+  "@id" : "_:genid928",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cemv_support"
+  } ]
+}, {
+  "@id" : "_:genid930",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid934"
+    }, {
+      "@id" : "_:genid932"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid932",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#continuous_pickup"
+  } ]
+}, {
+  "@id" : "_:genid934",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid937",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Agency"
+    }, {
+      "@id" : "_:genid939"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid939",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cemv_support"
+  } ]
+}, {
+  "@id" : "_:genid941",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Agency"
+    }, {
+      "@id" : "_:genid943"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid943",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid947"
+    }, {
+      "@id" : "_:genid945"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid945",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cemv_support"
+  } ]
+}, {
+  "@id" : "_:genid947",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cemv_support"
+  } ]
+}, {
+  "@id" : "_:genid949",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Agency"
+    }, {
+      "@id" : "_:genid951"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid951",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#cemv_support"
+  } ]
+}, {
+  "@id" : "_:genid953",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
     }, {
-      "@id" : "_:genid919"
+      "@id" : "_:genid955"
     } ]
   } ]
 }, {
-  "@id" : "_:genid919",
+  "@id" : "_:genid955",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
@@ -2153,299 +4203,203 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
   } ]
 }, {
-  "@id" : "_:genid924",
+  "@id" : "_:genid957",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
     }, {
-      "@id" : "_:genid926"
+      "@id" : "_:genid959"
     } ]
   } ]
 }, {
-  "@id" : "_:genid926",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#hasParentStation"
-  } ]
-}, {
-  "@id" : "_:genid928",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
-    }, {
-      "@id" : "_:genid930"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid930",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "2"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
-  } ]
-}, {
-  "@id" : "_:genid932",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat"
-  } ]
-}, {
-  "@id" : "_:genid933",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon"
-  } ]
-}, {
-  "@id" : "_:genid934",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name"
-  } ]
-}, {
-  "@id" : "_:genid935",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
-    }, {
-      "@id" : "_:genid937"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid937",
+  "@id" : "_:genid959",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "3"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type"
   } ]
 }, {
-  "@id" : "_:genid939",
+  "@id" : "_:genid961",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+    }, {
+      "@id" : "_:genid963"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid963",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "5"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type"
+  } ]
+}, {
+  "@id" : "_:genid968",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
     }, {
-      "@id" : "_:genid941"
+      "@id" : "_:genid970"
     } ]
   } ]
 }, {
-  "@id" : "_:genid941",
+  "@id" : "_:genid970",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "0"
+    "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#hasParentStation"
   } ]
 }, {
-  "@id" : "_:genid943",
+  "@id" : "_:genid972",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
     }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
+      "@id" : "_:genid974"
     } ]
   } ]
 }, {
-  "@id" : "_:genid947",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
-    }, {
-      "@id" : "_:genid949"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid949",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
-  } ]
-}, {
-  "@id" : "_:genid951",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat"
-  } ]
-}, {
-  "@id" : "_:genid952",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon"
-  } ]
-}, {
-  "@id" : "_:genid953",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name"
-  } ]
-}, {
-  "@id" : "_:genid955",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStop"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid958",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
-    }, {
-      "@id" : "_:genid960"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid960",
+  "@id" : "_:genid974",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "_:genid964"
+      "@id" : "_:genid978"
     }, {
-      "@id" : "_:genid962"
+      "@id" : "_:genid976"
     } ]
   } ]
 }, {
-  "@id" : "_:genid962",
+  "@id" : "_:genid976",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "0"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
   } ]
 }, {
-  "@id" : "_:genid964",
+  "@id" : "_:genid978",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "0"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
   } ]
 }, {
-  "@id" : "_:genid966",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat"
-  } ]
-}, {
-  "@id" : "_:genid967",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon"
-  } ]
-}, {
-  "@id" : "_:genid968",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name"
-  } ]
-}, {
-  "@id" : "_:genid972",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
+  "@id" : "_:genid980",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Agency"
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
     }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#BookingRule"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Level"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Location"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#LocationGroup"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Shape"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
-    }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+      "@id" : "_:genid982"
     } ]
   } ]
 }, {
+  "@id" : "_:genid982",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
+  } ]
+}, {
   "@id" : "_:genid984",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#BoardingArea"
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
     }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"
+      "@id" : "_:genid986"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid986",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"
+  } ]
+}, {
+  "@id" : "_:genid988",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid992"
     }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#GenericNode"
+      "@id" : "_:genid990"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid990",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#continuous_pickup"
+  } ]
+}, {
+  "@id" : "_:genid992",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
     }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Platform"
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid995",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid999"
     }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#Station"
+      "@id" : "_:genid997"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid997",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "3"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#continuous_pickup"
+  } ]
+}, {
+  "@id" : "_:genid999",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
     }, {
-      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopLocation"
+      "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
     } ]
   } ]
 }, {
@@ -2502,15 +4456,78 @@
     "@value" : "0.1.0"
   } ]
 }, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#AerialLiftRoute",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid916"
+  } ]
+}, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Agency",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation"
+  }, {
+    "@id" : "_:genid920"
+  }, {
+    "@id" : "_:genid921"
+  }, {
+    "@id" : "_:genid922"
+  }, {
+    "@id" : "_:genid923"
+  }, {
+    "@id" : "_:genid924"
+  }, {
+    "@id" : "_:genid925"
+  }, {
+    "@id" : "_:genid926"
+  }, {
+    "@id" : "_:genid927"
+  }, {
+    "@id" : "_:genid928"
   } ],
   "http://www.w3.org/2002/07/owl#hasKey" : [ {
     "@list" : [ {
       "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_id"
     } ]
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#AgencyCoordinationRequiredForContinuousStoppingPickup",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid930"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#AgencyWithCEMVSupport",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Agency"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid937"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#AgencyWithNoCEMVInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Agency"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid941"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#AgencyWithoutCEMVSupport",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Agency"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid949"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#BoardingArea",
@@ -2519,7 +4536,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid917"
+    "@id" : "_:genid953"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#BookingRule",
@@ -2528,16 +4545,22 @@
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ]
 }, {
-  "@id" : "https://transit.ac.uk/ontologies/gtfs#CEMVSupportedRecord",
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#BusRoute",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid957"
   } ]
 }, {
-  "@id" : "https://transit.ac.uk/ontologies/gtfs#CEMVUnsupportedRecord",
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#CableTramRoute",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid961"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarDateService",
@@ -2573,10 +4596,66 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStop"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#OrphanStop"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid924"
+    "@id" : "_:genid968"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStopInheritingAccessibilityFromParent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid972"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStopWithAccessiblePathFromOutsideStation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid980"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStopWithNoAccessiblePathFromOutsideStation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid984"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ContinuousStoppingPickup",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid988"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#DriverCoordinationRequiredForContinuousStoppingPickup",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid995"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceInheritingAccessibilityFromStation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStopInheritingAccessibilityFromParent"
+  }, {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1002"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit",
@@ -2584,14 +4663,54 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
   }, {
-    "@id" : "_:genid932"
+    "@id" : "_:genid1014"
   }, {
-    "@id" : "_:genid933"
+    "@id" : "_:genid1015"
   }, {
-    "@id" : "_:genid934"
+    "@id" : "_:genid1016"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid928"
+    "@id" : "_:genid1010"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceWithNoAccessiblePathToPlatforms",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStopWithNoAccessiblePathFromOutsideStation"
+  }, {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1017"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceWithWheelchairAccessibility",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStopWithAccessiblePathFromOutsideStation"
+  }, {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1021"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#FerryRoute",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1025"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#FunicularRoute",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1029"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#GenericNode",
@@ -2600,7 +4719,7 @@
     "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid935"
+    "@id" : "_:genid1033"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Level",
@@ -2621,28 +4740,139 @@
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ]
 }, {
-  "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStop",
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#MonorailRoute",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1037"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#NoContinuousStoppingPickup",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1041"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#OrphanStop",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid939"
+    "@id" : "_:genid1052"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentStop",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1056"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoAccessibilityInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#OrphanStop"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1060"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoWheelchairAccessibility",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#OrphanStop"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1068"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithPartialWheelchairAccessibility",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#OrphanStop"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1072"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Platform",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#ChildStop"
+  }, {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid943"
+    "@id" : "_:genid1076"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#RailRoute",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1079"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithAccessibilityInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Route",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation"
+  }, {
+    "@id" : "_:genid1083"
+  }, {
+    "@id" : "_:genid1084"
+  }, {
+    "@id" : "_:genid1085"
+  }, {
+    "@id" : "_:genid1086"
+  }, {
+    "@id" : "_:genid1087"
+  }, {
+    "@id" : "_:genid1088"
+  }, {
+    "@id" : "_:genid1089"
+  }, {
+    "@id" : "_:genid1090"
+  }, {
+    "@id" : "_:genid1091"
+  }, {
+    "@id" : "_:genid1092"
+  }, {
+    "@id" : "_:genid1093"
+  }, {
+    "@id" : "_:genid1094"
+  }, {
+    "@id" : "_:genid1095"
+  }, {
+    "@id" : "_:genid1096"
   } ],
   "http://www.w3.org/2002/07/owl#hasKey" : [ {
     "@list" : [ {
@@ -2650,10 +4880,169 @@
     } ]
   } ]
 }, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#RouteWithCEMVSupport",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation"
+  }, {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1098"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation"
+  }, {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1102"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVSupport",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation"
+  }, {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1106"
+  } ]
+}, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Service",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableFriday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1110"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableMonday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1114"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableSaturday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1118"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableSunday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1122"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableThursday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1126"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableTuesday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1130"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceAvailableWednesday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1134"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableFriday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1138"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableMonday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1142"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableSaturday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1146"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableSunday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1150"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableThursday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1154"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableTuesday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1158"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableWednesday",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1162"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Shape",
@@ -2665,22 +5054,54 @@
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Station",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#ParentlessStop"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#OrphanStop"
   }, {
-    "@id" : "_:genid951"
+    "@id" : "_:genid1170"
   }, {
-    "@id" : "_:genid952"
+    "@id" : "_:genid1171"
   }, {
-    "@id" : "_:genid953"
+    "@id" : "_:genid1172"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid947"
+    "@id" : "_:genid1166"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithAccessibilityInformation"
+  }, {
+    "@id" : "_:genid1173"
+  }, {
+    "@id" : "_:genid1174"
+  }, {
+    "@id" : "_:genid1175"
+  }, {
+    "@id" : "_:genid1176"
+  }, {
+    "@id" : "_:genid1177"
+  }, {
+    "@id" : "_:genid1178"
+  }, {
+    "@id" : "_:genid1179"
+  }, {
+    "@id" : "_:genid1180"
+  }, {
+    "@id" : "_:genid1181"
+  }, {
+    "@id" : "_:genid1182"
+  }, {
+    "@id" : "_:genid1183"
+  }, {
+    "@id" : "_:genid1184"
+  }, {
+    "@id" : "_:genid1185"
+  }, {
+    "@id" : "_:genid1186"
+  }, {
+    "@id" : "_:genid1187"
+  }, {
+    "@id" : "_:genid1188"
   } ],
   "http://www.w3.org/2002/07/owl#hasKey" : [ {
     "@list" : [ {
@@ -2688,13 +5109,37 @@
     } ]
   } ]
 }, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#StopAccessibleViaStationOnly",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Platform"
+  }, {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#StopWithStopAccessInformation"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1190"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#StopDirectlyAccessibleFromStreet",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Platform"
+  }, {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#StopWithStopAccessInformation"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1195"
+  } ]
+}, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#StopLocation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#OrphanStop"
+  }, {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid955"
+    "@id" : "_:genid1200"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#StopOrPlatform",
@@ -2702,20 +5147,20 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   }, {
-    "@id" : "_:genid966"
+    "@id" : "_:genid1211"
   }, {
-    "@id" : "_:genid967"
+    "@id" : "_:genid1212"
   }, {
-    "@id" : "_:genid968"
+    "@id" : "_:genid1213"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid958"
+    "@id" : "_:genid1203"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation"
   } ],
   "http://www.w3.org/2002/07/owl#hasKey" : [ {
     "@list" : [ {
@@ -2725,10 +5170,56 @@
     } ]
   } ]
 }, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#StopWithStopAccessInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#SubwayRoute",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1216"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TramRoute",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1220"
+  } ]
+}, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#RecordWithAccessibilityInformation"
+  }, {
+    "@id" : "_:genid1224"
+  }, {
+    "@id" : "_:genid1225"
+  }, {
+    "@id" : "_:genid1226"
+  }, {
+    "@id" : "_:genid1227"
+  }, {
+    "@id" : "_:genid1228"
+  }, {
+    "@id" : "_:genid1229"
+  }, {
+    "@id" : "_:genid1230"
+  }, {
+    "@id" : "_:genid1231"
+  }, {
+    "@id" : "_:genid1232"
+  }, {
+    "@id" : "_:genid1233"
+  }, {
+    "@id" : "_:genid1234"
   } ],
   "http://www.w3.org/2002/07/owl#hasKey" : [ {
     "@list" : [ {
@@ -2736,8 +5227,119 @@
     } ]
   } ]
 }, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TripInDirectionA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#TripInDirectionB"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1236"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TripInDirectionB",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1240"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneBicycleSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1244"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneCarSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1248"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneWheelchairSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1252"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoBicycleSpaces",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1256"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoBikesAllowedInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1260"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoCarSpaces",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1268"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoCarsAllowedInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1272"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibility",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1280"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibilityInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1284"
+  } ]
+}, {
+  "@id" : "https://transit.ac.uk/ontologies/gtfs#TrolleybusRoute",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid1292"
+  } ]
+}, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_email",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency."
@@ -2754,7 +5356,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_fare_url",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency's fares."
@@ -2788,7 +5390,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_lang",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset."
@@ -2805,7 +5407,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Full name of the transit agency."
@@ -2822,7 +5424,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_phone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."
@@ -2839,7 +5441,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_timezone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone."
@@ -2856,7 +5458,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#agency_url",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "URL of the transit agency."
@@ -2873,7 +5475,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#arrival_time",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -2882,7 +5484,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#bikes_allowed",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -2891,7 +5493,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#block_id",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -2900,7 +5502,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#cars_allowed",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -2909,7 +5511,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#cemv_support",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Indicates if riders can access a transit service (i.e., trip) associated with this agency by using a contactless EMV (Europay, Mastercard, and Visa) card or mobile device as fare media at a fare validator (such as in pay-as-you-go or open-loop systems). This field does not indicate that cEMV can be used to purchase other fare products or to add value to another fare media.\\n Support for cEMVs should only be indicated if all services under this agency are accessible with the use of cEMV cards or mobile devices as fare media.#"
@@ -2936,7 +5538,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#continuous_drop_off",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid832"
   } ],
@@ -2945,7 +5547,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#continuous_pickup",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid840"
   } ],
@@ -2974,7 +5576,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#date",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarDateService"
   } ],
@@ -2993,7 +5595,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#departure_time",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3002,7 +5604,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#direction_id",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -3011,7 +5613,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3020,7 +5622,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#drop_off_type",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3039,7 +5641,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#end_date",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
@@ -3048,7 +5650,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3057,7 +5659,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#exception_type",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarDateService"
   } ],
@@ -3066,7 +5668,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#friday",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
@@ -3075,7 +5677,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#hasLevel",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3084,7 +5686,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#hasLocation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3093,7 +5695,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#hasLocationGroup",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3102,16 +5704,19 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#hasParentStation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://transit.ac.uk/ontologies/gtfs#isParentStationOf"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#hasRoute",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -3120,7 +5725,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#hasService",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -3129,7 +5734,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#hasShape",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -3138,7 +5743,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#hasStop",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3147,7 +5752,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#hasTrip",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3172,9 +5777,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
-  } ],
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://transit.ac.uk/ontologies/gtfs#hasParentStation"
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#language_code",
@@ -3210,7 +5812,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#location_type",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3225,7 +5827,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#monday",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
@@ -3234,7 +5836,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#network_id",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
@@ -3253,7 +5855,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#operatedBy",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
@@ -3278,7 +5880,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3287,7 +5889,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#pickup_type",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3296,7 +5898,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#platform_code",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3305,7 +5907,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_color",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
@@ -3314,7 +5916,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_desc",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
@@ -3323,7 +5925,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_id",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
@@ -3332,7 +5934,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_long_name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
@@ -3341,7 +5943,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_short_name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
@@ -3350,7 +5952,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_sort_order",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
@@ -3359,7 +5961,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_text_color",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
@@ -3368,7 +5970,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_type",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
@@ -3377,7 +5979,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#route_url",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Route"
   } ],
@@ -3386,7 +5988,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#safe_duration_factor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -3395,7 +5997,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#safe_duration_offset",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -3404,7 +6006,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#saturday",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
@@ -3413,7 +6015,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#service_id",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Service"
   } ],
@@ -3422,7 +6024,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3431,7 +6033,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#start_date",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
@@ -3440,7 +6042,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3449,7 +6051,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_access",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3458,7 +6060,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_code",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3467,7 +6069,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_desc",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3476,7 +6078,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_headsign",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3485,7 +6087,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_id",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3494,7 +6096,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lat",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3503,7 +6105,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_lon",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3512,7 +6114,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3521,7 +6123,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_sequence",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3530,7 +6132,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_timezone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3539,7 +6141,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#stop_url",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3548,7 +6150,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#sunday",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
@@ -3564,7 +6166,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#thursday",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
@@ -3583,7 +6185,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#timepoint",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#StopTime"
   } ],
@@ -3602,7 +6204,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#trip_headsign",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -3611,7 +6213,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#trip_id",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -3620,7 +6222,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#trip_short_name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -3629,7 +6231,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#tts_stop_name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3638,7 +6240,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#tuesday",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
@@ -3657,7 +6259,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#wednesday",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#CalendarService"
   } ],
@@ -3666,7 +6268,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Trip"
   } ],
@@ -3675,7 +6277,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],
@@ -3684,7 +6286,7 @@
   } ]
 }, {
   "@id" : "https://transit.ac.uk/ontologies/gtfs#zone_id",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://transit.ac.uk/ontologies/gtfs#Stop"
   } ],

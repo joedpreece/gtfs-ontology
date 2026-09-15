@@ -5044,6 +5044,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#drop_off_booking_rule_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#BookingRule"/>
     </owl:ObjectProperty>
@@ -5054,6 +5055,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#hasLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#Level"/>
     </owl:ObjectProperty>
@@ -5064,6 +5066,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#hasLocation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#Location"/>
     </owl:ObjectProperty>
@@ -5074,6 +5077,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#hasLocationGroup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#LocationGroup"/>
     </owl:ObjectProperty>
@@ -5084,6 +5088,8 @@
 
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#hasParentStation">
+        <owl:inverseOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#isParentStationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
     </owl:ObjectProperty>
@@ -5094,6 +5100,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#hasRoute">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
     </owl:ObjectProperty>
@@ -5104,6 +5111,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#hasService">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#Service"/>
     </owl:ObjectProperty>
@@ -5114,6 +5122,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#hasShape">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#Shape"/>
     </owl:ObjectProperty>
@@ -5124,6 +5133,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#hasStop">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
     </owl:ObjectProperty>
@@ -5134,6 +5144,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#hasTrip">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
     </owl:ObjectProperty>
@@ -5144,7 +5155,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#isParentStationOf">
-        <owl:inverseOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#hasParentStation"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
     </owl:ObjectProperty>
@@ -5156,6 +5166,7 @@
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#operatedBy">
         <owl:inverseOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#operatesRoute"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#Agency"/>
     </owl:ObjectProperty>
@@ -5173,6 +5184,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#pickup_booking_rule_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#BookingRule"/>
     </owl:ObjectProperty>
@@ -5195,6 +5207,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#agency_email">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Agency"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#email"/>
         <rdfs:comment xml:lang="en">Email address actively monitored by the agency’s customer service department. This email address should be a direct contact point where transit riders can reach a customer service representative at the agency.</rdfs:comment>
@@ -5207,6 +5220,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#agency_fare_url">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Agency"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#url"/>
         <rdfs:comment xml:lang="en">URL of a web page where a rider can purchase tickets or other fare instruments for that agency, or a web page containing information about that agency&apos;s fares.</rdfs:comment>
@@ -5232,6 +5246,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#agency_lang">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Agency"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#language_code"/>
         <rdfs:comment xml:lang="en">Primary language used by this transit agency. Should be provided to help GTFS consumers choose capitalization rules and other language-specific settings for the dataset.</rdfs:comment>
@@ -5244,6 +5259,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#agency_name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Agency"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#text"/>
         <rdfs:comment xml:lang="en">Full name of the transit agency.</rdfs:comment>
@@ -5256,6 +5272,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#agency_phone">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Agency"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#phone_number"/>
         <rdfs:comment xml:lang="en">A voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency&apos;s service area. It may contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet&apos;s &quot;503-238-RIDE&quot;) is permitted, but the field must not contain any other descriptive text.</rdfs:comment>
@@ -5268,6 +5285,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#agency_timezone">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Agency"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#timezone"/>
         <rdfs:comment xml:lang="en">Timezone where the transit agency is located. If multiple agencies are specified in the dataset, each must have the same agency_timezone.</rdfs:comment>
@@ -5280,6 +5298,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#agency_url">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Agency"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#url"/>
         <rdfs:comment xml:lang="en">URL of the transit agency.</rdfs:comment>
@@ -5292,6 +5311,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#arrival_time">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#time"/>
     </owl:DatatypeProperty>
@@ -5302,6 +5322,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#bikes_allowed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -5334,6 +5355,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#block_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#id"/>
     </owl:DatatypeProperty>
@@ -5344,6 +5366,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#cars_allowed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -5376,6 +5399,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#cemv_support">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -5417,6 +5441,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#continuous_drop_off">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -5462,6 +5487,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#continuous_pickup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -5507,6 +5533,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#date">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarDateService"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#dateType"/>
     </owl:DatatypeProperty>
@@ -5517,6 +5544,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#departure_time">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#time"/>
     </owl:DatatypeProperty>
@@ -5527,6 +5555,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#direction_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -5553,6 +5582,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#drop_off_type">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -5591,6 +5621,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#end_date">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#dateType"/>
     </owl:DatatypeProperty>
@@ -5601,6 +5632,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#end_pickup_drop_off_window">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#time"/>
     </owl:DatatypeProperty>
@@ -5611,6 +5643,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#exception_type">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarDateService"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -5637,6 +5670,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#friday">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -5663,6 +5697,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#location_type">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -5707,6 +5742,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#monday">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -5733,6 +5769,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#network_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#id"/>
     </owl:DatatypeProperty>
@@ -5743,6 +5780,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#pickup_type">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -5781,6 +5819,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#platform_code">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#text"/>
     </owl:DatatypeProperty>
@@ -5791,6 +5830,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#route_color">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#color"/>
     </owl:DatatypeProperty>
@@ -5801,6 +5841,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#route_desc">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#text"/>
     </owl:DatatypeProperty>
@@ -5811,6 +5852,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#route_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#id"/>
     </owl:DatatypeProperty>
@@ -5821,6 +5863,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#route_long_name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#text"/>
     </owl:DatatypeProperty>
@@ -5831,6 +5874,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#route_short_name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#text"/>
     </owl:DatatypeProperty>
@@ -5841,6 +5885,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#route_sort_order">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     </owl:DatatypeProperty>
@@ -5851,6 +5896,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#route_text_color">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#color"/>
     </owl:DatatypeProperty>
@@ -5861,6 +5907,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#route_type">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -5935,6 +5982,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#route_url">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#url"/>
     </owl:DatatypeProperty>
@@ -5945,6 +5993,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#safe_duration_factor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
@@ -5955,6 +6004,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#safe_duration_offset">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
@@ -5965,6 +6015,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#saturday">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -5991,6 +6042,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#service_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Service"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#id"/>
     </owl:DatatypeProperty>
@@ -6001,6 +6053,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#shape_dist_traveled">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#nonNegativeFloat"/>
     </owl:DatatypeProperty>
@@ -6011,6 +6064,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#start_date">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#dateType"/>
     </owl:DatatypeProperty>
@@ -6021,6 +6075,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#start_pickup_drop_off_window">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#time"/>
     </owl:DatatypeProperty>
@@ -6031,6 +6086,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_access">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -6057,6 +6113,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_code">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#text"/>
     </owl:DatatypeProperty>
@@ -6067,6 +6124,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_desc">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#text"/>
     </owl:DatatypeProperty>
@@ -6077,6 +6135,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_headsign">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#text"/>
     </owl:DatatypeProperty>
@@ -6087,6 +6146,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#id"/>
     </owl:DatatypeProperty>
@@ -6097,6 +6157,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_lat">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#latitude"/>
     </owl:DatatypeProperty>
@@ -6107,6 +6168,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_lon">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#longitude"/>
     </owl:DatatypeProperty>
@@ -6117,6 +6179,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#text"/>
     </owl:DatatypeProperty>
@@ -6127,6 +6190,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_sequence">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     </owl:DatatypeProperty>
@@ -6137,6 +6201,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_timezone">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#timezone"/>
     </owl:DatatypeProperty>
@@ -6147,6 +6212,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_url">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#url"/>
     </owl:DatatypeProperty>
@@ -6157,6 +6223,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#sunday">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -6183,6 +6250,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#thursday">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -6209,6 +6277,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#timepoint">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -6235,6 +6304,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#trip_headsign">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#text"/>
     </owl:DatatypeProperty>
@@ -6245,6 +6315,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#trip_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#id"/>
     </owl:DatatypeProperty>
@@ -6255,6 +6326,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#trip_short_name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#text"/>
     </owl:DatatypeProperty>
@@ -6265,6 +6337,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#tts_stop_name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#text"/>
     </owl:DatatypeProperty>
@@ -6275,6 +6348,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#tuesday">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -6301,6 +6375,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#wednesday">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -6327,6 +6402,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -6359,6 +6435,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -6391,6 +6468,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://transit.ac.uk/ontologies/gtfs#zone_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
         <rdfs:range rdf:resource="https://transit.ac.uk/ontologies/gtfs#id"/>
     </owl:DatatypeProperty>
@@ -6409,14 +6487,181 @@
     
 
 
+    <!-- https://transit.ac.uk/ontologies/gtfs#AerialLiftRoute -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#AerialLiftRoute">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_type"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
+    </owl:Class>
+    
+
+
     <!-- https://transit.ac.uk/ontologies/gtfs#Agency -->
 
 
     <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#Agency">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#agency_name"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#agency_timezone"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#agency_url"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#agency_email"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#agency_fare_url"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#agency_id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#agency_lang"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#agency_phone"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cemv_support"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:hasKey rdf:parseType="Collection">
             <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#agency_id"/>
         </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#AgencyCoordinationRequiredForContinuousStoppingPickup -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#AgencyCoordinationRequiredForContinuousStoppingPickup">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#continuous_pickup"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#AgencyWithCEMVSupport -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#AgencyWithCEMVSupport">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Agency"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cemv_support"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Agency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#AgencyWithNoCEMVInformation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#AgencyWithNoCEMVInformation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Agency"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cemv_support"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cemv_support"/>
+                                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Agency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#AgencyWithoutCEMVSupport -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#AgencyWithoutCEMVSupport">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Agency"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cemv_support"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Agency"/>
     </owl:Class>
     
 
@@ -6450,20 +6695,42 @@
     
 
 
-    <!-- https://transit.ac.uk/ontologies/gtfs#CEMVSupportedRecord -->
+    <!-- https://transit.ac.uk/ontologies/gtfs#BusRoute -->
 
 
-    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#CEMVSupportedRecord">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#BusRoute">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_type"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
     </owl:Class>
     
 
 
-    <!-- https://transit.ac.uk/ontologies/gtfs#CEMVUnsupportedRecord -->
+    <!-- https://transit.ac.uk/ontologies/gtfs#CableTramRoute -->
 
 
-    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#CEMVUnsupportedRecord">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#CableTramRoute">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_type"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
     </owl:Class>
     
 
@@ -6510,7 +6777,154 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
-        <owl:disjointWith rdf:resource="https://transit.ac.uk/ontologies/gtfs#ParentlessStop"/>
+        <owl:disjointWith rdf:resource="https://transit.ac.uk/ontologies/gtfs#OrphanStop"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ChildStopInheritingAccessibilityFromParent -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ChildStopInheritingAccessibilityFromParent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#ChildStop"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#ChildStop"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ChildStopWithAccessiblePathFromOutsideStation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ChildStopWithAccessiblePathFromOutsideStation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#ChildStop"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#ChildStop"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ChildStopWithNoAccessiblePathFromOutsideStation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ChildStopWithNoAccessiblePathFromOutsideStation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#ChildStop"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#ChildStop"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ContinuousStoppingPickup -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ContinuousStoppingPickup">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#continuous_pickup"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#DriverCoordinationRequiredForContinuousStoppingPickup -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#DriverCoordinationRequiredForContinuousStoppingPickup">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#continuous_pickup"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#EntranceInheritingAccessibilityFromStation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#EntranceInheritingAccessibilityFromStation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#ChildStopInheritingAccessibilityFromParent"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"/>
     </owl:Class>
     
 
@@ -6549,6 +6963,88 @@
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#EntranceWithNoAccessiblePathToPlatforms -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#EntranceWithNoAccessiblePathToPlatforms">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#ChildStopWithNoAccessiblePathFromOutsideStation"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#EntranceWithWheelchairAccessibility -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#EntranceWithWheelchairAccessibility">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#ChildStopWithAccessiblePathFromOutsideStation"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#EntranceOrExit"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#FerryRoute -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#FerryRoute">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_type"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#FunicularRoute -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#FunicularRoute">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_type"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
     </owl:Class>
     
 
@@ -6600,10 +7096,63 @@
     
 
 
-    <!-- https://transit.ac.uk/ontologies/gtfs#ParentlessStop -->
+    <!-- https://transit.ac.uk/ontologies/gtfs#MonorailRoute -->
 
 
-    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ParentlessStop">
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#MonorailRoute">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_type"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#NoContinuousStoppingPickup -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#NoContinuousStoppingPickup">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#StopTime"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#continuous_pickup"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#continuous_pickup"/>
+                                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#OrphanStop -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#OrphanStop">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -6620,6 +7169,94 @@
     
 
 
+    <!-- https://transit.ac.uk/ontologies/gtfs#ParentStop -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ParentStop">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Stop"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#isParentStationOf"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoAccessibilityInformation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoAccessibilityInformation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#OrphanStop"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#OrphanStop"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoWheelchairAccessibility -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoWheelchairAccessibility">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#OrphanStop"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#OrphanStop"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithPartialWheelchairAccessibility -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithPartialWheelchairAccessibility">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#OrphanStop"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#OrphanStop"/>
+    </owl:Class>
+    
+
+
     <!-- https://transit.ac.uk/ontologies/gtfs#Platform -->
 
 
@@ -6632,7 +7269,55 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#ChildStop"/>
         <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#RailRoute -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#RailRoute">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_type"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#RecordWithAccessibilityInformation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#RecordWithAccessibilityInformation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </owl:Class>
     
 
@@ -6641,10 +7326,157 @@
 
 
     <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#Route">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_id"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_type"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#agency_id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cemv_support"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#continuous_drop_off"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#continuous_pickup"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#network_id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_color"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_desc"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_long_name"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_short_name"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_sort_order"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_text_color"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_url"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:hasKey rdf:parseType="Collection">
             <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#route_id"/>
         </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#RouteWithCEMVSupport -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#RouteWithCEMVSupport">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cemv_support"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVInformation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVInformation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cemv_support"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVSupport -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVSupport">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cemv_support"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#RecordWithCEMVInformation"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
     </owl:Class>
     
 
@@ -6654,6 +7486,286 @@
 
     <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#Service">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceAvailableFriday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceAvailableFriday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#friday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceAvailableMonday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceAvailableMonday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#monday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceAvailableSaturday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceAvailableSaturday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#saturday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceAvailableSunday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceAvailableSunday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#sunday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceAvailableThursday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceAvailableThursday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#thursday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceAvailableTuesday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceAvailableTuesday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#tuesday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceAvailableWednesday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceAvailableWednesday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wednesday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableFriday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableFriday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#friday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableMonday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableMonday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#monday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableSaturday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableSaturday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#saturday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableSunday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableSunday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#sunday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableThursday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableThursday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#thursday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableTuesday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableTuesday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#tuesday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableWednesday -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#ServiceNotAvailableWednesday">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wednesday"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#CalendarService"/>
     </owl:Class>
     
 
@@ -6682,7 +7794,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#ParentlessStop"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#OrphanStop"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#stop_lat"/>
@@ -6709,10 +7821,150 @@
 
 
     <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#Stop">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#RecordWithAccessibilityInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#hasLevel"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#hasParentStation"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#stop_id"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#location_type"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#platform_code"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#stop_access"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#stop_code"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#stop_desc"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#stop_lat"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#stop_lon"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#stop_name"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#stop_timezone"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#stop_url"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#tts_stop_name"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_boarding"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#zone_id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:hasKey rdf:parseType="Collection">
             <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_id"/>
         </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#StopAccessibleViaStationOnly -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#StopAccessibleViaStationOnly">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#ChildStop"/>
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#stop_access"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Platform"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopWithStopAccessInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#StopDirectlyAccessibleFromStreet -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#StopDirectlyAccessibleFromStreet">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#ChildStop"/>
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#stop_access"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Platform"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopWithStopAccessInformation"/>
     </owl:Class>
     
 
@@ -6724,11 +7976,12 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#ParentlessStop"/>
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#OrphanStop"/>
                     <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"/>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#OrphanStop"/>
         <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#StopOrPlatform"/>
     </owl:Class>
     
@@ -6784,7 +8037,7 @@
 
 
     <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#StopTime">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#RecordWithPickupInformation"/>
         <owl:hasKey rdf:parseType="Collection">
             <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#hasTrip"/>
             <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#stop_sequence"/>
@@ -6793,14 +8046,394 @@
     
 
 
+    <!-- https://transit.ac.uk/ontologies/gtfs#StopWithStopAccessInformation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#StopWithStopAccessInformation">
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Stop"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#SubwayRoute -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#SubwayRoute">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_type"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TramRoute -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TramRoute">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_type"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
+    </owl:Class>
+    
+
+
     <!-- https://transit.ac.uk/ontologies/gtfs#Trip -->
 
 
     <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#Trip">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#RecordWithAccessibilityInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#hasRoute"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#hasService"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#hasShape"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#trip_id"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#bikes_allowed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#block_id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cars_allowed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#direction_id"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#trip_headsign"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#trip_short_name"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:hasKey rdf:parseType="Collection">
             <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#trip_id"/>
         </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TripInDirectionA -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TripInDirectionA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#direction_id"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+        <owl:disjointWith rdf:resource="https://transit.ac.uk/ontologies/gtfs#TripInDirectionB"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TripInDirectionB -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TripInDirectionB">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#direction_id"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneBicycleSpace -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneBicycleSpace">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#bikes_allowed"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneCarSpace -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneCarSpace">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cars_allowed"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneWheelchairSpace -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneWheelchairSpace">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TripWithNoBicycleSpaces -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithNoBicycleSpaces">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#bikes_allowed"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TripWithNoBikesAllowedInformation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithNoBikesAllowedInformation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#bikes_allowed"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#bikes_allowed"/>
+                                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TripWithNoCarSpaces -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithNoCarSpaces">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cars_allowed"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TripWithNoCarsAllowedInformation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithNoCarsAllowedInformation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cars_allowed"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#cars_allowed"/>
+                                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibility -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibility">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibilityInformation -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibilityInformation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#wheelchair_accessible"/>
+                                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Trip"/>
+    </owl:Class>
+    
+
+
+    <!-- https://transit.ac.uk/ontologies/gtfs#TrolleybusRoute -->
+
+
+    <owl:Class rdf:about="https://transit.ac.uk/ontologies/gtfs#TrolleybusRoute">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Route"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://transit.ac.uk/ontologies/gtfs#route_type"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://transit.ac.uk/ontologies/gtfs#Route"/>
     </owl:Class>
     
 
@@ -6814,6 +8447,21 @@
      -->
 
 
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#AerialLiftRoute"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#BusRoute"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#CableTramRoute"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#FerryRoute"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#FunicularRoute"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#MonorailRoute"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#RailRoute"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#SubwayRoute"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#TramRoute"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#TrolleybusRoute"/>
+        </owl:members>
+    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
@@ -6839,6 +8487,62 @@
             <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Platform"/>
             <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#Station"/>
             <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#StopLocation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#ChildStopInheritingAccessibilityFromParent"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#ChildStopWithAccessiblePathFromOutsideStation"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#ChildStopWithNoAccessiblePathFromOutsideStation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#EntranceInheritingAccessibilityFromStation"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#EntranceWithNoAccessiblePathToPlatforms"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#EntranceWithWheelchairAccessibility"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoAccessibilityInformation"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithNoWheelchairAccessibility"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#ParentlessStopWithPartialWheelchairAccessibility"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#RouteWithCEMVSupport"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVInformation"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#RouteWithNoCEMVSupport"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneBicycleSpace"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithNoBicycleSpaces"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithNoBikesAllowedInformation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneCarSpace"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithNoCarSpaces"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithNoCarsAllowedInformation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithAtLeastOneWheelchairSpace"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibility"/>
+            <rdf:Description rdf:about="https://transit.ac.uk/ontologies/gtfs#TripWithNoWheelchairAccessibilityInformation"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
