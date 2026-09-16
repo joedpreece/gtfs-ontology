@@ -4,30 +4,30 @@ from owlready2 import PropertyClass, ThingClass, Thing, Or
 from rdflib import Namespace, URIRef, Graph, RDF, BNode, Literal
 
 from gtfs_ontology import gtfs_rml_iri, gtfs_owl_iri, gtfs_kg_iri, MAPPINGS_DIR, \
-    AGENCY_RML_FILE, STOP_RML_FILE, ROUTE_RML_FILE, TRIP_RML_FILE, STOP_TIME_RML_FILE
+    AGENCY_RML_FILE, STOP_RML_FILE, ROUTE_RML_FILE, TRIP_RML_FILE, STOP_TIME_RML_FILE, \
+    GTFS, GTFS_RML
 from gtfs_ontology.ontologies import Agency, agency_id, agency_name, agency_url, \
     agency_timezone, agency_lang, agency_phone, agency_fare_url, agency_email, \
     cemv_support, Stop, stop_id, stop_code, stop_name, tts_stop_name, stop_desc, \
     stop_lat, stop_lon, zone_id, stop_url, \
-    location_type, parent_station, stop_timezone, wheelchair_boarding, platform_code, \
+    location_type, stop_timezone, wheelchair_boarding, platform_code, \
     stop_access, hasLevel, Route, route_id, route_short_name, route_long_name, \
     route_desc, route_type, route_url, route_color, route_text_color, route_sort_order, \
-    continuous_pickup, continuous_drop_off, network_id, operatedBy, hasRoute, hasService, \
+    continuous_pickup, continuous_drop_off, network_id, operatedBy, hasRoute, \
+    hasService, \
     hasShape, trip_headsign, trip_short_name, direction_id, block_id, \
     wheelchair_accessible, bikes_allowed, cars_allowed, safe_duration_factor, \
     safe_duration_offset, trip_id, Trip, hasStop, hasLocation, hasLocationGroup, \
     arrival_time, departure_time, stop_sequence, stop_headsign, \
     start_pickup_drop_off_window, end_pickup_drop_off_window, pickup_type, \
     drop_off_type, shape_dist_traveled, timepoint, pickup_booking_rule_id, \
-    drop_off_booking_rule_id
+    drop_off_booking_rule_id, hasParentStation
 
-GTFS_RML = Namespace(f"{gtfs_rml_iri}#")
 gtfs_rml_uri_ref = URIRef(gtfs_rml_iri)
 
 RR = Namespace("http://www.w3.org/ns/r2rml#")
 RML = Namespace("http://semweb.mmlab.be/ns/rml#")
 SD = Namespace("https://w3id.org/okn/o/sd#")
-GTFS = Namespace(f"{gtfs_owl_iri}#")
 
 def create_graph():
     g = Graph()
@@ -85,15 +85,15 @@ def add_predicate_object_map_data_property(
         g: Graph,
         triples_map: URIRef,
         column_name: str,
-        cost_model_property,
+        data_property,
 ):
 
     predicate_object_map = BNode()
 
-    g.add((predicate_object_map, RR.predicate, URIRef(cost_model_property.iri)))
+    g.add((predicate_object_map, RR.predicate, URIRef(data_property.iri)))
     object_map = BNode()
     g.add((object_map, RML.reference, Literal(column_name)))
-    g.add((object_map, RR.datatype, URIRef(cost_model_property.range_iri[0])))
+    g.add((object_map, RR.datatype, URIRef(data_property.range_iri[0])))
 
     g.add((predicate_object_map, RR.objectMap, object_map))
     g.add((triples_map, RR.predicateObjectMap, predicate_object_map))
@@ -154,7 +154,7 @@ def build_agency_mapping():
             g=g,
             triples_map=triples_map,
             column_name=column_name,
-            cost_model_property=data_property,
+            data_property=data_property,
         )
 
     g.serialize((AGENCY_RML_FILE).resolve(), format="ttl")
@@ -197,7 +197,7 @@ def build_stop_mapping():
     ]
 
     object_properties = [
-        (parent_station, f"{gtfs_kg_iri}/Stop/{{stop_id}}"),
+        (hasParentStation, f"{gtfs_kg_iri}/Stop/{{stop_id}}"),
         (hasLevel, f"{gtfs_kg_iri}/Level/{{level_id}}"),
     ]
 
@@ -206,7 +206,7 @@ def build_stop_mapping():
             g=g,
             triples_map=triples_map,
             column_name=column_name,
-            cost_model_property=data_property,
+            data_property=data_property,
         )
 
     for property, template in object_properties:
@@ -263,7 +263,7 @@ def build_route_mapping():
             g=g,
             triples_map=triples_map,
             column_name=column_name,
-            cost_model_property=data_property,
+            data_property=data_property,
         )
 
     for property, template in object_properties:
@@ -319,7 +319,7 @@ def build_trips_mapping():
             g=g,
             triples_map=triples_map,
             column_name=column_name,
-            cost_model_property=data_property,
+            data_property=data_property,
         )
 
     for property, template in object_properties:
@@ -380,7 +380,7 @@ def build_stop_time_mapping():
             g=g,
             triples_map=triples_map,
             column_name=column_name,
-            cost_model_property=data_property,
+            data_property=data_property,
         )
 
     for property, template in object_properties:

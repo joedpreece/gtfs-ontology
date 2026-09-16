@@ -9,48 +9,48 @@
     rml:logicalSource [ rml:referenceFormulation rml:CSV ;
             rml:source [ a sd:DatasetSpecification ;
                     sd:name "routes.txt" ] ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rml:reference "route_id" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:route_id ],
-        [ rr:objectMap [ rml:reference "route_type" ;
-                    rr:datatype xsd:integer ] ;
-            rr:predicate gtfs:route_type ],
-        [ rr:objectMap [ rml:reference "continuous_drop_off" ;
-                    rr:datatype xsd:integer ] ;
-            rr:predicate gtfs:continuous_drop_off ],
-        [ rr:objectMap [ rml:reference "route_url" ;
-                    rr:datatype xsd:string ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "route_url" ;
+                    rr:datatype gtfs:url ] ;
             rr:predicate gtfs:route_url ],
-        [ rr:objectMap [ rml:reference "cemv_support" ;
-                    rr:datatype xsd:integer ] ;
-            rr:predicate gtfs:cemv_support ],
-        [ rr:objectMap [ rml:reference "route_long_name" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:route_long_name ],
-        [ rr:objectMap [ rml:reference "route_desc" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:route_desc ],
-        [ rr:objectMap [ rml:reference "continuous_pickup" ;
-                    rr:datatype xsd:integer ] ;
-            rr:predicate gtfs:continuous_pickup ],
+        [ rr:objectMap [ rml:reference "continuous_drop_off" ;
+                    rr:datatype <_:1044> ] ;
+            rr:predicate gtfs:continuous_drop_off ],
+        [ rr:objectMap [ rml:reference "route_type" ;
+                    rr:datatype <_:1022> ] ;
+            rr:predicate gtfs:route_type ],
         [ rr:objectMap [ rml:reference "network_id" ;
-                    rr:datatype xsd:integer ] ;
+                    rr:datatype gtfs:id ] ;
             rr:predicate gtfs:network_id ],
+        [ rr:objectMap [ rml:reference "route_sort_order" ;
+                    rr:datatype xsd:nonNegativeInteger ] ;
+            rr:predicate gtfs:route_sort_order ],
         [ rr:objectMap [ rml:reference "route_short_name" ;
-                    rr:datatype xsd:string ] ;
+                    rr:datatype gtfs:text ] ;
             rr:predicate gtfs:route_short_name ],
+        [ rr:objectMap [ rml:reference "route_text_color" ;
+                    rr:datatype gtfs:color ] ;
+            rr:predicate gtfs:route_text_color ],
+        [ rr:objectMap [ rml:reference "continuous_pickup" ;
+                    rr:datatype <_:1036> ] ;
+            rr:predicate gtfs:continuous_pickup ],
+        [ rr:objectMap [ rml:reference "route_desc" ;
+                    rr:datatype gtfs:text ] ;
+            rr:predicate gtfs:route_desc ],
+        [ rr:objectMap [ rml:reference "route_color" ;
+                    rr:datatype gtfs:color ] ;
+            rr:predicate gtfs:route_color ],
+        [ rr:objectMap [ rml:reference "route_long_name" ;
+                    rr:datatype gtfs:text ] ;
+            rr:predicate gtfs:route_long_name ],
         [ rr:objectMap [ rr:template "https://transit.ac.uk/graphs/gtfs/Agency/{agency_id}" ;
                     rr:termType rr:IRI ] ;
-            rr:predicate gtfs:hasAgency ],
-        [ rr:objectMap [ rml:reference "route_sort_order" ;
-                    rr:datatype xsd:integer ] ;
-            rr:predicate gtfs:route_sort_order ],
-        [ rr:objectMap [ rml:reference "route_text_color" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:route_text_color ],
-        [ rr:objectMap [ rml:reference "route_color" ;
-                    rr:datatype xsd:string ] ;
-            rr:predicate gtfs:route_color ] ;
+            rr:predicate gtfs:operatedBy ],
+        [ rr:objectMap [ rml:reference "cemv_support" ;
+                    rr:datatype <_:834> ] ;
+            rr:predicate gtfs:cemv_support ],
+        [ rr:objectMap [ rml:reference "route_id" ;
+                    rr:datatype gtfs:id ] ;
+            rr:predicate gtfs:route_id ] ;
     rr:subjectMap [ rr:class gtfs:Route ;
             rr:template "https://transit.ac.uk/graphs/gtfs/Route/{route_id}" ] .
 

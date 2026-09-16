@@ -52,3 +52,4 @@ STOP_TIME_KG_FILE = GRAPHS_DIR / "stop_times.nt"
 # Namespaces
 ONTOLOGY_PREFIX = "gtfs"
 GTFS = Namespace(f"{gtfs_owl_iri}#")
+GTFS_RML = Namespace(f"{gtfs_rml_iri}#")

@@ -43,7 +43,6 @@ def materialize_graph(
     source_name,
 ):
 
-    print(output_file)
     config = f"""
     
     [DataSource]
@@ -55,6 +54,8 @@ def materialize_graph(
     for col in required_columns:
         if col not in df.columns:
             df[col] = np.nan
+
+    print(df)
 
     graph = morph_kgc.materialize(
         config,
@@ -92,6 +93,8 @@ def build_agencies_graph():
     data_dict = {
         "agency.txt": df,
     }
+
+    print(df)
 
     graph = morph_kgc.materialize(config, data_dict)
 

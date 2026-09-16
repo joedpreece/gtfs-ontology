@@ -241,7 +241,7 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     dcterms:license <https://creativecommons.org/licenses/by/4.0> ;
     dcterms:source <https://gtfs.org/documentation/overview/> ;
     dcterms:title "A GTFS Application Ontology" ;
-    vann:preferredNamespacePrefix "dvla" ;
+    vann:preferredNamespacePrefix "gtfs" ;
     vann:preferredNamespaceUri <https://transit.ac.uk/ontologies/gtfs> ;
     owl:versionIRI <https://transit.ac.uk/ontologies/gtfs/0.1.0> ;
     owl:versionInfo "0.1.0" .
@@ -501,13 +501,13 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 :Station a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_lon ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :stop_lat ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :stop_name ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lon ],
         :OrphanStop ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( :Stop [ a owl:Restriction ;
@@ -988,10 +988,10 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
             owl:onProperty :stop_lat ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_lon ],
+            owl:onProperty :stop_name ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_name ],
+            owl:onProperty :stop_lon ],
         :ChildStop ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( :Stop [ a owl:Restriction ;
@@ -1072,13 +1072,13 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 :StopOrPlatform a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_lon ],
+            owl:onProperty :stop_name ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :stop_lat ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_name ],
+            owl:onProperty :stop_lon ],
         :Stop ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( :Stop [ a owl:Class ;
@@ -1098,10 +1098,10 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 :CalendarDateService a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :exception_type ],
+            owl:onProperty :date ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :date ],
+            owl:onProperty :exception_type ],
         :Service ;
     owl:hasKey ( :service_id :date ) .
 
@@ -1141,7 +1141,8 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
     rdfs:subClassOf owl:Thing .
 
 :text a rdfs:Datatype ;
-    rdfs:label "text"@en .
+    rdfs:label "text"@en ;
+    owl:equivalentClass xsd:string .
 
 :wheelchair_boarding a owl:DatatypeProperty,
         owl:FunctionalProperty ;
@@ -1151,29 +1152,29 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 
 :Agency a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :agency_timezone ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :agency_url ],
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :cemv_support ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :agency_lang ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_timezone ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :agency_phone ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :agency_fare_url ],
+            owl:onProperty :agency_email ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :agency_name ],
         [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :agency_email ],
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :agency_url ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :cemv_support ],
+            owl:onProperty :agency_fare_url ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :agency_id ],
@@ -1186,60 +1187,72 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 
 :Stop a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_desc ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :tts_stop_name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_code ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :platform_code ],
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_id ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :wheelchair_boarding ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_lat ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :hasLevel ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :zone_id ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :stop_access ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_lon ],
+            owl:onProperty :tts_stop_name ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :location_type ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :hasParentStation ],
+            owl:onProperty :stop_name ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :stop_url ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lat ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :zone_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :platform_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_lon ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :stop_timezone ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :stop_name ],
+            owl:onProperty :hasLevel ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :hasParentStation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :stop_desc ],
         owl:Thing ;
     owl:hasKey ( :stop_id ) .
 
 :Trip a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :trip_id ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :hasRoute ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :trip_headsign ],
+        [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :wheelchair_accessible ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :block_id ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :bikes_allowed ],
@@ -1250,26 +1263,14 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :hasShape ],
         [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :trip_id ],
-        [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :trip_headsign ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :hasRoute ],
+            owl:onProperty :trip_short_name ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :hasService ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :block_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :direction_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :trip_short_name ],
         owl:Thing ;
     owl:hasKey ( :trip_id ) .
 
@@ -1279,28 +1280,28 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
             owl:onProperty :thursday ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :saturday ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :wednesday ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :start_date ],
+            owl:onProperty :tuesday ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :end_date ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :sunday ],
+            owl:onProperty :friday ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :friday ],
+            owl:onProperty :start_date ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :monday ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :tuesday ],
+            owl:onProperty :sunday ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :saturday ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :wednesday ],
         :Service ;
     owl:disjointWith :CalendarDateService ;
     owl:hasKey ( :service_id ) .
@@ -1308,79 +1309,79 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 :Route a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :route_color ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :cemv_support ],
+            owl:onProperty :route_long_name ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :network_id ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :route_desc ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :route_sort_order ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :continuous_pickup ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :continuous_drop_off ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :route_long_name ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :route_type ],
+            owl:onProperty :route_short_name ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :agency_id ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :route_text_color ],
+            owl:onProperty :route_color ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :route_short_name ],
+            owl:onProperty :route_sort_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :continuous_drop_off ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_desc ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty :route_url ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :route_id ],
+            owl:onProperty :route_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :route_text_color ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :cemv_support ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :continuous_pickup ],
         owl:Thing ;
     owl:hasKey ( :route_id ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( :TripWithNoBikesAllowedInformation :TripWithAtLeastOneBicycleSpace :TripWithNoBicycleSpaces ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( :RouteWithNoCEMVInformation :RouteWithCEMVSupport :RouteWithNoCEMVSupport ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( :TripWithNoCarsAllowedInformation :TripWithAtLeastOneCarSpace :TripWithNoCarSpaces ) .
-
-[] a owl:AllDisjointClasses ;
     owl:members ( :ChildStopInheritingAccessibilityFromParent :ChildStopWithNoAccessiblePathFromOutsideStation :ChildStopWithAccessiblePathFromOutsideStation ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( :StopLocation :Platform :Station :EntranceOrExit :GenericNode :BoardingArea ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( :ContinuousStoppingPickup :NoContinuousStoppingPickup :AgencyCoordinationRequiredForContinuousStoppingPickup :DriverCoordinationRequiredForContinuousStoppingPickup ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( :ParentlessStopWithNoAccessibilityInformation :ParentlessStopWithPartialWheelchairAccessibility :ParentlessStopWithNoWheelchairAccessibility ) .
+    owl:members ( :TripWithNoBikesAllowedInformation :TripWithAtLeastOneBicycleSpace :TripWithNoBicycleSpaces ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( :EntranceInheritingAccessibilityFromStation :EntranceWithWheelchairAccessibility :EntranceWithNoAccessiblePathToPlatforms ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( :TripWithNoWheelchairAccessibilityInformation :TripWithAtLeastOneWheelchairSpace :TripWithNoWheelchairAccessibility ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( :TramRoute :SubwayRoute :RailRoute :BusRoute :FerryRoute :CableTramRoute :AerialLiftRoute :FunicularRoute :TrolleybusRoute :MonorailRoute ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( :Agency :Stop :Route :Trip :StopTime :Service :Level :Shape :LocationGroup :Location :BookingRule ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :ParentlessStopWithNoAccessibilityInformation :ParentlessStopWithPartialWheelchairAccessibility :ParentlessStopWithNoWheelchairAccessibility ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :StopLocation :Platform :Station :EntranceOrExit :GenericNode :BoardingArea ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :TripWithNoCarsAllowedInformation :TripWithAtLeastOneCarSpace :TripWithNoCarSpaces ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :TripWithNoWheelchairAccessibilityInformation :TripWithAtLeastOneWheelchairSpace :TripWithNoWheelchairAccessibility ) .
 

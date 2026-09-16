@@ -57,7 +57,7 @@ with gtfs:
     g.add((gtfs_uri_ref, DCTERMS.license, URIRef("https://creativecommons.org/licenses/by/4.0")))
     g.add((gtfs_uri_ref, DCTERMS.created, Literal(creation_date, datatype=XSD.date)))
     g.add((gtfs_uri_ref, VANN.preferredNamespaceUri, gtfs_uri_ref))
-    g.add((gtfs_uri_ref, VANN.preferredNamespacePrefix, Literal("dvla")))
+    g.add((gtfs_uri_ref, VANN.preferredNamespacePrefix, Literal("gtfs")))
     # g.add((bustimes_uri_ref, BIBO.doi, Literal("10.5281/zenodo.6940891"))) # TODO Change before release
     # g.add((gtfs_uri_ref, WIDOCO.introduction, Literal(intro_text)))
     # g.add((gtfs_uri_ref, DCTERMS.abstract, Literal(abstract_text)))
@@ -158,7 +158,7 @@ with gtfs:
     class text(Datatype):
         pass
     g.add((URIRef(text.iri), RDFS.label, Literal("text", "en")))
-    g.add((URIRef(id.iri), OWL.equivalentClass, XSD.string))
+    g.add((URIRef(text.iri), OWL.equivalentClass, XSD.string))
 
     class timezone(Datatype):
         dfs = pd.read_html(
